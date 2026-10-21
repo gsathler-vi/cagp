@@ -1,0 +1,94 @@
+---
+title: "ACG & Atividades Complementares"
+subtitle: "Regulamento, categorias, teto de horas e passo a passo para submissão"
+toc: true
+---
+
+::: {.cagp-hero}
+<span class="cagp-badge cagp-badge-red mb-2">Normas Acadêmicas</span>
+# GUIA DE ATIVIDADES COMPLEMENTARES (ACG) {.cagp-hero-title}
+
+As **Atividades Complementares de Graduação (ACG)** são componentes curriculares obrigatórios destinados a enriquecer a formação universitária através de experiências práticas, acadêmicas, comunitárias e científicas além da sala de aula.
+:::
+
+## 🎯 Carga Horária Exigida
+
+::: {.row .g-3 .mb-4}
+::: {.col-md-4}
+::: {.cagp-card .text-center}
+<span class="cagp-badge cagp-badge-red mx-auto mb-2">Exigência Total</span>
+<h2 class="mb-0">200 HORAS</h2>
+<p class="text-muted small mt-1 mb-0">Carga horária mínima para integralização curricular</p>
+:::
+:::
+
+::: {.col-md-4}
+::: {.cagp-card .text-center}
+<span class="cagp-badge cagp-badge-dark mx-auto mb-2">Diversidade</span>
+<h2 class="mb-0">MÍN. 2 GRUPOS</h2>
+<p class="text-muted small mt-1 mb-0">As horas devem ser distribuídas em pelo menos 2 categorias</p>
+:::
+:::
+
+::: {.col-md-4}
+::: {.cagp-card .text-center}
+<span class="cagp-badge cagp-badge-dark mx-auto mb-2">Prazo Limite</span>
+<h2 class="mb-0">7º PERÍODO</h2>
+<p class="text-muted small mt-1 mb-0">Recomendado protocolar até o penúltimo semestre</p>
+:::
+:::
+:::
+
+---
+
+## 📑 Tabela de Categorias e Pontuação de ACG
+
+::: {.table-responsive}
+| Grupo / Categoria | Atividades Válidas | Comprovação Exigida | Teto Máximo Permitido |
+| :--- | :--- | :--- | :--- |
+| **Grupo 1: Ensino** | Monitoria de graduação (com ou sem bolsa), cursos extracurriculares de idiomas e capacitação na área pública. | Certificado oficial emitido pelo departamento ou órgão promotor com carga horária expressa. | **Até 80 horas** |
+| **Grupo 2: Pesquisa** | Iniciação Científica (PIBIC/PIBITI/Voluntária), publicação de artigos em periódicos, apresentação de trabalhos em simpósios e congressos acadêmicos. | Declaração do orientador, certificado de apresentação no evento ou cópia dos anais publicados. | **Até 100 horas** |
+| **Grupo 3: Extensão** | Participação em projetos e programas de extensão registrados na PROEX, atuação em Empresas Juniores e ações comunitárias universitárias. | Certificado emitido pelo Sistema de Informação da Extensão (SIEX/UFMG) ou termo de posse e atuação em EJ. | **Até 100 horas** |
+| **Grupo 4: Vivência & Gestão** | Representação estudantil eleita no **CAGP**, DCE, Congregação ou Colegiado de Curso; estágio extracurricular não-obrigatório na área pública; participação como ouvinte em palestras e semanas acadêmicas. | Ata de posse homologada pela diretoria da FAFICH, termo de compromisso de estágio ou certificados de ouvinte em seminários. | **Até 60 horas** |
+:::
+
+---
+
+## 🔍 Regras Essenciais que Você Deve Conhecer
+
+::: {.row .g-4}
+::: {.col-md-6}
+::: {.cagp-card}
+### ⚠️ Limites por Atividade Individual
+- Nenhuma atividade individual isolada pode cobrir a totalidade das suas horas de ACG.
+- Cursos online sem tutoria ou sem avaliação têm pontuação reduzida (consulte o colegiado antes de matricular-se).
+- As atividades precisam ter sido realizadas **durante** o período em que você esteve regularmente matriculado na graduação (atividades anteriores ao vestibular/ENEM não são aceitas).
+:::
+:::
+
+::: {.col-md-6}
+::: {.cagp-card}
+### 📄 Requisitos dos Certificados
+Para que seu documento seja aceito sem exigências, certifique-se de que contenha:
+1. Seu nome completo e número de matrícula (ou CPF).
+2. Título exato da atividade, projeto ou evento.
+3. Período de realização (data de início e término).
+4. **Carga horária expressa em horas**.
+5. Assinatura da instituição promotora e código de validação de autenticidade digital (QR Code ou chave hash).
+:::
+:::
+:::
+
+---
+
+## 🚀 Passo a Passo para Submissão pelo SEI-UFMG
+
+O processo de convalidação de ACG é 100% digital através do Sistema Eletrônico de Informações da UFMG:
+
+1. **Reúna seus Certificados:** Organize os PDFs dos certificados renomeando-os de forma padronizada (ex.: `Grupo1_Monitoria_2024.pdf`, `Grupo2_Artigo_2025.pdf`).
+2. **Preencha o Formulário Padrão de ACG:** Baixe o modelo oficial disponibilizado na página do Colegiado de Gestão Pública da FAFICH.
+3. **Abra o Processo no SEI:**
+   - Acesse o SEI como usuário externo ou envie o dossiê conforme a instrução semestral divulgada pelo Colegiado.
+   - Tipo de Processo: *Graduação: Aproveitamento de Atividades Complementares*.
+4. **Acompanhe a Avaliação:** O Colegiado designará um professor avaliador para analisar as cargas e deferir o cômputo no seu histórico do SIGA.
+5. **Dúvidas no Envio?** O CAGP oferece plantões semestrais de apoio aos estudantes para conferência prévia da documentação.

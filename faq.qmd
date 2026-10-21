@@ -1,0 +1,94 @@
+---
+title: "Dúvidas Frequentes (FAQ)"
+subtitle: "Respostas diretas para as dúvidas mais comuns sobre o curso e a UFMG"
+toc: true
+---
+
+::: {.cagp-hero}
+<span class="cagp-badge cagp-badge-red mb-2">Central de Ajuda</span>
+
+# PERGUNTAS FREQUENTES {.cagp-hero-title}
+
+Compilamos as principais dúvidas que calouros e veteranos trazem ao Centro Acadêmico para que você encontre respostas rápidas sobre matrícula, trancamento, regras institucionais e convivência acadêmica.
+:::
+
+## ❓ Questões Acadêmicas e de Matrícula
+
+```{=html}
+<div class="accordion mb-4" id="faqAccordion">
+
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        1. Como funciona o trancamento parcial ou total de matrícula?
+      </button>
+    </h3>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        <p>O <strong>trancamento parcial</strong> é o cancelamento da inscrição em uma disciplina específica e deve ser solicitado dentro do prazo previsto no Calendário Acadêmico através do sistema SIGA. Você só pode trancar se continuar matriculado na carga horária mínima exigida por semestre.</p>
+        <p class="mb-0">Já o <strong>trancamento total</strong> suspende todas as atividades acadêmicas do semestre. Pode ser solicitado sem justificativa médica por até o limite máximo estabelecido pelas Normas Gerais de Graduação da UFMG. Em casos de saúde ou motivos de força maior, pode ser requerido o trancamento com justificativa a qualquer momento do semestre.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        2. Reprovei em uma disciplina que é pré-requisito de outra. O que fazer?
+      </button>
+    </h3>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        <p class="mb-0">Se a disciplina reprovada for pré-requisito estrito, o sistema do SIGA não permitirá a matrícula automática na matéria subsequente. No entanto, em casos excepcionais (como proximidade da formatura ou equivalência de conteúdos), você pode solicitar ao Colegiado do Curso a <strong>quebra de pré-requisito</strong> durante o período de ajuste presencial.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        3. Onde emito meu comprovante de matrícula e histórico escolar oficial?
+      </button>
+    </h3>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        <p class="mb-0">Basta acessar o portal <a href="https://minha.ufmg.br" target="_blank" rel="noopener">MinhaUFMG</a>, entrar na aba <strong>SIGA: Sistema Acadêmico</strong> e clicar em <em>Documentos &gt; Comprovante de Matrícula</em> ou <em>Histórico Escolar</em>. Todos os documentos gerados pelo sistema contam com código de verificação digital e assinatura eletrônica reconhecida nacionalmente.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        4. Como posso fazer estágio durante o curso de Gestão Pública?
+      </button>
+    </h3>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        <p class="mb-0">O estágio pode ser <strong>não-obrigatório</strong> (a partir do 3º período, como atividade extracurricular remunerada) ou <strong>obrigatório</strong> (componente curricular do 6º e 7º períodos). Todo estágio deve ser formalizado mediante Termo de Compromisso firmado entre a UFMG, o órgão concedente e o estudante, via Colegiado de Gestão Pública.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        5. Como participar ativamente e ajudar nas ações do CAGP?
+      </button>
+    </h3>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        <p class="mb-0">O CAGP é aberto e construído por todos os estudantes de Gestão Pública da UFMG! Você pode participar das reuniões quinzenais abertas, integrar comissões de eventos (como a Semana Acadêmica e Recepção de Calouros), colaborar no grupo de comunicação ou propor iniciativas. Envie uma mensagem pelo nosso Instagram <strong>@cagpufmg</strong> ou procure nossa diretoria na salinha do pilotis da FAFICH.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+```
+
+---
+
+::: {.cagp-card .mt-4}
+### Ainda restou alguma dúvida?
+Não hesite em nos procurar! Envie um e-mail para [cagp@fafich.ufmg.br](mailto:cagp@fafich.ufmg.br) ou fale diretamente conosco pelo Instagram [@cagpufmg](https://www.instagram.com/cagpufmg).
+:::

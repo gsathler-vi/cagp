@@ -1,0 +1,60 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - calouros.qmd
+    - percurso.qmd
+    - acg.qmd
+    - faq.qmd
+    - sobre.qmd
+
+website:
+  title: "CAGP UFMG"
+  site-url: "https://cagp-ufmg.github.io"
+  description: "Centro Acadêmico de Gestão Pública - FAFICH / UFMG"
+  favicon: "logos/10_simbolo_transparente_positivo.svg"
+  
+  navbar:
+    logo: "logos/06_horizontal_transparente_positivo.svg"
+    logo-alt: "Logotipo do Centro Acadêmico de Gestão Pública UFMG"
+    background: light
+    collapse-below: lg
+    left:
+      - href: index.qmd
+        text: Início
+      - href: calouros.qmd
+        text: Guia do Calouro
+      - href: percurso.qmd
+        text: Percurso Curricular
+      - href: acg.qmd
+        text: ACG & Horas
+      - href: faq.qmd
+        text: Dúvidas Frequentes
+      - href: sobre.qmd
+        text: Sobre o CAGP
+    right:
+      - icon: instagram
+        href: "https://www.instagram.com/cagpufmg"
+        aria-label: "Instagram do CAGP UFMG"
+      - icon: envelope
+        href: "mailto:cagp@fafich.ufmg.br"
+        aria-label: "E-mail oficial do CAGP UFMG"
+
+  page-footer:
+    left: |
+      **Centro Acadêmico de Gestão Pública (CAGP)**  
+      FAFICH • Universidade Federal de Minas Gerais (UFMG)  
+      Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG
+    right: |
+      Gestão Democrática e Participativa • Desenvolvido com Quarto
+
+format:
+  html:
+    theme:
+      - _variables.scss
+    css: styles.css
+    toc: true
+    toc-title: "Nesta página"
+    toc-location: right
+    smooth-scroll: true

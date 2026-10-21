@@ -1,0 +1,148 @@
+---
+title: "Percurso Curricular"
+subtitle: "Estrutura do curso, linha do tempo semestral e planejamento acadêmico"
+toc: true
+---
+
+::: {.cagp-hero}
+<span class="cagp-badge cagp-badge-red mb-2">Estrutura Acadêmica</span>
+# A TRAJETÓRIA EM GESTÃO PÚBLICA {.cagp-hero-title}
+
+O curso de Gestão Pública da FAFICH/UFMG é estruturado para formar profissionais capazes de formular, implementar, monitorar e avaliar políticas públicas com rigor técnico, visão crítica e compromisso democrático.
+:::
+
+## 📊 Visão Geral da Graduação
+
+::: {.row .g-3 .mb-4}
+::: {.col-md-3}
+::: {.cagp-card .text-center}
+<span class="cagp-card-icon mx-auto mb-2" aria-hidden="true">⏳</span>
+<h4 class="mb-1">8 Semestres</h4>
+<p class="text-muted small mb-0">Tempo padrão (4 anos)</p>
+:::
+:::
+
+::: {.col-md-3}
+::: {.cagp-card .text-center}
+<span class="cagp-card-icon mx-auto mb-2" aria-hidden="true">📚</span>
+<h4 class="mb-1">Obrigatórias</h4>
+<p class="text-muted small mb-0">Núcleo estruturante e metodológico</p>
+:::
+:::
+
+::: {.col-md-3}
+::: {.cagp-card .text-center}
+<span class="cagp-card-icon mx-auto mb-2" aria-hidden="true">🎯</span>
+<h4 class="mb-1">Optativas</h4>
+<p class="text-muted small mb-0">Formação livre e transversal</p>
+:::
+:::
+
+::: {.col-md-3}
+::: {.cagp-card .text-center}
+<span class="cagp-card-icon mx-auto mb-2" aria-hidden="true">📝</span>
+<h4 class="mb-1">TCC & Estágio</h4>
+<p class="text-muted small mb-0">Prática e consolidação teórica</p>
+:::
+:::
+:::
+
+---
+
+## 🗺️ Linha do Tempo Semestral do Percurso
+
+::: {.cagp-timeline}
+
+::: {.cagp-timeline-step}
+<div class="cagp-timeline-marker">1</div>
+::: {.cagp-timeline-content}
+### 1º Período: Fundamentos das Ciências Sociais e do Estado
+- **Disciplinas Chave:** Introdução à Ciência Política, Fundamentos de Sociologia, Introdução à Economia, Teoria Geral da Administração Pública.
+- <span class="cagp-badge cagp-badge-dark">Foco:</span> Adaptação ao ritmo universitário e compreensão do papel do Estado na sociedade brasileira.
+- <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> Dedique atenção especial à leitura dos textos clássicos; eles formam a base argumentativa de quase todas as matérias seguintes.
+:::
+:::
+
+::: {.cagp-timeline-step}
+<div class="cagp-timeline-marker">2</div>
+::: {.cagp-timeline-content}
+### 2º Período: Métodos e Direito Constitucional
+- **Disciplinas Chave:** Direito Constitucional Aplicado ao Setor Público, Estatística Descritiva e Análise de Dados I, Teoria do Estado, História Econômica e Social do Brasil.
+- <span class="cagp-badge cagp-badge-dark">Foco:</span> Instrumentalização analítica e normas constitucionais da administração.
+- <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> Não tenha medo da estatística! A análise quantitativa é um dos grandes diferenciais do gestor público moderno.
+:::
+:::
+
+::: {.cagp-timeline-step}
+<div class="cagp-timeline-marker">3</div>
+::: {.cagp-timeline-content}
+### 3º Período: Gestão Orçamentária e Métodos Quantitativos
+- **Disciplinas Chave:** Finanças Públicas e Orçamento Governamental, Direito Administrativo, Análise de Dados II (Inferência), Teoria das Organizações Públicas.
+- <span class="cagp-badge cagp-badge-dark">Foco:</span> Instrumentos de planejamento (PPA, LDO, LOA) e regimes jurídicos do servidor público.
+- <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> Orçamento público é matéria fundamental para concursos e consultorias governamentais.
+:::
+:::
+
+::: {.cagp-timeline-step}
+<div class="cagp-timeline-marker">4</div>
+::: {.cagp-timeline-content}
+### 4º Período: Ciclo de Políticas Públicas
+- **Disciplinas Chave:** Formulação e Implementação de Políticas Públicas, Gestão de Pessoas no Setor Público, Planejamento Governamental, Metodologia de Pesquisa em Gestão Pública.
+- <span class="cagp-badge cagp-badge-dark">Foco:</span> Dinâmicas reais de formulação de agendas e desenho de programas públicos.
+- <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> Momento ideal para começar a buscar estágios e projetos de iniciação científica ou extensão.
+:::
+:::
+
+::: {.cagp-timeline-step}
+<div class="cagp-timeline-marker">5</div>
+::: {.cagp-timeline-content}
+### 5º Período: Avaliação e Governança
+- **Disciplinas Chave:** Monitoramento e Avaliação de Políticas Públicas, Contabilidade Pública, Governança e Controle Democrático, Optativa I.
+- <span class="cagp-badge cagp-badge-dark">Foco:</span> Medição de impacto social, auditoria governamental e transparência ativa.
+- <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> Comece a contabilizar e organizar suas horas de ACG.
+:::
+:::
+
+::: {.cagp-timeline-step}
+<div class="cagp-timeline-marker">6</div>
+::: {.cagp-timeline-content}
+### 6º Período: Prática Profissional e Optativas
+- **Disciplinas Chave:** Estágio Curricular Supervisionado I, Políticas Sociais e de Infraestrutura, Optativa II, Optativa III.
+- <span class="cagp-badge cagp-badge-dark">Foco:</span> Inserção em órgãos governamentais (prefeituras, secretarias estaduais, ministérios, agências e terceiro setor).
+- <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> Converse com professores sobre temas potenciais para o seu Trabalho de Conclusão de Curso (TCC).
+:::
+:::
+
+::: {.cagp-timeline-step}
+<div class="cagp-timeline-marker">7</div>
+::: {.cagp-timeline-content}
+### 7º Período: Projeto de Pesquisa e Estágio II
+- **Disciplinas Chave:** Seminário de Monografia / TCC I, Estágio Curricular Supervisionado II, Optativas de Aprofundamento.
+- <span class="cagp-badge cagp-badge-dark">Foco:</span> Elaboração do projeto de pesquisa do TCC e cumprimento final de cargas complementares.
+- <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> Defina seu orientador(a) logo no início do semestre.
+:::
+:::
+
+::: {.cagp-timeline-step}
+<div class="cagp-timeline-marker">8</div>
+::: {.cagp-timeline-content}
+### 8º Período: Conclusão de Curso e Colação de Grau
+- **Disciplinas Chave:** Trabalho de Conclusão de Curso II (Defesa de Monografia), Optativas Finais, Homologação de ACG.
+- <span class="cagp-badge cagp-badge-dark">Foco:</span> Redação final, defesa perante banca examinadora e colação de grau.
+- <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> Certifique-se de que todas as horas de ACG estejam validadas no Colegiado com pelo menos 60 dias de antecedência.
+:::
+:::
+
+:::
+
+---
+
+## 📌 Dicas de Matrícula e Planejamento
+
+::: {.cagp-card}
+### Como Organizar sua Grade Semestral
+1. **Evite sobrecarga de créditos:** Fazer mais de 24 créditos no mesmo semestre costuma comprometer o rendimento acadêmico e inviabilizar estágios.
+2. **Priorize disciplinas estruturantes com pré-requisitos:** Se precisar escolher entre uma optativa e uma obrigatória que tranca matérias futuras, escolha sempre a obrigatória.
+3. **Equilibre disciplinas teóricas e metodológicas:** Intercalar matérias com intensa carga de leitura com matérias aplicadas (análise de dados, finanças) torna o semestre mais fluido.
+4. **Utilize o Período de Ajuste do Colegiado:** Caso não consiga vaga no SIGA em uma matéria obrigatória, apresente requerimento durante o período de ajuste com a justificativa de percurso.
+:::

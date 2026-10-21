@@ -1,0 +1,40 @@
+meta:
+  name: "Centro Acadêmico de Gestão Pública"
+  link: "https://cagp-ufmg.github.io"
+
+logo:
+  small: "logos/10_simbolo_transparente_positivo.svg"
+  medium: "logos/06_horizontal_transparente_positivo.svg"
+  large: "logos/02_vertical_transparente_positivo.svg"
+
+color:
+  palette:
+    cagp-red: "#9E2424"
+    cagp-dark: "#0A0A0A"
+    cagp-white: "#FFFFFF"
+    cagp-gray-100: "#F8F9FA"
+    cagp-gray-200: "#E9ECEF"
+    cagp-gray-800: "#212529"
+  foreground: cagp-dark
+  background: cagp-white
+  primary: cagp-red
+  secondary: cagp-dark
+  light: cagp-gray-100
+  dark: cagp-dark
+
+typography:
+  fonts:
+    - family: Oswald
+      source: google
+      weight: [500, 600, 700]
+    - family: Inter
+      source: google
+      weight: [400, 500, 600, 700]
+  base:
+    family: Inter
+    weight: 400
+    size: 1rem
+    line-height: 1.6
+  headings:
+    family: Oswald
+    weight: 700

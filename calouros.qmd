@@ -1,0 +1,94 @@
+---
+title: "Guia de Sobrevivência do Calouro"
+subtitle: "Tudo o que você precisa saber para começar a graduação em Gestão Pública na UFMG"
+toc: true
+---
+
+::: {.cagp-hero}
+<span class="cagp-badge cagp-badge-red mb-2">Acolhimento Discente</span>
+
+# PARABÉNS PELA APROVAÇÃO NA UFMG! {.cagp-hero-title}
+
+Você agora faz parte do curso de **Gestão Pública** na **Faculdade de Filosofia e Ciências Humanas (FAFICH)**, em uma das melhores universidades da América Latina. O CAGP preparou este guia passo a passo para facilitar a sua chegada.
+:::
+
+## 📋 Checklist dos Primeiros Dias
+
+::: {.row .g-3 .mb-4}
+::: {.col-md-6}
+::: {.cagp-card}
+#### 1. Acesso ao MinhaUFMG
+O portal central do estudante. É nele que você acessa o **SIGA** (matrícula, notas, histórico) e emite seu comprovante de matrícula oficial.
+- **Como acessar:** Crie sua senha de acesso inicial no portal institucional [minha.ufmg.br](https://minha.ufmg.br).
+:::
+:::
+
+::: {.col-md-6}
+::: {.cagp-card}
+#### 2. Carteirinha de Estudante e Crachá
+Seu documento oficial dentro da UFMG. Dá acesso ao Restaurante Universitário (RU), empréstimo de livros no Sistema de Bibliotecas da UFMG e catracas do campus.
+- **Onde solicitar:** Pelo portal MinhaUFMG ou no Departamento de Registro e Controle Acadêmico (DRCA).
+:::
+:::
+
+::: {.col-md-6}
+::: {.cagp-card}
+#### 3. Restaurante Universitário (RU - "Bandejão")
+Alimentação balanceada e subsidiada para toda a comunidade universitária. No campus Pampulha existem duas unidades principais: RU Setorial I (próximo à FAFICH/ICEx) e RU Setorial II (próximo à FALE/Educação Física).
+- **Dica do CAGP:** Carregue créditos na sua carteirinha com antecedência via internet para evitar filas nos totens.
+:::
+:::
+
+::: {.col-md-6}
+::: {.cagp-card}
+#### 4. Conectividade Wi-Fi (eduroam)
+Rede sem fio de alta velocidade e segura disponível em todos os prédios da UFMG e instituições conveniadas no mundo todo.
+- **Configuração:** Conecte-se à rede `eduroam` utilizando seu login `@ufmg.br` e senha do portal institucional.
+:::
+:::
+:::
+
+---
+
+## 🏛️ Conhecendo a FAFICH
+
+A **Faculdade de Filosofia e Ciências Humanas** é o lar do curso de Gestão Pública, além dos cursos de Ciências Sociais, História, Filosofia, Psicologia e Comunicação Social.
+
+::: {.cagp-card}
+### 📍 Onde Encontrar o CAGP e Pontos-Chave
+- **Salinha do CAGP:** Localizada no espaço dos Centros Acadêmicos no pilotis da FAFICH. Venha tomar um café, tirar dúvidas sobre professores ou matérias e descansar nos intervalos.
+- **Colegiado do Curso de Gestão Pública:** Sala administrativa no 2º andar da FAFICH. Responsável por requerimentos formais, orientações de matrícula e aproveitamento de créditos.
+- **Biblioteca da FAFICH:** Espaço silencioso com salas de estudo em grupo, acervo amplo de Ciência Política, Sociologia, Gestão Pública e periódicos científicos.
+:::
+
+---
+
+## 🚌 Circulação no Campus Pampulha
+
+O campus da UFMG é amplo e conta com linhas internas gratuitas para estudantes:
+
+1. **Linhas Internas Gratuitas:**
+   - Ônibus circulares conectam a Portaria da Av. Antônio Carlos à Portaria da Av. Carlos Luz (Catalão), passando pela FAFICH, Reitoria e demais unidades.
+2. **Ciclovias e Bicicletas:**
+   - O campus conta com ciclovias sinalizadas ligando as principais avenidas aos prédios acadêmicos.
+3. **Transporte Público Externo:**
+   - Linhas MOVE (estações UFMG e Mineirão) e linhas alimentadoras com paradas diretas na portaria principal.
+
+---
+
+## 💡 Dicas de Ouro dos Veteranos
+
+::: {.callout-tip}
+### Cuide do seu Percurso desde o 1º Período
+Não deixe matérias introdutórias acumularem para os períodos seguintes. Disciplinas como Teoria Política, Introdução à Economia e Estatística Básica são requisitos ou bases para matérias essenciais do 3º e 4º períodos.
+:::
+
+::: {.callout-note}
+### Não Deixe o ACG para o Final
+Guarde os certificados de cada palestra, curso de extensão, congresso e monitoria que realizar desde o primeiro mês. Visite a página de [ACG & Horas](acg.qmd) para entender a pontuação de cada atividade.
+:::
+
+::: {.callout-important}
+### Conte Sempre com o CAGP
+Em qualquer situação de dúvida, dificuldade com professores ou problemas de frequência, procure a diretoria do CAGP antes dos prazos finais regimentais. Nossa função é defender e apoiar você.
+:::

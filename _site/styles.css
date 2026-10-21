@@ -1,0 +1,448 @@
+/* ==========================================================================
+   CAGP UFMG - Neo-Brutalist Theme Styles (Brite System)
+   Centro Acadêmico de Gestão Pública - FAFICH / UFMG
+   ========================================================================== */
+
+:root {
+  --cagp-red: #9e2424;
+  --cagp-red-hover: #7b1a1a;
+  --cagp-dark: #0a0a0a;
+  --cagp-white: #ffffff;
+  --cagp-gray-50: #fbfbfc;
+  --cagp-gray-100: #f4f5f7;
+  --cagp-gray-200: #e5e7eb;
+  --cagp-gray-600: #4b5563;
+  --cagp-border-width: 2px;
+  --cagp-shadow-sm: 2px 2px 0px var(--cagp-dark);
+  --cagp-shadow-md: 4px 4px 0px var(--cagp-dark);
+  --cagp-shadow-lg: 7px 7px 0px var(--cagp-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Typography & Global Refinements
+   -------------------------------------------------------------------------- */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--cagp-dark);
+  background-color: var(--cagp-white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.cagp-display {
+  font-family: 'Oswald', 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cagp-dark);
+}
+
+a {
+  color: var(--cagp-red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--cagp-red-hover);
+}
+
+/* Accessible focus ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--cagp-red) !important;
+  outline-offset: 2px !important;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar Customizations
+   -------------------------------------------------------------------------- */
+.navbar {
+  border-bottom: 2px solid var(--cagp-dark) !important;
+  background-color: var(--cagp-white) !important;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.35rem;
+  color: var(--cagp-dark) !important;
+}
+
+.navbar-brand img {
+  max-height: 38px;
+  width: auto;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--cagp-dark) !important;
+  padding: 0.4rem 0.85rem !important;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--cagp-red) !important;
+  background-color: var(--cagp-gray-100);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.cagp-hero {
+  border: 2px solid var(--cagp-dark);
+  background-color: var(--cagp-white);
+  box-shadow: var(--cagp-shadow-md);
+  border-radius: 6px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cagp-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: var(--cagp-red);
+}
+
+.cagp-hero-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.cagp-hero-lead {
+  font-size: 1.15rem;
+  color: var(--cagp-gray-600);
+  max-width: 720px;
+  margin-bottom: 1.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   Neo-Brutalist Cards
+   -------------------------------------------------------------------------- */
+.cagp-card {
+  border: 2px solid var(--cagp-dark);
+  background-color: var(--cagp-white);
+  box-shadow: var(--cagp-shadow-md);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cagp-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--cagp-shadow-lg);
+}
+
+.cagp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cagp-card-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cagp-gray-100);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  font-size: 1.25rem;
+  box-shadow: var(--cagp-shadow-sm);
+  flex-shrink: 0;
+}
+
+.cagp-card-title {
+  font-size: 1.35rem;
+  margin-bottom: 0;
+  color: var(--cagp-dark);
+}
+
+.cagp-card-body {
+  color: var(--cagp-gray-600);
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Tactile Buttons
+   -------------------------------------------------------------------------- */
+.cagp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.4rem;
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  text-decoration: none !important;
+  cursor: pointer;
+  box-shadow: var(--cagp-shadow-md);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease;
+}
+
+.cagp-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--cagp-shadow-lg);
+}
+
+.cagp-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--cagp-dark);
+}
+
+.cagp-btn-primary {
+  background-color: var(--cagp-red);
+  color: var(--cagp-white) !important;
+}
+
+.cagp-btn-primary:hover {
+  background-color: var(--cagp-red-hover);
+  color: var(--cagp-white) !important;
+}
+
+.cagp-btn-secondary {
+  background-color: var(--cagp-dark);
+  color: var(--cagp-white) !important;
+}
+
+.cagp-btn-outline {
+  background-color: var(--cagp-white);
+  color: var(--cagp-dark) !important;
+}
+
+.cagp-btn-outline:hover {
+  background-color: var(--cagp-gray-100);
+}
+
+/* --------------------------------------------------------------------------
+   Badges and Tags
+   -------------------------------------------------------------------------- */
+.cagp-badge {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border: 2px solid var(--cagp-dark);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+  background-color: var(--cagp-white);
+  color: var(--cagp-dark);
+}
+
+.cagp-badge-red {
+  background-color: var(--cagp-red);
+  color: var(--cagp-white);
+}
+
+.cagp-badge-dark {
+  background-color: var(--cagp-dark);
+  color: var(--cagp-white);
+}
+
+/* --------------------------------------------------------------------------
+   Timeline / Semester Journey
+   -------------------------------------------------------------------------- */
+.cagp-timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 3px solid var(--cagp-dark);
+}
+
+.cagp-timeline-step {
+  position: relative;
+  margin-bottom: 2.25rem;
+}
+
+.cagp-timeline-marker {
+  position: absolute;
+  left: -2.85rem;
+  top: 0.25rem;
+  width: 28px;
+  height: 28px;
+  background-color: var(--cagp-red);
+  color: var(--cagp-white);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: var(--cagp-shadow-sm);
+}
+
+.cagp-timeline-content {
+  border: 2px solid var(--cagp-dark);
+  background-color: var(--cagp-white);
+  box-shadow: var(--cagp-shadow-md);
+  border-radius: 4px;
+  padding: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Tables (ACG & Course Plan)
+   -------------------------------------------------------------------------- */
+.table-responsive {
+  border: 2px solid var(--cagp-dark);
+  box-shadow: var(--cagp-shadow-md);
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.table {
+  margin-bottom: 0;
+  background-color: var(--cagp-white);
+}
+
+.table thead th {
+  background-color: var(--cagp-dark);
+  color: var(--cagp-white);
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.03em;
+  font-size: 1rem;
+  border-bottom: 2px solid var(--cagp-dark);
+  padding: 0.85rem 1rem;
+}
+
+.table tbody td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--cagp-gray-200);
+}
+
+.table tbody tr:hover {
+  background-color: var(--cagp-gray-100);
+}
+
+/* --------------------------------------------------------------------------
+   Accordion / FAQ Neo-Brutalist
+   -------------------------------------------------------------------------- */
+.accordion-item {
+  border: 2px solid var(--cagp-dark) !important;
+  box-shadow: var(--cagp-shadow-md);
+  margin-bottom: 1rem;
+  border-radius: 4px !important;
+  overflow: hidden;
+}
+
+.accordion-button {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  background-color: var(--cagp-white);
+  color: var(--cagp-dark);
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--cagp-gray-100);
+  color: var(--cagp-red);
+  border-bottom: 2px solid var(--cagp-dark);
+}
+
+.accordion-button::after {
+  filter: grayscale(1);
+}
+
+.accordion-body {
+  padding: 1.25rem;
+  background-color: var(--cagp-white);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.nav-footer {
+  border-top: 2px solid var(--cagp-dark) !important;
+  background-color: var(--cagp-gray-100) !important;
+  color: var(--cagp-dark);
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility & Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .cagp-card:hover,
+  .cagp-btn:hover,
+  .cagp-btn:active {
+    transform: none !important;
+    box-shadow: var(--cagp-shadow-md) !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Viewport Fine-Tuning
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .cagp-hero {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .cagp-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .cagp-timeline-marker {
+    left: -2.35rem;
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+  }
+
+  .cagp-btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}

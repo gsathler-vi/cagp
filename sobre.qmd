@@ -1,0 +1,91 @@
+---
+title: "Sobre o CAGP"
+subtitle: "História, identidade institucional e canais de representação"
+toc: true
+---
+
+::: {.cagp-hero}
+::: {.row .align-items-center}
+::: {.col-lg-8}
+<span class="cagp-badge cagp-badge-red mb-2">Representação Estudantil</span>
+
+# O CENTRO ACADÊMICO DE GESTÃO PÚBLICA {.cagp-hero-title}
+
+O **CAGP** é a voz dos estudantes do curso de Gestão Pública da FAFICH na Universidade Federal de Minas Gerais. Atuamos na defesa do ensino público, gratuito, inclusivo e de excelência, aproximando discentes, corpo docente e a sociedade civil.
+:::
+::: {.col-lg-4 .text-center .d-none .d-lg-block}
+![](logos/06_horizontal_transparente_positivo.svg){fig-alt="Logotipo horizontal institucional do Centro Acadêmico de Gestão Pública da UFMG" style="max-width: 100%; height: auto;"}
+:::
+:::
+:::
+
+## 🏛️ A Nossa Identidade Visual e o Símbolo dos Candangos
+
+O símbolo do CAGP é diretamente inspirado no monumento histórico **"Os Candangos"** (título original: *Dois Guerreiros*), obra de **Bruno Giorgi (1905–1993)** inaugurada em 1959 na Praça dos Três Poderes, em Brasília.
+
+::: {.row .g-4 .align-items-center .my-3}
+::: {.col-md-4 .text-center}
+::: {.cagp-card}
+![](logos/10_simbolo_transparente_positivo.svg){fig-alt="Símbolo vetorial canônico dos Candangos de Bruno Giorgi estilizado para o CAGP UFMG" style="max-height: 180px; width: auto;"}
+<p class="text-muted small mt-2 mb-0"><strong>Os Candangos (1959)</strong><br>Vetorização canônica v2.0</p>
+:::
+:::
+
+::: {.col-md-8}
+::: {.cagp-card}
+### Semiótica e Significado
+- **Trabalho Coletivo e Soberania Popular:** A união das figuras em traço vertical simboliza a construção coletiva da sociedade e a centralidade do povo no interesse público.
+- **Prumo da Administração Pública:** A haste horizontal central representa o equilíbrio, a transparência e a ética republicana que orientam o gestor público.
+- **Pilares Democráticos:** As colunas sólidas representam as instituições do Estado de Direito e a defesa irrestrita dos direitos fundamentais e das políticas públicas inclusivas.
+:::
+:::
+:::
+
+---
+
+## 🎯 Nossos Eixos de Atuação
+
+::: {.row .g-3 .mb-4}
+::: {.col-md-4}
+::: {.cagp-card}
+#### 🛡️ Defesa dos Direitos Estudantis
+Representação ativa na Congregação da FAFICH, no Colegiado de Gestão Pública e nas instâncias da UFMG para garantir os interesses dos alunos.
+:::
+:::
+
+::: {.col-md-4}
+::: {.cagp-card}
+#### 💡 Acolhimento e Integração
+Recepção contínua de calouros, mediação acadêmica, grupos de estudo, eventos culturais e debates sobre os rumos da administração pública brasileira.
+:::
+:::
+
+::: {.col-md-4}
+::: {.cagp-card}
+#### 🌐 Conexão Profissional
+Parcerias com órgãos de governo, prefeituras, institutos de pesquisa e terceiro setor para difusão de oportunidades de estágio e extensão.
+:::
+:::
+:::
+
+---
+
+## 📬 Canais Oficiais de Atendimento
+
+::: {.cagp-card}
+::: {.row .g-3}
+::: {.col-md-6}
+##### 📍 Localização Física
+- **FAFICH • UFMG - Pilotis (Espaço dos Centros Acadêmicos)**  
+- Av. Presidente Antônio Carlos, 6627 - Campus Pampulha  
+- CEP: 31270-901 - Belo Horizonte / MG
+:::
+
+::: {.col-md-6}
+##### ✉️ Comunicação Digital
+- **E-mail:** [cagp@fafich.ufmg.br](mailto:cagp@fafich.ufmg.br)
+- **Instagram:** [@cagpufmg](https://www.instagram.com/cagpufmg)
+- **Atendimento Presencial:** De segunda a sexta-feira, nos intervalos de aula e horários de plantão discente.
+:::
+:::
+:::
