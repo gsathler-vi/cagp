@@ -6,6 +6,7 @@ toc: true
 
 ::: {.cagp-hero}
 <span class="cagp-badge cagp-badge-red mb-2">Estrutura Acadêmica</span>
+
 # A TRAJETÓRIA EM GESTÃO PÚBLICA {.cagp-hero-title}
 
 O curso de Gestão Pública da FAFICH/UFMG é estruturado para formar profissionais capazes de formular, implementar, monitorar e avaliar políticas públicas com rigor técnico, visão crítica e compromisso democrático.
