@@ -1,0 +1,170 @@
+---
+title: "Documentos Oficiais do Curso"
+subtitle: "Repositório dos atos normativos, projeto pedagógico, regulamento, ementário e matrizes curriculares"
+toc: true
+---
+
+::: {.cagp-hero}
+<div class="d-flex flex-wrap gap-2 mb-2">
+  <span class="cagp-badge cagp-badge-red">Acervo Oficial FAFICH/UFMG</span>
+  <span class="cagp-badge cagp-badge-dark">Versão Curricular N-20229</span>
+  <span class="cagp-badge cagp-badge-blue">Formatos Originais em PDF</span>
+</div>
+
+# REPOSITÓRIO NORMATIVO DE GESTÃO PÚBLICA {.cagp-hero-title}
+
+Todas as diretrizes, prazos e regras informados neste portal baseiam-se estritamente nos documentos oficiais aprovados pelas instâncias colegiadas da UFMG (Colegiado de Gestão Pública, Congregação da FAFICH e Conselho de Ensino, Pesquisa e Extensão - CEPE). Disponibilizamos abaixo os arquivos originais digitalizados para consulta pública e download.
+:::
+
+## 🏛️ Atos Fundamentais do Curso
+
+Os documentos basilares que regem a estrutura pedagógica, os direitos e os deveres dos discentes de Gestão Pública da UFMG:
+
+::: {.row .g-4 .mb-5}
+::: {.col-lg-6}
+```{=html}
+<div class="cagp-doc-card">
+  <div class="cagp-doc-header">
+    <div>
+      <span class="cagp-doc-badge bg-danger text-white">Documento Mestre</span>
+      <span class="cagp-doc-badge bg-light text-dark">PDF • 3.3 MB</span>
+    </div>
+    <h3 class="cagp-doc-title">Projeto Pedagógico do Curso (PPC)</h3>
+    <div class="cagp-doc-meta"><strong>Emissão:</strong> Colegiado de Coordenação Didática / FAFICH / CEPE-UFMG • Versão N-20229</div>
+    <p class="cagp-doc-desc">Documento institucional completo que define o perfil do egresso, as competências técnicas e analíticas, a matriz curricular de 3.000 horas no turno noturno, as diretrizes de extensão obrigatória e a justificativa pedagógica do curso de Gestão Pública da UFMG.</p>
+  </div>
+  <div class="cagp-doc-actions">
+    <a href="documentos/ppc-gestao-publica-ufmg.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary" aria-label="Visualizar Projeto Pedagógico do Curso em PDF">👁️ Visualizar PDF</a>
+    <a href="documentos/ppc-gestao-publica-ufmg.pdf" download="PPC-Gestao-Publica-UFMG.pdf" class="cagp-doc-btn cagp-doc-btn-outline" aria-label="Baixar Projeto Pedagógico do Curso em PDF">📥 Baixar Arquivo</a>
+  </div>
+</div>
+```
+:::
+
+::: {.col-lg-6}
+```{=html}
+<div class="cagp-doc-card">
+  <div class="cagp-doc-header">
+    <div>
+      <span class="cagp-doc-badge bg-dark text-white">Regulamento Oficial</span>
+      <span class="cagp-doc-badge bg-light text-dark">PDF • 2.0 MB</span>
+    </div>
+    <h3 class="cagp-doc-title">Regulamento do Curso de Graduação</h3>
+    <div class="cagp-doc-meta"><strong>Emissão:</strong> Colegiado do Curso de Gestão Pública • FAFICH / UFMG</div>
+    <p class="cagp-doc-desc">Conjunto formal de regras regimentais do curso: matrícula mínima semestral de 180h (12 créditos), os 3 percursos formais (Art. 3º), Atividades Acadêmicas Complementares e prazos de 120 dias (Art. 15), dispensa de estágio profissional (Art. 41), TCC e avaliação de conhecimentos (Art. 51).</p>
+  </div>
+  <div class="cagp-doc-actions">
+    <a href="documentos/regulamento-gestao-publica-ufmg.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary" aria-label="Visualizar Regulamento do Curso em PDF">👁️ Visualizar PDF</a>
+    <a href="documentos/regulamento-gestao-publica-ufmg.pdf" download="Regulamento-Curso-Gestao-Publica-UFMG.pdf" class="cagp-doc-btn cagp-doc-btn-outline" aria-label="Baixar Regulamento do Curso em PDF">📥 Baixar Arquivo</a>
+  </div>
+</div>
+```
+:::
+:::
+
+---
+
+## 📖 Ementário Geral do Curso
+
+O programa curricular com os objetivos de ensino, conteúdos e referências bibliográficas de todas as matérias:
+
+::: {.row .g-4 .mb-5}
+::: {.col-12}
+```{=html}
+<div class="cagp-doc-card">
+  <div class="cagp-doc-header">
+    <div>
+      <span class="cagp-doc-badge bg-primary text-white">Ementário Completo</span>
+      <span class="cagp-doc-badge bg-light text-dark">PDF • 3.0 MB</span>
+    </div>
+    <h3 class="cagp-doc-title">Ementário Oficial das Disciplinas Obrigatórias</h3>
+    <div class="cagp-doc-meta"><strong>Departamentos Ofertantes:</strong> DCP (Ciência Política), ECN (Economia), EST (Estatística) e SOA (Sociologia)</div>
+    <p class="cagp-doc-desc">Catálogo normativo que detalha as ementas oficiais, objetivos programáticos e bibliografias recomendadas de todas as <strong>27 disciplinas obrigatórias</strong> dos 10 períodos curriculares, fundamentando o aprendizado teórico e instrumental em políticas públicas, finanças, avaliação e governança.</p>
+  </div>
+  <div class="cagp-doc-actions">
+    <a href="documentos/ementario-gestao-publica-ufmg.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary" aria-label="Visualizar Ementário Oficial em PDF">👁️ Visualizar Ementário Completo</a>
+    <a href="documentos/ementario-gestao-publica-ufmg.pdf" download="Ementario-Gestao-Publica-UFMG.pdf" class="cagp-doc-btn cagp-doc-btn-outline" aria-label="Baixar Ementário Oficial em PDF">📥 Baixar Ementário (PDF)</a>
+  </div>
+</div>
+```
+:::
+:::
+
+---
+
+## 🗺️ Matrizes Curriculares dos Três Percursos Oficiais
+
+Conforme o **Art. 3º do Regulamento**, o curso oferece 3 modalidades formais de percurso curricular registradas nos sistemas acadêmicos da UFMG:
+
+::: {.row .g-4 .mb-5}
+::: {.col-md-4}
+```{=html}
+<div class="cagp-doc-card">
+  <div class="cagp-doc-header">
+    <div>
+      <span class="cagp-doc-badge bg-dark text-white">Percurso 01-01</span>
+      <span class="cagp-doc-badge bg-light text-dark">PDF • 163 KB</span>
+    </div>
+    <h4 class="cagp-doc-title">Bacharelado / Núcleo Geral</h4>
+    <div class="cagp-doc-meta"><strong>Padrão Canônico:</strong> 10 Semestres • 3.000h</div>
+    <p class="cagp-doc-desc">Relatório oficial de percurso padrão. Grade recomendada período a período com 1.560h obrigatórias, 300h de estágio, 1.020h optativas e 120h de Formação Livre.</p>
+  </div>
+  <div class="cagp-doc-actions">
+    <a href="documentos/percurso-bacharelado-nucleo-geral.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary" aria-label="Visualizar Percurso Geral em PDF">👁️ Ver PDF</a>
+    <a href="documentos/percurso-bacharelado-nucleo-geral.pdf" download="Percurso-Bacharelado-Nucleo-Geral.pdf" class="cagp-doc-btn cagp-doc-btn-outline" aria-label="Baixar Percurso Geral em PDF">📥 Baixar</a>
+  </div>
+</div>
+```
+:::
+
+::: {.col-md-4}
+```{=html}
+<div class="cagp-doc-card">
+  <div class="cagp-doc-header">
+    <div>
+      <span class="cagp-doc-badge bg-warning text-dark">Percurso 01-02</span>
+      <span class="cagp-doc-badge bg-light text-dark">PDF • 163 KB</span>
+    </div>
+    <h4 class="cagp-doc-title">Núcleo Complementar</h4>
+    <div class="cagp-doc-meta"><strong>Transversal/Aberta:</strong> A partir do 5º Período</div>
+    <p class="cagp-doc-desc">Relatório do percurso de formação interdisciplinar. Integralização de 300h em Formação Transversal com redução das optativas específicas para 720h.</p>
+  </div>
+  <div class="cagp-doc-actions">
+    <a href="documentos/percurso-bacharelado-nucleo-complementar.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary" aria-label="Visualizar Percurso Complementar em PDF">👁️ Ver PDF</a>
+    <a href="documentos/percurso-bacharelado-nucleo-complementar.pdf" download="Percurso-Bacharelado-Nucleo-Complementar.pdf" class="cagp-doc-btn cagp-doc-btn-outline" aria-label="Baixar Percurso Complementar em PDF">📥 Baixar</a>
+  </div>
+</div>
+```
+:::
+
+::: {.col-md-4}
+```{=html}
+<div class="cagp-doc-card">
+  <div class="cagp-doc-header">
+    <div>
+      <span class="cagp-doc-badge bg-info text-white">Percurso 01-03</span>
+      <span class="cagp-doc-badge bg-light text-dark">PDF • 164 KB</span>
+    </div>
+    <h4 class="cagp-doc-title">Núcleo Avançado</h4>
+    <div class="cagp-doc-meta"><strong>Pós-Graduação:</strong> A partir do 7º Período</div>
+    <p class="cagp-doc-desc">Relatório do percurso acadêmico articulado com a Pós-Graduação. Permite cursar de 45h a 120h em disciplinas do mestrado (ex: PPGCP/FAFICH).</p>
+  </div>
+  <div class="cagp-doc-actions">
+    <a href="documentos/percurso-bacharelado-nucleo-avancado.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary" aria-label="Visualizar Percurso Avançado em PDF">👁️ Ver PDF</a>
+    <a href="documentos/percurso-bacharelado-nucleo-avancado.pdf" download="Percurso-Bacharelado-Nucleo-Avancado.pdf" class="cagp-doc-btn cagp-doc-btn-outline" aria-label="Baixar Percurso Avançado em PDF">📥 Baixar</a>
+  </div>
+</div>
+```
+:::
+:::
+---
+
+## 💡 Como Usar os Documentos Oficiais em Requerimentos
+
+::: {.callout-note}
+### Dicas Jurídicas e Regimentais do CAGP para o Estudante
+1. **Citação Literal em Requerimentos:** Ao solicitar dispensa de pré-requisitos, aproveitamento de estudos ou justificativa de quebra de matrícula no SEI, cite o artigo específico do **Regulamento do Curso**.
+2. **Dispensa de Estágio (Art. 41):** Estudantes que exercem cargo público efetivo, função pública ou cargo em comissão devem anexar cópia do Art. 41 do Regulamento junto ao termo de posse e declaração de atribuições no processo SEI.
+3. **Prazo Decadencial de AAC (Art. 15):** Os certificados de Atividades Acadêmicas Complementares devem ser protocolados em no máximo **120 dias corridos** a contar do início do semestre seguinte à conclusão da atividade.
+4. **Dúvidas ou Apoio:** Caso tenha dificuldades na interpretação das normas ou no trâmite processual com o Colegiado, procure a diretoria do CAGP pelo e-mail [cagp@fafich.ufmg.br](mailto:cagp@fafich.ufmg.br).
+:::

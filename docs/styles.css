@@ -313,6 +313,153 @@ body.quarto-light .navbar-logo.light-content,
   color: var(--cagp-white);
 }
 
+.cagp-badge-blue {
+  background-color: #1565c0;
+  color: var(--cagp-white);
+}
+
+.cagp-badge-green {
+  background-color: #2e7d32;
+  color: var(--cagp-white);
+}
+
+/* Department Badges */
+.badge-dcp { background-color: var(--cagp-red) !important; color: #fff !important; }
+.badge-ecn { background-color: var(--cagp-dark) !important; color: #fff !important; }
+.badge-est { background-color: #1565c0 !important; color: #fff !important; }
+.badge-soa { background-color: #2e7d32 !important; color: #fff !important; }
+
+/* --------------------------------------------------------------------------
+   Interactive Expandable Disciplines (Ementário)
+   -------------------------------------------------------------------------- */
+.cagp-discipline {
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  background-color: var(--cagp-white);
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+  margin-bottom: 0.75rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cagp-discipline:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--cagp-dark);
+}
+
+.cagp-discipline summary {
+  padding: 0.65rem 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.cagp-discipline summary::-webkit-details-marker {
+  display: none;
+}
+
+.cagp-discipline summary .discipline-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.cagp-discipline summary .discipline-chevron {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+  color: var(--cagp-gray-600);
+}
+
+.cagp-discipline[open] summary .discipline-chevron {
+  transform: rotate(90deg);
+  color: var(--cagp-red);
+}
+
+.cagp-discipline-body {
+  padding: 0.85rem 1rem 1rem 1rem;
+  border-top: 1px dashed var(--cagp-gray-200);
+  background-color: var(--cagp-gray-50);
+  border-left: 4px solid var(--cagp-red);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.cagp-discipline-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Quarto Panel Tabsets (Neo-Brutalist)
+   -------------------------------------------------------------------------- */
+.panel-tabset .nav-tabs {
+  border-bottom: 2px solid var(--cagp-dark) !important;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.panel-tabset .nav-tabs .nav-link {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 2px solid var(--cagp-dark) !important;
+  border-bottom: none !important;
+  border-radius: 4px 4px 0 0 !important;
+  background-color: var(--cagp-gray-100);
+  color: var(--cagp-dark) !important;
+  padding: 0.55rem 1.25rem !important;
+  box-shadow: 2px -2px 0px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.panel-tabset .nav-tabs .nav-link:hover {
+  background-color: #fff;
+}
+
+.panel-tabset .nav-tabs .nav-link.active {
+  background-color: var(--cagp-white) !important;
+  color: var(--cagp-red) !important;
+  border-bottom: 2px solid var(--cagp-white) !important;
+  box-shadow: 3px 0 0 var(--cagp-dark);
+}
+
+/* Stat Cards */
+.cagp-stat-card {
+  border: 2px solid var(--cagp-dark);
+  background-color: var(--cagp-white);
+  box-shadow: var(--cagp-shadow-md);
+  border-radius: 4px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  height: 100%;
+}
+
+.cagp-stat-value {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--cagp-red);
+  margin-bottom: 0.35rem;
+}
+
+.cagp-stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cagp-dark);
+  margin-bottom: 0;
+}
+
 /* --------------------------------------------------------------------------
    Timeline / Semester Journey
    -------------------------------------------------------------------------- */
@@ -485,3 +632,389 @@ body.quarto-light .navbar-logo.light-content,
     margin-bottom: 0.5rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Hero Emblem Card (Neo-Brutalist Crest)
+   -------------------------------------------------------------------------- */
+.cagp-hero-emblem-card {
+  background-color: var(--cagp-light, #FBF8F3);
+  border: 3px solid var(--cagp-dark, #111111);
+  box-shadow: 6px 6px 0 var(--cagp-dark, #111111);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.cagp-hero-emblem-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-hero-emblem-img {
+  height: 160px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 1rem auto;
+  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.08));
+}
+
+.cagp-hero-emblem-seal {
+  border-top: 2px dashed var(--cagp-gray-300, #ced4da);
+  padding-top: 0.85rem;
+}
+
+.cagp-hero-emblem-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cagp-dark, #111111);
+  margin-bottom: 0.2rem;
+}
+
+.cagp-hero-emblem-sub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cagp-red, #9E2424);
+}
+
+/* --------------------------------------------------------------------------
+   Document Cards & Repository Styles
+   -------------------------------------------------------------------------- */
+.cagp-doc-card {
+  background-color: var(--cagp-white, #FFFFFF);
+  border: 3px solid var(--cagp-dark, #111111);
+  box-shadow: 5px 5px 0 var(--cagp-dark, #111111);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cagp-doc-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-doc-header {
+  margin-bottom: 1rem;
+}
+
+.cagp-doc-badge {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border: 1.5px solid var(--cagp-dark, #111111);
+  display: inline-block;
+  margin-right: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.cagp-doc-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--cagp-dark, #111111);
+  margin-bottom: 0.5rem;
+}
+
+.cagp-doc-meta {
+  font-size: 0.8rem;
+  color: #555555;
+  margin-bottom: 0.75rem;
+}
+
+.cagp-doc-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--cagp-dark, #111111);
+  margin-bottom: 1.25rem;
+}
+
+.cagp-doc-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.cagp-doc-btn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.85rem;
+  border: 2px solid var(--cagp-dark, #111111);
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
+}
+
+.cagp-doc-btn-primary {
+  background-color: var(--cagp-red, #9E2424);
+  color: #ffffff !important;
+}
+
+.cagp-doc-btn-primary:hover {
+  background-color: var(--cagp-dark, #111111);
+  color: #ffffff !important;
+}
+
+.cagp-doc-btn-outline {
+  background-color: #ffffff;
+  color: var(--cagp-dark, #111111) !important;
+}
+
+.cagp-doc-btn-outline:hover {
+  background-color: var(--cagp-gray-100, #f8f9fa);
+  color: var(--cagp-dark, #111111) !important;
+}
+
+/* ==========================================================================
+   Quarto Callouts (CAGP Neo-Brutalist Theme)
+   ========================================================================== */
+div.callout {
+  border: 3px solid var(--cagp-dark, #111111) !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111) !important;
+  background-color: var(--cagp-white, #FFFFFF) !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  overflow: hidden !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+div.callout:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 var(--cagp-dark, #111111) !important;
+}
+
+div.callout > .callout-header {
+  border-bottom: 2px solid var(--cagp-dark, #111111) !important;
+  border-radius: 0px !important;
+  padding: 0.65rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  opacity: 1 !important;
+}
+
+div.callout > .callout-header .callout-title-container {
+  font-family: 'Oswald', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+  line-height: 1.25 !important;
+}
+
+div.callout > .callout-header .callout-icon-container {
+  padding-top: 0 !important;
+  margin-right: 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+div.callout > .callout-body-container {
+  padding: 1.15rem 1.25rem !important;
+  background-color: #FFFFFF !important;
+  color: var(--cagp-dark, #111111) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+div.callout > .callout-body-container p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Callout Note (Azul Institucional UFMG) */
+div.callout-note {
+  border-left-color: var(--cagp-dark, #111111) !important;
+}
+div.callout-note > .callout-header {
+  background-color: #1E3F66 !important;
+  color: #FFFFFF !important;
+}
+div.callout-note > .callout-header .callout-title-container {
+  color: #FFFFFF !important;
+}
+div.callout-note .callout-icon::before {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Callout Tip (Dourado / Mostarda CAGP) */
+div.callout-tip {
+  border-left-color: var(--cagp-dark, #111111) !important;
+}
+div.callout-tip > .callout-header {
+  background-color: #E8A317 !important;
+  color: #111111 !important;
+}
+div.callout-tip > .callout-header .callout-title-container {
+  color: #111111 !important;
+}
+div.callout-tip .callout-icon::before {
+  filter: brightness(0) !important;
+}
+
+/* Callout Important (Vinho Institucional CAGP) */
+div.callout-important {
+  border-left-color: var(--cagp-dark, #111111) !important;
+}
+div.callout-important > .callout-header {
+  background-color: #8B1E2D !important;
+  color: #FFFFFF !important;
+}
+div.callout-important > .callout-header .callout-title-container {
+  color: #FFFFFF !important;
+}
+div.callout-important .callout-icon::before {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Callout Warning (Laranja Âmbar) */
+div.callout-warning {
+  border-left-color: var(--cagp-dark, #111111) !important;
+}
+div.callout-warning > .callout-header {
+  background-color: #E65100 !important;
+  color: #FFFFFF !important;
+}
+div.callout-warning > .callout-header .callout-title-container {
+  color: #FFFFFF !important;
+}
+div.callout-warning .callout-icon::before {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Callout Caution (Vermelho Alerta) */
+div.callout-caution {
+  border-left-color: var(--cagp-dark, #111111) !important;
+}
+div.callout-caution > .callout-header {
+  background-color: #B71C1C !important;
+  color: #FFFFFF !important;
+}
+div.callout-caution > .callout-header .callout-title-container {
+  color: #FFFFFF !important;
+}
+div.callout-caution .callout-icon::before {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Links inside callout body */
+div.callout .callout-body a {
+  color: var(--cagp-red, #9E2424) !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+
+div.callout .callout-body a:hover {
+  color: var(--cagp-dark, #111111) !important;
+}
+
+/* Callout Collapsible Toggles */
+div.callout-note .callout-toggle::before,
+div.callout-important .callout-toggle::before,
+div.callout-warning .callout-toggle::before,
+div.callout-caution .callout-toggle::before {
+  filter: brightness(0) invert(1) !important;
+}
+div.callout-tip .callout-toggle::before {
+  filter: brightness(0) !important;
+}
+
+/* ==========================================================================
+   Permanent Campaign Announcement Banner (Neo-Brutalist)
+   ========================================================================== */
+#quarto-announcement,
+#quarto-announcement.hidden {
+  background-color: var(--cagp-red, #8B1E2D) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-bottom: 2px solid var(--cagp-dark, #111111) !important;
+  border-radius: 0px !important;
+  padding: 0.55rem 1.25rem !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.85rem !important;
+  line-height: 1.45 !important;
+  text-align: center !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+  z-index: 1040 !important;
+}
+
+#quarto-announcement .quarto-announcement-icon {
+  color: #FFFFFF !important;
+  font-size: 1.15rem !important;
+  margin-right: 0.65rem !important;
+  flex-shrink: 0 !important;
+}
+
+#quarto-announcement .quarto-announcement-content {
+  margin: 0 !important;
+  color: #FFFFFF !important;
+  max-width: 1200px;
+}
+
+#quarto-announcement .quarto-announcement-content p {
+  margin-bottom: 0 !important;
+  color: #FFFFFF !important;
+}
+
+.cagp-announcement-badge {
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  background-color: var(--cagp-dark, #111111) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  padding: 0.2rem 0.5rem !important;
+  margin-right: 0.45rem !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+.cagp-chapa-highlight {
+  color: #FFD54F !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+
+@media (max-width: 768px) {
+  #quarto-announcement {
+    padding: 0.65rem 0.75rem !important;
+    font-size: 0.78rem !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+  
+  .cagp-announcement-badge {
+    margin-bottom: 0.25rem !important;
+  }
+}
+
+
+

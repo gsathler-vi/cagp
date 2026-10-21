@@ -7,33 +7,86 @@ toc: false
 ::: {.cagp-hero}
 ::: {.row .align-items-center}
 ::: {.col-lg-8}
-<span class="cagp-badge cagp-badge-red mb-3">Portal do Estudante • Gestão Pública UFMG</span>
+<div class="d-flex flex-wrap gap-2 mb-3">
+  <span class="cagp-badge cagp-badge-red">Turno Noturno</span>
+  <span class="cagp-badge cagp-badge-dark">10 Semestres • 3.000 Horas</span>
+  <span class="cagp-badge cagp-badge-blue">Bacharelado FAFICH / UFMG</span>
+</div>
 
 # BEM-VINDO(A) AO CAGP UFMG {.cagp-hero-title}
 
-O **Centro Acadêmico de Gestão Pública** é a entidade de representação discente dos estudantes de Gestão Pública da FAFICH/UFMG. Estamos aqui para orientar, acolher e construir uma universidade democrática, pública e de excelência.
+O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de representação discente dos estudantes de Gestão Pública da FAFICH/UFMG. Estamos ao seu lado desde a recepção de calouros até a colação de grau, defendendo uma formação crítica, pública e comprometida com a transformação democrática do Estado.
 
 ::: {.d-flex .flex-wrap .gap-2 .mt-4}
 [🚀 Sou Calouro](calouros.qmd){.cagp-btn .cagp-btn-primary aria-label="Ir para o Guia de Sobrevivência do Calouro"}
-[📋 Regras de ACG](acg.qmd){.cagp-btn .cagp-btn-secondary aria-label="Acessar o guia de Atividades Complementares de Graduação"}
-[🗺️ Percurso do Curso](percurso.qmd){.cagp-btn .cagp-btn-outline aria-label="Visualizar a grade e o percurso curricular"}
+[🧭 Percurso (10P)](percurso.qmd){.cagp-btn .cagp-btn-secondary aria-label="Visualizar a grade e os 3 percursos curriculares"}
+[💼 Estágio & TCC](estagio-tcc.qmd){.cagp-btn .cagp-btn-outline aria-label="Acessar regras oficiais de Estágio Obrigatório e TCC"}
+[🌱 Extensão & AAC](acg.qmd){.cagp-btn .cagp-btn-outline aria-label="Consultar regras de Extensão Obrigatória e Atividades Complementares"}
+[📚 Documentos](documentos.qmd){.cagp-btn .cagp-btn-outline aria-label="Acessar o repositório de documentos oficiais e PDFs"}
 :::
 :::
 
+::: {.col-lg-4 .col-md-5 .col-12 .text-center .mt-4 .mt-lg-0}
+```{=html}
+<div class="cagp-hero-emblem-card">
+  <img src="logos/10_simbolo_transparente_positivo.svg" alt="Símbolo oficial dos Candangos do Centro Acadêmico de Gestão Pública da UFMG" class="cagp-hero-emblem-img">
+  <div class="cagp-hero-emblem-seal">
+    <div class="cagp-hero-emblem-title">CAGP UFMG</div>
+    <div class="cagp-hero-emblem-sub">• FAFICH •</div>
+  </div>
+</div>
+```
+:::
 :::
 :::
 
-## Acesso Rápido aos Módulos do Curso
+## 📊 O Curso de Gestão Pública em Números Oficiais
+
+::: {.row .g-3 .mb-5}
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">3.000 h</div>
+<div class="cagp-stat-label">Carga Horária Total</div>
+<small class="text-muted">NE + NG para integralização</small>
+:::
+:::
+
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">10 Períodos</div>
+<div class="cagp-stat-label">Tempo Padrão (5 anos)</div>
+<small class="text-muted">Mínimo 8 / Máximo 17 semestres</small>
+:::
+:::
+
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">300 h</div>
+<div class="cagp-stat-label">Formação em Extensão</div>
+<small class="text-muted">10% obrigatório (CEPE nº 10/19)</small>
+:::
+:::
+
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">300 h</div>
+<div class="cagp-stat-label">Estágio Supervisionado</div>
+<small class="text-muted">DCP 135 (180h) + DCP 136 (120h)</small>
+:::
+:::
+:::
+
+## 🧭 Navegação por Módulos Oficiais
 
 ::: {.row .g-4}
-::: {.col-md-4}
+::: {.col-md-3 .col-sm-6}
 ::: {.cagp-card}
 ::: {.cagp-card-header}
 <span class="cagp-card-icon" aria-hidden="true">🎓</span>
 <h3 class="cagp-card-title">Guia do Calouro</h3>
 :::
 ::: {.cagp-card-body}
-Acabou de chegar na UFMG? Veja como emitir sua carteirinha, cadastrar-se no RU, acessar o MinhaUFMG e se situar nos prédios da FAFICH.
+Chegou à UFMG? Veja como funciona o **Turno Noturno**, horários das aulas (19h–22h30), emissão de carteirinha, jantar no RU e matrícula mínima de 180h.
 :::
 <div class="mt-3">
 [Acessar Guia &rarr;](calouros.qmd){.cagp-btn .cagp-btn-outline .w-100}
@@ -41,57 +94,85 @@ Acabou de chegar na UFMG? Veja como emitir sua carteirinha, cadastrar-se no RU, 
 :::
 :::
 
-::: {.col-md-4}
-::: {.cagp-card}
-::: {.cagp-card-header}
-<span class="cagp-card-icon" aria-hidden="true">⏱️</span>
-<h3 class="cagp-card-title">ACG & Horas</h3>
-:::
-::: {.cagp-card-body}
-Consulte a tabela completa de Atividades Complementares, limites máximos por categoria (Ensino, Pesquisa, Extensão e Gestão) e como enviar pelo SEI.
-:::
-<div class="mt-3">
-[Tabela de ACG &rarr;](acg.qmd){.cagp-btn .cagp-btn-outline .w-100}
-</div>
-:::
-:::
-
-::: {.col-md-4}
+::: {.col-md-3 .col-sm-6}
 ::: {.cagp-card}
 ::: {.cagp-card-header}
 <span class="cagp-card-icon" aria-hidden="true">🧭</span>
 <h3 class="cagp-card-title">Percurso Curricular</h3>
 :::
 ::: {.cagp-card-body}
-Planeje sua trajetória semestral: disciplinas obrigatórias, formação complementar, pré-requisitos fundamentais e dicas de matrícula do CAGP.
+Linha do tempo oficial dos **10 semestres**, as 27 disciplinas obrigatórias com ementas completas e os 3 percursos: Padrão, Complementar e Avançado.
 :::
 <div class="mt-3">
 [Ver Percurso &rarr;](percurso.qmd){.cagp-btn .cagp-btn-outline .w-100}
 </div>
 :::
 :::
+
+::: {.col-md-3 .col-sm-6}
+::: {.cagp-card}
+::: {.cagp-card-header}
+<span class="cagp-card-icon" aria-hidden="true">💼</span>
+<h3 class="cagp-card-title">Estágio & TCC</h3>
+:::
+::: {.cagp-card-body}
+Regras dos Estágios A (180h) e B (120h), aproveitamento profissional no setor público (Art. 41) e as 4 modalidades de TCC da UFMG.
+:::
+<div class="mt-3">
+[Estágio & TCC &rarr;](estagio-tcc.qmd){.cagp-btn .cagp-btn-outline .w-100}
+</div>
+:::
+:::
+
+::: {.col-md-3 .col-sm-6}
+::: {.cagp-card}
+::: {.cagp-card-header}
+<span class="cagp-card-icon" aria-hidden="true">🌱</span>
+<h3 class="cagp-card-title">Extensão & AAC</h3>
+:::
+::: {.cagp-card-body}
+Entenda a diferença entre a **Extensão Obrigatória (300h)** e as **Atividades Complementares (até 300h)** em 9 categorias regulamentadas.
+:::
+<div class="mt-3">
+[Extensão & AAC &rarr;](acg.qmd){.cagp-btn .cagp-btn-outline .w-100}
+</div>
+:::
+:::
+:::
+
+::: {.cagp-card .mt-4}
+::: {.row .align-items-center}
+::: {.col-md-8}
+<span class="cagp-badge cagp-badge-red mb-2">Acervo Oficial em PDF</span>
+<h3 class="mb-2">Acesse os Documentos Oficiais e Regulamentares do Curso</h3>
+<p class="text-muted small mb-0">Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, do <strong>Regulamento Oficial da Graduação</strong>, do <strong>Ementário das 27 Disciplinas</strong> e das <strong>Matrizes Curriculares dos 3 Percursos</strong> em formato PDF original da UFMG.</p>
+:::
+::: {.col-md-4 .text-md-end .mt-3 .mt-md-0}
+[Consultar Acervo em PDF &rarr;](documentos.qmd){.cagp-btn .cagp-btn-primary}
+:::
+:::
 :::
 
 ---
 
-## 📢 Mural de Avisos e Destaques
+## 📢 Avisos Oficiais e Comunicados do Colegiado
 
 ::: {.row .g-4 .mt-2}
 ::: {.col-md-6}
 ::: {.cagp-card}
-<span class="cagp-badge cagp-badge-red mb-2">Período de Matrícula</span>
-<h4>Planejamento Semestral e Ajuste com Colegiado</h4>
-<p class="text-muted small mb-3">Fique atento aos prazos do calendário acadêmico da UFMG para requisição de matrícula online no SIGA e período de ajuste presencial.</p>
-[Ver Dicas de Matrícula &rarr;](percurso.qmd#dicas-de-matrícula)
+<span class="cagp-badge cagp-badge-red mb-2">Regime Acadêmico</span>
+<h4>Matrícula Semestral e Carga Horária Mínima</h4>
+<p class="text-muted small mb-3">Conforme as normas regimentais da graduação e o PPC, o limite mínimo de matrícula por semestre é de <strong>180 horas (12 créditos)</strong>. O Colegiado do Curso de Gestão Pública atende dúvidas no 2º andar da FAFICH.</p>
+[Entenda o Planejamento Semestral &rarr;](percurso.qmd)
 :::
 :::
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-<span class="cagp-badge cagp-badge-dark mb-2">Comunidade & Representação</span>
-<h4>Participe das Reuniões e Grupos de Trabalho do CAGP</h4>
-<p class="text-muted small mb-3">O centro acadêmico realiza reuniões periódicas abertas a todos os estudantes de Gestão Pública na salinha do diretório da FAFICH.</p>
-[Conheça a Gestão &rarr;](sobre.qmd)
+<span class="cagp-badge cagp-badge-dark mb-2">Extensão Universitária</span>
+<h4>Curricularização da Extensão e Empresa Jr.</h4>
+<p class="text-muted small mb-3">Lembre-se de que 300 horas do seu percurso devem ser dedicadas a ações e projetos de extensão cadastrados na PROEX ou na Empresa Júnior de Gestão Pública da UFMG.</p>
+[Ver Diretrizes de Extensão &rarr;](acg.qmd)
 :::
 :::
 :::

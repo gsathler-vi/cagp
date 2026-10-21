@@ -11,7 +11,7 @@ toc: true
 
 # O CENTRO ACADÊMICO DE GESTÃO PÚBLICA {.cagp-hero-title}
 
-O **CAGP** é a voz dos estudantes do curso de Gestão Pública da FAFICH na Universidade Federal de Minas Gerais. Atuamos na defesa do ensino público, gratuito, inclusivo e de excelência, aproximando discentes, corpo docente e a sociedade civil.
+O **CAGP** é a voz dos estudantes do curso de Gestão Pública da FAFICH na Universidade Federal de Minas Gerais. O curso é sediado no **Departamento de Ciência Política (DCP)** da Faculdade de Filosofia e Ciências Humanas (FAFICH / UFMG). Atuamos na defesa do ensino público, gratuito, inclusivo e de excelência, aproximando discentes, corpo docente e a sociedade civil.
 :::
 ::: {.col-lg-4 .text-center .d-none .d-lg-block}
 ![](logos/06_horizontal_transparente_positivo.svg){fig-alt="Logotipo horizontal institucional do Centro Acadêmico de Gestão Pública da UFMG" style="max-width: 100%; height: auto;"}
@@ -84,7 +84,7 @@ Parcerias com órgãos de governo, prefeituras, institutos de pesquisa e terceir
 ::: {.col-md-6}
 ##### ✉️ Comunicação Digital
 - **E-mail:** [cagp@fafich.ufmg.br](mailto:cagp@fafich.ufmg.br)
-- **Instagram:** [@cagpufmg](https://www.instagram.com/cagpufmg)
+- **Instagram:** [@cagp.ufmg](https://www.instagram.com/cagp.ufmg)
 - **Atendimento Presencial:** De segunda a sexta-feira, nos intervalos de aula e horários de plantão discente.
 :::
 :::

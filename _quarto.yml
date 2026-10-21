@@ -1,11 +1,16 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - "documentos/*.pdf"
+    - "logos/**"
   render:
     - index.qmd
     - calouros.qmd
     - percurso.qmd
+    - estagio-tcc.qmd
     - acg.qmd
+    - documentos.qmd
     - faq.qmd
     - sobre.qmd
 
@@ -14,6 +19,14 @@ website:
   site-url: "https://cagp-ufmg.github.io"
   description: "Centro Acadêmico de Gestão Pública - FAFICH / UFMG"
   favicon: "logos/10_simbolo_transparente_positivo.svg"
+
+  announcement:
+    icon: megaphone-fill
+    dismissable: false
+    position: above-navbar
+    type: danger
+    content: |
+      <span class="cagp-announcement-badge">PROPOSTA DE CHAPA</span> Este portal é uma proposta e projeto da <strong class="cagp-chapa-highlight">Chapa [Nome da Chapa a Definir]</strong> para a gestão do <strong>CAGP (FAFICH/UFMG)</strong>. Como nosso compromisso prioritário é com os discentes, <strong>independentemente do resultado da eleição, disponibilizaremos este projeto completo para a gestão vencedora</strong>, pois a transparência e o acesso à informação são de interesse coletivo de todo o curso.
   
   navbar:
     title: "CAGP"
@@ -28,8 +41,12 @@ website:
         text: Guia do Calouro
       - href: percurso.qmd
         text: Percurso Curricular
+      - href: estagio-tcc.qmd
+        text: Estágio & TCC
       - href: acg.qmd
-        text: ACG & Horas
+        text: Extensão & AAC
+      - href: documentos.qmd
+        text: Documentos
       - href: faq.qmd
         text: Dúvidas Frequentes
       - href: sobre.qmd
@@ -59,3 +76,4 @@ format:
     toc-title: "Nesta página"
     toc-location: right
     smooth-scroll: true
+

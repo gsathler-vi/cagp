@@ -1,95 +1,131 @@
 ---
-title: "ACG & Atividades Complementares"
-subtitle: "Regulamento, categorias, teto de horas e passo a passo para submissão"
+title: "Extensão & Atividades Complementares (AAC)"
+subtitle: "Regulamento oficial, curricularização da extensão (300h), modalidades de AAC e convalidação no SEI"
 toc: true
 ---
 
 ::: {.cagp-hero}
-<span class="cagp-badge cagp-badge-red mb-2">Normas Acadêmicas</span>
+<div class="d-flex flex-wrap gap-2 mb-2">
+  <span class="cagp-badge cagp-badge-red">Normas Oficiais • Capítulos IV e V</span>
+  <span class="cagp-badge cagp-badge-dark">300h Extensão Obrigatória</span>
+  <span class="cagp-badge cagp-badge-blue">Até 300h AAC (Art. 15)</span>
+</div>
 
-# GUIA DE ATIVIDADES COMPLEMENTARES (ACG) {.cagp-hero-title}
+# EXTENSÃO UNIVERSITÁRIA E HORAS COMPLEMENTARES {.cagp-hero-title}
 
-As **Atividades Complementares de Graduação (ACG)** são componentes curriculares obrigatórios destinados a enriquecer a formação universitária através de experiências práticas, acadêmicas, comunitárias e científicas além da sala de aula.
+A formação em Gestão Pública na UFMG integra extensão comunitária obrigatória e enriquecimento acadêmico complementar. É fundamental compreender que **Formação em Extensão** e **Atividades Acadêmicas Complementares (AAC)** são exigências distintas previstas no Regulamento e no Projeto Pedagógico do Curso.
 :::
 
-## 🎯 Carga Horária Exigida
+## 🎯 Quadro Geral de Cargas Horárias
 
-::: {.row .g-3 .mb-4}
+::: {.row .g-3 .mb-5}
 ::: {.col-md-4}
 ::: {.cagp-card .text-center}
-<span class="cagp-badge cagp-badge-red mx-auto mb-2">Exigência Total</span>
-<h2 class="mb-0">200 HORAS</h2>
-<p class="text-muted small mt-1 mb-0">Carga horária mínima para integralização curricular</p>
-:::
-:::
-
-::: {.col-md-4}
-::: {.cagp-card .text-center}
-<span class="cagp-badge cagp-badge-dark mx-auto mb-2">Diversidade</span>
-<h2 class="mb-0">MÍN. 2 GRUPOS</h2>
-<p class="text-muted small mt-1 mb-0">As horas devem ser distribuídas em pelo menos 2 categorias</p>
+<span class="cagp-badge cagp-badge-red mx-auto mb-2">Obrigação Legal</span>
+<h2 class="mb-0">300 HORAS</h2>
+<p class="text-muted small mt-1 mb-0"><strong>Formação em Extensão Obrigatória</strong><br>10% da carga total do curso (Res. CEPE nº 10/2019)</p>
 :::
 :::
 
 ::: {.col-md-4}
 ::: {.cagp-card .text-center}
-<span class="cagp-badge cagp-badge-dark mx-auto mb-2">Prazo Limite</span>
-<h2 class="mb-0">7º PERÍODO</h2>
-<p class="text-muted small mt-1 mb-0">Recomendado protocolar até o penúltimo semestre</p>
+<span class="cagp-badge cagp-badge-dark mx-auto mb-2">Enriquecimento</span>
+<h2 class="mb-0">ATÉ 300 HORAS</h2>
+<p class="text-muted small mt-1 mb-0"><strong>Atividades Complementares (AAC)</strong><br>Integralizáveis como optativas (Art. 15 do Regulamento)</p>
 :::
 :::
+
+::: {.col-md-4}
+::: {.cagp-card .text-center}
+<span class="cagp-badge cagp-badge-blue mx-auto mb-2">Equivalência Regimental</span>
+<h2 class="mb-0">1 CRÉDITO = 15H</h2>
+<p class="text-muted small mt-1 mb-0"><strong>Parâmetro Oficial da UFMG</strong><br>Todas as cargas são convertidas nesta proporção</p>
+:::
+:::
+:::
+
+::: {.callout-note .my-4}
+#### 📜 Consulte o Texto Oficial do Regulamento e Normas de AAC
+Todas as 9 modalidades regulamentadas de Atividades Acadêmicas Complementares (Art. 15) e o prazo de 120 dias constam no regulamento do curso:
+- [📥 **Baixar Regulamento do Curso de Gestão Pública (PDF • 2.0 MB)**](documentos/regulamento-gestao-publica-ufmg.pdf){target="_blank"}
+- [Acessar Acervo Completo de Documentos Normativos &rarr;](documentos.qmd)
 :::
 
 ---
 
-## 📑 Tabela de Categorias e Pontuação de ACG
+## 📑 Regulamento Detalhado por Categoria
+
+::: {.panel-tabset}
+
+### 1. Formação em Extensão Obrigatória (300h)
+
+A **Resolução CEPE nº 10/2019** estabelece que 10% da carga horária de todos os cursos de graduação da UFMG deve ser composta por extensão universitária com a sociedade.
+
+#### Como Integralizar as 300 Horas de Extensão:
+
+1. **Disciplinas Optativas de Laboratório de Extensão:**
+   - `DCP 195 - Laboratório de Gestão e Políticas Públicas A:` 90 horas (6 créditos).
+   - `DCP 196 - Laboratório de Gestão e Políticas Públicas B:` 90 horas (6 créditos).
+2. **Empresa Júnior de Gestão Pública (Equalitas UFMG Consultoria Jr.):**
+   - Atividades e projetos de consultoria desenvolvidos na *Equalitas Jr.* são convalidáveis como Atividades Interinstitucionais de Extensão (até 6 créditos / 90 horas).
+3. **Projetos e Programas de Extensão na UFMG (PROEX / SIEX):**
+   - Participação como bolsista ou voluntário em projetos registrados no Sistema de Informação da Extensão (até 6 créditos / 90 horas).
+4. **Participação em Organização de Eventos (Eventos II):**
+   - Atuação em comissão organizadora, comitê técnico-científico ou como debatedor/moderador de evento da área (até 2 créditos, extensível a 4 créditos somado a ouvinte).
+5. **Atividades Interinstitucionais de Ensino:**
+   - Cursos e oficinas promovidos por outras instituições de ensino públicas na área de Gestão Pública (até 8 créditos / 120 horas).
+
+::: {.callout-note}
+#### Docente Responsável no DCP
+Conforme o Art. 14, o Colegiado designa um docente específico do Departamento de Ciência Política com mandato de 2 anos para analisar e despachar requerimentos de extensão *ad referendum*.
+:::
+
+### 2. Atividades Acadêmicas Complementares - AAC (Art. 15)
+
+As AACs são atividades facultativas de enriquecimento curricular desenvolvidas durante o vínculo com a graduação, podendo integralizar até 300 horas do grupo de optativas (Art. 15):
 
 ::: {.table-responsive}
-| Grupo / Categoria | Atividades Válidas | Comprovação Exigida | Teto Máximo Permitido |
-| :--- | :--- | :--- | :--- |
-| **Grupo 1: Ensino** | Monitoria de graduação (com ou sem bolsa), cursos extracurriculares de idiomas e capacitação na área pública. | Certificado oficial emitido pelo departamento ou órgão promotor com carga horária expressa. | **Até 80 horas** |
-| **Grupo 2: Pesquisa** | Iniciação Científica (PIBIC/PIBITI/Voluntária), publicação de artigos em periódicos, apresentação de trabalhos em simpósios e congressos acadêmicos. | Declaração do orientador, certificado de apresentação no evento ou cópia dos anais publicados. | **Até 100 horas** |
-| **Grupo 3: Extensão** | Participação em projetos e programas de extensão registrados na PROEX, atuação em Empresas Juniores e ações comunitárias universitárias. | Certificado emitido pelo Sistema de Informação da Extensão (SIEX/UFMG) ou termo de posse e atuação em EJ. | **Até 100 horas** |
-| **Grupo 4: Vivência & Gestão** | Representação estudantil eleita no **CAGP**, DCE, Congregação ou Colegiado de Curso; estágio extracurricular não-obrigatório na área pública; participação como ouvinte em palestras e semanas acadêmicas. | Ata de posse homologada pela diretoria da FAFICH, termo de compromisso de estágio ou certificados de ouvinte em seminários. | **Até 60 horas** |
+| Modalidade Oficial (Art. 15) | Atividades Válidas | Limite Máximo em Créditos | Carga Horária Máxima | Comprovação Exigida |
+| :--- | :--- | :---: | :---: | :--- |
+| **I - Pesquisa Interinstitucional** | Projetos de pesquisa realizados em outras instituições voltadas para Gestão Pública. | Até 5 créditos | 75 horas | Relatório final assinado pelo aluno e pelo responsável, com avaliação de desempenho. |
+| **II - Monitoria** | Monitoria acadêmica (bolsista ou voluntária) em disciplinas afins à Gestão Pública. | 3 créditos | 45 horas | Relatório final assinado junto ao docente responsável pela matéria. |
+| **III - Participação em Eventos I (Ouvinte)** | Congressos, seminários e palestras com público externo. 1 crédito a cada 15h. | Até 4 créditos | 60 horas | Certificado oficial protocolado em **até 120 dias** após o evento! |
+| **IV - Grupos de Estudo** | Participação regular em grupos de estudo cadastrados na UFMG. | 2 créditos | 30 horas | Relatório final assinado com avaliação do docente coordenador. |
+| **V - Pesquisa na UFMG** | Iniciação Científica (PIBIC, PIBITI ou voluntária) desenvolvida na UFMG. | Até 6 créditos | 90 horas | Relatório final atestado pelo orientador da pesquisa. |
+| **VI - Pesquisa Bibliográfica** | Aprofundamento teórico orientado por docente em tema da área, distinto do TCC. | 2 créditos | 30 horas | Texto científico elaborado e parecer avaliativo do docente. |
+| **VII - Trabalho em Anais** | Apresentação de pôster, trabalho oral ou artigo publicado em anais de evento científico. | 2 créditos | 30 horas | Certificado de apresentação entregue em **até 120 dias**. |
+| **VIII - Artigo em Periódico** | Artigo publicado em revista científica reconhecida (Qualis/Capes). | 4 créditos | 60 horas | Cópia do artigo publicado ou carta oficial de aceite definitivo. |
+| **IX - Vivência Profissional Complementar** | Gestão em órgãos públicos, ONGs ou estágio não-obrigatório na área de políticas públicas. | Até 4 créditos | 60 horas | Documento de autorização e relatório final assinado com avaliação. |
+:::
+
+### 3. Prazos e Submissão via SEI-UFMG
+
+::: {.callout-important}
+#### ⚠️ Fique Atento ao Prazo Regimental de 120 Dias!
+O Art. 15, § 4º, incisos III e VII estabelece que certificados de participação e de apresentação em congressos, conferências e eventos devem ser protocolados junto ao Colegiado no **prazo máximo de 120 dias corridos após a realização do evento**! Não guarde certificados de eventos para o fim do curso.
+:::
+
+#### Passo a Passo para Abertura do Processo:
+1. **Digitalize os Comprovantes:** Reúna os certificados e relatórios em PDF nítidos contendo seu nome, CPF ou matrícula, carga horária expressa e chave de validação digital.
+2. **Preencha o Formulário Padrão do Colegiado:** Baixe o formulário oficial de aproveitamento de AAC/Extensão disponibilizado pela Secretaria de Gestão Pública na FAFICH.
+3. **Autuação no Sistema Eletrônico de Informações (SEI-UFMG):**
+   - Acesse o SEI como discente ou protocole via instrução semestral divulgada pelo Colegiado.
+   - Tipo do Processo: *Graduação: Aproveitamento de Atividades Acadêmicas Complementares*.
+4. **Análise Docente:** O docente designado pelo Departamento de Ciência Política avaliará o mérito acadêmico e emitirá o despacho de creditação no SIGA.
+5. **Apoio do CAGP:** Se tiver dúvidas sobre o enquadramento de uma atividade, procure o plantão do CAGP no pilotis da FAFICH antes de submeter!
+
 :::
 
 ---
 
-## 🔍 Regras Essenciais que Você Deve Conhecer
+## 📌 Principais Dúvidas sobre Horas e Atividades
 
-::: {.row .g-4}
-::: {.col-md-6}
 ::: {.cagp-card}
-### ⚠️ Limites por Atividade Individual
-- Nenhuma atividade individual isolada pode cobrir a totalidade das suas horas de ACG.
-- Cursos online sem tutoria ou sem avaliação têm pontuação reduzida (consulte o colegiado antes de matricular-se).
-- As atividades precisam ter sido realizadas **durante** o período em que você esteve regularmente matriculado na graduação (atividades anteriores ao vestibular/ENEM não são aceitas).
+### Dicas Práticas dos Veteranos
+- **Posso usar o mesmo evento para Extensão e AAC?**  
+  Não. Conforme o regulamento, uma mesma atividade não pode ser duplicada entre categorias. O discente escolhe se a atividade preencherá o grupo de Extensão (caso envolva comissão/debatedor) ou de AAC (caso ouvinte).
+- **Atividades anteriores à matrícula na UFMG são válidas?**  
+  Não. O Art. 15, § 1º determina que as atividades devem ser realizadas estritamente **durante o período em que o discente estiver matriculado** no curso de Gestão Pública.
+- **E se minha solicitação for indeferida?**  
+  Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma modalidade, mas cabe recurso administrativo fundamentado ao Colegiado de Coordenação Didática.
 :::
-:::
-
-::: {.col-md-6}
-::: {.cagp-card}
-### 📄 Requisitos dos Certificados
-Para que seu documento seja aceito sem exigências, certifique-se de que contenha:
-1. Seu nome completo e número de matrícula (ou CPF).
-2. Título exato da atividade, projeto ou evento.
-3. Período de realização (data de início e término).
-4. **Carga horária expressa em horas**.
-5. Assinatura da instituição promotora e código de validação de autenticidade digital (QR Code ou chave hash).
-:::
-:::
-:::
-
----
-
-## 🚀 Passo a Passo para Submissão pelo SEI-UFMG
-
-O processo de convalidação de ACG é 100% digital através do Sistema Eletrônico de Informações da UFMG:
-
-1. **Reúna seus Certificados:** Organize os PDFs dos certificados renomeando-os de forma padronizada (ex.: `Grupo1_Monitoria_2024.pdf`, `Grupo2_Artigo_2025.pdf`).
-2. **Preencha o Formulário Padrão de ACG:** Baixe o modelo oficial disponibilizado na página do Colegiado de Gestão Pública da FAFICH.
-3. **Abra o Processo no SEI:**
-   - Acesse o SEI como usuário externo ou envie o dossiê conforme a instrução semestral divulgada pelo Colegiado.
-   - Tipo de Processo: *Graduação: Aproveitamento de Atividades Complementares*.
-4. **Acompanhe a Avaliação:** O Colegiado designará um professor avaliador para analisar as cargas e deferir o cômputo no seu histórico do SIGA.
-5. **Dúvidas no Envio?** O CAGP oferece plantões semestrais de apoio aos estudantes para conferência prévia da documentação.

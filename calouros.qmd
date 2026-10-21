@@ -1,94 +1,129 @@
 ---
 title: "Guia de Sobrevivência do Calouro"
-subtitle: "Tudo o que você precisa saber para começar a graduação em Gestão Pública na UFMG"
+subtitle: "Manual prático e orientações para o ingressante no curso Noturno de Gestão Pública da UFMG"
 toc: true
 ---
 
 ::: {.cagp-hero}
-<span class="cagp-badge cagp-badge-red mb-2">Acolhimento Discente</span>
+<div class="d-flex flex-wrap gap-2 mb-2">
+  <span class="cagp-badge cagp-badge-red">Acolhimento Discente</span>
+  <span class="cagp-badge cagp-badge-dark">Turno Noturno (19h - 22h30)</span>
+</div>
 
 # PARABÉNS PELA APROVAÇÃO NA UFMG! {.cagp-hero-title}
 
-Você agora faz parte do curso de **Gestão Pública** na **Faculdade de Filosofia e Ciências Humanas (FAFICH)**, em uma das melhores universidades da América Latina. O CAGP preparou este guia passo a passo para facilitar a sua chegada.
+Você agora é estudante de **Gestão Pública** na **Faculdade de Filosofia e Ciências Humanas (FAFICH)**, no campus Pampulha da UFMG. O curso funciona no **turno noturno**, permitindo que muitos discentes conciliem a formação universitária de ponta com estágios, trabalho e pesquisa durante o dia.
 :::
 
-## 📋 Checklist dos Primeiros Dias
+## 🌙 A Rotina do Estudante do Turno Noturno
+
+Estudar à noite na UFMG tem uma dinâmica própria que você precisa conhecer desde a primeira semana:
 
 ::: {.row .g-3 .mb-4}
 ::: {.col-md-6}
 ::: {.cagp-card}
-#### 1. Acesso ao MinhaUFMG
-O portal central do estudante. É nele que você acessa o **SIGA** (matrícula, notas, histórico) e emite seu comprovante de matrícula oficial.
-- **Como acessar:** Crie sua senha de acesso inicial no portal institucional [minha.ufmg.br](https://minha.ufmg.br).
+#### ⏰ Horários das Aulas
+- As aulas do curso noturno ocorrem de **segunda a sexta-feira, das 19:00 às 22:30** (divididas em dois blocos letivos de 1h40 com intervalo).
+- Algumas disciplinas optativas e laboratórios de imersão podem ter atividades esporádicas aos sábados ou no período diurno (sempre opcionais).
+:::
+:::
+
+::: {.col-md-6}
+::: {.cagp-card}
+#### 🍽️ Jantar no Restaurante Universitário (RU)
+- O RU ("Bandejão") serve jantar subsidiado para todos os estudantes regularmente matriculados.
+- **Unidades:** No campus Pampulha, o **RU Setorial I** (próximo à FAFICH e ICEx) é o mais utilizado pelos alunos de Gestão Pública.
+- **Horário do Jantar:** Geralmente das **17:45 às 20:30**. Programe-se para jantar antes do início da aula das 19h!
+:::
+:::
+
+::: {.col-md-6}
+::: {.cagp-card}
+#### 🚌 Transporte e Circulares Noturnos
+- Os **ônibus circulares internos da UFMG são 100% gratuitos** e operam interligando as portarias da Av. Antônio Carlos e Av. Carlos Luz (Catalão) aos prédios da FAFICH e Reitoria até as 22h45.
+- As estações do MOVE UFMG e Mineirão têm linhas rápidas com destino ao Centro, Venda Nova e demais regiões metropolitanas.
+:::
+:::
+
+::: {.col-md-6}
+::: {.cagp-card}
+#### 🛡️ Segurança no Campus à Noite
+- O campus Pampulha possui serviço próprio de vigilância patrimonial e rondas motorizadas.
+- **Dica do CAGP:** Desça para as portarias em grupos de colegas ao término das aulas às 22h30 e utilize as vias principais iluminadas.
+:::
+:::
+:::
+
+---
+
+## 📋 Checklist dos Primeiros 30 Dias
+
+::: {.row .g-3 .mb-4}
+::: {.col-md-6}
+::: {.cagp-card}
+#### 1. Acesso ao MinhaUFMG e SIGA
+O portal central do estudante para matrícula, histórico e declarações oficiais.
+- **Primeiro Acesso:** Crie sua senha de acesso inicial no portal institucional [minha.ufmg.br](https://minha.ufmg.br) utilizando os dados do seu registro acadêmico.
+- É pelo MinhaUFMG que você emite o **Comprovante de Matrícula** com autenticação digital.
 :::
 :::
 
 ::: {.col-md-6}
 ::: {.cagp-card}
 #### 2. Carteirinha de Estudante e Crachá
-Seu documento oficial dentro da UFMG. Dá acesso ao Restaurante Universitário (RU), empréstimo de livros no Sistema de Bibliotecas da UFMG e catracas do campus.
+Seu documento oficial dentro da UFMG. Dá acesso às catracas, empréstimo de livros no Sistema de Bibliotecas da UFMG e pagamento rápido no RU.
 - **Onde solicitar:** Pelo portal MinhaUFMG ou no Departamento de Registro e Controle Acadêmico (DRCA).
+- **Créditos do RU:** Recarregue via internet com antecedência para evitar totens lotados no intervalo.
 :::
 :::
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-#### 3. Restaurante Universitário (RU - "Bandejão")
-Alimentação balanceada e subsidiada para toda a comunidade universitária. No campus Pampulha existem duas unidades principais: RU Setorial I (próximo à FAFICH/ICEx) e RU Setorial II (próximo à FALE/Educação Física).
-- **Dica do CAGP:** Carregue créditos na sua carteirinha com antecedência via internet para evitar filas nos totens.
+#### 3. Carga Horária Mínima de Matrícula
+Conforme as normas regimentais do curso (PPC e Regulamento):
+- A matrícula semestral exige a inscrição em **no mínimo 180 horas (12 créditos)** por semestre, salvo em período de conclusão ou trancamento formal.
+- No 1º período, sua matrícula nas 5 disciplinas obrigatórias introdutórias (300h) é automática pelo DRCA!
 :::
 :::
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-#### 4. Conectividade Wi-Fi (eduroam)
-Rede sem fio de alta velocidade e segura disponível em todos os prédios da UFMG e instituições conveniadas no mundo todo.
-- **Configuração:** Conecte-se à rede `eduroam` utilizando seu login `@ufmg.br` e senha do portal institucional.
+#### 4. Conectividade Wi-Fi Institucional (eduroam)
+Rede sem fio de alta velocidade e criptografada disponível em todas as dependências da UFMG e em milhares de universidades no exterior.
+- **Configuração:** Conecte seu celular ou notebook à rede `eduroam` informando seu login completo no formato `seulogin@ufmg.br` e senha institucional.
 :::
 :::
 :::
 
 ---
 
-## 🏛️ Conhecendo a FAFICH
+## 🏛️ Conhecendo a FAFICH e os Espaços do Curso
 
-A **Faculdade de Filosofia e Ciências Humanas** é o lar do curso de Gestão Pública, além dos cursos de Ciências Sociais, História, Filosofia, Psicologia e Comunicação Social.
+A **Faculdade de Filosofia e Ciências Humanas** é uma das unidades mais tradicionais e politizadas da UFMG.
 
 ::: {.cagp-card}
-### 📍 Onde Encontrar o CAGP e Pontos-Chave
-- **Salinha do CAGP:** Localizada no espaço dos Centros Acadêmicos no pilotis da FAFICH. Venha tomar um café, tirar dúvidas sobre professores ou matérias e descansar nos intervalos.
-- **Colegiado do Curso de Gestão Pública:** Sala administrativa no 2º andar da FAFICH. Responsável por requerimentos formais, orientações de matrícula e aproveitamento de créditos.
-- **Biblioteca da FAFICH:** Espaço silencioso com salas de estudo em grupo, acervo amplo de Ciência Política, Sociologia, Gestão Pública e periódicos científicos.
+### 📍 Onde Encontrar a Gestão e Pontos-Chave
+- **Salinha do CAGP (Pilotis da FAFICH):** Espaço dos Centros Acadêmicos no pilotis térreo. Venha tomar um café, tirar dúvidas sobre professores, provas e percurso, e participar dos debates da gestão.
+- **Colegiado de Coordenação Didática de Gestão Pública:** Localizado no **2º andar da FAFICH**. É o órgão responsável por autorizar quebras de pré-requisito, aproveitamento de estudos e requerimentos formais.
+- **Departamento de Ciência Política (DCP):** Departamento acadêmico de vinculação do curso de Gestão Pública, no 3º andar da FAFICH.
+- **Biblioteca Setorial da FAFICH:** Amplo acervo especializado em Ciência Política, Administração Pública, Sociologia, Economia e periódicos internacionais.
 :::
 
 ---
 
-## 🚌 Circulação no Campus Pampulha
-
-O campus da UFMG é amplo e conta com linhas internas gratuitas para estudantes:
-
-1. **Linhas Internas Gratuitas:**
-   - Ônibus circulares conectam a Portaria da Av. Antônio Carlos à Portaria da Av. Carlos Luz (Catalão), passando pela FAFICH, Reitoria e demais unidades.
-2. **Ciclovias e Bicicletas:**
-   - O campus conta com ciclovias sinalizadas ligando as principais avenidas aos prédios acadêmicos.
-3. **Transporte Público Externo:**
-   - Linhas MOVE (estações UFMG e Mineirão) e linhas alimentadoras com paradas diretas na portaria principal.
-
----
-
-## 💡 Dicas de Ouro dos Veteranos
+## 💡 Dicas de Ouro dos Veteranos do CAGP
 
 ::: {.callout-tip}
 ### Cuide do seu Percurso desde o 1º Período
-Não deixe matérias introdutórias acumularem para os períodos seguintes. Disciplinas como Teoria Política, Introdução à Economia e Estatística Básica são requisitos ou bases para matérias essenciais do 3º e 4º períodos.
-:::
-
-::: {.callout-note}
-### Não Deixe o ACG para o Final
-Guarde os certificados de cada palestra, curso de extensão, congresso e monitoria que realizar desde o primeiro mês. Visite a página de [ACG & Horas](acg.qmd) para entender a pontuação de cada atividade.
+Disciplinas como *Fundamentos da Análise Política (DCP 032)*, *Metodologia (DCP 033)* e *Introdução à Economia (ECN 140)* constituem alicerces para as disciplinas analíticas do 3º e 4º períodos. Não deixe matérias acumularem!
 :::
 
 ::: {.callout-important}
-### Conte Sempre com o CAGP
-Em qualquer situação de dúvida, dificuldade com professores ou problemas de frequência, procure a diretoria do CAGP antes dos prazos finais regimentais. Nossa função é defender e apoiar você.
+### Comece a Pensar nas Horas de Extensão (300h)
+Lembre-se de que 10% da carga horária total (300 horas) são de **Formação em Extensão Obrigatória** (Resolução CEPE nº 10/2019). Visite a página de [Extensão & AAC](acg.qmd) para entender como integralizar essas horas através de projetos PROEX e na *Equalitas Consultoria Jr.*
+:::
+
+::: {.callout-note}
+### Conte Sempre com o Centro Acadêmico
+O CAGP existe para garantir que sua passagem pela universidade pública seja justa, rica e acolhedora. Qualquer dúvida com colegiado, professores ou dificuldades acadêmicas, fale com a nossa diretoria. Você também pode consultar todos os [Documentos Oficiais, PPC e Regulamentos do Curso &rarr;](documentos.qmd).
 :::

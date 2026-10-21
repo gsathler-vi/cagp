@@ -1,0 +1,170 @@
+---
+title: "Estágio & Trabalho de Conclusão de Curso (TCC)"
+subtitle: "Regulamento oficial, procedimentos de matrícula, modalidades de TCC e aproveitamento profissional"
+toc: true
+---
+
+::: {.cagp-hero}
+<div class="d-flex flex-wrap gap-2 mb-2">
+  <span class="cagp-badge cagp-badge-red">Regulamento Oficial • Capítulos VI e VII</span>
+  <span class="cagp-badge cagp-badge-dark">300h Estágio • 180h TCC</span>
+</div>
+
+# ESTÁGIO SUPERVISIONADO E TCC {.cagp-hero-title}
+
+O Estágio Curricular e o Trabalho de Conclusão de Curso constituem os momentos culminantes da formação em Gestão Pública na UFMG. Eles integram teoria analítica, vivência prática no setor governamental e produção de conhecimento científico aplicado.
+:::
+
+## 📊 Visão Geral dos Requisitos Finais
+
+::: {.row .g-3 .mb-5}
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">180 h</div>
+<div class="cagp-stat-label">Estágio Curricular A</div>
+<small class="text-muted">DCP 135 • 7º Período (12 créditos)</small>
+:::
+:::
+
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">120 h</div>
+<div class="cagp-stat-label">Estágio Curricular B</div>
+<small class="text-muted">DCP 136 • 8º Período (8 créditos)</small>
+:::
+:::
+
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">60 h</div>
+<div class="cagp-stat-label">Projeto de TCC</div>
+<small class="text-muted">DCP 089 • 9º Período (4 créditos)</small>
+:::
+:::
+
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">120 h</div>
+<div class="cagp-stat-label">Defesa de TCC</div>
+<small class="text-muted">DCP 137 • 10º Período (8 créditos)</small>
+:::
+:::
+:::
+
+::: {.callout-note .my-4}
+#### 📜 Consulte o Texto Oficial do Regulamento
+Todas as disposições sobre Estágio Obrigatório (Art. 29 a 41), Dispensa por Atuação Profissional (Art. 41) e Normas Regimentais de TCC (Art. 18 a 28) constam no documento original da UFMG:
+- [📥 **Baixar Regulamento do Curso de Gestão Pública (PDF • 2.0 MB)**](documentos/regulamento-gestao-publica-ufmg.pdf){target="_blank"}
+- [Acessar Acervo Completo de Documentos Normativos &rarr;](documentos.qmd)
+:::
+
+---
+
+## 💼 Estágio Curricular Supervisionado (Art. 29 a 41)
+
+O estágio destina-se a propiciar ao estudante o aprendizado prático de aspectos que contribuam para a atuação profissional nos diversos órgãos da administração direta, autarquias, fundações, agências reguladoras e terceiro setor.
+
+::: {.row .g-4 .mb-4}
+::: {.col-md-6}
+::: {.cagp-card}
+<span class="cagp-badge cagp-badge-red mb-2">Componente Obrigatório</span>
+
+### Estágio Obrigatório (300 Horas)
+- Dividido em duas etapas curriculares sequenciais:
+  - **DCP 135 - Estágio Curricular A (7º período):** 180 horas (12 créditos).
+  - **DCP 136 - Estágio Curricular B (8º período):** 120 horas (8 créditos).
+- **Legislação Aplicável:** Respeita os limites da Lei Federal nº 11.788/2008 (máximo de 6 horas diárias e 30 horas semanais).
+- **Formalização:** Exige Termo de Compromisso de Estágio (TCE) assinado pela concedente, UFMG e estudante, sob supervisão de um docente do Departamento de Ciência Política.
+:::
+:::
+
+::: {.col-md-6}
+::: {.cagp-card}
+<span class="cagp-badge cagp-badge-dark mb-2">Enriquecimento Curricular</span>
+
+### Estágio Não-Obrigatório
+- Atividade extracurricular remunerada com concessão de bolsa e auxílio-transporte.
+- Pode ser iniciado a partir dos primeiros semestres letivos para ganho de experiência.
+- As horas de estágio não-obrigatório na área pública podem ser aproveitadas como **Atividades Acadêmicas Complementares (AAC - Vivência Profissional)** até o limite de 60 horas (4 créditos).
+:::
+:::
+:::
+
+### 🌟 Art. 41: Integralização por Experiência Profissional no Setor Público
+
+::: {.callout-important}
+#### Você já é Servidor(a) ou Trabalha no Setor Público?
+O **Art. 41 do Regulamento** estabelece que o discente que possuir vínculo profissional com cargos públicos (de instituições governamentais ou organizações da sociedade civil que executem políticas públicas), **seja concursado/efetivo ou contratado**, pode solicitar a dispensa/integralização dos Estágios A e/ou B com base na sua experiência de trabalho!
+:::
+
+#### Como Solicitar a Dispensa de Estágio via Art. 41:
+1. **Matrícula Regimental:** Matricule-se na disciplina `DCP 135` (7º período) ou `DCP 136` (8º período).
+2. **Requerimento no Início do Semestre:** Apresente ao Orientador de Estágio do DCP o *Requerimento de Integralização Curricular Baseada em Experiência Profissional*, instruído com:
+   - Declaração formal emitida pelo superior hierárquico no órgão comprovando o vínculo, o período de atuação e a descrição das funções exercidas.
+3. **Relatório de Atividades no Fim do Semestre:** Apresente relatório demonstrando o cumprimento de carga horária igual ou superior à exigida e a compatibilidade das suas atividades com o currículo de Gestão Pública da UFMG.
+4. **Avaliação:** O orientador avaliará a compatibilidade e a qualidade do relatório para homologar a aprovação com nota final no histórico.
+
+---
+
+## 📝 Trabalho de Conclusão de Curso - TCC (Art. 19 a 28)
+
+O TCC é componente curricular obrigatório desenvolvido individualmente pelo aluno na área de Gestão Pública a partir do 9º período.
+
+::: {.row .g-3 .mb-4}
+::: {.col-md-6}
+::: {.cagp-card}
+<span class="cagp-badge cagp-badge-dark mb-2">9º Período • 60h</span>
+
+### DCP 089: Projeto do TCC
+- **Objetivo:** Delimitar o problema de pesquisa empírico ou teórico, construir a justificativa, estruturar a revisão de literatura e o desenho metodológico.
+- **Matrícula:** Condicionada à entrega do **Formulário de Aceite de Orientação** preenchido e assinado por professor(a) da UFMG (preferencialmente do Departamento de Ciência Política).
+- Cada professor pode orientar até 4 alunos por semestre para assegurar a qualidade do acompanhamento.
+:::
+:::
+
+::: {.col-md-6}
+::: {.cagp-card}
+<span class="cagp-badge cagp-badge-red mb-2">10º Período • 120h</span>
+
+### DCP 137: Trabalho de Conclusão de Curso
+- **Objetivo:** Conclusão da análise empírica, redação final e sustentação perante banca examinadora.
+- **Requisito para Defesa:** Ter concluído as disciplinas obrigatórias do percurso.
+- **Banca Examinadora:** Composta por pelo menos 2 docentes (sendo um o orientador).
+- **Aprovação:** Mínimo de 60 pontos na sessão pública de defesa.
+:::
+:::
+:::
+
+### 🎯 As 4 Modalidades Oficiais de TCC Aceitas na UFMG
+
+Conforme o **Parágrafo Único do Art. 19**, o estudante pode optar pelo formato que melhor se alinha com seus planos de carreira:
+
+::: {.panel-tabset}
+
+#### 1. Monografia Científica
+Trabalho acadêmico tradicional evidenciando a capacidade do aluno de formular um problema de pesquisa (teórico ou empírico), realizar revisão da literatura, coletar dados com metodologia rigorosa e apresentar conclusões estruturadas.
+
+#### 2. Projeto ou Programa de Intervenção
+Proposição de um conjunto de procedimentos ou ações para solucionar um problema real identificado em um órgão governamental, comunidade ou política pública. **Perfeito para quem deseja aproveitar dados e vivências colhidas durante o estágio obrigatório!**
+
+#### 3. Artigo Científico
+Trabalho individual formatado no padrão de publicação acadêmica, respondendo a uma pergunta de pesquisa delimitada com arcabouço teórico consistente e testes metodológicos explícitos.
+
+#### 4. Projeto de Iniciação Científica
+Desenho completo de projeto de pesquisa que visa a enfrentar, em investigações futuras (como mestrado acadêmico ou profissional), uma questão científica de ponta no campo de públicas.
+
+:::
+
+---
+
+## 📌 Perguntas Frequentes sobre Estágio e TCC
+
+::: {.cagp-card}
+### Dúvidas Rápidas dos Formandos
+- **Posso fazer estágio obrigatório nas férias?**  
+  Sim! Conforme o Art. 31, o estágio pode ser realizado durante as férias escolares, respeitando o limite legal de 30h semanais.
+- **Onde entrego a versão final do TCC após a banca?**  
+  A versão definitiva homologada com as correções da banca deve ser depositada em cópia eletrônica (PDF) junto à Secretaria do Curso de Gestão Pública na FAFICH (Art. 28).
+- **Quem pode me orientar?**  
+  Docentes do quadro da UFMG, prioritariamente vinculados ao Departamento de Ciência Política (DCP).
+:::
