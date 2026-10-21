@@ -20,9 +20,6 @@ O **Centro Acadêmico de Gestão Pública** é a entidade de representação dis
 :::
 :::
 
-::: {.col-lg-4 .text-center .d-none .d-lg-block}
-![](logos/02_vertical_transparente_positivo.svg){fig-alt="Logotipo vertical institucional do CAGP UFMG, inspirado na escultura Os Candangos de Bruno Giorgi" style="max-height: 220px; width: auto;"}
-:::
 :::
 :::
 

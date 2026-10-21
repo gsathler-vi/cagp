@@ -71,17 +71,56 @@ textarea:focus-visible {
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.04);
 }
 
-.navbar-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.35rem;
-  color: var(--cagp-dark) !important;
+.navbar-brand-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
 }
 
-.navbar-brand img {
-  max-height: 38px;
-  width: auto;
+.navbar-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: var(--cagp-dark) !important;
+  text-decoration: none !important;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+}
+
+.navbar-brand-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1;
+}
+
+.navbar-brand img,
+.navbar-logo {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  width: auto !important;
+  min-width: 24px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  object-fit: contain;
+}
+
+/* Ensure light-content logo is visible in light mode */
+body.quarto-light .navbar-logo.light-content,
+.navbar-logo.light-content {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.navbar-title {
+  font-family: 'Oswald', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: 0.05em;
+  color: var(--cagp-dark);
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .nav-link {

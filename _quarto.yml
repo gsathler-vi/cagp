@@ -10,13 +10,15 @@ project:
     - sobre.qmd
 
 website:
-  title: "CAGP UFMG"
+  title: "CAGP"
+  site-url: "https://cagp-ufmg.github.io"
   description: "Centro Acadêmico de Gestão Pública - FAFICH / UFMG"
   favicon: "logos/10_simbolo_transparente_positivo.svg"
   
   navbar:
-    logo: "logos/06_horizontal_transparente_positivo.svg"
-    logo-alt: "Logotipo do Centro Acadêmico de Gestão Pública UFMG"
+    title: "CAGP"
+    logo: "logos/10_simbolo_transparente_positivo.svg"
+    logo-alt: "Símbolo dos Candangos - CAGP UFMG"
     background: light
     collapse-below: lg
     left:

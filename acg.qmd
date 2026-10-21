@@ -6,6 +6,7 @@ toc: true
 
 ::: {.cagp-hero}
 <span class="cagp-badge cagp-badge-red mb-2">Normas Acadêmicas</span>
+
 # GUIA DE ATIVIDADES COMPLEMENTARES (ACG) {.cagp-hero-title}
 
 As **Atividades Complementares de Graduação (ACG)** são componentes curriculares obrigatórios destinados a enriquecer a formação universitária através de experiências práticas, acadêmicas, comunitárias e científicas além da sala de aula.
