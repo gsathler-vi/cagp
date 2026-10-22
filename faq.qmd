@@ -1,6 +1,7 @@
 ---
 title: "Dúvidas Frequentes (FAQ)"
 subtitle: "Respostas baseadas nas Normas Gerais de Graduação da UFMG e no Regulamento Oficial do Curso"
+title-block-style: none
 toc: true
 ---
 
@@ -15,18 +16,57 @@ toc: true
 Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas nas resoluções regimentais da Universidade Federal de Minas Gerais e no Regulamento Oficial do Curso de Gestão Pública.
 :::
 
-## ❓ Questões Acadêmicas e Regime Escolar
+```{=html}
+<nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
+  <span class="cagp-subnav-label">Atalhos:</span>
+  <a href="#filtro-faq" class="cagp-subnav-link">🔎 Filtrar Dúvidas</a>
+  <a href="acg.html#calculadora-horas" class="cagp-subnav-link">🧮 Calculadora 600h</a>
+  <a href="estagio-tcc.html#simulador-art41" class="cagp-subnav-link">⚖️ Simulador Dispensa Art. 41</a>
+  <a href="documentos.html#formularios" class="cagp-subnav-link">📝 Formulários SEI</a>
+</nav>
+
+<section id="filtro-faq" class="cagp-tool-box" aria-labelledby="faq-filter-title">
+  <div class="cagp-tool-header">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1">Busca Instantânea</span>
+      <h2 id="faq-filter-title" class="h5 mb-0">FILTRAR PERGUNTAS E RESPOSTAS REGIMENTAIS</h2>
+    </div>
+    <div class="d-flex flex-wrap align-items-center gap-2">
+      <span id="faq-filter-status" class="cagp-badge cagp-badge-dark cagp-filter-count" aria-live="polite">Exibindo 9 de 9 perguntas</span>
+      <button type="button" id="faq-expand-all" class="cagp-chip">Expandir todas</button>
+      <button type="button" id="faq-collapse-all" class="cagp-chip">Recolher todas</button>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-end">
+    <div class="col-md-6">
+      <label for="faq-search-input" class="small fw-bold text-uppercase d-block mb-1">Buscar palavra-chave (ex: trancamento, pré-requisito, EaD, CEAG, intercâmbio):</label>
+      <input type="search" id="faq-search-input" class="cagp-search-input" placeholder="Digite sua dúvida...">
+    </div>
+    <div class="col-md-6">
+      <div class="cagp-filter-group" role="group" aria-label="Filtrar por tema">
+        <button type="button" class="cagp-chip" aria-pressed="true" data-faq-tag="all">Todas (9)</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-faq-tag="matricula">📋 Matrícula & Trancamento</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-faq-tag="dispensa">⚖️ Dispensas & Estágio</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-faq-tag="modalidades">🌐 Noturno, EaD & Extensão</button>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+## <span aria-hidden="true">❓</span> Questões Acadêmicas e Regime Escolar
 
 ```{=html}
 <div class="accordion mb-4" id="faqAccordion">
 
-  <div class="accordion-item">
+  <div class="accordion-item" data-faq-item="matricula">
     <h3 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         1. Como funciona o trancamento parcial e total de matrícula?
       </button>
     </h3>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
       <div class="accordion-body">
         <p>O <strong>trancamento parcial</strong> é o cancelamento da inscrição em uma disciplina específica, realizado no SIGA dentro do prazo improrrogável do Calendário Escolar. Você só pode trancar parcialmente se a carga horária restante permanecer igual ou superior ao mínimo regimental de <strong>180 horas (12 créditos)</strong>.</p>
         <p class="mb-0">Já o <strong>trancamento total</strong> suspende todas as atividades acadêmicas daquele semestre. Conforme o Art. 48 do Regulamento, é permitido sem justificativa médica até o limite previsto nas Normas Gerais de Graduação. Em casos de saúde ou motivos de força maior documentalmente comprovados, o trancamento total com justificativa pode ser requerido a qualquer momento do semestre junto ao Colegiado.</p>
@@ -34,52 +74,52 @@ Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas
     </div>
   </div>
 
-  <div class="accordion-item">
+  <div class="accordion-item" data-faq-item="matricula">
     <h3 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         2. Reprovei em uma matéria que é pré-requisito. Como pedir quebra de pré-requisito?
       </button>
     </h3>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
       <div class="accordion-body">
         <p class="mb-0">Se a disciplina trancar a matrícula na subsequente, o sistema online do SIGA bloqueará a inscrição automática. No entanto, durante o <strong>período de ajuste presencial com o Colegiado</strong>, o estudante pode protocolar requerimento fundamentado de quebra de pré-requisito, especialmente se estiver em fase de conclusão de curso ou se houver compatibilidade de horários atestada pelos docentes envolvidos.</p>
       </div>
     </div>
   </div>
 
-  <div class="accordion-item">
+  <div class="accordion-item" data-faq-item="modalidades">
     <h3 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
         3. O curso de Gestão Pública oferece disciplinas a distância (EaD)?
       </button>
     </h3>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
       <div class="accordion-body">
         <p class="mb-0">Sim! O <strong>Art. 42 do Regulamento</strong> permite a oferta de atividades didáticas na modalidade EaD até o limite máximo de <strong>20% da carga horária total do curso</strong>. As disciplinas obrigatórias teóricas (como Fundamentos da Análise Política, Gestão Pública e Metodologia) podem ofertar até 25% de sua carga letiva (15 horas) em formato virtual. Além disso, optativas específicas como <em>Ética na Gestão Pública</em> (até 50%) e <em>Libras</em> (100% EaD) aproveitam essa modalidade.</p>
       </div>
     </div>
   </div>
 
-  <div class="accordion-item">
+  <div class="accordion-item" data-faq-item="dispensa">
     <h3 class="accordion-header" id="headingFour">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
         4. Posso adiantar disciplinas por Comprovação de Conhecimentos?
       </button>
     </h3>
-    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
       <div class="accordion-body">
         <p class="mb-0">Sim! Conforme o <strong>Art. 51 do Regulamento</strong> e o Art. 78 das Normas Gerais de Graduação, o estudante com extraordinário aproveitamento nos estudos demonstrado por aferição escrita e oral perante banca examinadora especial pode solicitar adiantamento de disciplinas obrigatórias, dispensando a frequência regular caso seja aprovado.</p>
       </div>
     </div>
   </div>
 
-  <div class="accordion-item">
+  <div class="accordion-item" data-faq-item="modalidades">
     <h3 class="accordion-header" id="headingFive">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
         5. Como funciona a Mobilidade Acadêmica e Intercâmbio Internacional?
       </button>
     </h3>
-    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
       <div class="accordion-body">
         <p>O <strong>Art. 52 do Regulamento</strong> assegura ao discente o direito de realizar mobilidade acadêmica mantendo o vínculo ativo com a UFMG:</p>
         <ul>
@@ -92,26 +132,26 @@ Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas
     </div>
   </div>
 
-  <div class="accordion-item">
+  <div class="accordion-item" data-faq-item="dispensa">
     <h3 class="accordion-header" id="headingSix">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
         6. Já trabalho no setor público. Preciso fazer o Estágio Obrigatório?
       </button>
     </h3>
-    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
       <div class="accordion-body">
-        <p class="mb-0">Não necessariamente! Conforme o <strong>Art. 41 do Regulamento</strong>, se você possui vínculo de trabalho (efetivo ou contratado) em órgãos governamentais ou entidades públicas, pode solicitar <strong>dispensa com integralização curricular</strong> apresentando declaração da chefia no início do semestre e relatório das atividades no final. Veja os detalhes na página de <a href="estagio-tcc.html">Estágio &amp; TCC</a>.</p>
+        <p class="mb-0">Não necessariamente! Conforme o <strong>Art. 41 do Regulamento</strong>, se você possui vínculo de trabalho (efetivo ou contratado) em órgãos governamentais ou entidades públicas, pode solicitar <strong>dispensa com integralização curricular</strong> apresentando declaração da chefia no início do semestre e relatório das atividades no final. Use o <a href="estagio-tcc.html#simulador-art41">Simulador de Dispensa Art. 41</a> na página de Estágio &amp; TCC.</p>
       </div>
     </div>
   </div>
 
-  <div class="accordion-item">
+  <div class="accordion-item" data-faq-item="modalidades">
     <h3 class="accordion-header" id="headingSeven">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
         7. Como funciona o atendimento presencial para estudantes do turno noturno?
       </button>
     </h3>
-    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven">
       <div class="accordion-body">
         <p>A FAFICH dispõe de dois níveis de atendimento no 2º andar do prédio principal:</p>
         <ul>
@@ -122,26 +162,26 @@ Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas
     </div>
   </div>
 
-  <div class="accordion-item">
+  <div class="accordion-item" data-faq-item="dispensa">
     <h3 class="accordion-header" id="headingEight">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
         8. Qual o prazo máximo para pedir aproveitamento de estudos (dispensa de disciplinas)?
       </button>
     </h3>
-    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight">
       <div class="accordion-body">
         <p class="mb-0">Fique muito atento! Conforme o <strong>Art. 2º, inciso I da Resolução CEPE nº 06/2019</strong>, o requerimento de aproveitamento de estudos realizados em outras instituições de ensino superior só pode ser submetido <strong>até o 2º período letivo no curso</strong>. Após esse prazo decadencial, perde-se o direito de solicitar a convalidação de disciplinas cursadas anteriormente.</p>
       </div>
     </div>
   </div>
 
-  <div class="accordion-item">
+  <div class="accordion-item" data-faq-item="modalidades">
     <h3 class="accordion-header" id="headingNine">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
         9. O que é o Programa de Imersão e os Laboratórios de Gestão A e B?
       </button>
     </h3>
-    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine">
       <div class="accordion-body">
         <p class="mb-0">Criado pelo Colegiado em 2017/2, o <strong>Programa de Imersão no Campo de Públicas</strong> integra ensino e extensão através das matérias obrigatórias de <em>Laboratório de Gestão e Políticas Públicas A e B</em> (7º e 8º períodos). Os estudantes produzem diagnósticos, intervenções e planos de gestão reais sob demanda de órgãos públicos e prefeituras parceiras, contabilizando horas de extensão no SIEX (nº 109111 e nº 109109). Saiba mais na página de <a href="acg.html#programa-de-imersao">Extensão &amp; AAC</a>.</p>
       </div>
@@ -157,3 +197,91 @@ Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas
 ### Precisa de apoio do Centro Acadêmico?
 O CAGP tem representação com assento no Colegiado do Curso de Gestão Pública e na Congregação da FAFICH. Se tiver problemas com prazos ou requerimentos, procure nossa gestão na salinha do pilotis, envie um e-mail para [cagp@fafich.ufmg.br](mailto:cagp@fafich.ufmg.br) ou consulte os [Documentos e Regulamentos Oficiais do Curso &rarr;](documentos.qmd).
 :::
+
+```{=html}
+<nav class="cagp-journey-nav" aria-label="Continuidade da jornada acadêmica">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <a href="documentos.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">&larr; Passo Anterior</div>
+          <div class="cagp-journey-title">Acervo de Documentos & Formulários Oficiais</div>
+        </div>
+        <p class="cagp-journey-desc">Baixe o PPC, Regulamento, Ementário, Regimento CAGP e requerimentos em DOCX.</p>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="sobre.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">Próximo Passo na Jornada &rarr;</div>
+          <div class="cagp-journey-title">Sobre o CAGP & Governança Discente</div>
+        </div>
+        <p class="cagp-journey-desc">Regimento Interno 2024, as 7 Diretorias Executivas, Assembleia Geral, Colegiado e Os Candangos.</p>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const items = Array.from(document.querySelectorAll('#faqAccordion .accordion-item'));
+  const searchInput = document.getElementById('faq-search-input');
+  const tagBtns = document.querySelectorAll('[data-faq-tag]');
+  const statusEl = document.getElementById('faq-filter-status');
+  const btnExpand = document.getElementById('faq-expand-all');
+  const btnCollapse = document.getElementById('faq-collapse-all');
+  let activeTag = 'all';
+
+  function normalize(str) {
+    return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function setItemExpanded(item, expanded) {
+    const btn = item.querySelector('.accordion-button');
+    const col = item.querySelector('.accordion-collapse');
+    if (!btn || !col) return;
+    if (expanded) {
+      btn.classList.remove('collapsed');
+      btn.setAttribute('aria-expanded', 'true');
+      col.classList.add('show');
+    } else {
+      btn.classList.add('collapsed');
+      btn.setAttribute('aria-expanded', 'false');
+      col.classList.remove('show');
+    }
+  }
+
+  function applyFaqFilter() {
+    const q = normalize(searchInput ? searchInput.value : '');
+    let visible = 0;
+    items.forEach(function (item) {
+      const tag = item.getAttribute('data-faq-item');
+      const tagMatch = (activeTag === 'all' || tag === activeTag);
+      const textMatch = (!q || normalize(item.textContent).indexOf(q) !== -1);
+      const show = tagMatch && textMatch;
+      item.style.display = show ? '' : 'none';
+      if (show) {
+        visible++;
+        if (q.length >= 2) setItemExpanded(item, true);
+      }
+    });
+    if (statusEl) {
+      statusEl.textContent = 'Exibindo ' + visible + ' de ' + items.length + ' perguntas';
+    }
+  }
+
+  tagBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activeTag = btn.getAttribute('data-faq-tag');
+      tagBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      btn.setAttribute('aria-pressed', 'true');
+      applyFaqFilter();
+    });
+  });
+
+  if (searchInput) searchInput.addEventListener('input', applyFaqFilter);
+  if (btnExpand) btnExpand.addEventListener('click', function () { items.forEach(function (i) { if (i.style.display !== 'none') setItemExpanded(i, true); }); });
+  if (btnCollapse) btnCollapse.addEventListener('click', function () { items.forEach(function (i) { setItemExpanded(i, false); }); });
+});
+</script>
+```

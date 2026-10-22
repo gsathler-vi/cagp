@@ -30,13 +30,29 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
 .navbar-brand,
 .cagp-display {
   font-family: 'Oswald', 'Inter', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  line-height: 1.35 !important;
   color: var(--cagp-dark);
+}
+
+code, kbd, pre, samp {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-weight: 600;
+  color: var(--cagp-red);
+  background-color: var(--cagp-gray-100);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+.badge {
+  font-size: 0.8rem !important;
+  line-height: 1.35 !important;
 }
 
 a {
@@ -381,9 +397,8 @@ h1.cagp-hero-title,
 
 .cagp-discipline-body {
   padding: 0.85rem 1rem 1rem 1rem;
-  border-top: 1px dashed var(--cagp-gray-200);
+  border-top: 2px solid var(--cagp-dark);
   background-color: var(--cagp-gray-50);
-  border-left: 4px solid var(--cagp-red);
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -405,6 +420,7 @@ h1.cagp-hero-title,
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
+  line-height: 1.35 !important;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   border: 2px solid var(--cagp-dark) !important;
@@ -428,6 +444,20 @@ h1.cagp-hero-title,
   box-shadow: 3px 0 0 var(--cagp-dark);
 }
 
+.panel-tabset .tab-content {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0.5rem 0 !important;
+  margin-top: 0.5rem !important;
+}
+
+.alert-info,
+.alert-warning {
+  background-color: #fbf8f3 !important;
+  color: var(--cagp-dark) !important;
+  border: 2px solid var(--cagp-dark) !important;
+}
+
 /* Stat Cards */
 .cagp-stat-card {
   border: 2px solid var(--cagp-dark);
@@ -443,14 +473,21 @@ h1.cagp-hero-title,
   font-family: 'Oswald', sans-serif;
   font-size: 1.85rem;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.3;
   color: var(--cagp-red);
   margin-bottom: 0.35rem;
+}
+
+.sidebar nav[role="doc-toc"] .nav-link,
+#TOC .nav-link,
+#TOC a {
+  line-height: 1.4 !important;
 }
 
 .cagp-stat-label {
   font-size: 0.85rem;
   font-weight: 600;
+  line-height: 1.35;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--cagp-dark);
@@ -464,7 +501,16 @@ h1.cagp-hero-title,
   position: relative;
   margin: 2rem 0;
   padding-left: 2rem;
-  border-left: 3px solid var(--cagp-dark);
+}
+
+.cagp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--cagp-dark);
 }
 
 .cagp-timeline-step {
@@ -492,20 +538,111 @@ h1.cagp-hero-title,
 }
 
 .cagp-timeline-content {
+  border-bottom: 2px solid var(--cagp-dark);
+  background-color: transparent;
+  padding: 0 0 1.5rem 0;
+}
+
+.cagp-timeline-optative {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.45rem 0.85rem;
+  margin: 0.65rem 0;
+  background-color: var(--cagp-gray-100);
+  border: 1.5px dashed var(--cagp-dark);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--cagp-dark);
+}
+
+.cagp-timeline-milestone {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  background-color: #fbf8f3;
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.cagp-timeline-milestone a {
+  font-weight: 700;
+  color: var(--cagp-red);
+}
+
+/* --------------------------------------------------------------------------
+   TCC Modalities Grid (2x2 Matrix)
+   -------------------------------------------------------------------------- */
+.cagp-modalities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.cagp-modality-card {
   border: 2px solid var(--cagp-dark);
   background-color: var(--cagp-white);
   box-shadow: var(--cagp-shadow-md);
   border-radius: 4px;
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cagp-modality-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--cagp-shadow-lg);
+}
+
+.cagp-modality-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.cagp-modality-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cagp-dark);
+  margin-bottom: 0;
+  line-height: 1.35;
+}
+
+.cagp-modality-desc {
+  font-size: 0.88rem;
+  color: var(--cagp-dark);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+.cagp-modality-fit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cagp-gray-600);
+  background-color: var(--cagp-gray-100);
+  padding: 0.35rem 0.65rem;
+  border-radius: 3px;
+  border: 1px solid var(--cagp-dark);
 }
 
 /* --------------------------------------------------------------------------
    Tables (ACG & Course Plan)
    -------------------------------------------------------------------------- */
 .table-responsive {
-  border: 2px solid var(--cagp-dark);
-  box-shadow: var(--cagp-shadow-md);
-  border-radius: 4px;
   margin: 1.5rem 0;
   overflow-x: auto;
 }
@@ -513,6 +650,7 @@ h1.cagp-hero-title,
 .table {
   margin-bottom: 0;
   background-color: var(--cagp-white);
+  box-shadow: var(--cagp-shadow-md);
 }
 
 .table thead th {
@@ -723,7 +861,7 @@ h1.cagp-hero-title,
   font-family: 'Oswald', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.35;
   color: var(--cagp-dark, #111111);
   margin-bottom: 0.5rem;
 }
@@ -817,7 +955,7 @@ div.callout > .callout-header .callout-title-container {
   font-size: 1.05rem !important;
   letter-spacing: 0.03em !important;
   text-transform: uppercase !important;
-  line-height: 1.25 !important;
+  line-height: 1.35 !important;
 }
 
 div.callout > .callout-header .callout-icon-container {
@@ -1128,11 +1266,11 @@ div.callout-tip .callout-toggle::before {
 }
 
 .cagp-governance-card.cagp-highlight-red {
-  border-left: 8px solid var(--cagp-red);
+  border-top: 6px solid var(--cagp-red);
 }
 
 .cagp-governance-card.cagp-highlight-gold {
-  border-left: 8px solid var(--cagp-ouro, #e8a317);
+  border-top: 6px solid var(--cagp-ouro, #e8a317);
 }
 
 .cagp-succession-box {
@@ -1316,6 +1454,474 @@ div.callout-tip .callout-toggle::before {
   background-color: var(--cagp-blue, #1e3f66);
   color: #fff;
 }
+
+/* --------------------------------------------------------------------------
+   Browser Surfaces, Selection & Tabular Numerals
+   -------------------------------------------------------------------------- */
+::selection {
+  background-color: var(--cagp-red);
+  color: var(--cagp-white);
+}
+
+.cagp-stat-value,
+.cagp-tabular,
+.cagp-calc-num,
+.cagp-filter-count {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Grouped Navbar Dropdowns (4-Pillar Clean Navigation)
+   -------------------------------------------------------------------------- */
+.navbar .dropdown-menu {
+  border: 2px solid var(--cagp-dark) !important;
+  border-radius: 4px !important;
+  box-shadow: 4px 4px 0px var(--cagp-dark) !important;
+  background-color: var(--cagp-white) !important;
+  padding: 0.45rem !important;
+  margin-top: 0.4rem !important;
+}
+
+.navbar .dropdown-item {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--cagp-dark) !important;
+  padding: 0.55rem 0.85rem;
+  border-radius: 3px;
+  border: 1.5px solid transparent;
+  transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus,
+.navbar .dropdown-item.active {
+  background-color: #fbf8f3 !important;
+  color: var(--cagp-red) !important;
+  border-color: var(--cagp-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Quick Section Sub-Navigation Bar (.cagp-subnav)
+   -------------------------------------------------------------------------- */
+.cagp-subnav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 2rem;
+  background-color: #fbf8f3;
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px var(--cagp-dark);
+  scrollbar-width: thin;
+}
+
+.cagp-subnav-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cagp-red);
+  white-space: nowrap;
+  padding-right: 0.45rem;
+  border-right: 2px solid var(--cagp-dark);
+}
+
+.cagp-subnav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--cagp-dark) !important;
+  background-color: var(--cagp-white);
+  border: 1.5px solid var(--cagp-dark);
+  border-radius: 3px;
+  padding: 0.35rem 0.7rem;
+  text-decoration: none !important;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.cagp-subnav-link:hover {
+  background-color: var(--cagp-red);
+  color: var(--cagp-white) !important;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--cagp-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Console & Tool Box (.cagp-tool-box)
+   -------------------------------------------------------------------------- */
+.cagp-tool-box {
+  border-top: 3px solid var(--cagp-dark);
+  border-bottom: 3px solid var(--cagp-dark);
+  background-color: #fbf8f3;
+  padding: 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.cagp-tool-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--cagp-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Compass ("O que você precisa resolver hoje?")
+   -------------------------------------------------------------------------- */
+.cagp-compass-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 991px) {
+  .cagp-compass-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .cagp-compass-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cagp-compass-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background-color: var(--cagp-white);
+  color: var(--cagp-dark);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px var(--cagp-dark);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.cagp-compass-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--cagp-dark);
+}
+
+.cagp-compass-btn[aria-selected="true"] {
+  background-color: var(--cagp-red);
+  color: var(--cagp-white);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+}
+
+.cagp-compass-btn-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.15rem;
+}
+
+.cagp-compass-btn-sub {
+  font-size: 0.78rem;
+  opacity: 0.9;
+}
+
+.cagp-compass-panel {
+  background-color: transparent;
+  padding: 0.5rem 0 0 0;
+}
+
+.cagp-compass-panel.cagp-panel-boxed {
+  background-color: var(--cagp-white);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  padding: 1.25rem;
+  box-shadow: 3px 3px 0px var(--cagp-dark);
+}
+
+.cagp-compass-panel[hidden] {
+  display: none !important;
+}
+
+.cagp-action-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1rem;
+  border: 1.5px solid var(--cagp-dark);
+  border-radius: 4px;
+  background-color: var(--cagp-gray-50);
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+  text-decoration: none !important;
+  color: var(--cagp-dark) !important;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.cagp-action-tile:hover {
+  background-color: var(--cagp-white);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--cagp-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Filter Chips & Dynamic Search Controls
+   -------------------------------------------------------------------------- */
+.cagp-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.cagp-chip {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  min-height: 38px;
+  background-color: var(--cagp-white);
+  color: var(--cagp-dark);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.12s ease;
+}
+
+.cagp-chip:hover {
+  background-color: var(--cagp-gray-100);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--cagp-dark);
+}
+
+.cagp-chip[aria-pressed="true"] {
+  background-color: var(--cagp-red);
+  color: var(--cagp-white);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--cagp-dark);
+}
+
+.cagp-search-input {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: var(--cagp-dark);
+  background-color: var(--cagp-white);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+}
+
+.cagp-search-input::placeholder {
+  color: #555555;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Calculator (Extensão 300h & AAC 300h)
+   -------------------------------------------------------------------------- */
+.cagp-progress-track {
+  width: 100%;
+  height: 22px;
+  background-color: var(--cagp-white);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.15);
+}
+
+.cagp-progress-fill {
+  height: 100%;
+  background-color: var(--cagp-red);
+  border-right: 2px solid var(--cagp-dark);
+  transition: width 0.25s ease, background-color 0.2s ease;
+}
+
+.cagp-progress-fill.is-complete {
+  background-color: #2e7d32;
+}
+
+.cagp-calc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1.5px solid var(--cagp-gray-200);
+}
+
+.cagp-calc-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cagp-calc-desc {
+  font-size: 0.75rem;
+  color: var(--cagp-gray-600);
+  line-height: 1.35;
+}
+
+.cagp-calc-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.cagp-step-btn {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: var(--cagp-white);
+  color: var(--cagp-dark);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  .cagp-step-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.25rem;
+  }
+}
+
+.cagp-step-btn:hover:not(:disabled) {
+  background-color: var(--cagp-red);
+  color: var(--cagp-white);
+}
+
+.cagp-step-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cagp-calc-readout {
+  min-width: 72px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Persistent Checklist (Calouros 30 Dias)
+   -------------------------------------------------------------------------- */
+.cagp-check-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.1rem 1.25rem;
+  background-color: var(--cagp-white);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px var(--cagp-dark);
+  cursor: pointer;
+  height: 100%;
+  transition: background-color 0.15s ease, transform 0.12s ease;
+}
+
+.cagp-check-card:hover {
+  transform: translate(-1px, -1px);
+}
+
+.cagp-check-card.is-checked {
+  background-color: #f0f9f1;
+}
+
+.cagp-check-box {
+  width: 24px;
+  height: 24px;
+  margin-top: 0.15rem;
+  accent-color: #2e7d32;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   End-of-Page Journey Navigation Trail (.cagp-journey-nav)
+   -------------------------------------------------------------------------- */
+.cagp-journey-nav {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--cagp-dark);
+}
+
+.cagp-journey-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--cagp-white);
+  border: 2px solid var(--cagp-dark);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px var(--cagp-dark);
+  text-decoration: none !important;
+  color: var(--cagp-dark) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.cagp-journey-link:hover {
+  background-color: #fbf8f3;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--cagp-dark);
+}
+
+.cagp-journey-dir {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cagp-red);
+  margin-bottom: 0.3rem;
+}
+
+.cagp-journey-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cagp-dark);
+  line-height: 1.35 !important;
+  margin-bottom: 0.25rem;
+}
+
+.cagp-journey-desc {
+  font-size: 0.86rem;
+  color: var(--cagp-gray-600);
+  line-height: 1.5 !important;
+  margin-bottom: 0;
+}
+
 
 
 

@@ -497,6 +497,58 @@ crie um /plan de organização dos arquivos e pastas do projeto focando em não 
 
 ---
 
+### Ciclo 14 — Arquitetura de Navegação Despoluída (4 Pilares) e Ecossistema Interativo (`/impeccable init` + `/impeccable shape`)
+
+**Contexto e Objetivo:**
+Com a consolidação da estrutura de arquivos (`AGENTS.md`, `documentos/`, `_referencias/`) e o posicionamento do portal como entrega-vitrine de utilidade pública da Chapa para a eleição do CAGP (enquanto as propostas gerais para as 7 diretorias residirão em um site de campanha separado), foi conduzido um novo ciclo de `/impeccable init` e `/impeccable shape` para eliminar a poluição visual na navegação entre páginas/seções e substituir muros de texto por ferramentas interativas client-side.
+
+**Mudanças Implementadas:**
+1. **Atualização do `PRODUCT.md`:**
+   - Registro da distinção entre este portal acadêmico (entrega concreta de utilidade pública para o curso) e o site externo de propostas eleitorais da chapa.
+   - Sincronização com os 8 PDFs oficiais em `documentos/` e as 7 transcrições em `_referencias/documentos-oficiais/`.
+   - Definição dos 4 pilares de interatividade client-side (sem backend).
+2. **Despoluição da Navbar Global (`_quarto.yml` e `styles.css`):**
+   - Agrupamento dos 8 links de primeiro nível em **4 pilares claros** (`Início`, dropdown `Jornada Acadêmica`, dropdown `Acervo & Ajuda`, `Sobre o CAGP`), preservando 100% das URLs públicas na raiz (`*.qmd`).
+   - Adição da barra horizontal de salto rápido entre seções (`.cagp-subnav`) abaixo do Hero e da trilha de continuidade no rodapé (`.cagp-journey-nav` — *Passo Anterior / Próximo Passo na Jornada*) em todas as 8 páginas.
+3. **Ferramentas Interativas Client-Side (Vanilla JS + `localStorage`):**
+   - **`index.qmd` — Bússola *"O que você precisa resolver hoje?"*:** Seletor interativo em 4 modos (*1. Calouro 1ºP*, *2. Meio de Curso 2º–6ºP*, *3. Reta Final 7º–10ºP* e *4. Processos SEI & Prazos*).
+   - **`calouros.qmd` — Checklist Interativo dos Primeiros 30 Dias:** 6 passos essenciais com barra de progresso em tempo real e persistência local no navegador (`localStorage`).
+   - **`percurso.qmd` — Árvore de Decisão dos 3 Percursos + Explorador Dinâmico da Grade e Ementas:** Seletor interativo de perfil (`01-01`, `01-02`, `01-03`) e filtro instantâneo das 27 matérias obrigatórias por período (`1ºP`–`10ºP`), departamento (`DCP`, `ECN`, `EST`, `SOA`), busca textual nas ementas e controles de expandir/recolher todas.
+   - **`acg.qmd` — Calculadora e Simulador de 600 Horas (Extensão 300h + AAC até 300h):** Simulador interativo com trava automática dos tetos regimentais de créditos de cada uma das 9 categorias do Art. 15, conversão horas ↔ créditos (`1 cr = 15h`) e salvamento automático no navegador.
+   - **`estagio-tcc.qmd` — Simulador de Elegibilidade para Dispensa de Estágio (Art. 41):** Verificador interativo por vínculo profissional (servidor público, trabalhador em OSC de políticas públicas, estagiário não-obrigatório ou setor privado).
+   - **`documentos.qmd`, `faq.qmd` e `sobre.qmd`:** Filtros instantâneos por palavra-chave e categoria em tempo real, mais controles de expansão rápida das atribuições das 7 Diretorias Executivas.
+4. **Refinamento Estrutural e Acessibilidade:**
+   - Achamento de cartões aninhados (`nested-cards`) na linha do tempo e nas caixas de ferramentas, normalização de cabeçalhos (`H1` ➔ `H2` ➔ `H3`) e uso de `aria-live="polite"` e `aria-pressed` em todos os controles interativos.
+
+---
+
+### Ciclo 15 — Destilação e Otimização de Layout (`/impeccable distill` + `/impeccable layout`) nas Páginas Mais Longas
+
+**Contexto e Objetivo:**
+As páginas mais ricas em conteúdo normativo do curso (`percurso.qmd`, `estagio-tcc.qmd` e `acg.qmd`) acumulavam alta densidade visual, sobreposição de contêineres e repetições textuais (como caixas de alerta idênticas em múltiplos períodos, tabsets com textos de uma linha e tabelas largas desconfortáveis no celular). Este ciclo executou uma rigorosa lapidação com base em `/impeccable distill` (eliminação de redundância e redução de atrito cognitivo) e `/impeccable layout` (cadência visual, matrizes comparativas e ergonomia responsiva em mobile, tablet e desktop).
+
+**Mudanças Implementadas:**
+1. **Destilação do Percurso Curricular (`percurso.qmd`):**
+   - **Eliminação de Duplicação de Percursos:** Remoção do `::: {.panel-tabset}` redundante sob o seletor interativo `#simulador-percurso`. Os detalhes estruturais de cada percurso (`01-01`, `01-02`, `01-03`) foram incorporados diretamente nos painéis interativos com botões de download dos PDFs oficiais, complementados por um quadro comparativo consolidado em tabela responsiva.
+   - **Enxugamento da Linha do Tempo dos 10 Semestres:** Exclusão de 4 alertas repetitivos que duplicavam texto sobre Estágio (7º e 8º períodos) e TCC (9º e 10º períodos). Introdução dos marcos semestrais integrados (`.cagp-timeline-milestone`) com pontes contextuais diretas para `estagio-tcc.qmd`.
+   - **Cadência de Optativas:** Criação do token visual `.cagp-timeline-optative` (borda pontilhada leve e badge escuro), conferindo respiro rítmico entre as matérias obrigatórias de cada semestre.
+   - **Flattening de Contêineres:** Remoção de bordas aninhadas em cartões dentro de `#track-result-box`, zerando o antipattern `nested-cards`.
+2. **Matriz e Ritmo em Estágio e TCC (`estagio-tcc.qmd`):**
+   - **Matriz 2x2 para Modalidades de TCC:** Substituição do `panel-tabset` de 4 abas curtas por um grid responsivo (`.cagp-modalities-grid` com `.cagp-modality-card`), permitindo visualização comparativa instantânea em 2 colunas no desktop/tablet e fluxo natural de leitura no mobile, sem cliques desnecessários.
+   - **Desobstrução do Fluxo Inicial:** Substituição do callout que interrompia a leitura no topo por uma barra limpa de consulta direta ao Regulamento, unificando os componentes de estágio e o simulador do Art. 41.
+3. **Ergonomia e Tabela Responsiva de Horas Complementares (`acg.qmd`):**
+   - **Otimização da Tabela de AAC (Art. 15):** Unificação de créditos e carga horária em uma coluna concisa (`Teto Máximo`), reduzindo a largura da tabela e destacando com nitidez o prazo regimental fatal de 120 dias com a classe `.cagp-badge-red`.
+   - **Conformidade com a Escala de DESIGN.md:** Eliminação de estilos inline com `font-size: 0.76rem` e implementação da classe `.cagp-calc-desc` (`font-size: 0.75rem; color: var(--cagp-gray-600)`).
+   - **Acessibilidade Touch nos Controles de Simulação:** Ampliação responsiva dos botões `+` e `-` da calculadora (`.cagp-step-btn`) para telas menores (38px de altura com `touch-action: manipulation`).
+4. **Alinhamento do Sistema SCSS e Tipografia:**
+   - Adição de `$headings-line-height: 1.35 !default;` e tokens de raio (`$border-radius-lg: 6px;`, `$border-radius: 4px;`) em `_variables.scss`.
+   - Ajuste de entrelinha em `.cagp-journey-title` (`line-height: 1.35 !important;`) e `.cagp-journey-desc` (`line-height: 1.5 !important;`), eliminando o aviso de `tight-leading`.
+5. **Verificação Mecânica:**
+   - Compilação limpa de produção executada com `rm -rf docs && quarto render`.
+   - Auditoria mecânica com `.agents/skills/impeccable/scripts/impeccable detect --json docs/*.html` confirmando **zero erros e zero avisos de qualidade/layout** em todo o site.
+
+---
+
 ## 19. Instruções de Manutenção e Publicação
 
 ### 19.1 Pré-Visualização Local com Live-Reload

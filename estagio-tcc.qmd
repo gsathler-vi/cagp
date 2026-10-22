@@ -1,6 +1,7 @@
 ---
 title: "Estágio & Trabalho de Conclusão de Curso (TCC)"
 subtitle: "Regulamento oficial, procedimentos de matrícula, modalidades de TCC e aproveitamento profissional"
+title-block-style: none
 toc: true
 ---
 
@@ -15,9 +16,19 @@ toc: true
 O Estágio Curricular e o Trabalho de Conclusão de Curso constituem os momentos culminantes da formação em Gestão Pública na UFMG. Eles integram teoria analítica, vivência prática no setor governamental e produção de conhecimento científico aplicado.
 :::
 
-## 📊 Visão Geral dos Requisitos Finais
+```{=html}
+<nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
+  <span class="cagp-subnav-label">Nesta Página:</span>
+  <a href="#estagio-supervisionado" class="cagp-subnav-link">💼 Estágio A e B (300h)</a>
+  <a href="#simulador-art41" class="cagp-subnav-link">⚖️ Simulador Dispensa Art. 41</a>
+  <a href="#modalidades-tcc" class="cagp-subnav-link">📝 TCC & 4 Modalidades</a>
+  <a href="documentos/termo-aceite-orientador-tcc.pdf" target="_blank" class="cagp-subnav-link">📥 Termo de Aceite TCC (PDF)</a>
+</nav>
+```
 
-::: {.row .g-3 .mb-5}
+## <span aria-hidden="true">📊</span> Visão Geral dos Requisitos Finais
+
+::: {.row .g-3 .mb-4}
 ::: {.col-md-3 .col-6}
 ::: {.cagp-stat-card}
 <div class="cagp-stat-value">180 h</div>
@@ -51,16 +62,14 @@ O Estágio Curricular e o Trabalho de Conclusão de Curso constituem os momentos
 :::
 :::
 
-::: {.callout-note .my-4}
-#### 📜 Consulte o Texto Oficial do Regulamento
-Todas as disposições sobre Estágio Obrigatório (Art. 29 a 41), Dispensa por Atuação Profissional (Art. 41) e Normas Regimentais de TCC (Art. 18 a 28) constam no documento original da UFMG:
-- [📥 **Baixar Regulamento do Curso de Gestão Pública (PDF • 2.0 MB)**](documentos/regulamento-gestao-publica-ufmg.pdf){target="_blank"}
-- [Acessar Acervo Completo de Documentos Normativos &rarr;](documentos.qmd)
-:::
+<div class="d-flex flex-wrap align-items-center justify-content-between p-3 my-4 bg-light border rounded gap-2">
+  <span class="small">📜 Todas as disposições constam nos <strong>Capítulos VI e VII do Regulamento</strong> (Art. 18 a 41).</span>
+  <a href="documentos/regulamento-gestao-publica-ufmg.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-3">📥 Baixar Regulamento do Curso (PDF • 2 MB)</a>
+</div>
 
 ---
 
-## 💼 Estágio Curricular Supervisionado (Art. 29 a 41)
+## <span aria-hidden="true">💼</span> Estágio Curricular Supervisionado (Art. 29 a 41) {#estagio-supervisionado}
 
 O estágio destina-se a propiciar ao estudante o aprendizado prático de aspectos que contribuam para a atuação profissional nos diversos órgãos da administração direta, autarquias, fundações, agências reguladoras e terceiro setor.
 
@@ -90,23 +99,78 @@ O estágio destina-se a propiciar ao estudante o aprendizado prático de aspecto
 :::
 :::
 
-### 🌟 Art. 41: Integralização por Experiência Profissional no Setor Público
+### <span aria-hidden="true">⚖️</span> Art. 41: Simulador de Integralização por Experiência Profissional {#simulador-art41}
 
-::: {.callout-important}
-#### Você já é Servidor(a) ou Trabalha no Setor Público?
-O **Art. 41 do Regulamento** estabelece que o discente que possuir vínculo profissional com cargos públicos (de instituições governamentais ou organizações da sociedade civil que executem políticas públicas), **seja concursado/efetivo ou contratado**, pode solicitar a dispensa/integralização dos Estágios A e/ou B com base na sua experiência de trabalho!
-:::
+```{=html}
+<section class="cagp-tool-box" aria-labelledby="art41-sim-title">
+  <div class="cagp-tool-header">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1">Verificador Interativo • Art. 41 do Regulamento</span>
+      <h4 id="art41-sim-title" class="h5 mb-0">POSSO PEDIR DISPENSA/INTEGRALIZAÇÃO DO ESTÁGIO A E B?</h4>
+    </div>
+    <span class="small text-muted fw-semibold">Selecione seu vínculo profissional atual:</span>
+  </div>
 
-#### Como Solicitar a Dispensa de Estágio via Art. 41:
-1. **Matrícula Regimental:** Matricule-se na disciplina `DCP 135` (7º período) ou `DCP 136` (8º período).
-2. **Requerimento no Início do Semestre:** Apresente ao Orientador de Estágio do DCP o *Requerimento de Integralização Curricular Baseada em Experiência Profissional*, instruído com:
-   - Declaração formal emitida pelo superior hierárquico no órgão comprovando o vínculo, o período de atuação e a descrição das funções exercidas.
-3. **Relatório de Atividades no Fim do Semestre:** Apresente relatório demonstrando o cumprimento de carga horária igual ou superior à exigida e a compatibilidade das suas atividades com o currículo de Gestão Pública da UFMG.
-4. **Avaliação:** O orientador avaliará a compatibilidade e a qualidade do relatório para homologar a aprovação com nota final no histórico.
+  <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Situação profissional">
+    <button type="button" class="cagp-chip" aria-pressed="true" data-art41-choice="servidor">🏛️ Servidor(a) Efetivo(a) ou Contratado(a) no Setor Público</button>
+    <button type="button" class="cagp-chip" aria-pressed="false" data-art41-choice="osc">🤝 Trabalhador(a) em ONG / OSC de Políticas Públicas</button>
+    <button type="button" class="cagp-chip" aria-pressed="false" data-art41-choice="estagiario">📋 Já faço Estágio Não-Obrigatório na Área</button>
+    <button type="button" class="cagp-chip" aria-pressed="false" data-art41-choice="privado">🏢 Trabalho no Setor Privado (Fora da Área Pública)</button>
+  </div>
+
+  <div class="cagp-compass-panel cagp-panel-boxed" aria-live="polite">
+    <div id="art41-res-servidor">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-green">✅ Elegível à Integralização via Art. 41!</span>
+        <span class="small fw-bold">Vale para Estágio A (180h) e/ou Estágio B (120h)</span>
+      </div>
+      <p class="small mb-2">Conforme o <strong>Art. 41 do Regulamento</strong>, servidores concursados, comissionados ou contratados em órgãos da administração direta ou indireta podem integralizar os créditos de estágio com sua atuação profissional.</p>
+      <ol class="small mb-0 ps-3">
+        <li><strong>Matrícula Obrigatória:</strong> Inscreva-se normalmente no SIGA em <code>DCP 135</code> (7ºP) ou <code>DCP 136</code> (8ºP).</li>
+        <li><strong>No Início do Semestre:</strong> Entregue ao Orientador de Estágio do DCP o requerimento instruído com <strong>declaração da chefia imediata</strong> (comprovando vínculo, período e atribuições detalhadas).</li>
+        <li><strong>No Fim do Semestre:</strong> Apresente o <strong>Relatório de Atividades</strong> demonstrando o cumprimento das 180h/120h e a pertinência com o currículo de Gestão Pública.</li>
+      </ol>
+    </div>
+
+    <div id="art41-res-osc" hidden>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-green">✅ Elegível via Art. 41 (Sujeito à Análise de Funções)</span>
+        <span class="small fw-bold">Organizações que Executam Políticas Públicas</span>
+      </div>
+      <p class="small mb-2">O Art. 41 abrange vínculos profissionais em instituições governamentais ou organizações que atuem diretamente na gestão de políticas públicas, desde que as funções desempenhadas sejam compatíveis com o perfil do curso.</p>
+      <p class="small mb-0"><strong>Como proceder:</strong> Matricule-se na disciplina de estágio e apresente no início do semestre a declaração formal do dirigente da entidade detalhando os projetos públicos em que você atua, para validação do docente orientador do DCP.</p>
+    </div>
+
+    <div id="art41-res-estagiario" hidden>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-blue">🔄 Duas Rotas Possíveis: Conversão de TCE ou AAC</span>
+        <span class="small fw-bold">Lei do Estágio nº 11.788/2008</span>
+      </div>
+      <p class="small mb-2">Se você já realiza estágio remunerado (não-obrigatório) em órgão público ou entidade conveniada:</p>
+      <ul class="small mb-0 ps-3">
+        <li><strong>Para valer como Estágio Obrigatório (DCP 135 / 136):</strong> Ao chegar no 7º ou 8º período, formalize junto ao setor de estágios da FAFICH (CEAG) e ao orientador do DCP o Termo de Compromisso / Aditivo vinculando a atividade à disciplina.</li>
+        <li><strong>Nos períodos anteriores (1º ao 6ºP):</strong> Você pode aproveitar até <strong>60 horas (4 créditos)</strong> como <strong>AAC — Modalidade IX (Vivência Profissional Complementar)</strong>!</li>
+      </ul>
+    </div>
+
+    <div id="art41-res-privado" hidden>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-dark">ℹ️ Não Enquadrado no Art. 41 — Alternativas Viáveis</span>
+        <span class="small fw-bold">Planejamento para Trabalhadores do Noturno</span>
+      </div>
+      <p class="small mb-2">Atividades sem relação com gestão pública ou políticas públicas não dispensam o estágio pelo Art. 41. Contudo, o Regulamento oferece alternativas para quem trabalha durante o dia:</p>
+      <ul class="small mb-0 ps-3">
+        <li><strong>Estágio nas Férias Escolares (Art. 31):</strong> É permitido cumprir a carga horária durante o recesso escolar (respeitando o teto legal de 6h/dia e 30h/semana).</li>
+        <li><strong>Projetos Conveniados e Terceiro Setor:</strong> Consulte o orientador de estágio do DCP sobre modalidades e parcerias institucionais com flexibilidade de horário.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+```
 
 ---
 
-## 📝 Trabalho de Conclusão de Curso - TCC (Art. 19 a 28)
+## <span aria-hidden="true">📝</span> Trabalho de Conclusão de Curso - TCC (Art. 19 a 28) {#modalidades-tcc}
 
 O TCC é componente curricular obrigatório desenvolvido individualmente pelo aluno na área de Gestão Pública a partir do 9º período.
 
@@ -135,29 +199,61 @@ O TCC é componente curricular obrigatório desenvolvido individualmente pelo al
 :::
 :::
 
-### 🎯 As 4 Modalidades Oficiais de TCC Aceitas na UFMG
+### <span aria-hidden="true">🎯</span> As 4 Modalidades Oficiais de TCC Aceitas na UFMG
 
 Conforme o **Parágrafo Único do Art. 19**, o estudante pode optar pelo formato que melhor se alinha com seus planos de carreira:
 
-::: {.panel-tabset}
+```{=html}
+<div class="cagp-modalities-grid">
+  <div class="cagp-modality-card">
+    <div>
+      <div class="cagp-modality-header">
+        <h4 class="cagp-modality-title">1. Monografia Científica</h4>
+        <span class="cagp-badge cagp-badge-dark">Acadêmico</span>
+      </div>
+      <p class="cagp-modality-desc">Trabalho monográfico tradicional evidenciando domínio teórico-analítico, revisão exaustiva da literatura e metodologia rigorosa na análise de fontes primárias ou secundárias.</p>
+    </div>
+    <div class="cagp-modality-fit">🎯 Indicado para discentes que visam ingresso em programas de mestrado e carreira acadêmica.</div>
+  </div>
 
-#### 1. Monografia Científica
-Trabalho acadêmico tradicional evidenciando a capacidade do aluno de formular um problema de pesquisa (teórico ou empírico), realizar revisão da literatura, coletar dados com metodologia rigorosa e apresentar conclusões estruturadas.
+  <div class="cagp-modality-card">
+    <div>
+      <div class="cagp-modality-header">
+        <h4 class="cagp-modality-title">2. Projeto de Intervenção</h4>
+        <span class="cagp-badge cagp-badge-red">Prático</span>
+      </div>
+      <p class="cagp-modality-desc">Diagnóstico detalhado de um problema real em órgão público, ONG ou política pública e proposição de um plano executivo de melhoria, modernização ou intervenção.</p>
+    </div>
+    <div class="cagp-modality-fit">🎯 Perfeito para quem deseja aproveitar dados, diagnósticos e vivências do estágio obrigatório!</div>
+  </div>
 
-#### 2. Projeto ou Programa de Intervenção
-Proposição de um conjunto de procedimentos ou ações para solucionar um problema real identificado em um órgão governamental, comunidade ou política pública. **Perfeito para quem deseja aproveitar dados e vivências colhidas durante o estágio obrigatório!**
+  <div class="cagp-modality-card">
+    <div>
+      <div class="cagp-modality-header">
+        <h4 class="cagp-modality-title">3. Artigo Científico</h4>
+        <span class="cagp-badge cagp-badge-blue">Publicação</span>
+      </div>
+      <p class="cagp-modality-desc">Trabalho individual formatado no padrão de submissão a periódicos científicos indexados (Qualis/Capes), testando hipóteses com arcabouço teórico consistente.</p>
+    </div>
+    <div class="cagp-modality-fit">🎯 Excelente para quem participou de pesquisas no DCP e quer submeter artigo para publicação.</div>
+  </div>
 
-#### 3. Artigo Científico
-Trabalho individual formatado no padrão de publicação acadêmica, respondendo a uma pergunta de pesquisa delimitada com arcabouço teórico consistente e testes metodológicos explícitos.
-
-#### 4. Projeto de Iniciação Científica
-Desenho completo de projeto de pesquisa que visa a enfrentar, em investigações futuras (como mestrado acadêmico ou profissional), uma questão científica de ponta no campo de públicas.
-
-:::
+  <div class="cagp-modality-card">
+    <div>
+      <div class="cagp-modality-header">
+        <h4 class="cagp-modality-title">4. Projeto de Iniciação Científica</h4>
+        <span class="cagp-badge cagp-badge-dark">Pesquisa</span>
+      </div>
+      <p class="cagp-modality-desc">Desenho completo de projeto de pesquisa para investigações futuras, estruturando justificativa, estado da arte, hipóteses e matriz operacional de coleta de dados.</p>
+    </div>
+    <div class="cagp-modality-fit">🎯 Recomendado para alunos com planos de bolsas de fomento científico ou pós-graduação.</div>
+  </div>
+</div>
+```
 
 ---
 
-## 📌 Perguntas Frequentes sobre Estágio e TCC
+## <span aria-hidden="true">📌</span> Perguntas Frequentes sobre Estágio e TCC
 
 ::: {.cagp-card}
 ### Dúvidas Rápidas dos Formandos
@@ -168,3 +264,46 @@ Desenho completo de projeto de pesquisa que visa a enfrentar, em investigações
 - **Quem pode me orientar?**  
   Docentes do quadro da UFMG, prioritariamente vinculados ao Departamento de Ciência Política (DCP).
 :::
+
+```{=html}
+<nav class="cagp-journey-nav" aria-label="Continuidade da jornada acadêmica">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <a href="acg.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">&larr; Passo Anterior</div>
+          <div class="cagp-journey-title">Extensão Obrigatória & Horas AAC (Calculadora 600h)</div>
+        </div>
+        <p class="cagp-journey-desc">Simule suas horas de Extensão e Atividades Complementares nas 9 categorias do Art. 15.</p>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="documentos.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">Próximo Passo na Jornada &rarr;</div>
+          <div class="cagp-journey-title">Acervo de Documentos & Formulários Oficiais</div>
+        </div>
+        <p class="cagp-journey-desc">Baixe os 8 PDFs oficiais (PPC, Regulamento, Termo de Aceite) e os requerimentos em DOCX.</p>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const btns = document.querySelectorAll('[data-art41-choice]');
+  const keys = ['servidor', 'osc', 'estagiario', 'privado'];
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const target = btn.getAttribute('data-art41-choice');
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      btn.setAttribute('aria-pressed', 'true');
+      keys.forEach(function (k) {
+        const el = document.getElementById('art41-res-' + k);
+        if (el) el.hidden = (k !== target);
+      });
+    });
+  });
+});
+</script>
+```

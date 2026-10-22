@@ -27,7 +27,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
 ::: {.col-lg-4 .col-md-5 .col-12 .text-center .mt-4 .mt-lg-0}
 ```{=html}
 <div class="cagp-hero-emblem-card">
-  <img src="logos/10_simbolo_transparente_positivo.svg" alt="Símbolo oficial dos Candangos do Centro Acadêmico de Gestão Pública da UFMG" class="cagp-hero-emblem-img">
+  <img src="logos/10_simbolo_transparente_positivo.svg" alt="Símbolo oficial dos Candangos do Centro Acadêmico de Gestão Pública da UFMG" class="cagp-hero-emblem-img" width="160" height="160">
   <div class="cagp-hero-emblem-seal">
     <div class="cagp-hero-emblem-title">CAGP UFMG</div>
     <div class="cagp-hero-emblem-sub">• FAFICH •</div>
@@ -37,6 +37,207 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
 :::
 :::
 :::
+
+```{=html}
+<nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
+  <span class="cagp-subnav-label">Saltar para:</span>
+  <a href="#bussola-interativa" class="cagp-subnav-link">🧭 Resolver Hoje</a>
+  <a href="#modulos-oficiais" class="cagp-subnav-link">📚 Módulos do Curso</a>
+  <a href="#sistemas-ufmg" class="cagp-subnav-link">⚡ Sistemas UFMG</a>
+  <a href="acg.html#calculadora-horas" class="cagp-subnav-link">🧮 Calculadora 600h</a>
+  <a href="percurso.html#explorador-grade" class="cagp-subnav-link">🔎 Filtrar Ementas</a>
+</nav>
+
+<section id="bussola-interativa" class="cagp-tool-box" aria-labelledby="bussola-heading">
+  <div class="cagp-tool-header">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1">Navegação Guiada por Momento</span>
+      <h2 id="bussola-heading" class="h4 mb-0">O QUE VOCÊ PRECISA RESOLVER HOJE?</h2>
+    </div>
+    <span class="small text-muted fw-semibold">Selecione sua etapa atual no curso para ver atalhos sob medida:</span>
+  </div>
+
+  <div class="cagp-compass-tabs" role="tablist" aria-label="Etapas da jornada do estudante">
+    <button type="button" class="cagp-compass-btn" role="tab" id="tab-calouro" aria-selected="true" aria-controls="panel-calouro" data-compass-target="panel-calouro">
+      <span class="cagp-compass-btn-title">1. Calouro (1º Período)</span>
+      <span class="cagp-compass-btn-sub">Primeiros 30 dias, RU, circular e sistemas</span>
+    </button>
+    <button type="button" class="cagp-compass-btn" role="tab" id="tab-meio" aria-selected="false" aria-controls="panel-meio" data-compass-target="panel-meio">
+      <span class="cagp-compass-btn-title">2. Meio de Curso (2º–6º P)</span>
+      <span class="cagp-compass-btn-sub">Escolha de percurso, 300h Extensão e AAC</span>
+    </button>
+    <button type="button" class="cagp-compass-btn" role="tab" id="tab-formando" aria-selected="false" aria-controls="panel-formando" data-compass-target="panel-formando">
+      <span class="cagp-compass-btn-title">3. Reta Final (7º–10º P)</span>
+      <span class="cagp-compass-btn-sub">Estágio A/B, Dispensa Art. 41 e TCC</span>
+    </button>
+    <button type="button" class="cagp-compass-btn" role="tab" id="tab-sei" aria-selected="false" aria-controls="panel-sei" data-compass-target="panel-sei">
+      <span class="cagp-compass-btn-title">4. Processos SEI & Prazos</span>
+      <span class="cagp-compass-btn-sub">Qual requerimento abrir para cada demanda</span>
+    </button>
+  </div>
+
+  <!-- Painel 1: Calouro -->
+  <div id="panel-calouro" class="cagp-compass-panel" role="tabpanel" aria-labelledby="tab-calouro">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <a href="calouros.html#checklist-calouro" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-red mb-2">Interativo</span>
+            <h3 class="h6 fw-bold mb-1">Checklist dos Primeiros 30 Dias</h3>
+            <p class="small text-muted mb-2">Marque passo a passo seu primeiro acesso ao MinhaUFMG, emissão de carteirinha, eduroam e recarga do RU.</p>
+          </div>
+          <span class="small fw-bold text-danger">Abrir Checklist &rarr;</span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="calouros.html#rotina-noturna" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-dark mb-2">19h00 às 22h30</span>
+            <h3 class="h6 fw-bold mb-1">Rotina Noturna, Jantar e Circular</h3>
+            <p class="small text-muted mb-2">Jantar no RU Setorial I até 20h30, linhas gratuitas do circular até 22h45 e atendimento noturno no CEAG (até 22h).</p>
+          </div>
+          <span class="small fw-bold text-danger">Ver Guia da Noite &rarr;</span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="faq.html" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-blue mb-2">Atenção até o 2ºP</span>
+            <h3 class="h6 fw-bold mb-1">Dispensa de Matérias (Outra Faculdade)</h3>
+            <p class="small text-muted mb-2">Já cursou matérias antes? O prazo máximo para pedir Aproveitamento de Estudos (Res. CEPE 06/19) encerra no 2º período!</p>
+          </div>
+          <span class="small fw-bold text-danger">Ver Regra no FAQ &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Painel 2: Meio de Curso -->
+  <div id="panel-meio" class="cagp-compass-panel" role="tabpanel" aria-labelledby="tab-meio" hidden>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <a href="percurso.html#simulador-percurso" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-red mb-2">5º ou 7º Período</span>
+            <h3 class="h6 fw-bold mb-1">Qual dos 3 Percursos Escolher?</h3>
+            <p class="small text-muted mb-2">Compare Geral (01-01), Complementar/Transversal (01-02 a partir do 5ºP) e Avançado/Pós (01-03 a partir do 7ºP).</p>
+          </div>
+          <span class="small fw-bold text-danger">Testar Percursos &rarr;</span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="acg.html#calculadora-horas" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-green mb-2">Simulador 600h</span>
+            <h3 class="h6 fw-bold mb-1">Calculadora de Extensão & AAC</h3>
+            <p class="small text-muted mb-2">Some suas horas de Extensão (300h) e AAC (até 300h) respeitando o teto de cada uma das 9 categorias do Art. 15.</p>
+          </div>
+          <span class="small fw-bold text-danger">Calcular Minhas Horas &rarr;</span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="percurso.html#explorador-grade" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-dark mb-2">27 Obrigatórias</span>
+            <h3 class="h6 fw-bold mb-1">Explorador de Disciplinas e Ementas</h3>
+            <p class="small text-muted mb-2">Filtre matérias por semestre (1º ao 10º) ou departamento (DCP, ECN, EST, SOA) e planeje seus 12 créditos mínimos.</p>
+          </div>
+          <span class="small fw-bold text-danger">Filtrar Grade &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Painel 3: Reta Final -->
+  <div id="panel-formando" class="cagp-compass-panel" role="tabpanel" aria-labelledby="tab-formando" hidden>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <a href="estagio-tcc.html#simulador-art41" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-red mb-2">Art. 41 do Regulamento</span>
+            <h3 class="h6 fw-bold mb-1">Simulador de Dispensa de Estágio</h3>
+            <p class="small text-muted mb-2">Trabalha em órgão público ou terceiro setor? Descubra em 3 cliques se pode abater o Estágio A (180h) e B (120h).</p>
+          </div>
+          <span class="small fw-bold text-danger">Verificar Elegibilidade &rarr;</span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="estagio-tcc.html#modalidades-tcc" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-dark mb-2">9º e 10º Períodos</span>
+            <h3 class="h6 fw-bold mb-1">As 4 Modalidades de TCC & Aceite</h3>
+            <p class="small text-muted mb-2">Monografia, Projeto de Intervenção, Artigo ou Projeto de IC + download direto do Termo de Aceite de Orientador.</p>
+          </div>
+          <span class="small fw-bold text-danger">Planejar TCC &rarr;</span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="documentos.html#formularios" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-blue mb-2">Colação de Grau</span>
+            <h3 class="h6 fw-bold mb-1">Requerimentos de Conclusão</h3>
+            <p class="small text-muted mb-2">Baixe os modelos oficiais de Inscrição à Colação de Grau, Integralização de AAC e Termo de Aceite do Colegiado.</p>
+          </div>
+          <span class="small fw-bold text-danger">Baixar Formulários &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Painel 4: Processos SEI -->
+  <div id="panel-sei" class="cagp-compass-panel" role="tabpanel" aria-labelledby="tab-sei" hidden>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <a href="acg.html#passo-a-passo-sei" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-red mb-2">Prazo Fatal: 120 Dias</span>
+            <h3 class="h6 fw-bold mb-1">Validar Certificados de Eventos (AAC)</h3>
+            <p class="small text-muted mb-2">Art. 15, § 4º: Certificados de eventos (ouvinte ou apresentação) prescrevem em 120 dias corridos após o evento!</p>
+          </div>
+          <span class="small fw-bold text-danger">Ver Passo a Passo SEI &rarr;</span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="documentos.html#formularios" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-dark mb-2">Modelos Oficiais DOCX</span>
+            <h3 class="h6 fw-bold mb-1">Trancamento, FCA e Mudança de Percurso</h3>
+            <p class="small text-muted mb-2">Acesse todos os 9 formulários oficiais do Colegiado prontos para preenchimento e protocolo no SEI ou CEAG.</p>
+          </div>
+          <span class="small fw-bold text-danger">Ver Todos os Modelos &rarr;</span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="calouros.html#secretaria-e-ceag" class="cagp-action-tile">
+          <div>
+            <span class="cagp-badge cagp-badge-green mb-2">2º Andar FAFICH</span>
+            <h3 class="h6 fw-bold mb-1">Onde Protocolar: CEAG vs. Secretaria</h3>
+            <p class="small text-muted mb-2">CEAG funciona das 08h às 22h (seg-sex) para atestados e protocolos noturnos; Secretaria do Curso (Sala 2039) às quartas.</p>
+          </div>
+          <span class="small fw-bold text-danger">Conferir Atendimento &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('[data-compass-target]');
+  const panels = document.querySelectorAll('.cagp-compass-panel');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      const targetId = tab.getAttribute('data-compass-target');
+      tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(function (p) { p.hidden = true; });
+      tab.setAttribute('aria-selected', 'true');
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) targetPanel.hidden = false;
+    });
+  });
+});
+</script>
+```
 
 ## <span aria-hidden="true">📊</span> O Curso de Gestão Pública em Números Oficiais
 
@@ -77,7 +278,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
 ::: {.row .g-4 .my-2}
 ::: {.col-xl-8 .col-lg-8 .col-12}
 
-## <span aria-hidden="true">🧭</span> Navegação por Módulos Oficiais
+## <span aria-hidden="true">🧭</span> Navegação por Módulos Oficiais {#modulos-oficiais}
 
 ::: {.row .g-4}
 ::: {.col-md-6 .col-12}
@@ -159,7 +360,7 @@ Entenda a diferença entre a **Extensão Obrigatória (300h)** e as **Atividades
 ::: {.col-xl-4 .col-lg-4 .col-12}
 ::: {.cagp-sidebar-panel .cagp-sticky-rail}
 
-## <span aria-hidden="true">⚡</span> Sistemas Oficiais UFMG
+## <span aria-hidden="true">⚡</span> Sistemas Oficiais UFMG {#sistemas-ufmg}
 
 ::: {.cagp-card .p-3}
 <p class="small text-muted mb-3">Acesso direto aos portais acadêmicos e administrativos da UFMG:</p>
@@ -241,3 +442,28 @@ Entenda a diferença entre a **Extensão Obrigatória (300h)** e as **Atividades
 :::
 :::
 :::
+
+```{=html}
+<nav class="cagp-journey-nav" aria-label="Continuidade da jornada acadêmica">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <a href="calouros.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">Comece por aqui &rarr;</div>
+          <div class="cagp-journey-title">Guia de Sobrevivência do Calouro</div>
+        </div>
+        <p class="cagp-journey-desc">Checklist interativo dos primeiros 30 dias, jantar no RU, circular noturno e atendimento na FAFICH.</p>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="percurso.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">Planejamento do Curso &rarr;</div>
+          <div class="cagp-journey-title">Percurso Curricular & Explorador de Ementas</div>
+        </div>
+        <p class="cagp-journey-desc">Filtre as 27 matérias obrigatórias por semestre e departamento e compare os 3 percursos oficiais.</p>
+      </a>
+    </div>
+  </div>
+</nav>
+```

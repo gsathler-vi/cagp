@@ -1,6 +1,7 @@
 ---
 title: "Percurso Curricular"
 subtitle: "Estrutura oficial dos 10 semestres, 27 disciplinas obrigatórias, ementário e os 3 percursos do curso"
+title-block-style: none
 toc: true
 ---
 
@@ -16,7 +17,17 @@ toc: true
 O curso de Gestão Pública da FAFICH/UFMG confere o grau de **Bacharel em Gestão Pública** e é estruturado para formar lideranças técnicas com domínio analítico, visão ética e compromisso democrático com as políticas públicas brasileiras.
 :::
 
-## 📊 Estrutura Geral e Prazos Oficiais
+```{=html}
+<nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
+  <span class="cagp-subnav-label">Nesta Página:</span>
+  <a href="#simulador-percurso" class="cagp-subnav-link">🔀 Escolher Percurso</a>
+  <a href="#explorador-grade" class="cagp-subnav-link">🔎 Filtrar Grade & Ementas</a>
+  <a href="#dicas-matricula" class="cagp-subnav-link">📌 Dicas de Matrícula</a>
+  <a href="documentos.html" class="cagp-subnav-link">📥 PDFs de Percurso</a>
+</nav>
+```
+
+## <span aria-hidden="true">📊</span> Estrutura Geral e Prazos Oficiais
 
 ::: {.row .g-3 .mb-4}
 ::: {.col-md-3 .col-6}
@@ -54,51 +65,160 @@ O curso de Gestão Pública da FAFICH/UFMG confere o grau de **Bacharel em Gest�
 
 ---
 
-## 🔀 Os Três Percursos Curriculares Oficiais
+## <span aria-hidden="true">🔀</span> Os Três Percursos Curriculares Oficiais {#simulador-percurso}
 
-Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua trajetória acadêmica através de 3 modalidades formais:
+Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua trajetória acadêmica através de 3 modalidades formais de formação. Explore abaixo os detalhes de cada percurso ou consulte o quadro comparativo consolidado:
 
-::: {.panel-tabset}
+```{=html}
+<section class="cagp-tool-box" aria-labelledby="track-finder-title">
+  <div class="cagp-tool-header">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1">Árvore de Decisão • Art. 3º</span>
+      <h3 id="track-finder-title" class="h5 mb-0">QUAL DOS 3 PERCURSOS É MELHOR PARA VOCÊ?</h3>
+    </div>
+    <span class="small text-muted fw-semibold">Clique no seu objetivo principal de formação:</span>
+  </div>
 
-### 1. Bacharelado / Núcleo Geral (Padrão)
+  <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Perfis de formação">
+    <button type="button" class="cagp-chip" aria-pressed="true" data-track-choice="01-01">🏛️ Gestão Pública Ampla & Flexível (01-01)</button>
+    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-02">🌐 Formação Transversal ou Outro Curso (01-02)</button>
+    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-03">🔬 Carreira Acadêmica & Mestrado PPGCP (01-03)</button>
+  </div>
 
-- **Identificador Oficial:** `01-01 (Bacharelado com Núcleo Específico e Núcleo Geral)`
-- **Como Funciona:** É o percurso canônico ao qual todo estudante é automaticamente vinculado ao ingressar no curso.
-- **Estrutura:**
-  - **Núcleo Específico (Obrigatórias):** 1.560 horas (25 matérias teóricas).
-  - **Núcleo Específico (Estágio Curricular A e B):** 300 horas práticas obrigatórias.
-  - **Núcleo Específico (Optativas):** 1.020 horas (distribuídas entre 300h de Extensão Obrigatória, até 300h de AAC e optativas temáticas do DCP).
-  - **Núcleo Geral (Formação Livre):** 120 horas cursadas em quaisquer disciplinas ofertadas pela UFMG.
-- **Perfil:** Ideal para quem deseja formação ampla e generalista em Gestão Pública, Ciência Política e Administração Governamental.
+  <div id="track-result-box" class="cagp-compass-panel cagp-panel-boxed" aria-live="polite">
+    <div id="track-res-01-01">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-dark">Percurso 01-01 • Bacharelado com Núcleo Específico e Núcleo Geral</span>
+        <span class="small fw-bold text-success">Vínculo Automático no 1º Período</span>
+      </div>
+      <p class="small mb-3">É o percurso canônico da FAFICH/UFMG. Proporciona formação sólida e generalista em gestão pública, finanças e ciência política, com máxima autonomia na escolha de matérias optativas.</p>
+      <div class="row g-2 mb-3 small">
+        <div class="col-sm-6 col-12">
+          <div>📌 <strong>Obrigatórias:</strong> 1.560h (25 disciplinas) + 300h Estágio (A + B)</div>
+        </div>
+        <div class="col-sm-6 col-12">
+          <div>📌 <strong>Optativas & Livre:</strong> 1.020h optativas (DCP/Extensão/AAC) + 120h Livre</div>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="documentos/percurso-bacharelado-nucleo-geral.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">📥 Baixar Matriz Oficial 01-01 (PDF)</a>
+      </div>
+    </div>
 
-### 2. Núcleo Complementar (Formação Transversal / Aberta)
+    <div id="track-res-01-02" hidden>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-red">Percurso 01-02 • Núcleo Complementar (Transversal / Aberta)</span>
+        <span class="small fw-bold text-danger">Requerimento a partir do 5º Período</span>
+      </div>
+      <p class="small mb-3">Permite cursar <strong>300 horas em Formação Transversal</strong> (Direitos Humanos, Relações Étnico-Raciais, Meio Ambiente, Divulgação Científica) ou <strong>Formação Complementar Aberta (FCA)</strong> em outro departamento da UFMG.</p>
+      <div class="row g-2 mb-3 small">
+        <div class="col-sm-6 col-12">
+          <div>🌐 <strong>Formação Complementar:</strong> 300h dedicadas a área interdisciplinar</div>
+        </div>
+        <div class="col-sm-6 col-12">
+          <div>📉 <strong>Optativas Reduzidas:</strong> Carga de optativas do DCP cai de 1.020h para <strong>720h</strong></div>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="documentos/percurso-bacharelado-nucleo-complementar.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">📥 Baixar Matriz Oficial 01-02 (PDF)</a>
+        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline">📝 Formulário de Mudança de Percurso / FCA</a>
+      </div>
+    </div>
 
-- **Identificador Oficial:** `01-02 (Bacharelado com Núcleo Específico, Núcleo Geral e Núcleo Complementar)`
-- **Como Funciona:** Pode ser requerido pelo discente ao Colegiado a partir do **5º período**.
-- **Estrutura:**
-  - O estudante cursa **300 horas em Formação Complementar** (Formação Transversal em Direitos Humanos, Relações Étnico-Raciais, Meio Ambiente, Divulgação Científica ou Formação Complementar Aberta em outra área afim da UFMG).
-  - **Benefício:** A exigência de disciplinas optativas do Núcleo Específico é reduzida de 1.020 horas para **720 horas**, permitindo integralizar a formação temática sem sobrecarga de créditos.
-- **Perfil:** Indicado para quem deseja especializar-se em áreas interdisciplinares conexas às políticas públicas.
+    <div id="track-res-01-03" hidden>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-blue">Percurso 01-03 • Núcleo Avançado (Articulação com Pós-Graduação)</span>
+        <span class="small fw-bold text-primary">Requerimento a partir do 7º Período</span>
+      </div>
+      <p class="small mb-3">Destinado a discentes com vocação para pesquisa e carreira acadêmica. Permite cursar entre <strong>45h e 120h em disciplinas de Mestrado/Doutorado</strong> no Programa de Pós-Graduação em Ciência Política (PPGCP/FAFICH) ainda na graduação.</p>
+      <div class="row g-2 mb-3 small">
+        <div class="col-sm-6 col-12">
+          <div>🔬 <strong>Disciplinas de Pós:</strong> 45h a 120h com aproveitamento no mestrado</div>
+        </div>
+        <div class="col-sm-6 col-12">
+          <div>🎓 <strong>Perfil:</strong> Preparação direta para processos seletivos e docência</div>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="documentos/percurso-bacharelado-nucleo-avancado.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">📥 Baixar Matriz Oficial 01-03 (PDF)</a>
+        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline">📝 Formulário de Mudança de Percurso</a>
+      </div>
+    </div>
+  </div>
+</section>
+```
 
-### 3. Núcleo Avançado (Articulação com Pós-Graduação)
-
-- **Identificador Oficial:** `01-03 (Bacharelado com Núcleo Específico, Núcleo Geral e Núcleo Avançado)`
-- **Como Funciona:** Pode ser requerido pelo discente ao Colegiado a partir do **7º período**.
-- **Estrutura:**
-  - O estudante cursa entre **45 horas e 120 horas** em disciplinas de nível de **Pós-Graduação (Mestrado/Doutorado)** nos programas conveniados da FAFICH (notadamente o Programa de Pós-Graduação em Ciência Política - PPGCP).
-  - As disciplinas cursadas têm aproveitamento automático caso o aluno ingresse no mestrado após a colação de grau.
-- **Perfil:** Destinado a estudantes com vocação acadêmica, científica e de pesquisa de alto nível.
-
+::: {.table-responsive .mt-4}
+| Percurso Oficial | Código | Ingresso | Carga Optativas DCP | Foco e Diferencial de Formação | Matriz Oficial |
+| :--- | :---: | :---: | :---: | :--- | :---: |
+| **Bacharelado Geral (Padrão)** | `01-01` | 1º período (automático) | 1.020 horas | Formação ampla em Gestão Governamental, Ciência Política e Políticas Públicas | [📥 Matriz 01-01 (PDF)](documentos/percurso-bacharelado-nucleo-geral.pdf){target="_blank"} |
+| **Núcleo Complementar** | `01-02` | A partir do 5º período | 720 horas (-300h) | 300h em Formação Transversal (DH, Étnico-Racial, Ambiente) ou Formação Aberta (FCA) | [📥 Matriz 01-02 (PDF)](documentos/percurso-bacharelado-nucleo-complementar.pdf){target="_blank"} |
+| **Núcleo Avançado (Pós)** | `01-03` | A partir do 7º período | 900h a 975h | 45h a 120h em disciplinas de Mestrado/Doutorado no PPGCP/FAFICH com creditação futura | [📥 Matriz 01-03 (PDF)](documentos/percurso-bacharelado-nucleo-avancado.pdf){target="_blank"} |
 :::
 
 ---
 
-## 🗺️ Linha do Tempo dos 10 Semestres com Ementário Oficial
+## <span aria-hidden="true">🗺️</span> Linha do Tempo dos 10 Semestres com Ementário Oficial {#explorador-grade}
 
-Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualquer disciplina para expandir e ler a ementa oficial completa** aprovada no Projeto Pedagógico do Curso:
+Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtros dinâmicos** para isolar um período específico, filtrar por departamento ofertante ou buscar qualquer palavra nas 27 ementas oficiais:
 
+```{=html}
+<section class="cagp-tool-box" aria-labelledby="grade-filter-title">
+  <div class="cagp-tool-header">
+    <div>
+      <span class="cagp-badge cagp-badge-dark mb-1">Filtro Instantâneo • 27 Obrigatórias</span>
+      <h3 id="grade-filter-title" class="h5 mb-0">EXPLORADOR INTERATIVO DA GRADE E EMENTAS</h3>
+    </div>
+    <div class="d-flex flex-wrap align-items-center gap-2">
+      <span id="grade-filter-status" class="cagp-badge cagp-badge-red cagp-filter-count" aria-live="polite">Exibindo 27 de 27 disciplinas (10 períodos)</span>
+      <button type="button" id="btn-expand-all" class="cagp-chip">Expandir ementas</button>
+      <button type="button" id="btn-collapse-all" class="cagp-chip">Recolher ementas</button>
+      <button type="button" id="btn-reset-grade" class="cagp-chip">Limpar filtros</button>
+    </div>
+  </div>
 
-<div class="cagp-timeline">
+  <div class="row g-3 mb-3">
+    <div class="col-lg-6">
+      <label for="grade-search-input" class="small fw-bold text-uppercase d-block mb-1">Buscar por nome, código (ex: DCP 032, ECN 140) ou assunto da ementa:</label>
+      <input type="search" id="grade-search-input" class="cagp-search-input" placeholder="Digite ex: orçamento, econometria, constitucional, estágio...">
+    </div>
+    <div class="col-lg-6">
+      <span class="small fw-bold text-uppercase d-block mb-1">Filtrar por Departamento Ofertante:</span>
+      <div class="cagp-filter-group" role="group" aria-label="Filtrar por departamento">
+        <button type="button" class="cagp-chip" aria-pressed="true" data-dept-filter="all">Todos (27)</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-dept-filter="DCP">DCP • Ciência Política</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-dept-filter="ECN">ECN • Economia</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-dept-filter="EST">EST • Estatística</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-dept-filter="SOA">SOA • Sociologia</button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <span class="small fw-bold text-uppercase d-block mb-1">Isolar Período Semestral:</span>
+    <div class="cagp-filter-group" role="group" aria-label="Filtrar por período">
+      <button type="button" class="cagp-chip" aria-pressed="true" data-period-filter="all">Todos (1º–10º)</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="1º">1ºP</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="2º">2ºP</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="3º">3ºP</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="4º">4ºP</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="5º">5ºP</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="6º">6ºP</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="7º">7ºP</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="8º">8ºP</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="9º">9ºP</button>
+      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="10º">10ºP</button>
+    </div>
+  </div>
+
+  <div id="grade-empty-state" class="cagp-compass-panel mt-3 text-center" hidden>
+    <p class="fw-bold mb-2">Nenhuma disciplina obrigatória encontrada para esta combinação de filtros.</p>
+    <button type="button" id="btn-empty-reset" class="cagp-btn cagp-btn-outline">Mostrar todas as 27 disciplinas</button>
+  </div>
+</section>
+```
+
+<div class="cagp-timeline" id="cagp-grade-timeline">
 
 <div class="cagp-timeline-step">
 <div class="cagp-timeline-marker">1º</div>
@@ -446,13 +566,10 @@ Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualqu
 </div>
 </details>
 
-<div class="p-2 mb-2 bg-light border rounded small d-flex justify-content-between align-items-center">
-<span>📚 <strong>1 Disciplina Optativa (60h)</strong></span>
-<span class="badge bg-secondary">Optativa</span>
-</div>
+<div class="cagp-timeline-optative"><span>📚 <strong>1 Disciplina Optativa (60h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativa</span></div>
 
 <div class="mt-2">
-<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Momento de virada: aqui você pode requerer opção de vinculação ao Percurso de Formação Complementar se desejar cursar Formação Transversal!</small>
+<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Momento de planejamento: a partir do próximo semestre você pode requerer opção formal de vinculação ao Núcleo Complementar (Formação Transversal / Aberta).</small>
 </div>
 </div>
 </div>
@@ -511,13 +628,10 @@ Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualqu
 </div>
 </details>
 
-<div class="p-2 mb-2 bg-light border rounded small d-flex justify-content-between align-items-center">
-<span>📚 <strong>2 Disciplinas Optativas (120h)</strong></span>
-<span class="badge bg-secondary">Optativa</span>
-</div>
+<div class="cagp-timeline-optative"><span>📚 <strong>2 Disciplinas Optativas (120h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
 
 <div class="mt-2">
-<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Início do percurso intermediário. Ideal para buscar projetos de iniciação científica e extensão na UFMG.</small>
+<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Início do ciclo intermediário: momento ideal para engajar-se em projetos de extensão universitária (PROEX) ou Iniciação Científica no DCP.</small>
 </div>
 </div>
 </div>
@@ -544,13 +658,10 @@ Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualqu
 </div>
 </details>
 
-<div class="p-2 mb-2 bg-light border rounded small d-flex justify-content-between align-items-center">
-<span>📚 <strong>4 Disciplinas Optativas (240h)</strong></span>
-<span class="badge bg-secondary">Optativa</span>
-</div>
+<div class="cagp-timeline-optative"><span>📚 <strong>4 Disciplinas Optativas (240h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
 
 <div class="mt-2">
-<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Concentre créditos em disciplinas de seu interesse temático (saúde, educação, segurança, finanças ou meio ambiente) e comece a alinhar o local do Estágio Obrigatório do próximo semestre.</small>
+<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Concentre créditos em disciplinas de seu interesse temático e comece a alinhar a vaga de Estágio Curricular Obrigatório do próximo semestre.</small>
 </div>
 </div>
 </div>
@@ -577,19 +688,14 @@ Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualqu
 </div>
 </details>
 
-<div class="p-2 mb-2 bg-light border rounded small d-flex justify-content-between align-items-center">
-<span>📚 <strong>2 Disciplinas Optativas (120h)</strong></span>
-<span class="badge bg-secondary">Optativa</span>
-</div>
+<div class="cagp-timeline-optative"><span>📚 <strong>2 Disciplinas Optativas (120h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
 
-<div class="alert alert-info border-start border-4 mt-3">
-<div class="fw-bold mb-1">💼 Diretrizes de Estágio Curricular Obrigatório</div>
-<p class="mb-1 small">O Estágio Curricular totaliza 300h divididas entre o 7º e 8º períodos. Estudantes que já atuam profissionalmente em órgãos governamentais ou entidades públicas podem solicitar **dispensa/aproveitamento de carga horária via Art. 41 do Regulamento**!</p>
-<a href="estagio-tcc.html" class="fw-bold small">Acessar Guia Completo de Estágio & TCC &rarr;</a>
+<div class="cagp-timeline-milestone">
+  <div>💼 <strong>Marco de Estágio Obrigatório (Art. 29 a 41):</strong> Início das 300h de prática supervisionada (DCP 135 • 180h). Se você já atua como servidor, contratado ou em ONG, <a href="estagio-tcc.html#simulador-art41">verifique a dispensa via Art. 41 &rarr;</a></div>
 </div>
 
 <div class="mt-2">
-<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Atenção: Estágio Curricular A (DCP 135) possui 180 horas (12 créditos). Se você já trabalha no setor público, consulte a regra de aproveitamento do Art. 41!</small>
+<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Atenção à carga horária: Estágio A totaliza 180h (12 créditos). Se tiver vínculo profissional no setor público, protocole a comprovação no início das aulas.</small>
 </div>
 </div>
 </div>
@@ -616,19 +722,14 @@ Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualqu
 </div>
 </details>
 
-<div class="p-2 mb-2 bg-light border rounded small d-flex justify-content-between align-items-center">
-<span>📚 <strong>2 Disciplinas Optativas (120h) + 1 Formação Livre (60h)</strong></span>
-<span class="badge bg-secondary">Optativa</span>
-</div>
+<div class="cagp-timeline-optative"><span>📚 <strong>2 Disciplinas Optativas (120h) + 1 Formação Livre (60h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas + Livre</span></div>
 
-<div class="alert alert-info border-start border-4 mt-3">
-<div class="fw-bold mb-1">💼 Diretrizes de Estágio Curricular Obrigatório</div>
-<p class="mb-1 small">O Estágio Curricular totaliza 300h divididas entre o 7º e 8º períodos. Estudantes que já atuam profissionalmente em órgãos governamentais ou entidades públicas podem solicitar **dispensa/aproveitamento de carga horária via Art. 41 do Regulamento**!</p>
-<a href="estagio-tcc.html" class="fw-bold small">Acessar Guia Completo de Estágio & TCC &rarr;</a>
+<div class="cagp-timeline-milestone">
+  <div>💼 <strong>Conclusão do Estágio (DCP 136 • 120h):</strong> Segunda etapa prática. Aproveite o contato com o campo governamental para delinear o problema de pesquisa do seu TCC.</div>
 </div>
 
 <div class="mt-2">
-<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Estágio Curricular B (DCP 136) totaliza 120 horas (8 créditos). Converse com professores para definir o tema do seu TCC para o próximo semestre.</small>
+<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Converse com professores do DCP sobre a orientação para a disciplina de Projeto de TCC do próximo semestre.</small>
 </div>
 </div>
 </div>
@@ -655,19 +756,14 @@ Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualqu
 </div>
 </details>
 
-<div class="p-2 mb-2 bg-light border rounded small d-flex justify-content-between align-items-center">
-<span>📚 <strong>3 Disciplinas Optativas (180h) + 1 Formação Livre (60h)</strong></span>
-<span class="badge bg-secondary">Optativa</span>
-</div>
+<div class="cagp-timeline-optative"><span>📚 <strong>3 Disciplinas Optativas (180h) + 1 Formação Livre (60h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas + Livre</span></div>
 
-<div class="alert alert-warning border-start border-4 mt-3">
-<div class="fw-bold mb-1">📝 Trabalho de Conclusão de Curso (TCC)</div>
-<p class="mb-1 small">O TCC inicia-se com o Projeto (DCP 089) no 9º período e conclui-se com a Defesa Pública (DCP 137) no 10º período. A UFMG aceita 4 formatos: Monografia, Projeto de Intervenção Governamental, Artigo Científico ou Projeto de IC.</p>
-<a href="estagio-tcc.html" class="fw-bold small">Consulte as Regras e Modalidades de TCC &rarr;</a>
+<div class="cagp-timeline-milestone">
+  <div>📝 <strong>Projeto de TCC (DCP 089 • 60h):</strong> Exige Termo de Aceite de Orientação assinado por professor(a). <a href="estagio-tcc.html#modalidades-tcc">Conheça as 4 modalidades oficiais aceitas &rarr;</a></div>
 </div>
 
 <div class="mt-2">
-<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Projeto de TCC (DCP 089) exige termo de aceite de orientação. A UFMG aceita 4 modalidades de TCC: Monografia, Projeto de Intervenção, Artigo Científico ou Projeto de IC!</small>
+<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Pegue a assinatura do seu orientador no Termo de Aceite antes do período de matrícula online no SIGA.</small>
 </div>
 </div>
 </div>
@@ -694,19 +790,14 @@ Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualqu
 </div>
 </details>
 
-<div class="p-2 mb-2 bg-light border rounded small d-flex justify-content-between align-items-center">
-<span>📚 <strong>3 Disciplinas Optativas (180h)</strong></span>
-<span class="badge bg-secondary">Optativa</span>
-</div>
+<div class="cagp-timeline-optative"><span>📚 <strong>3 Disciplinas Optativas (180h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
 
-<div class="alert alert-warning border-start border-4 mt-3">
-<div class="fw-bold mb-1">📝 Trabalho de Conclusão de Curso (TCC)</div>
-<p class="mb-1 small">O TCC inicia-se com o Projeto (DCP 089) no 9º período e conclui-se com a Defesa Pública (DCP 137) no 10º período. A UFMG aceita 4 formatos: Monografia, Projeto de Intervenção Governamental, Artigo Científico ou Projeto de IC.</p>
-<a href="estagio-tcc.html" class="fw-bold small">Consulte as Regras e Modalidades de TCC &rarr;</a>
+<div class="cagp-timeline-milestone">
+  <div>🎓 <strong>Defesa Pública de TCC (DCP 137 • 120h):</strong> Apresentação perante banca examinadora de 2 docentes. Certifique-se de convalidar com antecedência todas as 300h de Extensão e AAC no Colegiado.</div>
 </div>
 
 <div class="mt-2">
-<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Reta final! Defesa pública perante banca de pelo menos 2 docentes e homologação prévia de todas as 300h de Extensão e AAC no Colegiado.</small>
+<span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Reta final! Aprovado na banca, protocole a versão final em PDF na Secretaria e confirme a homologação de todas as pendências para a colação.</small>
 </div>
 </div>
 </div>
@@ -716,7 +807,7 @@ Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualqu
 ---
 
 
-## 📌 Orientações Estratégicas de Matrícula do CAGP
+## <span aria-hidden="true">📌</span> Orientações Estratégicas de Matrícula do CAGP {#dicas-matricula}
 
 ::: {.cagp-card}
 ### Como Planejar seus Semestres com Segurança
@@ -725,3 +816,158 @@ Explore abaixo a trajetória recomendada semestre a semestre. **Clique em qualqu
 3. **Planeje a Formação em Extensão cedo:** Não acumule as 300 horas de Extensão Obrigatória para os últimos semestres, quando você estará dedicado ao Estágio A e B e à redação do TCC.
 4. **Utilize o Requerimento de Ajuste:** Caso fique de fora de uma matéria obrigatória no processamento online do SIGA, apresente requerimento presencial ao Colegiado da FAFICH no período de ajuste.
 :::
+
+```{=html}
+<nav class="cagp-journey-nav" aria-label="Continuidade da jornada acadêmica">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <a href="calouros.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">&larr; Passo Anterior</div>
+          <div class="cagp-journey-title">Guia de Sobrevivência do Calouro</div>
+        </div>
+        <p class="cagp-journey-desc">Checklist dos primeiros 30 dias, rotina do turno noturno, jantar no RU e atendimento na FAFICH.</p>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="acg.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">Próximo Passo na Jornada &rarr;</div>
+          <div class="cagp-journey-title">Extensão Obrigatória & Horas AAC (Calculadora 600h)</div>
+        </div>
+        <p class="cagp-journey-desc">Simule suas 300h de Extensão e até 300h de Atividades Complementares nas 9 categorias do Art. 15.</p>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  /* 1. Simulador de Percurso (01-01, 01-02, 01-03) */
+  const trackBtns = document.querySelectorAll('[data-track-choice]');
+  trackBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const code = btn.getAttribute('data-track-choice');
+      trackBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      btn.setAttribute('aria-pressed', 'true');
+      ['01-01', '01-02', '01-03'].forEach(function (k) {
+        const el = document.getElementById('track-res-' + k);
+        if (el) el.hidden = (k !== code);
+      });
+    });
+  });
+
+  /* 2. Explorador Dinâmico da Grade & Ementas */
+  const steps = Array.from(document.querySelectorAll('#cagp-grade-timeline .cagp-timeline-step'));
+  const allDisciplines = Array.from(document.querySelectorAll('#cagp-grade-timeline details.cagp-discipline'));
+  const searchInput = document.getElementById('grade-search-input');
+  const deptBtns = document.querySelectorAll('[data-dept-filter]');
+  const periodBtns = document.querySelectorAll('[data-period-filter]');
+  const statusEl = document.getElementById('grade-filter-status');
+  const emptyState = document.getElementById('grade-empty-state');
+  const btnExpandAll = document.getElementById('btn-expand-all');
+  const btnCollapseAll = document.getElementById('btn-collapse-all');
+  const btnReset = document.getElementById('btn-reset-grade');
+  const btnEmptyReset = document.getElementById('btn-empty-reset');
+
+  let activeDept = 'all';
+  let activePeriod = 'all';
+
+  function normalize(str) {
+    return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function applyFilters() {
+    const query = normalize(searchInput ? searchInput.value : '');
+    let visibleCount = 0;
+    let visibleSteps = 0;
+
+    steps.forEach(function (step) {
+      const marker = step.querySelector('.cagp-timeline-marker');
+      const periodLabel = marker ? marker.textContent.trim() : '';
+      const periodMatches = (activePeriod === 'all' || periodLabel === activePeriod);
+
+      const stepDisciplines = Array.from(step.querySelectorAll('details.cagp-discipline'));
+      let stepVisibleDisciplines = 0;
+
+      stepDisciplines.forEach(function (disc) {
+        const badge = disc.querySelector('.cagp-badge');
+        const badgeText = badge ? badge.textContent : '';
+        const deptMatches = (activeDept === 'all' || badgeText.indexOf(activeDept) !== -1);
+        const textMatches = (!query || normalize(disc.textContent).indexOf(query) !== -1);
+
+        if (periodMatches && deptMatches && textMatches) {
+          disc.hidden = false;
+          if (query.length >= 2) disc.open = true;
+          visibleCount++;
+          stepVisibleDisciplines++;
+        } else {
+          disc.hidden = true;
+        }
+      });
+
+      if (periodMatches && stepVisibleDisciplines > 0) {
+        step.hidden = false;
+        visibleSteps++;
+      } else {
+        step.hidden = true;
+      }
+    });
+
+    if (statusEl) {
+      statusEl.textContent = 'Exibindo ' + visibleCount + ' de ' + allDisciplines.length + ' disciplinas (' + visibleSteps + ' períodos)';
+    }
+    if (emptyState) {
+      emptyState.hidden = (visibleCount > 0);
+    }
+  }
+
+  deptBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activeDept = btn.getAttribute('data-dept-filter');
+      deptBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      btn.setAttribute('aria-pressed', 'true');
+      applyFilters();
+    });
+  });
+
+  periodBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activePeriod = btn.getAttribute('data-period-filter');
+      periodBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      btn.setAttribute('aria-pressed', 'true');
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilters);
+  }
+
+  if (btnExpandAll) {
+    btnExpandAll.addEventListener('click', function () {
+      allDisciplines.forEach(function (d) { if (!d.hidden) d.open = true; });
+    });
+  }
+
+  if (btnCollapseAll) {
+    btnCollapseAll.addEventListener('click', function () {
+      allDisciplines.forEach(function (d) { d.open = false; });
+    });
+  }
+
+  function resetAll() {
+    activeDept = 'all';
+    activePeriod = 'all';
+    if (searchInput) searchInput.value = '';
+    deptBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-dept-filter') === 'all' ? 'true' : 'false'); });
+    periodBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-period-filter') === 'all' ? 'true' : 'false'); });
+    allDisciplines.forEach(function (d) { d.open = false; });
+    applyFilters();
+  }
+
+  if (btnReset) btnReset.addEventListener('click', resetAll);
+  if (btnEmptyReset) btnEmptyReset.addEventListener('click', resetAll);
+});
+</script>
+```

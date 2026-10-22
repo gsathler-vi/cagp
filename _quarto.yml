@@ -38,20 +38,24 @@ website:
     left:
       - href: index.qmd
         text: Início
-      - href: calouros.qmd
-        text: Guia do Calouro
-      - href: percurso.qmd
-        text: Percurso Curricular
-      - href: estagio-tcc.qmd
-        text: Estágio & TCC
-      - href: acg.qmd
-        text: Extensão & AAC
-      - href: documentos.qmd
-        text: Documentos
-      - href: faq.qmd
-        text: Dúvidas Frequentes
+      - text: "Jornada Acadêmica"
+        menu:
+          - href: calouros.qmd
+            text: "Guia do Calouro (1º Período)"
+          - href: percurso.qmd
+            text: "Percurso & Ementas (10 Semestres)"
+          - href: acg.qmd
+            text: "Extensão & Horas AAC (600h)"
+          - href: estagio-tcc.qmd
+            text: "Estágio Supervisionado & TCC"
+      - text: "Acervo & Ajuda"
+        menu:
+          - href: documentos.qmd
+            text: "Documentos & Formulários"
+          - href: faq.qmd
+            text: "Dúvidas Frequentes (FAQ)"
       - href: sobre.qmd
-        text: Sobre o CAGP
+        text: "Sobre o CAGP"
     right:
       - icon: instagram
         href: "https://www.instagram.com/cagpufmg"

@@ -23,21 +23,32 @@ Sediado no Departamento de Ciência Política (DCP), o CAGP é o órgão legíti
 ::: {.col-lg-4 .col-12 .text-center .mt-4 .mt-lg-0}
 ```{=html}
 <div class="cagp-hero-emblem-card">
-  <img src="logos/06_horizontal_transparente_positivo.svg" alt="Símbolo oficial dos Candangos do Centro Acadêmico de Gestão Pública da UFMG" class="cagp-hero-emblem-img">
+  <img src="logos/06_horizontal_transparente_positivo.svg" alt="Símbolo oficial dos Candangos do Centro Acadêmico de Gestão Pública da UFMG" class="cagp-hero-emblem-img" width="260" height="90">
 </div>
 ```
 :::
 :::
 :::
 
-## 🏛️ A Nossa Identidade Visual e o Símbolo dos Candangos
+```{=html}
+<nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
+  <span class="cagp-subnav-label">Nesta Página:</span>
+  <a href="#simbolo-candangos" class="cagp-subnav-link">🏛️ Os Candangos</a>
+  <a href="#principios-regimentais" class="cagp-subnav-link">⚖️ Princípios Regimentais</a>
+  <a href="#diretorias-cagp" class="cagp-subnav-link">👥 As 7 Diretorias</a>
+  <a href="#colegiado-curso" class="cagp-subnav-link">🎓 Colegiado do Curso</a>
+  <a href="#sede-contato" class="cagp-subnav-link">📬 Sede e Contato</a>
+</nav>
+```
+
+## <span aria-hidden="true">🏛️</span> A Nossa Identidade Visual e o Símbolo dos Candangos {#simbolo-candangos}
 
 O símbolo do CAGP é diretamente inspirado no monumento histórico **"Os Candangos"** (título original: *Dois Guerreiros*), obra-prima de **Bruno Giorgi (1905–1993)** inaugurada em 1959 na Praça dos Três Poderes, em Brasília.
 
 ::: {.row .g-4 .align-items-center .my-3}
 ::: {.col-md-4 .text-center}
 ::: {.cagp-card}
-![](imagens/os-candangos.jpg){fig-alt="Fotografia do monumento Os Candangos de Bruno Giorgi na Praça dos Três Poderes em Brasília" style="height: auto; width: auto;"}
+![](imagens/os-candangos.jpg){fig-alt="Fotografia do monumento Os Candangos de Bruno Giorgi na Praça dos Três Poderes em Brasília" style="height: auto; max-width: 100%;"}
 <p class="text-muted small mt-2 mb-0"><strong>Os Candangos (1959)</strong><br>Monumento aos Construtores de Brasília</p>
 :::
 :::
@@ -54,7 +65,7 @@ O símbolo do CAGP é diretamente inspirado no monumento histórico **"Os Candan
 
 ---
 
-## ⚖️ Princípios e Fundamentos Regimentais
+## <span aria-hidden="true">⚖️</span> Princípios e Fundamentos Regimentais {#principios-regimentais}
 
 Conforme os **Arts. 2º, 3º, 4º e 8º do Regimento Interno**, a atuação do CAGP orienta-se por pilares inegociáveis de ética pública e compromisso discente:
 
@@ -151,9 +162,17 @@ O CAGP fundamenta-se na separação democrática entre a soberania dos represent
 
 ---
 
-## 👥 As 7 Diretorias Executivas do CAGP
+## <span aria-hidden="true">👥</span> As 7 Diretorias Executivas do CAGP {#diretorias-cagp}
 
-A competência executiva do Centro Acadêmico é subdividida em **7 Diretorias de Gestão** (Arts. 24 a 34), exigindo-se uma chapa de **no mínimo 8 membros** para a sua apresentação formal (Art. 25):
+```{=html}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+  <p class="mb-0">A competência executiva do Centro Acadêmico é subdividida em <strong>7 Diretorias de Gestão</strong> (Arts. 24 a 34), exigindo-se uma chapa de <strong>no mínimo 8 membros</strong> para a sua apresentação formal (Art. 25):</p>
+  <div class="d-flex gap-2">
+    <button type="button" id="dir-expand-all" class="cagp-chip">Expandir atribuições</button>
+    <button type="button" id="dir-collapse-all" class="cagp-chip">Recolher atribuições</button>
+  </div>
+</div>
+```
 
 ```{=html}
 <div class="row g-4 mb-4">
@@ -358,7 +377,7 @@ A competência executiva do Centro Acadêmico é subdividida em **7 Diretorias d
 
 ---
 
-## 🎓 O Colegiado de Coordenação Didática
+## <span aria-hidden="true">🎓</span> O Colegiado de Coordenação Didática {#colegiado-curso}
 
 Enquanto o CAGP é a voz política e representativa dos estudantes, o **Colegiado de Gestão Pública** é o órgão colegiado da UFMG responsável pela gestão didática e administrativa do curso (com mandato de dois anos para seus membros). Conforme as deliberações oficiais, a composição atual é:
 
@@ -431,14 +450,14 @@ Conforme o **Título VI do Regimento Interno (Arts. 41 a 45)**, as eleições do
 
 ---
 
-## 📬 Canais Oficiais e Sede Física
+## <span aria-hidden="true">📬</span> Canais Oficiais e Sede Física {#sede-contato}
 
 Conforme o **Art. 6º do Regimento**, a sede e o foro da entidade situam-se no campus universitário:
 
 ::: {.cagp-card}
 ::: {.row .g-4}
 ::: {.col-md-6}
-### 📍 Localização Institucional {.fs-5 .fw-bold}
+### <span aria-hidden="true">📍</span> Localização Institucional {.fs-5 .fw-bold}
 - **Centro Acadêmico de Gestão Pública (CAGP)**
 - Faculdade de Filosofia e Ciências Humanas (FAFICH) • UFMG
 - Pilotis — Espaço dos Centros Acadêmicos
@@ -447,10 +466,45 @@ Conforme o **Art. 6º do Regimento**, a sede e o foro da entidade situam-se no c
 :::
 
 ::: {.col-md-6}
-### ✉️ Atendimento e Contato {.fs-5 .fw-bold}
+### <span aria-hidden="true">✉️</span> Atendimento e Contato {.fs-5 .fw-bold}
 - **E-mail Institucional:** [cagp@fafich.ufmg.br](mailto:cagp@fafich.ufmg.br)
 - **Instagram Oficial:** [@cagp.ufmg](https://www.instagram.com/cagp.ufmg)
 - **Atendimento Presencial:** De segunda a sexta-feira, nos intervalos de aula do turno noturno e plantões discentes.
 :::
 :::
 :::
+
+```{=html}
+<nav class="cagp-journey-nav" aria-label="Continuidade da jornada acadêmica">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <a href="faq.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">&larr; Passo Anterior</div>
+          <div class="cagp-journey-title">Dúvidas Frequentes (FAQ com Busca)</div>
+        </div>
+        <p class="cagp-journey-desc">Respostas regimentais sobre trancamento, quebra de pré-requisito, EaD e intercâmbio.</p>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="index.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">Voltar ao Início &rarr;</div>
+          <div class="cagp-journey-title">Hub Principal do CAGP (Bússola do Estudante)</div>
+        </div>
+        <p class="cagp-journey-desc">Retornar ao painel principal com atalhos para SIGA, SEI, MinhaUFMG e trilhas por etapa.</p>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const details = document.querySelectorAll('.cagp-details-box');
+  const btnExp = document.getElementById('dir-expand-all');
+  const btnCol = document.getElementById('dir-collapse-all');
+  if (btnExp) btnExp.addEventListener('click', function () { details.forEach(function (d) { d.open = true; }); });
+  if (btnCol) btnCol.addEventListener('click', function () { details.forEach(function (d) { d.open = false; }); });
+});
+</script>
+```

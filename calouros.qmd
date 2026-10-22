@@ -1,6 +1,7 @@
 ---
 title: "Guia de Sobrevivência do Calouro"
 subtitle: "Manual prático e orientações para o ingressante no curso Noturno de Gestão Pública da UFMG"
+title-block-style: none
 toc: true
 ---
 
@@ -15,14 +16,177 @@ toc: true
 Você agora é estudante de **Gestão Pública** na **Faculdade de Filosofia e Ciências Humanas (FAFICH)**, no campus Pampulha da UFMG. O curso funciona no **turno noturno**, permitindo que muitos discentes conciliem a formação universitária de ponta com estágios, trabalho e pesquisa durante o dia.
 :::
 
-## 🌙 A Rotina do Estudante do Turno Noturno
+```{=html}
+<nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
+  <span class="cagp-subnav-label">Nesta Página:</span>
+  <a href="#checklist-calouro" class="cagp-subnav-link">✅ Checklist 30 Dias</a>
+  <a href="#rotina-noturna" class="cagp-subnav-link">🌙 Rotina Noturna & RU</a>
+  <a href="#secretaria-e-ceag" class="cagp-subnav-link">🏢 CEAG & Secretaria</a>
+  <a href="#assistencia-estudantil" class="cagp-subnav-link">🤝 FUMP, PRAE e NAI</a>
+</nav>
+```
+
+## <span aria-hidden="true">✅</span> Checklist Interativo dos Primeiros 30 Dias {#checklist-calouro}
+
+Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica salvo automaticamente neste navegador:
+
+```{=html}
+<section class="cagp-tool-box" aria-labelledby="calouro-check-title">
+  <div class="cagp-tool-header">
+    <div>
+      <span class="cagp-badge cagp-badge-green mb-1">Salvo no Navegador</span>
+      <h3 id="calouro-check-title" class="h5 mb-0">SEU PROGRESSO DE AMBIENTAÇÃO</h3>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <span id="calouro-check-status" class="cagp-badge cagp-badge-dark cagp-tabular" aria-live="polite">0 de 6 concluídos (0%)</span>
+      <button type="button" id="calouro-check-reset" class="cagp-chip">Desmarcar tudo</button>
+    </div>
+  </div>
+
+  <div class="cagp-progress-track mb-4" aria-hidden="true">
+    <div id="calouro-check-bar" class="cagp-progress-fill" style="width: 0%;"></div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="cagp-check-card" for="chk-minhaufmg">
+        <input type="checkbox" class="cagp-check-box" id="chk-minhaufmg" data-calouro-chk="minhaufmg">
+        <div>
+          <h3 class="h6 fw-bold mb-1">1. Ativar MinhaUFMG e SIGA</h3>
+          <p class="small text-muted mb-0">Crie sua senha inicial em <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer">minha.ufmg.br</a> com os dados do registro acadêmico e emita seu Comprovante de Matrícula autenticado.</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-md-6">
+      <label class="cagp-check-card" for="chk-carteirinha">
+        <input type="checkbox" class="cagp-check-box" id="chk-carteirinha" data-calouro-chk="carteirinha">
+        <div>
+          <h3 class="h6 fw-bold mb-1">2. Solicitar Carteirinha</h3>
+          <p class="small text-muted mb-0">Essencial para catracas, empréstimo de livros nas bibliotecas da UFMG e pagamento rápido no Bandejão.</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-md-6">
+      <label class="cagp-check-card" for="chk-matricula">
+        <input type="checkbox" class="cagp-check-box" id="chk-matricula" data-calouro-chk="matricula">
+        <div>
+          <h3 class="h6 fw-bold mb-1">3. Conferir Matrícula do 1º Período (300h)</h3>
+          <p class="small text-muted mb-0">No 1º semestre, sua inscrição nas 5 matérias obrigatórias (300h / 20 créditos) é automática pelo DRCA. Nos períodos seguintes, o mínimo regimental é de <strong>180h (12 créditos)</strong>.</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-md-6">
+      <label class="cagp-check-card" for="chk-eduroam">
+        <input type="checkbox" class="cagp-check-box" id="chk-eduroam" data-calouro-chk="eduroam">
+        <div>
+          <h3 class="h6 fw-bold mb-1">4. Configurar o Wi-Fi Institucional (eduroam)</h3>
+          <p class="small text-muted mb-0">Conecte celular e notebook à rede criptografada <code>eduroam</code> usando seu login completo no formato <code>seulogin@ufmg.br</code> e a senha do MinhaUFMG.</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-md-6">
+      <label class="cagp-check-card" for="chk-dispensa">
+        <input type="checkbox" class="cagp-check-box" id="chk-dispensa" data-calouro-chk="dispensa">
+        <div>
+          <h3 class="h6 fw-bold mb-1">5. Avaliar Aproveitamento de Estudos (Até o 2ºP)</h3>
+          <p class="small text-muted mb-0">Cursou disciplinas em outra faculdade? Conforme a <strong>Res. CEPE nº 06/2019</strong>, o pedido de dispensa de matérias só é aceito até o seu <strong>2º período letivo</strong>.</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-md-6">
+      <label class="cagp-check-card" for="chk-fump">
+        <input type="checkbox" class="cagp-check-box" id="chk-fump" data-calouro-chk="fump">
+        <div>
+          <h3 class="h6 fw-bold mb-1">6. Preencher Questionário da FUMP (Se aplicável)</h3>
+          <p class="small text-muted mb-0">Solicite classificação socioeconômica na Fundação Universitária Mendes Pimentel para desconto ou isenção no jantar do RU, auxílio transporte e moradia.</p>
+        </div>
+      </label>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const STORAGE_KEY = 'cagp_calouro_checklist_v1';
+  const checkboxes = document.querySelectorAll('[data-calouro-chk]');
+  const statusEl = document.getElementById('calouro-check-status');
+  const barEl = document.getElementById('calouro-check-bar');
+  const resetBtn = document.getElementById('calouro-check-reset');
+
+  function loadState() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveState(state) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {}
+  }
+
+  function render() {
+    const total = checkboxes.length;
+    let done = 0;
+    checkboxes.forEach(function (cb) {
+      const card = cb.closest('.cagp-check-card');
+      if (cb.checked) {
+        done++;
+        if (card) card.classList.add('is-checked');
+      } else {
+        if (card) card.classList.remove('is-checked');
+      }
+    });
+    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+    if (statusEl) statusEl.textContent = done + ' de ' + total + ' concluídos (' + pct + '%)';
+    if (barEl) {
+      barEl.style.width = pct + '%';
+      barEl.classList.toggle('is-complete', done === total);
+    }
+  }
+
+  const saved = loadState();
+  checkboxes.forEach(function (cb) {
+    const key = cb.getAttribute('data-calouro-chk');
+    if (saved[key]) cb.checked = true;
+    cb.addEventListener('change', function () {
+      const current = loadState();
+      current[key] = cb.checked;
+      saveState(current);
+      render();
+    });
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      checkboxes.forEach(function (cb) { cb.checked = false; });
+      saveState({});
+      render();
+    });
+  }
+
+  render();
+});
+</script>
+```
+
+---
+
+## <span aria-hidden="true">🌙</span> A Rotina do Estudante do Turno Noturno {#rotina-noturna}
 
 Estudar à noite na UFMG tem uma dinâmica própria que você precisa conhecer desde a primeira semana:
 
 ::: {.row .g-3 .mb-4}
 ::: {.col-md-6}
 ::: {.cagp-card}
-#### ⏰ Horários das Aulas
+### <span aria-hidden="true">⏰</span> Horários das Aulas {.fs-5}
 - As aulas do curso noturno ocorrem de **segunda a sexta-feira, das 19:00 às 22:30** (divididas em dois blocos letivos de 1h40 com intervalo).
 - Algumas disciplinas optativas e laboratórios de imersão podem ter atividades esporádicas aos sábados ou no período diurno (sempre opcionais).
 :::
@@ -30,16 +194,16 @@ Estudar à noite na UFMG tem uma dinâmica própria que você precisa conhecer d
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-#### 🍽️ Jantar no Restaurante Universitário (RU)
+### <span aria-hidden="true">🍽️</span> Jantar no Restaurante Universitário (RU) {.fs-5}
 - O RU ("Bandejão") serve jantar subsidiado para todos os estudantes regularmente matriculados.
-- **Unidades:** No campus Pampulha, o **RU Setorial I** (próximo à FAFICH e ICEx) é o mais utilizado pelos alunos de Gestão Pública.
-- **Horário do Jantar:** Geralmente das **17:45 às 20:30**. Programe-se para jantar antes do início da aula das 19h!
+- **Unidades:** No campus Pampulha, o **RU Setorial II** (próximo ao ICB).
+- **Horário do Jantar:** Geralmente das **17:15 às 19:30**. Programe-se para jantar antes do início da aula das 19h!
 :::
 :::
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-#### 🚌 Transporte e Circulares Noturnos (Interno Rotas)
+### <span aria-hidden="true">🚌</span> Transporte e Circulares Noturnos (Interno Rotas) {.fs-5}
 - Os **ônibus circulares internos da UFMG são 100% gratuitos** e operam interligando as portarias da Av. Antônio Carlos e Av. Carlos Luz (Catalão) aos prédios da FAFICH, ICEx e Reitoria até as 22h45.
 - **Rastreamento em Tempo Real:** Utilize o aplicativo [**Interno Rotas** (internorotas.com)](https://internorotas.com/){target="_blank" rel="noopener noreferrer"} no celular para visualizar o mapa dinâmico das linhas, previsão de chegada nos pontos da FAFICH e lotação estimada.
 - As estações do MOVE UFMG e Mineirão têm linhas rápidas com destino ao Centro, Venda Nova e demais regiões metropolitanas.
@@ -48,7 +212,7 @@ Estudar à noite na UFMG tem uma dinâmica própria que você precisa conhecer d
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-#### 🛡️ Segurança no Campus à Noite
+### <span aria-hidden="true">🛡️</span> Segurança no Campus à Noite {.fs-5}
 - O campus Pampulha possui serviço próprio de vigilância patrimonial e rondas motorizadas.
 - **Dica do CAGP:** Desça para as portarias em grupos de colegas ao término das aulas às 22h30 e utilize as vias principais iluminadas.
 :::
@@ -57,59 +221,18 @@ Estudar à noite na UFMG tem uma dinâmica própria que você precisa conhecer d
 
 ---
 
-## 📋 Checklist dos Primeiros 30 Dias
-
-::: {.row .g-3 .mb-4}
-::: {.col-md-6}
-::: {.cagp-card}
-#### 1. Acesso ao MinhaUFMG e SIGA
-O portal central do estudante para matrícula, histórico e declarações oficiais.
-- **Primeiro Acesso:** Crie sua senha de acesso inicial no portal institucional [minha.ufmg.br](https://minha.ufmg.br) utilizando os dados do seu registro acadêmico.
-- É pelo MinhaUFMG que você emite o **Comprovante de Matrícula** com autenticação digital.
-:::
-:::
-
-::: {.col-md-6}
-::: {.cagp-card}
-#### 2. Carteirinha de Estudante e Crachá
-Seu documento oficial dentro da UFMG. Dá acesso às catracas, empréstimo de livros no Sistema de Bibliotecas da UFMG e pagamento rápido no RU.
-- **Onde solicitar:** Pelo portal MinhaUFMG ou no Departamento de Registro e Controle Acadêmico (DRCA).
-- **Créditos do RU:** Recarregue via internet com antecedência para evitar totens lotados no intervalo.
-:::
-:::
-
-::: {.col-md-6}
-::: {.cagp-card}
-#### 3. Carga Horária Mínima de Matrícula
-Conforme as normas regimentais do curso (PPC e Regulamento):
-- A matrícula semestral exige a inscrição em **no mínimo 180 horas (12 créditos)** por semestre, salvo em período de conclusão ou trancamento formal.
-- No 1º período, sua matrícula nas 5 disciplinas obrigatórias introdutórias (300h) é automática pelo DRCA!
-:::
-:::
-
-::: {.col-md-6}
-::: {.cagp-card}
-#### 4. Conectividade Wi-Fi Institucional (eduroam)
-Rede sem fio de alta velocidade e criptografada disponível em todas as dependências da UFMG e em milhares de universidades no exterior.
-- **Configuração:** Conecte seu celular ou notebook à rede `eduroam` informando seu login completo no formato `seulogin@ufmg.br` e senha institucional.
-:::
-:::
-:::
-
----
-
-## 🏛️ Conhecendo a FAFICH e os Espaços do Curso
+## <span aria-hidden="true">🏛️</span> Conhecendo a FAFICH e os Espaços do Curso
 
 A **Faculdade de Filosofia e Ciências Humanas** é uma das unidades mais tradicionais e politizadas da UFMG.
 
 ::: {.cagp-card}
-### 📍 Onde Encontrar a Gestão e Pontos-Chave
+### <span aria-hidden="true">📍</span> Onde Encontrar a Gestão e Pontos-Chave
 - **Salinha do CAGP (Pilotis da FAFICH):** Espaço dos Centros Acadêmicos no pilotis térreo. Venha tomar um café, tirar dúvidas sobre professores, provas e percurso, e participar dos debates da gestão.
 - **Departamento de Ciência Política (DCP):** Departamento acadêmico de vinculação do curso de Gestão Pública, no 3º andar da FAFICH.
 - **Biblioteca Setorial da FAFICH:** Amplo acervo especializado em Ciência Política, Administração Pública, Sociologia, Economia e periódicos internacionais.
 :::
 
-### 🏢 Atendimento Acadêmico: Secretaria vs. CEAG {#secretaria-e-ceag}
+### <span aria-hidden="true">🏢</span> Atendimento Acadêmico: Secretaria vs. CEAG {#secretaria-e-ceag}
 
 Como estudante do noturno, você conta com dois canais de atendimento presencial no **2º andar da FAFICH**:
 
@@ -152,7 +275,7 @@ Como estudante do noturno, você conta com dois canais de atendimento presencial
 
 ---
 
-## 🤝 Permanência Estudantil, Bolsas e Assistência
+## <span aria-hidden="true">🤝</span> Permanência Estudantil, Bolsas e Assistência {#assistencia-estudantil}
 
 A UFMG compreende a assistência estudantil como direito à educação pública de qualidade, garantindo que o estudante tenha condições socioeconômicas de concluir seu curso:
 
@@ -161,8 +284,8 @@ A UFMG compreende a assistência estudantil como direito à educação pública 
   <div class="col-md-4">
     <div class="cagp-card h-100">
       <div class="d-flex align-items-center gap-2 mb-2">
-        <span class="fs-4">🍽️</span>
-        <h4 class="fs-6 fw-bold text-uppercase mb-0">FUMP (Mendes Pimentel)</h4>
+        <span class="fs-4" aria-hidden="true">🍽️</span>
+        <h3 class="fs-6 fw-bold text-uppercase mb-0">FUMP (Mendes Pimentel)</h3>
       </div>
       <p class="small text-muted mb-2">Responsável pela assistência socioeconômica: bolsas de alimentação (RU subsidiado ou gratuito), auxílio moradia, auxílio transporte e material acadêmico.</p>
       <a href="http://www.fump.ufmg.br/" target="_blank" rel="noopener noreferrer" class="small fw-bold">Acessar portal da FUMP ↗</a>
@@ -172,8 +295,8 @@ A UFMG compreende a assistência estudantil como direito à educação pública 
   <div class="col-md-4">
     <div class="cagp-card h-100">
       <div class="d-flex align-items-center gap-2 mb-2">
-        <span class="fs-4">🌱</span>
-        <h4 class="fs-6 fw-bold text-uppercase mb-0">PRAE & Ações Afirmativas</h4>
+        <span class="fs-4" aria-hidden="true">🌱</span>
+        <h3 class="fs-6 fw-bold text-uppercase mb-0">PRAE & Ações Afirmativas</h3>
       </div>
       <p class="small text-muted mb-2">Pró-Reitoria de Assuntos Estudantis: políticas de permanência, acolhimento psicossocial, apoio a projetos acadêmicos geridos por estudantes e ações afirmativas.</p>
       <a href="https://www.ufmg.br/prae/" target="_blank" rel="noopener noreferrer" class="small fw-bold">Acessar PRAE UFMG ↗</a>
@@ -183,8 +306,8 @@ A UFMG compreende a assistência estudantil como direito à educação pública 
   <div class="col-md-4">
     <div class="cagp-card h-100">
       <div class="d-flex align-items-center gap-2 mb-2">
-        <span class="fs-4">♿</span>
-        <h4 class="fs-6 fw-bold text-uppercase mb-0">NAI (Acessibilidade)</h4>
+        <span class="fs-4" aria-hidden="true">♿</span>
+        <h3 class="fs-6 fw-bold text-uppercase mb-0">NAI (Acessibilidade)</h3>
       </div>
       <p class="small text-muted mb-2">Núcleo de Acessibilidade e Inclusão: acompanhamento pedagógico, mediação de materiais acessíveis e suporte físico para discentes com deficiência ou neurodivergências.</p>
       <a href="https://www.ufmg.br/nai/" target="_blank" rel="noopener noreferrer" class="small fw-bold">Acessar NAI UFMG ↗</a>
@@ -195,7 +318,7 @@ A UFMG compreende a assistência estudantil como direito à educação pública 
 
 ---
 
-## 💡 Dicas de Ouro dos Veteranos do CAGP
+## <span aria-hidden="true">💡</span> Dicas de Ouro dos Veteranos do CAGP
 
 ::: {.callout-tip}
 ### Cuide do seu Percurso desde o 1º Período
@@ -211,3 +334,28 @@ Lembre-se de que 10% da carga horária total (300 horas) são de **Formação em
 ### Conte Sempre com o Centro Acadêmico
 O CAGP existe para garantir que sua passagem pela universidade pública seja justa, rica e acolhedora. Qualquer dúvida com colegiado, professores ou dificuldades acadêmicas, fale com a nossa diretoria. Você também pode consultar todos os [Documentos Oficiais, PPC e Regulamentos do Curso &rarr;](documentos.qmd).
 :::
+
+```{=html}
+<nav class="cagp-journey-nav" aria-label="Continuidade da jornada acadêmica">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <a href="index.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">&larr; Voltar ao Início</div>
+          <div class="cagp-journey-title">Hub Principal do CAGP</div>
+        </div>
+        <p class="cagp-journey-desc">Bússola de resolução rápida, atalhos para SIGA/SEI/MinhaUFMG e avisos do colegiado.</p>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="percurso.html" class="cagp-journey-link">
+        <div>
+          <div class="cagp-journey-dir">Próximo Passo na Jornada &rarr;</div>
+          <div class="cagp-journey-title">Percurso Curricular & Ementas (10 Semestres)</div>
+        </div>
+        <p class="cagp-journey-desc">Explore as 27 disciplinas obrigatórias por semestre, filtre por departamento e conheça os 3 percursos.</p>
+      </a>
+    </div>
+  </div>
+</nav>
+```
