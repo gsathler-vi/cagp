@@ -1762,8 +1762,8 @@ div.callout-tip .callout-toggle::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.65rem 0;
+  gap: 0.85rem;
+  padding: 0.7rem 0;
   border-bottom: 1.5px solid var(--cagp-gray-200);
 }
 
@@ -1772,10 +1772,18 @@ div.callout-tip .callout-toggle::before {
   padding-bottom: 0;
 }
 
+.cagp-calc-info {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
 .cagp-calc-desc {
   font-size: 0.75rem;
   color: var(--cagp-gray-600);
   line-height: 1.35;
+  margin-top: 0.15rem;
 }
 
 .cagp-calc-controls {
@@ -1792,7 +1800,7 @@ div.callout-tip .callout-toggle::before {
   align-items: center;
   justify-content: center;
   font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   background-color: var(--cagp-white);
   color: var(--cagp-dark);
@@ -1801,14 +1809,8 @@ div.callout-tip .callout-toggle::before {
   box-shadow: 2px 2px 0px var(--cagp-dark);
   cursor: pointer;
   touch-action: manipulation;
-}
-
-@media (max-width: 768px) {
-  .cagp-step-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 1.25rem;
-  }
+  user-select: none;
+  transition: background-color 0.1s ease, transform 0.08s ease;
 }
 
 .cagp-step-btn:hover:not(:disabled) {
@@ -1816,19 +1818,72 @@ div.callout-tip .callout-toggle::before {
   color: var(--cagp-white);
 }
 
+.cagp-step-btn:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--cagp-dark);
+}
+
 .cagp-step-btn:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
   box-shadow: none;
 }
 
 .cagp-calc-readout {
-  min-width: 72px;
+  min-width: 76px;
   text-align: center;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 767.98px) {
+  .cagp-tool-box {
+    padding: 1.15rem 0.85rem;
+  }
+
+  .cagp-compass-panel.cagp-panel-boxed {
+    padding: 1rem 0.85rem;
+  }
+
+  .cagp-calc-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+    padding: 0.8rem 0;
+  }
+
+  .cagp-calc-info {
+    width: 100%;
+  }
+
+  .cagp-calc-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0.25rem 0;
+    box-sizing: border-box;
+  }
+
+  .cagp-step-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+  }
+
+  .cagp-calc-readout {
+    font-size: 1.05rem;
+    font-weight: 700;
+    flex: 1;
+    text-align: center;
+  }
 }
 
 /* --------------------------------------------------------------------------

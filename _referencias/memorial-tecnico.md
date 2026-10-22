@@ -549,6 +549,24 @@ As páginas mais ricas em conteúdo normativo do curso (`percurso.qmd`, `estagio
 
 ---
 
+### Ciclo 16 — Otimização Mobile e Alinhamento Universal dos Simuladores de Extensão e AAC (`styles.css` e `acg.qmd`)
+
+**Contexto e Diagnóstico:**
+Em visualizações mobile (< 768px), itens com títulos e termos técnicos extensos (como *"Organização / Debatedor de Eventos (II)"*, *"Atividades Interinstitucionais de Ensino"* e *"I. Pesquisa Interinstitucional"*) concorriam pelo espaço horizontal com o bloco de controles numéricos (`.cagp-calc-controls` com ~160px). Como os contêineres tinham paddings generosos acumulados (`.cagp-tool-box` e `.cagp-panel-boxed`) e a coluna de texto não possuía `min-width: 0`, palavras longas não conseguiam quebrar e empurravam os botões `+` e `−` para fora da borda do cartão, gerando desalinhamento assimétrico entre as linhas da calculadora.
+
+**Mudanças Implementadas:**
+1. **Layout Mobile Dedicado (`@media (max-width: 767.98px)`):**
+   - **Empilhamento Semântico e Alinhamento Universal:** As linhas da calculadora (`.cagp-calc-row`) passam a adotar `flex-direction: column` no mobile, dedicando 100% da largura superior para a leitura confortável do título e descrição (sem quebras artificiais de palavras).
+   - **Barra de Controle de Largura Total:** O bloco `.cagp-calc-controls` foi configurado com `width: 100%` e `justify-content: space-between`: o botão de diminuir (`−`) fixa-se na extremidade esquerda, o valor numérico em Oswald centraliza-se com destaque, e o botão de aumentar (`+`) fixa-se na extremidade direita. Todas as 13 linhas passam a ter exatamente a mesma largura e alinhamento visual milimétrico.
+   - **Touch Targets de 44px:** Botões `+` e `−` ampliados para 44px × 44px em telas sensíveis ao toque (atendendo com folga ao critério WCAG AAA 2.5.5).
+   - **Recuperação de Espaço Útil:** Redução controlada dos paddings de contêiner em telas pequenas (`.cagp-tool-box` para `1.15rem 0.85rem` e `.cagp-panel-boxed` para `1rem 0.85rem`), devolvendo mais de 40px de área útil para o conteúdo.
+2. **Robustez no Desktop (`min-width: 768px`):**
+   - Criação da classe `.cagp-calc-info` com `flex: 1 1 auto; min-width: 0; overflow-wrap: break-word;`, assegurando que títulos longos quebrem internamente no desktop sem empurrar os botões para além da borda direita.
+3. **Auditoria e Zero Regressões:**
+   - Renderização limpa em `docs/` e validação com `impeccable detect --json docs/*.html` (zero erros e zero avisos de `nested-cards`, `tight-leading` ou layout).
+
+---
+
 ## 19. Instruções de Manutenção e Publicação
 
 ### 19.1 Pré-Visualização Local com Live-Reload

@@ -84,7 +84,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
           <div>
             <span class="cagp-badge cagp-badge-red mb-2">Interativo</span>
             <h3 class="h6 fw-bold mb-1">Checklist dos Primeiros 30 Dias</h3>
-            <p class="small text-muted mb-2">Marque passo a passo seu primeiro acesso ao MinhaUFMG, emissão de carteirinha, eduroam e recarga do RU.</p>
+            <p class="small text-muted mb-2">Marque passo a passo seu primeiro acesso ao MinhaUFMG, emissão de carteirinha, eduroam e assistência estudantil pela FUMP.</p>
           </div>
           <span class="small fw-bold text-danger">Abrir Checklist &rarr;</span>
         </a>
@@ -94,7 +94,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
           <div>
             <span class="cagp-badge cagp-badge-dark mb-2">19h00 às 22h30</span>
             <h3 class="h6 fw-bold mb-1">Rotina Noturna, Jantar e Circular</h3>
-            <p class="small text-muted mb-2">Jantar no RU Setorial I até 20h30, linhas gratuitas do circular até 22h45 e atendimento noturno no CEAG (até 22h).</p>
+            <p class="small text-muted mb-2">Jantar no RU Setorial II até 19h30, linhas gratuitas do circular até 22h45 e atendimento noturno no CEAG (até 22h).</p>
           </div>
           <span class="small fw-bold text-danger">Ver Guia da Noite &rarr;</span>
         </a>

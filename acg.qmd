@@ -86,7 +86,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         <p class="small text-muted mb-3">Exigência obrigatória para colação de grau (20 créditos = 300h):</p>
 
         <div class="cagp-calc-row" data-calc-group="ext" data-calc-id="ext_lab_a" data-step="90" data-max="90">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">DCP 195 — Laboratório de Gestão A</div>
             <div class="cagp-calc-desc">Disciplina de Extensão • 90h (6 créditos)</div>
           </div>
@@ -98,7 +98,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="ext" data-calc-id="ext_lab_b" data-step="90" data-max="90">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">DCP 196 — Laboratório de Gestão B</div>
             <div class="cagp-calc-desc">Disciplina de Extensão • 90h (6 créditos)</div>
           </div>
@@ -110,7 +110,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="ext" data-calc-id="ext_equalitas" data-step="15" data-max="90">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">Equalitas Consultoria Jr. (Empresa Jr.)</div>
             <div class="cagp-calc-desc">Teto máximo: até 90h (6 créditos)</div>
           </div>
@@ -122,7 +122,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="ext" data-calc-id="ext_proex" data-step="15" data-max="90">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">Projetos e Programas PROEX / SIEX</div>
             <div class="cagp-calc-desc">Bolsista ou voluntário • Teto: até 90h (6 cr)</div>
           </div>
@@ -134,7 +134,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="ext" data-calc-id="ext_eventos" data-step="15" data-max="60">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">Organização / Debatedor de Eventos (II)</div>
             <div class="cagp-calc-desc">Comissão ou moderador • Teto: até 60h (4 cr)</div>
           </div>
@@ -146,7 +146,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="ext" data-calc-id="ext_inter" data-step="15" data-max="120">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">Atividades Interinstitucionais de Ensino</div>
             <div class="cagp-calc-desc">Cursos em IES públicas • Teto: até 120h (8 cr)</div>
           </div>
@@ -172,7 +172,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         <p class="small text-muted mb-3">Abatem créditos optativos respeitando os limites do <strong>Art. 15</strong>:</p>
 
         <div class="cagp-calc-row" data-calc-group="aac" data-calc-id="aac_1" data-step="15" data-max="75">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">I. Pesquisa Interinstitucional</div>
             <div class="cagp-calc-desc">Teto máximo: até 75h (5 créditos)</div>
           </div>
@@ -184,7 +184,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="aac" data-calc-id="aac_2" data-step="15" data-max="45">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">II. Monitoria Acadêmica</div>
             <div class="cagp-calc-desc">Teto máximo: até 45h (3 créditos)</div>
           </div>
@@ -196,7 +196,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="aac" data-calc-id="aac_3" data-step="15" data-max="60">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">III. Eventos I — Ouvinte <span class="text-danger">(Prazo 120d!)</span></div>
             <div class="cagp-calc-desc">Teto máximo: até 60h (4 créditos)</div>
           </div>
@@ -208,7 +208,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="aac" data-calc-id="aac_4" data-step="15" data-max="30">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">IV. Grupos de Estudo + VI. Pesq. Bibliográfica</div>
             <div class="cagp-calc-desc">Até 30h (2 cr) cada modalidade</div>
           </div>
@@ -220,7 +220,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="aac" data-calc-id="aac_5" data-step="15" data-max="90">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">V. Iniciação Científica na UFMG (PIBIC/Volunt.)</div>
             <div class="cagp-calc-desc">Teto máximo: até 90h (6 créditos)</div>
           </div>
@@ -232,7 +232,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="aac" data-calc-id="aac_7" data-step="15" data-max="90">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">VII. Anais (30h) + VIII. Artigo em Periódico (60h)</div>
             <div class="cagp-calc-desc">Publicações científicas • Anais têm prazo de 120d</div>
           </div>
@@ -244,7 +244,7 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         </div>
 
         <div class="cagp-calc-row" data-calc-group="aac" data-calc-id="aac_9" data-step="15" data-max="60">
-          <div>
+          <div class="cagp-calc-info">
             <div class="fw-bold small">IX. Vivência Profissional / Estágio Não-Obrig.</div>
             <div class="cagp-calc-desc">Teto máximo: até 60h (4 créditos)</div>
           </div>
