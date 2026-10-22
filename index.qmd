@@ -169,7 +169,7 @@ Serviços essenciais, ferramentas de mobilidade no campus e canais operacionais 
         <h3 class="fs-6 fw-bold text-uppercase mb-2">Circular UFMG (Interno Rotas)</h3>
         <p class="small text-muted mb-3">Mapa interativo e rastreamento colaborativo em tempo real dos ônibus circulares no Campus Pampulha para o turno noturno.</p>
       </div>
-      <a href="https://internorotas.com/" target="_blank" rel="noopener noreferrer" class="cagp-btn cagp-btn-outline w-100 text-center" aria-label="Abrir aplicativo Interno Rotas">Abrir Interno Rotas ↗</a>
+      <a href="https://internorotas.com/" target="_blank" rel="noopener noreferrer" class="cagp-btn cagp-btn-outline w-100 text-center" aria-label="Abrir aplicativo Interno Rotas (abre em nova aba)">Abrir Interno Rotas ↗</a>
     </div>
   </div>
 

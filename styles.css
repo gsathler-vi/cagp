@@ -60,6 +60,12 @@ textarea:focus-visible {
   outline-offset: 2px !important;
 }
 
+/* Suppress Quarto default title block (each page defines its own semantic .cagp-hero H1) */
+header#title-block-header,
+.quarto-title-block {
+  display: none !important;
+}
+
 /* --------------------------------------------------------------------------
    Navbar Customizations
    -------------------------------------------------------------------------- */
@@ -935,10 +941,10 @@ div.callout-tip .callout-toggle::before {
    ========================================================================== */
 #quarto-announcement,
 #quarto-announcement.hidden {
-  background-color: var(--cagp-red, #8B1E2D) !important;
+  background-color: var(--cagp-dark, #0A0A0A) !important;
   color: #FFFFFF !important;
   border: none !important;
-  border-bottom: 2px solid var(--cagp-dark, #111111) !important;
+  border-bottom: 2px solid var(--cagp-ouro, #E8A317) !important;
   border-radius: 0px !important;
   padding: 0.55rem 1.25rem !important;
   font-family: 'Inter', sans-serif !important;
@@ -955,7 +961,7 @@ div.callout-tip .callout-toggle::before {
 }
 
 #quarto-announcement .quarto-announcement-icon {
-  color: #FFFFFF !important;
+  color: var(--cagp-ouro, #E8A317) !important;
   font-size: 1.15rem !important;
   margin-right: 0.65rem !important;
   flex-shrink: 0 !important;
@@ -979,9 +985,9 @@ div.callout-tip .callout-toggle::before {
   font-weight: 700 !important;
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
-  background-color: var(--cagp-dark, #111111) !important;
+  background-color: var(--cagp-red, #9E2424) !important;
   color: #FFFFFF !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   padding: 0.22rem 0.55rem !important;
   margin-right: 0.45rem !important;
   display: inline-block !important;
