@@ -13,8 +13,37 @@ toc: true
 
 # REPOSITÓRIO NORMATIVO DE GESTÃO PÚBLICA {.cagp-hero-title}
 
-Todas as diretrizes, prazos e regras informados neste portal baseiam-se estritamente nos documentos oficiais aprovados pelas instâncias colegiadas da UFMG (Colegiado de Gestão Pública, Congregação da FAFICH e Conselho de Ensino, Pesquisa e Extensão - CEPE). Disponibilizamos abaixo os arquivos originais digitalizados para consulta pública e download.
+Todas as diretrizes, prazos e regras informados neste portal baseiam-se estritamente nos documentos oficiais aprovados pelas instâncias colegiadas da UFMG (Colegiado de Gestão Pública, Congregação da FAFICH e Conselho de Ensino, Pesquisa e Extensão - CEPE), bem como no Regimento Interno formal da entidade discente. Disponibilizamos abaixo os arquivos originais digitalizados para consulta pública e download.
 :::
+
+## 📜 Atos Institucionais da Representação Discente
+
+O documento supremo de auto-organização, direitos discentes e governança do Centro Acadêmico de Gestão Pública da FAFICH/UFMG:
+
+::: {.row .g-4 .mb-5}
+::: {.col-12}
+```{=html}
+<div class="cagp-doc-card">
+  <div class="cagp-doc-header">
+    <div>
+      <span class="cagp-doc-badge bg-danger text-white">Regimento Interno Oficial • 2024</span>
+      <span class="cagp-doc-badge bg-light text-dark">PDF • 307 KB</span>
+      <span class="cagp-doc-badge bg-dark text-white">Vigência Plena</span>
+    </div>
+    <h3 class="cagp-doc-title">Regimento Interno do Centro Acadêmico de Gestão Pública (CAGP)</h3>
+    <div class="cagp-doc-meta"><strong>Aprovação:</strong> Assembleia Geral dos Estudantes de Gestão Pública • 14 de outubro de 2024 (Revoga o Estatuto de 2010 e o Regimento de 2021)</div>
+    <p class="cagp-doc-desc">Documento normativo soberano que define a natureza civil, autônoma e suprapartidária do CAGP (Art. 3º e 4º), os princípios regedores da Administração Pública de legalidade, impessoalidade, moralidade, publicidade e eficiência (Art. 8º, III), a estruturação em 7 Diretorias Executivas com no mínimo 8 membros (Art. 24 e 25), a soberania da Assembleia Geral (Art. 35 a 40), a fiscalização pela Junta Eleitoral permanente e independente (Art. 20 a 23) e o rito de eleições diretas e secretas com debate obrigatório (Art. 41 a 45).</p>
+  </div>
+  <div class="cagp-doc-actions">
+    <a href="documentos/regimento-interno-cagp-ufmg.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary" aria-label="Visualizar Regimento Interno do CAGP em PDF">👁️ Visualizar PDF</a>
+    <a href="documentos/regimento-interno-cagp-ufmg.pdf" download="Regimento-Interno-CAGP-UFMG.pdf" class="cagp-doc-btn cagp-doc-btn-outline" aria-label="Baixar Regimento Interno do CAGP em PDF">📥 Baixar Arquivo Oficial</a>
+  </div>
+</div>
+```
+:::
+:::
+
+---
 
 ## 🏛️ Atos Fundamentais do Curso
 
@@ -157,6 +186,102 @@ Conforme o **Art. 3º do Regulamento**, o curso oferece 3 modalidades formais de
 ```
 :::
 :::
+---
+
+## 📝 Formulários e Requerimentos Administrativos {#formularios}
+
+Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da FAFICH/UFMG para abertura de processos acadêmicos via SEI ou protocolo presencial:
+
+```{=html}
+<div class="row g-4 mb-5">
+  <!-- Coluna 1: Trajetória & Percurso -->
+  <div class="col-lg-6">
+    <div class="cagp-card h-100">
+      <h4 class="fs-6 fw-bold text-uppercase text-danger mb-3">🧭 Trajetória Curricular e Matrícula</h4>
+      
+      <div class="cagp-form-item">
+        <div>
+          <div class="cagp-form-title">Mudança de Percurso Curricular</div>
+          <div class="cagp-form-sub">Migração formal entre Geral (01-01), Complementar (01-02) e Avançado (01-03).</div>
+        </div>
+        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-MUDANCA-DE-PERCURSO-CURRICULAR.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+      </div>
+
+      <div class="cagp-form-item">
+        <div>
+          <div class="cagp-form-title">Formação Complementar Aberta (FCA)</div>
+          <div class="cagp-form-sub">Solicitação de percurso individual com disciplinas de outros departamentos da UFMG.</div>
+        </div>
+        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-FORMACAO-COMPLEMENTAR-ABERTA-FCA.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+      </div>
+
+      <div class="cagp-form-item">
+        <div>
+          <div class="cagp-form-title">Trancamento Parcial de Matrícula</div>
+          <div class="cagp-form-sub">Cancelamento de inscrição em disciplina isolada dentro do prazo do calendário.</div>
+        </div>
+        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-TRANCAMENTO-PARCIAL-DE-MATRICULA.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+      </div>
+
+      <div class="cagp-form-item">
+        <div>
+          <div class="cagp-form-title">Trancamento Total de Matrícula</div>
+          <div class="cagp-form-sub">Suspensão de atividades no semestre com justificativa formal comprovada.</div>
+        </div>
+        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-TRANCAMENTO-TOTAL-DE-MATRICULA.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coluna 2: Integralização & Aproveitamento -->
+  <div class="col-lg-6">
+    <div class="cagp-card h-100">
+      <h4 class="fs-6 fw-bold text-uppercase text-dark mb-3">🎓 Aproveitamento, Conclusão & Condições Especiais</h4>
+
+      <div class="cagp-form-item">
+        <div>
+          <div class="cagp-form-title">Aproveitamento de Estudos (Dispensa)</div>
+          <div class="cagp-form-sub">Para disciplinas cursadas em outra faculdade. <em>Prazo limite: até o 2º período</em> (Res. CEPE 06/19).</div>
+        </div>
+        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-APROVEITAMENTO-DE-ESTUDOS.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+      </div>
+
+      <div class="cagp-form-item">
+        <div>
+          <div class="cagp-form-title">Integralização de Horas por AAC (N-20229)</div>
+          <div class="cagp-form-sub">Validação de até 300h de atividades complementares na versão curricular vigente.</div>
+        </div>
+        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-INTEGRALIZACAO-DE-HORAS-POR-ATIVIDADE-ACADEMICA-COMPLEMENTAR-N-20229.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+      </div>
+
+      <div class="cagp-form-item">
+        <div>
+          <div class="cagp-form-title">Termo de Aceite de Orientador de TCC</div>
+          <div class="cagp-form-sub">Declaração formal assinada pelo orientador docente para início da monografia/artigo.</div>
+        </div>
+        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/TERMO-DE-ACEITE-ORIENTADOR-TCC.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+      </div>
+
+      <div class="cagp-form-item">
+        <div>
+          <div class="cagp-form-title">Inscrição à Colação de Grau</div>
+          <div class="cagp-form-sub">Requerimento final de formatura para discentes concluintes dos 10 períodos.</div>
+        </div>
+        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-INSCRICAO-A-COLACAO-DE-GRAU.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+      </div>
+
+      <div class="cagp-form-item">
+        <div>
+          <div class="cagp-form-title">Regime Especial (Gestante / Médico)</div>
+          <div class="cagp-form-sub">Requerimento de exercícios domiciliares e inspeção médica oficial.</div>
+        </div>
+        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-REGIME-ESPECIAL-PARA-GESTANTE.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 ---
 
 ## 💡 Como Usar os Documentos Oficiais em Requerimentos

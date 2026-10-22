@@ -39,8 +39,9 @@ Estudar à noite na UFMG tem uma dinâmica própria que você precisa conhecer d
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-#### 🚌 Transporte e Circulares Noturnos
-- Os **ônibus circulares internos da UFMG são 100% gratuitos** e operam interligando as portarias da Av. Antônio Carlos e Av. Carlos Luz (Catalão) aos prédios da FAFICH e Reitoria até as 22h45.
+#### 🚌 Transporte e Circulares Noturnos (Interno Rotas)
+- Os **ônibus circulares internos da UFMG são 100% gratuitos** e operam interligando as portarias da Av. Antônio Carlos e Av. Carlos Luz (Catalão) aos prédios da FAFICH, ICEx e Reitoria até as 22h45.
+- **Rastreamento em Tempo Real:** Utilize o aplicativo [**Interno Rotas** (internorotas.com)](https://internorotas.com/){target="_blank" rel="noopener noreferrer"} no celular para visualizar o mapa dinâmico das linhas, previsão de chegada nos pontos da FAFICH e lotação estimada.
 - As estações do MOVE UFMG e Mineirão têm linhas rápidas com destino ao Centro, Venda Nova e demais regiões metropolitanas.
 :::
 :::
@@ -104,10 +105,93 @@ A **Faculdade de Filosofia e Ciências Humanas** é uma das unidades mais tradic
 ::: {.cagp-card}
 ### 📍 Onde Encontrar a Gestão e Pontos-Chave
 - **Salinha do CAGP (Pilotis da FAFICH):** Espaço dos Centros Acadêmicos no pilotis térreo. Venha tomar um café, tirar dúvidas sobre professores, provas e percurso, e participar dos debates da gestão.
-- **Colegiado de Coordenação Didática de Gestão Pública:** Localizado no **2º andar da FAFICH**. É o órgão responsável por autorizar quebras de pré-requisito, aproveitamento de estudos e requerimentos formais.
 - **Departamento de Ciência Política (DCP):** Departamento acadêmico de vinculação do curso de Gestão Pública, no 3º andar da FAFICH.
 - **Biblioteca Setorial da FAFICH:** Amplo acervo especializado em Ciência Política, Administração Pública, Sociologia, Economia e periódicos internacionais.
 :::
+
+### 🏢 Atendimento Acadêmico: Secretaria vs. CEAG {#secretaria-e-ceag}
+
+Como estudante do noturno, você conta com dois canais de atendimento presencial no **2º andar da FAFICH**:
+
+```{=html}
+<div class="row g-4 my-2">
+  <div class="col-md-6">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="cagp-badge cagp-badge-red">Secretaria do Curso</span>
+        <span class="text-muted small">Sala 2039</span>
+      </div>
+      <h4 class="fs-6 fw-bold text-uppercase mb-2">Secretaria de Gestão Pública</h4>
+      <p class="small text-muted mb-2">Atendimento especializado em demandas curriculares exclusivas do curso de Gestão Pública (contato direto com a coordenação).</p>
+      <ul class="small mb-3 ps-3">
+        <li><strong>Secretários:</strong> Wander Wenceslau Pereira / Ubirajara Dutra</li>
+        <li><strong>Horário Presencial:</strong> Quarta-feira, das 13h00 às 19h00</li>
+        <li><strong>Telefone:</strong> (31) 3409-3826</li>
+        <li><strong>E-mail Oficial:</strong> <a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="cagp-badge cagp-badge-dark">Cobertura Noturna</span>
+        <span class="text-muted small">2º Andar (Caixas)</span>
+      </div>
+      <h4 class="fs-6 fw-bold text-uppercase mb-2">CEAG FAFICH (Graduação)</h4>
+      <p class="small text-muted mb-2">Centro de Atendimento à Graduação da FAFICH. Ideal para o estudante do noturno resolver protocolos sem faltar ao trabalho diurno!</p>
+      <ul class="small mb-3 ps-3">
+        <li><strong>Horário Integral:</strong> Segunda a sexta-feira, das <strong>08h00 às 22h00</strong></li>
+        <li><strong>Local:</strong> Guichê ao lado dos caixas eletrônicos (2º piso)</li>
+        <li><strong>Serviços:</strong> Entrega de atestados médicos, requerimentos de trancamento, protocolos gerais, certidões e declarações de matrícula.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## 🤝 Permanência Estudantil, Bolsas e Assistência
+
+A UFMG compreende a assistência estudantil como direito à educação pública de qualidade, garantindo que o estudante tenha condições socioeconômicas de concluir seu curso:
+
+```{=html}
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="fs-4">🍽️</span>
+        <h4 class="fs-6 fw-bold text-uppercase mb-0">FUMP (Mendes Pimentel)</h4>
+      </div>
+      <p class="small text-muted mb-2">Responsável pela assistência socioeconômica: bolsas de alimentação (RU subsidiado ou gratuito), auxílio moradia, auxílio transporte e material acadêmico.</p>
+      <a href="http://www.fump.ufmg.br/" target="_blank" rel="noopener noreferrer" class="small fw-bold">Acessar portal da FUMP ↗</a>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="fs-4">🌱</span>
+        <h4 class="fs-6 fw-bold text-uppercase mb-0">PRAE & Ações Afirmativas</h4>
+      </div>
+      <p class="small text-muted mb-2">Pró-Reitoria de Assuntos Estudantis: políticas de permanência, acolhimento psicossocial, apoio a projetos acadêmicos geridos por estudantes e ações afirmativas.</p>
+      <a href="https://www.ufmg.br/prae/" target="_blank" rel="noopener noreferrer" class="small fw-bold">Acessar PRAE UFMG ↗</a>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="fs-4">♿</span>
+        <h4 class="fs-6 fw-bold text-uppercase mb-0">NAI (Acessibilidade)</h4>
+      </div>
+      <p class="small text-muted mb-2">Núcleo de Acessibilidade e Inclusão: acompanhamento pedagógico, mediação de materiais acessíveis e suporte físico para discentes com deficiência ou neurodivergências.</p>
+      <a href="https://www.ufmg.br/nai/" target="_blank" rel="noopener noreferrer" class="small fw-bold">Acessar NAI UFMG ↗</a>
+    </div>
+  </div>
+</div>
+```
 
 ---
 

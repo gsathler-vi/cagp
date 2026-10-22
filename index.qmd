@@ -2,6 +2,7 @@
 title: "Centro Acadêmico de Gestão Pública"
 subtitle: "FAFICH • Universidade Federal de Minas Gerais"
 toc: false
+title-block-style: none
 ---
 
 ::: {.cagp-hero}
@@ -19,10 +20,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
 
 ::: {.d-flex .flex-wrap .gap-2 .mt-4}
 [🚀 Sou Calouro](calouros.qmd){.cagp-btn .cagp-btn-primary aria-label="Ir para o Guia de Sobrevivência do Calouro"}
-[🧭 Percurso (10P)](percurso.qmd){.cagp-btn .cagp-btn-secondary aria-label="Visualizar a grade e os 3 percursos curriculares"}
-[💼 Estágio & TCC](estagio-tcc.qmd){.cagp-btn .cagp-btn-outline aria-label="Acessar regras oficiais de Estágio Obrigatório e TCC"}
-[🌱 Extensão & AAC](acg.qmd){.cagp-btn .cagp-btn-outline aria-label="Consultar regras de Extensão Obrigatória e Atividades Complementares"}
-[📚 Documentos](documentos.qmd){.cagp-btn .cagp-btn-outline aria-label="Acessar o repositório de documentos oficiais e PDFs"}
+[🧭 Percurso Curricular (10P)](percurso.qmd){.cagp-btn .cagp-btn-secondary aria-label="Visualizar a grade e os 3 percursos curriculares"}
 :::
 :::
 
@@ -40,14 +38,14 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
 :::
 :::
 
-## 📊 O Curso de Gestão Pública em Números Oficiais
+## <span aria-hidden="true">📊</span> O Curso de Gestão Pública em Números Oficiais
 
 ::: {.row .g-3 .mb-5}
 ::: {.col-md-3 .col-6}
 ::: {.cagp-stat-card}
 <div class="cagp-stat-value">3.000 h</div>
 <div class="cagp-stat-label">Carga Horária Total</div>
-<small class="text-muted">NE + NG para integralização</small>
+<small class="text-muted">Núcleo Específico + Geral (Plena)</small>
 :::
 :::
 
@@ -76,7 +74,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
 :::
 :::
 
-## 🧭 Navegação por Módulos Oficiais
+## <span aria-hidden="true">🧭</span> Navegação por Módulos Oficiais
 
 ::: {.row .g-4}
 ::: {.col-md-3 .col-sm-6}
@@ -155,24 +153,90 @@ Entenda a diferença entre a **Extensão Obrigatória (300h)** e as **Atividades
 
 ---
 
-## 📢 Avisos Oficiais e Comunicados do Colegiado
+## <span aria-hidden="true">⚡</span> Hub de Acesso Rápido & Serviços Universitários
+
+Serviços essenciais, ferramentas de mobilidade no campus e canais operacionais cotidianos:
+
+```{=html}
+<div class="row g-4 my-2">
+  <div class="col-md-6 col-lg-3">
+    <div class="cagp-hub-card">
+      <div>
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="fs-4" aria-hidden="true">🚌</span>
+          <span class="cagp-badge-live">Tempo Real</span>
+        </div>
+        <h3 class="fs-6 fw-bold text-uppercase mb-2">Circular UFMG (Interno Rotas)</h3>
+        <p class="small text-muted mb-3">Mapa interativo e rastreamento colaborativo em tempo real dos ônibus circulares no Campus Pampulha para o turno noturno.</p>
+      </div>
+      <a href="https://internorotas.com/" target="_blank" rel="noopener noreferrer" class="cagp-btn cagp-btn-outline w-100 text-center" aria-label="Abrir aplicativo Interno Rotas">Abrir Interno Rotas ↗</a>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3">
+    <div class="cagp-hub-card">
+      <div>
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="fs-4" aria-hidden="true">🏢</span>
+          <span class="cagp-badge cagp-badge-dark">Até 22h00</span>
+        </div>
+        <h3 class="fs-6 fw-bold text-uppercase mb-2">CEAG FAFICH (Atendimento Noturno)</h3>
+        <p class="small text-muted mb-3">Centro de Atendimento à Graduação no 2º andar da FAFICH aberto das 08h às 22h para protocolo de requerimentos e processos.</p>
+      </div>
+      <a href="calouros.qmd#secretaria-e-ceag" class="cagp-btn cagp-btn-outline w-100 text-center" aria-label="Ver horários de atendimento da CEAG">Ver Horários &rarr;</a>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3">
+    <div class="cagp-hub-card">
+      <div>
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="fs-4" aria-hidden="true">📝</span>
+          <span class="cagp-badge cagp-badge-red">Modelos</span>
+        </div>
+        <h3 class="fs-6 fw-bold text-uppercase mb-2">Formulários & Requerimentos</h3>
+        <p class="small text-muted mb-3">Modelos oficiais de trancamento, aproveitamento de estudos, FCA, mudança de percurso e aceite de orientador de TCC.</p>
+      </div>
+      <a href="documentos.qmd#formularios" class="cagp-btn cagp-btn-outline w-100 text-center" aria-label="Acessar formulários administrativos">Acessar Modelos &rarr;</a>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3">
+    <div class="cagp-hub-card">
+      <div>
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="fs-4" aria-hidden="true">🌱</span>
+          <span class="cagp-badge cagp-badge-blue">Extensão</span>
+        </div>
+        <h3 class="fs-6 fw-bold text-uppercase mb-2">Programa de Imersão</h3>
+        <p class="small text-muted mb-3">Laboratórios A e B, assessoria a prefeituras e projetos do SIEX com produtos técnicos aplicados para o setor público.</p>
+      </div>
+      <a href="acg.qmd#programa-de-imersao" class="cagp-btn cagp-btn-outline w-100 text-center" aria-label="Conhecer o Programa de Imersão">Conhecer Imersão &rarr;</a>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## <span aria-hidden="true">📢</span> Avisos Oficiais e Comunicados do Colegiado
 
 ::: {.row .g-4 .mt-2}
 ::: {.col-md-6}
 ::: {.cagp-card}
 <span class="cagp-badge cagp-badge-red mb-2">Regime Acadêmico</span>
-<h4>Matrícula Semestral e Carga Horária Mínima</h4>
+<h3 class="cagp-card-title fs-5 mb-2">Matrícula Semestral e Carga Horária Mínima</h3>
 <p class="text-muted small mb-3">Conforme as normas regimentais da graduação e o PPC, o limite mínimo de matrícula por semestre é de <strong>180 horas (12 créditos)</strong>. O Colegiado do Curso de Gestão Pública atende dúvidas no 2º andar da FAFICH.</p>
-[Entenda o Planejamento Semestral &rarr;](percurso.qmd)
+[Entenda o Planejamento Semestral &rarr;](percurso.qmd){aria-label="Entenda o planejamento semestral e carga horária mínima"}
 :::
 :::
 
 ::: {.col-md-6}
 ::: {.cagp-card}
 <span class="cagp-badge cagp-badge-dark mb-2">Extensão Universitária</span>
-<h4>Curricularização da Extensão e Empresa Jr.</h4>
+<h3 class="cagp-card-title fs-5 mb-2">Curricularização da Extensão e Empresa Jr.</h3>
 <p class="text-muted small mb-3">Lembre-se de que 300 horas do seu percurso devem ser dedicadas a ações e projetos de extensão cadastrados na PROEX ou na Empresa Júnior de Gestão Pública da UFMG.</p>
-[Ver Diretrizes de Extensão &rarr;](acg.qmd)
+[Ver Diretrizes de Extensão &rarr;](acg.qmd){aria-label="Ver diretrizes de extensão universitária e Empresa Júnior"}
 :::
 :::
 :::

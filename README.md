@@ -2,7 +2,7 @@
 
 **Projeto:** Centro Acadêmico de Gestão Pública (CAGP) — FAFICH / UFMG  
 **Finalidade:** Documentação pedagógica, técnica e histórica integral do processo de desenvolvimento do portal do CAGP utilizando Quarto CLI, Positron IDE, Google Antigravity Extension, orquestração de skills de IA, tema neo-brutalista Brite e conformidade documental e de acessibilidade.  
-**Data:** 21 de Outubro de 2026  
+**Data:** 22 de Outubro de 2026  
 **Status do Projeto:** Compilado e validado em `docs/` (Pronto para GitHub Pages)  
 
 ---
@@ -21,8 +21,11 @@
 11. [Ciclo 7: Redesenho do Emblema Hero na Página Inicial](#11-ciclo-7-redesenho-do-emblema-hero-na-página-inicial)
 12. [Ciclo 8: Customização Neo-brutalista dos Callouts do Quarto](#12-ciclo-8-customização-neo-brutalista-dos-callouts-do-quarto)
 13. [Ciclo 9: Alerta Permanente de Proposta Eleitoral de Chapa](#13-ciclo-9-alerta-permanente-de-proposta-eleitoral-de-chapa)
-14. [Matriz Comparativa Completa de Arquivos (Antes vs. Depois)](#14-matriz-comparativa-completa-de-arquivos-antes-vs-depois)
-15. [Instruções de Manutenção e Publicação](#15-instruções-de-manutenção-e-publicação)
+14. [Ciclo 10: Incorporação do Regimento Interno e Governança do CAGP](#14-ciclo-10-incorporação-do-regimento-interno-e-governança-do-cagp)
+15. [Ciclo 11: Web Scraping Institucional e Arquitetura Híbrida de Serviços](#15-ciclo-11-web-scraping-institucional-e-arquitetura-híbrida-de-serviços)
+16. [Ciclo 12: Inicialização do Impeccable (PRODUCT.md) e Atualização da Memória Técnica](#16-ciclo-12-inicialização-do-impeccable-productmd-e-atualização-da-memória-técnica)
+17. [Matriz Comparativa Completa de Arquivos (Antes vs. Depois)](#17-matriz-comparativa-completa-de-arquivos-antes-vs-depois)
+18. [Instruções de Manutenção e Publicação](#18-instruções-de-manutenção-e-publicação)
 
 ---
 
@@ -39,34 +42,37 @@ Visualmente, o projeto articula duas forças de design:
 ```mermaid
 flowchart TD
     subgraph Fontes [Fontes Normativas e Visuais]
-      A[Documentos Oficiais do Curso: PPC, Regulamento, Ementário e Percursos]
-      B[Manual de Identidade Visual CAGP v2.0]
-      C[Tema Bootswatch Brite SCSS / Neo-brutalismo]
-      D[Diretrizes Éticas e Proposta de Chapa]
+      A[Documentos do Curso: PPC N-20229, Regulamento, Ementário e Matrizes]
+      B[Regimento Interno Oficial do CAGP 2024]
+      C[Manual de Identidade Visual CAGP v2.0 & Candangos]
+      D[Tema Bootswatch Brite SCSS / Neo-brutalismo]
+      E[Web Scraping: 11 Páginas Oficiais FAFICH/UFMG]
+      F[Diretrizes Éticas e Proposta de Chapa]
     end
 
     subgraph Ferramental [Stack Tecnológico & IA]
       T1[Quarto CLI v1.10.18+]
       T2[Positron IDE by Posit]
       T3[Google Antigravity Extension]
+      T4[Pandoc Engine com Blocos raw html]
     end
 
     subgraph Skills [Orquestração de Skills de IA]
       S1[brand-yml: Tokens de Marca e Cores]
       S2[quarto-authoring: Estrutura, Recursos e Pandoc]
-      S3[impeccable: UI/UX Craft, Proporção e Mobile]
+      S3[impeccable: UI/UX Craft, PRODUCT.md e Mobile]
       S4[alt-text: Acessibilidade Universal WCAG AAA]
     end
 
     subgraph Portal [Portal CAGP Compilado em docs/]
-      P1[index.html - Início com Emblema Hero]
-      P2[calouros.html - Guia de Sobrevivência Noturno]
-      P3[percurso.html - 10 Semestres, 3 Percursos & Ementário]
+      P1[index.html - Início com Emblema Hero & Hub de Acesso Rápido]
+      P2[calouros.html - Guia Noturno, Interno Rotas & Permanência FUMP/PRAE]
+      P3[percurso.html - 10 Semestres, 27 Ementas & 3 Percursos]
       P4[estagio-tcc.html - Estágio A/B, Art. 41 & 4 TCCs]
-      P5[acg.html - Extensão 300h vs AAC 300h]
-      P6[documentos.html - Repositório de PDFs Oficiais]
-      P7[faq.html - FAQ Regimental com Accordions]
-      P8[sobre.html - História, Símbolo & FAFICH/DCP]
+      P5[acg.html - Extensão 300h, Programa de Imersão & 15 Núcleos DCP]
+      P6[documentos.html - 7 PDFs Oficiais & Central de Formulários]
+      P7[faq.html - 9 Perguntas: Mobilidade, CEAG Noturno & Prazos]
+      P8[sobre.html - Regimento 2024, 7 Diretorias, Colegiado & Candangos]
       P9[Alerta Permanente de Proposta Eleitoral de Chapa]
     end
 
@@ -342,43 +348,144 @@ fazer um plano /plan e /grill-me para adicionar um alerta permanente com fundo t
 
 ---
 
-## 14. Matriz Comparativa Completa de Arquivos (Antes vs. Depois)
+## 14. Ciclo 10: Incorporação do Regimento Interno e Governança do CAGP
 
-| Arquivo / Diretório | Estado Inicial | Estado Final Após os 9 Ciclos | Função no Sistema |
+### Prompt do Usuário
+```text
+eu adicionei na pasta de documentos o @[documentos_oficiais_do_curso/regimento_interno_do_centro_acad_mico_de_gest_o_p_blica_cagp.md] de como o CAGP funciona juntamente do PDF original do Regimento Interno @[documentos_oficiais_do_curso/pdfs_originais/regimento_interno_do_centro_acad_mico_de_gest_o_p_blica_cagp.pdf] . Elabore um plano /plan e /grill-me para colocar as informações veridicas do CAGO no site e adicoionar o documnento oficial no repositorio. Ademais se atente que precisei fazer uma mudança na hora de colocar certos codigos em html que precisam de serem em um bloco  html para renderizar de acorsdo no Quarto. Lembre de utilizar a skills corretas e md certos delas
+
+```{=html}
+
+```
+```
+
+### O Que Foi Feito
+- **Inclusão do Documento PDF Oficial (`documentos/`):**
+  - Cópia e normalização do arquivo original `regimento_interno_do_centro_acad_mico_de_gest_o_p_blica_cagp.pdf` (307 KB) para `documentos/regimento-interno-cagp-ufmg.pdf`.
+  - O documento é o ato formal aprovado em Assembleia Geral no dia **14 de outubro de 2024**, revogando o Estatuto de 2010 e o Regimento de 2021.
+- **Destaque Soberano no Repositório (`documentos.qmd`):**
+  - Criação da seção de destaque no topo da página: *"📜 Atos Institucionais da Representação Discente"*.
+  - Envelopamento do card documental em bloco ````{=html} ... ```` para compilação 100% limpa no Quarto/Pandoc.
+  - Disponibilização dos botões oficiais de visualização e download direto.
+- **Reestruturação Factual Completa da Página "Sobre o CAGP" (`sobre.qmd`):**
+  - **Definição Jurídica e Institucional:** Entidade civil sem fins lucrativos, de representação de todos os matriculados em Gestão Pública (FAFICH/UFMG), expressamente suprapartidária e autônoma perante governos, DA e DCE (Arts. 3º, 4º e 7º).
+  - **Princípios da Administração Pública (Art. 8º):** Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência, Transparência Ativa e manutenção do CNPJ.
+  - **Instâncias de Deliberação e Fiscalização:**
+    - *Assembleia Geral (Arts. 35 a 40):* Instância máxima; ordinária anual e extraordinária (requerida pela gestão, Junta ou 5 alunos); quórum qualificado de 2/3 para decisões estatutárias.
+    - *Junta Eleitoral Permanente (Arts. 20 a 23):* 3 discentes independentes eleitos em assembleia, vedada a presença de integrantes da gestão atual ou candidatos, responsável pela lisura, condução do pleito e debate eleitoral obrigatório.
+  - **As 7 Diretorias Executivas (Arts. 24 a 34):**
+    - Apresentação em cards neo-brutalistas com organograma e gavetas retráteis (`<details><summary>`) para as competências regimentais: DIPRE (Presidência), DIJUR (Assuntos Jurídicos), DIFI (Financeira), DIAC (Acadêmica), DIAP (Articulação e Política), DICULT (Cultura e Calouradas) e DIMAC (Marketing e Comunicação).
+    - Exigência de chapa com no mínimo 8 membros (Art. 25).
+    - *Linha Sucessória da Presidência (Art. 26):* Vice-Presidência ➔ DIJUR ➔ DIFI ➔ Dissolução e novas eleições pela Junta Eleitoral.
+  - **Democracia Discente & Processo Eleitoral (Arts. 41 a 45):** Voto direto e secreto, debate obrigatório (mín. 24h antes) e mandato de 1 ano com 1 reeleição consecutiva permitida.
+- **Solução Técnica de Renderização Quarto:**
+  - Isolamento estrito de todos os blocos com marcação HTML complexa dentro de ````{=html} ... ````, eliminando conflitos de fechamento de tags do Pandoc.
+
+---
+
+## 15. Ciclo 11: Web Scraping Institucional e Arquitetura Híbrida de Serviços
+
+### Prompt do Usuário
+```text
+faça um plano /plan e /grill-me de analisar todos os sites que voce tem acesso e fazer um webscrapping para decidir o que é melhor colocar de informação no site do cagpo e o que é melhor deixar de acesso rapido apenas 
+
+https://internorotas.com/
+https://www.fafich.ufmg.br/gestaopublica/
+https://www.fafich.ufmg.br/gestaopublica/?page_id=188
+https://www.fafich.ufmg.br/gestaopublica/?page_id=207
+https://www.fafich.ufmg.br/gestaopublica/?page_id=214
+https://www.fafich.ufmg.br/gestaopublica/?page_id=236
+https://www.fafich.ufmg.br/gestaopublica/?page_id=237
+https://www.fafich.ufmg.br/gestaopublica/?page_id=239
+https://www.fafich.ufmg.br/gestaopublica/?page_id=275
+https://www.fafich.ufmg.br/gestaopublica/?page_id=278
+https://www.ufmg.br/viverufmg/mobilidade-academica/
+```
+
+### O Que Foi Feito
+- **Web Scraping das 11 URLs Oficiais:** Script em Python automatizado no scratch directory para extração limpa e estruturada do conteúdo institucional da FAFICH e UFMG.
+- **Implementação da Arquitetura Híbrida (Conteúdo Denso vs. Acesso Rápido):**
+  - **Hub de Acesso Rápido (`index.qmd`):** Criação de seção dedicada com cards interativos:
+    - *Ônibus Circular UFMG em Tempo Real:* Conexão direta com o aplicativo **Interno Rotas** (`internorotas.com`).
+    - *Atendimento Noturno CEAG:* Informação clara do funcionamento do guichê no 2º piso da FAFICH aberto de 08h às 22h.
+    - *Central de Formulários:* Acesso rápido a requerimentos oficiais.
+    - *Programa de Imersão:* Destaque para projetos de extensão com prefeituras e órgãos públicos.
+  - **Guia do Calouro Noturno (`calouros.qmd`):**
+    - Card de transporte com o Interno Rotas (previsões, linhas e mapa no celular).
+    - Divisão operacional: Secretaria do Curso (Sala 2039, quartas das 13h às 19h) vs. CEAG FAFICH (segunda a sexta das 08h às 22h, cobrindo o turno noturno).
+    - Guia prático de Permanência Estudantil: FUMP (alimentação no RU, moradia, transporte), PRAE (ações afirmativas), NAI (acessibilidade) e bolsas PROGRAD.
+  - **Extensão e Pesquisa Prática (`acg.qmd`):**
+    - Detalhamento dos 3 eixos do **Programa de Imersão no Campo de Públicas** (Laboratórios A e B, assessoria a prefeituras no *Gestão além do Horizonte*, e *Práticas Avançadas* registradas no SIEX 109111/109109 com o Instagram `@programadeimersao`).
+    - Catálogo dos 15 Núcleos de Pesquisa do DCP/FAFICH (Publicus, CECOMP, PRODEP, CEDE, CEL, Margem, NEPEM, etc.) para bolsas e Iniciação Científica (AAC).
+  - **Governança do Colegiado (`sobre.qmd`):**
+    - Composição oficial da Coordenação (Profª Isabele Batista Mitozo e Profª Ludmila Mendonça Lopes Ribeiro), representantes docentes (DCP, DSO, ECN) e titular discente.
+  - **Central de Formulários Oficiais (`documentos.qmd`):**
+    - Nova seção estruturada em bloco ````{=html}```` com links diretos para requerimentos administrativos da FAFICH (mudança de percurso, FCA, trancamentos, aproveitamento de estudos, AAC, aceite de orientador de TCC, colação de grau e regime especial).
+  - **Central de Dúvidas Atualizada (`faq.qmd`):**
+    - Novas respostas sobre Mobilidade Acadêmica (DRI/ANDIFES), prazo decadencial de aproveitamento de estudos (até o 2º período, Resolução CEPE nº 06/2019) e atendimento da CEAG até 22h.
+
+---
+
+## 16. Ciclo 12: Inicialização do Impeccable (PRODUCT.md) e Atualização da Memória Técnica
+
+### Prompts do Usuário
+```text
+/impeccable init
+```
+e subsequentemente:
+```text
+atualize o @[/home/gsathler/Nextcloud/Projects/cagp/README.md] com todas as mudanças feitas até o momento
+```
+
+### O Que Foi Feito
+- **Institucionalização da Verdade do Produto (`PRODUCT.md`):**
+  - Execução da diretiva de design `/impeccable init`, gerando o arquivo canônico [`PRODUCT.md`](PRODUCT.md) na raiz do projeto.
+  - Formalização dos perfis de usuários primários (calouros e veteranos noturnos), missão republicana, posicionamento ético da chapa, sistemas conexos da UFMG (SIGA, SEI, SIEX, Equalitas Jr.), compromissos visuais e critérios rigorosos de acessibilidade universal (WCAG 2.1 AA/AAA).
+- **Consolidação Mestra do `README.md`:**
+  - Atualização completa do memorial técnico encadeando os 12 ciclos de desenvolvimento.
+  - Sincronização dos diagramas Mermaid com as novas fontes de dados (Regimento Interno 2024 e Web Scraping).
+  - Correção de referências de compilação, subseções de deploy no GitHub Pages e expansão da matriz comparativa de arquivos.
+
+---
+
+## 17. Matriz Comparativa Completa de Arquivos (Antes vs. Depois)
+
+| Arquivo / Diretório | Estado Inicial | Estado Final Após os 12 Ciclos | Função no Sistema |
 | :--- | :--- | :--- | :--- |
+| `PRODUCT.md` | Inexistente | Criado via `/impeccable init` consolidando usuários (calouros/veteranos), compromissos éticos, sistemas UFMG e acessibilidade. | Fonte durável da verdade do produto (Single Source of Truth). |
 | `_brand.yml` | Inexistente | Criado em conformidade total com a especificação brand.yml e o manual canônico CAGP v2.0. | Fonte única de verdade de cores, fontes e versões de logotipo. |
 | `_quarto.yml` | Configuração mínima genérica (20 linhas). | Configurado para `output-dir: docs`, 8 páginas, banner permanente da chapa, recursos PDF e navbar completa. | Maestro de compilação do Quarto Website. |
 | `_variables.scss` | Rascunho inicial. | Integrado com a paleta CAGP (`#8B1E2D`, `#E8A317`, `#111111`), Google Fonts e mixins neo-brutalistas. | Motor SCSS Bootstrap compilado pelo Quarto. |
-| `styles.css` | Vazio (1 linha). | Folha com componentes neo-brutalistas (`.cagp-card`, `.cagp-hero-emblem-card`, `.cagp-doc-card`, `.callout-*`), microinterações e acessibilidade. | Estilização fina de UI/UX, temas de callout e layout responsivo. |
-| `index.qmd` | Texto de exemplo. | Landing page oficial com Card Emblema dos Candangos, números do curso (Noturno, 10P, 3000h), atalhos e banner documental. | Hub principal de entrada do portal. |
-| `calouros.qmd` | Inexistente | Guia do Calouro Noturno (aulas 19h–22h30, jantar no RU até 20h30, ônibus circular, matrícula mínima 180h). | Módulo de sobrevivência e acolhimento. |
+| `styles.css` | Vazio (1 linha). | Folha com componentes neo-brutalistas (`.cagp-card`, `.cagp-hub-card`, `.cagp-form-item`, `.cagp-badge-live`, `.callout-*`). | Estilização fina de UI/UX, temas de callout e layout responsivo. |
+| `index.qmd` | Texto de exemplo. | Landing page oficial com Card Emblema dos Candangos, números do curso (Noturno, 10P, 3000h), Hub de Acesso Rápido e banner documental. | Hub principal de entrada do portal. |
+| `calouros.qmd` | Inexistente | Guia do Calouro Noturno (aulas 19h–22h30, Interno Rotas em tempo real, CEAG até 22h, RU, FUMP/PRAE/NAI). | Módulo de sobrevivência e acolhimento. |
 | `percurso.qmd` | Inexistente | Linha do tempo dos 10 semestres, 27 obrigatórias com ementas oficiais em `<details>`, 3 percursos formais (Art. 3º) e downloads. | Módulo de planejamento curricular oficial. |
 | `estagio-tcc.qmd` | Inexistente | Estágio Curricular A (180h) e B (120h), dispensa de estágio profissional (Art. 41) e 4 modalidades aceitas de TCC. | Módulo de formação prática e conclusão de curso. |
-| `acg.qmd` | Inexistente | Extensão Obrigatória (300h, Resolução CEPE nº 10/19) vs AAC (até 300h, Art. 15, 9 modalidades, conversão 15h=1cr e prazo de 120 dias). | Guia de extensão universitária e créditos complementares. |
-| `documentos.qmd` | Inexistente | Repositório dos 6 arquivos normativos oficiais em PDF categorizados, com metadados e botões duplos de visualização e download. | Repositório digital de atos normativos. |
-| `faq.qmd` | Inexistente | Accordion acessível com regras oficiais sobre trancamento, quebra de pré-requisitos, limite EaD (20%) e exames de conhecimento. | Central de dúvidas regimentais. |
-| `sobre.qmd` | Inexistente | História da representação discente, vinculação ao DCP/FAFICH, semiótica da escultura "Os Candangos" e canais de contato. | Página institucional e estatutária. |
-| `documentos/` | Inexistente | 6 arquivos PDF oficiais digitalizados com nomes web-safe normalizados (PPC, Regulamento, Ementário e Matrizes). | Acervo físico de documentos fonte. |
+| `acg.qmd` | Inexistente | Extensão Obrigatória (300h) vs AAC (até 300h), Programa de Imersão (3 eixos, SIEX e Instagram) e 15 Núcleos de Pesquisa do DCP. | Guia de extensão universitária e créditos complementares. |
+| `documentos.qmd` | Inexistente | Repositório dos 7 arquivos normativos oficiais em PDF e Central de Formulários Administrativos Oficiais para download. | Repositório digital de atos normativos e requerimentos. |
+| `faq.qmd` | Inexistente | 9 perguntas e respostas com regras sobre trancamento, Mobilidade Acadêmica (DRI), CEAG até 22h e aproveitamento de estudos. | Central de dúvidas regimentais. |
+| `sobre.qmd` | Inexistente | Governança autêntica do Regimento 2024: 7 Diretorias Executivas, Assembleia Geral, Junta Eleitoral, Composição do Colegiado e semiótica dos Candangos. | Página institucional e estatutária. |
+| `documentos/` | Inexistente | 7 arquivos PDF oficiais digitalizados com nomes web-safe normalizados (Regimento Interno CAGP, PPC, Regulamento, Ementário e Matrizes). | Acervo físico de documentos fonte. |
 | `logos/` | SVGs com percentuais. | SVGs com dimensões físicas ajustadas (`width="410" height="600"`) para evitar colapso flexbox na navbar. | Acervo vetorial de identidade de marca. |
 | `docs/` | Inexistente. | Diretório estático compilado pelo Quarto, pronto para deploy no GitHub Pages (8 páginas HTML, CSS, JS e pasta `documentos/`). | Artefato de produção final. |
 
 ---
 
-## 15. Instruções de Manutenção e Publicação
+## 18. Instruções de Manutenção e Publicação
 
-### 15.1 Pré-Visualização Local com Live-Reload
+### 18.1 Pré-Visualização Local com Live-Reload
 Para continuar desenvolvendo ou visualizando o site localmente com atualização instantânea no navegador ao salvar qualquer arquivo `.qmd` ou `.css`:
 ```bash
 /usr/share/positron/resources/app/quarto/bin/quarto preview
 ```
 
-### 15.2 Compilação Final de Produção
+### 18.2 Compilação Final de Produção
 Para compilar todas as páginas e sincronizar a pasta `docs/`:
 ```bash
 /usr/share/positron/resources/app/quarto/bin/quarto render
 ```
 
-### 15.3 Publicação no GitHub Pages
+### 18.3 Publicação no GitHub Pages
 Como o diretório de saída está configurado e validado em `docs/`:
 1. Faça o commit e push de todas as alterações para a branch principal (`main`):
    ```bash

@@ -118,6 +118,94 @@ O Art. 15, § 4º, incisos III e VII estabelece que certificados de participaç�
 
 ---
 
+## 🏛️ Programa de Imersão no Campo de Públicas {#programa-de-imersao}
+
+Criado no segundo semestre de 2017 pelo Colegiado de Coordenação Didática, o **Programa de Imersão no Campo de Públicas** congrega ações de ensino, pesquisa e extensão universitária. Seu objetivo é integrar a formação teórica de sala de aula à prática profissional real, prestando consultoria e assessoramento direto a órgãos públicos municipais, estaduais e organizações da sociedade civil.
+
+O programa estrutura-se em **3 eixos fundamentais**:
+
+```{=html}
+<div class="row g-4 my-2">
+  <div class="col-md-4">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="cagp-badge cagp-badge-red">Eixo 1 • Ensino & Extensão</span>
+      </div>
+      <h4 class="fs-6 fw-bold text-uppercase mb-2">Laboratórios A e B</h4>
+      <p class="small text-muted mb-2">Operacionalizado nas disciplinas de <strong>Laboratório de Gestão e Políticas Públicas A e B</strong> (7º e 8º períodos). Equipes de alunos desenvolvem produtos sob demanda de órgãos públicos parceiros:</p>
+      <ul class="small mb-3 ps-3">
+        <li>Diagnósticos de gestão ou situacionais;</li>
+        <li>Projetos de intervenção governamental;</li>
+        <li>Análises de políticas públicas e matrizes orçamentárias;</li>
+        <li>Otimização de processos e gestão de pessoas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="cagp-badge cagp-badge-dark">Eixo 2 • Prefeituras</span>
+      </div>
+      <h4 class="fs-6 fw-bold text-uppercase mb-2">Gestão Além do Horizonte</h4>
+      <p class="small text-muted mb-2">Projeto de assessoria técnica a gestores de prefeituras municipais de Minas Gerais, conduzido por discentes sob supervisão docente do DCP:</p>
+      <ul class="small mb-3 ps-3">
+        <li>Elaboração de planos municipais em áreas temáticas prioritárias;</li>
+        <li>Captação de recursos federais e estaduais para municípios;</li>
+        <li>Capacitação de equipes administrativas locais.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="cagp-badge cagp-badge-blue">Eixo 3 • SIEX UFMG</span>
+      </div>
+      <h4 class="fs-6 fw-bold text-uppercase mb-2">Práticas Avançadas</h4>
+      <p class="small text-muted mb-2">Projetos de extensão contínuos com duração superior a um semestre, registrados oficialmente no Sistema de Informação da Extensão (SIEX):</p>
+      <ul class="small mb-3 ps-3">
+        <li><strong>Registro SIEX:</strong> Projetos nº 109111 e nº 109109;</li>
+        <li><strong>Instagram Oficial:</strong> <a href="https://www.instagram.com/programadeimersao" target="_blank" rel="noopener noreferrer">@programadeimersao ↗</a>;</li>
+        <li>Participação remunerada com bolsas de extensão ou voluntária válida para a carga horária de 300h.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## 🔬 Núcleos de Pesquisa do DCP: Oportunidades de Bolsas e Iniciação Científica
+
+Os estudantes de Gestão Pública da UFMG têm acesso aos centros e laboratórios de pesquisa vinculados ao **Departamento de Ciência Política (DCP)** e à FAFICH. A atuação como bolsista (PIBIC, PIBITI, FAPEMIG) ou voluntário de Iniciação Científica permite integralizar horas de AAC (Modalidade V do Art. 15):
+
+```{=html}
+<div class="cagp-card mb-4">
+  <h4 class="fs-6 fw-bold text-uppercase mb-3">Principais Centros de Pesquisa do DCP / FAFICH</h4>
+  <div class="d-flex flex-wrap gap-1">
+    <span class="cagp-research-pill"><strong>Publicus:</strong> Núcleo de Estudos em Gestão e Políticas Públicas</span>
+    <span class="cagp-research-pill"><strong>PRODEP:</strong> Projeto Democracia Participativa</span>
+    <span class="cagp-research-pill"><strong>CECOMP:</strong> Centro de Estudos do Comportamento Político</span>
+    <span class="cagp-research-pill"><strong>CEDE:</strong> Centro de Estudos em Deliberação</span>
+    <span class="cagp-research-pill"><strong>CEL:</strong> Centro de Estudos Legislativos</span>
+    <span class="cagp-research-pill"><strong>CePPI:</strong> Política e Internet</span>
+    <span class="cagp-research-pill"><strong>CIAPSOC:</strong> Análise de Políticas Públicas</span>
+    <span class="cagp-research-pill"><strong>GEDAI:</strong> Deliberação, Ativismo e Inclusão</span>
+    <span class="cagp-research-pill"><strong>DECODE:</strong> Democracia e Comunicação Digital</span>
+    <span class="cagp-research-pill"><strong>Margem:</strong> Democracia e Justiça</span>
+    <span class="cagp-research-pill"><strong>NEPEM:</strong> Estudos e Pesquisas sobre a Mulher</span>
+    <span class="cagp-research-pill"><strong>NESTH:</strong> Trabalho Humano</span>
+    <span class="cagp-research-pill"><strong>Observatório da Justiça no Brasil e América Latina</strong></span>
+    <span class="cagp-research-pill"><strong>Opinião Pública:</strong> Marketing Político e Eleitoral</span>
+    <span class="cagp-research-pill"><strong>RIPPERP:</strong> Política Externa e Regime Político</span>
+  </div>
+  <p class="small text-muted mt-3 mb-0">💡 <strong>Como ingressar:</strong> Acompanhe os editais semestrais de seleção de bolsistas e voluntários divulgados no mural da FAFICH, pelo Colegiado e pelas mídias do CAGP.</p>
+</div>
+```
+
+---
+
 ## 📌 Principais Dúvidas sobre Horas e Atividades
 
 ::: {.cagp-card}

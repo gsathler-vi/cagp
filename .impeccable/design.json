@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T11:32:45-03:00",
+  "title": "Design System: Centro Acadêmico de Gestão Pública (CAGP) - FAFICH / UFMG",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Vinho Candango",
+        "canonical": "#9e2424",
+        "tonalRamp": ["#3d0b0b", "#5e1212", "#7f1919", "#9e2424", "#bd3333", "#dc4d4d", "#ea8080", "#f7cccc"]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Vinho Candango Intenso",
+        "canonical": "#7b1a1a",
+        "tonalRamp": ["#290808", "#440e0e", "#5f1414", "#7b1a1a", "#9a2424", "#ba3232", "#d96666", "#f2b3b3"]
+      },
+      "primary-bordeaux": {
+        "role": "primary",
+        "displayName": "Vinho Bordeaux Institucional",
+        "canonical": "#8b1e2d",
+        "tonalRamp": ["#33080e", "#510f18", "#6e1622", "#8b1e2d", "#aa2b3d", "#c64356", "#db7987", "#f1bcc3"]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Preto Nanquim Estrutural",
+        "canonical": "#0a0a0a",
+        "tonalRamp": ["#000000", "#0a0a0a", "#1a1a1a", "#333333", "#555555", "#888888", "#cccccc", "#f0f0f0"]
+      },
+      "dark": {
+        "role": "secondary",
+        "displayName": "Preto Chumbo",
+        "canonical": "#111111",
+        "tonalRamp": ["#050505", "#111111", "#222222", "#3a3a3a", "#5e5e5e", "#8c8c8c", "#c4c4c4", "#ececec"]
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Branco Puro",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#1f2421", "#3b423e", "#646d68", "#949e98", "#c1c9c4", "#e2e6e4", "#f4f6f5", "#ffffff"]
+      },
+      "neutral-warm": {
+        "role": "neutral",
+        "displayName": "Off-White Quente Papel Timbrado",
+        "canonical": "#fbf8f3",
+        "tonalRamp": ["#383226", "#5e5441", "#877960", "#b0a284", "#d4c9b2", "#ede6d8", "#f7f3ec", "#fbf8f3"]
+      },
+      "surface-low": {
+        "role": "neutral",
+        "displayName": "Cinza Superfície Suave",
+        "canonical": "#f4f5f7",
+        "tonalRamp": ["#24262b", "#3f434a", "#626770", "#8b919b", "#b5b9c0", "#d6d9de", "#ebedf0", "#f4f5f7"]
+      },
+      "surface-mid": {
+        "role": "neutral",
+        "displayName": "Cinza Borda Interna",
+        "canonical": "#e5e7eb",
+        "tonalRamp": ["#1f2329", "#373d45", "#545c66", "#77808c", "#9ea6b2", "#c4c9d1", "#e5e7eb", "#f4f5f7"]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Cinza Texto Secundário",
+        "canonical": "#4b5563",
+        "tonalRamp": ["#14171c", "#242930", "#373e47", "#4b5563", "#687382", "#8d97a5", "#b8bfca", "#e3e6eb"]
+      },
+      "accent-gold": {
+        "role": "tertiary",
+        "displayName": "Ouro Alerta FAFICH",
+        "canonical": "#e8a317",
+        "tonalRamp": ["#472f03", "#734d06", "#a66f09", "#d48e0c", "#e8a317", "#f0bb48", "#f6d483", "#fbecc1"]
+      },
+      "accent-blue": {
+        "role": "tertiary",
+        "displayName": "Azul Reitoria UFMG",
+        "canonical": "#1e3f66",
+        "tonalRamp": ["#091524", "#10233b", "#173152", "#1e3f66", "#2b568a", "#3c74b8", "#729ed3", "#b9d0ec"]
+      },
+      "accent-green": {
+        "role": "tertiary",
+        "displayName": "Verde Extensão Universitária",
+        "canonical": "#2e7d32",
+        "tonalRamp": ["#0d2e10", "#164719", "#206124", "#2e7d32", "#3fa244", "#5bc460", "#90db94", "#caf0cc"]
+      },
+      "accent-amber": {
+        "role": "tertiary",
+        "displayName": "Laranja Âmbar Regulamentar",
+        "canonical": "#e65100",
+        "tonalRamp": ["#471800", "#732700", "#a83a00", "#e65100", "#ff6d19", "#ff8f4d", "#ffb88c", "#ffdfcc"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Hero",
+        "purpose": "Grandes títulos de seções hero nas páginas principais"
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Título institucional da navbar e cabeçalhos H1/H2"
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de cartões de serviços, documentos e modais"
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Parágrafos, ementas completas e redação de artigos regimentais"
+      },
+      "label": {
+        "displayName": "Label & Badges",
+        "purpose": "Botões táteis, badges departamentais e tags de status"
+      }
+    },
+    "shadows": [
+      {
+        "name": "cagp-shadow-sm",
+        "value": "2px 2px 0px #0a0a0a",
+        "purpose": "Badges, marcadores temporais e formulários rápidos em descanso"
+      },
+      {
+        "name": "cagp-shadow-md",
+        "value": "4px 4px 0px #0a0a0a",
+        "purpose": "Cards padrão, callouts e contêineres estruturais em descanso"
+      },
+      {
+        "name": "cagp-shadow-lg",
+        "value": "7px 7px 0px #0a0a0a",
+        "purpose": "Estado :hover de botões e cartões interativos em elevação"
+      },
+      {
+        "name": "cagp-shadow-active",
+        "value": "1px 1px 0px #0a0a0a",
+        "purpose": "Estado :active mecânico simulando pressão física de carimbo"
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-tactile",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Transição mecânica responsiva de hover e clique tátil"
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "576px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "992px" },
+      { "name": "xl", "value": "1200px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Tactile Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Botão principal de comando em Vinho Candango com resposta física e sombra rígida.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Acessar Guia do Calouro</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.65rem 1.4rem; border: 2px solid #0a0a0a; border-radius: 4px; cursor: pointer; box-shadow: 4px 4px 0px #0a0a0a; transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease; text-decoration: none; } .ds-btn-primary { background-color: #9e2424; color: #ffffff; } .ds-btn-primary:hover { background-color: #7b1a1a; transform: translate(-2px, -2px); box-shadow: 7px 7px 0px #0a0a0a; } .ds-btn-primary:focus-visible { outline: 3px solid #9e2424; outline-offset: 2px; } .ds-btn-primary:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px #0a0a0a; }"
+    },
+    {
+      "name": "Outline Tactile Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Botão secundário de apoio e download com fundo branco e borda preta sólida.",
+      "html": "<button class=\"ds-btn ds-btn-outline\">Consultar Regulamento</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.65rem 1.4rem; border: 2px solid #0a0a0a; border-radius: 4px; cursor: pointer; box-shadow: 4px 4px 0px #0a0a0a; transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease; text-decoration: none; } .ds-btn-outline { background-color: #ffffff; color: #0a0a0a; } .ds-btn-outline:hover { background-color: #f4f5f7; transform: translate(-2px, -2px); box-shadow: 7px 7px 0px #0a0a0a; } .ds-btn-outline:focus-visible { outline: 3px solid #9e2424; outline-offset: 2px; } .ds-btn-outline:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px #0a0a0a; }"
+    },
+    {
+      "name": "Neo-Brutalist Content Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Cartão padrão para disciplinas, serviços e ementas com hover dinâmico.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-header\"><span class=\"ds-badge ds-badge-dcp\">Obrigatória • DCP</span><h3 class=\"ds-card-title\">Teoria da Administração Pública</h3></div><p class=\"ds-card-body\">Conceitos fundamentais da burocracia weberiana, princípios do Estado de Direito e evolução do modelo gerencial.</p></div>",
+      "css": ".ds-card { border: 2px solid #0a0a0a; background-color: #ffffff; box-shadow: 4px 4px 0px #0a0a0a; border-radius: 4px; padding: 1.5rem; transition: transform 0.18s ease, box-shadow 0.18s ease; font-family: 'Inter', sans-serif; color: #0a0a0a; } .ds-card:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0px #0a0a0a; } .ds-card-header { display: flex; align-items: flex-start; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem; } .ds-card-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.25rem; text-transform: uppercase; margin: 0; color: #0a0a0a; } .ds-card-body { font-size: 0.92rem; color: #4b5563; line-height: 1.6; margin: 0; }"
+    },
+    {
+      "name": "Departmental Badges",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Etiquetas cromáticas oficiais para os quatro departamentos do curso (DCP, ECN, EST, SOA).",
+      "html": "<div style=\"display:flex;gap:0.5rem;flex-wrap:wrap;\"><span class=\"ds-badge ds-badge-dcp\">DCP</span><span class=\"ds-badge ds-badge-ecn\">ECN</span><span class=\"ds-badge ds-badge-est\">EST</span><span class=\"ds-badge ds-badge-soa\">SOA</span></div>",
+      "css": ".ds-badge { display: inline-block; font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.25rem 0.65rem; border: 1.5px solid #0a0a0a; border-radius: 3px; box-shadow: 2px 2px 0px #0a0a0a; } .ds-badge-dcp { background-color: #9e2424; color: #ffffff; } .ds-badge-ecn { background-color: #0a0a0a; color: #ffffff; } .ds-badge-est { background-color: #1565c0; color: #ffffff; } .ds-badge-soa { background-color: #2e7d32; color: #ffffff; }"
+    },
+    {
+      "name": "Quarto Callout Note",
+      "kind": "custom",
+      "description": "Caixa de destaque normativo institucional com borda cartesiana e cabeçalho em Azul UFMG.",
+      "html": "<div class=\"ds-callout\"><div class=\"ds-callout-header\"><span class=\"ds-callout-icon\">ℹ️</span><span class=\"ds-callout-title\">Resolução CEPE nº 10/2019</span></div><div class=\"ds-callout-body\">A formação em extensão exige o cumprimento integral de 300 horas obrigatórias registradas no SIEX.</div></div>",
+      "css": ".ds-callout { border: 3px solid #0a0a0a; border-radius: 0px; box-shadow: 4px 4px 0px #0a0a0a; background-color: #ffffff; margin: 1rem 0; overflow: hidden; font-family: 'Inter', sans-serif; } .ds-callout-header { background-color: #1e3f66; color: #ffffff; border-bottom: 2px solid #0a0a0a; padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.5rem; } .ds-callout-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.03em; } .ds-callout-body { padding: 1rem 1.25rem; font-size: 0.92rem; line-height: 1.6; color: #0a0a0a; }"
+    },
+    {
+      "name": "Discipline Drawer (Ementário)",
+      "kind": "custom",
+      "description": "Gaveta sanfonada retrátil para ementas de disciplinas obrigatórias e optativas.",
+      "html": "<details class=\"ds-discipline\" open><summary class=\"ds-discipline-summary\"><span class=\"ds-disc-code\">DCP037</span><span class=\"ds-disc-name\">Políticas Públicas e Cidadania</span><span class=\"ds-disc-chevron\">▼</span></summary><div class=\"ds-discipline-body\"><p>Análise dos ciclos de formulação, implementação e avaliação de políticas públicas no Brasil republicano.</p></div></details>",
+      "css": ".ds-discipline { border: 2px solid #0a0a0a; border-radius: 4px; background-color: #ffffff; box-shadow: 2px 2px 0px #0a0a0a; margin-bottom: 0.75rem; font-family: 'Inter', sans-serif; } .ds-discipline-summary { padding: 0.65rem 0.95rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; list-style: none; } .ds-discipline-summary::-webkit-details-marker { display: none; } .ds-disc-code { font-family: 'Oswald', sans-serif; font-weight: 700; color: #9e2424; margin-right: 0.5rem; } .ds-disc-name { flex-grow: 1; color: #0a0a0a; } .ds-disc-chevron { font-size: 0.75rem; color: #4b5563; } .ds-discipline-body { padding: 0.85rem 1rem; border-top: 1px dashed #e5e7eb; background-color: #fbfbfc; border-left: 4px solid #9e2424; font-size: 0.9rem; line-height: 1.6; color: #0a0a0a; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Prumo Republicano",
+    "overview": "O sistema de design do CAGP nasce da convergência entre a autoridade documental da administração pública e a combatividade do movimento estudantil da FAFICH/UFMG. Inspirado pelo monumento 'Os Candangos (Dois Guerreiros)' de Bruno Giorgi — símbolo máximo do trabalho coletivo anônimo e da construção republicana —, o sistema adota o neo-brutalismo funcional (Brite System) como postura estética e ética: não há adornos cosméticos, sombras com desfoque artificial ou gradientes assépticos. Cada linha divisória, cada contraste e cada bloco de informação serve ao propósito de desmistificar a burocracia acadêmica e emancipar os discentes.",
+    "keyCharacteristics": [
+      "Neo-Brutalismo Estrutural: Bordas pretas sólidas de 2px a 3px e sombras duras ortogonais (0px de blur) que conferem presença física a cada elemento.",
+      "Tipografia de Dupla Força: Títulos condensados e enérgicos em caixa alta com Oswald, ancorados em parágrafos neutros, arejados e confortáveis com Inter.",
+      "Disciplina Cromática Republicana: O Vinho Candango atua como autoridade dirigente e liderança discente, o Ouro Alerta conduz avisos e acolhimento, e o Preto Nanquim delimita fronteiras cartesianas irredutíveis.",
+      "Transparência e Acessibilidade: Conformidade WCAG 2.1 AA/AAA em todos os pares cromáticos, com estados de foco explícitos (outline de 3px) e estrutura navegável por teclado e leitores de tela."
+    ],
+    "rules": [
+      {
+        "name": "A Regra da Sombra Dura",
+        "body": "Todas as declarações de box-shadow devem conter 0px de blur radius e cor sólida preta (#0a0a0a ou #111111). Sombras difusas são explicitamente proibidas.",
+        "section": "elevation"
+      },
+      {
+        "name": "A Regra da Bordadura Rígida",
+        "body": "Nenhum contêiner, botão ou gaveta existe no vácuo: todo bloco interativo ou de conteúdo possui contorno preto nítido (#0a0a0a ou #111111), proibindo gradientes suaves de delimitação.",
+        "section": "colors"
+      },
+      {
+        "name": "A Regra da Autoridade Vermelha",
+        "body": "O Vinho Candango é um marcador de liderança discente e foco resolutivo; ele nunca deve ultrapassar 15% da área cromática de qualquer viewport.",
+        "section": "colors"
+      },
+      {
+        "name": "A Regra da Caixa Alta nos Títulos",
+        "body": "Todos os títulos H1, H2, H3, botões e badges usam text-transform: uppercase e fonte Oswald. Parágrafos e ementas mantêm caixa mista com Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "A Regra da Gravidade Interativa",
+        "body": "Componentes interativos em hover sobem para o noroeste (translate(-2px, -2px)) com projeção de sombra aumentada; ao clique (:active), descem para o sudeste (translate(2px, 2px)), afundando na página.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do utilizar bordas pretas sólidas de 2px a 3px (#0A0A0A / #111111) em todos os botões, cartões, gavetas e caixas de alerta.",
+      "Do projetar sombras 100% rígidas com zero desfoque (box-shadow: 2px 2px 0px #0a0a0a a 7px 7px 0px #0a0a0a).",
+      "Do utilizar Oswald em caixa alta para títulos, manches, cabeçalhos de tabela, botões e badges.",
+      "Do manter Inter para todo o corpo de texto, descrições normativas e ementas, priorizando legibilidade contínua.",
+      "Do assegurar contraste WCAG AAA para leitura crítica e manter foco visível explícito (outline: 3px solid #9e2424).",
+      "Do utilizar o componente de gaveta retrátil (<details class=\"cagp-discipline\">) para conter ementas densas sem poluir o fluxo de página."
+    ],
+    "donts": [
+      "Don't utilizar sombras difusas com blur (box-shadow: 0 4px 20px rgba(0,0,0,0.1)).",
+      "Don't arredondar cantos em estilo 'pílula gigante' em botões ou cartões (border-radius: 9999px ou 24px). O vocabulário formal é estritamente de cantos contidos (0px a 4px).",
+      "Don't utilizar gradientes pastéis suaves, efeitos de vidro (glassmorphism/backdrop-filter) ou estéticas corporativas assépticas.",
+      "Don't espalhar a cor Vinho Candango por toda a tela como plano de fundo dominante; ela deve servir exclusivamente a pontos de comando, liderança e âncoras focais (≤15% da área).",
+      "Don't suprimir o anel de foco de acessibilidade (outline: none sem substituto é estritamente proibido).",
+      "Don't abreviar títulos regimentais ou eliminar o respaldo normativo dos atos citados nas páginas."
+    ]
+  }
+}
