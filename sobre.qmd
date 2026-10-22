@@ -1,6 +1,7 @@
 ---
 title: "Sobre o CAGP"
 subtitle: "Regimento interno, governança em 7 diretorias, princípios da administração pública e representação discente"
+title-block-style: none
 toc: true
 ---
 
@@ -19,8 +20,12 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** da Faculdade de Filosofia e C
 
 Sediado no Departamento de Ciência Política (DCP), o CAGP é o órgão legítimo de representação da totalidade dos estudantes regularmente matriculados no curso de Gestão Pública. Rege-se pelo **Regimento Interno formal aprovado em 14 de outubro de 2024**, atuando na defesa do ensino público, gratuito, crítico, autônomo e socialmente referenciado.
 :::
-::: {.col-lg-4 .text-center .d-none .d-lg-block}
-![](logos/06_horizontal_transparente_positivo.svg){fig-alt="Logotipo institucional horizontal do Centro Acadêmico de Gestão Pública da UFMG" style="max-width: 100%; height: auto;"}
+::: {.col-lg-4 .col-12 .text-center .mt-4 .mt-lg-0}
+```{=html}
+<div class="cagp-hero-emblem-card">
+  <img src="logos/06_horizontal_transparente_positivo.svg" alt="Símbolo oficial dos Candangos do Centro Acadêmico de Gestão Pública da UFMG" class="cagp-hero-emblem-img">
+</div>
+```
 :::
 :::
 :::
@@ -58,8 +63,8 @@ Conforme os **Arts. 2º, 3º, 4º e 8º do Regimento Interno**, a atuação do C
   <div class="col-md-6 col-lg-3">
     <div class="cagp-card h-100">
       <div class="d-flex align-items-center gap-2 mb-2">
-        <span class="fs-4">🏛️</span>
-        <h4 class="mb-0 fs-6 text-uppercase fw-bold">Administração Pública</h4>
+        <span class="fs-4" aria-hidden="true">🏛️</span>
+        <h3 class="mb-0 fs-6 text-uppercase fw-bold">Administração Pública</h3>
       </div>
       <p class="small text-muted mb-0">Prezar irrestritamente pelos princípios constitucionais da <strong>Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência</strong> em todas as decisões e atos (Art. 8º, III).</p>
     </div>
@@ -67,8 +72,8 @@ Conforme os **Arts. 2º, 3º, 4º e 8º do Regimento Interno**, a atuação do C
   <div class="col-md-6 col-lg-3">
     <div class="cagp-card h-100">
       <div class="d-flex align-items-center gap-2 mb-2">
-        <span class="fs-4">🕊️</span>
-        <h4 class="mb-0 fs-6 text-uppercase fw-bold">Suprapartidarismo</h4>
+        <span class="fs-4" aria-hidden="true">🕊️</span>
+        <h3 class="mb-0 fs-6 text-uppercase fw-bold">Suprapartidarismo</h3>
       </div>
       <p class="small text-muted mb-0">É <strong>expressamente vedada a filiação a partidos políticos</strong> de qualquer âmbito (Art. 4º). Autonomia plena frente a governos, DA FAFICH e DCE UFMG (Art. 3º e 7º).</p>
     </div>
@@ -76,8 +81,8 @@ Conforme os **Arts. 2º, 3º, 4º e 8º do Regimento Interno**, a atuação do C
   <div class="col-md-6 col-lg-3">
     <div class="cagp-card h-100">
       <div class="d-flex align-items-center gap-2 mb-2">
-        <span class="fs-4">🎓</span>
-        <h4 class="mb-0 fs-6 text-uppercase fw-bold">Educação Crítica</h4>
+        <span class="fs-4" aria-hidden="true">🎓</span>
+        <h3 class="mb-0 fs-6 text-uppercase fw-bold">Educação Crítica</h3>
       </div>
       <p class="small text-muted mb-0">Defender o ensino público, gratuito, de excelência e socialmente referenciado, assegurando <strong>acesso, permanência e evolução constante da grade do curso</strong> (Art. 8º, I e II).</p>
     </div>
@@ -85,8 +90,8 @@ Conforme os **Arts. 2º, 3º, 4º e 8º do Regimento Interno**, a atuação do C
   <div class="col-md-6 col-lg-3">
     <div class="cagp-card h-100">
       <div class="d-flex align-items-center gap-2 mb-2">
-        <span class="fs-4">🔍</span>
-        <h4 class="mb-0 fs-6 text-uppercase fw-bold">Transparência & CNPJ</h4>
+        <span class="fs-4" aria-hidden="true">🔍</span>
+        <h3 class="mb-0 fs-6 text-uppercase fw-bold">Transparência & CNPJ</h3>
       </div>
       <p class="small text-muted mb-0">Manutenção do CNPJ ativo, emissão mensal do RREO, prestação de contas anual e <strong>acesso de qualquer discente às contas em até 3 dias úteis</strong> (Art. 8º, V e Art. 15, V).</p>
     </div>
@@ -338,7 +343,7 @@ A competência executiva do Centro Acadêmico é subdividida em **7 Diretorias d
   <!-- Box Linha Sucessória -->
   <div class="col-md-12 col-lg-4">
     <div class="cagp-succession-box h-100">
-      <h4 class="fs-6 fw-bold text-uppercase mb-2 text-danger">⚖️ Linha Sucessória da Presidência</h4>
+      <h3 class="fs-6 fw-bold text-uppercase mb-2 text-danger"><span aria-hidden="true">⚖️</span> Linha Sucessória da Presidência</h3>
       <p class="small text-muted mb-3">Conforme o <strong>Art. 26 do Regimento</strong>, em caso de vacância da Presidência, a ordem legal de sucessão é estrita:</p>
       <ol class="small ps-3 mb-3 fw-bold">
         <li>Vice-Presidência</li>
@@ -361,20 +366,20 @@ Enquanto o CAGP é a voz política e representativa dos estudantes, o **Colegiad
 <div class="cagp-card mb-4">
   <div class="row g-3">
     <div class="col-md-6">
-      <h4 class="fs-6 fw-bold text-uppercase text-danger mb-2">Coordenação do Curso</h4>
+      <h3 class="fs-6 fw-bold text-uppercase text-danger mb-2">Coordenação do Curso</h3>
       <ul class="small mb-3 ps-3">
         <li><strong>Coordenadora:</strong> Profª Isabele Batista Mitozo (<a href="mailto:coordgestaopublicaufmg@gmail.com">coordgestaopublicaufmg@gmail.com</a>)</li>
         <li><strong>Subcoordenadora:</strong> Profª Ludmila Mendonça Lopes Ribeiro (<a href="mailto:ludmila.ribeiro@gmail.com">ludmila.ribeiro@gmail.com</a>)</li>
         <li><em>Atendimento presencial mediante agendamento prévio.</em></li>
       </ul>
-      <h4 class="fs-6 fw-bold text-uppercase text-dark mb-2">Representação Discente no Colegiado</h4>
+      <h3 class="fs-6 fw-bold text-uppercase text-dark mb-2">Representação Discente no Colegiado</h3>
       <ul class="small mb-0 ps-3">
         <li><strong>Titular:</strong> Nina Queirolo Lage (<a href="mailto:ninaqueirololage@gmail.com">ninaqueirololage@gmail.com</a>)</li>
       </ul>
     </div>
 
     <div class="col-md-6">
-      <h4 class="fs-6 fw-bold text-uppercase text-dark mb-2">Representantes Docentes dos Departamentos</h4>
+      <h3 class="fs-6 fw-bold text-uppercase text-dark mb-2">Representantes Docentes dos Departamentos</h3>
       <ul class="small mb-0 ps-3">
         <li><strong>Ciência Política (DCP):</strong> Prof. Paulo Ricardo Diniz Filho (titular) / Prof. Lucas Gelape (suplente); Prof. Lucas Pereira Rezende (titular) / Prof. José Angelo Machado (suplente).</li>
         <li><strong>Sociologia (DSO):</strong> Profª Ana Paula Vasconcelos Gonçalves (titular) / Profª Elaine Meire Vilela (suplente).</li>
@@ -395,29 +400,29 @@ Conforme o **Título VI do Regimento Interno (Arts. 41 a 45)**, as eleições do
 <div class="row g-3 mb-5">
   <div class="col-md-3">
     <div class="cagp-card h-100 text-center">
-      <span class="fs-3">🗳️</span>
-      <h4 class="fs-6 fw-bold text-uppercase mt-2 mb-1">Voto Secreto e Direto</h4>
+      <span class="fs-3" aria-hidden="true">🗳️</span>
+      <h3 class="fs-6 fw-bold text-uppercase mt-2 mb-1">Voto Secreto e Direto</h3>
       <p class="small text-muted mb-0">Todo discente regularmente matriculado no curso é eleitor e elegível (Art. 41 e 42).</p>
     </div>
   </div>
   <div class="col-md-3">
     <div class="cagp-card h-100 text-center">
-      <span class="fs-3">📋</span>
-      <h4 class="fs-6 fw-bold text-uppercase mt-2 mb-1">Chapas com Mín. 8 Membros</h4>
+      <span class="fs-3" aria-hidden="true">📋</span>
+      <h3 class="fs-6 fw-bold text-uppercase mt-2 mb-1">Chapas com Mín. 8 Membros</h3>
       <p class="small text-muted mb-0">Estrutura completa das 7 diretorias sem membros em duplicidade (Art. 25 e 42).</p>
     </div>
   </div>
   <div class="col-md-3">
     <div class="cagp-card h-100 text-center">
-      <span class="fs-3">🎙️</span>
-      <h4 class="fs-6 fw-bold text-uppercase mt-2 mb-1">Debate Eleitoral</h4>
+      <span class="fs-3" aria-hidden="true">🎙️</span>
+      <h3 class="fs-6 fw-bold text-uppercase mt-2 mb-1">Debate Eleitoral</h3>
       <p class="small text-muted mb-0">Obrigatório, organizado pela Junta Eleitoral pelo menos 24h antes da eleição (Art. 23, III).</p>
     </div>
   </div>
   <div class="col-md-3">
     <div class="cagp-card h-100 text-center">
-      <span class="fs-3">⏱️</span>
-      <h4 class="fs-6 fw-bold text-uppercase mt-2 mb-1">Mandato de 1 Ano</h4>
+      <span class="fs-3" aria-hidden="true">⏱️</span>
+      <h3 class="fs-6 fw-bold text-uppercase mt-2 mb-1">Mandato de 1 Ano</h3>
       <p class="small text-muted mb-0">Permitida apenas 1 (uma) reeleição consecutiva da mesma gestão (Art. 44).</p>
     </div>
   </div>
@@ -433,7 +438,7 @@ Conforme o **Art. 6º do Regimento**, a sede e o foro da entidade situam-se no c
 ::: {.cagp-card}
 ::: {.row .g-4}
 ::: {.col-md-6}
-##### 📍 Localização Institucional
+### 📍 Localização Institucional {.fs-5 .fw-bold}
 - **Centro Acadêmico de Gestão Pública (CAGP)**
 - Faculdade de Filosofia e Ciências Humanas (FAFICH) • UFMG
 - Pilotis — Espaço dos Centros Acadêmicos
@@ -442,7 +447,7 @@ Conforme o **Art. 6º do Regimento**, a sede e o foro da entidade situam-se no c
 :::
 
 ::: {.col-md-6}
-##### ✉️ Atendimento e Contato
+### ✉️ Atendimento e Contato {.fs-5 .fw-bold}
 - **E-mail Institucional:** [cagp@fafich.ufmg.br](mailto:cagp@fafich.ufmg.br)
 - **Instagram Oficial:** [@cagp.ufmg](https://www.instagram.com/cagp.ufmg)
 - **Atendimento Presencial:** De segunda a sexta-feira, nos intervalos de aula do turno noturno e plantões discentes.

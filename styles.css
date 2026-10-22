@@ -1249,6 +1249,74 @@ div.callout-tip .callout-toggle::before {
   box-shadow: 1px 1px 0px var(--cagp-dark);
 }
 
+/* --------------------------------------------------------------------------
+   Multi-Device Responsive Grid & Asymmetric Layout
+   -------------------------------------------------------------------------- */
+.cagp-equal-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cagp-equal-card .cagp-card-body {
+  flex-grow: 1;
+}
+
+.cagp-equal-card .cagp-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.cagp-sidebar-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (min-width: 1200px) {
+  .cagp-sticky-rail {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+.cagp-sys-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--cagp-dark);
+  border-radius: 4px;
+  background-color: var(--cagp-white);
+  box-shadow: 2px 2px 0 var(--cagp-dark);
+  text-decoration: none !important;
+  color: var(--cagp-dark);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+  margin-bottom: 0.65rem;
+}
+
+.cagp-sys-pill:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--cagp-dark);
+  background-color: var(--cagp-gray-100);
+  color: var(--cagp-red);
+}
+
+.cagp-sys-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--cagp-dark);
+  border-radius: 3px;
+  background-color: var(--cagp-blue, #1e3f66);
+  color: #fff;
+}
+
 
 
 
