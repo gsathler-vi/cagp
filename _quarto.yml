@@ -4,6 +4,7 @@ project:
   resources:
     - "documentos/*.pdf"
     - "logos/**"
+    - "imagens/**"
   render:
     - index.qmd
     - calouros.qmd

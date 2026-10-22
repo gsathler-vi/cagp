@@ -117,7 +117,7 @@ O TCC é componente curricular obrigatório desenvolvido individualmente pelo al
 
 ### DCP 089: Projeto do TCC
 - **Objetivo:** Delimitar o problema de pesquisa empírico ou teórico, construir a justificativa, estruturar a revisão de literatura e o desenho metodológico.
-- **Matrícula:** Condicionada à entrega do **Formulário de Aceite de Orientação** preenchido e assinado por professor(a) da UFMG (preferencialmente do Departamento de Ciência Política).
+- **Matrícula:** Condicionada à entrega do **[Termo de Aceite de Orientador de TCC (PDF)](documentos/termo-aceite-orientador-tcc.pdf){target="_blank"}** preenchido e assinado por professor(a) da UFMG (preferencialmente do Departamento de Ciência Política).
 - Cada professor pode orientar até 4 alunos por semestre para assegurar a qualidade do acompanhamento.
 :::
 :::

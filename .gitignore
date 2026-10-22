@@ -1,2 +1,9 @@
 /.quarto/
 **/*.quarto_ipynb
+
+# Sistema / editores
+.DS_Store
+*~
+.Rproj.user/
+.Rhistory
+/.luarc.json

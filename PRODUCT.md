@@ -67,18 +67,22 @@ web
 
 ## Evidence on Hand
 
-- **Documentos Normativos Oficiais (`documentos/` e `documentos_oficiais_do_curso/`):**
-  - Regimento Interno Oficial do Centro Acadêmico de Gestão Pública (CAGP) — Aprovado em 14/10/2024 (`documentos/regimento-interno-cagp-ufmg.pdf` • 307 KB e `documentos_oficiais_do_curso/regimento_interno_do_centro_acad_mico_de_gest_o_p_blica_cagp.md`).
+- **Documentos Normativos Oficiais (PDFs publicados em `documentos/`; transcrições `.md` homônimas em `_referencias/documentos-oficiais/`):**
+  - Regimento Interno Oficial do Centro Acadêmico de Gestão Pública (CAGP) — Aprovado em 14/10/2024 (`documentos/regimento-interno-cagp-ufmg.pdf` • 307 KB e `_referencias/documentos-oficiais/regimento-interno-cagp-ufmg.md`).
   - Projeto Pedagógico do Curso (PPC) — Versão Curricular N-20229 (`ppc-gestao-publica-ufmg.pdf` • 3.3 MB).
   - Regulamento Oficial do Curso de Graduação em Gestão Pública (`regulamento-gestao-publica-ufmg.pdf` • 2.0 MB).
   - Ementário Oficial das Disciplinas Obrigatórias dos Departamentos DCP, ECN, EST e SOA (`ementario-gestao-publica-ufmg.pdf` • 3.0 MB).
   - Relatórios Oficiais de Percurso: Bacharelado Núcleo Geral (`percurso-bacharelado-nucleo-geral.pdf`), Núcleo Complementar (`percurso-bacharelado-nucleo-complementar.pdf`) e Núcleo Avançado (`percurso-bacharelado-nucleo-avancado.pdf`).
-  - Termo de Aceite de Orientador de TCC — Formulário Oficial do Colegiado (`logos/TERMO-DE-ACEITE-ORIENTADOR-TCC.pdf` • 401 KB).
+  - Termo de Aceite de Orientador de TCC — Formulário Oficial do Colegiado (`documentos/termo-aceite-orientador-tcc.pdf` • 401 KB).
 - **Ativos Vetoriais (`logos/`):**
   - Símbolo puro oficial dos Candangos com dimensões intrínsecas fixas (`logos/10_simbolo_transparente_positivo.svg`).
-  - Fotografia histórica da escultura de Bruno Giorgi em Brasília (`logos/Os_Candangos.jpg`).
   - Logotipos institucionais horizontais e verticais em múltiplos contrastes.
-- **Registro Técnico:** Histórico completo dos 9 ciclos de desenvolvimento documentado no `README.md`.
+- **Imagens (`imagens/`):**
+  - Fotografia histórica da escultura de Bruno Giorgi em Brasília (`imagens/os-candangos.jpg`).
+- **Referências de Marca e Tema (`_referencias/`, não publicadas):**
+  - Manual canônico da identidade visual v2.0 (`_referencias/identidade-visual/manual-de-identidade-visual-cagp-ufmg.md`).
+  - Tema Bootswatch Brite 5.3.8 original e intocado (`_referencias/tema-brite-original/`) — referência obrigatória da linguagem visual Brite para criar novos componentes; as adaptações do projeto vivem em `_variables.scss` e `styles.css`.
+- **Registro Técnico:** Histórico completo dos ciclos de desenvolvimento documentado em `_referencias/memorial-tecnico.md`.
 
 ## Product Principles
 

@@ -259,7 +259,10 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
           <div class="cagp-form-title">Termo de Aceite de Orientador de TCC</div>
           <div class="cagp-form-sub">Declaração formal assinada pelo orientador docente para início da monografia/artigo.</div>
         </div>
-        <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/TERMO-DE-ACEITE-ORIENTADOR-TCC.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="documentos/termo-aceite-orientador-tcc.pdf" target="_blank" class="cagp-form-link" aria-label="Visualizar Termo de Aceite de Orientador de TCC em PDF">Ver PDF</a>
+          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/TERMO-DE-ACEITE-ORIENTADOR-TCC.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">Baixar DOCX ↗</a>
+        </div>
       </div>
 
       <div class="cagp-form-item">
