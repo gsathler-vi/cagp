@@ -7,6 +7,7 @@ project:
     - "imagens/**"
   render:
     - index.qmd
+    - curso.qmd
     - calouros.qmd
     - percurso.qmd
     - estagio-tcc.qmd
@@ -38,6 +39,8 @@ website:
     left:
       - href: index.qmd
         text: Início
+      - href: curso.qmd
+        text: O Curso
       - text: "Jornada Acadêmica"
         menu:
           - href: calouros.qmd

@@ -770,4 +770,42 @@ Em atendimento às diretrizes estratégicas de usabilidade, representação disc
 
 ---
 
+## 23. Ciclo de Arquitetura Institucional e Criação de 'O Curso' (curso.qmd)
+
+Em atendimento às deliberações de usabilidade e completude institucional, foi realizado o ciclo `/impeccable shape` e a implementação completa da nova página canônica **"O Curso" (`curso.qmd`)**:
+
+### 23.1 Justificativa e Posicionamento Arquitetural
+- O portal possuía excelente cobertura das rotinas discentes (calouros, grade de 10 semestres, horas complementares e estágio/TCC), mas carecia de uma página de primeiro nível dedicada a explicar a identidade do curso aos vestibulandos, calouros e à comunidade externa.
+- A navegação foi reorganizada em pilares limpos e despoluídos: `Início`, `O Curso`, `Jornada Acadêmica` ▾ (Calouros, Percurso 10P, Extensão 600h, Estágio/TCC), `Acervo & Ajuda` ▾ (Documentos, FAQ) e `Sobre o CAGP`.
+
+### 23.2 Evidências e Dados Fatuais Incorporados (Apresentação de Ingressantes 2024/2)
+Todos os dados foram extraídos com rigor documental da apresentação oficial da Coordenação do Curso (`transcricao-recepcao-ingressantes-2024-2.md`):
+1. **Reconhecimento & Fundação:**
+   - Criado em 2009 via REUNI; sediado no Departamento de Ciência Política (DCP / FAFICH);
+   - Turno Noturno (19h00 às 22h30); 80 vagas anuais via SiSU (40 por semestre);
+   - **Nota 4 no CPC/MEC** (numa escala de 1 a 5) com base no Enade, qualificação docente e infraestrutura;
+   - 3.000 horas totais (200 créditos), com tempo padrão de 5 anos (10 semestres) e máximo de 8,5 anos (17 semestres).
+2. **Cientometria do Campo de Públicas (Clemente et al., 2022, Revista de Sociologia e Política):**
+   - Comparativo visual e pedagógico entre o **Cluster de Gestão de Políticas Públicas** (ao qual a UFMG pertence, junto com USP, UFABC e UFRN) e o **Cluster de Administração Pública Burocrática/Organizacional** (FJP, UFLA, UDESC, etc.).
+   - Afirmação da identidade formativa da UFMG: preparação de tomadores de decisão pública, formuladores e analistas de dados governamentais, superando o modelo de mero executor burocrático.
+3. **Atuação dos Egressos e Salários (Pesquisa de Egressos 2023, n=89):**
+   - **65% no Poder Executivo** (37% Executivo Estadual, 15% Federal, 13% Municipal);
+   - 12% em Consultorias e Assessorias especializadas;
+   - 6% no Terceiro Setor (ONGs e fundações);
+   - 17% em Outros setores (iniciativa privada, academia, legislativo);
+   - **Remuneração Comprovada (n=88):** 55% recebem mais de R$ 5.000,00/mês; 21% ganham acima de R$ 8.000,00/mês; e 5% auferem renda superior a R$ 15.000,00 mensais.
+   - Apresentação em barras semânticas horizontais com acessibilidade WAI-ARIA e conformidade WCAG 2.1 AAA.
+4. **Governança do Colegiado (7 Membros):**
+   - Relação oficial dos integrantes: Coordenação (Profª Ana Paula Karruz), Subcoordenação (Prof. João Carlos Botelho), 2 do DCP (Profª Isabele Mitozo, Profª Márcia Soares), 1 de Sociologia (Profª Ludmila Ribeiro), 1 de Economia (Prof. Ronaldo Nazaré) e Representação Discente do CAGP.
+   - Guia presencial de atendimento: Secretaria do Colegiado (sala 2039 FAFICH, quartas 13h–19h) e guichê do CEAG (2º andar, segunda a sexta das 8h às 22h).
+5. **Transições Curriculares e Formas de Ingresso:**
+   - Resumo das regras de entrada e migração dos 3 percursos: Núcleo Geral (ingresso), FCA (a partir do 5º período) e Núcleo Avançado de Pós-Graduação (a partir do 7º período).
+   - Especificação das formas de ingresso (SiSU, Reopção interna de curso, Transferência e Novo Título) e prazo decadencial do Aproveitamento de Estudos (até o 2º período de vínculo).
+
+### 23.3 Auditoria Técnica e Verificação
+- `quarto render`: Todas as 9 páginas do site compiladas com código 0 e **zero warnings**.
+- `impeccable detect`: Validação mecânica com zero violações de acessibilidade, contraste ou layout. Aviso sobre a fonte Inter mantido por se tratar da identidade canônica da marca (`AGENTS.md`).
+
+---
+
 *Documentação elaborada como registro pedagógico, técnico e de engenharia de software para o Centro Acadêmico de Gestão Pública (CAGP - FAFICH / UFMG).*
