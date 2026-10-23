@@ -51,8 +51,12 @@ code, kbd, pre, samp {
 }
 
 .badge {
-  font-size: 0.8rem !important;
+  font-size: 0.82rem !important;
   line-height: 1.35 !important;
+}
+
+small, .small {
+  font-size: 0.85rem !important;
 }
 
 a {
@@ -813,7 +817,7 @@ h1.cagp-hero-title,
 }
 
 .cagp-hero-emblem-sub {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -846,7 +850,7 @@ h1.cagp-hero-title,
 
 .cagp-doc-badge {
   font-family: 'Oswald', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1028,13 +1032,13 @@ div.callout-warning {
 }
 div.callout-warning > .callout-header {
   background-color: #E65100 !important;
-  color: #FFFFFF !important;
+  color: #0A0A0A !important;
 }
 div.callout-warning > .callout-header .callout-title-container {
-  color: #FFFFFF !important;
+  color: #0A0A0A !important;
 }
 div.callout-warning .callout-icon::before {
-  filter: brightness(0) invert(1) !important;
+  filter: none !important;
 }
 
 /* Callout Caution (Vermelho Alerta) */
@@ -1304,7 +1308,7 @@ div.callout-tip .callout-toggle::before {
   background-color: var(--cagp-green, #2e7d32) !important;
   color: #ffffff !important;
   font-family: 'Oswald', sans-serif !important;
-  font-size: 0.76rem !important;
+  font-size: 0.82rem !important;
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
   padding: 0.22rem 0.55rem !important;
@@ -1327,7 +1331,6 @@ div.callout-tip .callout-toggle::before {
   border: 1.5px solid var(--cagp-dark);
   background-color: var(--cagp-white);
   padding: 0.85rem 1rem;
-  box-shadow: 2px 2px 0px var(--cagp-dark);
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
@@ -1349,7 +1352,7 @@ div.callout-tip .callout-toggle::before {
 }
 
 .cagp-form-sub {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--cagp-gray-600);
 }
 
@@ -1446,7 +1449,7 @@ div.callout-tip .callout-toggle::before {
 }
 
 .cagp-sys-tag {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 700;
   padding: 0.15rem 0.45rem;
   border: 1px solid var(--cagp-dark);
@@ -1520,7 +1523,7 @@ div.callout-tip .callout-toggle::before {
 
 .cagp-subnav-label {
   font-family: 'Oswald', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1636,7 +1639,7 @@ div.callout-tip .callout-toggle::before {
 }
 
 .cagp-compass-btn-sub {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   opacity: 0.9;
 }
 
@@ -1647,10 +1650,10 @@ div.callout-tip .callout-toggle::before {
 
 .cagp-compass-panel.cagp-panel-boxed {
   background-color: var(--cagp-white);
-  border: 2px solid var(--cagp-dark);
+  border: 1.5px solid var(--cagp-dark);
   border-radius: 4px;
   padding: 1.25rem;
-  box-shadow: 3px 3px 0px var(--cagp-dark);
+  box-shadow: none;
 }
 
 .cagp-compass-panel[hidden] {
@@ -1666,16 +1669,16 @@ div.callout-tip .callout-toggle::before {
   border: 1.5px solid var(--cagp-dark);
   border-radius: 4px;
   background-color: var(--cagp-gray-50);
-  box-shadow: 2px 2px 0px var(--cagp-dark);
+  box-shadow: none;
   text-decoration: none !important;
   color: var(--cagp-dark) !important;
-  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+  transition: transform 0.12s ease, background-color 0.12s ease, border-color 0.12s ease;
 }
 
 .cagp-action-tile:hover {
   background-color: var(--cagp-white);
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0px var(--cagp-dark);
+  transform: translateY(-2px);
+  border-color: var(--cagp-red);
 }
 
 /* --------------------------------------------------------------------------
@@ -1780,7 +1783,7 @@ div.callout-tip .callout-toggle::before {
 }
 
 .cagp-calc-desc {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--cagp-gray-600);
   line-height: 1.35;
   margin-top: 0.15rem;
@@ -1952,7 +1955,7 @@ div.callout-tip .callout-toggle::before {
 
 .cagp-journey-dir {
   font-family: 'Oswald', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1975,6 +1978,711 @@ div.callout-tip .callout-toggle::before {
   color: var(--cagp-gray-600);
   line-height: 1.5 !important;
   margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Central de Apps & Sistemas UFMG (Neo-Brutalista Brite 2.0)
+   ========================================================================== */
+.cagp-app-section {
+  padding: 0.5rem 0 2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.cagp-app-section-header {
+  border-bottom: 2px solid var(--cagp-dark, #0a0a0a);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cagp-app-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cagp-app-filter-btn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--cagp-gray-100, #f8f9fa);
+  color: var(--cagp-dark, #0a0a0a);
+  border: 2px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0px var(--cagp-dark, #0a0a0a);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cagp-app-filter-btn:hover {
+  background-color: #f1f5f9;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-app-filter-btn.is-active,
+.cagp-app-filter-btn[aria-pressed="true"] {
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff;
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 576px) {
+  .cagp-app-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cagp-app-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--cagp-white, #ffffff);
+  border: 2px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px var(--cagp-dark, #0a0a0a);
+  padding: 1.15rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cagp-app-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--cagp-dark, #0a0a0a);
+}
+
+/* Faixas heráldicas superiores com cores adaptadas que ornam com o Brite */
+.cagp-app-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-app-card-siga::before {
+  background-color: #1e3f66; /* Azul Siga / UFMG */
+}
+
+.cagp-app-card-minhaufmg::before {
+  background-color: #00796b; /* Petróleo MinhaUFMG */
+}
+
+.cagp-app-card-fump::before {
+  background-color: #e65100; /* Laranja FUMP */
+}
+
+.cagp-app-card-rotas::before {
+  background-color: #2e7d32; /* Verde Interno Rotas */
+}
+
+.cagp-app-card-ceag::before {
+  background-color: #9e2424; /* Vinho Candango FAFICH */
+}
+
+.cagp-app-card-bu::before {
+  background-color: #e8a317; /* Ouro BU */
+}
+
+.cagp-app-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.cagp-app-logo-box {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 2px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px var(--cagp-dark, #0a0a0a);
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.cagp-app-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cagp-app-meta {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.cagp-app-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cagp-dark, #0a0a0a);
+  line-height: 1.2;
+  margin: 0 0 0.2rem 0;
+}
+
+.cagp-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.cagp-app-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 3px;
+  line-height: 1;
+  background-color: var(--cagp-gray-100, #f8f9fa);
+  color: var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-app-tag-blue { background-color: #f4f5f7; color: #0d47a1; }
+.cagp-app-tag-cyan { background-color: #f4f5f7; color: #004d40; }
+.cagp-app-tag-orange { background-color: #fbf8f3; color: #92400e; }
+.cagp-app-tag-green { background-color: #f4f5f7; color: #1b5e20; }
+.cagp-app-tag-red { background-color: #fbf8f3; color: #9e2424; }
+.cagp-app-tag-gold { background-color: #fbf8f3; color: #78350f; }
+
+.cagp-app-desc {
+  font-size: 0.85rem;
+  color: var(--cagp-gray-700, #495057);
+  line-height: 1.45;
+  margin-bottom: 0.85rem;
+  flex-grow: 1;
+}
+
+.cagp-app-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--cagp-gray-300, #dee2e6);
+}
+
+.cagp-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.32rem 0.65rem;
+  background-color: var(--cagp-gray-100, #f8f9fa);
+  color: var(--cagp-dark, #0a0a0a);
+  border: 1.5px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0px var(--cagp-dark, #0a0a0a);
+  text-decoration: none !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+
+.cagp-store-btn:hover {
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff !important;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-store-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px 0px var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-store-btn-primary {
+  background-color: var(--cagp-dark, #0a0a0a);
+  color: #ffffff !important;
+}
+
+.cagp-store-btn-primary:hover {
+  background-color: var(--cagp-red, #9e2424);
+}
+
+/* ==========================================================================
+   Módulo Tripartite de Representação Estudantil (.cagp-rep-grid)
+   ========================================================================== */
+.cagp-rep-section {
+  padding: 0.5rem 0 2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cagp-rep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 992px) {
+  .cagp-rep-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cagp-rep-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 2px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px var(--cagp-dark, #0a0a0a);
+  padding: 1.25rem;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cagp-rep-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-rep-card-cagp {
+  background-color: #ffffff;
+}
+
+.cagp-rep-card-da {
+  background-color: #ffffff;
+}
+
+.cagp-rep-card-dce {
+  background-color: #ffffff;
+}
+
+.cagp-rep-badge {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border: 1.5px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 3px;
+  box-shadow: 1.5px 1.5px 0px var(--cagp-dark, #0a0a0a);
+  margin-bottom: 0.5rem;
+  background-color: var(--cagp-gray-100, #f8f9fa);
+  color: var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-rep-badge-cagp {
+  background-color: #fbf8f3;
+  color: var(--cagp-red, #9e2424);
+}
+
+.cagp-rep-badge-da {
+  background-color: #f4f5f7;
+  color: #1e3f66;
+}
+
+.cagp-rep-badge-dce {
+  background-color: #f4f5f7;
+  color: #2e7d32;
+}
+
+.cagp-rep-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cagp-dark, #0a0a0a);
+  margin-bottom: 0.35rem;
+}
+
+.cagp-rep-scope {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cagp-gray-700, #495057);
+  margin-bottom: 0.75rem;
+}
+
+.cagp-rep-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--cagp-dark, #0a0a0a);
+  flex-grow: 1;
+}
+
+.cagp-rep-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.cagp-rep-list li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  color: var(--cagp-red, #9e2424);
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   Facade de Vídeos do YouTube (Alta Performance & Acessibilidade)
+   ========================================================================== */
+.cagp-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.cagp-video-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 2px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px var(--cagp-dark, #0a0a0a);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cagp-video-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-video-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #0a0a0a;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cagp-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cagp-video-card:hover .cagp-video-thumb {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.cagp-video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff;
+  border: 2.5px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px var(--cagp-dark, #0a0a0a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  pointer-events: none;
+}
+
+.cagp-video-card:hover .cagp-video-play-btn {
+  transform: translate(-50%, -50%) scale(1.12);
+  background-color: #b71c1c;
+}
+
+.cagp-video-body {
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cagp-video-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cagp-dark, #0a0a0a);
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+}
+
+.cagp-video-source {
+  font-size: 0.8rem;
+  color: var(--cagp-gray-600, #4b5563);
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   Visualizador de Mapas Universitários (.cagp-map-card)
+   ========================================================================== */
+.cagp-map-card {
+  background-color: #ffffff;
+  border: 2px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px var(--cagp-dark, #0a0a0a);
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.cagp-map-img-container {
+  width: 100%;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid var(--cagp-dark, #0a0a0a);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.cagp-map-img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 2px;
+}
+
+.cagp-map-caption {
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background-color: #ffffff;
+}
+
+/* Ajuste nos botões de navegação por personas */
+.cagp-compass-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 992px) {
+  .cagp-compass-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .cagp-compass-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Tutoriais Visuais de Preenchimento de Documentos (.cagp-doc-guide)
+   ========================================================================== */
+.cagp-doc-guide {
+  background-color: var(--cagp-white, #ffffff);
+  border: 2.5px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 4px;
+  box-shadow: 5px 5px 0px var(--cagp-dark, #0a0a0a);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cagp-doc-guide-header {
+  border-bottom: 2px solid var(--cagp-dark, #0a0a0a);
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.cagp-doc-preview-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 2px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 3px;
+  box-shadow: none;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.cagp-doc-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Pins numéricos sobrepostos ao documento */
+.cagp-doc-pin {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff;
+  border: 2px solid var(--cagp-dark, #0a0a0a);
+  box-shadow: 2px 2px 0px var(--cagp-dark, #0a0a0a);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.cagp-doc-pin:hover {
+  transform: translate(-50%, -50%) scale(1.18);
+  background-color: #bf360c;
+}
+
+/* Destaque / Caixa delimitadora no print */
+.cagp-doc-box {
+  position: absolute;
+  border: 2.5px dashed var(--cagp-red, #9e2424);
+  background-color: rgba(158, 36, 36, 0.08);
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Painel de Passos Explicativos */
+.cagp-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cagp-step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1.5px dashed var(--cagp-gray-300, #dee2e6);
+}
+
+.cagp-step-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cagp-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff;
+  border: 1.5px solid var(--cagp-dark, #0a0a0a);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.cagp-step-content {
+  flex-grow: 1;
+}
+
+.cagp-step-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cagp-dark, #0a0a0a);
+  margin-bottom: 0.2rem;
+}
+
+.cagp-step-desc {
+  font-size: 0.84rem;
+  color: var(--cagp-gray-700, #343a40);
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Botão Flutuante 'Voltar ao Topo' (Back to Top)
+   ========================================================================== */
+.cagp-back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1040;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.55rem 0.9rem;
+  background-color: var(--cagp-white, #ffffff);
+  color: var(--cagp-dark, #0a0a0a);
+  border: 2px solid var(--cagp-dark, #0a0a0a);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px var(--cagp-dark, #0a0a0a);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none !important;
+}
+
+.cagp-back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cagp-back-to-top:hover {
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff !important;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-back-to-top:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--cagp-dark, #0a0a0a);
+}
+
+/* ==========================================================================
+   Melhorias Responsivas na Subnav
+   ========================================================================== */
+@media (max-width: 768px) {
+  .cagp-subnav {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
 }
 
 

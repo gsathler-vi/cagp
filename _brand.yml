@@ -3,9 +3,9 @@ meta:
   link: "https://cagp-ufmg.github.io"
 
 logo:
-  small: "logos/10_simbolo_transparente_positivo.svg"
-  medium: "logos/06_horizontal_transparente_positivo.svg"
-  large: "logos/02_vertical_transparente_positivo.svg"
+  small: "logos/cagp/10_simbolo_transparente_positivo.svg"
+  medium: "logos/cagp/06_horizontal_transparente_positivo.svg"
+  large: "logos/cagp/02_vertical_transparente_positivo.svg"
 
 color:
   palette:

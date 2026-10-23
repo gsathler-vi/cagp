@@ -1,6 +1,6 @@
 ---
 title: "Extensão & Atividades Complementares (AAC)"
-subtitle: "Regulamento oficial, curricularização da extensão (300h), modalidades de AAC e convalidação no SEI"
+subtitle: "Regulamento oficial, curricularização da extensão (300h), modalidades de AAC e validação no Colegiado"
 title-block-style: none
 toc: true
 ---
@@ -22,7 +22,7 @@ A formação em Gestão Pública na UFMG integra extensão comunitária obrigat�
   <span class="cagp-subnav-label">Nesta Página:</span>
   <a href="#calculadora-horas" class="cagp-subnav-link">🧮 Calculadora 600h</a>
   <a href="#regulamento-categorias" class="cagp-subnav-link">📑 As 9 Categorias AAC</a>
-  <a href="#passo-a-passo-sei" class="cagp-subnav-link">⚠️ Prazo 120 Dias & SEI</a>
+  <a href="#passo-a-passo" class="cagp-subnav-link">⚠️ Prazo 120 Dias & Validação</a>
   <a href="#programa-de-imersao" class="cagp-subnav-link">🏛️ Programa de Imersão</a>
   <a href="#nucleos-pesquisa" class="cagp-subnav-link">🔬 Núcleos de Pesquisa</a>
 </nav>
@@ -312,21 +312,93 @@ As AACs são atividades facultativas de enriquecimento curricular desenvolvidas 
 | **IX — Vivência Profissional** | Gestão em órgãos públicos, ONGs ou estágio não-obrigatório na área de públicas. | **60h** (4 cr) | Documento de autorização e relatório final assinado com avaliação das atribuições. |
 :::
 
-### 3. Prazos e Submissão via SEI-UFMG {#passo-a-passo-sei}
+### 3. Prazos e Submissão ao Colegiado {#passo-a-passo}
 
 ::: {.callout-important}
 ### ⚠️ Fique Atento ao Prazo Regimental de 120 Dias!
 O Art. 15, § 4º, incisos III e VII estabelece que certificados de participação e de apresentação em congressos, conferências e eventos devem ser protocolados junto ao Colegiado no **prazo máximo de 120 dias corridos após a realização do evento**! Não guarde certificados de eventos para o fim do curso.
 :::
 
-### Passo a Passo para Abertura do Processo: {.fs-5}
-1. **Digitalize os Comprovantes:** Reúna os certificados e relatórios em PDF nítidos contendo seu nome, CPF ou matrícula, carga horária expressa e chave de validação digital.
-2. **Preencha o Formulário Padrão do Colegiado:** Baixe o [Formulário Oficial de Integralização de AAC (DOCX)](documentos.qmd#formularios) disponibilizado pela Secretaria de Gestão Pública na FAFICH.
-3. **Autuação no Sistema Eletrônico de Informações (SEI-UFMG):**
-   - Acesse o SEI como discente ou protocole via instrução semestral divulgada pelo Colegiado.
-   - Tipo do Processo: *Graduação: Aproveitamento de Atividades Acadêmicas Complementares*.
-4. **Análise Docente:** O docente designado pelo Departamento de Ciência Política avaliará o mérito acadêmico e emitirá o despacho de creditação no SIGA.
-5. **Apoio do CAGP:** Se tiver dúvidas sobre o enquadramento de uma atividade, procure o plantão do CAGP no pilotis da FAFICH antes de submeter!
+```{=html}
+<section class="cagp-doc-guide my-4" aria-labelledby="guide-aac-title">
+  <div class="cagp-doc-guide-header d-flex flex-wrap align-items-center justify-content-between gap-2">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1">Guia Visual Passo a Passo</span>
+      <h3 id="guide-aac-title" class="h5 mb-0 text-uppercase fw-bold">Como Preencher o Requerimento de AAC (Versão N-20229)</h3>
+    </div>
+    <a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-chip">📥 Baixar Requerimento Oficial (PDF)</a>
+  </div>
+  <p class="small text-muted mb-4">
+    Preencha um requerimento para cada atividade extracurricular que desejar integralizar na sua carga horária de até 300h (Art. 15). Confira os campos indispensáveis no formulário padrão:
+  </p>
+
+  <div class="row g-4">
+    <!-- Visual com Print e Pins -->
+    <div class="col-lg-6">
+      <div class="cagp-doc-preview-wrapper" role="region" aria-label="Visualização anotada do formulário de Requerimento de Atividade Integralizadora de Crédito">
+        <img src="imagens/tutoriais/print-requerimento-aac-1.png" alt="Formulário oficial de Requerimento de Atividade Integralizadora de Crédito AAC do Colegiado de Gestão Pública com marcações numeradas" class="cagp-doc-preview-img" loading="lazy">
+        
+        <!-- Box 1 & Pin 1: Identificação -->
+        <div class="cagp-doc-box" style="top: 13%; left: 5%; width: 90%; height: 16%;" aria-hidden="true"></div>
+        <button type="button" class="cagp-doc-pin" style="top: 13%; left: 5%;" aria-label="Ponto 1: Identificação do Requerente">1</button>
+
+        <!-- Box 2 & Pin 2: Dados da Atividade -->
+        <div class="cagp-doc-box" style="top: 31%; left: 5%; width: 90%; height: 26%;" aria-hidden="true"></div>
+        <button type="button" class="cagp-doc-pin" style="top: 31%; left: 5%;" aria-label="Ponto 2: Dados da Atividade e Créditos Requeridos">2</button>
+
+        <!-- Box 3 & Pin 3: Documentos e Assinatura -->
+        <div class="cagp-doc-box" style="top: 58%; left: 5%; width: 90%; height: 18%;" aria-hidden="true"></div>
+        <button type="button" class="cagp-doc-pin" style="top: 58%; left: 5%;" aria-label="Ponto 3: Comprovação e Assinatura">3</button>
+      </div>
+    </div>
+
+    <!-- Passos Explicativos -->
+    <div class="col-lg-6">
+      <div class="cagp-step-list">
+        <div class="cagp-step-card">
+          <span class="cagp-step-num">1</span>
+          <div class="cagp-step-content">
+            <h4 class="cagp-step-title">1. Identificação do(a) Estudante</h4>
+            <p class="cagp-step-desc">
+              Preencha seu nome completo, <strong>Nº de Matrícula</strong>, telefone de contato e e-mail institucional <code>@ufmg.br</code>. Certifique-se de que sua versão curricular é a <strong>N-20229</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="cagp-step-card">
+          <span class="cagp-step-num">2</span>
+          <div class="cagp-step-content">
+            <h4 class="cagp-step-title">2. Classificação da Atividade & Créditos</h4>
+            <p class="cagp-step-desc">
+              Indique o <strong>Tipo (Modalidades I a IX)</strong>, período de realização (início e término), órgão ou entidade promotora e a quantidade exata de créditos solicitados (1 crédito = 15h).
+            </p>
+          </div>
+        </div>
+
+        <div class="cagp-step-card">
+          <span class="cagp-step-num">3</span>
+          <div class="cagp-step-content">
+            <h4 class="cagp-step-title">3. Anexos Comprobatórios & Assinatura</h4>
+            <p class="cagp-step-desc">
+              Relacione no campo de documentos os certificados com código/link de verificação de autenticidade eletrônica. Assine e date a solicitação antes da entrega.
+            </p>
+          </div>
+        </div>
+
+        <div class="cagp-step-card">
+          <span class="cagp-step-num">📍</span>
+          <div class="cagp-step-content">
+            <h4 class="cagp-step-title">Onde Entregar e Acompanhamento</h4>
+            <p class="cagp-step-desc">
+              Protocolar no guichê do CEAG (2º andar da FAFICH) ou conforme instrução semestral do Colegiado. Após análise do docente do DCP, os créditos constarão no seu histórico escolar no SIGA.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+```
 
 :::
 

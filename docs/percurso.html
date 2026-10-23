@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./logos/10_simbolo_transparente_positivo.svg" rel="icon" type="image/svg+xml">
+<link href="./logos/cagp/10_simbolo_transparente_positivo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-955bad0bd13c5038111fddfa05bfbac8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-955bad0bd13c5038111fddfa05bfbac8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-955bad0bd13c5038111fddfa05bfbac8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a1f1a3887588b37393eb9c40a38723c2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a1f1a3887588b37393eb9c40a38723c2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a1f1a3887588b37393eb9c40a38723c2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -95,8 +95,8 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./logos/10_simbolo_transparente_positivo.svg" alt="Símbolo dos Candangos - CAGP UFMG" class="navbar-logo light-content">
-    <img src="./logos/10_simbolo_transparente_positivo.svg" alt="Símbolo dos Candangos - CAGP UFMG" class="navbar-logo dark-content">
+    <img src="./logos/cagp/10_simbolo_transparente_positivo.svg" alt="Símbolo dos Candangos - CAGP UFMG" class="navbar-logo light-content">
+    <img src="./logos/cagp/10_simbolo_transparente_positivo.svg" alt="Símbolo dos Candangos - CAGP UFMG" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">CAGP</span>
@@ -1223,6 +1223,26 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 
 </main> <!-- /main -->
+<a href="#" id="cagp-back-to-top" class="cagp-back-to-top" aria-label="Voltar ao início da página">↑ Topo</a>
+<script>
+(function () {
+  const btn = document.getElementById('cagp-back-to-top');
+  if (!btn) return;
+  const toggleVisible = function () {
+    if (window.scrollY > 280) {
+      btn.classList.add('is-visible');
+    } else {
+      btn.classList.remove('is-visible');
+    }
+  };
+  window.addEventListener('scroll', toggleVisible, { passive: true });
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  toggleVisible();
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

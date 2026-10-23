@@ -23,7 +23,7 @@ Sediado no Departamento de Ciência Política (DCP), o CAGP é o órgão legíti
 ::: {.col-lg-4 .col-12 .text-center .mt-4 .mt-lg-0}
 ```{=html}
 <div class="cagp-hero-emblem-card">
-  <img src="logos/06_horizontal_transparente_positivo.svg" alt="Símbolo oficial dos Candangos do Centro Acadêmico de Gestão Pública da UFMG" class="cagp-hero-emblem-img" width="260" height="90">
+  <img src="logos/cagp/06_horizontal_transparente_positivo.svg" alt="Símbolo oficial dos Candangos do Centro Acadêmico de Gestão Pública da UFMG" class="cagp-hero-emblem-img" width="260" height="90">
 </div>
 ```
 :::
@@ -407,6 +407,31 @@ Enquanto o CAGP é a voz política e representativa dos estudantes, o **Colegiad
     </div>
   </div>
 </div>
+
+<div class="cagp-card mb-4">
+  <div class="d-flex align-items-center justify-content-between mb-2">
+    <span class="cagp-badge cagp-badge-dark">Órgão Consultivo e Estruturante</span>
+    <span class="text-muted small">PPC & Matriz Curricular</span>
+  </div>
+  <h3 class="fs-6 fw-bold text-uppercase text-danger mb-2">Núcleo Docente Estruturante (NDE)</h3>
+  <p class="small text-muted mb-3">Responsável pela concepção, consolidação e atualização contínua do Projeto Pedagógico do Curso (PPC) e pelo acompanhamento da matriz curricular:</p>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <ul class="small mb-0 ps-3">
+        <li><strong>Presidente (Membro Nato):</strong> Profª Isabele Batista Mitozo (<a href="mailto:coordgestaopublicaufmg@gmail.com">coordgestaopublicaufmg@gmail.com</a>)</li>
+        <li><strong>Membro Eleito:</strong> Prof. Paulo Ricardo Diniz Filho (<a href="mailto:paulo.ng.diniz@gmail.com">paulo.ng.diniz@gmail.com</a>)</li>
+        <li><strong>Membro Eleito:</strong> Prof. Marcus Abílio Pereira (<a href="mailto:magopebh@gmail.com">magopebh@gmail.com</a>)</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul class="small mb-0 ps-3">
+        <li><strong>Membro Eleito:</strong> Prof. João Carlos Amoroso Botelho (<a href="mailto:joaocarlosbotelho@hotmail.com">joaocarlosbotelho@hotmail.com</a>)</li>
+        <li><strong>Membro Eleita:</strong> Profª Ludmila Mendonça Lopes Ribeiro (<a href="mailto:ludmila.ribeiro@gmail.com">ludmila.ribeiro@gmail.com</a>)</li>
+        <li><strong>Membro Eleita:</strong> Profª Natália Guimarães Duarte Sátyro (<a href="mailto:nsatyro@gmail.com">nsatyro@gmail.com</a>)</li>
+      </ul>
+    </div>
+  </div>
+</div>
 ```
 
 ---
@@ -445,6 +470,58 @@ Conforme o **Título VI do Regimento Interno (Arts. 41 a 45)**, as eleições do
       <p class="small text-muted mb-0">Permitida apenas 1 (uma) reeleição consecutiva da mesma gestão (Art. 44).</p>
     </div>
   </div>
+</div>
+```
+
+---
+
+## <span aria-hidden="true">🏛️</span> As Três Esferas de Representação Discente na UFMG {#representacao-tripartite}
+
+A representação estudantil na Universidade Federal de Minas Gerais opera em **três instâncias democráticas complementares e autônomas**. Compreender o papel de cada uma garante que suas demandas cheguem com agilidade ao órgão deliberativo competente:
+
+```{=html}
+<div class="cagp-rep-grid my-4">
+  <!-- Nível 1: CAGP -->
+  <article class="cagp-rep-card cagp-rep-card-cagp">
+    <span class="cagp-rep-badge cagp-rep-badge-cagp">1. Âmbito do Curso</span>
+    <h3 class="cagp-rep-title">CAGP UFMG</h3>
+    <div class="cagp-rep-scope">Centro Acadêmico de Gestão Pública</div>
+    <p class="small text-muted mb-2">Entidade primária e imediata de representação discente de Gestão Pública na FAFICH.</p>
+    <ul class="cagp-rep-list">
+      <li><strong>Instâncias:</strong> Colegiado de Coordenação Didática e Núcleo Docente Estruturante (NDE).</li>
+      <li><strong>Pautas Centrais:</strong> Oferta e horários das 27 matérias no turno noturno, quebra de pré-requisitos, ementas, percursos curriculares, validação de horas AAC e Estágios.</li>
+      <li><strong>Quando Procurar:</strong> Dificuldades pedagógicas com docentes, dúvidas regimentais, recepção de calouros e projetos de extensão do curso.</li>
+      <li><strong>Contato:</strong> <a href="mailto:cagp@fafich.ufmg.br">cagp@fafich.ufmg.br</a> • Pilotis da FAFICH.</li>
+    </ul>
+  </article>
+
+  <!-- Nível 2: DA FAFICH -->
+  <article class="cagp-rep-card cagp-rep-card-da">
+    <span class="cagp-rep-badge cagp-rep-badge-da">2. Âmbito da Unidade</span>
+    <h3 class="cagp-rep-title">DA FAFICH</h3>
+    <div class="cagp-rep-scope">Diretório Acadêmico da FAFICH</div>
+    <p class="small text-muted mb-2">Articulação coletiva dos mais de 2.000 estudantes dos 7 cursos de Humanas e Sociais da faculdade.</p>
+    <ul class="cagp-rep-list">
+      <li><strong>Instâncias:</strong> Congregação da FAFICH e interlocução com a Diretoria da Unidade.</li>
+      <li><strong>Cursos Integrados:</strong> Gestão Pública, Ciências Sociais, Ciência Política, Filosofia, História, Psicologia e Comunicação Social.</li>
+      <li><strong>Pautas Centrais:</strong> Manutenção predial da FAFICH, banheiros, acessibilidade dos elevadores, segurança noturna e gestão do auditório e pilotis.</li>
+      <li><strong>Quando Procurar:</strong> Problemas estruturais do prédio da FAFICH, convivência universitária e eventos interdisciplinares de Humanas.</li>
+    </ul>
+  </article>
+
+  <!-- Nível 3: DCE UFMG -->
+  <article class="cagp-rep-card cagp-rep-card-dce">
+    <span class="cagp-rep-badge cagp-rep-badge-dce">3. Âmbito Universitário</span>
+    <h3 class="cagp-rep-title">DCE UFMG</h3>
+    <div class="cagp-rep-scope">Diretório Central dos Estudantes "José Carlos da Mata Machado"</div>
+    <p class="small text-muted mb-2">Instância máxima de representação geral de todos os 35 mil discentes de graduação da UFMG.</p>
+    <ul class="cagp-rep-list">
+      <li><strong>Instâncias:</strong> Conselhos Superiores da UFMG (Conselho Universitário - COSNUN, CEPE e CEI).</li>
+      <li><strong>Pautas Centrais:</strong> Políticas de Assistência Estudantil (ampliação de recursos FUMP/PRAE), restaurantes universitários (RUs), passe livre e circulares gratuitos, e moradia estudantil.</li>
+      <li><strong>Quando Procurar:</strong> Violações graves de direitos institucionais, mobilizações gerais e cortes orçamentários na educação federal.</li>
+      <li><strong>Sede:</strong> Praça de Serviços (Campus Pampulha) e sede histórica no Centro de BH.</li>
+    </ul>
+  </article>
 </div>
 ```
 
@@ -492,7 +569,7 @@ Conforme o **Art. 6º do Regimento**, a sede e o foro da entidade situam-se no c
           <div class="cagp-journey-dir">Voltar ao Início &rarr;</div>
           <div class="cagp-journey-title">Hub Principal do CAGP (Bússola do Estudante)</div>
         </div>
-        <p class="cagp-journey-desc">Retornar ao painel principal com atalhos para SIGA, SEI, MinhaUFMG e trilhas por etapa.</p>
+        <p class="cagp-journey-desc">Retornar ao painel principal com atalhos para MinhaUFMG/SIGA e trilhas por etapa.</p>
       </a>
     </div>
   </div>

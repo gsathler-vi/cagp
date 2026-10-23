@@ -85,8 +85,14 @@ web
   8. `documentos/termo-aceite-orientador-tcc.pdf` (401 KB) — Formulário Oficial de Termo de Aceite de Orientador de TCC.
 - **Transcrições Oficiais para Consulta (`_referencias/documentos-oficiais/` — não publicadas):**
   - 7 arquivos `.md` homônimos aos PDFs normativos acima (registrados em `_referencias/documentos-oficiais/README.md`). Regra: consultar o `.md` para redigir, mas linkar sempre `documentos/<nome>.pdf` nas páginas.
+- **Fontes Oficiais Capturadas (`_referencias/sites-informacoes-oficiais/` — não publicadas; HTML bruto fora do git):**
+  - `colegiado-gp/`: páginas do site do Colegiado (colegiado, estágio, NDE, normas, o curso, programas, secretaria, grade de horários), a apresentação e a transcrição da Recepção de Ingressantes 2024/2.
+  - `guia-viver-ufmg/`: Guia Viver UFMG (primeiros passos, vida acadêmica, assistência estudantil).
+  - Precedência: PDF nas normas; site do Colegiado em informação operacional (com URL viva e data da captura); Guia Viver UFMG como complemento, subordinado ao específico do curso.
+- **Plataformas Externas (`_referencias/plataformas-e-acessos-externos/` — não publicada):** repositório do Interno Rotas (MIT), linkado no portal com crédito.
 - **Ativos Visuais Publicados:**
-  - `logos/`: Exclusivamente arquivos SVG de logotipo e símbolo do CAGP (`10_simbolo_transparente_positivo.svg`, `06_horizontal_transparente_positivo.svg`, etc.).
+  - `logos/cagp/`: arquivos SVG de logotipo e símbolo do CAGP (`10_simbolo_transparente_positivo.svg`, `06_horizontal_transparente_positivo.svg`, etc.). É a única subpasta de `logos/` publicada por padrão.
+  - `logos/<entidade>/` (`ufmg`, `minhaufmg`, `siga`, `fump`, `interno-rotas`): marcas de terceiros, de uso apenas referencial (identificam serviço ou sistema), sem alteração e nunca no cabeçalho ou rodapé. Vão para `docs/` só quando uma página os referencia.
   - `imagens/`: Fotografias e imagens de conteúdo (`imagens/os-candangos.jpg`).
 - **Histórico Técnico:** `_referencias/memorial-tecnico.md`.
 
@@ -102,5 +108,5 @@ web
 
 - Conformidade com os critérios **WCAG 2.1 níveis AA e AAA** em taxas de contraste cromático e componentes interativos.
 - Hierarquia semântica contínua de cabeçalhos (único `H1` por página, sem saltos de nível `H2` ➔ `H3`).
-- Atributos `alt` / `fig-alt` descritivos em 100% das imagens em `imagens/` e `logos/`, e `aria-hidden="true"` em emojis decorativos.
+- Atributos `alt` / `fig-alt` descritivos em 100% das imagens em `imagens/` e `logos/` (inclusive logos de terceiros), e `aria-hidden="true"` em emojis decorativos.
 - Navegação completa por teclado com estados `:focus-visible` nítidos (`outline: 3px solid #9e2424`) e componentes interativos (filtros, abas, gavetas `<details>`, checklists) acessíveis a leitores de tela.

@@ -163,12 +163,12 @@ O sistema espacial e proporcional do CAGP estrutura-se sobre um plano cartesiano
 
 ---
 
-## 5. Catálogo Oficial dos Arquivos Vetoriais (12 Variações)
+## 5. Catálogo Oficial dos Arquivos Vetoriais (12 Variações + 1)
 
-A suíte oficial de arquivos SVG é composta por 12 variações divididas em três disposições funcionais:
+A suíte oficial de arquivos SVG é composta por 12 variações divididas em três disposições funcionais, mais uma 13ª variação monocromática (ver 5.1). Todos ficam em `logos/cagp/`; as demais subpastas de `logos/` guardam marcas de terceiros (ver `AGENTS.md`):
 
 ```
-logos/
+logos/cagp/
 ├── 01_vertical_fundo_claro.svg
 ├── 02_vertical_transparente_positivo.svg
 ├── 03_vertical_fundo_escuro.svg
@@ -180,7 +180,8 @@ logos/
 ├── 09_simbolo_fundo_claro.svg
 ├── 10_simbolo_transparente_positivo.svg
 ├── 11_simbolo_fundo_escuro.svg
-└── 12_simbolo_transparente_negativo.svg
+├── 12_simbolo_transparente_negativo.svg
+└── 13_horizontal_cagp_essencial.svg   # variação adicional pós-v2.0
 ```
 
 ### 5.1 Matriz Técnica e Descrição Exata dos Documentos
@@ -199,6 +200,7 @@ logos/
 | `10_simbolo_transparente_positivo.svg` | Ícone | Transparente | `#0A0A0A` | — | Selos monocromáticos, carimbos oficiais, botons e corte a laser. |
 | `11_simbolo_fundo_escuro.svg` | Ícone | `#121214` | `#FFFFFF` | — | Favicons escuros, botões de aplicativo mobile e avatares escuros. |
 | `12_simbolo_transparente_negativo.svg` | Ícone | Transparente | `#FFFFFF` | — | Marcas d'água em vídeos institucionais, apresentações e estampas de vestuário. |
+| `13_horizontal_cagp_essencial.svg` | Horizontal | Transparente | `#0A0A0A` | — (monocromático) | Variação adicionada após a v2.0 (sem cor de acento). Regras de uso a definir; até lá, tratar como o `06` em fundo claro. |
 
 ---
 

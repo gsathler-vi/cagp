@@ -2,8 +2,8 @@ project:
   type: website
   output-dir: docs
   resources:
-    - "documentos/*.pdf"
-    - "logos/**"
+    - "documentos/**"
+    - "logos/cagp/**"
     - "imagens/**"
   render:
     - index.qmd
@@ -19,7 +19,7 @@ website:
   title: "CAGP"
   site-url: "https://cagp-ufmg.github.io"
   description: "Centro Acadêmico de Gestão Pública - FAFICH / UFMG"
-  favicon: "logos/10_simbolo_transparente_positivo.svg"
+  favicon: "logos/cagp/10_simbolo_transparente_positivo.svg"
 
   announcement:
     icon: megaphone-fill
@@ -31,7 +31,7 @@ website:
   
   navbar:
     title: "CAGP"
-    logo: "logos/10_simbolo_transparente_positivo.svg"
+    logo: "logos/cagp/10_simbolo_transparente_positivo.svg"
     logo-alt: "Símbolo dos Candangos - CAGP UFMG"
     background: light
     collapse-below: lg
@@ -81,4 +81,5 @@ format:
     toc-title: "Nesta página"
     toc-location: right
     smooth-scroll: true
+    include-after-body: _includes/back-to-top.html
 

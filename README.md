@@ -17,12 +17,14 @@ cagp/
 ├── _variables.scss         # tema Bootswatch Brite adaptado ao CAGP
 ├── styles.css              # componentes visuais próprios (.cagp-*)
 ├── documentos/             # PDFs oficiais para download
-├── logos/                  # logotipos SVG do CAGP
+├── logos/                  # marcas: cagp/ (publicado) + subpastas de terceiros (uso referencial)
 ├── imagens/                # fotos e imagens de conteúdo
 ├── docs/                   # site gerado (não editar à mão)
 ├── _referencias/           # material de apoio, não publicado
 │   ├── documentos-oficiais/  # transcrições .md dos documentos oficiais
-│   ├── identidade-visual/    # manual de identidade visual
+│   ├── identidade-visual/    # manuais de identidade visual (CAGP, UFMG, minhaUFMG)
+│   ├── sites-informacoes-oficiais/       # capturas do site do Colegiado GP e do Guia Viver UFMG
+│   ├── plataformas-e-acessos-externos/   # material de serviços externos (ex.: Interno Rotas)
 │   ├── tema-brite-original/  # Bootswatch Brite original (referência)
 │   └── memorial-tecnico.md   # histórico completo do desenvolvimento
 ├── AGENTS.md               # regras do projeto para agentes de IA
@@ -49,11 +51,13 @@ O GitHub Pages publica a pasta `/docs` da branch `main` (**Settings → Pages �
 
 O projeto é mantido com o Google Antigravity e quatro skills em `.agents/skills/`:
 
-| Skill | Uso |
+| Skill | Acionada quando |
 | :--- | :--- |
-| `quarto-authoring` | Estrutura das páginas, callouts, tabsets e configuração do Quarto |
-| `brand-yml` | Identidade de marca (`_brand.yml`) |
-| `impeccable` | Design de interface e UX (lê `PRODUCT.md` e `DESIGN.md`) |
-| `alt-text` | Textos alternativos acessíveis para imagens |
+| `impeccable` | Qualquer trabalho de interface: design, crítica, auditoria, acabamento (lê `PRODUCT.md` e `DESIGN.md`) |
+| `quarto-authoring` | Edição de `.qmd` e `_quarto.yml`: estrutura das páginas, callouts, divs e navegação |
+| `brand-yml` | Mudanças de cores, fontes ou logos em `_brand.yml` |
+| `alt-text` | Textos alternativos acessíveis para imagens e logos |
+
+O agente escolhe a skill sozinho, seguindo a seção "Roteamento de Skills" do `AGENTS.md`. A `impeccable` está versionada no repositório (`.agents/skills/impeccable/`, v4.7.0).
 
 As regras do projeto, as fontes de verdade e as convenções de pastas estão em [`AGENTS.md`](AGENTS.md). O histórico de decisões fica em [`_referencias/memorial-tecnico.md`](_referencias/memorial-tecnico.md).

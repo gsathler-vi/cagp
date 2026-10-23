@@ -488,10 +488,10 @@ crie um /plan de organização dos arquivos e pastas do projeto focando em não 
 | `faq.qmd` | Inexistente | 9 perguntas e respostas com regras sobre trancamento, Mobilidade Acadêmica (DRI), CEAG até 22h e aproveitamento de estudos. | Central de dúvidas regimentais. |
 | `sobre.qmd` | Inexistente | Governança autêntica do Regimento 2024: 7 Diretorias Executivas, Assembleia Geral, Junta Eleitoral, Composição do Colegiado e semiótica dos Candangos. | Página institucional e estatutária. |
 | `documentos/` | Inexistente | 7 arquivos PDF oficiais digitalizados com nomes web-safe normalizados (Regimento Interno CAGP, PPC, Regulamento, Ementário e Matrizes). | Acervo físico de documentos fonte. |
-| `logos/` | SVGs com percentuais. | SVGs com dimensões físicas ajustadas (`width="410" height="600"`) para evitar colapso flexbox na navbar. Desde o Ciclo 13, contém apenas os SVG. | Acervo vetorial de identidade de marca. |
+| `logos/` | SVGs com percentuais. | SVGs com dimensões físicas ajustadas (`width="410" height="600"`) para evitar colapso flexbox na navbar. Desde o Ciclo 13, contém apenas os SVG. No Ciclo 17 passou a ter uma subpasta por entidade (`cagp/`, `ufmg/`, `minhaufmg/`, `siga/`, `fump/`, `interno-rotas/`); só `cagp/` é publicado por padrão. | Acervo de marcas (CAGP e terceiros referenciais). |
 | `imagens/` | Inexistente | Fotografia histórica dos Candangos (`os-candangos.jpg`), retirada de `logos/` no Ciclo 13. | Imagens de conteúdo. |
-| `_referencias/` | Material solto na raiz (`brite/`, manual, `documentos_oficiais_do_curso/`, memorial no `README.md`). | Pasta não publicada com `documentos-oficiais/`, `identidade-visual/`, `tema-brite-original/` e `memorial-tecnico.md`. | Material de apoio e fontes de verdade para agentes. |
-| `AGENTS.md` | Inexistente | Regra de projeto com mapa de pastas, fontes de verdade e regras de manutenção. | Contexto carregado sempre pelos agentes. |
+| `_referencias/` | Material solto na raiz (`brite/`, manual, `documentos_oficiais_do_curso/`, memorial no `README.md`). | Pasta não publicada com `documentos-oficiais/`, `identidade-visual/` (manuais CAGP, UFMG e minhaUFMG), `tema-brite-original/`, `sites-informacoes-oficiais/`, `plataformas-e-acessos-externos/` (estas duas desde o Ciclo 17) e `memorial-tecnico.md`. | Material de apoio e fontes de verdade para agentes. |
+| `AGENTS.md` | Inexistente | Regra de projeto com mapa de pastas, fontes de verdade, roteamento de skills (Ciclo 18) e regras de manutenção. | Contexto carregado sempre pelos agentes. |
 | `README.md` | Exemplo padrão; depois virou o memorial técnico. | Apresentação curta do repositório (estrutura, como rodar, publicação, skills). | Porta de entrada no GitHub. |
 | `docs/` | Inexistente. | Diretório estático compilado pelo Quarto, pronto para deploy no GitHub Pages (8 páginas HTML, CSS, JS e as pastas `documentos/`, `logos/` e `imagens/`). | Artefato de produção final. |
 
@@ -567,7 +567,144 @@ Em visualizações mobile (< 768px), itens com títulos e termos técnicos exten
 
 ---
 
-## 19. Instruções de Manutenção e Publicação
+### Ciclo 17 — Acervo de Marcas por Entidade e Novas Referências Oficiais (`/plan` + `/grill-me`)
+
+**Prompt do Usuário:**
+```text
+realizei alterações nas pastas do projeto e adicionei alguns arquivos quero que analise as mudanças e atualize as diretrizes do projeto de forma geral com o novo contexto. /plan /grill-me
+```
+
+**Diagnóstico:**
+- `logos/` foi reorganizado em subpastas por entidade: `cagp/`, `ufmg/`, `minhaufmg/`, `siga/`, `fump/`, `interno_rotas/`. Isso quebrou os caminhos em `_quarto.yml` (favicon e navbar), `_brand.yml`, `index.qmd` e `sobre.qmd`, que ainda apontavam para `logos/NN_*.svg`.
+- Novas referências em `_referencias/`: `sites_informacoes_oficiais/` (~120 MB de HTML do Colegiado GP e do Guia Viver UFMG, mais a Recepção de Ingressantes 2024/2), `plataformas_e_acessos_externos/interno_rotas/` (repositório MIT) e dois manuais de identidade visual (UFMG e minhaUFMG).
+- Nomes fora do padrão (espaços, acentos, `_removebg-preview`) e HTML bruto ainda fora do `.gitignore`.
+- Havia uma 13ª variação do logo do CAGP (`13_horizontal_cagp_essencial.svg`) ausente do manual.
+
+**Decisões (via `/grill-me`):**
+1. `resources` publica só `logos/cagp/**`. Logos de terceiros vão a `docs/` apenas se uma página os referenciar.
+2. HTML bruto e `*_files/` de `sites-informacoes-oficiais/` ficam no `.gitignore`; só `.md` e PDFs são versionados.
+3. Precedência: PDF nas normas; site do Colegiado em informação operacional (URL viva + data da captura); Guia Viver UFMG complementa, prevalecendo o específico do curso. Em conflito, vale o mais recente e sinaliza-se.
+4. Logos de terceiros só de forma referencial, sem alteração, com `alt`; marca UFMG nunca em cabeçalho, rodapé ou hero; Interno Rotas (MIT) com crédito e link.
+5. Nomes em kebab-case, sem acento e sem espaço, para arquivos e pastas (exceções: variações `NN_nome.svg` de `logos/cagp/`, `README`/`LICENSE` e HTML brutos capturados).
+6. Corrigir caminhos, rodar `quarto render` e registrar este ciclo.
+
+**O Que Foi Feito:**
+- **Renomeação:** pastas e arquivos novos passaram a kebab-case (`sites-informacoes-oficiais/colegiado-gp/…`, `plataformas-e-acessos-externos/interno-rotas/`, `logos/interno-rotas/`, `logos/ufmg/aplicacoes|assinaturas/`, `manual-de-identidade-visual-minhaufmg.md`, `logo-minha-ufmg.png`, `transcricao-recepcao-ingressantes-2024-2.md`, `recepcao-ingressantes-2024-2.pdf`). A pasta `README/` do Interno Rotas manteve o nome porque o `README.md` dele a referencia.
+- **Caminhos:** `_quarto.yml`, `_brand.yml`, `index.qmd` e `sobre.qmd` apontam para `logos/cagp/…`; `resources` reduzido a `logos/cagp/**`.
+- **`.gitignore`:** ignora `**/*.html` e `**/*_files/` de `_referencias/sites-informacoes-oficiais/`.
+- **Diretrizes:** `AGENTS.md` (mapa de pastas, hierarquia de fontes, regras 4 a 6 novas), `README.md`, `PRODUCT.md` (Evidence on Hand e acessibilidade), `DESIGN.md` (subseção "Marcas de Terceiros"), `_referencias/README.md` e dois READMEs novos (`sites-informacoes-oficiais/` e `plataformas-e-acessos-externos/`).
+- **Manual CAGP:** seção 5 com o prefixo `logos/cagp/` e a 13ª variação catalogada como "regras de uso a definir".
+- **Validação:** `rm -rf docs && quarto render` sem erros (8 páginas); `docs/logos/` contém só `cagp/`; nenhuma referência órfã a `logos/NN_*`.
+
+---
+
+### Ciclo 18 — Roteamento Automático de Skills no `AGENTS.md` (`/plan` + `/grill-me` + `/antigravity-guide` + `/agy-customizations`)
+
+**Prompt do Usuário:**
+```text
+faça uma análise detalhada das minhas skills do projeto e monte um agents.md detalhado capaz de destinar cada skill automaticamente para o melhor contexto e uso possível /plan /grill-me /antigravity-guide /agy-customizations
+```
+
+**Análise das skills:**
+- `impeccable` (v4.7.0): núcleo do projeto, mas era um **symlink absoluto** para `~/.gemini/skills/impeccable`, versionado no git e quebrado em qualquer outro clone.
+- `quarto-authoring` (v1.4), `brand-yml` (v1.1) e `alt-text` (v1.0): foram escritas para R, Python, Shiny e gráficos de dados. O portal é estático, sem células de código, e a `alt-text` procura `#| label: fig-`, que não existe aqui.
+- Como skills só expõem nome e descrição até serem ativadas, o `AGENTS.md` (regra sempre ativa) é o lugar certo do roteamento.
+
+**Decisões (via `/grill-me`):**
+1. Roteamento dentro do único `AGENTS.md` (limite de 24 KB por regra).
+2. Copiar a `impeccable` real para `.agents/skills/impeccable/` (23 MB, com binário Linux x64).
+3. Precedência: `AGENTS.md` + `PRODUCT.md` + `DESIGN.md` > skill > padrão geral. A linguagem Brite é o brief fixado da `impeccable`.
+4. Verificação obrigatória sem hook: `quarto render` e `impeccable detect --json docs/*.html`.
+5. Skills built-in em tabela curta.
+6. Nenhuma skill nova: fluxos viram playbooks.
+
+**O Que Foi Feito:**
+- `.agents/skills/impeccable` deixou de ser symlink e passou a ser cópia real (v4.7.0 confirmada).
+- `AGENTS.md` ganhou a seção "Roteamento de Skills": precedência, matriz de decisão, tabela de comandos da `impeccable`, limites de cada skill, playbooks por tarefa, verificação obrigatória e dependências. Regra 9 e mapa de pastas atualizados.
+- `README.md`: tabela de skills com "acionada quando".
+
+---
+
+## 19. Ciclo 15: Atualização Documental Completa, Modelos de Estágio e Alinhamento Político-Operacional
+
+### Contexto e Alinhamento (/plan & /grill-me)
+Ciclo conduzido a partir das fontes oficiais capturadas (Colegiado de Gestão Pública, Guia Viver UFMG e FUMP). Através do `/grill-me`, foram consolidadas as decisões de arquitetura e tom:
+1. **Acervo de Documentos:** Download e catalogação de todos os PDFs identificados e exportação de modelos de estágio do Google Docs para a pasta pública `documentos/` (PDF e DOCX).
+2. **Sínteses em Markdown:** Criação de base temática estruturada (`.md`) em `_referencias/sites-informacoes-oficiais/` para alimentar agentes e consultas futuras.
+3. **Restaurante Universitário:** Integração da orientação prática do RU Setorial II (17h10–19h30, linhas 3 e 4 do circular) com Callout de Reivindicação do CAGP cobrando as entidades estudantis (DCE/PRAE) pelo impacto da distância aos estudantes trabalhadores do turno noturno.
+4. **Sistemas Acadêmicos:** MinhaUFMG como portal desktop integrador, app Siga UFMG no smartphone, e remoção completa de qualquer menção ao aplicativo do SEI.
+5. **Governança:** Inclusão formal do Núcleo Docente Estruturante (NDE) e dos horários do CEAG e Secretaria de Curso.
+
+### O Que Foi Feito:
+- **Download Automatizado (`_referencias/scripts/download_all_docs.py`):**
+  - 80 arquivos válidos consolidados em `documentos/` com nomes limpos em kebab-case sem acento.
+  - Modelos de estágio do Google Docs exportados em PDF e DOCX (Plano de Atividades, Termos de Compromisso, Relatórios e Requerimentos de Integralização por Experiência).
+  - Formulários oficiais do DRCA atualizados para a versão vigente de 2026.
+  - Normas institucionais arquivadas (Regimento Geral UFMG, Resolução Assédio 07/2025, Resolução Nome Social, Manual App Siga UFMG).
+- **Curadoria Visual:**
+  - Infográficos úteis copiados para `imagens/` (`guia-alimentacao-no-campus.png`, `guia-acesso-biblioteca.png`, `guia-acesso-sistemas.png`).
+  - Assinaturas e marcas organizadas em `logos/ufmg/assinaturas/` (`prae-ufmg.png`, `nai-ufmg.png`, `prograd-ufmg.png`).
+  - Imagens auxiliares de contexto salvas em `_referencias/imagens-contexto/`.
+- **Sínteses em Markdown (`_referencias/sites-informacoes-oficiais/`):**
+  - `fump/assistencia-estudantil-e-alimentacao.md`: Classificação socioeconômica, questionário, funcionamento dos RUs e contatos de BH.
+  - `guia-viver-ufmg/sistemas-e-primeiros-passos.md`: Folha NIPs, MinhaUFMG desktop, App Siga UFMG, Wi-Fi eduroam e BU.
+  - `guia-viver-ufmg/vida-academica-e-servicos.md`: Calendário, NAI, Direitos Humanos, Nome Social e Saúde Mental.
+  - `colegiado-gp/secretaria-e-procedimentos.md`: Secretaria Sala 2039 vs CEAG noturno (8h–22h).
+  - `colegiado-gp/estagio-curricular.md`: Tabela com links locais e Google Docs dos modelos.
+  - `colegiado-gp/nde-e-colegiado.md`: Composição nominal da coordenação, colegiado e NDE.
+- **Revisão Textual das Páginas:**
+  - `calouros.qmd`: Checklist com MinhaUFMG + App Siga UFMG; Jantar no Setorial II + Callout de Reivindicação do CAGP; FUMP com WhatsApp e questionário.
+  - `index.qmd`: Remoção do SEI dos atalhos e do painel lateral; criação da aba "4. Protocolos Acadêmicos & CEAG".
+  - `documentos.qmd`: Tabela de formulários com links locais; seção dedicada de "Modelos de Estágio" (PDF/DOCX/Drive); seção "Normas Gerais Institucionais"; remoção de menções ao SEI.
+  - `sobre.qmd`: Inclusão nominal dos 6 membros do Núcleo Docente Estruturante (NDE).
+  - `acg.qmd`, `estagio-tcc.qmd` e `faq.qmd`: Adequação aos novos modelos locais e eliminação de referências ao SEI.
+  - `styles.css`: Ajuste de contraste no header do `callout-warning` para conformidade estrita WCAG AA (texto `#0A0A0A` sobre `#E65100`, ratio 6.5:1).
+- **Compilação e Auditoria:**
+  - `quarto render`: 8 páginas compiladas com zero erros.
+  - `impeccable detect`: zero desvios de contraste ou all-caps nas páginas atualizadas.
+
+---
+
+## 20. Ciclo 7: Identidades Visuais, Central de Aplicativos, Tutoriais com PDFs e QoL da Navegação
+
+### Prompt do Usuário
+```text
+Agora quero que planeje /plan com /grill-me para ajustar visualmente o site colocando tambem as logos e identidade visual da fump, siga, minha ufmg e site de acompanhamento dos internos feitos por um aluno. Ademais colocar link dos apps do siga e fump para android e ios também. e logos. Ademais verifique nos sites coisas que necessitam de um tutorial, e crie um passo a passo visual com print do pdf e setas com marcações apontando o que fazer em cada espaço e documento como estagio e solicitar acg e preencher formularios. Ademais identifiquei alguns erros de renderização na home Sistemas Oficiais UFMG {#sistemas-ufmg} ademais ate proponha reajustes na navegação e paginas do site pensando em UX/UI se tem alguma coisa em relação a QoL da navegação nessa navegação rápida que poderia melhorar.
+```
+
+### O Que Foi Feito
+- **Central de Aplicativos e Identidades Visuais Oficiais:**
+  - Coleta e organização referencial das marcas de serviços acadêmicos: MinhaUFMG (`logos/minhaufmg/`), Siga UFMG (`logos/siga/`), Fump (`logos/fump/`) e Interno Rotas (`logos/interno-rotas/`), em total conformidade com a Regra 4 do `AGENTS.md`.
+  - Inclusão dos links oficiais verificados para lojas e web:
+    - *Siga UFMG*: Google Play (Android) e Apple App Store (iOS).
+    - *Fump*: Google Play (Android) e Portal da Fundação Mendes Pimentel.
+    - *MinhaUFMG*: Portal de sistemas integrados (`sistemas.ufmg.br`).
+    - *Interno Rotas*: Web App dinâmico dos circulares (`internorotas.com`).
+  - Criação dos componentes responsivos `.cagp-app-hub`, `.cagp-app-card` e `.cagp-store-btn` no estilo Neo-Brutalista Brite.
+  - Inserção na barra lateral da Home (`index.qmd`) e no Guia de Sobrevivência do Calouro (`calouros.qmd`).
+- **Resolução do Erro de Renderização Pandoc na Home (`#sistemas-ufmg`):**
+  - Identificada a causa raiz: recuo de 4 espaços em blocos HTML brutos e o uso de títulos Markdown `##` dentro de colunas de grid Quarto/Bootstrap, o que forçava o Pandoc a interpretar o conteúdo como `<pre><code>` e fechar indevidamente os contêineres `.col-*`.
+  - Refatoração completa da barra lateral com bloco `{=html}` estrito e elemento semântico `<aside class="cagp-sidebar-panel cagp-sticky-rail">`, garantindo layout estável em 8 colunas (conteúdo) + 4 colunas (rail lateral).
+- **Tutoriais Visuais Passo a Passo com Prints de Formulários:**
+  - Extração de imagens em alta resolução (150 DPI) das primeiras páginas dos formulários oficiais via `pdftoppm`:
+    - `imagens/tutoriais/print-termo-estagio-1.png`: Termo de Compromisso de Estágio com Convênio UFMG.
+    - `imagens/tutoriais/print-requerimento-aac-1.png`: Requerimento de AAC (Versão N-20229).
+    - `imagens/tutoriais/print-mudanca-percurso-1.png`: Requerimento de Mudança de Percurso Curricular (DRCA).
+  - Implementação do componente `.cagp-doc-guide`, contendo o documento demarcado com caixas tracejadas (`.cagp-doc-box`), pins numéricos interativos (`.cagp-doc-pin`) e cards explicativos sequenciais (`.cagp-step-card`).
+  - Inserção em `estagio-tcc.qmd` (formalização de estágio e limites da Lei 11.788/08), `acg.qmd` (submissão de AAC e prazo de 120 dias) e `documentos.qmd` (migração de percurso DRCA).
+- **Melhorias de UX/UI e Qualidade de Vida (QoL) na Navegação:**
+  - **Deep-linking na Bússola:** Sincronização automática do hash da URL (`#bussola=calouro`, `#bussola=meio`, `#bussola=formando`, `#bussola=ceag`) permitindo compartilhamento direto de abas específicas entre estudantes.
+  - **Acessibilidade por Teclado WAI-ARIA:** Suporte completo às teclas `ArrowLeft`, `ArrowRight`, `Home` e `End` nas abas da Bússola com gestão dinâmica de foco.
+  - **Subnav Responsiva:** Adição de rolagem horizontal tátil (`overflow-x: auto`, `scrollbar-width: thin`) em dispositivos móveis na barra rápida `.cagp-subnav`.
+  - **Botão Global 'Voltar ao Topo':** Criado via template parcial `_includes/back-to-top.html` e integrado globalmente pelo `_quarto.yml`, com aparição suave após rolagem de 280px e animação tátil no clique.
+- **Auditoria de Design com Skill Impeccable:**
+  - Eliminação de alertas de `nested-cards`, `side-tab-accent` e `tiny-text` através de ajustes na hierarquia visual e tipografia em `styles.css` e `_variables.scss` (`$font-size-base: 1rem; small, .small { font-size: 0.85rem !important; }`).
+  - `quarto render`: 8 páginas compiladas com zero erros.
+  - `impeccable detect`: zero violações críticas ou de acessibilidade.
+
+---
+
+## 21. Instruções de Manutenção e Publicação
 
 ### 19.1 Pré-Visualização Local com Live-Reload
 Para continuar desenvolvendo ou visualizando o site localmente com atualização instantânea no navegador ao salvar qualquer arquivo `.qmd` ou `.css`:
@@ -593,6 +730,43 @@ Como o diretório de saída está configurado e validado em `docs/`:
 3. Em **Build and deployment > Source**, selecione **Deploy from a branch**.
 4. Em **Branch**, selecione a branch `main` e a pasta `/docs`.
 5. Clique em **Save**. O site entrará no ar no endereço configurado em `_quarto.yml` (`https://cagp-ufmg.github.io`).
+
+---
+
+## 22. Ciclo de Refinamento UX/UI, Multimídia e Navegação por Personas (Outubro/2026)
+
+Em atendimento às diretrizes estratégicas de usabilidade, representação discente e redução de sobrecarga cognitiva, foi implementado o ciclo `/impeccable shape` e `/impeccable craft`:
+
+### 22.1 Inovações de Navegação e UX
+- **Bússola Interativa de 4 Personas Discentes:**
+  1. *Quero Ingressar:* Apresentação do Gestor Público, dados salariais de egressos (R$ 6.300+), dinâmica do turno noturno e editais SiSU/DRCA.
+  2. *Calouro Noturno (1º Período):* Checklist de 30 dias, rotina noturna (aulas, jantar no RU Setorial II, circulares linhas 3 e 4) e matrícula de 180h.
+  3. *Meio de Curso (2º ao 6º Período):* Comparador dos 3 percursos, calculadora interativa de 600h e alerta do prazo de 120 dias para AAC (Art. 15).
+  4. *Reta Final & Formando (7º ao 10º Período):* Simulador de dispensa de estágio (Art. 41), 4 modalidades de TCC e formulários de colação de grau.
+  - Implementado com deep-linking via URL hash (`#bussola=ingressar`, `#bussola=calouro`, etc.) e suporte integral a WAI-ARIA com teclas direcionais.
+
+### 22.2 Redesenho Integral do Hub de Apps & Sistemas UFMG
+- O antigo bloco lateral rígido foi substituído por uma seção em grade fluida (`.cagp-app-grid`) com barra de filtros dinâmicos no cliente ("Todos", "💻 Portais Web / Desktop", "📱 Apps de Celular", "🏢 Atendimento Presencial").
+- Cards com faixas heráldicas personalizadas que harmonizam com o Neo-Brutalismo Brite: SIGA (azul), MinhaUFMG (petróleo), FUMP (laranja), Interno Rotas (verde), CEAG FAFICH (vinho) e BU (ouro), mantendo os arquivos oficiais dos logos intocados em conformidade com a Regra 4 de `AGENTS.md`.
+
+### 22.3 Módulo Tripartite de Representação Discente
+- Estruturação didática e visual das 3 esferas da representação estudantil na UFMG:
+  1. **CAGP:** Nível de curso (Colegiado, NDE, quebras de pré-requisitos, ementas e acolhimento).
+  2. **DA FAFICH:** Nível de unidade (interlocução dos 7 cursos de Humanas com Congregação e Diretoria, segurança e manutenção predial).
+  3. **DCE UFMG:** Nível universitário (Conselho Universitário, CEPE, assistência estudantil FUMP/PRAE, moradia e circulares).
+- Exibição de destaque na página inicial e detalhamento aprofundado em `sobre.qmd`.
+
+### 22.4 Recursos Multimídia: Mapas e Vídeos Oficiais
+- **Visualizador de Mapas:** Integração de mapas em alta resolução do Campus Pampulha (`mapa-pampulha-detalhado.jpg` e `mapas-dos-campi.png`) destacando FAFICH, CAD 2, RUs I e II, Praça de Serviços e linhas circulares.
+- **YouTube Facade Acessível:** Implementação de cards multimídia leves com miniaturas do YouTube e carregamento de player sob demanda (sem lentidão de página), cobrindo tutoriais do SIGA, MinhaUFMG, Carteirinha da UFMG, NAI Acessibilidade, Saúde Mental DASE e Enfrentamento ao Assédio (Res. 07/2025).
+
+### 22.5 Central de Assistência Estudantil e Logística Noturna
+- Apresentação completa dos Níveis I, II e III da FUMP e guia passo a passo do Questionário Socioeconômico com infográfico oficial.
+- Tabela oficial de reforço das linhas circulares 3 e 4 para acesso ao RU Setorial II à noite e denúncia política do CAGP pela reabertura do jantar no Setorial I ou marmitas no CAD 2 / FAFICH.
+
+### 22.6 Auditoria e Verificação
+- `quarto render`: 8 páginas compiladas com código 0.
+- `impeccable detect`: zero violações críticas, zero nested-cards, zero contrast issues e adesão total à cartilha de design.
 
 ---
 

@@ -222,7 +222,13 @@ O vocabulário geométrico é cartesiano, sólido e contido:
 
 ### Navigation (Navbar & Announcement Banner)
 - **Banner de Proposta:** Faixa vermelha superior contínua e não dispensável (`website.announcement`), com badge preto contrastante `PROPOSTA DE CHAPA` e texto destacado em amarelo claro (`#FFD54F`).
-- **Navbar:** Fundo branco puro com borda inferior preta de 2px, logotipo oficial dos Candangos com altura fixa de 40px, links com peso 600 que se colorem em Vinho Candango no hover/active.
+- **Navbar:** Fundo branco puro com borda inferior preta de 2px, logotipo oficial dos Candangos com altura fixa de 40px, links com peso 600 que se colorem em Vinho Candango no hover/active. O símbolo vem de `logos/cagp/10_simbolo_transparente_positivo.svg`.
+
+### Marcas de Terceiros (UFMG, minhaUFMG, SIGA, FUMP, Interno Rotas)
+- **Função:** identificar o serviço ou sistema para onde um card ou botão leva. Nunca decoram, nunca assinam o portal.
+- **Fidelidade:** arquivo original de `logos/<entidade>/`, sem recolorir, distorcer, cortar ou aplicar sombra, borda ou efeito. Escolha a versão do arquivo adequada ao fundo (positivo em fundo claro, negativo em fundo escuro) e respeite a área de proteção descrita nos manuais de `_referencias/identidade-visual/`.
+- **Contenção:** o logo fica dentro de um contêiner neutro (branco ou off-white), com altura controlada, sem competir com o símbolo dos Candangos. A marca UFMG não aparece em navbar, rodapé, hero nem no banner da chapa.
+- **Acessibilidade:** `alt` descritivo com o nome da entidade e o destino (ex.: "Logo do SIGA UFMG").
 
 ## Do's and Don'ts
 

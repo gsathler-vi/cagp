@@ -22,7 +22,7 @@ Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas
   <a href="#filtro-faq" class="cagp-subnav-link">🔎 Filtrar Dúvidas</a>
   <a href="acg.html#calculadora-horas" class="cagp-subnav-link">🧮 Calculadora 600h</a>
   <a href="estagio-tcc.html#simulador-art41" class="cagp-subnav-link">⚖️ Simulador Dispensa Art. 41</a>
-  <a href="documentos.html#formularios" class="cagp-subnav-link">📝 Formulários SEI</a>
+  <a href="documentos.html#formularios" class="cagp-subnav-link">📝 Formulários & Requerimentos</a>
 </nav>
 
 <section id="filtro-faq" class="cagp-tool-box" aria-labelledby="faq-filter-title">
@@ -207,7 +207,7 @@ O CAGP tem representação com assento no Colegiado do Curso de Gestão Pública
           <div class="cagp-journey-dir">&larr; Passo Anterior</div>
           <div class="cagp-journey-title">Acervo de Documentos & Formulários Oficiais</div>
         </div>
-        <p class="cagp-journey-desc">Baixe o PPC, Regulamento, Ementário, Regimento CAGP e requerimentos em DOCX.</p>
+        <p class="cagp-journey-desc">Acesse o PPC, Regulamento, Ementário, Regimento CAGP, mais de 80 documentos e modelos em PDF e DOCX.</p>
       </a>
     </div>
     <div class="col-md-6">
