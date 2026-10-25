@@ -87,8 +87,9 @@
         'index.html': 'cagp-mnav-inicio',
         '': 'cagp-mnav-inicio',
         'percurso.html': 'cagp-mnav-percurso',
-        'acg.html': 'cagp-mnav-acg',
-        'faq.html': 'cagp-mnav-faq'
+        'documentos.html': 'cagp-mnav-docs',
+        'gestao.html': 'cagp-mnav-cagp',
+        'sobre.html': 'cagp-mnav-cagp'
       };
       document.querySelectorAll('.cagp-mobile-nav-item').forEach(function (item) {
         item.classList.remove('is-active');
@@ -98,6 +99,24 @@
         const activeEl = document.getElementById(activeId);
         if (activeEl) activeEl.classList.add('is-active');
       }
+
+      // 3. Atualizar Bespoke Super App Floating Island Navbar
+      document.querySelectorAll('.cagp-island-nav-link').forEach(function (link) {
+        const route = link.getAttribute('data-route');
+        link.classList.toggle('is-active', route === pathname || (route === 'index.html' && pathname === ''));
+      });
+      document.querySelectorAll('.cagp-island-dropdown').forEach(function (dd) {
+        const items = dd.querySelectorAll('.cagp-island-dropdown-item');
+        let parentActive = false;
+        items.forEach(function (item) {
+          const route = item.getAttribute('data-route');
+          const isItemActive = route === pathname;
+          item.classList.toggle('is-active', isItemActive);
+          if (isItemActive) parentActive = true;
+        });
+        const btn = dd.querySelector('.cagp-island-dropdown-btn');
+        if (btn) btn.classList.toggle('is-active', parentActive);
+      });
     } catch (e) {
       console.warn('CAGP Router: Erro ao sincronizar UI de navegação:', e);
     }
@@ -115,14 +134,46 @@
     });
   }
 
+  function findHashElement(hash) {
+    if (!hash || hash === '#') return null;
+    const rawId = hash.startsWith('#') ? hash.slice(1) : hash;
+    let decodedId = rawId;
+    try {
+      decodedId = decodeURIComponent(rawId);
+    } catch (e) {}
+
+    let el = document.getElementById(decodedId);
+    if (el) return el;
+    el = document.getElementById(rawId);
+    if (el) return el;
+    try {
+      if (window.CSS && CSS.escape) {
+        el = document.querySelector('#' + CSS.escape(decodedId)) || document.querySelector('#' + CSS.escape(rawId));
+        if (el) return el;
+      }
+    } catch (e) {}
+    return null;
+  }
+
   function applyPageSwap(doc, targetUrl) {
     // 1. Título do Documento
     const newTitle = doc.querySelector('title');
     if (newTitle) document.title = newTitle.textContent;
 
-    // 2. Classes do Body
+    // 2. Classes do Body (Preservando estados dinâmicos como Standalone e Acessibilidade)
+    const isStandaloneActive = document.documentElement.classList.contains('cagp-is-standalone') ||
+                               document.body.classList.contains('cagp-is-standalone');
+    const isDyslexia = document.body.classList.contains('cagp-dyslexia');
+    const isContrast = document.body.classList.contains('cagp-high-contrast');
+
     if (doc.body) {
       document.body.className = doc.body.className;
+      if (isStandaloneActive) {
+        document.documentElement.classList.add('cagp-is-standalone');
+        document.body.classList.add('cagp-is-standalone');
+      }
+      if (isDyslexia) document.body.classList.add('cagp-dyslexia');
+      if (isContrast) document.body.classList.add('cagp-high-contrast');
     }
 
     // 3. Margin Sidebar (TOC)
@@ -143,23 +194,66 @@
     const currentMain = document.getElementById('quarto-document-content');
     const newMain = doc.getElementById('quarto-document-content');
     if (currentMain && newMain) {
+      // Remover componentes do Shell persistente que possam vir embutidos no HTML estático recebido,
+      // pois eles já vivem de forma soberana e persistente na raiz do <body>
+      const dupBanner = newMain.querySelector('#quarto-announcement') || newMain.querySelector('#cagp-chapa-banner');
+      if (dupBanner) dupBanner.remove();
+
+      const dupHeader = newMain.querySelector('#cagp-superapp-header');
+      if (dupHeader) dupHeader.remove();
+
+      const dupTopbar = newMain.querySelector('#cagp-superapp-topbar');
+      if (dupTopbar) dupTopbar.remove();
+
+      const dupTabbar = newMain.querySelector('#cagp-superapp-tabbar');
+      if (dupTabbar) dupTabbar.remove();
+
+      const dupSettings = newMain.querySelector('#cagp-settings-sheet');
+      if (dupSettings) dupSettings.remove();
+
+      const dupBackdrop = newMain.querySelector('#cagp-settings-backdrop');
+      if (dupBackdrop) dupBackdrop.remove();
+
+      const dupDrawer = newMain.querySelector('#cagp-mobile-drawer');
+      if (dupDrawer) dupDrawer.remove();
+
+      const dupSkipLinks = newMain.querySelector('.cagp-skip-links');
+      if (dupSkipLinks) dupSkipLinks.remove();
+
+      const dupLauncher = newMain.querySelector('#cagp-app-launcher-modal');
+      if (dupLauncher) dupLauncher.remove();
+
+      // Fechar gaveta móvel ou modais abertos durante a navegação
+      if (window.closeCagpMobileDrawer) window.closeCagpMobileDrawer();
+      if (window.closeCagpAppLauncher) window.closeCagpAppLauncher();
+      if (window.closeCagpSpotlight) window.closeCagpSpotlight();
+      if (window.closeCagpAppSettings) window.closeCagpAppSettings();
+
       currentMain.innerHTML = newMain.innerHTML;
+      if (window.applyCagpCampusState) {
+        window.applyCagpCampusState(currentMain);
+      }
       executePageScripts(currentMain);
     }
 
-    // 5. Atualizar UI de Navegação (Navbar e Barra Móvel)
+    // 5. Atualizar UI de Navegação (Navbar, Barra Móvel e Super App)
     updateNavigationUI(targetUrl);
+    if (window.updateSuperAppUI) {
+      window.updateSuperAppUI(targetUrl);
+    }
 
     // 6. Controle Suave de Rolagem
     try {
       const url = new URL(targetUrl, window.location.href);
       if (url.hash) {
-        const targetEl = document.querySelector(url.hash);
-        if (targetEl) {
-          targetEl.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'instant' });
-        }
+        requestAnimationFrame(function () {
+          const targetEl = findHashElement(url.hash);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+          }
+        });
       } else {
         window.scrollTo({ top: 0, behavior: 'instant' });
       }
@@ -179,17 +273,40 @@
     document.dispatchEvent(new CustomEvent('cagp:navigated', { detail: { url: targetUrl } }));
   }
 
+  function showSkeleton(container) {
+    if (!container) return;
+    container.innerHTML = 
+      '<div class="cagp-skeleton-container" aria-busy="true" aria-label="Carregando conteúdo...">' +
+        '<div class="cagp-skeleton-header cagp-shimmer"></div>' +
+        '<div class="cagp-skeleton-line cagp-skeleton-title cagp-shimmer"></div>' +
+        '<div class="cagp-skeleton-line cagp-skeleton-sub cagp-shimmer"></div>' +
+        '<div class="cagp-skeleton-grid">' +
+          '<div class="cagp-skeleton-card cagp-shimmer"></div>' +
+          '<div class="cagp-skeleton-card cagp-shimmer"></div>' +
+          '<div class="cagp-skeleton-card cagp-shimmer"></div>' +
+        '</div>' +
+      '</div>';
+  }
+
   async function navigate(targetUrl, isBack) {
     try {
+      const mainEl = document.getElementById('quarto-document-content');
+      let skeletonTimer = null;
+      if (!cache.has(targetUrl) && mainEl) {
+        skeletonTimer = setTimeout(function () {
+          showSkeleton(mainEl);
+        }, 80);
+      }
+
       const html = await loadPage(targetUrl);
+      clearTimeout(skeletonTimer);
+
       const parser = new DOMParser();
       const newDoc = parser.parseFromString(html, 'text/html');
 
       if (!isBack) {
         history.pushState({ url: targetUrl }, '', targetUrl);
       }
-
-      const mainEl = document.getElementById('quarto-document-content');
 
       // Se o navegador suporta a View Transitions API nativa da Web
       if (document.startViewTransition) {

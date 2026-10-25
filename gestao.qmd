@@ -63,6 +63,17 @@ Conheça abaixo o organograma hierárquico da gestão, a estrutura funcional das
 :::
 
 ```{=html}
+<!-- Segmented Control Nativo (Apple HIG & M3 Expressive — Gestão Atual vs. O CAGP) -->
+<div class="cagp-segmented-nav my-3" role="tablist" aria-label="Visualização Institucional do CAGP">
+  <button type="button" class="cagp-seg-btn is-active" id="cagp-tab-gestao" role="tab" aria-selected="true" aria-controls="cagp-section-gestao" onclick="window.cagpSwitchInstTab &amp;&amp; window.cagpSwitchInstTab('gestao')">
+    <i class="bi bi-people-fill me-1" aria-hidden="true"></i> A Gestão em Exercício
+  </button>
+  <button type="button" class="cagp-seg-btn" id="cagp-tab-sobre" role="tab" aria-selected="false" aria-controls="cagp-section-sobre" onclick="window.cagpSwitchInstTab &amp;&amp; window.cagpSwitchInstTab('sobre')">
+    <i class="bi bi-bank me-1" aria-hidden="true"></i> O Centro Acadêmico (História &amp; Regimento)
+  </button>
+</div>
+
+<div id="cagp-section-gestao" class="cagp-inst-tab-panel">
 <nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
   <span class="cagp-subnav-label">Nesta Página:</span>
   <a href="#apresentacao-gestao" class="cagp-subnav-link"><i class="bi bi-megaphone" aria-hidden="true"></i> Comunicação</a>
@@ -528,6 +539,121 @@ Todas as 7 diretorias executivas possuem previsão regimental para inclusão de 
 :::
 :::
 :::
+</div>
+
+<!-- ======================================================================= -->
+<!-- SEÇÃO 2: O CENTRO ACADÊMICO (HISTÓRIA, REGIMENTO & SALINHA)              -->
+<!-- ======================================================================= -->
+```{=html}
+<div id="cagp-section-sobre" class="cagp-inst-tab-panel" hidden>
+  <div class="cagp-card cagp-surface-timbre mb-4">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="imagens/os-candangos.jpg" alt="Fotografia do monumento Os Candangos de Bruno Giorgi na Praça dos Três Poderes em Brasília" class="img-fluid border border-dark shadow-sm" style="max-height: 220px; object-fit: cover;">
+        <p class="text-muted small mt-2 mb-0"><strong>Os Candangos (1959)</strong><br>Monumento aos Construtores de Brasília</p>
+      </div>
+      <div class="col-md-8">
+        <span class="cagp-badge cagp-badge-red mb-2">Identidade Visual &amp; Origem</span>
+        <h3 class="fs-4 fw-bold text-uppercase mb-2">A Inspiração em Bruno Giorgi</h3>
+        <p class="small text-muted mb-2">
+          O símbolo do CAGP é inspirado no monumento histórico <strong>"Os Candangos"</strong> (Dois Guerreiros), obra-prima de Bruno Giorgi inaugurada na Praça dos Três Poderes em 1959.
+        </p>
+        <ul class="small list-unstyled mb-0">
+          <li class="mb-1"><i class="bi bi-check2-circle text-danger me-1"></i> <strong>Trabalho Coletivo:</strong> Duas figuras unidas em traço vertical simbolizam a soberania popular e a construção democrática da sociedade.</li>
+          <li class="mb-1"><i class="bi bi-check2-circle text-danger me-1"></i> <strong>Prumo da Gestão Pública:</strong> A haste horizontal representa a equidade, impessoalidade e ética que orientam a tomada de decisão no Estado.</li>
+          <li><i class="bi bi-check2-circle text-danger me-1"></i> <strong>Pilares Democráticos:</strong> Sustentação perene do Estado Democrático de Direito e das políticas públicas socialmente referenciadas.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4 mb-4">
+    <div class="col-md-6 col-lg-3">
+      <div class="cagp-card h-100">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <i class="bi bi-bank fs-4 text-danger" aria-hidden="true"></i>
+          <h4 class="mb-0 fs-6 text-uppercase fw-bold">Administração Pública</h4>
+        </div>
+        <p class="small text-muted mb-0">Princípios constitucionais da <strong>Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência</strong> em todos os atos (Art. 8º, III).</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="cagp-card h-100">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <i class="bi bi-shield-check fs-4 text-danger" aria-hidden="true"></i>
+          <h4 class="mb-0 fs-6 text-uppercase fw-bold">Suprapartidarismo</h4>
+        </div>
+        <p class="small text-muted mb-0">É <strong>expressamente vedada a filiação partidária</strong> da entidade (Art. 4º). Autonomia plena frente a governos, DA e DCE (Arts. 3º e 7º).</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="cagp-card h-100">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <i class="bi bi-mortarboard fs-4 text-danger" aria-hidden="true"></i>
+          <h4 class="mb-0 fs-6 text-uppercase fw-bold">Educação Crítica</h4>
+        </div>
+        <p class="small text-muted mb-0">Defesa intransigente do ensino público, gratuito e de excelência, assegurando <strong>acesso, permanência e apoio noturno</strong> (Art. 8º, I).</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="cagp-card h-100">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <i class="bi bi-file-earmark-spreadsheet fs-4 text-danger" aria-hidden="true"></i>
+          <h4 class="mb-0 fs-6 text-uppercase fw-bold">Transparência Ativa</h4>
+        </div>
+        <p class="small text-muted mb-0">Manutenção do CNPJ ativo, emissão mensal do RREO e <strong>acesso discente às contas em até 3 dias úteis</strong> (Art. 15, V).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cagp-card mb-4">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <i class="bi bi-geo-alt-fill fs-4 text-danger" aria-hidden="true"></i>
+      <h3 class="fs-5 fw-bold text-uppercase mb-0">A Sede Física no Pilotis da FAFICH</h3>
+    </div>
+    <p class="small text-muted mb-3">
+      O Centro Acadêmico possui espaço físico permanente de acolhimento discente localizado no <strong>Pilotis da FAFICH (térreo)</strong>, em frente aos jardins centrais. O espaço conta com computadores para consulta acadêmica, acervo de livros doados, café e área de debate.
+    </p>
+    <div class="d-flex flex-wrap gap-2">
+      <a href="documentos/regimento-interno-cagp-ufmg.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">
+        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Baixar Regimento Interno 2024 (PDF)
+      </a>
+      <a href="sobre.html" class="cagp-doc-btn cagp-doc-btn-outline">
+        <i class="bi bi-journal-text me-1" aria-hidden="true"></i> Ver Memorial Completo do Estatuto &rarr;
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+window.cagpSwitchInstTab = function (tabKey) {
+  const tabGestao = document.getElementById('cagp-tab-gestao');
+  const tabSobre = document.getElementById('cagp-tab-sobre');
+  const secGestao = document.getElementById('cagp-section-gestao');
+  const secSobre = document.getElementById('cagp-section-sobre');
+  if (!tabGestao || !tabSobre || !secGestao || !secSobre) return;
+
+  if (tabKey === 'sobre') {
+    tabGestao.classList.remove('is-active');
+    tabGestao.setAttribute('aria-selected', 'false');
+    tabSobre.classList.add('is-active');
+    tabSobre.setAttribute('aria-selected', 'true');
+    secGestao.hidden = true;
+    secSobre.hidden = false;
+  } else {
+    tabSobre.classList.remove('is-active');
+    tabSobre.setAttribute('aria-selected', 'false');
+    tabGestao.classList.add('is-active');
+    tabGestao.setAttribute('aria-selected', 'true');
+    secSobre.hidden = true;
+    secGestao.hidden = false;
+  }
+};
+if (window.location.hash === '#sobre-cagp' || window.location.hash === '#regimento-cagp') {
+  window.cagpSwitchInstTab('sobre');
+}
+</script>
+```
 
 ```{=html}
 <nav class="cagp-journey-nav" aria-label="Navegação entre páginas institucionais">

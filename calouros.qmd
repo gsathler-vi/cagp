@@ -49,6 +49,7 @@ Você agora é estudante de **Gestão Pública** na **Faculdade de Filosofia e C
 ```
 
 ## <i class="bi bi-check2-square" aria-hidden="true"></i> Checklist Interativo dos Primeiros 30 Dias {#checklist-calouro}
+<span id="checklist" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica salvo automaticamente neste navegador:
 
@@ -384,7 +385,8 @@ Estudar à noite na UFMG tem uma dinâmica própria que você precisa dominar de
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-### <i class="bi bi-cup-hot" aria-hidden="true"></i> Logística da Alimentação Noturna (RUs) {.fs-5}
+### <i class="bi bi-cup-hot" aria-hidden="true"></i> Logística da Alimentação Noturna (RUs) {#ru-alimentacao .fs-5}
+<span id="logística-da-alimentação-noturna-rus" class="cagp-anchor-alias" aria-hidden="true"></span>
 - **Jantar no Campus:** Servido exclusivamente no **RU Setorial II** (próximo ao ICB), das **17h10 às 19h30**.
 - **Café da Manhã:** Exclusivo para estudantes Níveis I, II e III da assistência estudantil no **RU Setorial I**, das **06h40 às 08h15**.
 - **Cobrança Política do CAGP:** O CAGP e o DA FAFICH cobram da PRAE e da FUMP a reabertura do jantar no Setorial I (vizinho à FAFICH) ou distribuição de marmitas no CAD 2, para evitar a subida íngreme à noite.
@@ -397,7 +399,8 @@ Estudar à noite na UFMG tem uma dinâmica própria que você precisa dominar de
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-### <i class="bi bi-bus-front" aria-hidden="true"></i> Ônibus Circulares Noturnos (Linhas 3 e 4) {.fs-5}
+### <i class="bi bi-bus-front" aria-hidden="true"></i> Ônibus Circulares Noturnos (Linhas 3 e 4) {#circulares-noturnos .fs-5}
+<span id="ônibus-circulares-noturnos-linhas-3-e-4" class="cagp-anchor-alias" aria-hidden="true"></span>
 - Os **circulares internos são 100% gratuitos** e ligam as portarias da Av. Antônio Carlos e Catalão aos prédios até as 22h45.
 - Para atender ao jantar no Setorial II, a PRA reforçou as viagens nos horários de pico:
   - **Linha 3:** 16h40, 17h20, 18h00 e 19h05.
@@ -534,6 +537,8 @@ A **Faculdade de Filosofia e Ciências Humanas** é uma das unidades mais tradic
 
 ::: {.cagp-card}
 ### <i class="bi bi-geo-alt" aria-hidden="true"></i> Onde Encontrar a Gestão e Pontos-Chave {#biblioteca-espacos}
+<span id="guia-biblioteca" class="cagp-anchor-alias" aria-hidden="true"></span>
+<span id="biblioteca" class="cagp-anchor-alias" aria-hidden="true"></span>
 - **Salinha do CAGP (Pilotis da FAFICH):** Espaço dos Centros Acadêmicos no pilotis térreo. Venha tomar um café, tirar dúvidas sobre professores, provas e percurso, e participar dos debates da gestão.
 - **Departamento de Ciência Política (DCP):** Departamento acadêmico de vinculação do curso de Gestão Pública, no 3º andar da FAFICH.
 - **Biblioteca Setorial da FAFICH (1º Andar):** Amplo acervo especializado em Ciência Política, Administração Pública, Sociologia e periódicos internacionais.

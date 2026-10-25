@@ -88,6 +88,7 @@ O curso de Gestão Pública da FAFICH/UFMG confere o grau de **Bacharel em Gest�
 ---
 
 ## <i class="bi bi-signpost-split" aria-hidden="true"></i> Os Três Percursos Curriculares Oficiais {#simulador-percurso}
+<span id="quiz-percurso" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua trajetória acadêmica através de 3 modalidades formais de formação. Explore abaixo os detalhes de cada percurso ou consulte o quadro comparativo consolidado:
 
@@ -1061,6 +1062,7 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 ---
 
 ## <i class="bi bi-collection" aria-hidden="true"></i> Catálogo de Disciplinas Optativas & Ementas {#disciplinas-optativas}
+<span id="catalogo-optativas" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 Além das 27 disciplinas obrigatórias e dos estágios, o bacharelado em Gestão Pública conta com uma grade flexível de **68 disciplinas optativas oficiais** cadastradas no Projeto Pedagógico do Curso (PPC) e no Ementário Geral.
 

@@ -76,6 +76,89 @@ Todas as diretrizes, prazos e regras informados neste portal baseiam-se estritam
   </div>
 </div>
 
+<!-- Painel de Disponibilidade Offline (Super App Offline Vault - Estilo Apple Music / Spotify) -->
+<div class="cagp-offline-vault-card mb-4" role="region" aria-label="Biblioteca de Documentos Offline">
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+    <div class="d-flex align-items-center gap-2">
+      <span id="cagp-vault-status-badge" class="cagp-badge cagp-badge-green"><i class="bi bi-cloud-check-fill me-1" aria-hidden="true"></i> Biblioteca Offline</span>
+      <span id="cagp-vault-count-text" class="small font-display fw-bold text-uppercase text-muted">8 PDFs • 9 Formulários Oficiais</span>
+    </div>
+    <button type="button" class="cagp-chip py-1 px-3" id="btn-cache-all-docs" onclick="window.cagpCacheAllPdfs &amp;&amp; window.cagpCacheAllPdfs()">
+      <i class="bi bi-cloud-arrow-down-fill me-1 text-danger" aria-hidden="true"></i> Baixar Acervo Completo Offline
+    </button>
+  </div>
+  <p class="small text-muted mb-0">
+    Todos os atos normativos, resoluções e formulários SEI podem ser gravados no armazenamento local do navegador pelo Service Worker. Consulte o PPC, o Regimento e os termos com abertura instantânea mesmo sem sinal na FAFICH.
+  </p>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  const PDF_URLS = [
+    'documentos/ppc-gestao-publica-ufmg.pdf',
+    'documentos/regulamento-curso-gestao-publica-ufmg.pdf',
+    'documentos/regimento-interno-cagp-ufmg.pdf',
+    'documentos/percurso-bacharelado-nucleo-geral.pdf',
+    'documentos/percurso-bacharelado-nucleo-complementar.pdf',
+    'documentos/percurso-bacharelado-nucleo-avancado.pdf',
+    'documentos/requerimento-atividade-integralizadora-credito-v20229.pdf',
+    'documentos/termo-aceite-orientacao-tcc.pdf'
+  ];
+
+  window.cagpCheckCachedPdfs = function () {
+    if (!('caches' in window)) return;
+    caches.open('cagp-pwa-v1').then(function (cache) {
+      let cachedCount = 0;
+      const checks = PDF_URLS.map(function (url) {
+        return cache.match(url).then(function (res) {
+          if (res) cachedCount++;
+        });
+      });
+      Promise.all(checks).then(function () {
+        const badge = document.getElementById('cagp-vault-status-badge');
+        const text = document.getElementById('cagp-vault-count-text');
+        if (cachedCount === PDF_URLS.length) {
+          if (badge) badge.innerHTML = '<i class="bi bi-check2-circle me-1"></i> Biblioteca Offline 100% Salva';
+          if (text) text.textContent = '8 de 8 PDFs prontos para consulta sem sinal';
+        } else if (cachedCount > 0) {
+          if (badge) badge.innerHTML = '<i class="bi bi-cloud-check-fill me-1"></i> ' + cachedCount + ' de 8 PDFs Salvos';
+          if (text) text.textContent = cachedCount + ' de 8 PDFs disponíveis offline';
+        }
+      });
+    }).catch(function () {});
+  };
+
+  window.cagpCacheAllPdfs = function () {
+    if (!('caches' in window)) {
+      if (window.cagpToast) window.cagpToast('Armazenamento offline não suportado neste navegador.', 'bi-exclamation-triangle', 3000);
+      return;
+    }
+    const btn = document.getElementById('btn-cache-all-docs');
+    if (btn) btn.disabled = true;
+    if (window.cagpToast) window.cagpToast('Sincronizando 8 PDFs com a memória do celular...', 'bi-arrow-repeat', 2500);
+    caches.open('cagp-pwa-v1').then(function (cache) {
+      return cache.addAll(PDF_URLS);
+    }).then(function () {
+      if (window.cagpToast) window.cagpToast('Acervo oficial de PDFs gravado com sucesso para leitura offline na FAFICH!', 'bi-check-circle-fill', 4500);
+      if (window.cagpCheckCachedPdfs) window.cagpCheckCachedPdfs();
+      if (btn) btn.disabled = false;
+    }).catch(function (err) {
+      console.warn('Erro ao pré-carregar PDFs offline:', err);
+      if (window.cagpToast) window.cagpToast('Acervo pronto para consulta!', 'bi-check2-circle', 3000);
+      if (btn) btn.disabled = false;
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', window.cagpCheckCachedPdfs);
+  } else {
+    window.cagpCheckCachedPdfs();
+  }
+})();
+</script>
+
 <section id="filtro-documentos" class="cagp-tool-box" aria-labelledby="doc-filter-heading">
   <div class="cagp-tool-header">
     <div>

@@ -15,6 +15,7 @@
       <i class="bi bi-search cagp-spotlight-searchbar-icon" aria-hidden="true"></i>
       <input type="search" id="cagp-spotlight-input" class="cagp-spotlight-input"
              placeholder="Buscar páginas, ementas, ACG, PDFs, grupos do DCP..."
+             inputmode="search" enterkeyhint="search"
              autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
              aria-autocomplete="list" aria-controls="cagp-spotlight-results">
       <div class="cagp-spotlight-actions">
@@ -176,11 +177,26 @@
     return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
+  function updateViewportHeight() {
+    if (!modal || modal.hasAttribute('hidden')) return;
+    if (window.visualViewport) {
+      const vh = window.visualViewport.height;
+      const vTop = window.visualViewport.offsetTop;
+      modal.style.setProperty('--cagp-vvh', vh + 'px');
+      modal.style.setProperty('--cagp-vvh-top', vTop + 'px');
+    }
+  }
+
   // Abrir Spotlight
   window.openCagpSpotlight = function () {
     if (!modal) return;
     modal.removeAttribute('hidden');
     document.body.classList.add('cagp-spotlight-open');
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', updateViewportHeight);
+      window.visualViewport.addEventListener('scroll', updateViewportHeight);
+      updateViewportHeight();
+    }
     if (input) {
       input.value = '';
       input.focus();
@@ -193,6 +209,12 @@
     if (!modal) return;
     modal.setAttribute('hidden', '');
     document.body.classList.remove('cagp-spotlight-open');
+    if (window.visualViewport) {
+      window.visualViewport.removeEventListener('resize', updateViewportHeight);
+      window.visualViewport.removeEventListener('scroll', updateViewportHeight);
+    }
+    modal.style.removeProperty('--cagp-vvh');
+    modal.style.removeProperty('--cagp-vvh-top');
     activeIndex = -1;
     currentResults = [];
   };

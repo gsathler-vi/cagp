@@ -56,6 +56,10 @@
 46. [Ciclo 46: Arquitetura de Super App Multiplataforma](#46-ciclo-46-arquitetura-de-super-app-multiplataforma-roteador-spa-client-side-view-transitions-nativas-pré-carregamento-instantâneo-e-física-tátil-apple-hig--m3-expressive)
 47. [Ciclo 47: Spotlight Command Palette & Suíte UI/UX Apple HIG & M3 Expressive](#47-ciclo-47-spotlight-command-palette--suíte-uiux-apple-hig--m3-expressive)
 48. [Ciclo 48: Floating Island Navbar, Mobile Super App & Detecção Inteligente de Plataforma](#48-ciclo-48-floating-island-navbar-mobile-super-app--detecção-inteligente-de-plataforma-ios-vs-android-widget-campus-hoje-e-layout-para-dobráveis)
+49. [Ciclo 49: Sovereign Super App Navigation Shell, Lançador de Mini-Apps & Transições com Skeleton Shimmer](#49-ciclo-49-sovereign-super-app-navigation-shell-lançador-de-mini-apps-waffle-grid--transições-com-skeleton-shimmer)
+50. [Ciclo 50: Arquitetura Dual Web vs. Super App Instalado, Catálogo dos 8 Micro-Apps e Offline Student Vault](#50-ciclo-50-arquitetura-dual-web-vs-super-app-instalado-catálogo-dos-8-micro-apps-e-offline-student-vault)
+51. [Ciclo 51: Polimento Global de Links, Resolução Infallível de Âncoras e Restauração do Anúncio da Chapa](#51-ciclo-51-polimento-global-de-links-resolução-infallível-de-âncoras-e-restauração-do-anúncio-da-chapa-impeccable-polish)
+52. [Ciclo 52: Refatoração Integral da UI/UX Mobile do Super App, Nova Bottom Tab Bar de 5 Destinos, Central de PDFs Offline e Relógio Síncrono Zero Latência](#52-ciclo-52-refatoração-integral-da-uiux-mobile-do-super-app-nova-bottom-tab-bar-de-5-destinos-central-de-pdfs-offline-e-relógio-síncrono-zero-latência-apple-hig--impeccable-adapt)
 
 ---
 
@@ -1780,3 +1784,194 @@ Atendendo às diretrizes avançadas `/impeccable new-work`, `/apple-design` e `/
 ### 48.5 Verificação Técnica e Auditoria Impeccable
 - Compilação estática Quarto executada com código de retorno 0 em todas as 11 páginas;
 - Auditoria do detector Impeccable em `docs/*.html` confirmou **0 erros**, registrando exclusivamente as 11 advertências autorizadas de `overused-font` para a tipografia Inter oficial.
+
+---
+
+## 49. Ciclo 49: Sovereign Super App Navigation Shell, Lançador de Mini-Apps (Waffle Grid) & Transições com Skeleton Shimmer
+
+**Contexto e Motivação:**  
+Seguindo os preceitos globais de arquitetura de **Super Apps** (WeChat, Alipay, Grab, Banco Inter, Mercado Pago) e os padrões de excelência de interface da **Apple (HIG / App Clips)** e do **Google (Material Design 3 Expressive)**, a navegação do portal CAGP foi completamente emancipada do motor nativo do Quarto (`website.navbar` e `website.announcement` foram 100% suprimidos de `_quarto.yml`). Foi desenvolvida uma **Navigation Shell soberana e proprietária** com controle total sobre marcação, semiótica, transições de estado, microinterações e acessibilidade universal.
+
+### 49.1 Emancipação Arquitetural do Quarto (`_quarto.yml`)
+- **Remoção de `website.navbar` e `website.announcement`:** A supressão total do bloco de navegação nativa do Quarto eliminou dependências legadas do Bootstrap (como `headroom.min.js`), transferindo o controle estrutural do cabeçalho para `_includes/super-app-header.html` injetado via `format.html.include-before-body`;
+- **Arquitetura Desacoplada:** O portal agora possui marcação HTML limpa, previsível e semanticamente auditada, garantindo total conformidade com a árvore de acessibilidade.
+
+### 49.2 Super App Navigation Shell & Floating Island (`_includes/super-app-header.html` e `styles.css`)
+- **Faixa Soberana de Proposta de Chapa (`.cagp-chapa-banner`):**
+  - Renderizada no topo com fundo neutro canônico (`var(--cagp-surface-container, #fbf8f3)`), borda nanquim de 2px, tipografia Inter e badge oficial em Oswald (`.cagp-announcement-badge`);
+  - Destaque ético do compromisso de entrega integral do portal à gestão vencedora, independente do pleito;
+- **Ilha Flutuante Suspensa (`.cagp-island-container`):**
+  - Barra suspensa com `max-width: 1200px`, borda sólida nanquim de 2.5px, sombra dura de 3px (`box-shadow: 3px 3px 0 var(--cagp-dark)`), cantos estritamente retos (`0px`) e microelevação tátil;
+  - Marca dos Candangos com o símbolo vetorial oficial e tipografia display Oswald;
+  - **Pílulas de Navegação Direta:** Atalhos para *Início* e *O Curso* com estado ativo contrastante em preto sólido;
+  - **Menus Suspensos Soberanos (Dropdowns Customizados):** Gavetas para *Jornada Acadêmica* (Guia do Calouro, Percurso, Calculadora ACG, Estágio/TCC), *Acervo & Ajuda* (Documentos, FAQ, Mapa do Site) e *O CAGP* (O Centro Acadêmico, Gestão em Exercício), operando sem dependências de JavaScript externo e com gerenciamento de estado via teclado (Escape/Tab);
+  - **Barra de Ferramentas Integrada:** Gatilho da busca Spotlight (`⌘K`), Lançador de Mini-Apps (`#cagp-waffle-btn`) e Acessibilidade Universal.
+
+### 49.3 Lançador de Mini-Apps (Waffle Grid 3x3 Modal)
+- **Inspiração WeChat / Alipay / Apple Launchpad:**
+  - Botão tátil na ilha (`.cagp-waffle-btn`) em Vinho Candango com badge de contagem de serviços (`8`);
+  - Ao ser clicado ou acionado via teclado, exibe uma gaveta modal suspensa (`#cagp-app-launcher-modal`) com fundo translúcido (`backdrop-filter: blur(4px)`) e física suave de expansão (`cubic-bezier(0.16, 1, 0.3, 1)`);
+- **Grade Canônica dos 8 Serviços Críticos do Curso:**
+  1. *Percurso & Ementas* (Matriz dos 10 períodos e 27 obrigatórias);
+  2. *Calculadora ACG* (Extensão 300h + AAC 300h);
+  3. *RU II Alimentação* (Horários e acesso FUMP);
+  4. *Circulares UFMG* (Linhas noturnas e Interno Rotas);
+  5. *68 Optativas* (Catálogo filtrável por departamento);
+  6. *Secretaria F-2039* (Escala CEAG e atendimento presencial);
+  7. *Central de PDFs* (Repositório de 8 normas oficiais e formulários SEI);
+  8. *Pesquisa & Iniciação* (11 núcleos temáticos do DCP/FAFICH);
+- **Cards Táteis com Badges de Função:** Cada mini-app conta com ícone monocromático em cores de ecossistema, título em Oswald, resumo funcional em Inter e tag categorizada (`Matriz`, `Simulador`, `Campus`, `Rotas`, `Catálogo`, `Suporte`, `Acervo`, `Ciência`).
+
+### 49.4 Telas de Esqueleto com Shimmer Effect no Roteador SPA (`_includes/super-app-router.html`)
+- **Zero Cumulative Layout Shift (CLS):** Durante o carregamento assíncrono de rotas internas no roteador SPA, caso a página de destino demore mais de 80ms para carregar do cache ou da rede, a função `showSkeleton()` injeta uma estrutura geométrica correspondente à página (`.cagp-skeleton-container`);
+- **Pulso Luminoso Suave (`.cagp-shimmer`):** Animação contida via gradiente linear deslizante de baixa saturação, antecipando blocos de cabeçalho, títulos e cards sem saltos de layout;
+- **Sincronização de Rotas Soberana:** A função `updateNavigationUI()` sincroniza instantaneamente as classes ativas (`.is-active`) tanto nos links diretos quanto nos itens de submenu e no botão-mãe do dropdown.
+
+### 49.5 Auditoria de Qualidade e Conformidade Impeccable
+- Compilação estática Quarto executada via `rm -rf docs && quarto render` com saída 0 em todas as 11 páginas;
+- Auditoria do detector Impeccable (`impeccable detect --json docs/*.html`) executada após resolução de contraste, dimensionamento de micro-textos para piso seguro ($\ge 11\text{px}$) e curvas de desaceleração exponencial (`ease-out-expo`), atingindo **0 erros** e registrando unicamente as 11 advertências esperadas e autorizadas de `overused-font: inter`.
+
+### 49.6 Crítica de Interface & Polimento Arquitetural (Impeccable Critique & Polish)
+Após a primeira implementação do Ciclo 49, uma auditoria profunda conduzida por dois subagentes especializados (Assessment A de Design Review e Assessment B de Evidências Técnicas) identificou e corrigiu falhas estruturais e estéticas:
+1. **Desacoplamento do Lançador de Mini-Apps (`_includes/app-launcher.html`):**
+   - **Causa Raiz do "Borrão Escuro":** O modal estava inserido em `include-before-body`, caindo dentro de `<main id="quarto-document-content">` que possuía `will-change: transform`. Pela especificação *CSS Transforms Level 1*, o elemento pai transformado tornava-se o bloco de contenção (*containing block*) do modal, projetando a caixa de diálogo milhares de pixels abaixo da viewport enquanto o backdrop cobria a tela com um borrão escuro inescapável.
+   - **Correção:** O modal foi migrado para o arquivo dedicado `_includes/app-launcher.html` e injetado em `format.html.include-after-body` em `_quarto.yml`, garantindo ancoragem direta em `<body>` fora de `<main>` e imunidade total a transformações de hardware. A regra `will-change: transform` foi removida de `#quarto-document-content`.
+2. **Correção do Botão de Acessibilidade da Navbar:**
+   - **Causa Raiz:** O botão invocava `window.openCagpA11y`, que não existia na API exposta por `_includes/accessibility.html` (`window.cagpA11y.open()`).
+   - **Correção:** Atualizado o disparador para `window.cagpA11y ? window.cagpA11y.open() : ...` e registrada a ponte global `window.openCagpA11y = openPanel` em `accessibility.html`.
+3. **Reconciliação e Proporções da Navbar (Brite Neo-brutalismo Autêntico):**
+   - **Eliminação do Glassmorphism Desalinhado:** Removidos o gradiente translúcido e o `backdrop-filter: blur(8px)` da embalagem externa, substituídos por cabeçalho sólido branco (`#FFFFFF`) com borda preta sólida de 2.5px (`#111111`) e sombra dura de 3px, estritamente alinhado a `DESIGN.md`.
+   - **Compactação Vertical (52px de Altura):** Reduzida a altura do cabeçalho de ~90px para 52px; o logo e a tipografia foram alinhados horizontalmente em uma única linha elegante.
+   - **Compactação da Faixa de Chapa:** Reduzida para linha única informativa com altura contida (máximo 30px).
+   - **Remoção do Falso Badge "8":** Eliminado o badge numérico amarelo do botão waffle que gerava falsa impressão de pendência/notificação não lida.
+   - **Ergonomia Móvel com Drawer Off-Canvas:** Adicionado botão de menu móvel e gaveta lateral deslizante (`#cagp-mobile-drawer`) em telas `< 992px` para navegação estruturada pelas 11 páginas.
+4. **Deduplicação de Shell e Correção de Navegação SPA Mobile:**
+   - **Causa Raiz da Duplicação:** Ao clicar nos botões inferiores de navegação móvel (`#cagp-mobile-nav`) ou nas ações rápidas de bolso, o roteador SPA carregava o HTML estático da página de destino. Como o Quarto injeta `include-before-body` dentro de `<main id="quarto-document-content">` em cada página estática compilada, a injeção ingênua de `newMain.innerHTML` em `currentMain` duplicava o cabeçalho e a faixa de anúncio dentro do artigo, mantendo simultaneamente a navbar prepended no `<body>`.
+   - **Correção:** A função `applyPageSwap` em `_includes/super-app-router.html` foi atualizada para remover cirurgicamente `#cagp-chapa-banner`, `#cagp-superapp-header`, `#cagp-mobile-drawer`, `.cagp-skip-links` e `#cagp-app-launcher-modal` do nó `newMain` antes de substituir o conteúdo interno de `<main>`. A casca soberana permanece 100% persistente na raiz de `<body>`, com zero duplicações, transições limpas e fechamento automático de quaisquer gavetas ou modais abertos. Além disso, `hoistHeaderToBody` em `super-app-header.html` ganhou rotina defensiva de deduplicação de nós.
+
+
+
+---
+
+## 50. Ciclo 50: Arquitetura Dual Web vs. Super App Instalado, Catálogo dos 8 Micro-Apps e Offline Student Vault (Shape, Critique, Polish, Apple HIG & M3 Expressive)
+
+**Contexto e Motivação:**  
+Atendendo às diretrizes avançadas `/impeccable shape`, `/impeccable critique`, `/impeccable polish`, `/apple-design` e `/m3-expressive`, o portal do CAGP passou por uma reformulação arquitetural profunda para operar sob um **modelo dual estrito e intencional**:
+1. **No Navegador Web Comum (Desktop e Mobile):** O portal preserva a experiência de publicação editorial acadêmica completa (navbar flutuante Floating Island, hero monumental de Bruno Giorgi, bússola guiada e central de sistemas), servindo perfeitamente para leitura densa e estudo. No navegador móvel (Safari/Chrome sem instalar), um card persuasivo convida ativamente o discente a adicionar o aplicativo à tela de início para desbloquear o modo de bolso;
+2. **No Super App Instalado (PWA Standalone):** Quando aberto a partir da tela inicial do celular (`display-mode: standalone`), o portal transmuta-se completamente em um **Super App de Bolso**, eliminando cabeçalhos de site, banners redundantes e rolagens verticais intermináveis, estruturando-se em torno de uma Top App Bar nativa (48px) com botão contextual `[← Hub]`, uma Bottom Tab Bar de 5 abas ergonômicas, a central dos 8 Micro-Apps do curso e a carteira acadêmica local offline.
+
+### 50.1 Top App Bar Nativa Enxuta (`#cagp-superapp-topbar` em `styles.css` e `super-app-header.html`)
+- **Altura Contida (48px + Safe Area):** Ocupa a faixa superior imediata sem poluição visual, respeitando `env(safe-area-inset-top)` em iPhones com notch ou Dynamic Island;
+- **Comportamento Contextual:**
+  - *Na Tela Inicial:* Exibe o símbolo clássico dos Candangos miniaturizado, a marca `CAGP • SUPER APP`, o selo comemorativo `⚡ Offline Ativo`, atalho para busca Spotlight (`⌘K`) e painel de acessibilidade;
+  - *Dentro de um Micro-App Específico (ex: `acg.html`, `percurso.html`, `calouros.html`):* Substitui a marca por um botão tátil `[← Hub]` para retorno imediato à central, atualizando o título central para a ferramenta correspondente (`CALCULADORA ACG 600H`, `PERCURSO & EMENTAS`, `GUIA DO CALOURO`, `ESTÁGIO & ART. 41`, `CENTRAL DE NORMAS`, etc.).
+
+### 50.2 Bottom Tab Bar Permanente do Super App (`#cagp-superapp-tabbar` em `pwa-install.html`)
+- **5 Destinos Canônicos ao Alcance do Polegar (Thumb-first / Apple HIG):**
+  1. 🏛️ **Campus:** Modo presencial ao vivo (relógio sincronizado, contagem regressiva do RU II, circulares noturnos e CEAG F-2033);
+  2. ⚡ **Apps:** Central com a grade tátil dos 8 Micro-Apps do curso;
+  3. 🗺️ **Percurso:** Matriz curricular dos 10 períodos e 27 ementas em navegação compacta;
+  4. 🆘 **SOS:** Central resolutiva de dúvidas acadêmicas frequentes (FAQ), prazos e formulários SEI;
+  5. ⚙️ **Ajustes:** Modal Bottom Sheet de metas e preferências do estudante;
+- **Física Tátil e Indicadores:** Resposta imediata com micro-escala (`scale(0.94)` no toque), pílula superior de realce ativo em Vinho Candango (`#9E2424`) e safe area inset inferior.
+
+### 50.3 Catálogo Canônico dos 8 Micro-Apps de Bolso (`index.qmd` e `styles.css`)
+Cada uma das dimensões informativas do curso passa a ser tratada como um Micro-App focado em tela cheia, preservando 100% da verdade documental e eliminando a sobrecarga de navegação de sites:
+1. *Campus Hoje & Sobrevivência Noturna:* Horários em tempo real do RU II, circulares e atendimento noturno da FAFICH;
+2. *Calculadora ACG 600h:* Simulador reativo com gavetas O que Conta / Não Conta, teto regulamentar e prazo fatal de 120 dias;
+3. *Termômetro Curricular & Grade:* Mini-Quiz vocacional e 27 ementas oficiais em gavetas retráteis sanfonadas;
+4. *Catálogo de 68 Optativas:* Busca instantânea e chips horizontais deslizantes M3 por departamento (DCP, ECN, SOA);
+5. *Estágio Art. 41 & TCC:* Simulador de dispensa profissional em 1 toque, com carimbos visuais animados e termo TCC;
+6. *Guia do Calouro & 30 Dias:* Checklist de ambientação com persistência local e dicas de veteranos;
+7. *Central de Normas & Formulários SEI:* Repositório direto com os 8 PDFs oficiais e requerimentos administrativos;
+8. *Hub de Pesquisa & IC DCP:* Conexão direta aos 11 núcleos temáticos para bolsas de Iniciação Científica e AAC.
+
+### 50.4 Minhas Metas Acadêmicas Salvas (Offline Student Vault)
+- **Persistência Local Integrada:** Exibição dinâmica na aba Ajustes e no dashboard inicial dos dados de progresso salvos no navegador do aluno:
+  - Total de horas contabilizadas na Calculadora ACG (ex: `420h / 600h`);
+  - Etapas concluídas do Checklist do Calouro (ex: `5 de 6 passos`);
+  - Percurso vocacional recomendado pelo Termômetro (ex: `Políticas Sociais`);
+- **Alternador Manual de Modo:** Chave "Alternar para Modo Portal Web Clássico", permitindo que o estudante comute instantaneamente entre a visão de aplicativo móvel e a visualização editorial completa quando desejar imprimir ou ler textos longos.
+
+### 50.5 Verificação e Auditoria Técnica Impeccable
+- Compilação estática Quarto executada via `quarto render` com código 0 em todas as 11 páginas;
+- Auditoria do detector Impeccable executada em todos os arquivos de saída (`docs/*.html`), confirmando **0 erros**, adequação total do type ramp ($\ge 11\text{px}$) e registrando estritamente as 11 advertências documentadas e autorizadas de `overused-font: inter`.
+
+---
+
+## 51. Ciclo 51: Polimento Global de Links, Resolução Infallível de Âncoras e Restauração do Anúncio da Chapa (Impeccable Polish)
+
+**Contexto e Motivação:**  
+Dando continuidade às diretrizes `/impeccable polish`, foi realizada uma auditoria exaustiva de consistência de links em todos os atalhos, botões, modais (Lançador de Mini-Apps e Spotlight) e na tela de início dos Micro-Apps. Detectou-se que slugs gerados automaticamente pelo Quarto a partir de cabeçalhos em português (ex: `calouros.html#log%C3%ADstica-da-alimenta%C3%A7%C3%A3o-noturna-rus`) divergiam de atalhos conceituais simplificados (`calouros.html#ru-alimentacao`), além de provocarem erros de sintaxe no `document.querySelector` do roteador SPA devido à codificação de caracteres especiais. Ademais, foi solicitada a restauração fidedigna da faixa superior de anúncio da Chapa, restituindo o texto, ícone, badge e estilização neo-brutalista exata da configuração nativa do Quarto (`type: danger`), integrando-a de maneira limpa com a arquitetura do Super App instalado.
+
+### 51.1 Restauração Integral do Anúncio da Chapa (`website.announcement` em `_quarto.yml`)
+- **Configuração Quarto Nativa:** Restabelecida a diretiva canônica em `_quarto.yml`:
+  - `icon: megaphone-fill`
+  - `dismissable: false`
+  - `position: above-navbar`
+  - `type: danger`
+  - Conteúdo oficial integral com badge `<span class="cagp-announcement-badge">PROPOSTA DE CHAPA</span>`, destaque `<strong class="cagp-chapa-highlight">Chapa [Nome da Chapa a Definir]</strong>` e compromisso ético republicano de disponibilização do projeto completo à gestão vencedora.
+- **Harmonização Visual Neo-brutalista (`styles.css`):**
+  - Fundo institucional Vinho Bordeaux (`var(--cagp-red, #8B1E2D)`), borda preta inferior de 2px, texto branco (`#FFFFFF`), badge escuro com borda de proteção e destaque dourado (`#FFD54F`) sublinhado com offset;
+  - Ocultamento estrito e absoluto no modo standalone (`html.cagp-is-standalone #quarto-announcement { display: none !important; }`), garantindo que a aplicação instalada não apresente poluição eleitoral na tela do celular;
+  - Remoção de marcação HTML duplicada em `_includes/super-app-header.html`, unificando a soberania do elemento no motor do Quarto.
+
+### 51.2 Resolução de Âncoras e Aliases Bidirecionais
+Para garantir que atalhos conceituais (`#ru-alimentacao`, `#calculadora`, etc.) e slugs acentuados oficiais (`#logística-da-alimentação-noturna-rus`, `#calculadora-horas`, etc.) funcionem simultaneamente sem qualquer ruptura de link externo ou navegação interna, foram inseridos identificadores canônicos e tags de alias `<span id="..." class="cagp-anchor-alias" aria-hidden="true"></span>`:
+1. `calouros.html#ru-alimentacao` e `calouros.html#logística-da-alimentação-noturna-rus`
+2. `calouros.html#circulares-noturnos` e `calouros.html#ônibus-circulares-noturnos-linhas-3-e-4`
+3. `calouros.html#checklist` e `calouros.html#checklist-calouro`
+4. `calouros.html#guia-biblioteca` / `#biblioteca` e `calouros.html#biblioteca-espacos`
+5. `acg.html#calculadora` e `acg.html#calculadora-horas`
+6. `percurso.html#catalogo-optativas` e `percurso.html#disciplinas-optativas`
+7. `percurso.html#quiz-percurso` e `percurso.html#simulador-percurso`
+8. `curso.html#secretaria-colegiado` e `curso.html#canais-e-locais-de-atendimento-presencial`
+9. Corrigido atalho de Formas de Ingresso em `index.qmd` de `faq.html#ingresso-transferencia` para `curso.html#ingresso`.
+
+### 51.3 Blindagem do Roteador SPA e Offset de Rolagem
+- **Função `findHashElement(hash)` em `_includes/super-app-router.html`:** Trata com segurança IDs codificados em percentual (`decodeURIComponent`) e caracteres especiais sem lançar exceções de DOM no `document.querySelector`, realizando a transição de rolagem suave (`scrollIntoView`) logo após a substituição do conteúdo da página;
+- **Offset Universal para Barra Fixa:** Definido `scroll-margin-top: 5.5rem;` para todas as seções e títulos com ID, além da classe `.cagp-anchor-alias`, impedindo que o cabeçalho superior encubra os títulos de seção após o clique.
+
+### 51.4 Auditoria Automatizada e Verificação Impeccable
+- **Script de Auditoria Python:** Varreu 171 links de âncoras internas em todos os arquivos de template e páginas `.qmd`, comprovando **0 links quebrados** (`Audited 171 links. Total broken links found: 0. SUCCESS: ALL INTERNAL HASH LINKS RESOLVE PERFECTLY!`);
+- **`quarto render`:** Executado com código 0 em todas as 11 páginas;
+- **`impeccable detect`:** Executado em `docs/*.html`, registrando **0 erros**, 0 avisos de cor de design system (após inclusão de `#ffd54f` em `DESIGN.md`) e preservando as 11 tolerâncias canônicas da fonte Inter.
+
+---
+
+## 52. Ciclo 52: Refatoração Integral da UI/UX Mobile do Super App, Nova Bottom Tab Bar de 5 Destinos, Central de PDFs Offline e Relógio Síncrono Zero Latência (Apple HIG & Impeccable Adapt)
+
+**Contexto e Motivação:**  
+Seguindo as diretrizes de Product Design, `/apple-design`, `/impeccable polish`, `/impeccable shape` e `/impeccable adapt`, foi executada uma reformulação profunda na experiência mobile do Super App do CAGP. O trabalho abordou diretamente os conflitos de redundância na barra inferior, a duplicação dos gatilhos de acessibilidade, a criação de uma central de PDFs offline, a fusão integrada das informações do CAGP e da gestão atual, além da eliminação definitiva do bug de atraso na exibição do relógio do campus.
+
+### 52.1 Nova Arquitetura da Bottom Tab Bar (5 Destinos Canônicos e Independentes)
+- **Eliminação do Conflito "Campus" vs. "Apps":** Anteriormente, ambos os botões conduziam à página inicial `index.html`. A nova barra inferior foi reestruturada em 5 destinos funcionais independentes e essenciais, em conformidade com as recomendações de *Tab bars* do Apple HIG:
+  1. 🧭 **Hoje (`index.html`):** Hub operacional diário em tempo real (RU II, Circulares com app Interno Rotas, Atendimento Noturno CEAG F-2033, relógio síncrono, atalhos de bolso e catálogo dos 8 Micro-Apps);
+  2. 🗺️ **Percurso (`percurso.html`):** Matriz curricular dos 10 períodos, 27 obrigatórias, 68 optativas e Termômetro Vocacional;
+  3. 📄 **Documentos (`documentos.html`):** Central de atos normativos, resoluções e requerimentos com suporte a cache local;
+  4. 👥 **O CAGP (`gestao.html`):** Seção institucional integrada (Gestão em Exercício + História e Regimento do Centro Acadêmico);
+  5. ⚙️ **Ajustes (`#cagp-settings-sheet`):** Bottom sheet com a carteira acadêmica (Offline Student Vault) e Central de Acessibilidade Unificada.
+- **Ergonomia e Thumb Zones (Apple HIG & M3):** Área de toque de todos os itens ampliada para no mínimo 48x48px (`min-height: 48px; min-width: 48px; touch-action: manipulation;`).
+- **Adaptação para Tablets e Foldables:** Em telas acima de 600px (dispositivos dobráveis abertos e iPads), a tab bar se transforma em uma doca flutuante com largura máxima de 520px centralizada, evitando botões hiperesticados.
+
+### 52.2 Centralização e Desduplicação da Acessibilidade
+- **Remoção do Botão Flutuante Invasivo no Mobile:** O botão flutuante `#cagp-a11y-trigger` (que cobria conteúdos no rodapé e colidia com a barra inferior) foi completamente desativado no mobile (`display: none !important;` em `@media (max-width: 991px)` e no modo `standalone`);
+- **Pontos de Acesso Nobres:** Acessibilidade universal (fonte, dislexia, régua visual e alto contraste) agora é acessada com extrema ergonomia através da aba **Ajustes** (seção dedicada de 1 toque), do ícone no canto superior direito da Topbar nativa (`#cagp-superapp-topbar`), e do atalho universal `Alt + A`.
+
+### 52.3 Central de PDFs Offline no Dispositivo (`documentos.qmd`)
+- **Painel de Armazenamento Local Ativo:** Inserido card de destaque informando que o acervo normativo (PPC, Regimento, Resoluções e Formulários SEI) é mantido em cache local pelo Service Worker do CAGP;
+- **Ação de 1 Toque (`cagpCacheAllPdfs()`):** Botão "Baixar Acervo Completo Offline" que pré-armazena os 8 PDFs na Cache Storage com feedback sonoro e visual através do Toast tátil nativo.
+
+### 52.4 Página Institucional Integrada (`gestao.qmd`)
+- **Segmented Control Apple HIG:** Inserido seletor segmentado com alternância fluida e instantânea entre:
+  - *A Gestão em Exercício:* Organograma hierárquico das 7 Diretorias Executivas, representantes discentes no Colegiado e Congregação, e prestação de contas;
+  - *O Centro Acadêmico:* História dos Candangos (1959, Bruno Giorgi), princípios republicanos da administração pública (LIMPE), a Salinha Física no Pilotis da FAFICH e download direto do Regimento Interno 2024.
+
+### 52.5 Correção de Performance: Relógio Síncrono Zero Latência
+- **Eliminação do Bug de Reset e Latência:** Criadas as funções `window.computeCagpCampusState()` e `window.applyCagpCampusState()`. Os dados de horário e status de RU/circulares/CEAG são gerados de forma síncrona logo no cabeçalho antes do primeiro frame de pintura;
+- **Injeção Imediata no Roteador SPA:** Durante as trocas de página em `applyPageSwap()` do `super-app-router.html`, o estado é injetado síncronamente no DOM antes do render, eliminando o flash de `--:--` e `Consultando...`.
+
+### 52.6 Auditoria e Verificação Impeccable
+- Script de auditoria Python comprovando **0 links quebrados** em 170 links analisados;
+- Compilação Quarto (`quarto render`) finalizada com código 0;
+- Detector `impeccable detect` registrando **0 erros**, adequação total do type ramp ($\ge 11\text{px}$) e conformidade de raios com a escala de `DESIGN.md`.

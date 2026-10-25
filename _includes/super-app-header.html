@@ -1,0 +1,443 @@
+<!-- ======================================================================= -->
+<!-- Super App Navigation Shell (CAGP UFMG)                                  -->
+<!-- Autêntico Brite Neo-brutalismo • Proporções Enxutas • Acessibilidade AAA-->
+<!-- ======================================================================= -->
+
+<!-- 1. Barra de Navegação Soberana (52px de altura • 100% largura) -->
+<header id="cagp-superapp-header" class="cagp-superapp-header" role="banner">
+  <div class="cagp-header-inner">
+    
+    <!-- Marca & Identidade -->
+    <div class="cagp-island-brand">
+      <a href="index.html" class="cagp-island-brand-link" aria-label="Página Inicial do CAGP UFMG" data-cagp-nav>
+        <img src="logos/cagp/10_simbolo_transparente_positivo.svg" alt="Símbolo dos Candangos - CAGP UFMG" class="cagp-island-logo" width="30" height="30">
+        <div class="cagp-island-brand-text">
+          <span class="cagp-island-brand-title">CAGP</span>
+          <span class="cagp-island-brand-sub">FAFICH • UFMG</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Navegação de Eixos (Desktop) -->
+    <nav class="cagp-island-nav" aria-label="Navegação principal do portal">
+      <!-- Início -->
+      <a href="index.html" class="cagp-island-nav-link" data-cagp-nav data-route="index.html">Início</a>
+
+      <!-- O Curso -->
+      <a href="curso.html" class="cagp-island-nav-link" data-cagp-nav data-route="curso.html">O Curso</a>
+
+      <!-- Jornada Acadêmica (Dropdown Customizado) -->
+      <div class="cagp-island-dropdown" data-dropdown="jornada">
+        <button type="button" class="cagp-island-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+          <span>Jornada Acadêmica</span>
+          <i class="bi bi-chevron-down cagp-dropdown-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="cagp-island-dropdown-menu" role="menu">
+          <a href="calouros.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav data-route="calouros.html">
+            <i class="bi bi-compass cagp-dropdown-icon text-danger" aria-hidden="true"></i>
+            <div class="cagp-dropdown-item-info">
+              <strong class="cagp-dropdown-item-title">Guia do Calouro</strong>
+              <small class="cagp-dropdown-item-desc">Rotina noturna, RU II, Circulares e Dicas</small>
+            </div>
+          </a>
+          <a href="percurso.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav data-route="percurso.html">
+            <i class="bi bi-diagram-3 cagp-dropdown-icon text-primary" aria-hidden="true"></i>
+            <div class="cagp-dropdown-item-info">
+              <strong class="cagp-dropdown-item-title">Percurso & Ementas</strong>
+              <small class="cagp-dropdown-item-desc">10 períodos, 27 obrigatórias e 68 optativas</small>
+            </div>
+          </a>
+          <a href="acg.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav data-route="acg.html">
+            <i class="bi bi-calculator cagp-dropdown-icon text-warning" aria-hidden="true"></i>
+            <div class="cagp-dropdown-item-info">
+              <strong class="cagp-dropdown-item-title">Extensão & Horas AAC</strong>
+              <small class="cagp-dropdown-item-desc">Calculadora 600h, limites e protocolo</small>
+            </div>
+          </a>
+          <a href="estagio-tcc.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav data-route="estagio-tcc.html">
+            <i class="bi bi-briefcase cagp-dropdown-icon text-success" aria-hidden="true"></i>
+            <div class="cagp-dropdown-item-info">
+              <strong class="cagp-dropdown-item-title">Estágio & TCC</strong>
+              <small class="cagp-dropdown-item-desc">Estágio A/B, Art. 41 e 4 modalidades de TCC</small>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Acervo & Ajuda (Dropdown Customizado) -->
+      <div class="cagp-island-dropdown" data-dropdown="acervo">
+        <button type="button" class="cagp-island-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+          <span>Acervo & Ajuda</span>
+          <i class="bi bi-chevron-down cagp-dropdown-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="cagp-island-dropdown-menu" role="menu">
+          <a href="documentos.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav data-route="documentos.html">
+            <i class="bi bi-file-earmark-pdf cagp-dropdown-icon text-danger" aria-hidden="true"></i>
+            <div class="cagp-dropdown-item-info">
+              <strong class="cagp-dropdown-item-title">Documentos & Formulários</strong>
+              <small class="cagp-dropdown-item-desc">8 PDFs oficiais, PPC e resoluções</small>
+            </div>
+          </a>
+          <a href="faq.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav data-route="faq.html">
+            <i class="bi bi-question-circle cagp-dropdown-icon text-primary" aria-hidden="true"></i>
+            <div class="cagp-dropdown-item-info">
+              <strong class="cagp-dropdown-item-title">Dúvidas Frequentes (FAQ)</strong>
+              <small class="cagp-dropdown-item-desc">Respostas rápidas e orientações</small>
+            </div>
+          </a>
+          <a href="mapa-do-site.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav data-route="mapa-do-site.html">
+            <i class="bi bi-map cagp-dropdown-icon text-dark" aria-hidden="true"></i>
+            <div class="cagp-dropdown-item-info">
+              <strong class="cagp-dropdown-item-title">Mapa do Site</strong>
+              <small class="cagp-dropdown-item-desc">Visão panorâmica em 5 eixos</small>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- O CAGP (Dropdown Customizado) -->
+      <div class="cagp-island-dropdown" data-dropdown="cagp">
+        <button type="button" class="cagp-island-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+          <span>O CAGP</span>
+          <i class="bi bi-chevron-down cagp-dropdown-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="cagp-island-dropdown-menu" role="menu">
+          <a href="sobre.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav data-route="sobre.html">
+            <i class="bi bi-bank cagp-dropdown-icon text-danger" aria-hidden="true"></i>
+            <div class="cagp-dropdown-item-info">
+              <strong class="cagp-dropdown-item-title">O Centro Acadêmico</strong>
+              <small class="cagp-dropdown-item-desc">Regimento 2024, Candangos e instâncias</small>
+            </div>
+          </a>
+          <a href="gestao.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav data-route="gestao.html">
+            <i class="bi bi-people cagp-dropdown-icon text-success" aria-hidden="true"></i>
+            <div class="cagp-dropdown-item-info">
+              <strong class="cagp-dropdown-item-title">Gestão em Exercício & Equipe</strong>
+              <small class="cagp-dropdown-item-desc">Diretorias, prestação de contas e editais</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Barra de Ferramentas Integrada (Proporções Harmoniosas 36px) -->
+    <div class="cagp-header-tools">
+      <!-- Botão de Busca Rápida -->
+      <button type="button" class="cagp-nav-search-btn" id="cagp-nav-search-trigger" onclick="window.openCagpSpotlight &amp;&amp; window.openCagpSpotlight()" aria-label="Buscar no portal (Atalho: Ctrl+K ou ⌘K)">
+        <i class="bi bi-search cagp-nav-search-icon" aria-hidden="true"></i>
+        <span class="cagp-nav-search-label">Buscar</span>
+        <kbd class="cagp-nav-search-kbd">⌘K</kbd>
+      </button>
+
+      <!-- Botão Lançador de Mini-Apps (Limpo, sem falso badge numérico) -->
+      <button type="button" class="cagp-waffle-btn" id="cagp-waffle-btn" onclick="window.toggleCagpAppLauncher &amp;&amp; window.toggleCagpAppLauncher()" aria-label="Abrir lançador de mini-aplicativos do CAGP" title="Mini-Apps do Curso" aria-expanded="false" aria-controls="cagp-app-launcher-modal">
+        <i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
+      </button>
+
+      <!-- Botão de Acessibilidade Universal -->
+      <button type="button" class="cagp-island-tool-btn" onclick="window.cagpA11y ? window.cagpA11y.open() : (window.openCagpA11y &amp;&amp; window.openCagpA11y())" aria-label="Painel de Acessibilidade" title="Opções de Acessibilidade (Alt + A)">
+        <i class="bi bi-universal-access" aria-hidden="true"></i>
+      </button>
+
+      <!-- Botão Menu Mobile (Disponível apenas em telas < 992px) -->
+      <button type="button" class="cagp-mobile-menu-btn" onclick="window.toggleCagpMobileDrawer()" aria-label="Abrir menu de navegação móvel" aria-expanded="false" aria-controls="cagp-mobile-drawer">
+        <i class="bi bi-list fs-4" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 3. Drawer Móvel Off-Canvas para Telas < 992px -->
+<div id="cagp-mobile-drawer" class="cagp-mobile-drawer" role="dialog" aria-modal="true" aria-label="Navegação Geral do Portal" hidden>
+  <div class="cagp-drawer-backdrop" onclick="window.closeCagpMobileDrawer()"></div>
+  <div class="cagp-drawer-panel" role="document">
+    <div class="cagp-drawer-header">
+      <div class="d-flex align-items-center gap-2">
+        <img src="logos/cagp/10_simbolo_transparente_positivo.svg" alt="CAGP UFMG" width="26" height="26">
+        <span class="fw-bold font-display fs-5">Navegação do Portal</span>
+      </div>
+      <button type="button" class="cagp-launcher-close-btn" onclick="window.closeCagpMobileDrawer()" aria-label="Fechar menu">✕</button>
+    </div>
+    
+    <div class="cagp-drawer-body">
+      <div class="cagp-drawer-section">
+        <div class="cagp-drawer-section-title">PRINCIPAL</div>
+        <a href="index.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-house me-2"></i> Início</a>
+        <a href="curso.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-mortarboard me-2"></i> O Curso</a>
+      </div>
+
+      <div class="cagp-drawer-section">
+        <div class="cagp-drawer-section-title">JORNADA ACADÊMICA</div>
+        <a href="calouros.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-compass me-2 text-danger"></i> Guia do Calouro</a>
+        <a href="percurso.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-diagram-3 me-2 text-primary"></i> Percurso & Ementas</a>
+        <a href="acg.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-calculator me-2 text-warning"></i> Extensão & AAC (Calculadora)</a>
+        <a href="estagio-tcc.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-briefcase me-2 text-success"></i> Estágio & TCC</a>
+      </div>
+
+      <div class="cagp-drawer-section">
+        <div class="cagp-drawer-section-title">ACERVO & AJUDA</div>
+        <a href="documentos.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-file-earmark-pdf me-2 text-danger"></i> Documentos & Formulários</a>
+        <a href="faq.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-question-circle me-2 text-primary"></i> Dúvidas Frequentes (FAQ)</a>
+        <a href="mapa-do-site.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-map me-2 text-dark"></i> Mapa do Site</a>
+      </div>
+
+      <div class="cagp-drawer-section">
+        <div class="cagp-drawer-section-title">O CENTRO ACADÊMICO</div>
+        <a href="sobre.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-bank me-2 text-danger"></i> O CAGP & Estatuto</a>
+        <a href="gestao.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-people me-2 text-success"></i> Gestão em Exercício</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Top App Bar Nativa Exclusiva do Super App (Ativa somente em modo Standalone) -->
+<header id="cagp-superapp-topbar" class="cagp-superapp-topbar" role="banner" aria-label="Barra de Comandos do Super App" hidden>
+  <div class="cagp-topbar-inner">
+    <div class="cagp-topbar-leading" id="cagp-topbar-leading">
+      <a href="index.html" class="cagp-topbar-brand" aria-label="Início do Super App" data-cagp-nav>
+        <img src="logos/cagp/10_simbolo_transparente_positivo.svg" alt="Símbolo CAGP" width="24" height="24" class="cagp-topbar-logo">
+      </a>
+    </div>
+
+    <div class="cagp-topbar-center" id="cagp-topbar-center">
+      <span class="cagp-topbar-title" id="cagp-topbar-title">CAGP • SUPER APP</span>
+    </div>
+
+    <div class="cagp-topbar-trailing">
+      <span id="cagp-topbar-network-badge" class="cagp-topbar-badge" title="Status Offline Habilitado">
+        <i class="bi bi-lightning-charge-fill text-warning" aria-hidden="true"></i>
+        <span class="d-none d-sm-inline">Offline</span>
+      </span>
+      <button type="button" class="cagp-topbar-tool-btn" onclick="window.openCagpSpotlight && window.openCagpSpotlight()" aria-label="Buscar no Super App" title="Busca Rápida (⌘K)">
+        <i class="bi bi-search" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="cagp-topbar-tool-btn" onclick="window.cagpA11y ? window.cagpA11y.open() : (window.openCagpA11y && window.openCagpA11y())" aria-label="Acessibilidade" title="Acessibilidade (Alt + A)">
+        <i class="bi bi-universal-access" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+(function () {
+  'use strict';
+
+  // 0. Motor Síncrono de Estado do Campus & Relógio (Zero Latência • Sem Flash de '--:--')
+  window.computeCagpCampusState = function () {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const timeVal = hours * 60 + minutes;
+
+    const clockText = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0');
+
+    let ruHtml = '';
+    if (timeVal >= 11 * 60 + 15 && timeVal <= 14 * 60) {
+      ruHtml = '<span class="cagp-dot-online"></span> Almoço Aberto (até 14h00)';
+    } else if (timeVal >= 17 * 60 + 30 && timeVal <= 19 * 60 + 30) {
+      ruHtml = '<span class="cagp-dot-online"></span> Jantar Aberto (até 19h30 • Fila 18h15)';
+    } else if (timeVal > 19 * 60 + 30) {
+      ruHtml = '<span class="cagp-dot-offline"></span> Jantar Encerrado hoje';
+    } else {
+      ruHtml = '<span class="cagp-dot-pending"></span> Próxima: Almoço 11h15 / Jantar 17h30';
+    }
+
+    let circHtml = '';
+    if (timeVal >= 18 * 60 && timeVal <= 22 * 60 + 45) {
+      circHtml = '<span class="cagp-dot-online"></span> Em Operação (até 22h45)';
+    } else if (timeVal > 22 * 60 + 45 || timeVal < 6 * 60) {
+      circHtml = '<span class="cagp-dot-offline"></span> Encerrados por hoje';
+    } else {
+      circHtml = '<span class="cagp-dot-pending"></span> Diurnos ativos • Noturno às 18h';
+    }
+
+    let secHtml = '';
+    if (timeVal >= 8 * 60 && timeVal <= 22 * 60) {
+      secHtml = '<span class="cagp-dot-online"></span> CEAG F-2033 Aberto (até 22h)';
+    } else {
+      secHtml = '<span class="cagp-dot-offline"></span> Atendimento Fechado';
+    }
+
+    return { clockText, ruHtml, circHtml, secHtml };
+  };
+
+  window.applyCagpCampusState = function (container) {
+    const root = container || document;
+    const state = window.computeCagpCampusState();
+    window.cagpLiveState = state;
+
+    const clockEl = root.querySelector('#cagp-live-clock') || document.getElementById('cagp-live-clock');
+    if (clockEl) clockEl.textContent = state.clockText;
+
+    const ruEl = root.querySelector('#cagp-status-ru') || document.getElementById('cagp-status-ru');
+    if (ruEl) ruEl.innerHTML = state.ruHtml;
+
+    const circEl = root.querySelector('#cagp-status-circulares') || document.getElementById('cagp-status-circulares');
+    if (circEl) circEl.innerHTML = state.circHtml;
+
+    const secEl = root.querySelector('#cagp-status-secretaria') || document.getElementById('cagp-status-secretaria');
+    if (secEl) secEl.innerHTML = state.secHtml;
+  };
+
+  // Executar imediatamente se elementos já existirem no DOM
+  if (document.getElementById('cagp-live-clock')) {
+    window.applyCagpCampusState();
+  }
+
+  // 1. Garantir que o cabeçalho fique sempre no topo do body (fora de <main>)
+  function hoistHeaderToBody() {
+    const banner = document.getElementById('quarto-announcement') || document.getElementById('cagp-chapa-banner');
+    const header = document.getElementById('cagp-superapp-header');
+    const topbar = document.getElementById('cagp-superapp-topbar');
+    const drawer = document.getElementById('cagp-mobile-drawer');
+
+    // Higiene: remover quaisquer nós duplicados que existam no documento
+    const allHeaders = document.querySelectorAll('#cagp-superapp-header');
+    if (allHeaders.length > 1) {
+      for (let i = 1; i < allHeaders.length; i++) {
+        allHeaders[i].remove();
+      }
+    }
+    const allTopbars = document.querySelectorAll('#cagp-superapp-topbar');
+    if (allTopbars.length > 1) {
+      for (let i = 1; i < allTopbars.length; i++) {
+        allTopbars[i].remove();
+      }
+    }
+    const allBanners = document.querySelectorAll('#cagp-chapa-banner');
+    if (allBanners.length > 1) {
+      for (let i = 1; i < allBanners.length; i++) {
+        allBanners[i].remove();
+      }
+    }
+    const allDrawers = document.querySelectorAll('#cagp-mobile-drawer');
+    if (allDrawers.length > 1) {
+      for (let i = 1; i < allDrawers.length; i++) {
+        allDrawers[i].remove();
+      }
+    }
+
+    if (topbar && topbar.parentElement !== document.body) {
+      document.body.prepend(topbar);
+    }
+    if (header && header.parentElement !== document.body) {
+      document.body.prepend(header);
+    }
+    if (banner && banner.parentElement !== document.body) {
+      document.body.prepend(banner);
+    }
+    if (drawer && drawer.parentElement !== document.body) {
+      document.body.appendChild(drawer);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', hoistHeaderToBody);
+  } else {
+    hoistHeaderToBody();
+  }
+
+  // 2. Gerenciamento de Dropdowns Customizados
+  const dropdowns = document.querySelectorAll('.cagp-island-dropdown');
+
+  dropdowns.forEach(function (dd) {
+    const btn = dd.querySelector('.cagp-island-dropdown-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const isOpen = dd.classList.contains('is-open');
+
+      dropdowns.forEach(function (d) {
+        d.classList.remove('is-open');
+        const b = d.querySelector('.cagp-island-dropdown-btn');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        dd.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Fechar dropdowns ao clicar fora
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.cagp-island-dropdown')) {
+      dropdowns.forEach(function (d) {
+        d.classList.remove('is-open');
+        const b = d.querySelector('.cagp-island-dropdown-btn');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  // Fechar dropdowns e drawer com Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      dropdowns.forEach(function (d) {
+        d.classList.remove('is-open');
+        const b = d.querySelector('.cagp-island-dropdown-btn');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+      window.closeCagpMobileDrawer();
+    }
+  });
+
+  // 3. Mobile Drawer Controls
+  const mobileDrawer = document.getElementById('cagp-mobile-drawer');
+
+  window.openCagpMobileDrawer = function () {
+    if (!mobileDrawer) return;
+    if (mobileDrawer.parentElement !== document.body) {
+      document.body.appendChild(mobileDrawer);
+    }
+    mobileDrawer.removeAttribute('hidden');
+    document.body.classList.add('cagp-drawer-open');
+  };
+
+  window.closeCagpMobileDrawer = function () {
+    if (!mobileDrawer) return;
+    mobileDrawer.setAttribute('hidden', '');
+    document.body.classList.remove('cagp-drawer-open');
+  };
+
+  window.toggleCagpMobileDrawer = function () {
+    if (!mobileDrawer) return;
+    if (mobileDrawer.hasAttribute('hidden')) {
+      window.openCagpMobileDrawer();
+    } else {
+      window.closeCagpMobileDrawer();
+    }
+  };
+
+  // 4. Sincronizar Abas Ativas com base na Rota Atual
+  function syncActiveRoute() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    
+    document.querySelectorAll('.cagp-island-nav-link').forEach(function (link) {
+      const route = link.getAttribute('data-route');
+      link.classList.toggle('is-active', route === currentPath);
+    });
+
+    dropdowns.forEach(function (dd) {
+      const items = dd.querySelectorAll('.cagp-island-dropdown-item');
+      let parentActive = false;
+      items.forEach(function (item) {
+        const route = item.getAttribute('data-route');
+        if (route === currentPath) {
+          parentActive = true;
+          item.classList.add('is-active');
+        } else {
+          item.classList.remove('is-active');
+        }
+      });
+      const btn = dd.querySelector('.cagp-island-dropdown-btn');
+      if (btn) btn.classList.toggle('is-active', parentActive);
+    });
+  }
+
+  syncActiveRoute();
+  window.addEventListener('cagp:navigated', syncActiveRoute);
+})();
+</script>

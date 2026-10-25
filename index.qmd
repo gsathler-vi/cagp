@@ -56,43 +56,213 @@ title-block-style: none
     <!-- Card Inteligente de Incentivo de Instalação (Adaptado à Plataforma: iOS vs Android) -->
     <div id="cagp-platform-incentive-container" class="cagp-platform-incentive-box"></div>
 
-    <!-- Quick Actions Pocket (6 Atalhos de Alta Frequência no Mobile) -->
+    <!-- Quick Actions Pocket (Benchmark Bancos: Nubank / Inter — 6 Atalhos Horizontais de Bolso) -->
     <div class="cagp-pocket-actions-section">
-      <div class="cagp-pocket-actions-title">
-        <i class="bi bi-grid-fill me-1 text-danger" aria-hidden="true"></i>
-        <span>Ações Rápidas de Bolso</span>
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <div class="cagp-pocket-actions-title mb-0">
+          <i class="bi bi-grid-fill me-1 text-danger" aria-hidden="true"></i>
+          <span>Ações Rápidas de Bolso</span>
+        </div>
+        <span class="small text-muted d-sm-none font-display text-uppercase" style="font-size: 0.72rem;">Deslize &rarr;</span>
       </div>
       <div class="cagp-pocket-actions-grid">
         <a href="calouros.html#ru-alimentacao" class="cagp-pocket-btn" data-cagp-nav>
-          <i class="bi bi-egg-fried" aria-hidden="true"></i>
+          <div class="cagp-pocket-icon-wrap cagp-bg-gold"><i class="bi bi-egg-fried" aria-hidden="true"></i></div>
           <span>RU Hoje</span>
         </a>
         <a href="calouros.html#circulares-noturnos" class="cagp-pocket-btn" data-cagp-nav>
-          <i class="bi bi-bus-front" aria-hidden="true"></i>
+          <div class="cagp-pocket-icon-wrap cagp-bg-blue"><i class="bi bi-bus-front" aria-hidden="true"></i></div>
           <span>Circulares</span>
         </a>
         <a href="acg.html#calculadora" class="cagp-pocket-btn" data-cagp-nav>
-          <i class="bi bi-calculator" aria-hidden="true"></i>
+          <div class="cagp-pocket-icon-wrap cagp-bg-amber"><i class="bi bi-calculator" aria-hidden="true"></i></div>
           <span>Calculadora</span>
         </a>
         <a href="percurso.html#catalogo-optativas" class="cagp-pocket-btn" data-cagp-nav>
-          <i class="bi bi-journal-text" aria-hidden="true"></i>
+          <div class="cagp-pocket-icon-wrap cagp-bg-dark"><i class="bi bi-journal-text" aria-hidden="true"></i></div>
           <span>68 Optativas</span>
         </a>
         <a href="curso.html#secretaria-colegiado" class="cagp-pocket-btn" data-cagp-nav>
-          <i class="bi bi-geo-alt" aria-hidden="true"></i>
+          <div class="cagp-pocket-icon-wrap cagp-bg-charcoal"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
           <span>Secretaria</span>
         </a>
         <a href="documentos.html" class="cagp-pocket-btn" data-cagp-nav>
-          <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+          <div class="cagp-pocket-icon-wrap cagp-bg-bordeaux"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></div>
           <span>Documentos</span>
         </a>
       </div>
     </div>
   </div>
 </section>
+<script>if (window.applyCagpCampusState) window.applyCagpCampusState();</script>
+
+<!-- Central dos 8 Micro-Apps do Curso (Exclusivo Super App Instalado) -->
+<section id="micro-apps-hub" class="cagp-superapp-only cagp-superapp-hub-section" aria-label="Central dos Micro-Apps CAGP">
+  
+  <!-- Card de Boas-Vindas do Super App -->
+  <div class="cagp-superapp-welcome-card">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <span class="cagp-badge cagp-badge-red">Super App Instalado</span>
+      <span class="cagp-badge cagp-badge-dark"><i class="bi bi-shield-check text-warning me-1"></i> Modo Bolso Ativo</span>
+    </div>
+    <h2 class="h5 font-display text-uppercase mb-1">Central de Micro-Apps CAGP</h2>
+    <p class="small text-muted mb-0">Ferramentas focadas, ementas sem rolagem e cálculos salvos no seu dispositivo.</p>
+  </div>
+
+  <!-- Preview das Minhas Metas Acadêmicas (Offline Vault) -->
+  <div class="cagp-vault-section mb-3">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <div class="cagp-vault-title font-display fw-bold text-uppercase fs-6 mb-0">
+        <i class="bi bi-safe2-fill me-1 text-warning"></i> Minhas Metas Salvas
+      </div>
+      <button type="button" class="btn btn-sm btn-link p-0 text-decoration-none small font-display fw-bold" onclick="window.openCagpAppSettings &amp;&amp; window.openCagpAppSettings()">
+        Ver Ajustes &rarr;
+      </button>
+    </div>
+    <div class="cagp-vault-cards">
+      <div class="cagp-vault-card">
+        <div class="cagp-vault-card-label">Horas ACG</div>
+        <div class="cagp-vault-card-val" id="cagp-hub-vault-acg">0h / 600h</div>
+        <a href="acg.html#calculadora" class="cagp-vault-card-link" data-cagp-nav>Calculadora &rarr;</a>
+      </div>
+      <div class="cagp-vault-card">
+        <div class="cagp-vault-card-label">Checklist Calouro</div>
+        <div class="cagp-vault-card-val" id="cagp-hub-vault-checklist">0 de 6 passos</div>
+        <a href="calouros.html#checklist" class="cagp-vault-card-link" data-cagp-nav>Checklist &rarr;</a>
+      </div>
+      <div class="cagp-vault-card">
+        <div class="cagp-vault-card-label">Percurso Vocacional</div>
+        <div class="cagp-vault-card-val" id="cagp-hub-vault-percurso">Não simulado</div>
+        <a href="percurso.html#quiz-percurso" class="cagp-vault-card-link" data-cagp-nav>Mini-Quiz &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grade Canônica dos 8 Micro-Apps -->
+  <div class="d-flex align-items-center justify-content-between mb-2">
+    <div class="font-display fw-bold text-uppercase fs-6">
+      <i class="bi bi-grid-3x3-gap-fill me-1 text-danger"></i> Catálogo dos 8 Micro-Apps
+    </div>
+    <span class="small text-muted">1 toque</span>
+  </div>
+
+  <div class="cagp-microapp-grid">
+    <!-- 1. Campus Hoje -->
+    <a href="#cagp-mobile-superapp-hub" class="cagp-microapp-card">
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-gold">
+          <i class="bi bi-building"></i>
+        </div>
+        <span class="cagp-microapp-tag">Campus</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Campus Hoje</h3>
+        <p class="cagp-microapp-desc">RU II, circulares e atendimento CEAG até 22h.</p>
+      </div>
+    </a>
+
+    <!-- 2. Calculadora ACG 600h -->
+    <a href="acg.html#calculadora" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-amber">
+          <i class="bi bi-calculator"></i>
+        </div>
+        <span class="cagp-microapp-tag">Simulador</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Calculadora ACG</h3>
+        <p class="cagp-microapp-desc">Extensão 300h + AAC 300h e prazo fatal 120 dias.</p>
+      </div>
+    </a>
+
+    <!-- 3. Termômetro & Matriz -->
+    <a href="percurso.html#quiz-percurso" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-blue">
+          <i class="bi bi-diagram-3"></i>
+        </div>
+        <span class="cagp-microapp-tag">Matriz</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Termômetro &amp; Grade</h3>
+        <p class="cagp-microapp-desc">Quiz de percurso e 27 obrigatórias sem rolagem.</p>
+      </div>
+    </a>
+
+    <!-- 4. 68 Optativas -->
+    <a href="percurso.html#catalogo-optativas" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-dark">
+          <i class="bi bi-journal-text"></i>
+        </div>
+        <span class="cagp-microapp-tag">Catálogo</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">68 Optativas</h3>
+        <p class="cagp-microapp-desc">Busca rápida e filtro por departamentos DCP/ECN/SOA.</p>
+      </div>
+    </a>
+
+    <!-- 5. Estágio Art. 41 & TCC -->
+    <a href="estagio-tcc.html#simulador-art41" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-green">
+          <i class="bi bi-briefcase"></i>
+        </div>
+        <span class="cagp-microapp-tag">Regras</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Estágio &amp; Art. 41</h3>
+        <p class="cagp-microapp-desc">Simulador de dispensa profissional e termo TCC.</p>
+      </div>
+    </a>
+
+    <!-- 6. Guia do Calouro -->
+    <a href="calouros.html#checklist" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-red">
+          <i class="bi bi-compass"></i>
+        </div>
+        <span class="cagp-microapp-tag">Guia</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Guia do Calouro</h3>
+        <p class="cagp-microapp-desc">Checklist 30 dias e dicas de sobrevivência noturna.</p>
+      </div>
+    </a>
+
+    <!-- 7. Central de Normas -->
+    <a href="documentos.html" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-bordeaux">
+          <i class="bi bi-file-earmark-pdf"></i>
+        </div>
+        <span class="cagp-microapp-tag">Acervo</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Central de Normas</h3>
+        <p class="cagp-microapp-desc">8 PDFs oficiais, formulários e protocolo SEI.</p>
+      </div>
+    </a>
+
+    <!-- 8. Hub de Pesquisa IC -->
+    <a href="acg.html#nucleos-pesquisa" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-blue">
+          <i class="bi bi-mortarboard"></i>
+        </div>
+        <span class="cagp-microapp-tag">Ciência</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Pesquisa &amp; IC DCP</h3>
+        <p class="cagp-microapp-desc">11 núcleos temáticos para bolsas e extensão.</p>
+      </div>
+    </a>
+  </div>
+</section>
 ```
 
+::: {.cagp-web-only}
 ::: {.cagp-hero}
 ::: {.row .align-items-center}
 ::: {.col-lg-8}
@@ -207,7 +377,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
         </a>
       </div>
       <div class="col-md-4">
-        <a href="faq.html#ingresso-transferencia" class="cagp-action-tile">
+        <a href="curso.html#ingresso" class="cagp-action-tile">
           <div>
             <span class="cagp-badge cagp-badge-blue mb-2">SiSU &amp; DRCA</span>
             <h3 class="h6 fw-bold mb-1">Formas de Ingresso na UFMG</h3>
@@ -797,3 +967,4 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </nav>
 ```
+:::

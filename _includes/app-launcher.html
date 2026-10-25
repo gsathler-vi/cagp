@@ -1,0 +1,162 @@
+<!-- ======================================================================= -->
+<!-- Lançador de Mini-Apps do CAGP UFMG (Super App Launcher Modal)            -->
+<!-- Desacoplado do documento principal • Ancorado na Viewport Global         -->
+<!-- ======================================================================= -->
+
+<div id="cagp-app-launcher-modal" class="cagp-launcher-modal" role="dialog" aria-modal="true" aria-labelledby="cagp-launcher-title" aria-label="Lançador de Mini-Apps do CAGP" hidden>
+  <div class="cagp-launcher-backdrop" onclick="window.closeCagpAppLauncher()"></div>
+  <div class="cagp-launcher-dialog" role="document">
+    <div class="cagp-sheet-handle" aria-hidden="true"></div>
+    <div class="cagp-launcher-header">
+      <div class="cagp-launcher-title-wrap">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-grid-3x3-gap-fill text-danger fs-5" aria-hidden="true"></i>
+          <h2 id="cagp-launcher-title" class="cagp-launcher-title">Mini-Apps do Curso</h2>
+        </div>
+        <span class="cagp-launcher-subtitle">Acesso rápido aos 8 serviços essenciais de Gestão Pública</span>
+      </div>
+      <button type="button" class="cagp-launcher-close-btn" onclick="window.closeCagpAppLauncher()" aria-label="Fechar lançador de mini-apps">✕</button>
+    </div>
+
+    <div class="cagp-launcher-grid">
+      <!-- 1. Percurso Curricular -->
+      <a href="percurso.html" class="cagp-app-tile" data-cagp-nav onclick="window.closeCagpAppLauncher()">
+        <div class="cagp-app-tile-icon cagp-bg-bordeaux"><i class="bi bi-diagram-3"></i></div>
+        <strong class="cagp-app-tile-name">Percurso & Ementas</strong>
+        <span class="cagp-app-tile-desc">10 Semestres e 27 Obrigatórias</span>
+        <span class="cagp-app-tile-tag">Matriz</span>
+      </a>
+
+      <!-- 2. Calculadora ACG 600h -->
+      <a href="acg.html#calculadora" class="cagp-app-tile" data-cagp-nav onclick="window.closeCagpAppLauncher()">
+        <div class="cagp-app-tile-icon cagp-bg-gold"><i class="bi bi-calculator"></i></div>
+        <strong class="cagp-app-tile-name">Calculadora ACG</strong>
+        <span class="cagp-app-tile-desc">Extensão 300h + AAC 300h</span>
+        <span class="cagp-app-tile-tag">Simulador</span>
+      </a>
+
+      <!-- 3. RU II e Alimentação -->
+      <a href="calouros.html#ru-alimentacao" class="cagp-app-tile" data-cagp-nav onclick="window.closeCagpAppLauncher()">
+        <div class="cagp-app-tile-icon cagp-bg-green"><i class="bi bi-egg-fried"></i></div>
+        <strong class="cagp-app-tile-name">RU II Alimentação</strong>
+        <span class="cagp-app-tile-desc">Almoço, Jantar e Horários FUMP</span>
+        <span class="cagp-app-tile-tag">Campus</span>
+      </a>
+
+      <!-- 4. Circulares Noturnos -->
+      <a href="calouros.html#circulares-noturnos" class="cagp-app-tile" data-cagp-nav onclick="window.closeCagpAppLauncher()">
+        <div class="cagp-app-tile-icon cagp-bg-blue"><i class="bi bi-bus-front"></i></div>
+        <strong class="cagp-app-tile-name">Circulares UFMG</strong>
+        <span class="cagp-app-tile-desc">Linhas Noturnas até 22h45</span>
+        <span class="cagp-app-tile-tag">Rotas</span>
+      </a>
+
+      <!-- 5. 68 Optativas -->
+      <a href="percurso.html#catalogo-optativas" class="cagp-app-tile" data-cagp-nav onclick="window.closeCagpAppLauncher()">
+        <div class="cagp-app-tile-icon cagp-bg-sand"><i class="bi bi-journal-text"></i></div>
+        <strong class="cagp-app-tile-name">68 Optativas</strong>
+        <span class="cagp-app-tile-desc">Filtro por DCP, ECN e SOC</span>
+        <span class="cagp-app-tile-tag">Catálogo</span>
+      </a>
+
+      <!-- 6. Secretaria & CEAG -->
+      <a href="curso.html#secretaria-colegiado" class="cagp-app-tile" data-cagp-nav onclick="window.closeCagpAppLauncher()">
+        <div class="cagp-app-tile-icon cagp-bg-charcoal"><i class="bi bi-geo-alt"></i></div>
+        <strong class="cagp-app-tile-name">Secretaria F-2039</strong>
+        <span class="cagp-app-tile-desc">Escala, CEAG e Atendimento</span>
+        <span class="cagp-app-tile-tag">Suporte</span>
+      </a>
+
+      <!-- 7. Documentos & SEI -->
+      <a href="documentos.html" class="cagp-app-tile" data-cagp-nav onclick="window.closeCagpAppLauncher()">
+        <div class="cagp-app-tile-icon cagp-bg-bordeaux"><i class="bi bi-file-earmark-pdf"></i></div>
+        <strong class="cagp-app-tile-name">Central de PDFs</strong>
+        <span class="cagp-app-tile-desc">PPC, Regimento e Formulários</span>
+        <span class="cagp-app-tile-tag">Acervo</span>
+      </a>
+
+      <!-- 8. Núcleos do DCP -->
+      <a href="curso.html#grupos-pesquisa" class="cagp-app-tile" data-cagp-nav onclick="window.closeCagpAppLauncher()">
+        <div class="cagp-app-tile-icon cagp-bg-blue"><i class="bi bi-mortarboard"></i></div>
+        <strong class="cagp-app-tile-name">Pesquisa & Iniciação</strong>
+        <span class="cagp-app-tile-desc">11 Núcleos Temáticos do DCP</span>
+        <span class="cagp-app-tile-tag">Ciência</span>
+      </a>
+    </div>
+
+    <div class="cagp-launcher-footer">
+      <span class="small text-muted"><kbd class="cagp-kbd-mini">ESC</kbd> para fechar</span>
+      <span class="cagp-launcher-brand-tag">CAGP UFMG • SUPER APP ECOSYSTEM</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  function getLauncherModal() {
+    return document.getElementById('cagp-app-launcher-modal');
+  }
+
+  function ensureModalInBody() {
+    const modal = getLauncherModal();
+    if (modal && modal.parentElement !== document.body) {
+      document.body.appendChild(modal);
+    }
+  }
+
+  window.openCagpAppLauncher = function () {
+    ensureModalInBody();
+    const modal = getLauncherModal();
+    const waffleBtn = document.getElementById('cagp-waffle-btn');
+    if (!modal) return;
+    modal.removeAttribute('hidden');
+    document.body.classList.add('cagp-launcher-open');
+    if (waffleBtn) waffleBtn.setAttribute('aria-expanded', 'true');
+
+    // Focar no primeiro item interativo para acessibilidade
+    const firstLink = modal.querySelector('.cagp-app-tile');
+    if (firstLink) setTimeout(function () { firstLink.focus(); }, 50);
+  };
+
+  window.closeCagpAppLauncher = function () {
+    const modal = getLauncherModal();
+    const waffleBtn = document.getElementById('cagp-waffle-btn');
+    if (!modal) return;
+    modal.setAttribute('hidden', '');
+    document.body.classList.remove('cagp-launcher-open');
+    if (waffleBtn) {
+      waffleBtn.setAttribute('aria-expanded', 'false');
+      waffleBtn.focus();
+    }
+  };
+
+  window.toggleCagpAppLauncher = function () {
+    const modal = getLauncherModal();
+    if (!modal) return;
+    if (modal.hasAttribute('hidden')) {
+      window.openCagpAppLauncher();
+    } else {
+      window.closeCagpAppLauncher();
+    }
+  };
+
+  // Tecla Escape para fechar
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      const modal = getLauncherModal();
+      if (modal && !modal.hasAttribute('hidden')) {
+        window.closeCagpAppLauncher();
+      }
+    }
+  });
+
+  // Garantir posicionamento fora do contêiner no carregamento
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureModalInBody);
+  } else {
+    ensureModalInBody();
+  }
+})();
+</script>

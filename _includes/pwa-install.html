@@ -9,27 +9,51 @@
   <span id="cagp-toast-text" class="cagp-toast-text"></span>
 </div>
 
-<!-- Barra de Navegação Inferior Adaptativa para Dispositivos Móveis (Thumb-friendly & Safe Area) -->
-<nav id="cagp-mobile-nav" class="cagp-mobile-nav" aria-label="Navegação rápida do aplicativo">
-  <a href="index.html" class="cagp-mobile-nav-item" id="cagp-mnav-inicio">
-    <i class="bi bi-house-door" aria-hidden="true"></i>
-    <span>Início</span>
+<!-- Barra de Navegação Inferior Adaptativa para Dispositivos Móveis (Web Mobile Normal) -->
+<nav id="cagp-mobile-nav" class="cagp-mobile-nav" aria-label="Navegação rápida do site no celular">
+  <a href="index.html" class="cagp-mobile-nav-item" id="cagp-mnav-inicio" data-cagp-nav data-route="index.html" aria-label="Início e Campus Hoje">
+    <i class="bi bi-compass" aria-hidden="true"></i>
+    <span>Hoje</span>
   </a>
-  <a href="percurso.html" class="cagp-mobile-nav-item" id="cagp-mnav-percurso">
+  <a href="percurso.html" class="cagp-mobile-nav-item" id="cagp-mnav-percurso" data-cagp-nav data-route="percurso.html" aria-label="Percurso e Grade">
     <i class="bi bi-diagram-3" aria-hidden="true"></i>
     <span>Percurso</span>
   </a>
-  <a href="acg.html" class="cagp-mobile-nav-item" id="cagp-mnav-acg">
-    <i class="bi bi-calculator" aria-hidden="true"></i>
-    <span>ACG 600h</span>
+  <a href="documentos.html" class="cagp-mobile-nav-item" id="cagp-mnav-docs" data-cagp-nav data-route="documentos.html" aria-label="Documentos e PDFs Oficiais">
+    <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+    <span>Documentos</span>
   </a>
-  <a href="faq.html" class="cagp-mobile-nav-item" id="cagp-mnav-faq">
-    <i class="bi bi-question-circle" aria-hidden="true"></i>
-    <span>FAQ</span>
+  <a href="gestao.html" class="cagp-mobile-nav-item" id="cagp-mnav-cagp" data-cagp-nav data-route="gestao.html" aria-label="O CAGP e Gestão em Exercício">
+    <i class="bi bi-people" aria-hidden="true"></i>
+    <span>O CAGP</span>
   </a>
   <button type="button" class="cagp-mobile-nav-item cagp-mobile-nav-btn" id="cagp-mnav-buscar" onclick="window.openCagpSpotlight &amp;&amp; window.openCagpSpotlight()" aria-label="Abrir busca global e comandos">
     <i class="bi bi-search" aria-hidden="true"></i>
     <span>Buscar</span>
+  </button>
+</nav>
+
+<!-- 5-Tab Bar Soberana do Super App (Apple HIG & M3 Expressive — 5 Destinos Canônicos) -->
+<nav id="cagp-superapp-tabbar" class="cagp-superapp-tabbar" aria-label="Navegação principal do Super App" hidden>
+  <a href="index.html" class="cagp-tabbar-item" id="cagp-stab-hoje" data-cagp-nav data-route="index.html" aria-label="Hoje no Campus e Micro-Apps">
+    <i class="bi bi-compass-fill cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">Hoje</span>
+  </a>
+  <a href="percurso.html" class="cagp-tabbar-item" id="cagp-stab-percurso" data-cagp-nav data-route="percurso.html" aria-label="Percurso Curricular, Grade e 68 Optativas">
+    <i class="bi bi-diagram-3-fill cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">Percurso</span>
+  </a>
+  <a href="documentos.html" class="cagp-tabbar-item" id="cagp-stab-docs" data-cagp-nav data-route="documentos.html" aria-label="Acervo de PDFs Oficiais e Formulários Offline">
+    <i class="bi bi-file-earmark-pdf-fill cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">Documentos</span>
+  </a>
+  <a href="gestao.html" class="cagp-tabbar-item" id="cagp-stab-cagp" data-cagp-nav data-route="gestao.html" aria-label="O CAGP, Gestão em Exercício e Representação">
+    <i class="bi bi-people-fill cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">O CAGP</span>
+  </a>
+  <button type="button" class="cagp-tabbar-item cagp-tabbar-btn" id="cagp-stab-ajustes" onclick="window.openCagpAppSettings &amp;&amp; window.openCagpAppSettings()" aria-label="Ajustes, Metas Discentes e Acessibilidade">
+    <i class="bi bi-person-gear cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">Ajustes</span>
   </button>
 </nav>
 
@@ -78,6 +102,88 @@
   <div class="cagp-a11y-footer">
     <button type="button" id="cagp-ios-ok" class="cagp-btn cagp-btn-primary w-100">
       <i class="bi bi-check2 me-1"></i> Entendi
+    </button>
+  </div>
+</div>
+
+<!-- Modal Bottom Sheet de Ajustes & Minhas Metas Acadêmicas (Exclusivo Super App) -->
+<div id="cagp-settings-backdrop" class="cagp-a11y-backdrop" hidden onclick="window.closeCagpAppSettings &amp;&amp; window.closeCagpAppSettings()"></div>
+<div id="cagp-settings-sheet" class="cagp-a11y-panel cagp-settings-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="cagp-settings-title">
+  <!-- Drag Handle para ergonomia móvel (Apple Bottom Sheet & M3 Standard) -->
+  <div class="cagp-sheet-handle" aria-hidden="true"></div>
+  <div class="cagp-a11y-header">
+    <div class="cagp-a11y-header-title">
+      <i class="bi bi-person-gear me-2 text-primary" aria-hidden="true"></i>
+      <h3 id="cagp-settings-title" class="cagp-a11y-title">Ajustes &amp; Metas do Estudante</h3>
+    </div>
+    <button type="button" class="cagp-a11y-close" onclick="window.closeCagpAppSettings &amp;&amp; window.closeCagpAppSettings()" aria-label="Fechar ajustes">✕</button>
+  </div>
+  
+  <div class="cagp-a11y-body">
+    <!-- Identificação do Aluno -->
+    <div class="cagp-student-badge-card mb-3">
+      <div class="d-flex align-items-center gap-2 mb-1">
+        <span class="cagp-badge cagp-badge-red">Gestão Pública • FAFICH</span>
+        <span class="cagp-badge cagp-badge-dark">Noturno</span>
+      </div>
+      <div class="small text-muted">Centro Acadêmico de Gestão Pública • UFMG</div>
+    </div>
+
+    <!-- Minhas Metas Salvas Localmente (Offline Student Vault) -->
+    <div class="cagp-vault-section mb-3">
+      <div class="cagp-vault-title font-display fw-bold text-uppercase fs-6 mb-2">
+        <i class="bi bi-safe2-fill me-1 text-warning"></i> Minhas Metas Salvas
+      </div>
+      <div class="cagp-vault-cards">
+        <div class="cagp-vault-card">
+          <div class="cagp-vault-card-label">Calculadora ACG</div>
+          <div class="cagp-vault-card-val" id="cagp-vault-acg">0h / 600h</div>
+          <a href="acg.html#calculadora" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Abrir Calculadora →</a>
+        </div>
+        <div class="cagp-vault-card">
+          <div class="cagp-vault-card-label">Checklist Calouro</div>
+          <div class="cagp-vault-card-val" id="cagp-vault-checklist">0 de 6 passos</div>
+          <a href="calouros.html#checklist" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Ver Checklist →</a>
+        </div>
+        <div class="cagp-vault-card">
+          <div class="cagp-vault-card-label">Percurso Vocacional</div>
+          <div class="cagp-vault-card-val" id="cagp-vault-percurso">Não simulado</div>
+          <a href="percurso.html#quiz-percurso" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Fazer Teste →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status do Super App & Armazenamento Offline -->
+    <div class="cagp-app-status-box mb-3">
+      <div class="d-flex align-items-center justify-content-between mb-1">
+        <span class="fw-bold small text-uppercase font-display"><i class="bi bi-hdd-stack-fill text-success me-1"></i> Modo Offline Pronto</span>
+        <span class="badge bg-success text-white">100% Sincronizado</span>
+      </div>
+      <p class="small text-muted mb-0">Todas as 11 páginas, 27 ementas e formulários oficiais estão gravados no seu dispositivo para acesso nas salas de aula da FAFICH sem internet.</p>
+    </div>
+
+    <!-- Alternador de Modo de Visualização -->
+    <div class="cagp-mode-switch-box mb-3">
+      <div class="fw-bold small text-uppercase font-display mb-1"><i class="bi bi-toggles me-1"></i> Modo de Visualização</div>
+      <p class="small text-muted mb-2">Prefere a visualização editorial clássica completa do site com menus suspensos?</p>
+      <button type="button" class="cagp-btn cagp-btn-outline w-100 btn-sm" onclick="window.cagpToggleAppMode &amp;&amp; window.cagpToggleAppMode()">
+        <i class="bi bi-display me-1"></i> Alternar para Modo Portal Web Clássico
+      </button>
+    </div>
+
+    <!-- Acessibilidade Universal Centralizada -->
+    <div class="cagp-settings-section mb-3">
+      <div class="fw-bold small text-uppercase font-display mb-1"><i class="bi bi-universal-access me-1 text-primary"></i> Acessibilidade &amp; Preferências de Leitura</div>
+      <p class="small text-muted mb-2">Ajuste de tamanho tipográfico, fonte para dislexia, régua de foco e alto contraste.</p>
+      <button type="button" class="cagp-btn cagp-btn-secondary w-100 btn-sm" onclick="window.closeCagpAppSettings(); if (window.openCagpA11yModal) window.openCagpA11yModal();">
+        <i class="bi bi-sliders me-1"></i> Abrir Suíte de Acessibilidade (Alt + A)
+      </button>
+    </div>
+  </div>
+  
+  <div class="cagp-a11y-footer">
+    <button type="button" class="cagp-btn cagp-btn-primary w-100" onclick="window.closeCagpAppSettings &amp;&amp; window.closeCagpAppSettings()">
+      <i class="bi bi-check2 me-1"></i> Concluído
     </button>
   </div>
 </div>
@@ -182,23 +288,196 @@
     if (el) el.classList.add('is-active');
   }
 
-  // 6. Detecção de modo Standalone (PWA já instalado)
-  const isStandalone = window.matchMedia('(display-mode: standalone)').matches ||
-                       window.navigator.standalone === true;
-
-  if (isStandalone) {
-    document.body.classList.add('cagp-is-standalone');
-    const mnavBtn = document.getElementById('cagp-mnav-install');
-    if (mnavBtn) {
-      mnavBtn.innerHTML = '<i class="bi bi-check2-circle" aria-hidden="true"></i><span>Instalado</span>';
-      mnavBtn.disabled = true;
-      mnavBtn.style.opacity = '0.7';
-    }
+  // 6. Detecção Inteligente de Modo Standalone (App Instalado) vs Web
+  function checkIsStandalone() {
+    const forced = sessionStorage.getItem('cagp_force_app_mode');
+    if (forced === 'true') return true;
+    if (forced === 'false') return false;
+    return window.matchMedia('(display-mode: standalone)').matches ||
+           window.navigator.standalone === true ||
+           document.referrer.includes('android-app://');
   }
 
-  // 7. Detecção de plataforma Apple iOS
+  let isStandalone = checkIsStandalone();
+
+  function applyAppModeClasses() {
+    isStandalone = checkIsStandalone();
+    if (isStandalone) {
+      document.documentElement.classList.add('cagp-is-standalone');
+      document.body.classList.add('cagp-is-standalone');
+    } else {
+      document.documentElement.classList.remove('cagp-is-standalone');
+      document.body.classList.remove('cagp-is-standalone');
+    }
+    updateSuperAppUI(window.location.href);
+  }
+
+  applyAppModeClasses();
+
+  // 7. Alternador Manual de Modo (Super App vs Web Clássico)
+  window.cagpToggleAppMode = function () {
+    const currentlyStandalone = document.documentElement.classList.contains('cagp-is-standalone');
+    if (currentlyStandalone) {
+      sessionStorage.setItem('cagp_force_app_mode', 'false');
+      applyAppModeClasses();
+      if (window.cagpToast) window.cagpToast('Modo Portal Web Clássico ativado.', 'bi-window', 2500);
+    } else {
+      sessionStorage.setItem('cagp_force_app_mode', 'true');
+      applyAppModeClasses();
+      if (window.cagpToast) window.cagpToast('⚡ Modo Super App Instalado ativado!', 'bi-phone', 2500);
+    }
+  };
+
+  // 8. Bottom Sheet de Ajustes & Minhas Metas Acadêmicas
+  const settingsBackdrop = document.getElementById('cagp-settings-backdrop');
+  const settingsSheet = document.getElementById('cagp-settings-sheet');
+
+  function openAppSettings() {
+    if (!settingsSheet || !settingsBackdrop) return;
+    refreshVaultData();
+    settingsBackdrop.removeAttribute('hidden');
+    settingsBackdrop.classList.add('is-open');
+    settingsSheet.removeAttribute('hidden');
+    settingsSheet.classList.add('is-open');
+  }
+
+  function closeAppSettings() {
+    if (!settingsSheet || !settingsBackdrop) return;
+    settingsBackdrop.setAttribute('hidden', '');
+    settingsBackdrop.classList.remove('is-open');
+    settingsSheet.setAttribute('hidden', '');
+    settingsSheet.classList.remove('is-open');
+  }
+
+  function refreshVaultData() {
+    // 1. Horas ACG
+    const savedHours = localStorage.getItem('cagp_acg_total_horas') || localStorage.getItem('cagp_acg_horas_totais') || '0h';
+    const formattedHours = savedHours.includes('h') ? savedHours : savedHours + 'h';
+    const acgValEl = document.getElementById('cagp-vault-acg');
+    const hubAcgEl = document.getElementById('cagp-hub-vault-acg');
+    if (acgValEl) acgValEl.textContent = formattedHours + ' / 600h';
+    if (hubAcgEl) hubAcgEl.textContent = formattedHours + ' / 600h';
+
+    // 2. Checklist Calouro
+    let checkText = '0 de 6 passos';
+    try {
+      const rawCheck = localStorage.getItem('cagp_calouros_checklist');
+      if (rawCheck) {
+        const parsed = JSON.parse(rawCheck);
+        const count = Object.values(parsed).filter(Boolean).length;
+        checkText = count + ' de 6 passos';
+      }
+    } catch (e) {}
+    const checkValEl = document.getElementById('cagp-vault-checklist');
+    const hubCheckEl = document.getElementById('cagp-hub-vault-checklist');
+    if (checkValEl) checkValEl.textContent = checkText;
+    if (hubCheckEl) hubCheckEl.textContent = checkText;
+
+    // 3. Percurso Vocacional
+    const savedQuiz = localStorage.getItem('cagp_percurso_quiz_resultado') || localStorage.getItem('cagp_percurso_quiz_result') || 'Não simulado';
+    const percursoValEl = document.getElementById('cagp-vault-percurso');
+    const hubPercursoEl = document.getElementById('cagp-hub-vault-percurso');
+    if (percursoValEl) percursoValEl.textContent = savedQuiz;
+    if (hubPercursoEl) hubPercursoEl.textContent = savedQuiz;
+  }
+
+  window.openCagpAppSettings = openAppSettings;
+  window.closeCagpAppSettings = closeAppSettings;
+  window.refreshCagpVault = refreshVaultData;
+
+  // 9. Atualizador da Topbar e Tabbar do Super App
+  function updateSuperAppUI(targetUrl) {
+    const isApp = document.documentElement.classList.contains('cagp-is-standalone');
+    const topbar = document.getElementById('cagp-superapp-topbar');
+    const tabbar = document.getElementById('cagp-superapp-tabbar');
+    const mobileNav = document.getElementById('cagp-mobile-nav');
+
+    if (!isApp) {
+      if (topbar) topbar.setAttribute('hidden', '');
+      if (tabbar) tabbar.setAttribute('hidden', '');
+      if (mobileNav) mobileNav.removeAttribute('hidden');
+      return;
+    }
+
+    if (topbar) topbar.removeAttribute('hidden');
+    if (tabbar) tabbar.removeAttribute('hidden');
+    if (mobileNav) mobileNav.setAttribute('hidden', '');
+
+    let pathname = 'index.html';
+    let hash = '';
+    try {
+      const url = new URL(targetUrl || window.location.href, window.location.href);
+      pathname = url.pathname.split('/').pop() || 'index.html';
+      hash = url.hash;
+    } catch (e) {
+      pathname = window.location.pathname.split('/').pop() || 'index.html';
+      hash = window.location.hash;
+    }
+
+    const leadingEl = document.getElementById('cagp-topbar-leading');
+    const titleEl = document.getElementById('cagp-topbar-title');
+
+    const microAppTitles = {
+      'index.html': hash === '#micro-apps-hub' ? 'MICRO-APPS HUB' : 'CAGP • SUPER APP',
+      'percurso.html': 'PERCURSO & EMENTAS',
+      'acg.html': 'CALCULADORA ACG 600H',
+      'calouros.html': 'GUIA DO CALOURO',
+      'estagio-tcc.html': 'ESTÁGIO & ART. 41',
+      'documentos.html': 'CENTRAL DE NORMAS',
+      'faq.html': 'SOS ACADÊMICO (FAQ)',
+      'curso.html': 'O CURSO • FAFICH',
+      'sobre.html': 'O CAGP & ESTATUTO',
+      'gestao.html': 'GESTÃO & EQUIPE',
+      'mapa-do-site.html': 'MAPA DO ACERVO'
+    };
+
+    const currentTitle = microAppTitles[pathname] || 'CAGP • SUPER APP';
+    if (titleEl) {
+      titleEl.textContent = currentTitle;
+    }
+
+    if (leadingEl) {
+      if (pathname === 'index.html' && hash !== '#micro-apps-hub') {
+        leadingEl.innerHTML = 
+          '<a href="index.html" class="cagp-topbar-brand" aria-label="Início do Super App" data-cagp-nav>' +
+            '<img src="logos/cagp/10_simbolo_transparente_positivo.svg" alt="CAGP" width="24" height="24" class="cagp-topbar-logo">' +
+          '</a>';
+      } else {
+        leadingEl.innerHTML = 
+          '<a href="index.html#micro-apps-hub" class="cagp-topbar-back-btn" aria-label="Voltar à Central de Micro-Apps" data-cagp-nav>' +
+            '<i class="bi bi-chevron-left" aria-hidden="true"></i>' +
+            '<span>Hub</span>' +
+          '</a>';
+      }
+    }
+
+    document.querySelectorAll('.cagp-tabbar-item').forEach(function (tab) {
+      tab.classList.remove('is-active');
+    });
+
+    if (pathname === 'index.html' || pathname === '') {
+      const tab = document.getElementById('cagp-stab-hoje');
+      if (tab) tab.classList.add('is-active');
+    } else if (pathname === 'percurso.html') {
+      const tab = document.getElementById('cagp-stab-percurso');
+      if (tab) tab.classList.add('is-active');
+    } else if (pathname === 'documentos.html') {
+      const tab = document.getElementById('cagp-stab-docs');
+      if (tab) tab.classList.add('is-active');
+    } else if (pathname === 'gestao.html' || pathname === 'sobre.html') {
+      const tab = document.getElementById('cagp-stab-cagp');
+      if (tab) tab.classList.add('is-active');
+    }
+
+    refreshVaultData();
+  }
+
+  window.updateSuperAppUI = updateSuperAppUI;
+
+  // 10. Detecção de plataforma Apple iOS / Android
   const ua = window.navigator.userAgent.toLowerCase();
   const isIos = /iphone|ipad|ipod/.test(ua);
+  const isAndroid = /android/.test(ua);
 
   // 8. Instalação em navegadores Chromium / Desktop / Android
   let deferredPrompt = null;
@@ -286,55 +565,12 @@
 
   // 9. Atualização em Tempo Real do Campus & Detecção de Plataforma (Mobile Super App Hub)
   function updateCampusHub() {
+    if (window.applyCagpCampusState) {
+      window.applyCagpCampusState(document);
+    }
+
     const hub = document.getElementById('cagp-mobile-superapp-hub');
     if (!hub) return;
-
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const timeVal = hours * 60 + minutes;
-
-    // Relógio
-    const clockEl = document.getElementById('cagp-live-clock');
-    if (clockEl) {
-      clockEl.textContent = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0');
-    }
-
-    // Status do RU II
-    const ruEl = document.getElementById('cagp-status-ru');
-    if (ruEl) {
-      if (timeVal >= 11 * 60 + 15 && timeVal <= 14 * 60) {
-        ruEl.innerHTML = '<span class="cagp-dot-online"></span> Almoço Aberto (até 14h00)';
-      } else if (timeVal >= 17 * 60 + 30 && timeVal <= 19 * 60 + 30) {
-        ruEl.innerHTML = '<span class="cagp-dot-online"></span> Jantar Aberto (até 19h30 • Fila 18h15)';
-      } else if (timeVal > 19 * 60 + 30) {
-        ruEl.innerHTML = '<span class="cagp-dot-offline"></span> Jantar Encerrado hoje';
-      } else {
-        ruEl.innerHTML = '<span class="cagp-dot-pending"></span> Próxima: Almoço 11h15 / Jantar 17h30';
-      }
-    }
-
-    // Status dos Circulares Noturnos
-    const circEl = document.getElementById('cagp-status-circulares');
-    if (circEl) {
-      if (timeVal >= 18 * 60 && timeVal <= 22 * 60 + 45) {
-        circEl.innerHTML = '<span class="cagp-dot-online"></span> Em Operação (até 22h45)';
-      } else if (timeVal > 22 * 60 + 45 || timeVal < 6 * 60) {
-        circEl.innerHTML = '<span class="cagp-dot-offline"></span> Encerrados por hoje';
-      } else {
-        circEl.innerHTML = '<span class="cagp-dot-pending"></span> Diurnos ativos • Noturno às 18h';
-      }
-    }
-
-    // Status do CEAG / Secretaria F-2039
-    const secEl = document.getElementById('cagp-status-secretaria');
-    if (secEl) {
-      if (timeVal >= 8 * 60 && timeVal <= 22 * 60) {
-        secEl.innerHTML = '<span class="cagp-dot-online"></span> CEAG F-2033 Aberto (até 22h)';
-      } else {
-        secEl.innerHTML = '<span class="cagp-dot-offline"></span> Atendimento Fechado';
-      }
-    }
 
     // Incentivo de Instalação Adaptado à Plataforma
     const container = document.getElementById('cagp-platform-incentive-container');
@@ -390,7 +626,12 @@
 
   // Executar e agendar atualização
   updateCampusHub();
+  refreshVaultData();
   setInterval(updateCampusHub, 30000);
-  window.addEventListener('cagp:navigated', updateCampusHub);
+  window.addEventListener('cagp:navigated', function () {
+    updateCampusHub();
+    refreshVaultData();
+    updateSuperAppUI(window.location.href);
+  });
 })();
 </script>

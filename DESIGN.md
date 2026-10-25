@@ -13,6 +13,7 @@ colors:
   surface-mid: "#e5e7eb"
   text-muted: "#4b5563"
   accent-gold: "#e8a317"
+  highlight-gold: "#ffd54f"
   accent-blue: "#1e3f66"
   accent-green: "#2e7d32"
   accent-amber: "#e65100"

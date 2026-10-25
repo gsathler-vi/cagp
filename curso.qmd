@@ -611,7 +611,8 @@ Além da Coordenação, o Colegiado de Gestão Pública é integrado por represe
 </div>
 ```
 
-### Canais e Locais de Atendimento Presencial
+### Canais e Locais de Atendimento Presencial {#secretaria-colegiado}
+<span id="canais-e-locais-de-atendimento-presencial" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 ```{=html}
 <div class="row g-3 mb-4">
@@ -1134,6 +1135,7 @@ Essa inserção acadêmica de vanguarda oferece aos discentes a oportunidade de 
 ---
 
 ## <i class="bi bi-door-open" aria-hidden="true"></i> Formas de Ingresso e Reopção {#ingresso}
+<span id="ingresso-transferencia" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 O acesso ao Bacharelado em Gestão Pública da UFMG pode ser realizado por quatro vias formais:
 

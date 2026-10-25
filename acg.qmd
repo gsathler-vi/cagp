@@ -79,6 +79,7 @@ A formação em Gestão Pública na UFMG integra extensão comunitária obrigat�
 ---
 
 ## <i class="bi bi-calculator" aria-hidden="true"></i> Calculadora & Simulador Interativo de Horas {#calculadora-horas}
+<span id="calculadora" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular suas horas já realizadas ou planejadas. A calculadora **respeita automaticamente o teto máximo regimental de cada categoria** e salva seu rascunho neste navegador:
 
