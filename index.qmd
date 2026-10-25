@@ -62,7 +62,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
     </div>
     <div class="d-flex align-items-center gap-2">
       <a href="calouros.html" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-2" style="font-size: 0.78rem;"><i class="bi bi-backpack me-1"></i> Sou Calouro</a>
-      <button type="button" id="btn-dismiss-onboard" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-2" style="font-size: 0.78rem;" aria-label="Dispensar aviso de boas-vindas">✕ Entendi</button>
+      <button type="button" id="btn-dismiss-onboard" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-2" style="font-size: 0.78rem;" aria-label="Dispensar aviso de boas-vindas e não exibir novamente">✕ Entendi, fechar aviso</button>
     </div>
   </div>
 </div>

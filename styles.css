@@ -889,12 +889,16 @@ h1.cagp-hero-title,
   .cagp-doc-btn,
   .cagp-step-btn,
   .cagp-preset-btn {
-    min-height: 44px;
+    min-height: 44px !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .cagp-step-btn {
+    min-width: 44px !important;
   }
 }
 
@@ -3558,6 +3562,22 @@ div.callout-tip .callout-toggle::before {
   transform: translateX(-50%);
 }
 
+@media (max-width: 991px) {
+  .cagp-organogram-directorates {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .cagp-organogram-level-middle {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .cagp-organogram-directorates {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Cards da Equipe / Chapa */
 .cagp-directorate-group-title {
   display: flex;
@@ -3689,6 +3709,7 @@ div.callout-tip .callout-toggle::before {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .cagp-research-badge-list {
@@ -4294,8 +4315,8 @@ div.callout-tip .callout-toggle::before {
 
 .cagp-stamp-badge.is-homologado {
   border-color: #d97706;
-  color: #d97706;
-  background-color: var(--cagp-white, #ffffff);
+  color: #111111;
+  background-color: #fffdf5;
   box-shadow: 3px 3px 0 #d97706;
 }
 

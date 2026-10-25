@@ -55,7 +55,7 @@ Todas as diretrizes, prazos e regras informados neste portal baseiam-se estritam
     <div class="cagp-urgent-title">PPC — Projeto Pedagógico</div>
     <div class="cagp-urgent-desc">Estrutura de 3.000h, competências e matriz curricular do curso.</div>
     <div class="mt-2">
-      <a href="documentos/projeto-pedagogico-curso-gestao-publica-ufmg.pdf" target="_blank" class="cagp-chip"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i>Baixar PDF (3.3 MB)</a>
+      <a href="documentos/ppc-gestao-publica-ufmg.pdf" target="_blank" class="cagp-chip"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i>Baixar PDF (3.3 MB)</a>
     </div>
   </div>
   <div class="cagp-urgent-card cagp-surface-timbre">

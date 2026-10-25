@@ -840,7 +840,9 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
 
 ::: {.callout-important}
 ### <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i> Fique Atento ao Prazo Regimental de 120 Dias!
-O Art. 15, § 4º, incisos III e VII estabelece que certificados de participação (ouvinte) e de apresentação de trabalhos em anais de congressos e seminários devem ser protocolados junto ao Colegiado no **prazo máximo de 120 dias corridos após o encerramento do evento**! Não guarde certificados para o final do curso.
+**O que você precisa saber imediatamente:** Nunca acumule certificados de eventos, seminários ou anais de congressos para o final do curso! O Colegiado de Gestão Pública indefere sumariamente qualquer certificado protocolado fora do prazo.
+
+**Respaldo Legal e Regra de Contagem:** Conforme o **Art. 15, § 4º, incisos III e VII do Regulamento do Curso**, certificados de participação como ouvinte (Modalidade III) e apresentação de trabalhos em anais (Modalidade VII) devem ser protocolados no **prazo decadencial fatal de até 120 dias corridos**. Para eventos ocorridos durante as férias ou recesso acadêmico, o Colegiado adota a interpretação benéfica de que a contagem do prazo inicia-se a partir do **primeiro dia letivo do semestre regular subsequente** à emissão do documento.
 :::
 
 ```{=html}

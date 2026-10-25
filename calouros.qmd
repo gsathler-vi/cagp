@@ -115,7 +115,7 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
             <h3 class="h6 fw-bold mb-0">3. Conferir Matrícula do 1º Período (300h)</h3>
             <span class="cagp-stamp-badge is-visto py-0 px-2 d-none" data-stamp-chk><i class="bi bi-check2-all me-1"></i> VISTO</span>
           </div>
-          <p class="small text-muted mb-0">No 1º semestre, sua inscrição nas 5 matérias obrigatórias (300h / 20 créditos) é automática pelo DRCA. Nos períodos seguintes, o mínimo regimental é de <strong>180h (12 créditos)</strong>.</p>
+          <p class="small text-muted mb-0"><strong>Inscrição 100% Automática:</strong> No 1º semestre, você não precisa disputar vagas no SIGA — sua inscrição nas 5 disciplinas obrigatórias (300h / 20 créditos) é realizada de ofício pelo DRCA. Basta conferir seu comprovante. A partir do 2º período, a matrícula passa a ser solicitada manualmente no SIGA e a carga mínima regimental é de <strong>180h (12 créditos)</strong>.</p>
         </div>
       </label>
     </div>
@@ -432,6 +432,11 @@ Localize os principais pontos da sua vivência noturna: a FAFICH, o CAD 2 (onde 
 <div class="cagp-map-caption">
   <strong>Guia Espacial do Campus Pampulha:</strong> A FAFICH localiza-se próxima à Faculdade de Educação (FaE) e ao CAD 2. O <em>RU Setorial I</em> fica ao lado da FAFICH (aberto para café da manhã e almoço); o <em>RU Setorial II</em> (onde é servido o jantar das 17h10 às 19h30) situa-se na região biológica, acessível a pé ou via circulares linhas 3 e 4.
 </div>
+<div class="p-2 bg-light border-top text-center">
+  <a href="imagens/mapa-pampulha-detalhado.jpg" target="_blank" rel="noopener noreferrer" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-3">
+    <i class="bi bi-arrows-fullscreen me-1" aria-hidden="true"></i> Abrir Mapa em Tela Cheia / Alta Resolução <i class="bi bi-box-arrow-up-right cagp-external-icon ms-1" aria-hidden="true"></i>
+  </a>
+</div>
 :::
 
 ::: {.callout-note}
@@ -528,7 +533,7 @@ Assista aos guias audiovisuais produzidos pela DTI, PRAE e canais oficiais da UF
 A **Faculdade de Filosofia e Ciências Humanas** é uma das unidades mais tradicionais e politizadas da UFMG.
 
 ::: {.cagp-card}
-### <i class="bi bi-geo-alt" aria-hidden="true"></i> Onde Encontrar a Gestão e Pontos-Chave
+### <i class="bi bi-geo-alt" aria-hidden="true"></i> Onde Encontrar a Gestão e Pontos-Chave {#biblioteca-espacos}
 - **Salinha do CAGP (Pilotis da FAFICH):** Espaço dos Centros Acadêmicos no pilotis térreo. Venha tomar um café, tirar dúvidas sobre professores, provas e percurso, e participar dos debates da gestão.
 - **Departamento de Ciência Política (DCP):** Departamento acadêmico de vinculação do curso de Gestão Pública, no 3º andar da FAFICH.
 - **Biblioteca Setorial da FAFICH (1º Andar):** Amplo acervo especializado em Ciência Política, Administração Pública, Sociologia e periódicos internacionais.
@@ -562,8 +567,8 @@ Como estudante do noturno, você conta com canais de atendimento presencial no *
             <li><strong>Quinta e Sexta-feira:</strong> Serviços internos, das 09h00 às 15h00</li>
           </ul>
         </li>
-        <li><strong>Telefone:</strong> (31) 3409-3826 <button type="button" class="cagp-copy-btn" data-copy="3134093826" aria-label="Copiar telefone da secretaria"><i class="bi bi-telephone me-1" aria-hidden="true"></i>Copiar</button> • <strong>E-mail:</strong> <a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a> <button type="button" class="cagp-copy-btn" data-copy="gestaopublica@ufmg.br" aria-label="Copiar e-mail do Colegiado"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar</button></li>
-        <li><strong>Coordenação do Curso:</strong> Profª Isabele Batista Mitozo (Atendimento presencial na <strong>Sala F-4067</strong> às quartas das 17h30 às 19h00 e quintas on-line • <a href="mailto:coordgestaopublica@gmail.com">coordgestaopublica@gmail.com</a> <button type="button" class="cagp-copy-btn" data-copy="coordgestaopublica@gmail.com" aria-label="Copiar e-mail da coordenação"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar</button>).</li>
+        <li><strong>Telefone:</strong> (31) 3409-3826 <button type="button" class="cagp-copy-btn" data-copy="3134093826" aria-label="Copiar telefone da secretaria"><i class="bi bi-telephone me-1" aria-hidden="true"></i>Copiar telefone</button> • <strong>E-mail:</strong> <a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a> <button type="button" class="cagp-copy-btn" data-copy="gestaopublica@ufmg.br" aria-label="Copiar e-mail da secretaria"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar e-mail</button></li>
+        <li><strong>Coordenação do Curso:</strong> Profª Isabele Batista Mitozo (Atendimento presencial na <strong>Sala F-4067</strong> às quartas das 17h30 às 19h00 e quintas on-line • <a href="mailto:coordgestaopublica@gmail.com">coordgestaopublica@gmail.com</a> <button type="button" class="cagp-copy-btn" data-copy="coordgestaopublica@gmail.com" aria-label="Copiar e-mail da coordenação"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar e-mail</button>).</li>
       </ul>
     </div>
   </div>
@@ -613,7 +618,7 @@ Como estudante do noturno, você conta com canais de atendimento presencial no *
           <strong>Presencial:</strong> Quartas das 17h30 às 19h00 (Sala F-4067)<br>
           <strong>On-line:</strong> Quintas via Meet mediante e-mail<br>
           <strong>Contato:</strong> <a href="mailto:coordgestaopublica@gmail.com">coordgestaopublica@gmail.com</a>
-          <button type="button" class="cagp-copy-btn" data-copy="coordgestaopublica@gmail.com" aria-label="Copiar e-mail da coordenação"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar</button>
+          <button type="button" class="cagp-copy-btn" data-copy="coordgestaopublica@gmail.com" aria-label="Copiar e-mail da coordenação"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar e-mail</button>
         </div>
       </div>
     </div>
@@ -632,7 +637,7 @@ Como estudante do noturno, você conta com canais de atendimento presencial no *
           <strong>Atendimento:</strong> Sala dos Professores (3º andar DCP)<br>
           <strong>Agendamento:</strong> Via e-mail ou Secretaria do Curso<br>
           <strong>Contato:</strong> <a href="mailto:ludmila.ribeiro@gmail.com">ludmila.ribeiro@gmail.com</a>
-          <button type="button" class="cagp-copy-btn" data-copy="ludmila.ribeiro@gmail.com" aria-label="Copiar e-mail da subcoordenadora"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar</button>
+          <button type="button" class="cagp-copy-btn" data-copy="ludmila.ribeiro@gmail.com" aria-label="Copiar e-mail da subcoordenadora"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar e-mail</button>
         </div>
       </div>
     </div>

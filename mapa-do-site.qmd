@@ -30,7 +30,6 @@ toc: true
 ::: {.col-lg-8}
 <div class="d-flex flex-wrap gap-2 mb-2">
   <span class="cagp-badge cagp-badge-red">Acessibilidade Universal</span>
-  <span class="cagp-badge cagp-badge-dark">WCAG 2.1 (Critério 2.4.5)</span>
   <span class="cagp-badge cagp-badge-gold">Índice Completo do Portal</span>
 </div>
 
@@ -70,7 +69,7 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
       <i class="bi bi-calculator fs-2 text-danger mb-2" aria-hidden="true"></i>
       <h3 class="fs-6 fw-bold text-uppercase mb-1">Calculadora de AAC</h3>
       <p class="small text-muted mb-3">Simule seus créditos e aproveitamento de até 300h nas 5 modalidades oficiais.</p>
-      <a href="acg.html#calculadora-aac" class="cagp-doc-btn cagp-doc-btn-primary w-100 justify-content-center">
+      <a href="acg.html#calculadora-horas" class="cagp-doc-btn cagp-doc-btn-primary w-100 justify-content-center">
         Abrir Calculadora &rarr;
       </a>
     </div>
@@ -81,7 +80,7 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
       <i class="bi bi-search fs-2 text-danger mb-2" aria-hidden="true"></i>
       <h3 class="fs-6 fw-bold text-uppercase mb-1">Busca de 68 Optativas</h3>
       <p class="small text-muted mb-3">Consulte ementas completas com filtros por departamento (DCP, ECN, SOA).</p>
-      <a href="percurso.html#catalogo-optativas" class="cagp-doc-btn cagp-doc-btn-primary w-100 justify-content-center">
+      <a href="percurso.html#disciplinas-optativas" class="cagp-doc-btn cagp-doc-btn-primary w-100 justify-content-center">
         Filtrar Optativas &rarr;
       </a>
     </div>
@@ -114,7 +113,7 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
       <i class="bi bi-clock-history fs-2 text-danger mb-2" aria-hidden="true"></i>
       <h3 class="fs-6 fw-bold text-uppercase mb-1">Secretaria & CEAG 2025/2</h3>
       <p class="small text-muted mb-3">Escala da secretária Norma Guedes (F-2039) e plantão do CEAG FAFICH até 22h.</p>
-      <a href="calouros.html#secretaria-colegiado" class="cagp-doc-btn cagp-doc-btn-outline w-100 justify-content-center">
+      <a href="calouros.html#secretaria-e-ceag" class="cagp-doc-btn cagp-doc-btn-outline w-100 justify-content-center">
         Consultar Horários &rarr;
       </a>
     </div>
@@ -158,9 +157,9 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
         </a>
         <p class="small text-muted mb-1">Portal aberto, compromisso ético da chapa, números oficiais do curso (Noturno, 10 períodos, 3.000h) e acessos rápidos.</p>
         <div class="cagp-sitemap-sublinks">
-          <a href="index.html#acesso-rapido" class="cagp-sitemap-tag">Acesso Rápido</a>
+          <a href="index.html#bussola-interativa" class="cagp-sitemap-tag">Bússola Discente</a>
           <a href="index.html#circular-ufmg" class="cagp-sitemap-tag">Circular UFMG</a>
-          <a href="index.html#destaques-curso" class="cagp-sitemap-tag">Pilares do Curso</a>
+          <a href="index.html#modulos-oficiais" class="cagp-sitemap-tag">Módulos Oficiais</a>
         </div>
       </div>
 
@@ -171,10 +170,9 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
         </a>
         <p class="small text-muted mb-1">Orientações de sobrevivência para o noturno (19h–22h30), rotinas de sobrevivência, biblioteca, alimentação e bolsas.</p>
         <div class="cagp-sitemap-sublinks">
-          <a href="calouros.html#guia-sobrevivencia" class="cagp-sitemap-tag">Rotina Noturna</a>
-          <a href="calouros.html#biblioteca-espacos" class="cagp-sitemap-tag">Biblioteca FAFICH (1º Andar)</a>
-          <a href="calouros.html#biblioteca-face" class="cagp-sitemap-tag">Biblioteca FACE (Econometria)</a>
-          <a href="calouros.html#secretaria-colegiado" class="cagp-sitemap-tag">Secretaria (F-2039) & CEAG</a>
+          <a href="calouros.html#rotina-noturna" class="cagp-sitemap-tag">Rotina Noturna (RU & Circulares)</a>
+          <a href="calouros.html#biblioteca-espacos" class="cagp-sitemap-tag">Bibliotecas FAFICH & FACE</a>
+          <a href="calouros.html#secretaria-e-ceag" class="cagp-sitemap-tag">Secretaria (F-2039) & CEAG</a>
           <a href="calouros.html#assistencia-estudantil" class="cagp-sitemap-tag">FUMP / PRAE / NAI</a>
         </div>
       </div>
@@ -199,10 +197,10 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
         </a>
         <p class="small text-muted mb-1">Histórico institucional (REUNI 2009), nota 4 no CPC/MEC, perfil do egresso, departamentos parceiros e os 11 grupos do DCP.</p>
         <div class="cagp-sitemap-sublinks">
-          <a href="curso.html#historia-curso" class="cagp-sitemap-tag">História & Criação</a>
-          <a href="curso.html#perfil-egresso" class="cagp-sitemap-tag">Mercado & Atuação</a>
+          <a href="curso.html#dados-fundamentais" class="cagp-sitemap-tag">Identidade & Criação</a>
+          <a href="curso.html#mercado-egressos" class="cagp-sitemap-tag">Mercado & Egressos (2023)</a>
           <a href="curso.html#grupos-pesquisa" class="cagp-sitemap-tag">11 Grupos de Pesquisa (DCP)</a>
-          <a href="curso.html#guia-pibic" class="cagp-sitemap-tag">Guia de Iniciação Científica</a>
+          <a href="curso.html#colegiado" class="cagp-sitemap-tag">Colegiado & Coordenação</a>
         </div>
       </div>
 
@@ -213,9 +211,10 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
         </a>
         <p class="small text-muted mb-1">Linha do tempo oficial dos 10 semestres, 27 obrigatórias com ementas, catálogo das 68 optativas e 3 percursos formais.</p>
         <div class="cagp-sitemap-sublinks">
-          <a href="percurso.html#trajetoria-semestral" class="cagp-sitemap-tag">10 Semestres</a>
-          <a href="percurso.html#catalogo-optativas" class="cagp-sitemap-tag">68 Optativas com Busca</a>
-          <a href="percurso.html#percursos-formais" class="cagp-sitemap-tag">3 Percursos (Geral, Compl., Avanç.)</a>
+          <a href="percurso.html#explorador-grade" class="cagp-sitemap-tag">10 Semestres com Ementas</a>
+          <a href="percurso.html#disciplinas-optativas" class="cagp-sitemap-tag">68 Optativas com Busca</a>
+          <a href="percurso.html#simulador-percurso" class="cagp-sitemap-tag">Termômetro dos 3 Percursos</a>
+          <a href="percurso.html#grafo-curricular" class="cagp-sitemap-tag">Grafo de Pré-Requisitos</a>
         </div>
       </div>
     </div>
@@ -239,10 +238,10 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
         </a>
         <p class="small text-muted mb-1">Curricularização da Extensão (300h), Programa de Imersão, ATLAS Consultoria Jr., 300h de AAC (Art. 15) e calculadora.</p>
         <div class="cagp-sitemap-sublinks">
-          <a href="acg.html#extensao-obrigatoria" class="cagp-sitemap-tag">Extensão (300h)</a>
-          <a href="acg.html#calculadora-aac" class="cagp-sitemap-tag">Calculadora Interativa</a>
+          <a href="acg.html#calculadora-horas" class="cagp-sitemap-tag">Calculadora Interativa 600h</a>
+          <a href="acg.html#regulamento-categorias" class="cagp-sitemap-tag">Regulamento das 9 Modalidades</a>
+          <a href="acg.html#passo-a-passo" class="cagp-sitemap-tag">Guia de Requerimento SEI</a>
           <a href="acg.html#nucleos-pesquisa" class="cagp-sitemap-tag">Hub de IC nos 3 Eixos</a>
-          <a href="acg.html#submissao-colegiado" class="cagp-sitemap-tag">Fluxo de Protocolo (F-2039)</a>
         </div>
       </div>
 
@@ -254,9 +253,9 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
         <p class="small text-muted mb-1">Estágio A (180h) e B (120h), dispensa por atuação profissional (Art. 41), 4 modalidades aceitas de TCC e termo de aceite.</p>
         <div class="cagp-sitemap-sublinks">
           <a href="estagio-tcc.html#estagio-supervisionado" class="cagp-sitemap-tag">Estágios A e B (300h)</a>
-          <a href="estagio-tcc.html#dispensa-profissional" class="cagp-sitemap-tag">Dispensa Profissional (Art. 41)</a>
+          <a href="estagio-tcc.html#simulador-art41" class="cagp-sitemap-tag">Simulador Dispensa Art. 41</a>
+          <a href="estagio-tcc.html#tutorial-estagio" class="cagp-sitemap-tag">Tutorial TCE Anotado</a>
           <a href="estagio-tcc.html#modalidades-tcc" class="cagp-sitemap-tag">4 Modalidades de TCC</a>
-          <a href="estagio-tcc.html#termo-aceite" class="cagp-sitemap-tag">Termo de Aceite</a>
         </div>
       </div>
     </div>
@@ -280,9 +279,10 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
         </a>
         <p class="small text-muted mb-1">Repositório digital com 8 PDFs normativos oficiais e Central de Formulários Administrativos da FAFICH para download.</p>
         <div class="cagp-sitemap-sublinks">
-          <a href="documentos.html#documentos-normativos" class="cagp-sitemap-tag">8 PDFs Oficiais</a>
-          <a href="documentos.html#central-formularios" class="cagp-sitemap-tag">Requerimentos FAFICH</a>
-          <a href="documentos.html#solicitacao-documentos" class="cagp-sitemap-tag">Como Solicitar</a>
+          <a href="documentos.html#atos-curso" class="cagp-sitemap-tag">PPC & Regulamento Oficial</a>
+          <a href="documentos.html#matrizes-percursos" class="cagp-sitemap-tag">Matrizes dos 3 Percursos</a>
+          <a href="documentos.html#formularios" class="cagp-sitemap-tag">Requerimentos SEI & DOCX</a>
+          <a href="documentos.html#tutorial-drca" class="cagp-sitemap-tag">Tutorial DRCA</a>
         </div>
       </div>
 
@@ -293,9 +293,8 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
         </a>
         <p class="small text-muted mb-1">Respostas diretas fundamentadas nas Normas de Graduação sobre trancamento, pré-requisitos, intercâmbio e prazos.</p>
         <div class="cagp-sitemap-sublinks">
-          <a href="faq.html#trancamento-matricula" class="cagp-sitemap-tag">Trancamento Total/Parcial</a>
-          <a href="faq.html#quebra-prerequisito" class="cagp-sitemap-tag">Quebra de Pré-Requisito</a>
-          <a href="faq.html#mobilidade-academica" class="cagp-sitemap-tag">Intercâmbio (DRI/ANDIFES)</a>
+          <a href="faq.html#filtro-faq" class="cagp-sitemap-tag">Busca Rápida de Dúvidas</a>
+          <a href="faq.html#acessibilidade" class="cagp-sitemap-tag">Acessibilidade Digital (WCAG 2.1)</a>
         </div>
       </div>
 

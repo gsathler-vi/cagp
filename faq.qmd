@@ -252,6 +252,50 @@ Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas
 
 ---
 
+## <i class="bi bi-universal-access" aria-hidden="true"></i> Acessibilidade, Usabilidade e Navegação no Portal {#acessibilidade}
+
+O portal do Centro Acadêmico de Gestão Pública da FAFICH/UFMG foi concebido sob rigorosos princípios universais de acessibilidade digital e design inclusivo, em conformidade com as **Diretrizes de Acessibilidade para Conteúdo Web (WCAG 2.1)** do W3C nos níveis **AA e AAA**:
+
+```{=html}
+<div class="row g-3 mb-4">
+  <div class="col-md-6">
+    <div class="cagp-card h-100">
+      <div class="cagp-card-header">
+        <span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-keyboard"></i></span>
+        <h3 class="cagp-card-title">Navegação por Teclado e Foco Visível</h3>
+      </div>
+      <div class="cagp-card-body small">
+        <p class="mb-2">Todas as ferramentas interativas, botões táteis, gavetas sanfonadas, tabs e simuladores são 100% operáveis sem mouse:</p>
+        <ul class="ps-3 mb-0">
+          <li><strong>Tecla <code>Tab</code>:</strong> percorre todos os elementos focáveis em ordem lógica sequencial de leitura e tabulação;</li>
+          <li><strong>Anel de foco evidente:</strong> contorno sólido de 3px em vinho com deslocamento nítido (<code>outline-offset: 2px</code>);</li>
+          <li><strong>Tecla <code>Escape</code>:</strong> limpa instantaneamente as caixas de pesquisa e reseta filtros nos 5 buscadores;</li>
+          <li><strong>Teclas de seta (&larr; / &rarr;):</strong> alternam opções em grupos de botões de rádio e simuladores regimentais.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="cagp-card h-100">
+      <div class="cagp-card-header">
+        <span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-eye"></i></span>
+        <h3 class="cagp-card-title">Contraste, Leitura e Tecnologias Assistivas</h3>
+      </div>
+      <div class="cagp-card-body small">
+        <p class="mb-2">Desenvolvido com a linguagem visual Brite Neo-Brutalista com foco em clareza absoluta de informação:</p>
+        <ul class="ps-3 mb-0">
+          <li><strong>Contraste rigoroso:</strong> texto corrido com razão de até 19.8:1 (nível WCAG AAA) contra fundos brancos e superfícies suaves;</li>
+          <li><strong>Leitores de tela:</strong> regiões ativas com <code>aria-live="polite"</code> e <code>aria-expanded</code> informam atualizações de filtros e cálculos sem recarregar a página;</li>
+          <li><strong>Redução de movimento:</strong> respeito automático à preferência do sistema operacional (<code>prefers-reduced-motion</code>);</li>
+          <li><strong>Múltiplas vias de acesso:</strong> navegue pela barra superior, pelos atalhos de jornada ou pela visão panorâmica no <a href="mapa-do-site.html"><strong>Mapa do Site</strong></a> (WCAG 2.4.5).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 ::: {.callout-note .mt-4}
 ### Precisa de apoio do Centro Acadêmico?
 O CAGP tem representação com assento no Colegiado do Curso de Gestão Pública e na Congregação da FAFICH. Se tiver problemas com prazos ou requerimentos, procure nossa gestão na salinha do pilotis, envie um e-mail para [cagp@fafich.ufmg.br](mailto:cagp@fafich.ufmg.br) ou consulte os [Documentos e Regulamentos Oficiais do Curso &rarr;](documentos.qmd).

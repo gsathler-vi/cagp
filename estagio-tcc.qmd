@@ -147,7 +147,7 @@ O estágio destina-se a propiciar ao estudante o aprendizado prático de aspecto
       </div>
       <p class="small mb-2">Conforme o <strong>Art. 41 do Regulamento</strong>, servidores concursados, comissionados ou contratados em órgãos da administração direta ou indireta podem integralizar os créditos de estágio com sua atuação profissional.</p>
       <ol class="small mb-0 ps-3">
-        <li><strong>Matrícula Obrigatória:</strong> Inscreva-se normalmente no SIGA (via MinhaUFMG) em <code>DCP 135</code> (7ºP) ou <code>DCP 136</code> (8ºP).</li>
+        <li><strong>Matrícula Obrigatória no SIGA:</strong> Inscreva-se normalmente no SIGA (via MinhaUFMG) em <code>DCP 135</code> (7ºP) ou <code>DCP 136</code> (8ºP). <em>Atenção:</em> A dispensa não ocorre de ofício fora do sistema; a matrícula regular é indispensável para o lançamento de nota e convalidação dos créditos pelo Colegiado.</li>
         <li><strong>No Início do Semestre:</strong> Preencha o <a href="documentos/estagio-requerimento-integralizacao-experiencia-profissional.pdf" target="_blank">Requerimento de Experiência Profissional (PDF)</a> (<a href="documentos/estagio-requerimento-integralizacao-experiencia-profissional.docx" download>DOCX</a>) acompanhado de <strong>declaração funcional da chefia</strong> com descrição detalhada das atividades.</li>
         <li><strong>No Fim do Semestre:</strong> Apresente o <a href="documentos/estagio-relatorio-atividades-experiencia-profissional.pdf" target="_blank">Relatório de Atividades (PDF)</a> (<a href="documentos/estagio-relatorio-atividades-experiencia-profissional.docx" download>DOCX</a>) no Moodle demonstrando o cumprimento da carga horária e a pertinência com a gestão pública.</li>
       </ol>
