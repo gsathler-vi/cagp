@@ -196,6 +196,7 @@ O movimento no CAGP expressa a precisão de um protocolo administrativo e a auto
 
 ### Padrões Canônicos de Transição
 - **Entrada de Carimbo Mecânico (Focal Moment):** O Emblema Oficial dos Candangos (`.cagp-hero-emblem-card`) desce firmemente na página com a convicção de um ato chancelado (`0.45s cubic-bezier(0.16, 1, 0.3, 1)` com projeção de sombra nanquim no pouso).
+- **Impacto de Carimbo Burocrático (Stamp Impact):** Os selos institucionais (`.cagp-stamp-badge` — *DEFERIDO*, *INDEFERIDO*, *HOMOLOGADO*, *VISTO*) atingem a superfície com impacto rápido de prensa em 180ms (`scale(1.25) rotate(-6deg)` &rarr; `scale(1) rotate(-3deg)` com projeção instantânea de sombra dura 3px), reforçando a estética de registro público e chancela administrativa nos simuladores.
 - **Desdobramento de Ficha de Processo (Continuity):** Ao alternar painéis na Bússola Interativa (`.cagp-compass-panel`), o conteúdo novo revela-se com leve deslocamento vertical de 6px e opacidade (`0.22s`), evitando quebras de layout.
 - **Revelação Mecânica de Gavetas (Reveal):** As ementas obrigatórias/optativas (`.cagp-discipline-body`) e as gavetas da calculadora (`.cagp-calc-drawer`) expandem-se com descida contida de 4px e rotação precisa do chevron indicador (90° / 180°).
 - **Homologação de Marco / Conquista (Feedback):** A integralização das 600h na Calculadora e o Checklist de 100% dos Calouros destravam caixas comemorativas com pulso solene (`cagpSealUnlock`) e a barra de progresso emite iluminação discreta de conclusão (`cagpProgressComplete`).
@@ -289,9 +290,11 @@ O vocabulário geométrico é cartesiano, sólido e contido:
 - **Organograma Cartesiano:** Estrutura hierárquica em CSS puro (`.cagp-organogram`) conectando Assembleia Geral soberana, Junta Eleitoral independente e Presidência/Diretorias Executivas com conectores em linhas sólidas pretas de 2px.
 - **Cards de Diretoria:** Placeholders institucionais neutros com avatares estilizados, atribuições estatutárias e canal de transparência ativa (RREO e prestação contábil).
 
-### Barra de Busca e Filtros Dinâmicos (com Empty State)
-- **Filtro de Disciplinas & Optativas:** Campo de input com borda preta sólida de 2px e foco com anel vinho (`#9e2424`), pareado com pílulas de filtro departamental (DCP, ECN, SOA, Outros).
-- **Empty State Pedagógico:** Card explicativo acolhedor caso a busca textual resulte em zero ocorrências, instruindo o discente sobre as regras de Formação Livre em outras unidades da UFMG e botão de restauração instantânea.
+### Barra de Busca e Filtros Dinâmicos (com Empty State & Teclado)
+- **Filtro Unificado (`.cagp-search-input`):** Campo de busca padronizado com borda preta sólida de 2px, cantos de 4px, sombra rígida de 2px e foco em Vinho Candango (`#9e2424`).
+- **Atalhos Operacionais de Teclado:** Tecla `Escape` limpa imediatamente a consulta e restaura o catálogo completo em todos os 5 buscadores do portal. No simulador de estágio (Art. 41), teclas de seta (`ArrowLeft` / `ArrowRight`) alternam a situação profissional com WAI-ARIA Radio Group pattern.
+- **Empty States Pedagógicos com Recuperação em 1 Clique:** Em caso de zero resultados (Optativas, FAQ, Documentos e Mapa do Site), exibição de card acolhedor tracejado em cinza superfície com orientações institucionais e botão tátil de restauração imediata.
+- **Estados Desabilitados (`:disabled`):** Botões de zerar simulação e desmarcar checklist são automaticamente desabilitados quando não há ações a reverter (`opacity: 0.45; pointer-events: none; box-shadow: 1px 1px 0px #111111`).
 
 ## Do's and Don'ts
 

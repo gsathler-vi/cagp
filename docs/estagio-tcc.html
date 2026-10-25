@@ -371,7 +371,7 @@ Defesa de TCC
   <div class="cagp-compass-panel cagp-panel-boxed" aria-live="polite">
     <div id="art41-res-servidor">
       <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-        <span class="cagp-badge cagp-badge-green"><i class="bi bi-check2-circle me-1"></i> Elegível à Integralização via Art. 41!</span>
+        <span class="cagp-stamp-badge is-deferido"><i class="bi bi-patch-check-fill me-1" aria-hidden="true"></i> DEFERIDO • ART. 41</span>
         <span class="small fw-bold">Vale para Estágio A (180h) e/ou Estágio B (120h)</span>
       </div>
       <p class="small mb-2">Conforme o <strong>Art. 41 do Regulamento</strong>, servidores concursados, comissionados ou contratados em órgãos da administração direta ou indireta podem integralizar os créditos de estágio com sua atuação profissional.</p>
@@ -384,7 +384,7 @@ Defesa de TCC
 
     <div id="art41-res-osc" hidden="">
       <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-        <span class="cagp-badge cagp-badge-green"><i class="bi bi-check2-circle me-1"></i> Elegível via Art. 41 (Sujeito à Análise de Funções)</span>
+        <span class="cagp-stamp-badge is-homologado"><i class="bi bi-clock-history me-1" aria-hidden="true"></i> DEFERIMENTO CONDICIONADO</span>
         <span class="small fw-bold">Organizações que Executam Políticas Públicas</span>
       </div>
       <p class="small mb-2">O Art. 41 abrange vínculos profissionais em instituições governamentais ou organizações que atuem diretamente na gestão de políticas públicas, desde que as funções desempenhadas sejam compatíveis com o perfil do curso.</p>
@@ -393,7 +393,7 @@ Defesa de TCC
 
     <div id="art41-res-estagiario" hidden="">
       <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-        <span class="cagp-badge cagp-badge-blue"><i class="bi bi-arrow-repeat me-1"></i> Duas Rotas Possíveis: Conversão de TCE ou AAC</span>
+        <span class="cagp-stamp-badge is-homologado"><i class="bi bi-arrow-repeat me-1" aria-hidden="true"></i> CONVERSÃO DE TCE / AAC</span>
         <span class="small fw-bold">Lei do Estágio nº 11.788/2008</span>
       </div>
       <p class="small mb-2">Se você já realiza estágio remunerado (não-obrigatório) em órgão público ou entidade conveniada:</p>
@@ -405,7 +405,7 @@ Defesa de TCC
 
     <div id="art41-res-privado" hidden="">
       <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-        <span class="cagp-badge cagp-badge-dark"><i class="bi bi-info-circle me-1"></i> Não Enquadrado no Art. 41 — Alternativas Viáveis</span>
+        <span class="cagp-stamp-badge is-indeferido"><i class="bi bi-x-octagon-fill me-1" aria-hidden="true"></i> INDEFERIDO • ART. 41</span>
         <span class="small fw-bold">Planejamento para Trabalhadores do Noturno</span>
       </div>
       <p class="small mb-2">Atividades sem relação com gestão pública ou políticas públicas não dispensam o estágio pelo Art. 41. Contudo, o Regulamento oferece alternativas para quem trabalha durante o dia:</p>
@@ -620,16 +620,42 @@ Docentes do quadro da UFMG, prioritariamente vinculados ao Departamento de Ciên
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const btns = document.querySelectorAll('[data-art41-choice]');
+  const btnList = Array.from(btns);
   const keys = ['servidor', 'osc', 'estagiario', 'privado'];
-  btns.forEach(function (btn) {
+
+  btns.forEach(function (btn, idx) {
     btn.addEventListener('click', function () {
       const target = btn.getAttribute('data-art41-choice');
       btns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
       btn.setAttribute('aria-pressed', 'true');
       keys.forEach(function (k) {
         const el = document.getElementById('art41-res-' + k);
-        if (el) el.hidden = (k !== target);
+        if (el) {
+          el.hidden = (k !== target);
+          if (k === target) {
+            const stamp = el.querySelector('.cagp-stamp-badge');
+            if (stamp) {
+              stamp.style.animation = 'none';
+              stamp.offsetHeight; // forçar reflow
+              stamp.style.animation = '';
+            }
+          }
+        }
       });
+    });
+
+    btn.addEventListener('keydown', function (e) {
+      let nextIdx = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        nextIdx = (idx + 1) % btnList.length;
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        nextIdx = (idx - 1 + btnList.length) % btnList.length;
+      }
+      if (nextIdx !== null) {
+        e.preventDefault();
+        btnList[nextIdx].focus();
+        btnList[nextIdx].click();
+      }
     });
   });
 });

@@ -553,6 +553,18 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 
+<!-- Empty State Acolhedor de Busca do Mapa do Site -->
+<div id="sitemap-empty-state" class="cagp-empty-state mb-4" style="display: none;" role="status">
+  <div class="cagp-empty-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></div>
+  <h4 class="h5 mb-1 anchored">NENHUM TÓPICO ENCONTRADO NO MAPA</h4>
+  <p class="small text-muted mb-3">Nenhuma página ou seção corresponde à palavra pesquisada.</p>
+  <div>
+    <button type="button" id="btn-sitemap-empty-reset" class="cagp-chip">
+      <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Limpar filtro e ver todo o mapa
+    </button>
+  </div>
+</div>
+
 <!-- Navegação de Continuidade -->
 <nav class="cagp-journey-nav my-5" aria-label="Continuidade da navegação">
   <div class="row g-3">
@@ -584,6 +596,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const topics = document.querySelectorAll('.sitemap-topic');
   const axisCards = document.querySelectorAll('.sitemap-axis-card');
   const liveRegion = document.getElementById('sitemap-live-region');
+  const emptyState = document.getElementById('sitemap-empty-state');
+  const btnEmptyReset = document.getElementById('btn-sitemap-empty-reset');
 
   if (!searchInput) return;
 
@@ -608,6 +622,10 @@ document.addEventListener('DOMContentLoaded', function() {
       card.style.display = hasVisible ? '' : 'none';
     });
 
+    if (emptyState) {
+      emptyState.style.display = (visibleTopicsCount === 0) ? 'block' : 'none';
+    }
+
     // Notificar leitores de tela de forma acessível
     if (liveRegion) {
       if (term === '') {
@@ -617,6 +635,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      searchInput.value = '';
+      searchInput.dispatchEvent(new Event('input'));
+    }
+  });
+
+  if (btnEmptyReset) {
+    btnEmptyReset.addEventListener('click', function() {
+      searchInput.value = '';
+      searchInput.dispatchEvent(new Event('input'));
+    });
+  }
 });
 </script>
 

@@ -73,8 +73,11 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
     <div class="col-md-6">
       <label class="cagp-check-card" for="chk-minhaufmg">
         <input type="checkbox" class="cagp-check-box" id="chk-minhaufmg" data-calouro-chk="minhaufmg">
-        <div>
-          <h3 class="h6 fw-bold mb-1">1. Ativar MinhaUFMG e App Siga UFMG</h3>
+        <div class="w-100">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-1 mb-1">
+            <h3 class="h6 fw-bold mb-0">1. Ativar MinhaUFMG e App Siga UFMG</h3>
+            <span class="cagp-stamp-badge is-visto py-0 px-2 d-none" data-stamp-chk><i class="bi bi-check2-all me-1"></i> VISTO</span>
+          </div>
           <p class="small text-muted mb-2">Crie sua senha inicial em <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer">minha.ufmg.br</a> com a folha NIPs do DRCA. No computador, o portal integra o SIGA e e-mail institucional.</p>
           <div class="d-flex flex-wrap gap-2 mt-1">
             <a href="https://play.google.com/store/apps/details?id=br.ufmg.ddp.cecom.academico.sigaufmg" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar Siga UFMG para Android no Google Play">
@@ -94,8 +97,11 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
     <div class="col-md-6">
       <label class="cagp-check-card" for="chk-carteirinha">
         <input type="checkbox" class="cagp-check-box" id="chk-carteirinha" data-calouro-chk="carteirinha">
-        <div>
-          <h3 class="h6 fw-bold mb-1">2. Solicitar Carteirinha</h3>
+        <div class="w-100">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-1 mb-1">
+            <h3 class="h6 fw-bold mb-0">2. Solicitar Carteirinha</h3>
+            <span class="cagp-stamp-badge is-visto py-0 px-2 d-none" data-stamp-chk><i class="bi bi-check2-all me-1"></i> VISTO</span>
+          </div>
           <p class="small text-muted mb-0">Essencial para catracas, empréstimo de livros nas bibliotecas da UFMG e pagamento rápido no Bandejão.</p>
         </div>
       </label>
@@ -104,8 +110,11 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
     <div class="col-md-6">
       <label class="cagp-check-card" for="chk-matricula">
         <input type="checkbox" class="cagp-check-box" id="chk-matricula" data-calouro-chk="matricula">
-        <div>
-          <h3 class="h6 fw-bold mb-1">3. Conferir Matrícula do 1º Período (300h)</h3>
+        <div class="w-100">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-1 mb-1">
+            <h3 class="h6 fw-bold mb-0">3. Conferir Matrícula do 1º Período (300h)</h3>
+            <span class="cagp-stamp-badge is-visto py-0 px-2 d-none" data-stamp-chk><i class="bi bi-check2-all me-1"></i> VISTO</span>
+          </div>
           <p class="small text-muted mb-0">No 1º semestre, sua inscrição nas 5 matérias obrigatórias (300h / 20 créditos) é automática pelo DRCA. Nos períodos seguintes, o mínimo regimental é de <strong>180h (12 créditos)</strong>.</p>
         </div>
       </label>
@@ -114,8 +123,11 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
     <div class="col-md-6">
       <label class="cagp-check-card" for="chk-eduroam">
         <input type="checkbox" class="cagp-check-box" id="chk-eduroam" data-calouro-chk="eduroam">
-        <div>
-          <h3 class="h6 fw-bold mb-1">4. Configurar o Wi-Fi Institucional (eduroam)</h3>
+        <div class="w-100">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-1 mb-1">
+            <h3 class="h6 fw-bold mb-0">4. Configurar o Wi-Fi Institucional (eduroam)</h3>
+            <span class="cagp-stamp-badge is-visto py-0 px-2 d-none" data-stamp-chk><i class="bi bi-check2-all me-1"></i> VISTO</span>
+          </div>
           <p class="small text-muted mb-0">Conecte celular e notebook à rede criptografada <code>eduroam</code> usando seu login completo no formato <code>seulogin@ufmg.br</code> e a senha do MinhaUFMG.</p>
         </div>
       </label>
@@ -124,8 +136,11 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
     <div class="col-md-6">
       <label class="cagp-check-card" for="chk-dispensa">
         <input type="checkbox" class="cagp-check-box" id="chk-dispensa" data-calouro-chk="dispensa">
-        <div>
-          <h3 class="h6 fw-bold mb-1">5. Avaliar Aproveitamento de Estudos (Até o 2ºP)</h3>
+        <div class="w-100">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-1 mb-1">
+            <h3 class="h6 fw-bold mb-0">5. Avaliar Aproveitamento de Estudos (Até o 2ºP)</h3>
+            <span class="cagp-stamp-badge is-visto py-0 px-2 d-none" data-stamp-chk><i class="bi bi-check2-all me-1"></i> VISTO</span>
+          </div>
           <p class="small text-muted mb-0">Cursou disciplinas em outra faculdade? Conforme a <strong>Res. CEPE nº 06/2019</strong>, o pedido de dispensa de matérias só é aceito até o seu <strong>2º período letivo</strong>.</p>
         </div>
       </label>
@@ -134,8 +149,11 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
     <div class="col-md-6">
       <label class="cagp-check-card" for="chk-fump">
         <input type="checkbox" class="cagp-check-box" id="chk-fump" data-calouro-chk="fump">
-        <div>
-          <h3 class="h6 fw-bold mb-1">6. Preencher Questionário da FUMP (Se aplicável)</h3>
+        <div class="w-100">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-1 mb-1">
+            <h3 class="h6 fw-bold mb-0">6. Preencher Questionário da FUMP (Se aplicável)</h3>
+            <span class="cagp-stamp-badge is-visto py-0 px-2 d-none" data-stamp-chk><i class="bi bi-check2-all me-1"></i> VISTO</span>
+          </div>
           <p class="small text-muted mb-2">Solicite classificação socioeconômica na Fundação Universitária Mendes Pimentel para desconto ou isenção no jantar do RU, auxílio transporte e moradia.</p>
           <div class="d-flex flex-wrap gap-2 mt-1">
             <a href="https://www.fump.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Acessar Portal da FUMP">
@@ -152,7 +170,7 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
 
   <!-- Card de Celebração de 100% de Conclusão do Calouro -->
   <div id="calouro-celebration" class="cagp-calouro-celebration" style="display: none;" role="status" aria-live="polite">
-    <div class="cagp-celebration-badge"><i class="bi bi-mortarboard-fill me-1" aria-hidden="true"></i> 100% INTEGRADO À UFMG</div>
+    <div class="cagp-celebration-badge"><span class="cagp-stamp-badge is-deferido me-2"><i class="bi bi-patch-check-fill me-1" aria-hidden="true"></i> CALOURO HOMOLOGADO</span> 100% INTEGRADO À UFMG</div>
     <h3 class="h4 mb-2">PARABÉNS, VOCÊ ESTÁ OFICIALMENTE PRONTO PARA O SEMESTRE!</h3>
     <p class="small text-muted mb-3 mx-auto" style="max-width: 650px;">
       Você dominou todas as etapas fundamentais das primeiras quatro semanas: carteirinha, crachá, e-mail institucional, catálogo de matérias e rotina noturna. Conte com o CAGP em cada passo da sua trajetória acadêmica!
@@ -196,11 +214,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let done = 0;
     checkboxes.forEach(function (cb) {
       const card = cb.closest('.cagp-check-card');
+      const stamp = card ? card.querySelector('[data-stamp-chk]') : null;
       if (cb.checked) {
         done++;
         if (card) card.classList.add('is-checked');
+        if (stamp) stamp.classList.remove('d-none');
       } else {
         if (card) card.classList.remove('is-checked');
+        if (stamp) stamp.classList.add('d-none');
       }
     });
     const pct = total > 0 ? Math.round((done / total) * 100) : 0;
@@ -211,6 +232,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (celebrationEl) {
       celebrationEl.style.display = (total > 0 && done === total) ? 'block' : 'none';
+    }
+    if (resetBtn) {
+      resetBtn.disabled = (done === 0);
     }
   }
 
@@ -223,6 +247,15 @@ document.addEventListener('DOMContentLoaded', function () {
       current[key] = cb.checked;
       saveState(current);
       render();
+      if (cb.checked) {
+        const card = cb.closest('.cagp-check-card');
+        const stamp = card ? card.querySelector('[data-stamp-chk]') : null;
+        if (stamp) {
+          stamp.style.animation = 'none';
+          stamp.offsetHeight; // reflow
+          stamp.style.animation = '';
+        }
+      }
     });
   });
 
@@ -549,6 +582,59 @@ Como estudante do noturno, você conta com canais de atendimento presencial no *
         <li><strong>Localização:</strong> Sala F-2033 (2º piso da FAFICH, ao lado dos caixas eletrônicos)</li>
         <li><strong>Atribuições:</strong> Entrega de atestados médicos de alunos, protocolos de trancamento total/parcial, colação de grau, exame especial, certidões e histórico escolar autenticado.</li>
       </ul>
+    </div>
+  </div>
+</div>
+
+<div class="cagp-card mt-3">
+  <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+    <div class="d-flex align-items-center gap-2">
+      <span class="cagp-badge cagp-badge-red">Plantão Discente</span>
+      <h4 class="h6 fw-bold text-uppercase mb-0">Como &amp; Quando Falar com a Coordenação</h4>
+    </div>
+    <span class="small text-muted">Sala F-4067 • 4º Andar da FAFICH</span>
+  </div>
+  <p class="small text-muted mb-3">
+    A Coordenação Didática é responsável pelo acolhimento pedagógico de cada calouro. Teve dúvidas sobre quebra de pré-requisitos, adaptação ao turno noturno ou dispensa de matérias de outra faculdade? Procure as professoras da coordenação nos plantões:
+  </p>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <div class="p-3 bg-light border border-dark">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <div class="cagp-team-avatar-box fs-4" style="width: 44px; height: 44px;">
+            <i class="bi bi-person-badge-fill text-danger" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="fw-bold small">Profª Dra. Isabele Batista Mitozo</div>
+            <div class="cagp-coord-meta">Coordenadora do Curso • DCP/FAFICH</div>
+          </div>
+        </div>
+        <div class="small">
+          <strong>Presencial:</strong> Quartas das 17h30 às 19h00 (Sala F-4067)<br>
+          <strong>On-line:</strong> Quintas via Meet mediante e-mail<br>
+          <strong>Contato:</strong> <a href="mailto:coordgestaopublica@gmail.com">coordgestaopublica@gmail.com</a>
+          <button type="button" class="cagp-copy-btn" data-copy="coordgestaopublica@gmail.com" aria-label="Copiar e-mail da coordenação"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="p-3 bg-light border border-dark">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <div class="cagp-team-avatar-box fs-4" style="width: 44px; height: 44px;">
+            <i class="bi bi-mortarboard-fill text-dark" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="fw-bold small">Profª Dra. Ludmila M. L. Ribeiro</div>
+            <div class="cagp-coord-meta">Subcoordenadora do Curso • DCP/FAFICH</div>
+          </div>
+        </div>
+        <div class="small">
+          <strong>Atendimento:</strong> Sala dos Professores (3º andar DCP)<br>
+          <strong>Agendamento:</strong> Via e-mail ou Secretaria do Curso<br>
+          <strong>Contato:</strong> <a href="mailto:ludmila.ribeiro@gmail.com">ludmila.ribeiro@gmail.com</a>
+          <button type="button" class="cagp-copy-btn" data-copy="ludmila.ribeiro@gmail.com" aria-label="Copiar e-mail da subcoordenadora"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

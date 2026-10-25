@@ -40,6 +40,7 @@ O curso de Gestão Pública da FAFICH/UFMG confere o grau de **Bacharel em Gest�
 ```{=html}
 <nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
   <span class="cagp-subnav-label">Nesta Página:</span>
+  <a href="#grafo-curricular" class="cagp-subnav-link"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i> Mapa de Pré-Requisitos</a>
   <a href="#simulador-percurso" class="cagp-subnav-link"><i class="bi bi-signpost-split" aria-hidden="true"></i> Escolher Percurso</a>
   <a href="#explorador-grade" class="cagp-subnav-link"><i class="bi bi-search" aria-hidden="true"></i> Filtrar Grade & Ementas</a>
   <a href="#disciplinas-optativas" class="cagp-subnav-link"><i class="bi bi-collection" aria-hidden="true"></i> 68 Optativas</a>
@@ -179,6 +180,122 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
 
 ---
 
+## <i class="bi bi-diagram-3-fill" aria-hidden="true"></i> Mapa Interativo de Pré-Requisitos & Trilhas do Curso {#grafo-curricular}
+
+::: {.callout-note appearance="default"}
+## Regra Oficial de Pré-Requisitos no Colegiado de Gestão Pública & SIGA UFMG
+
+**Atenção discente sobre o SIGA:** De acordo com a matriz curricular oficial vigente (Versão N-20229), a **única disciplina de todo o curso com pré-requisito formal registrado no sistema** é **Economia do Bem-Estar (ECN 044)**, que exige aprovação prévia em **Introdução à Economia (ECN 140)**. Nenhuma outra matéria do curso possui trava automática que impeça a sua matrícula no SIGA.
+
+**Por que seguir o encadeamento sugerido?** Embora o sistema não bloqueie a matrícula nas demais disciplinas, os planos de ensino e ementas foram concebidos de forma cumulativa pelos departamentos da FAFICH e FACE. É **altamente desaconselhável pular** uma disciplina introdutória para uma avançada (por exemplo, cursar Estatística antes de Econometria, Gestão Pública A antes de B, ou Estado e Políticas Sociais A antes de B), pois a ausência do instrumental conceitual prévio compromete o rendimento acadêmico. O mapa abaixo destaca a **única trava formal** em linha contínua vermelha com ícone de cadeado e os **encadeamentos pedagógicos recomendados** pelos docentes em linhas tracejadas.
+:::
+
+```{=html}
+<section class="cagp-tool-box" aria-labelledby="grafo-heading">
+  <div class="cagp-tool-header">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1">Visualização Cartográfica • 27 Disciplinas Obrigatórias</span>
+      <h3 id="grafo-heading" class="h5 mb-0">MAPA INTERATIVO DE PRÉ-REQUISITOS & TRILHAS TEMÁTICAS</h3>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <span id="grafo-active-indicator" class="cagp-badge cagp-badge-dark cagp-tabular" aria-live="polite">Clique em uma disciplina para mapear conexões</span>
+      <button type="button" id="btn-grafo-reset" class="cagp-chip" disabled><i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i>Restaurar Visão Geral</button>
+    </div>
+  </div>
+
+  <!-- Seletor de Trilhas Temáticas com base nas Ementas Oficiais -->
+  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+    <div class="d-flex flex-wrap gap-1 align-items-center" role="group" aria-label="Isolar trilha temática">
+      <span class="small fw-bold text-uppercase text-muted me-1">Trilhas:</span>
+      <button type="button" class="cagp-chip is-active" data-trilha-filter="all">Todas as 27 Disciplinas</button>
+      <button type="button" class="cagp-chip" data-trilha-filter="gestao">Gestão &amp; Organizações</button>
+      <button type="button" class="cagp-chip" data-trilha-filter="politicas">Políticas Públicas &amp; Avaliação</button>
+      <button type="button" class="cagp-chip" data-trilha-filter="sociedade">Ciência Política &amp; Direito</button>
+      <button type="button" class="cagp-chip" data-trilha-filter="economia">Economia &amp; Finanças</button>
+      <button type="button" class="cagp-chip" data-trilha-filter="metodos">Metodologia &amp; Métodos</button>
+      <button type="button" class="cagp-chip" data-trilha-filter="pratica">Prática &amp; TCC</button>
+    </div>
+    <div class="small text-muted d-none d-md-flex flex-wrap align-items-center gap-2">
+      <span class="cagp-legend-pill"><span class="cagp-legend-line-formal"></span> <strong>Trava Formal no SIGA</strong> (ECN 044)</span>
+      <span class="cagp-legend-pill"><span class="cagp-legend-line-suggested"></span> Encadeamento Sugerido</span>
+      <span class="cagp-legend-pill"><span class="cagp-legend-dot" style="background-color: var(--cagp-gold, #E8A317);"></span> Base Recomendada (Anterior)</span>
+      <span class="cagp-legend-pill"><span class="cagp-legend-dot" style="background-color: var(--cagp-green, #2E7D32);"></span> Continuidade (Posterior)</span>
+    </div>
+  </div>
+
+  <div class="small text-muted mb-2 d-md-none">
+    <i class="bi bi-arrows-expand me-1" aria-hidden="true"></i> Deslize horizontalmente para navegar pelos 10 períodos curriculares.
+  </div>
+
+  <!-- Viewport SVG do Grafo -->
+  <div class="cagp-grafo-viewport" tabindex="0" role="region" aria-label="Mapa cartográfico do percurso curricular de Gestão Pública da UFMG">
+    <svg id="cagp-grafo-svg" class="cagp-grafo-svg" viewBox="0 0 1205 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <defs>
+        <marker id="arrow-default" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" fill="#9ca3af" />
+        </marker>
+        <marker id="arrow-formal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" fill="#9e2424" />
+        </marker>
+        <marker id="arrow-req" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" fill="#E8A317" />
+        </marker>
+        <marker id="arrow-next" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" fill="#2E7D32" />
+        </marker>
+      </defs>
+      <g id="grafo-cols"></g>
+      <g id="grafo-links"></g>
+      <g id="grafo-nodes"></g>
+    </svg>
+  </div>
+
+  <!-- Painel Flutuante / Detalhe Rápido da Disciplina Selecionada -->
+  <div id="grafo-detail-drawer" class="cagp-grafo-detail mt-3" style="display: none;" role="status">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2 pb-2 border-bottom">
+      <div>
+        <span id="detail-code-badge" class="cagp-badge cagp-badge-dark me-1">DCP 131</span>
+        <span id="detail-dept-badge" class="cagp-badge cagp-badge-red me-1">DCP</span>
+        <span id="detail-track-badge" class="cagp-badge cagp-badge-outline me-2">Políticas Públicas &amp; Avaliação</span>
+        <span id="detail-period" class="small fw-bold text-muted">5º Período • 60h (4 créditos)</span>
+      </div>
+      <button type="button" id="btn-close-detail" class="cagp-chip py-1 px-2"><i class="bi bi-x-lg me-1" aria-hidden="true"></i>Fechar Detalhes</button>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-6">
+        <h4 id="detail-title" class="h5 fw-bold mb-1 text-dark">DCP 131: Avaliação de Políticas Públicas A</h4>
+        <div class="p-2 border bg-white mb-2">
+          <div class="small fw-bold text-uppercase text-muted mb-1"><i class="bi bi-card-text me-1" aria-hidden="true"></i> Resumo da Ementa Oficial:</div>
+          <p id="detail-desc" class="small text-dark mb-0">Papel da avaliação no ciclo governamental, desenhos de avaliação, indicadores de eficácia, eficiência e efetividade.</p>
+        </div>
+        <div class="mt-2">
+          <a id="btn-jump-ementa" href="#explorador-grade" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-3">
+            <i class="bi bi-book me-1" aria-hidden="true"></i> Ver Ementa Completa na Grade &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- Box 1: Status no SIGA -->
+        <div id="detail-siga-box" class="p-2 mb-2 border bg-white"></div>
+        <!-- Box 2: Encadeamento Pedagógico Sugerido -->
+        <div class="p-2 mb-2 border bg-white">
+          <div class="small fw-bold text-uppercase text-dark mb-1"><i class="bi bi-mortarboard-fill me-1" style="color: var(--cagp-amber, #e65100);" aria-hidden="true"></i> Base Conceitual Recomendada (Anterior):</div>
+          <div id="detail-reqs-list" class="small text-muted mb-1">...</div>
+          <div id="detail-reqs-note" class="small text-muted fst-italic">Não barra no sistema, mas é altamente desaconselhável pular.</div>
+        </div>
+        <!-- Box 3: Desdobramento / Continuidade -->
+        <div class="p-2 border bg-white">
+          <div class="small fw-bold text-uppercase text-dark mb-1"><i class="bi bi-arrow-right-circle me-1" style="color: var(--cagp-green, #2e7d32);" aria-hidden="true"></i> Desdobramentos Sugeridos:</div>
+          <div id="detail-unlocks-list" class="small text-muted">...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+---
+
 ## <i class="bi bi-calendar3-range" aria-hidden="true"></i> Linha do Tempo dos 10 Semestres com Ementário Oficial {#explorador-grade}
 
 Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtros dinâmicos** para isolar um período específico, filtrar por departamento ofertante ou buscar qualquer palavra nas 27 ementas oficiais:
@@ -232,9 +349,19 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
     </div>
   </div>
 
-  <div id="grade-empty-state" class="cagp-compass-panel mt-3 text-center" hidden>
-    <p class="fw-bold mb-2">Nenhuma disciplina obrigatória encontrada para esta combinação de filtros.</p>
-    <button type="button" id="btn-empty-reset" class="cagp-btn cagp-btn-outline">Mostrar todas as 27 disciplinas</button>
+  <!-- Empty State Pedagógico de Busca da Grade Obrigatória -->
+  <div id="grade-empty-state" class="cagp-empty-state mt-3" style="display: none;" role="status">
+    <div class="cagp-empty-icon"><i class="bi bi-search" aria-hidden="true"></i></div>
+    <h4 class="h5 mb-1 text-dark">NENHUMA DISCIPLINA OBRIGATÓRIA ENCONTRADA</h4>
+    <p class="small text-muted mb-3">Não encontramos disciplinas obrigatórias para os termos ou departamento selecionados.</p>
+    <div class="cagp-empty-tips small mb-3">
+      <strong>💡 Dica do Colegiado:</strong> Tente buscar por códigos de disciplinas (ex.: <code>DCP 032</code>, <code>ECN 140</code>, <code>EST 057</code>) ou palavras-chave de ementas como <em>"orçamento"</em>, <em>"políticas"</em>, <em>"avaliação"</em> ou <em>"estado"</em>.
+    </div>
+    <div>
+      <button type="button" id="btn-empty-reset" class="cagp-chip">
+        <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Limpar filtros e ver todas as 27 obrigatórias
+      </button>
+    </div>
   </div>
 </section>
 ```
@@ -852,9 +979,15 @@ Conforme a sua opção de percurso (*Geral 01-01*, *Complementar 01-02* ou *Avan
     
     <div class="row g-3 align-items-center mt-2">
       <div class="col-md-6">
-        <div class="input-group">
-          <span class="input-group-text bg-white border-dark"><i class="bi bi-search" aria-hidden="true"></i></span>
-          <input type="text" id="opt-search-input" class="form-control border-dark" placeholder="Buscar por código, nome ou tema (ex: Burocracia, Orçamento, Avaliação)..." aria-label="Buscar disciplina optativa">
+        <label for="opt-search-input" class="visually-hidden">Buscar disciplina optativa</label>
+        <input type="search" id="opt-search-input" class="cagp-search-input" placeholder="Buscar por código, nome ou tema (ex: Burocracia, Orçamento, Avaliação)...">
+        <div class="cagp-search-presets">
+          <span class="small text-muted fw-bold me-1">Atalhos rápidos:</span>
+          <button type="button" class="cagp-preset-btn" data-preset="avaliação">Avaliação</button>
+          <button type="button" class="cagp-preset-btn" data-preset="orçamento">Orçamento</button>
+          <button type="button" class="cagp-preset-btn" data-preset="governança">Governança</button>
+          <button type="button" class="cagp-preset-btn" data-preset="metodologia">Metodologia</button>
+          <button type="button" class="cagp-preset-btn" data-preset="economia">Economia</button>
         </div>
       </div>
       <div class="col-md-6">
@@ -2091,7 +2224,7 @@ document.addEventListener('DOMContentLoaded', function () {
       statusEl.textContent = 'Exibindo ' + visibleCount + ' de ' + allDisciplines.length + ' disciplinas (' + visibleSteps + ' períodos)';
     }
     if (emptyState) {
-      emptyState.hidden = (visibleCount > 0);
+      emptyState.style.display = (visibleCount > 0) ? 'none' : 'block';
     }
   }
 
@@ -2115,6 +2248,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (searchInput) {
     searchInput.addEventListener('input', applyFilters);
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        applyFilters();
+      }
+    });
   }
 
   if (btnExpandAll) {
@@ -2204,7 +2343,24 @@ document.addEventListener('DOMContentLoaded', function () {
       currentSearch = optSearch.value.trim().toLowerCase();
       filterOptatives();
     });
+    optSearch.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        optSearch.value = '';
+        currentSearch = '';
+        filterOptatives();
+      }
+    });
   }
+
+  const presetBtns = document.querySelectorAll('.cagp-preset-btn');
+  presetBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const preset = btn.getAttribute('data-preset') || '';
+      if (optSearch) optSearch.value = preset;
+      currentSearch = preset.toLowerCase();
+      filterOptatives();
+    });
+  });
 
   optFilters.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -2232,6 +2388,845 @@ document.addEventListener('DOMContentLoaded', function () {
       optCards.forEach(function (card) { card.open = false; });
     });
   }
+
+  /* 4. Grafo Interativo Curricular SVG / DAG Engine (Overdrive Mode Refinado) */
+  const DISCIPLINAS_GRAFO = {
+    // 1º Período (5 disciplinas)
+    'DCP124': {
+      code: 'DCP 124',
+      name: 'Gestão Pública A',
+      lines: ['Gestão Pública A'],
+      period: 1, dept: 'DCP', ch: 60, cr: 4, col: 1, y: 45,
+      track: 'gestao', trackLabel: 'Gestão & Organizações',
+      desc: 'Origens, evolução da administração burocrática, Nova Gestão Pública, governança participativa e histórico da gestão pública no Brasil.',
+      formalReqs: [], suggestedReqs: [],
+      formalUnlocks: [], suggestedUnlocks: ['DCP127', 'DCP037']
+    },
+    'DCP032': {
+      code: 'DCP 032',
+      name: 'Fundamentos da Análise Política',
+      lines: ['Fundamentos da', 'Análise Política'],
+      period: 1, dept: 'DCP', ch: 60, cr: 4, col: 1, y: 155,
+      track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+      desc: 'Política, Poder, Estado e Mercado. Democracia procedimental, instituições decisórias, representação e accountability.',
+      formalReqs: [], suggestedReqs: [],
+      formalUnlocks: [], suggestedUnlocks: ['DCP035', 'DCP042', 'DCP037']
+    },
+    'SOA048': {
+      code: 'SOA 048',
+      name: 'Fundamentos de Análise Sociológica',
+      lines: ['Fundamentos de', 'Análise Sociológica'],
+      period: 1, dept: 'SOA', ch: 60, cr: 4, col: 1, y: 265,
+      track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+      desc: 'Sociedade e indivíduo, processos de socialização, papéis sociais, status, classes sociais e teorias da ação coletiva.',
+      formalReqs: [], suggestedReqs: [],
+      formalUnlocks: [], suggestedUnlocks: ['SOA607', 'DCP042']
+    },
+    'DCP123': {
+      code: 'DCP 123',
+      name: 'Aspectos Legais da Gestão Pública A',
+      lines: ['Aspectos Legais da', 'Gestão Pública A'],
+      period: 1, dept: 'DCP', ch: 60, cr: 4, col: 1, y: 375,
+      track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+      desc: 'Estado Moderno, Direito Constitucional, Direitos e Garantias Fundamentais, separação dos Poderes e repartição de competências no federalismo.',
+      formalReqs: [], suggestedReqs: [],
+      formalUnlocks: [], suggestedUnlocks: ['DCP125']
+    },
+    'DCP033': {
+      code: 'DCP 033',
+      name: 'Metodologia',
+      lines: ['Metodologia'],
+      period: 1, dept: 'DCP', ch: 60, cr: 4, col: 1, y: 485,
+      track: 'metodos', trackLabel: 'Metodologia & Métodos Quantitativos',
+      desc: 'Filosofia da ciência, métodos quantitativos e qualitativos, elaboração de projetos e construção de indicadores de políticas públicas.',
+      formalReqs: [], suggestedReqs: [],
+      formalUnlocks: [], suggestedUnlocks: ['EST057', 'DCP089']
+    },
+
+    // 2º Período (5 disciplinas)
+    'SOA607': {
+      code: 'SOA 607',
+      name: 'Sociologia das Organizações Públicas',
+      lines: ['Sociologia das', 'Organizações'],
+      period: 2, dept: 'SOA', ch: 60, cr: 4, col: 2, y: 45,
+      track: 'gestao', trackLabel: 'Gestão & Organizações',
+      desc: 'Burocracia pública, teorias institucionais, cultura organizacional, poder político e flexibilização da administração.',
+      formalReqs: [], suggestedReqs: ['SOA048'],
+      formalUnlocks: [], suggestedUnlocks: []
+    },
+    'DCP035': {
+      code: 'DCP 035',
+      name: 'Instituições Políticas Comparadas',
+      lines: ['Instituições Políticas', 'Comparadas'],
+      period: 2, dept: 'DCP', ch: 60, cr: 4, col: 2, y: 155,
+      track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+      desc: 'Análise comparada de regimes democráticos, sistemas eleitorais e partidários, federalismo e relações Executivo-Legislativo.',
+      formalReqs: [], suggestedReqs: ['DCP032'],
+      formalUnlocks: [], suggestedUnlocks: []
+    },
+    'DCP042': {
+      code: 'DCP 042',
+      name: 'Política, Economia e Sociedade no Brasil',
+      lines: ['Política, Econ. e Soc.', 'no Brasil'],
+      period: 2, dept: 'DCP', ch: 60, cr: 4, col: 2, y: 265,
+      track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+      desc: 'Construção nacional e desenvolvimento do Estado no Brasil, dinâmica de modernização e questões étnico-raciais e socioambientais.',
+      formalReqs: [], suggestedReqs: ['DCP032', 'SOA048'],
+      formalUnlocks: [], suggestedUnlocks: ['DCP126']
+    },
+    'DCP125': {
+      code: 'DCP 125',
+      name: 'Aspectos Legais da Gestão Pública B',
+      lines: ['Aspectos Legais da', 'Gestão Pública B'],
+      period: 2, dept: 'DCP', ch: 60, cr: 4, col: 2, y: 375,
+      track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+      desc: 'Administração direta e indireta, poderes administrativos, atos, licitações e contratos administrativos, controle e improbidade.',
+      formalReqs: [], suggestedReqs: ['DCP123'],
+      formalUnlocks: [], suggestedUnlocks: []
+    },
+    'ECN140': {
+      code: 'ECN 140',
+      name: 'Introdução à Economia',
+      lines: ['Introdução à', 'Economia'],
+      period: 2, dept: 'ECN', ch: 60, cr: 4, col: 2, y: 485,
+      track: 'economia', trackLabel: 'Economia & Finanças Públicas',
+      desc: 'Noções fundamentais de microeconomia (oferta, demanda, equilíbrio de mercado) e macroeconomia (moeda, renda, juros e setor público).',
+      formalReqs: [], suggestedReqs: [],
+      formalUnlocks: ['ECN044'], suggestedUnlocks: []
+    },
+
+    // 3º Período (5 disciplinas)
+    'DCP127': {
+      code: 'DCP 127',
+      name: 'Gestão Pública B',
+      lines: ['Gestão Pública B'],
+      period: 3, dept: 'DCP', ch: 60, cr: 4, col: 3, y: 45,
+      track: 'gestao', trackLabel: 'Gestão & Organizações',
+      desc: 'Governança contemporânea, parcerias público-privadas, regulação, gestão em redes, contratualização e gestão de pessoas no setor público.',
+      formalReqs: [], suggestedReqs: ['DCP124'],
+      formalUnlocks: [], suggestedUnlocks: ['DCP130']
+    },
+    'DCP037': {
+      code: 'DCP 037',
+      name: 'Análise de Políticas Públicas',
+      lines: ['Análise de', 'Políticas Públicas'],
+      period: 3, dept: 'DCP', ch: 60, cr: 4, col: 3, y: 155,
+      track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+      desc: 'Ciclo de políticas públicas (agenda, formulação, implementação e avaliação), policy communities e coordenação intersetorial.',
+      formalReqs: [], suggestedReqs: ['DCP032', 'DCP124'],
+      formalUnlocks: [], suggestedUnlocks: ['DCP131']
+    },
+    'DCP126': {
+      code: 'DCP 126',
+      name: 'Estado e Políticas Sociais A',
+      lines: ['Estado e Políticas', 'Sociais A'],
+      period: 3, dept: 'DCP', ch: 60, cr: 4, col: 3, y: 265,
+      track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+      desc: 'Teorias do Estado de bem-estar social, regimes de proteção social comparados e evolução das políticas sociais no Brasil.',
+      formalReqs: [], suggestedReqs: ['DCP042'],
+      formalUnlocks: [], suggestedUnlocks: ['DCP128']
+    },
+    'DCP132': {
+      code: 'DCP 132',
+      name: 'Democracia Digital e Governo Eletrônico',
+      lines: ['Democracia Digital &', 'Gov. Eletrônico'],
+      period: 3, dept: 'DCP', ch: 60, cr: 4, col: 3, y: 375,
+      track: 'gestao', trackLabel: 'Gestão & Organizações',
+      desc: 'Governança eletrônica, transparência pública ativa, Lei de Acesso à Informação, dados abertos, participação digital e controle social.',
+      formalReqs: [], suggestedReqs: [],
+      formalUnlocks: [], suggestedUnlocks: []
+    },
+    'ECN044': {
+      code: 'ECN 044',
+      name: 'Economia do Bem-Estar',
+      lines: ['Economia do', 'Bem-Estar'],
+      period: 3, dept: 'ECN', ch: 60, cr: 4, col: 3, y: 485,
+      track: 'economia', trackLabel: 'Economia & Finanças Públicas',
+      desc: 'Função de bem-estar social, equidade e eficiência, falhas de mercado, externalidades, bens públicos, tributação e análise custo-benefício.',
+      isFormalLock: true,
+      formalReqs: ['ECN140'], suggestedReqs: [],
+      formalUnlocks: [], suggestedUnlocks: ['DCP129']
+    },
+
+    // 4º Período (4 disciplinas)
+    'DCP130': {
+      code: 'DCP 130',
+      name: 'Planejamento Público',
+      lines: ['Planejamento', 'Público'],
+      period: 4, dept: 'DCP', ch: 60, cr: 4, col: 4, y: 45,
+      track: 'gestao', trackLabel: 'Gestão & Organizações',
+      desc: 'Metodologias de planejamento governamental, plano plurianual (PPA), planejamento estratégico e desenvolvimento governamental.',
+      formalReqs: [], suggestedReqs: ['DCP127'],
+      formalUnlocks: [], suggestedUnlocks: ['DCP133']
+    },
+    'DCP128': {
+      code: 'DCP 128',
+      name: 'Estado e Políticas Sociais B',
+      lines: ['Estado e Políticas', 'Sociais B'],
+      period: 4, dept: 'DCP', ch: 60, cr: 4, col: 4, y: 190,
+      track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+      desc: 'O sistema de proteção social pós-1988: saúde (SUS), previdência, assistência social (SUAS), educação, moradia e desafios federativos.',
+      formalReqs: [], suggestedReqs: ['DCP126'],
+      formalUnlocks: [], suggestedUnlocks: []
+    },
+    'DCP129': {
+      code: 'DCP 129',
+      name: 'Finanças Públicas',
+      lines: ['Finanças', 'Públicas'],
+      period: 4, dept: 'DCP', ch: 60, cr: 4, col: 4, y: 335,
+      track: 'economia', trackLabel: 'Economia & Finanças Públicas',
+      desc: 'Teoria da tributação, federalismo fiscal, ciclo orçamentário brasileiro (PPA, LDO, LOA) e Lei de Responsabilidade Fiscal.',
+      formalReqs: [], suggestedReqs: ['ECN044'],
+      formalUnlocks: [], suggestedUnlocks: []
+    },
+    'EST057': {
+      code: 'EST 057',
+      name: 'Introdução à Estatística',
+      lines: ['Introdução à', 'Estatística'],
+      period: 4, dept: 'EST', ch: 60, cr: 4, col: 4, y: 485,
+      track: 'metodos', trackLabel: 'Metodologia & Métodos Quantitativos',
+      desc: 'Estatística descritiva, cálculo de probabilidades, variáveis aleatórias, inferência estatística e prática no software estatístico R.',
+      formalReqs: [], suggestedReqs: ['DCP033'],
+      formalUnlocks: [], suggestedUnlocks: ['ECN190']
+    },
+
+    // 5º Período (3 disciplinas)
+    'DCP133': {
+      code: 'DCP 133',
+      name: 'Formulação e Implementação de Programas e Projetos',
+      lines: ['Formulação e Impl.', 'Programas/Projetos'],
+      period: 5, dept: 'DCP', ch: 60, cr: 4, col: 5, y: 90,
+      track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+      desc: 'Ciclo de vida de projetos públicos, matriz lógica, diagnóstico de viabilidade, monitoramento de execução e gestão de riscos.',
+      formalReqs: [], suggestedReqs: ['DCP130'],
+      formalUnlocks: [], suggestedUnlocks: []
+    },
+    'DCP131': {
+      code: 'DCP 131',
+      name: 'Avaliação de Políticas Públicas A',
+      lines: ['Avaliação de', 'Políticas Públicas A'],
+      period: 5, dept: 'DCP', ch: 60, cr: 4, col: 5, y: 265,
+      track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+      desc: 'Papel da avaliação no ciclo governamental, desenhos de avaliação, indicadores de eficácia, eficiência e efetividade.',
+      formalReqs: [], suggestedReqs: ['DCP037'],
+      formalUnlocks: [], suggestedUnlocks: ['DCP134']
+    },
+    'ECN190': {
+      code: 'ECN 190',
+      name: 'Econometria I',
+      lines: ['Econometria I'],
+      period: 5, dept: 'ECN', ch: 60, cr: 4, col: 5, y: 440,
+      track: 'metodos', trackLabel: 'Metodologia & Métodos Quantitativos',
+      desc: 'Modelo de regressão linear simples e múltipla, testes de hipóteses, pressupostos clássicos e estimação econométrica aplicada.',
+      formalReqs: [], suggestedReqs: ['EST057'],
+      formalUnlocks: [], suggestedUnlocks: ['DCP134']
+    },
+
+    // 6º Período (1 disciplina)
+    'DCP134': {
+      code: 'DCP 134',
+      name: 'Avaliação de Políticas Públicas B',
+      lines: ['Avaliação de', 'Políticas Públicas B'],
+      period: 6, dept: 'DCP', ch: 60, cr: 4, col: 6, y: 265,
+      track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+      desc: 'Avaliação de impactos causais, desenhos quase-experimentais, inferência com microdados e modelos econométricos aplicados.',
+      formalReqs: [], suggestedReqs: ['DCP131', 'ECN190'],
+      formalUnlocks: [], suggestedUnlocks: []
+    },
+
+    // 7º Período (1 disciplina)
+    'DCP135': {
+      code: 'DCP 135',
+      name: 'Estágio Curricular A',
+      lines: ['Estágio Curricular A', '(180 horas)'],
+      period: 7, dept: 'DCP', ch: 180, cr: 12, col: 7, y: 265,
+      track: 'pratica', trackLabel: 'Prática Profissional & TCC',
+      desc: 'Experiência prática profissional de 180 horas em órgãos públicos ou instituições conveniadas (ou dispensa pelo Art. 41).',
+      formalReqs: [], suggestedReqs: [],
+      formalUnlocks: [], suggestedUnlocks: ['DCP136']
+    },
+
+    // 8º Período (1 disciplina)
+    'DCP136': {
+      code: 'DCP 136',
+      name: 'Estágio Curricular B',
+      lines: ['Estágio Curricular B', '(120 horas)'],
+      period: 8, dept: 'DCP', ch: 120, cr: 8, col: 8, y: 265,
+      track: 'pratica', trackLabel: 'Prática Profissional & TCC',
+      desc: 'Segunda etapa da vivência profissional de estágio supervisionado (120 horas), aprofundando relatórios técnicos e atuação de campo.',
+      formalReqs: [], suggestedReqs: ['DCP135'],
+      formalUnlocks: [], suggestedUnlocks: []
+    },
+
+    // 9º Período (1 disciplina)
+    'DCP089': {
+      code: 'DCP 089',
+      name: 'Projeto do TCC',
+      lines: ['Projeto do TCC', '(60 horas)'],
+      period: 9, dept: 'DCP', ch: 60, cr: 4, col: 9, y: 265,
+      track: 'pratica', trackLabel: 'Prática Profissional & TCC',
+      desc: 'Sistematização do plano de monografia, delimitação do problema de pesquisa e elaboração formal do projeto de graduação.',
+      formalReqs: [], suggestedReqs: ['DCP033'],
+      formalUnlocks: [], suggestedUnlocks: ['DCP137']
+    },
+
+    // 10º Período (1 disciplina)
+    'DCP137': {
+      code: 'DCP 137',
+      name: 'Trabalho de Conclusão de Curso',
+      lines: ['Trabalho Conclusão', 'de Curso (120h)'],
+      period: 10, dept: 'DCP', ch: 120, cr: 8, col: 10, y: 265,
+      track: 'pratica', trackLabel: 'Prática Profissional & TCC',
+      desc: 'Desenvolvimento e defesa pública da monografia, relatório técnico ou plano de intervenção perante banca examinadora da UFMG.',
+      formalReqs: [], suggestedReqs: ['DCP089'],
+      formalUnlocks: [], suggestedUnlocks: []
+    }
+  };
+
+  const TRACK_NAMES = {
+    'gestao': 'Gestão & Organizações',
+    'politicas': 'Políticas Públicas & Avaliação',
+    'sociedade': 'Ciência Política & Direito',
+    'economia': 'Economia & Finanças Públicas',
+    'metodos': 'Metodologia & Métodos Quantitativos',
+    'pratica': 'Prática Profissional & TCC'
+  };
+
+  const grafoSvg = document.getElementById('cagp-grafo-svg');
+  const colsGroup = document.getElementById('grafo-cols');
+  const linksGroup = document.getElementById('grafo-links');
+  const nodesGroup = document.getElementById('grafo-nodes');
+  const indicator = document.getElementById('grafo-active-indicator');
+  const resetGrafoBtn = document.getElementById('btn-grafo-reset');
+  const detailDrawer = document.getElementById('grafo-detail-drawer');
+  const closeDetailBtn = document.getElementById('btn-close-detail');
+  const trilhaBtns = document.querySelectorAll('[data-trilha-filter]');
+
+  let selectedNodeId = null;
+  let activeTrilha = 'all';
+
+  function getColX(col) {
+    return 15 + (col - 1) * 118;
+  }
+
+  function initGrafo() {
+    if (!grafoSvg || !colsGroup || !linksGroup || !nodesGroup) return;
+
+    // Renderizar colunas (10 semestres)
+    for (let c = 1; c <= 10; c++) {
+      const cx = getColX(c);
+      const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      bg.setAttribute('class', 'grafo-col-bg');
+      bg.setAttribute('x', cx - 4);
+      bg.setAttribute('y', 15);
+      bg.setAttribute('width', 112);
+      bg.setAttribute('height', 570);
+      bg.setAttribute('rx', '4');
+      colsGroup.appendChild(bg);
+
+      const header = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      header.setAttribute('class', 'grafo-col-header');
+      header.setAttribute('x', cx + 52);
+      header.setAttribute('y', 34);
+      header.setAttribute('text-anchor', 'middle');
+      header.textContent = c + 'º PERÍODO';
+      colsGroup.appendChild(header);
+    }
+
+    // Renderizar Conexões (Links SVG)
+    Object.keys(DISCIPLINAS_GRAFO).forEach(function (fromId) {
+      const fromDisc = DISCIPLINAS_GRAFO[fromId];
+      const fromX = getColX(fromDisc.col) + 104;
+      const fromY = fromDisc.y + 37;
+
+      // 1. Links Formais (Trava no SIGA)
+      fromDisc.formalUnlocks.forEach(function (toId) {
+        const toDisc = DISCIPLINAS_GRAFO[toId];
+        if (!toDisc) return;
+        const toX = getColX(toDisc.col);
+        const toY = toDisc.y + 37;
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        const dx = Math.max(25, (toX - fromX) * 0.45);
+        const d = `M ${fromX} ${fromY} C ${fromX + dx} ${fromY}, ${toX - dx} ${toY}, ${toX} ${toY}`;
+        path.setAttribute('d', d);
+        path.setAttribute('class', `grafo-link link-formal link-from-${fromId} link-to-${toId}`);
+        path.setAttribute('id', `link-${fromId}-${toId}`);
+        path.setAttribute('data-from', fromId);
+        path.setAttribute('data-to', toId);
+        path.setAttribute('data-is-formal', 'true');
+        path.setAttribute('marker-end', 'url(#arrow-formal)');
+        linksGroup.appendChild(path);
+      });
+
+      // 2. Links Sugeridos (Encadeamento Pedagógico Recomendado)
+      fromDisc.suggestedUnlocks.forEach(function (toId) {
+        const toDisc = DISCIPLINAS_GRAFO[toId];
+        if (!toDisc) return;
+        const toX = getColX(toDisc.col);
+        const toY = toDisc.y + 37;
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        const dx = Math.max(25, (toX - fromX) * 0.45);
+        const d = `M ${fromX} ${fromY} C ${fromX + dx} ${fromY}, ${toX - dx} ${toY}, ${toX} ${toY}`;
+        path.setAttribute('d', d);
+        path.setAttribute('class', `grafo-link link-sugerido link-from-${fromId} link-to-${toId}`);
+        path.setAttribute('id', `link-${fromId}-${toId}`);
+        path.setAttribute('data-from', fromId);
+        path.setAttribute('data-to', toId);
+        path.setAttribute('data-is-formal', 'false');
+        path.setAttribute('marker-end', 'url(#arrow-default)');
+        linksGroup.appendChild(path);
+      });
+    });
+
+    // Renderizar Nós (Disciplinas)
+    Object.keys(DISCIPLINAS_GRAFO).forEach(function (id) {
+      const d = DISCIPLINAS_GRAFO[id];
+      const x = getColX(d.col);
+      const y = d.y;
+
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.setAttribute('class', `grafo-node node-track-${d.track}${d.isFormalLock ? ' has-formal-lock' : ''}`);
+      g.setAttribute('id', `node-${id}`);
+      g.setAttribute('data-id', id);
+      g.setAttribute('data-track', d.track);
+      g.setAttribute('tabindex', '0');
+      g.setAttribute('role', 'button');
+      g.setAttribute('aria-label', `${d.code}: ${d.name} (${d.period}º Período). Clique para ver detalhes e conexões.`);
+
+      // Card retangular
+      const card = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      card.setAttribute('class', 'node-card');
+      card.setAttribute('x', x);
+      card.setAttribute('y', y);
+      card.setAttribute('width', '104');
+      card.setAttribute('height', '74');
+      g.appendChild(card);
+
+      // Badge superior
+      if (d.isFormalLock) {
+        const lockBadge = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        lockBadge.setAttribute('class', 'node-lock-badge');
+        lockBadge.setAttribute('x', x + 58);
+        lockBadge.setAttribute('y', y + 6);
+        lockBadge.setAttribute('width', '40');
+        lockBadge.setAttribute('height', '13');
+        g.appendChild(lockBadge);
+
+        const lockText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        lockText.setAttribute('class', 'node-lock-text');
+        lockText.setAttribute('x', x + 78);
+        lockText.setAttribute('y', y + 15.5);
+        lockText.setAttribute('text-anchor', 'middle');
+        lockText.textContent = '🔒 TRAVA';
+        g.appendChild(lockText);
+      } else {
+        const badge = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        badge.setAttribute('class', 'node-badge');
+        badge.setAttribute('x', x + 68);
+        badge.setAttribute('y', y + 6);
+        badge.setAttribute('width', '30');
+        badge.setAttribute('height', '13');
+        if (d.dept === 'DCP') badge.style.fill = 'var(--cagp-red, #9E2424)';
+        else if (d.dept === 'ECN') badge.style.fill = '#111111';
+        else if (d.dept === 'SOA') badge.style.fill = '#2E7D32';
+        else if (d.dept === 'EST') badge.style.fill = '#1565C0';
+        g.appendChild(badge);
+
+        const badgeText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        badgeText.setAttribute('class', 'node-badge-text');
+        badgeText.setAttribute('x', x + 83);
+        badgeText.setAttribute('y', y + 15.5);
+        badgeText.setAttribute('text-anchor', 'middle');
+        badgeText.textContent = d.dept;
+        g.appendChild(badgeText);
+      }
+
+      // Código
+      const codeText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      codeText.setAttribute('class', 'node-code');
+      codeText.setAttribute('x', x + 6);
+      codeText.setAttribute('y', y + 16);
+      codeText.textContent = d.code;
+      g.appendChild(codeText);
+
+      // Nome da Disciplina (1 ou 2 linhas reais)
+      const nameText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      nameText.setAttribute('class', 'node-name');
+      if (d.lines.length === 1) {
+        nameText.setAttribute('x', x + 6);
+        nameText.setAttribute('y', y + 36);
+        nameText.textContent = d.lines[0];
+      } else {
+        nameText.setAttribute('x', x + 6);
+        nameText.setAttribute('y', y + 32);
+        const tspan1 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+        tspan1.setAttribute('x', x + 6);
+        tspan1.setAttribute('dy', '0');
+        tspan1.textContent = d.lines[0];
+        nameText.appendChild(tspan1);
+
+        const tspan2 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+        tspan2.setAttribute('x', x + 6);
+        tspan2.setAttribute('dy', '11');
+        tspan2.textContent = d.lines[1];
+        nameText.appendChild(tspan2);
+      }
+      g.appendChild(nameText);
+
+      // Rodapé do card: Carga Horária e Status
+      const metaLeft = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      metaLeft.setAttribute('class', 'node-meta');
+      metaLeft.setAttribute('x', x + 6);
+      metaLeft.setAttribute('y', y + 64);
+      metaLeft.setAttribute('fill', '#6b7280');
+      metaLeft.textContent = `${d.period}ºP • ${d.ch}h`;
+      g.appendChild(metaLeft);
+
+      const metaRight = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      metaRight.setAttribute('class', 'node-meta');
+      metaRight.setAttribute('x', x + 98);
+      metaRight.setAttribute('y', y + 64);
+      metaRight.setAttribute('text-anchor', 'end');
+      if (d.isFormalLock) {
+        metaRight.setAttribute('fill', '#9e2424');
+        metaRight.setAttribute('font-weight', '700');
+        metaRight.textContent = '🔒 Trava SIGA';
+      } else {
+        metaRight.setAttribute('fill', '#059669');
+        metaRight.textContent = '✓ Aberto';
+      }
+      g.appendChild(metaRight);
+
+      // Listeners de clique e teclado
+      g.addEventListener('click', function () {
+        toggleSelectNode(id);
+      });
+      g.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleSelectNode(id);
+        }
+      });
+
+      nodesGroup.appendChild(g);
+    });
+  }
+
+  function toggleSelectNode(id) {
+    if (selectedNodeId === id) {
+      clearSelection();
+    } else {
+      selectNode(id);
+    }
+  }
+
+  function selectNode(id) {
+    selectedNodeId = id;
+    const d = DISCIPLINAS_GRAFO[id];
+    if (!d) return;
+
+    // Reset de classes prévias
+    const allNodes = Array.from(nodesGroup.querySelectorAll('.grafo-node'));
+    const allLinks = Array.from(linksGroup.querySelectorAll('.grafo-link'));
+
+    allNodes.forEach(function (n) {
+      n.classList.remove('is-selected', 'is-prereq', 'is-unlocked', 'is-dimmed');
+      n.classList.add('is-dimmed');
+    });
+
+    allLinks.forEach(function (l) {
+      l.classList.remove('is-active-req', 'is-active-next', 'is-dimmed');
+      l.classList.add('is-dimmed');
+      const isFormal = l.getAttribute('data-is-formal') === 'true';
+      l.setAttribute('marker-end', isFormal ? 'url(#arrow-formal)' : 'url(#arrow-default)');
+    });
+
+    // Marcar nó selecionado
+    const selectedNode = document.getElementById(`node-${id}`);
+    if (selectedNode) {
+      selectedNode.classList.remove('is-dimmed');
+      selectedNode.classList.add('is-selected');
+    }
+
+    // Marcar pré-requisitos formais (Upstream)
+    d.formalReqs.forEach(function (reqId) {
+      const reqNode = document.getElementById(`node-${reqId}`);
+      if (reqNode) {
+        reqNode.classList.remove('is-dimmed');
+        reqNode.classList.add('is-prereq');
+      }
+      const link = document.getElementById(`link-${reqId}-${id}`);
+      if (link) {
+        link.classList.remove('is-dimmed');
+        link.classList.add('is-active-req');
+        link.setAttribute('marker-end', 'url(#arrow-formal)');
+      }
+    });
+
+    // Marcar encadeamentos sugeridos anteriores (Upstream)
+    d.suggestedReqs.forEach(function (reqId) {
+      const reqNode = document.getElementById(`node-${reqId}`);
+      if (reqNode) {
+        reqNode.classList.remove('is-dimmed');
+        reqNode.classList.add('is-prereq');
+      }
+      const link = document.getElementById(`link-${reqId}-${id}`);
+      if (link) {
+        link.classList.remove('is-dimmed');
+        link.classList.add('is-active-req');
+        link.setAttribute('marker-end', 'url(#arrow-req)');
+      }
+    });
+
+    // Marcar destravadas formais (Downstream)
+    d.formalUnlocks.forEach(function (nextId) {
+      const nextNode = document.getElementById(`node-${nextId}`);
+      if (nextNode) {
+        nextNode.classList.remove('is-dimmed');
+        nextNode.classList.add('is-unlocked');
+      }
+      const link = document.getElementById(`link-${id}-${nextId}`);
+      if (link) {
+        link.classList.remove('is-dimmed');
+        link.classList.add('is-active-next');
+        link.setAttribute('marker-end', 'url(#arrow-formal)');
+      }
+    });
+
+    // Marcar destravadas sugeridas (Downstream)
+    d.suggestedUnlocks.forEach(function (nextId) {
+      const nextNode = document.getElementById(`node-${nextId}`);
+      if (nextNode) {
+        nextNode.classList.remove('is-dimmed');
+        nextNode.classList.add('is-unlocked');
+      }
+      const link = document.getElementById(`link-${id}-${nextId}`);
+      if (link) {
+        link.classList.remove('is-dimmed');
+        link.classList.add('is-active-next');
+        link.setAttribute('marker-end', 'url(#arrow-next)');
+      }
+    });
+
+    // Atualizar indicador
+    if (indicator) {
+      if (d.isFormalLock) {
+        indicator.innerHTML = `<strong>${d.code}:</strong> 🔒 Pré-requisito Formal no SIGA: ECN 140`;
+      } else if (d.formalUnlocks.length > 0) {
+        indicator.innerHTML = `<strong>${d.code}:</strong> 🔑 Chave de destravamento formal de ECN 044 no SIGA`;
+      } else {
+        const totalReqs = d.suggestedReqs.length;
+        const totalUnlocks = d.suggestedUnlocks.length;
+        indicator.innerHTML = `<strong>${d.code}:</strong> ${totalReqs} base(s) sugerida(s) &bull; ${totalUnlocks} desdobramento(s)`;
+      }
+    }
+    if (resetGrafoBtn) resetGrafoBtn.disabled = false;
+
+    // Atualizar Drawer de Detalhes
+    renderDetailDrawer(id);
+  }
+
+  function clearSelection() {
+    selectedNodeId = null;
+    const allNodes = Array.from(nodesGroup.querySelectorAll('.grafo-node'));
+    const allLinks = Array.from(linksGroup.querySelectorAll('.grafo-link'));
+
+    allNodes.forEach(function (n) {
+      n.classList.remove('is-selected', 'is-prereq', 'is-unlocked');
+      if (activeTrilha === 'all') {
+        n.classList.remove('is-dimmed');
+      } else {
+        const track = n.getAttribute('data-track');
+        n.classList.toggle('is-dimmed', track !== activeTrilha);
+      }
+    });
+
+    allLinks.forEach(function (l) {
+      l.classList.remove('is-active-req', 'is-active-next', 'is-dimmed');
+      const isFormal = l.getAttribute('data-is-formal') === 'true';
+      l.setAttribute('marker-end', isFormal ? 'url(#arrow-formal)' : 'url(#arrow-default)');
+    });
+
+    if (indicator) {
+      indicator.textContent = 'Clique em uma disciplina para mapear conexões';
+    }
+    if (resetGrafoBtn) resetGrafoBtn.disabled = true;
+    if (detailDrawer) detailDrawer.style.display = 'none';
+  }
+
+  function renderDetailDrawer(id) {
+    if (!detailDrawer) return;
+    const d = DISCIPLINAS_GRAFO[id];
+    if (!d) return;
+
+    const codeBadge = document.getElementById('detail-code-badge');
+    const deptBadge = document.getElementById('detail-dept-badge');
+    const trackBadge = document.getElementById('detail-track-badge');
+    const periodText = document.getElementById('detail-period');
+    const titleText = document.getElementById('detail-title');
+    const descText = document.getElementById('detail-desc');
+    const jumpBtn = document.getElementById('btn-jump-ementa');
+    const sigaBox = document.getElementById('detail-siga-box');
+    const reqsList = document.getElementById('detail-reqs-list');
+    const reqsNote = document.getElementById('detail-reqs-note');
+    const unlocksList = document.getElementById('detail-unlocks-list');
+
+    if (codeBadge) codeBadge.textContent = d.code;
+    if (deptBadge) {
+      deptBadge.textContent = d.dept;
+      deptBadge.className = `cagp-badge badge-${d.dept.toLowerCase()} me-1`;
+    }
+    if (trackBadge) {
+      trackBadge.textContent = d.trackLabel || TRACK_NAMES[d.track] || d.track;
+    }
+    if (periodText) {
+      periodText.textContent = `${d.period}º Período • ${d.ch} horas (${d.cr} créditos)`;
+    }
+    if (titleText) {
+      titleText.textContent = `${d.code}: ${d.name}`;
+    }
+    if (descText) {
+      descText.textContent = d.desc;
+    }
+
+    // Box 1: Status no SIGA
+    if (sigaBox) {
+      if (d.isFormalLock) {
+        sigaBox.style.borderLeft = '4px solid var(--cagp-red, #9E2424)';
+        sigaBox.innerHTML = `
+          <div class="small fw-bold text-danger mb-1">
+            <i class="bi bi-lock-fill me-1"></i> Pré-Requisito Formal no SIGA (Trava de Matrícula):
+          </div>
+          <div class="small fw-semibold text-dark mb-1">
+            <button type="button" class="cagp-preset-btn mb-1 text-danger border-danger" onclick="window.cagpSelectGrafoNode('ECN140')">
+              <i class="bi bi-lock-fill me-1"></i>ECN 140 — Introdução à Economia
+            </button>
+          </div>
+          <div class="small text-muted"><strong>Bloqueio no Sistema:</strong> Esta é a <strong>única matéria do curso com trava de matrícula cadastrada no SIGA</strong>. O sistema bloqueia a inscrição caso você não tenha aprovação prévia em Introdução à Economia.</div>
+        `;
+      } else if (d.formalUnlocks && d.formalUnlocks.length > 0) {
+        sigaBox.style.borderLeft = '4px solid var(--cagp-red, #9E2424)';
+        sigaBox.innerHTML = `
+          <div class="small fw-bold text-danger mb-1">
+            <i class="bi bi-key-fill me-1"></i> Chave Formal de Destravamento no SIGA:
+          </div>
+          <div class="small text-dark mb-1">
+            Aprovação formalmente obrigatória para liberar a matrícula em:
+            ${d.formalUnlocks.map(function (uId) {
+              const uDisc = DISCIPLINAS_GRAFO[uId];
+              return `<button type="button" class="cagp-preset-btn mb-1 ms-1 text-danger border-danger" onclick="window.cagpSelectGrafoNode('${uId}')"><i class="bi bi-lock-fill me-1"></i>${uDisc ? uDisc.code + ' (' + uDisc.name + ')' : uId}</button>`;
+            }).join('')}
+          </div>
+          <div class="small text-muted">Aprovação nesta matéria é exigência estrita do Colegiado para que o SIGA libere o acesso a Economia do Bem-Estar (ECN 044).</div>
+        `;
+      } else {
+        sigaBox.style.borderLeft = '4px solid var(--cagp-green, #2E7D32)';
+        sigaBox.innerHTML = `
+          <div class="small fw-bold text-success mb-1">
+            <i class="bi bi-unlock-fill me-1"></i> Status no SIGA: Matrícula Destravada
+          </div>
+          <div class="small text-muted">Esta disciplina <strong>não possui pré-requisito formal no sistema</strong>. O SIGA não barra a sua inscrição, mesmo que você decida cursá-la fora da ordem recomendada.</div>
+        `;
+      }
+    }
+
+    // Box 2: Encadeamento Pedagógico Sugerido (Anterior)
+    if (reqsList) {
+      if (d.suggestedReqs.length === 0) {
+        reqsList.innerHTML = '<span class="text-success"><i class="bi bi-check-circle me-1"></i>Disciplina introdutória ou sem encadeamento conceitual direto prévio.</span>';
+        if (reqsNote) reqsNote.style.display = 'none';
+      } else {
+        reqsList.innerHTML = d.suggestedReqs.map(function (reqId) {
+          const reqDisc = DISCIPLINAS_GRAFO[reqId];
+          return `<button type="button" class="cagp-preset-btn mb-1 me-1" onclick="window.cagpSelectGrafoNode('${reqId}')"><i class="bi bi-arrow-left-short"></i>${reqDisc ? reqDisc.code + ' (' + reqDisc.name + ')' : reqId}</button>`;
+        }).join('');
+        if (reqsNote) reqsNote.style.display = 'block';
+      }
+    }
+
+    // Box 3: Desdobramentos Curriculares a Seguir
+    if (unlocksList) {
+      if (d.suggestedUnlocks.length === 0) {
+        unlocksList.innerHTML = '<span class="text-muted">Não é base pedagógica direta de nenhuma matéria obrigatória subsequente.</span>';
+      } else {
+        unlocksList.innerHTML = d.suggestedUnlocks.map(function (nextId) {
+          const nextDisc = DISCIPLINAS_GRAFO[nextId];
+          return `<button type="button" class="cagp-preset-btn mb-1 me-1" onclick="window.cagpSelectGrafoNode('${nextId}')"><i class="bi bi-arrow-right-short"></i>${nextDisc ? nextDisc.code + ' (' + nextDisc.name + ')' : nextId}</button>`;
+        }).join('');
+      }
+    }
+
+    // Botão de pular até o card da ementa oficial
+    if (jumpBtn) {
+      jumpBtn.onclick = function (e) {
+        e.preventDefault();
+        const detailsCards = Array.from(document.querySelectorAll('.cagp-discipline'));
+        const targetCard = detailsCards.find(function (c) {
+          return (c.textContent || '').includes(d.code);
+        });
+        if (targetCard) {
+          targetCard.open = true;
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetCard.style.outline = '3px solid var(--cagp-red, #9E2424)';
+          setTimeout(function () { targetCard.style.outline = 'none'; }, 2000);
+        } else {
+          const expSection = document.getElementById('explorador-grade');
+          if (expSection) expSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+    }
+
+    detailDrawer.style.display = 'block';
+  }
+
+  // Tornar acessível globalmente para os botões dos drawers
+  window.cagpSelectGrafoNode = function (id) {
+    selectNode(id);
+  };
+
+  if (resetGrafoBtn) {
+    resetGrafoBtn.addEventListener('click', clearSelection);
+  }
+  if (closeDetailBtn) {
+    closeDetailBtn.addEventListener('click', function () {
+      if (detailDrawer) detailDrawer.style.display = 'none';
+    });
+  }
+
+  // Atalho Escape no Grafo
+  const grafoViewport = document.querySelector('.cagp-grafo-viewport');
+  if (grafoViewport) {
+    grafoViewport.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        clearSelection();
+      }
+    });
+  }
+
+  // Filtros por Trilha Temática Oficial
+  trilhaBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      trilhaBtns.forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      activeTrilha = btn.getAttribute('data-trilha-filter') || 'all';
+
+      clearSelection();
+      const allNodes = Array.from(nodesGroup.querySelectorAll('.grafo-node'));
+      allNodes.forEach(function (n) {
+        const track = n.getAttribute('data-track');
+        if (activeTrilha === 'all' || track === activeTrilha) {
+          n.classList.remove('is-dimmed');
+        } else {
+          n.classList.add('is-dimmed');
+        }
+      });
+    });
+  });
+
+  // Inicializar renderização do grafo SVG
+  initGrafo();
 
 });
 </script>

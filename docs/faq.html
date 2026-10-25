@@ -249,6 +249,30 @@ ul.task-list li input[type="checkbox"] {
   <a href="documentos.html#formularios" class="cagp-subnav-link"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Formulários &amp; Requerimentos</a>
 </nav>
 
+<!-- Atalhos de Alta Urgência / Tópicos Mais Procurados -->
+<div class="cagp-urgent-grid my-3">
+  <a href="#collapseOne" class="cagp-urgent-card" data-faq-jump="collapseOne">
+    <div class="cagp-urgent-badge">Regime Escolar</div>
+    <div class="cagp-urgent-title">Trancamento Parcial &amp; Total</div>
+    <div class="cagp-urgent-desc">Carga mínima regimental (180h/12cr) e prazos do calendário acadêmico.</div>
+  </a>
+  <a href="#collapseTwo" class="cagp-urgent-card" data-faq-jump="collapseTwo">
+    <div class="cagp-urgent-badge">Ajuste de Matrícula</div>
+    <div class="cagp-urgent-title">Quebra de Pré-Requisito</div>
+    <div class="cagp-urgent-desc">Como proceder no ajuste presencial com o Colegiado em caso de reprovação.</div>
+  </a>
+  <a href="#collapseSix" class="cagp-urgent-card" data-faq-jump="collapseSix">
+    <div class="cagp-urgent-badge">Dispensa Curricular</div>
+    <div class="cagp-urgent-title">Dispensa do Estágio (Art. 41)</div>
+    <div class="cagp-urgent-desc">Aproveitamento de vínculo efetivo ou contratado no setor público.</div>
+  </a>
+  <a href="#collapseEight" class="cagp-urgent-card" data-faq-jump="collapseEight">
+    <div class="cagp-urgent-badge">Prazo Fatal</div>
+    <div class="cagp-urgent-title">Aproveitamento de Estudos</div>
+    <div class="cagp-urgent-desc">Prazo decadencial improrrogável: até o final do 2º período letivo no curso.</div>
+  </a>
+</div>
+
 <section id="filtro-faq" class="cagp-tool-box" aria-labelledby="faq-filter-title">
   <div class="cagp-tool-header">
     <div>
@@ -410,6 +434,21 @@ ul.task-list li input[type="checkbox"] {
   </div>
 
 </div>
+
+<!-- Empty State Acolhedor de Busca do FAQ -->
+<div id="faq-empty-state" class="cagp-empty-state mb-4" style="display: none;" role="status">
+  <div class="cagp-empty-icon"><i class="bi bi-question-circle" aria-hidden="true"></i></div>
+  <h4 class="h5 mb-1 anchored">NENHUMA PERGUNTA ENCONTRADA</h4>
+  <p class="small text-muted mb-3">Não encontramos dúvidas no FAQ oficial com os termos ou categoria pesquisados.</p>
+  <div class="cagp-empty-tips small mb-3">
+    <strong>💡 Precisa de orientação específica?</strong> Envie sua dúvida para o Colegiado de Gestão Pública (<a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a>) ou procure a diretoria do CAGP no Instagram <a href="https://www.instagram.com/cagp.ufmg" target="_blank" rel="noopener noreferrer">@cagp.ufmg</a>.
+  </div>
+  <div>
+    <button type="button" id="btn-faq-empty-reset" class="cagp-chip">
+      <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Limpar filtros e ver todas as 9 perguntas
+    </button>
+  </div>
+</div>
 <hr>
 <div class="mt-4 callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -476,6 +515,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  const emptyState = document.getElementById('faq-empty-state');
+  const btnEmptyReset = document.getElementById('btn-faq-empty-reset');
+
   function applyFaqFilter() {
     const q = normalize(searchInput ? searchInput.value : '');
     let visible = 0;
@@ -493,6 +535,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (statusEl) {
       statusEl.textContent = 'Exibindo ' + visible + ' de ' + items.length + ' perguntas';
     }
+    if (emptyState) {
+      emptyState.style.display = (visible === 0) ? 'block' : 'none';
+    }
   }
 
   tagBtns.forEach(function (btn) {
@@ -504,9 +549,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  if (searchInput) searchInput.addEventListener('input', applyFaqFilter);
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFaqFilter);
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        applyFaqFilter();
+      }
+    });
+  }
+
+  if (btnEmptyReset) {
+    btnEmptyReset.addEventListener('click', function () {
+      activeTag = 'all';
+      tagBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-faq-tag') === 'all' ? 'true' : 'false'); });
+      if (searchInput) searchInput.value = '';
+      applyFaqFilter();
+    });
+  }
+
   if (btnExpand) btnExpand.addEventListener('click', function () { items.forEach(function (i) { if (i.style.display !== 'none') setItemExpanded(i, true); }); });
   if (btnCollapse) btnCollapse.addEventListener('click', function () { items.forEach(function (i) { setItemExpanded(i, false); }); });
+
+  const jumpLinks = document.querySelectorAll('[data-faq-jump]');
+  jumpLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const targetId = link.getAttribute('data-faq-jump');
+      const targetCollapse = document.getElementById(targetId);
+      if (targetCollapse) {
+        const item = targetCollapse.closest('.accordion-item');
+        if (item) {
+          activeTag = 'all';
+          tagBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-faq-tag') === 'all' ? 'true' : 'false'); });
+          if (searchInput) searchInput.value = '';
+          applyFaqFilter();
+          setItemExpanded(item, true);
+        }
+      }
+    });
+  });
 });
 </script>
 

@@ -104,6 +104,14 @@ p, .cagp-card-body, .callout-body {
   text-wrap: pretty;
 }
 
+/* Divisores Estruturais Nanquim Brite */
+hr {
+  border: 0;
+  border-top: 2px solid var(--cagp-dark, #111111);
+  opacity: 1;
+  margin: 2.25rem 0;
+}
+
 /* Vector Icon System (CAGP Republicano) */
 i.bi, .cagp-icon {
   display: inline-flex;
@@ -253,9 +261,9 @@ body.quarto-light .navbar-logo.light-content,
   border: 2px solid var(--cagp-dark);
   background-color: var(--cagp-white);
   box-shadow: var(--cagp-shadow-md);
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 2.5rem 2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -854,6 +862,11 @@ h1.cagp-hero-title,
     padding: 1.75rem 1.25rem;
   }
 
+  .cagp-card {
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+
   .cagp-timeline {
     padding-left: 1.5rem;
   }
@@ -869,6 +882,38 @@ h1.cagp-hero-title,
     width: 100%;
     margin-bottom: 0.5rem;
   }
+
+  /* Ergonomia Mobile: Touch Targets Mínimos (WCAG 2.1 AA >= 44px) */
+  .cagp-chip,
+  .cagp-btn,
+  .cagp-doc-btn,
+  .cagp-step-btn,
+  .cagp-preset-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   External Link Indicator (Discrete & Semantic)
+   -------------------------------------------------------------------------- */
+.cagp-external-icon {
+  font-size: 0.85em;
+  margin-left: 0.35rem;
+  opacity: 0.75;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  vertical-align: middle;
+}
+
+.cagp-hub-card:hover .cagp-external-icon,
+.cagp-doc-btn:hover .cagp-external-icon,
+.cagp-btn:hover .cagp-external-icon {
+  opacity: 1;
+  transform: translate(1px, -1px);
 }
 
 /* --------------------------------------------------------------------------
@@ -1028,6 +1073,17 @@ h1.cagp-hero-title,
 .cagp-doc-btn:active {
   transform: translate(2px, 2px);
   box-shadow: 0 0 0 transparent;
+}
+
+.cagp-doc-btn:disabled,
+.cagp-doc-btn.is-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  background-color: var(--cagp-gray-100, #f8f9fa);
+  color: #6b7280 !important;
+  border-color: #9ca3af;
 }
 
 /* ==========================================================================
@@ -1827,10 +1883,33 @@ div.callout-tip .callout-toggle::before {
   transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.12s ease;
 }
 
-.cagp-chip:hover {
+.cagp-chip:hover:not(:disabled):not([aria-pressed="true"]):not(.is-active) {
   background-color: var(--cagp-gray-100);
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px var(--cagp-dark);
+}
+
+.cagp-chip:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--cagp-dark);
+}
+
+.cagp-chip[aria-pressed="true"]:hover,
+.cagp-chip.is-active:hover {
+  background-color: var(--cagp-red-hover, #7b1a1a);
+  color: var(--cagp-white, #ffffff);
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+}
+
+.cagp-chip:disabled,
+.cagp-chip[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: 1px 1px 0px var(--cagp-dark);
+  transform: none !important;
+  background-color: var(--cagp-gray-100, #f4f5f7);
+  color: #6b7280;
+  pointer-events: none;
 }
 
 .cagp-chip[aria-pressed="true"],
@@ -1851,6 +1930,19 @@ div.callout-tip .callout-toggle::before {
   border: 2px solid var(--cagp-dark);
   border-radius: 4px;
   box-shadow: 2px 2px 0px var(--cagp-dark);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cagp-search-input:focus {
+  border-color: var(--cagp-red, #9E2424);
+  outline: none;
+}
+
+.cagp-search-input:disabled {
+  background-color: var(--cagp-gray-100, #f4f5f7);
+  color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 .cagp-search-input::placeholder {
@@ -3074,6 +3166,120 @@ div.callout-tip .callout-toggle::before {
 }
 
 /* ==========================================================================
+   Coordenação do Curso - Perfis Acadêmicos Humanizados (Brite System)
+   ========================================================================== */
+
+.cagp-coord-card {
+  border: 2px solid var(--cagp-dark, #111111);
+  border-radius: 4px;
+  background-color: var(--cagp-white, #ffffff);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cagp-coord-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-coord-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1.5px solid var(--cagp-gray-200, #e5e7eb);
+}
+
+.cagp-coord-avatar {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  border: 2px solid var(--cagp-dark, #111111);
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--cagp-dark, #111111);
+  overflow: hidden;
+}
+
+.cagp-coord-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(110%);
+}
+
+.cagp-coord-meta {
+  font-size: 0.82rem;
+  color: var(--cagp-gray-600, #4b5563);
+  line-height: 1.4;
+}
+
+.cagp-coord-body {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--cagp-dark, #111111);
+  margin-bottom: 0.75rem;
+}
+
+.cagp-coord-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+  margin-bottom: 0.75rem;
+}
+
+.cagp-coord-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 1px solid var(--cagp-dark, #111111);
+  color: var(--cagp-dark, #111111);
+}
+
+.cagp-coord-hours {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border-left: 3px solid var(--cagp-red, #9e2424);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.82rem;
+  margin-top: 0.5rem;
+}
+
+/* Vitrine de Excelência e Atração */
+.cagp-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.cagp-showcase-tile {
+  background-color: var(--cagp-white, #ffffff);
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cagp-showcase-icon {
+  font-size: 1.85rem;
+  color: var(--cagp-red, #9e2424);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+/* ==========================================================================
    CACLP / ACG: GAVETAS DE DETALHAMENTO DE CRITÉRIOS ("O QUE CONTA NISSO?")
    ========================================================================== */
 
@@ -3839,6 +4045,116 @@ div.callout-tip .callout-toggle::before {
 }
 
 /* ==========================================================================
+   Onboarding & Time-to-Value Components (Brite System)
+   ========================================================================== */
+
+/* 1. Banner de Primeiro Acesso (Onboarding) */
+.cagp-onboard-banner {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  padding: 0.85rem 1.15rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--cagp-red, #9e2424);
+  transition: all 0.2s ease;
+}
+
+.cagp-onboard-icon {
+  font-size: 1.65rem;
+  color: var(--cagp-red, #9e2424);
+  line-height: 1;
+}
+
+/* 2. Presets de Busca (Atalhos de 1 Clique) */
+.cagp-search-presets {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.cagp-preset-btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  background-color: #ffffff;
+  color: var(--cagp-dark, #111111);
+  border: 1px solid var(--cagp-dark, #111111);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.cagp-preset-btn:hover {
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff;
+}
+
+.cagp-preset-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+/* 3. Atalhos de Alta Urgência (FAQ & Documentos) */
+.cagp-urgent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.cagp-urgent-card {
+  background-color: var(--cagp-white, #ffffff);
+  border: 1.5px solid var(--cagp-dark, #111111);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  padding: 0.85rem;
+  text-decoration: none !important;
+  color: var(--cagp-dark, #111111) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.cagp-urgent-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--cagp-red, #9e2424);
+}
+
+.cagp-urgent-card:active {
+  transform: translateY(1px);
+}
+
+.cagp-urgent-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff;
+  padding: 0.15rem 0.45rem;
+  margin-bottom: 0.4rem;
+}
+
+.cagp-urgent-title {
+  font-family: var(--cagp-font-heading, "Oswald", sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--cagp-dark, #111111);
+  margin-bottom: 0.35rem;
+}
+
+.cagp-urgent-desc {
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: #4b5563;
+}
+
+/* ==========================================================================
    Brite Mechanical Motion System (Keyframes & Accessibility)
    ========================================================================== */
 
@@ -3922,6 +4238,74 @@ div.callout-tip .callout-toggle::before {
   }
 }
 
+/* 7. Impacto Mecânico de Carimbo Burocrático */
+@keyframes cagpStampImpact {
+  0% {
+    opacity: 0;
+    transform: scale(1.25) rotate(-6deg);
+    box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(0.98) rotate(-2deg);
+    box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-3deg);
+    box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  }
+}
+
+/* Componente Canônico: Selo / Carimbo Burocrático Brite */
+.cagp-stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.65rem;
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  transform: rotate(-3deg);
+  transform-origin: center center;
+  animation: cagpStampImpact 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  background-color: var(--cagp-white, #ffffff);
+  color: var(--cagp-dark, #111111);
+  line-height: 1.2;
+}
+
+.cagp-stamp-badge.is-deferido {
+  border-color: #2e7d32;
+  color: #2e7d32;
+  background-color: var(--cagp-white, #ffffff);
+  box-shadow: 3px 3px 0 #2e7d32;
+}
+
+.cagp-stamp-badge.is-indeferido {
+  border-color: var(--cagp-red, #9e2424);
+  color: var(--cagp-red, #9e2424);
+  background-color: var(--cagp-white, #ffffff);
+  box-shadow: 3px 3px 0 var(--cagp-red, #9e2424);
+}
+
+.cagp-stamp-badge.is-homologado {
+  border-color: #d97706;
+  color: #d97706;
+  background-color: var(--cagp-white, #ffffff);
+  box-shadow: 3px 3px 0 #d97706;
+}
+
+.cagp-stamp-badge.is-visto {
+  border-color: var(--cagp-dark, #111111);
+  color: var(--cagp-dark, #111111);
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+}
+
 /* Redução Rigorosa de Movimento (Acessibilidade WCAG 2.1) */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -3940,10 +4324,268 @@ div.callout-tip .callout-toggle::before {
   .cagp-calc-celebration-box.is-all-complete,
   .cagp-calouro-celebration,
   .cagp-copy-btn.is-copied,
-  .cagp-progress-fill.is-complete {
+  .cagp-progress-fill.is-complete,
+  .cagp-stamp-badge,
+  .grafo-link.is-active-req,
+  .grafo-link.is-active-next,
+  .cagp-grafo-detail {
     animation: none !important;
     transform: none !important;
   }
+}
+
+/* ==========================================================================
+   Grafo Interativo Curricular SVG / DAG Engine (Overdrive Mode)
+   ========================================================================== */
+
+.cagp-grafo-viewport {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: #ffffff;
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.cagp-grafo-viewport:focus-visible {
+  outline: 3px solid var(--cagp-red, #9E2424);
+  outline-offset: 2px;
+}
+
+.cagp-grafo-svg {
+  display: block;
+  width: 100%;
+  min-width: 1160px;
+  height: auto;
+  user-select: none;
+}
+
+.grafo-col-bg {
+  fill: #fafafa;
+  stroke: #e5e7eb;
+  stroke-width: 1;
+}
+
+.grafo-col-header {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  fill: #4b5563;
+  letter-spacing: 0.05em;
+}
+
+.grafo-link {
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transition: stroke 0.15s ease, stroke-width 0.15s ease, opacity 0.15s ease;
+}
+
+.grafo-link.link-sugerido {
+  stroke-dasharray: 4 3;
+}
+
+.grafo-link.link-formal {
+  stroke: var(--cagp-red, #9E2424);
+  stroke-width: 2.5;
+  stroke-dasharray: none;
+  opacity: 0.9;
+}
+
+.grafo-link.is-active-req {
+  stroke: var(--cagp-gold, #E8A317);
+  stroke-width: 2.5;
+  stroke-dasharray: 6 3;
+  animation: cagpLinkFlow 0.8s linear infinite;
+  opacity: 1 !important;
+}
+
+.grafo-link.is-active-next {
+  stroke: var(--cagp-green, #2E7D32);
+  stroke-width: 2.5;
+  stroke-dasharray: 6 3;
+  animation: cagpLinkFlow 0.8s linear infinite;
+  opacity: 1 !important;
+}
+
+.grafo-link.link-formal.is-active-req,
+.grafo-link.link-formal.is-active-next {
+  stroke: var(--cagp-red, #9E2424) !important;
+  stroke-width: 3.5 !important;
+  stroke-dasharray: none !important;
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+.grafo-link.is-dimmed {
+  opacity: 0.08;
+}
+
+@keyframes cagpLinkFlow {
+  from {
+    stroke-dashoffset: 9;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.grafo-node {
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.15s ease;
+  outline: none;
+}
+
+.grafo-node rect.node-card {
+  fill: #ffffff;
+  stroke: var(--cagp-dark, #111111);
+  stroke-width: 1.5;
+  rx: 3px;
+  ry: 3px;
+  filter: drop-shadow(2px 2px 0px rgba(17, 17, 17, 0.9));
+  transition: all 0.12s ease;
+}
+
+.grafo-node text.node-code {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--cagp-dark, #111111);
+  letter-spacing: 0.02em;
+}
+
+.grafo-node text.node-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5px;
+  font-weight: 500;
+  fill: #374151;
+}
+
+.grafo-node rect.node-badge {
+  fill: var(--cagp-dark, #111111);
+  rx: 2px;
+}
+
+.grafo-node text.node-badge-text {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 7.5px;
+  font-weight: 700;
+  fill: #ffffff;
+  text-transform: uppercase;
+}
+
+.grafo-node:hover:not(.is-dimmed) rect.node-card {
+  stroke: var(--cagp-red, #9E2424);
+  filter: drop-shadow(3px 3px 0px var(--cagp-red, #9E2424));
+  transform: translate(-1px, -1px);
+}
+
+.grafo-node:focus-visible rect.node-card {
+  stroke: var(--cagp-red, #9E2424);
+  stroke-width: 2.5;
+}
+
+.grafo-node.is-selected rect.node-card {
+  stroke: var(--cagp-red, #9E2424);
+  stroke-width: 2.5;
+  fill: #fff5f5;
+  filter: drop-shadow(4px 4px 0px var(--cagp-red, #9E2424));
+}
+
+.grafo-node.is-selected rect.node-badge {
+  fill: var(--cagp-red, #9E2424);
+}
+
+.grafo-node.is-prereq rect.node-card {
+  stroke: var(--cagp-gold, #E8A317);
+  stroke-width: 2;
+  fill: #fffdf5;
+  filter: drop-shadow(3px 3px 0px var(--cagp-gold, #E8A317));
+}
+
+.grafo-node.is-prereq rect.node-badge {
+  fill: var(--cagp-gold, #E8A317);
+}
+
+.grafo-node.is-unlocked rect.node-card {
+  stroke: var(--cagp-green, #2E7D32);
+  stroke-width: 2;
+  fill: #f5fbf7;
+  filter: drop-shadow(3px 3px 0px var(--cagp-green, #2E7D32));
+}
+
+.grafo-node.is-unlocked rect.node-badge {
+  fill: var(--cagp-green, #2E7D32);
+}
+
+.grafo-node.is-dimmed {
+  opacity: 0.18;
+}
+
+.cagp-grafo-detail {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  padding: 1.15rem 1.35rem;
+  animation: cagpDrawerSlide 0.18s ease-out;
+}
+
+.cagp-legend-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+
+.cagp-legend-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.cagp-legend-line-formal {
+  display: inline-block;
+  width: 16px;
+  height: 0;
+  border-top: 3px solid var(--cagp-red, #9E2424);
+  vertical-align: middle;
+}
+
+.cagp-legend-line-suggested {
+  display: inline-block;
+  width: 16px;
+  height: 0;
+  border-top: 2px dashed #6b7280;
+  vertical-align: middle;
+}
+
+.grafo-node rect.node-lock-badge {
+  fill: var(--cagp-red, #9E2424);
+  rx: 2px;
+}
+
+.grafo-node text.node-lock-text {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 7.5px;
+  font-weight: 700;
+  fill: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.grafo-node text.node-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5px;
+  font-weight: 600;
 }
 
 

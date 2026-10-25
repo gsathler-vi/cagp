@@ -242,6 +242,23 @@ ul.task-list li input[type="checkbox"] {
   <a href="percurso.html#explorador-grade" class="cagp-subnav-link"><i class="bi bi-search" aria-hidden="true"></i> Filtrar Ementas</a>
 </nav>
 
+<!-- Banner de Onboarding e Primeiro Acesso -->
+<div id="cagp-onboarding-banner" class="cagp-onboard-banner" role="region" aria-label="Boas-vindas e primeiros passos no portal">
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+    <div class="d-flex align-items-center gap-3">
+      <div class="cagp-onboard-icon"><i class="bi bi-compass-fill" aria-hidden="true"></i></div>
+      <div>
+        <div class="fw-bold fs-6 text-uppercase">Primeira vez no Portal do CAGP?</div>
+        <p class="small text-muted mb-0">Selecione seu perfil na Bússola abaixo (Vestibulando, Calouro, Meio de Curso ou Formando) para ver atalhos diretos e eliminar burocracias.</p>
+      </div>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <a href="calouros.html" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-2" style="font-size: 0.78rem;"><i class="bi bi-backpack me-1"></i> Sou Calouro</a>
+      <button type="button" id="btn-dismiss-onboard" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-2" style="font-size: 0.78rem;" aria-label="Dispensar aviso de boas-vindas">✕ Entendi</button>
+    </div>
+  </div>
+</div>
+
 <section id="bussola-interativa" class="cagp-tool-box" aria-labelledby="bussola-heading">
   <div class="cagp-tool-header">
     <div>
@@ -485,6 +502,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
   checkHash();
   window.addEventListener('hashchange', checkHash);
+
+  // Onboarding Banner Dismissal Logic (LocalStorage)
+  const onboardBanner = document.getElementById('cagp-onboarding-banner');
+  const btnDismissOnboard = document.getElementById('btn-dismiss-onboard');
+  if (onboardBanner && btnDismissOnboard) {
+    try {
+      if (localStorage.getItem('cagp_onboard_v1_dismissed') === 'true') {
+        onboardBanner.style.display = 'none';
+      }
+    } catch (e) {}
+
+    btnDismissOnboard.addEventListener('click', function () {
+      onboardBanner.style.display = 'none';
+      try {
+        localStorage.setItem('cagp_onboard_v1_dismissed', 'true');
+      } catch (e) {}
+    });
+  }
 });
 </script>
 <section id="o-curso-de-gestão-pública-em-números-oficiais" class="level2">
@@ -654,9 +689,9 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
       </div>
       <p class="cagp-app-desc">Sistema de gestão discente: matrícula semestral (via MinhaUFMG no desktop), histórico oficial, diário de classe e consulta de notas/salas no smartphone.</p>
       <div class="cagp-app-actions">
-        <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar SIGA Web via portal MinhaUFMG"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> SIGA Web ↗</a>
-        <a href="https://play.google.com/store/apps/details?id=br.ufmg.ddp.cecom.academico.sigaufmg" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar aplicativo Siga UFMG para Android"><i class="bi bi-google-play" aria-hidden="true"></i> Android ↗</a>
-        <a href="https://apps.apple.com/br/app/siga-ufmg/id1456022680" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar aplicativo Siga UFMG para iOS"><i class="bi bi-apple" aria-hidden="true"></i> iOS ↗</a>
+        <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar SIGA Web via portal MinhaUFMG"><i class="bi bi-window-stack" aria-hidden="true"></i> SIGA Web <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
+        <a href="https://play.google.com/store/apps/details?id=br.ufmg.ddp.cecom.academico.sigaufmg" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar aplicativo Siga UFMG para Android"><i class="bi bi-google-play" aria-hidden="true"></i> Android <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
+        <a href="https://apps.apple.com/br/app/siga-ufmg/id1456022680" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar aplicativo Siga UFMG para iOS"><i class="bi bi-apple" aria-hidden="true"></i> iOS <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         <a href="documentos/manual-aplicativo-siga-ufmg.pdf" target="_blank" class="cagp-store-btn" aria-label="Baixar manual oficial do Siga UFMG em PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Manual</a>
       </div>
     </article>
@@ -677,8 +712,8 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
       </div>
       <p class="cagp-app-desc">Portal integrador da Universidade. É aqui que você faz o primeiro cadastro com a Folha NIPs e acessa o SIGA Web, e-mail @ufmg.br institucional e Moodle Virtual.</p>
       <div class="cagp-app-actions">
-        <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar o portal MinhaUFMG"><i class="bi bi-browser-chrome" aria-hidden="true"></i> Portal Web ↗</a>
-        <a href="https://sistemas.ufmg.br/nips/home.seam" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Cadastrar primeiro acesso com a Folha NIPs"><i class="bi bi-key" aria-hidden="true"></i> Folha NIPs ↗</a>
+        <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar o portal MinhaUFMG"><i class="bi bi-browser-chrome" aria-hidden="true"></i> Portal Web <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
+        <a href="https://sistemas.ufmg.br/nips/home.seam" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Cadastrar primeiro acesso com a Folha NIPs"><i class="bi bi-key" aria-hidden="true"></i> Folha NIPs <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
       </div>
     </article>
 
@@ -698,9 +733,9 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
       </div>
       <p class="cagp-app-desc">Fundação Mendes Pimentel: preenchimento do questionário socioeconômico, solicitação de auxílios, moradia, consultas de saúde e cardápio diário dos RUs.</p>
       <div class="cagp-app-actions">
-        <a href="https://www.fump.ufmg.br/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar Área do Aluno FUMP"><i class="bi bi-globe2" aria-hidden="true"></i> Área do Aluno ↗</a>
-        <a href="https://play.google.com/store/apps/details?id=com.appfump" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar App Fump para Android"><i class="bi bi-phone" aria-hidden="true"></i> App FUMP ↗</a>
-        <a href="https://wa.me/5531975370115" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Falar com a FUMP no WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp FUMP</a>
+        <a href="https://www.fump.ufmg.br/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar Área do Aluno FUMP"><i class="bi bi-globe2" aria-hidden="true"></i> Área do Aluno <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
+        <a href="https://play.google.com/store/apps/details?id=com.appfump" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar App Fump para Android"><i class="bi bi-phone" aria-hidden="true"></i> App FUMP <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
+        <a href="https://wa.me/5531975370115" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Falar com a FUMP no WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp FUMP <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
       </div>
     </article>
 
@@ -720,7 +755,7 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
       </div>
       <p class="cagp-app-desc">Rastreamento colaborativo dos circulares gratuitos da UFMG em tempo real com GPS. Criado por estudante da universidade com licença livre MIT.</p>
       <div class="cagp-app-actions">
-        <a href="https://internorotas.com/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Abrir mapa do Interno Rotas ao vivo no navegador"><i class="bi bi-bus-front" aria-hidden="true"></i> Abrir Mapa ao Vivo ↗</a>
+        <a href="https://internorotas.com/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Abrir mapa do Interno Rotas ao vivo no navegador"><i class="bi bi-bus-front" aria-hidden="true"></i> Abrir Mapa ao Vivo <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
       </div>
     </article>
 
@@ -761,7 +796,7 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
       </div>
       <p class="cagp-app-desc">Acervo especializado em Ciências Humanas e Sociais, salas de estudo individuais e coletivas, empréstimo domiciliar e acesso ao catálogo online Pergamum.</p>
       <div class="cagp-app-actions">
-        <a href="https://catalogobiblioteca.ufmg.br/pergamum/biblioteca/index.php" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Consultar catálogo online Pergamum da UFMG"><i class="bi bi-journal-bookmark" aria-hidden="true"></i> Catálogo Online ↗</a>
+        <a href="https://catalogobiblioteca.ufmg.br/pergamum/biblioteca/index.php" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Consultar catálogo online Pergamum da UFMG"><i class="bi bi-journal-bookmark" aria-hidden="true"></i> Catálogo Online <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         <a href="calouros.html#guia-biblioteca" class="cagp-store-btn" aria-label="Ver orientações de uso da biblioteca">Guia de Uso →</a>
       </div>
     </article>

@@ -48,6 +48,34 @@ Todas as diretrizes, prazos e regras informados neste portal baseiam-se estritam
   <a href="#tutorial-drca" class="cagp-subnav-link"><i class="bi bi-journal-text" aria-hidden="true"></i> Tutorial DRCA</a>
 </nav>
 
+<!-- Atalhos de Alta Urgência / Documentos Mais Solicitados -->
+<div class="cagp-urgent-grid my-3">
+  <div class="cagp-urgent-card">
+    <div class="cagp-urgent-badge">Documento Mestre</div>
+    <div class="cagp-urgent-title">PPC — Projeto Pedagógico</div>
+    <div class="cagp-urgent-desc">Estrutura de 3.000h, competências e matriz curricular do curso.</div>
+    <div class="mt-2">
+      <a href="documentos/projeto-pedagogico-curso-gestao-publica-ufmg.pdf" target="_blank" class="cagp-chip"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i>Baixar PDF (3.3 MB)</a>
+    </div>
+  </div>
+  <div class="cagp-urgent-card">
+    <div class="cagp-urgent-badge">Protocolo SEI</div>
+    <div class="cagp-urgent-title">Requerimento AAC (N-20229)</div>
+    <div class="cagp-urgent-desc">Formulário oficial para integralizar até 300h de atividades complementares.</div>
+    <div class="mt-2">
+      <a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-chip"><i class="bi bi-download me-1" aria-hidden="true"></i>Baixar Formulário</a>
+    </div>
+  </div>
+  <div class="cagp-urgent-card">
+    <div class="cagp-urgent-badge">Entidade Discente</div>
+    <div class="cagp-urgent-title">Regimento Interno CAGP</div>
+    <div class="cagp-urgent-desc">Estatuto soberano de 2024 aprovado em Assembleia Geral discente.</div>
+    <div class="mt-2">
+      <a href="documentos/regimento-interno-cagp-ufmg.pdf" target="_blank" class="cagp-chip"><i class="bi bi-file-earmark-ruled me-1" aria-hidden="true"></i>Baixar Regimento</a>
+    </div>
+  </div>
+</div>
+
 <section id="filtro-documentos" class="cagp-tool-box" aria-labelledby="doc-filter-heading">
   <div class="cagp-tool-header">
     <div>
@@ -263,7 +291,7 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
         </div>
         <div class="d-flex flex-wrap gap-2">
           <a href="documentos/requerimento-mudanca-percurso-curricular-drca.pdf" target="_blank" class="cagp-form-link">Ver PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>
-          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-MUDANCA-DE-PERCURSO-CURRICULAR.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX ↗</a>
+          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-MUDANCA-DE-PERCURSO-CURRICULAR.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -274,7 +302,7 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
         </div>
         <div class="d-flex flex-wrap gap-2">
           <a href="documentos/requerimento-formacao-complementar-aberta-fca.pdf" target="_blank" class="cagp-form-link">Ver PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>
-          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-FORMACAO-COMPLEMENTAR-ABERTA-FCA.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX ↗</a>
+          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-FORMACAO-COMPLEMENTAR-ABERTA-FCA.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -285,7 +313,7 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
         </div>
         <div class="d-flex flex-wrap gap-2">
           <a href="documentos/requerimento-trancamento-parcial-matricula.pdf" target="_blank" class="cagp-form-link">Ver PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>
-          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-TRANCAMENTO-PARCIAL-DE-MATRICULA.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX ↗</a>
+          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-TRANCAMENTO-PARCIAL-DE-MATRICULA.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -296,7 +324,7 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
         </div>
         <div class="d-flex flex-wrap gap-2">
           <a href="documentos/requerimento-trancamento-total-matricula.pdf" target="_blank" class="cagp-form-link">Ver PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>
-          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-TRANCAMENTO-TOTAL-DE-MATRICULA.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX ↗</a>
+          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-TRANCAMENTO-TOTAL-DE-MATRICULA.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -314,7 +342,7 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
         </div>
         <div class="d-flex flex-wrap gap-2">
           <a href="documentos/requerimento-aproveitamento-de-estudos-colegiado.pdf" target="_blank" class="cagp-form-link">Ver PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>
-          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-APROVEITAMENTO-DE-ESTUDOS.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX ↗</a>
+          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-APROVEITAMENTO-DE-ESTUDOS.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -325,7 +353,7 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
         </div>
         <div class="d-flex flex-wrap gap-2">
           <a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-form-link">Ver PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>
-          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-INTEGRALIZACAO-DE-HORAS-POR-ATIVIDADE-ACADEMICA-COMPLEMENTAR-N-20229.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX ↗</a>
+          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-INTEGRALIZACAO-DE-HORAS-POR-ATIVIDADE-ACADEMICA-COMPLEMENTAR-N-20229.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -336,7 +364,7 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
         </div>
         <div class="d-flex flex-wrap gap-2">
           <a href="documentos/termo-aceite-orientador-tcc.pdf" target="_blank" class="cagp-form-link" aria-label="Visualizar Termo de Aceite de Orientador de TCC em PDF">Ver PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>
-          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/TERMO-DE-ACEITE-ORIENTADOR-TCC.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX ↗</a>
+          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/TERMO-DE-ACEITE-ORIENTADOR-TCC.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -347,7 +375,7 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
         </div>
         <div class="d-flex flex-wrap gap-2">
           <a href="documentos/requerimento-inscricao-colacao-de-grau-colegiado.pdf" target="_blank" class="cagp-form-link">Ver PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>
-          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-INSCRICAO-A-COLACAO-DE-GRAU.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX ↗</a>
+          <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/REQUERIMENTO-DE-INSCRICAO-A-COLACAO-DE-GRAU.docx" target="_blank" rel="noopener noreferrer" class="cagp-form-link">DOCX <i class="bi bi-box-arrow-up-right cagp-external-icon" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -362,6 +390,21 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Empty State Acolhedor de Busca de Documentos -->
+<div id="doc-empty-state" class="cagp-empty-state mb-4" style="display: none;" role="status">
+  <div class="cagp-empty-icon"><i class="bi bi-file-earmark-x" aria-hidden="true"></i></div>
+  <h4 class="h5 mb-1">NENHUM DOCUMENTO ENCONTRADO</h4>
+  <p class="small text-muted mb-3">Nenhum ato normativo, percurso ou formulário corresponde ao termo pesquisado.</p>
+  <div class="cagp-empty-tips small mb-3">
+    <strong>💡 Dica do Acervo:</strong> Você pode consultar os processos e formulários padronizados diretamente no SEI da UFMG ou verificar o modelo de aproveitamento no CEAG da FAFICH (Sala F-2033).
+  </div>
+  <div>
+    <button type="button" id="btn-doc-empty-reset" class="cagp-chip">
+      <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Limpar busca e ver todos os documentos
+    </button>
   </div>
 </div>
 ```
@@ -491,6 +534,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.getElementById('doc-search-input');
   const catBtns = document.querySelectorAll('[data-doc-cat]');
   const statusEl = document.getElementById('doc-filter-status');
+  const emptyState = document.getElementById('doc-empty-state');
+  const btnEmptyReset = document.getElementById('btn-doc-empty-reset');
   let activeCat = 'all';
 
   function normalize(str) {
@@ -513,6 +558,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (statusEl) {
       statusEl.textContent = 'Exibindo ' + visible + ' de ' + items.length + ' itens';
     }
+    if (emptyState) {
+      emptyState.style.display = (visible === 0) ? 'block' : 'none';
+    }
   }
 
   catBtns.forEach(function (btn) {
@@ -526,6 +574,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (searchInput) {
     searchInput.addEventListener('input', applyDocFilter);
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        applyDocFilter();
+      }
+    });
+  }
+
+  if (btnEmptyReset) {
+    btnEmptyReset.addEventListener('click', function () {
+      activeCat = 'all';
+      catBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-doc-cat') === 'all' ? 'true' : 'false'); });
+      if (searchInput) searchInput.value = '';
+      applyDocFilter();
+    });
   }
 });
 </script>
