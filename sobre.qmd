@@ -79,14 +79,14 @@ O símbolo do CAGP é diretamente inspirado no monumento histórico **"Os Candan
 
 ::: {.row .g-4 .align-items-center .my-3}
 ::: {.col-md-4 .text-center}
-::: {.cagp-card}
+::: {.cagp-card .cagp-surface-timbre}
 ![](imagens/os-candangos.jpg){fig-alt="Fotografia do monumento Os Candangos de Bruno Giorgi na Praça dos Três Poderes em Brasília" style="height: auto; max-width: 100%;"}
 <p class="text-muted small mt-2 mb-0"><strong>Os Candangos (1959)</strong><br>Monumento aos Construtores de Brasília</p>
 :::
 :::
 
 ::: {.col-md-8}
-::: {.cagp-card}
+::: {.cagp-card .cagp-surface-timbre}
 ### Semiótica e Significado Institucional
 - **Trabalho Coletivo e Soberania Popular:** A união das duas figuras em traço vertical ascendente simboliza o esforço coletivo de construção da sociedade e a centralidade dos cidadãos no interesse público.
 - **Prumo da Administração Pública:** A haste horizontal central representa o equilíbrio, a transparência, a equidade e a ética republicana que devem orientar o gestor público e a tomada de decisão estatal.

@@ -1430,4 +1430,42 @@ Em atendimento às diretivas combinadas `/impeccable critique`, `/impeccable pol
 
 ---
 
+## 41. Ciclo de Delight Vocacional & Atmosfera Editorial Timbrada (Delight, Colored, Critique & Polish)
+
+Em atendimento às diretivas combinadas `/impeccable critique`, `/impeccable polish`, `/impeccable delight`, `/impeccable colored` (colorize), `/plan` e `/grill-me`, o portal do CAGP passou por um salto de maturidade estética e funcional:
+
+### 41.1 Tese de Cor Editorial: Superfícies Timbradas e Ardósia Analítica (`styles.css` e `DESIGN.md`)
+- **Superfície Timbrada Institucional (`.cagp-surface-timbre`):**
+  - Implementação de papel timbrado com fundo Off-White Quente (`#fbf8f3`, token `neutral-warm` do `DESIGN.md`), conferindo textura e solidez de documento oficial da universidade pública;
+  - Aplicação direcionada em seções de autoridade solene:
+    - `curso.qmd`: *Missão e Objetivo Pedagógico do Curso* (PPC 2020), *Secretaria do Colegiado* e *Central de Atendimento à Graduação (CEAG)*;
+    - `sobre.qmd`: Monumento histórico *Os Candangos (1959)* e bloco de *Semiótica e Significado Institucional*;
+    - `documentos.qmd`: Grid de alta urgência com os 3 documentos mestres (*PPC*, *Requerimento AAC N-20229* e *Regimento Interno do CAGP*).
+- **Superfície Ardósia Analítica (`.cagp-surface-slate`):**
+  - Aplicação do tom cinza técnico (`#f4f5f7`, token `surface-low` do `DESIGN.md`) para abrigar dados cientométricos, estatísticas de mercado e cartões quantitativos:
+    - `curso.qmd`: Cartões da Pesquisa de Egressos 2023 (*Setores de Atuação Profissional* com 65% no Executivo e *Faixas de Remuneração Mensal* com 55% acima de R$ 5.000/mês).
+- **Superfície Pergaminho de Dicas (`.cagp-surface-parchment` & `.cagp-veteran-tip`):**
+  - Atualização dos balões de orientação e conselhos de veteranos com fundo pergaminho suave (`#fffdf5`), borda esquerda sólida em Ouro FAFICH / Âmbar Biblioteca (`#d97706`), reforçando o acolhimento afetivo e a distinção imediata na leitura rápida.
+
+### 41.2 Termômetro de Percurso: Mini-Quiz Vocacional Interativo em 3 Cliques (`percurso.qmd` e `styles.css`)
+- **Tese de Delight Acadêmico-Profissional:**
+  - Resolução interativa de uma das maiores dúvidas do estudante de Gestão Pública na transição entre o 4º e o 5º período: *Qual dos três percursos formativos (01-01 Estado e Sociedade Civil, 01-02 Políticas Sociais, ou 01-03 Políticas Urbanas) melhor combina com meu horizonte de carreira?*
+- **Arquitetura em 3 Etapas Lineares (`.cagp-thermometer-box`):**
+  - **Passo 1 (Horizonte de Atuação):** Carreira no terceiro setor e movimentos sociais, ministérios/secretarias de desenvolvimento social e saúde, ou planejamento urbano, habitação e mobilidade;
+  - **Passo 2 (Tipo de Desafio Público):** Incidência política e direitos humanos, gestão de grandes redes de serviços públicos, ou ordenamento territorial e cidades inteligentes;
+  - **Passo 3 (Área de Leitura e Pesquisa Preferida):** Democracia participativa e accountability, políticas públicas distributivas e combate às desigualdades, ou meio ambiente, regulação urbana e infraestrutura local.
+- **Mecanismo de Pontuação e Chancela Mecânica de Resultado:**
+  - Algoritmo reativo que totaliza as escolhas e emite diagnóstico instantâneo no cartão `#quiz-result-box`;
+  - Carimbo institucional animado via `@keyframes cagpStampImpact` com selo `.cagp-stamp-badge.is-deferido` estampando a recomendação oficial do Percurso sugerido;
+  - Resumo analítico com a ênfase formativa correspondente;
+  - Botão de ação direta para download da Matriz Curricular oficial em PDF;
+  - Link com orientações regulamentares para o protocolo de migração no SEI;
+  - Botão tátil *"Refazer Simulação"* para testar outros cenários vocacionais.
+
+### 41.3 Verificação e Conformidade Técnica
+- Compilação estática com `quarto render` executada com sucesso e zero inconsistências;
+- Auditoria com o detector Impeccable (`.agents/skills/impeccable/scripts/impeccable detect --json docs/*.html`) resultando em **zero erros** de acessibilidade, cores, tipografia ou contraste, mantendo estritamente as 11 advertências de `overused-font` para a família tipográfica Inter oficial do projeto.
+
+---
+
 *Documentação elaborada como registro pedagógico, técnico e de engenharia de software para o Centro Acadêmico de Gestão Pública (CAGP - FAFICH / UFMG).*

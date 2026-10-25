@@ -311,6 +311,109 @@ Opções de Formação
 <section id="simulador-percurso" class="level2">
 <h2 class="anchored" data-anchor-id="simulador-percurso"><i class="bi bi-signpost-split" aria-hidden="true"></i> Os Três Percursos Curriculares Oficiais</h2>
 <p>Conforme o <strong>Art. 3º do Regulamento do Curso</strong>, o estudante pode direcionar sua trajetória acadêmica através de 3 modalidades formais de formação. Explore abaixo os detalhes de cada percurso ou consulte o quadro comparativo consolidado:</p>
+<!-- Termômetro de Percurso (Mini-Localizador em 3 Cliques) -->
+<div class="cagp-thermometer-box mb-4" id="cagp-thermometer">
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-dark">
+    <div class="d-flex align-items-center gap-2">
+      <span class="cagp-badge cagp-badge-red"><i class="bi bi-thermometer-half me-1"></i> Termômetro Vocacional</span>
+      <h3 class="h6 fw-bold mb-0 text-uppercase anchored">Descubra seu Percurso em 3 Cliques</h3>
+    </div>
+    <button type="button" class="cagp-chip py-1 px-2" id="quiz-reset-btn" style="font-size:0.8rem;"><i class="bi bi-arrow-counterclockwise me-1"></i> Reiniciar Teste</button>
+  </div>
+
+  <!-- Pergunta 1 -->
+  <div class="cagp-quiz-step is-active" data-quiz-step="1">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <span class="small fw-bold text-muted text-uppercase">Pergunta 1 de 3 • Vocação &amp; Carreira</span>
+      <span class="cagp-badge cagp-badge-dark">Etapa 1/3</span>
+    </div>
+    <div class="cagp-quiz-q-title">O que mais atrai você após a conclusão da graduação?</div>
+    <div class="cagp-quiz-options">
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-01">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-bank" aria-hidden="true"></i> Concurso / Gestão Geral</div>
+        <p class="cagp-quiz-btn-desc">Quero atuar em ministérios, secretarias de estado ou prefeituras na gestão e coordenação ampla de políticas governamentais.</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-02">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-diagram-3" aria-hidden="true"></i> Interdisciplinaridade / 3º Setor</div>
+        <p class="cagp-quiz-btn-desc">Quero cruzar a gestão pública com Meio Ambiente, Direitos Humanos, Direito ou outras faculdades da UFMG.</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-03">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-mortarboard" aria-hidden="true"></i> Mestrado / Carreira Acadêmica</div>
+        <p class="cagp-quiz-btn-desc">Quero seguir no PPGCP (Mestrado/Doutorado), focar em análise quantitativa de dados e ser pesquisador(a) ou professor(a).</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Pergunta 2 -->
+  <div class="cagp-quiz-step" data-quiz-step="2">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <span class="small fw-bold text-muted text-uppercase">Pergunta 2 de 3 • Matriz Curricular</span>
+      <span class="cagp-badge cagp-badge-dark">Etapa 2/3</span>
+    </div>
+    <div class="cagp-quiz-q-title">Como você prefere preencher suas horas flexíveis da graduação?</div>
+    <div class="cagp-quiz-options">
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-01">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-collection" aria-hidden="true"></i> Máxima Liberdade de Escolha</div>
+        <p class="cagp-quiz-btn-desc">Prefiro escolher matérias livremente no catálogo do DCP, projetos de extensão da FAFICH e horas complementares (AAC).</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-02">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-intersect" aria-hidden="true"></i> Bloco de 300h em Outra Área</div>
+        <p class="cagp-quiz-btn-desc">Prefiro certificar uma Formação Transversal (300h) ou um pacote de disciplinas em outro curso (Formação Aberta - FCA).</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-03">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-journal-code" aria-hidden="true"></i> Matérias da Pós-Graduação</div>
+        <p class="cagp-quiz-btn-desc">Prefiro cursar disciplinas avançadas do Mestrado em Ciência Política (DCP) e pesquisas avançadas de metodologia.</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Pergunta 3 -->
+  <div class="cagp-quiz-step" data-quiz-step="3">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <span class="small fw-bold text-muted text-uppercase">Pergunta 3 de 3 • Momento Acadêmico</span>
+      <span class="cagp-badge cagp-badge-dark">Etapa 3/3</span>
+    </div>
+    <div class="cagp-quiz-q-title">Em qual etapa do curso você se encontra atualmente?</div>
+    <div class="cagp-quiz-options">
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-01">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-backpack" aria-hidden="true"></i> Início de Curso (1º ao 4ºP)</div>
+        <p class="cagp-quiz-btn-desc">Estou nos semestres iniciais cumprindo as matérias fundamentais do ciclo obrigatório.</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-02">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-compass" aria-hidden="true"></i> Meio de Curso (5º ao 7ºP)</div>
+        <p class="cagp-quiz-btn-desc">Estou no momento ideal para planejar a migração curricular formal junto ao Colegiado do Curso.</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-03">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Reta Final / Formando (8º ao 10ºP)</div>
+        <p class="cagp-quiz-btn-desc">Estou focado(a) no cumprimento de TCC, estágio supervisionado e colação de grau.</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Painel de Resultado -->
+  <div class="cagp-quiz-result-box" id="quiz-result-box">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+      <span id="quiz-result-stamp" class="cagp-stamp-badge is-deferido"><i class="bi bi-patch-check-fill me-1" aria-hidden="true"></i> RECOMENDAÇÃO: PERCURSO 01-01</span>
+      <span class="small fw-bold text-muted">Resultado Personalizado do Teste</span>
+    </div>
+    <h4 class="h5 fw-bold text-uppercase mb-2 anchored" id="quiz-result-title">Percurso 01-01 • Núcleo Específico e Geral</h4>
+    <p class="small text-muted mb-3" id="quiz-result-desc">
+      Com base nas suas preferências, o Percurso 01-01 é o mais indicado. Ele confere a você máxima flexibilidade e autonomia para escolher suas optativas em qualquer área do DCP e validar horas de extensão e AAC com total liberdade.
+    </p>
+    <div class="d-flex flex-wrap gap-2">
+      <a id="quiz-pdf-link" href="documentos/percurso-bacharelado-nucleo-geral.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">
+        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Baixar Matriz Curricular Oficial (PDF)
+      </a>
+      <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline">
+        <i class="bi bi-pencil-square me-1" aria-hidden="true"></i> Ver Requerimento de Mudança de Percurso
+      </a>
+      <button type="button" class="cagp-doc-btn cagp-doc-btn-outline" id="quiz-retake-btn">
+        <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Refazer Teste
+      </button>
+    </div>
+  </div>
+</div>
+
 <section class="cagp-tool-box" aria-labelledby="track-finder-title">
   <div class="cagp-tool-header">
     <div>
@@ -2413,6 +2516,88 @@ Redação final do TCC, defesa perante banca examinadora oficial e colação de 
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  /* 0. Termômetro de Percurso ("Descubra seu Percurso em 3 Cliques") */
+  const quizSteps = Array.from(document.querySelectorAll('[data-quiz-step]'));
+  const quizBtns = document.querySelectorAll('[data-quiz-choice]');
+  const quizResultBox = document.getElementById('quiz-result-box');
+  const quizResultStamp = document.getElementById('quiz-result-stamp');
+  const quizResultTitle = document.getElementById('quiz-result-title');
+  const quizResultDesc = document.getElementById('quiz-result-desc');
+  const quizPdfLink = document.getElementById('quiz-pdf-link');
+  const quizResetBtn = document.getElementById('quiz-reset-btn');
+  const quizRetakeBtn = document.getElementById('quiz-retake-btn');
+
+  let currentStep = 1;
+  const userChoices = [];
+
+  function resetQuiz() {
+    currentStep = 1;
+    userChoices.length = 0;
+    quizSteps.forEach(function (step) {
+      const stepNum = parseInt(step.getAttribute('data-quiz-step'), 10);
+      step.classList.toggle('is-active', stepNum === 1);
+    });
+    if (quizResultBox) quizResultBox.style.display = 'none';
+  }
+
+  if (quizResetBtn) quizResetBtn.addEventListener('click', resetQuiz);
+  if (quizRetakeBtn) quizRetakeBtn.addEventListener('click', resetQuiz);
+
+  quizBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const choice = btn.getAttribute('data-quiz-choice');
+      userChoices.push(choice);
+
+      if (currentStep < 3) {
+        currentStep++;
+        quizSteps.forEach(function (step) {
+          const stepNum = parseInt(step.getAttribute('data-quiz-step'), 10);
+          step.classList.toggle('is-active', stepNum === currentStep);
+        });
+      } else {
+        quizSteps.forEach(function (step) { step.classList.remove('is-active'); });
+        computeRecommendation();
+      }
+    });
+  });
+
+  function computeRecommendation() {
+    if (!quizResultBox) return;
+    const scores = { '01-01': 0, '01-02': 0, '01-03': 0 };
+    userChoices.forEach(function (c) {
+      if (scores[c] !== undefined) scores[c]++;
+    });
+
+    let topChoice = '01-01';
+    if (scores['01-02'] > scores[topChoice]) topChoice = '01-02';
+    if (scores['01-03'] > scores[topChoice]) topChoice = '01-03';
+
+    if (topChoice === '01-01') {
+      if (quizResultStamp) quizResultStamp.innerHTML = '<i class="bi bi-patch-check-fill me-1" aria-hidden="true"></i> RECOMENDAÇÃO: PERCURSO 01-01';
+      if (quizResultTitle) quizResultTitle.textContent = 'Percurso 01-01 • Núcleo Específico e Geral';
+      if (quizResultDesc) quizResultDesc.textContent = 'Com base nas suas preferências, o Percurso 01-01 é o mais indicado. Ele confere a você máxima flexibilidade e autonomia para escolher suas optativas em qualquer área do DCP e validar horas de extensão e AAC com total liberdade.';
+      if (quizPdfLink) quizPdfLink.href = 'documentos/percurso-bacharelado-nucleo-geral.pdf';
+    } else if (topChoice === '01-02') {
+      if (quizResultStamp) quizResultStamp.innerHTML = '<i class="bi bi-intersect me-1" aria-hidden="true"></i> RECOMENDAÇÃO: PERCURSO 01-02';
+      if (quizResultTitle) quizResultTitle.textContent = 'Percurso 01-02 • Núcleo Complementar (Transversal / Aberta)';
+      if (quizResultDesc) quizResultDesc.textContent = 'Seu perfil é interdisciplinar! O Percurso 01-02 permite integralizar 300h em uma Formação Transversal oficial da UFMG (Direitos Humanos, Meio Ambiente, Relações Étnico-Raciais) ou em Formação Complementar Aberta (FCA) em outra faculdade.';
+      if (quizPdfLink) quizPdfLink.href = 'documentos/percurso-bacharelado-nucleo-complementar.pdf';
+    } else {
+      if (quizResultStamp) quizResultStamp.innerHTML = '<i class="bi bi-mortarboard-fill me-1" aria-hidden="true"></i> RECOMENDAÇÃO: PERCURSO 01-03';
+      if (quizResultTitle) quizResultTitle.textContent = 'Percurso 01-03 • Núcleo Avançado (Pesquisa & Pós-Graduação)';
+      if (quizResultDesc) quizResultDesc.textContent = 'Vocação para pesquisa e pós-graduação! O Percurso 01-03 é voltado para quem deseja seguir a carreira acadêmica, cursando disciplinas diretamente no Programa de Pós-Graduação em Ciência Política (PPGCP - Conceito 7 CAPES) e laboratórios de metodologia.';
+      if (quizPdfLink) quizPdfLink.href = 'documentos/percurso-bacharelado-nucleo-avancado.pdf';
+    }
+
+    quizResultBox.style.display = 'block';
+    const stamp = quizResultBox.querySelector('.cagp-stamp-badge');
+    if (stamp) {
+      stamp.style.animation = 'none';
+      stamp.offsetHeight; // forçar reflow
+      stamp.style.animation = '';
+    }
+  }
+
   /* 1. Simulador de Percurso (01-01, 01-02, 01-03) */
   const trackBtns = document.querySelectorAll('[data-track-choice]');
   trackBtns.forEach(function (btn) {

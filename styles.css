@@ -4028,8 +4028,8 @@ div.callout-tip .callout-toggle::before {
 /* 5. Dica de Veterano (Cards e Pílulas) */
 .cagp-veteran-tip {
   display: block;
-  background-color: var(--cagp-gray-100, #f4f5f7);
-  border-left: 4px solid var(--cagp-gold, #e8a317);
+  background-color: #fffdf5;
+  border-left: 4px solid #d97706;
   border-top: 1px solid var(--cagp-dark, #111111);
   border-right: 1px solid var(--cagp-dark, #111111);
   border-bottom: 1px solid var(--cagp-dark, #111111);
@@ -4332,6 +4332,141 @@ div.callout-tip .callout-toggle::before {
     animation: none !important;
     transform: none !important;
   }
+}
+
+/* ==========================================================================
+   Superfícies Editoriais e Documentais (Atmosfera Brite)
+   ========================================================================== */
+
+.cagp-surface-timbre {
+  background-color: var(--cagp-warm-surface, #fbf8f3) !important;
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-surface-slate {
+  background-color: var(--cagp-surface-low, #f4f5f7) !important;
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-surface-parchment {
+  background-color: #fffdf5 !important;
+  border: 2px solid #d97706 !important;
+  box-shadow: 4px 4px 0 #d97706 !important;
+}
+
+/* ==========================================================================
+   Termômetro de Percurso (Mini-Localizador Vocacional em 3 Cliques)
+   ========================================================================== */
+
+.cagp-thermometer-box {
+  background-color: var(--cagp-white, #ffffff);
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cagp-quiz-step {
+  display: none;
+}
+
+.cagp-quiz-step.is-active {
+  display: block;
+  animation: cagpDrawerSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cagp-quiz-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid var(--cagp-dark, #111111);
+}
+
+.cagp-quiz-q-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  color: var(--cagp-dark, #111111);
+}
+
+.cagp-quiz-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .cagp-quiz-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cagp-quiz-btn {
+  text-align: left;
+  background-color: var(--cagp-white, #ffffff);
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  padding: 1rem 0.95rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.cagp-quiz-btn:hover {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-quiz-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-quiz-btn.is-selected {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border-color: var(--cagp-red, #9e2424);
+  box-shadow: 3px 3px 0 var(--cagp-red, #9e2424);
+}
+
+.cagp-quiz-btn-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--cagp-dark, #111111);
+}
+
+.cagp-quiz-btn-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--cagp-text-muted, #4b5563);
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
+.cagp-quiz-result-box {
+  display: none;
+  background-color: var(--cagp-warm-surface, #fbf8f3);
+  border: 3px solid var(--cagp-dark, #111111);
+  box-shadow: 5px 5px 0 var(--cagp-dark, #111111);
+  padding: 1.5rem;
+  animation: cagpSealUnlock 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ==========================================================================
