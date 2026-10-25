@@ -79,6 +79,18 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#9E2424" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CAGP UFMG">
+<link rel="apple-touch-icon" sizes="180x180" href="imagens/pwa/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="imagens/pwa/pwa-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="imagens/pwa/pwa-512x512.png">
+<meta name="application-name" content="CAGP UFMG">
+<meta name="msapplication-TileColor" content="#9E2424">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -215,6 +227,10 @@ ul.task-list li input[type="checkbox"] {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">O Centro Acadêmico</h1></header>
+<div class="cagp-skip-links">
+  <a href="#quarto-document-content" class="cagp-skip-link">Pular para o conteúdo principal</a>
+  <a href="#cagp-a11y-trigger" class="cagp-skip-link">Pular para opções de acessibilidade</a>
+</div>
 
 <header id="title-block-header">
 
@@ -888,6 +904,638 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.removeChild(ta);
       copyAction();
     }
+  });
+})();
+</script>
+<!-- Suite Universal de Acessibilidade CAGP UFMG -->
+<div id="cagp-reading-ruler" class="cagp-reading-ruler" aria-hidden="true"></div>
+
+<button type="button" id="cagp-a11y-trigger" class="cagp-a11y-trigger" aria-label="Abrir opções de acessibilidade (Alt + A)" aria-haspopup="dialog" aria-expanded="false" aria-controls="cagp-a11y-panel" title="Opções de Acessibilidade (Atalho: Alt + A)">
+  <i class="bi bi-universal-access" aria-hidden="true"></i>
+  <span class="cagp-a11y-trigger-text">Acessibilidade</span>
+</button>
+
+<div id="cagp-a11y-backdrop" class="cagp-a11y-backdrop" aria-hidden="true"></div>
+
+<div id="cagp-a11y-panel" class="cagp-a11y-panel" role="dialog" aria-modal="true" aria-labelledby="cagp-a11y-title" aria-describedby="cagp-a11y-intro-desc" hidden="">
+  <div class="cagp-a11y-header">
+    <div class="cagp-a11y-header-title">
+      <i class="bi bi-universal-access cagp-a11y-header-icon" aria-hidden="true"></i>
+      <h2 id="cagp-a11y-title" class="cagp-a11y-title">Acessibilidade CAGP</h2>
+    </div>
+    <button type="button" id="cagp-a11y-close" class="cagp-a11y-close" aria-label="Fechar painel de acessibilidade (Esc)">
+      <i class="bi bi-x-lg" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="cagp-a11y-body">
+    <p id="cagp-a11y-intro-desc" class="cagp-a11y-intro">
+      Personalize a tipografia, contraste e ferramentas visuais de leitura do portal. Suas preferências são salvas automaticamente neste navegador.
+    </p>
+
+    <!-- 1. Tamanho do Texto -->
+    <fieldset class="cagp-a11y-group">
+      <legend class="cagp-a11y-legend">
+        <i class="bi bi-fonts me-1" aria-hidden="true"></i> Tamanho do Texto
+      </legend>
+      <p class="cagp-a11y-desc">Ajuste o tamanho de exibição do texto em todas as páginas.</p>
+      <div class="cagp-a11y-stepper" role="group" aria-label="Escala de tamanho da fonte">
+        <button type="button" class="cagp-a11y-btn-font" data-font-step="sm" aria-label="Reduzir texto para 90%">A-</button>
+        <button type="button" class="cagp-a11y-btn-font is-active" data-font-step="md" aria-label="Texto padrão em 100%">A</button>
+        <button type="button" class="cagp-a11y-btn-font" data-font-step="lg" aria-label="Aumentar texto para 115%">A+</button>
+        <button type="button" class="cagp-a11y-btn-font" data-font-step="xl" aria-label="Ampliar texto para 130%">A++</button>
+      </div>
+      <div class="cagp-a11y-status-pill" id="cagp-a11y-font-indicator" aria-live="polite">Nível: 100% (Padrão)</div>
+    </fieldset>
+
+    <!-- 2. Modo Especial para Dislexia -->
+    <fieldset class="cagp-a11y-group">
+      <legend class="cagp-a11y-legend">
+        <i class="bi bi-book-half me-1" aria-hidden="true"></i> Leitura Amigável para Dislexia
+      </legend>
+      <p class="cagp-a11y-desc">Aplica tipografia com base pesada, maior espaçamento entre caracteres e palavras, entrelinha ampla (1.85) e alinhamento estrito à esquerda para evitar saltos visuais.</p>
+      <label class="cagp-a11y-switch-label" for="cagp-a11y-toggle-dyslexia">
+        <input type="checkbox" id="cagp-a11y-toggle-dyslexia" class="cagp-a11y-checkbox">
+        <span class="cagp-a11y-switch-slider"></span>
+        <span class="cagp-a11y-switch-text">Ativar tipografia &amp; espaçamento para dislexia</span>
+      </label>
+    </fieldset>
+
+    <!-- 3. Régua de Leitura & Foco Visual -->
+    <fieldset class="cagp-a11y-group">
+      <legend class="cagp-a11y-legend">
+        <i class="bi bi-distribute-vertical me-1" aria-hidden="true"></i> Régua Visual de Foco
+      </legend>
+      <p class="cagp-a11y-desc">Cria uma faixa de foco que acompanha o cursor do mouse ou toque, destacando a linha lida e suavizando o restante da tela (recomendado para TDAH e dislexia).</p>
+      <label class="cagp-a11y-switch-label" for="cagp-a11y-toggle-ruler">
+        <input type="checkbox" id="cagp-a11y-toggle-ruler" class="cagp-a11y-checkbox">
+        <span class="cagp-a11y-switch-slider"></span>
+        <span class="cagp-a11y-switch-text">Ativar régua guia de leitura</span>
+      </label>
+    </fieldset>
+
+    <!-- 4. Alto Contraste -->
+    <fieldset class="cagp-a11y-group">
+      <legend class="cagp-a11y-legend">
+        <i class="bi bi-circle-half me-1" aria-hidden="true"></i> Modo em Alto Contraste
+      </legend>
+      <p class="cagp-a11y-desc">Inverte para fundo preto nanquim puro (#000000) e elementos em amarelo canário (#ffff00), atingindo razão de contraste superior a 15:1 sem reflexos ou sombras.</p>
+      <label class="cagp-a11y-switch-label" for="cagp-a11y-toggle-contrast">
+        <input type="checkbox" id="cagp-a11y-toggle-contrast" class="cagp-a11y-checkbox">
+        <span class="cagp-a11y-switch-slider"></span>
+        <span class="cagp-a11y-switch-text">Ativar modo alto contraste (Preto e Amarelo)</span>
+      </label>
+    </fieldset>
+
+    <!-- 5. Guia Rápido de Teclado -->
+    <div class="cagp-a11y-shortcuts-card">
+      <div class="cagp-a11y-shortcuts-header">
+        <i class="bi bi-keyboard me-1" aria-hidden="true"></i> Navegação por Teclado
+      </div>
+      <ul class="cagp-a11y-shortcuts-list">
+        <li><kbd>Alt</kbd> + <kbd>A</kbd>: Abrir ou fechar este painel</li>
+        <li><kbd>Tab</kbd> / <kbd>Shift+Tab</kbd>: Navegar entre as opções</li>
+        <li><kbd>Esc</kbd>: Fechar este painel e retornar à página</li>
+      </ul>
+      <a href="faq.html#acessibilidade" class="cagp-a11y-link-more">
+        <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i> Consultar compromisso de acessibilidade do CAGP
+      </a>
+    </div>
+  </div>
+
+  <div class="cagp-a11y-footer">
+    <button type="button" id="cagp-a11y-reset" class="cagp-a11y-btn-reset">
+      <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Restaurar Padrões
+    </button>
+    <button type="button" id="cagp-a11y-done" class="cagp-a11y-btn-done">
+      <i class="bi bi-check2 me-1" aria-hidden="true"></i> Salvar e Fechar
+    </button>
+  </div>
+</div>
+
+<div id="cagp-a11y-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  const STORAGE_KEY = 'cagp_a11y_prefs';
+  const FONT_LEVELS = {
+    sm: { label: '90% (Reduzido)', scale: 'sm' },
+    md: { label: '100% (Padrão)', scale: 'md' },
+    lg: { label: '115% (Aumentado)', scale: 'lg' },
+    xl: { label: '130% (Ampliado)', scale: 'xl' }
+  };
+
+  const defaultPrefs = {
+    font: 'md',
+    dyslexia: false,
+    ruler: false,
+    contrast: 'normal'
+  };
+
+  let currentPrefs = Object.assign({}, defaultPrefs);
+
+  function loadPrefs() {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (parsed && typeof parsed === 'object') {
+          currentPrefs = Object.assign({}, defaultPrefs, parsed);
+        }
+      }
+    } catch (e) {
+      console.warn('CAGP A11y: Erro ao carregar preferências do localStorage', e);
+    }
+  }
+
+  function savePrefs() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(currentPrefs));
+    } catch (e) {
+      console.warn('CAGP A11y: Erro ao salvar preferências no localStorage', e);
+    }
+  }
+
+  const announcer = document.getElementById('cagp-a11y-announcer');
+  let announceTimer = null;
+  function announce(message) {
+    if (!announcer) return;
+    clearTimeout(announceTimer);
+    announcer.textContent = '';
+    announceTimer = setTimeout(function () {
+      announcer.textContent = message;
+    }, 120);
+  }
+
+  const root = document.documentElement;
+  const rulerEl = document.getElementById('cagp-reading-ruler');
+  const triggerBtn = document.getElementById('cagp-a11y-trigger');
+  const panel = document.getElementById('cagp-a11y-panel');
+  const backdrop = document.getElementById('cagp-a11y-backdrop');
+  const closeBtn = document.getElementById('cagp-a11y-close');
+  const doneBtn = document.getElementById('cagp-a11y-done');
+  const resetBtn = document.getElementById('cagp-a11y-reset');
+
+  const fontIndicator = document.getElementById('cagp-a11y-font-indicator');
+  const fontBtns = document.querySelectorAll('.cagp-a11y-btn-font');
+  const toggleDyslexia = document.getElementById('cagp-a11y-toggle-dyslexia');
+  const toggleRuler = document.getElementById('cagp-a11y-toggle-ruler');
+  const toggleContrast = document.getElementById('cagp-a11y-toggle-contrast');
+
+  function applyPrefs(silent) {
+    // 1. Fonte
+    root.setAttribute('data-a11y-font', currentPrefs.font);
+    fontBtns.forEach(function (btn) {
+      const step = btn.getAttribute('data-font-step');
+      if (step === currentPrefs.font) {
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+      } else {
+        btn.classList.remove('is-active');
+        btn.setAttribute('aria-pressed', 'false');
+      }
+    });
+    if (fontIndicator && FONT_LEVELS[currentPrefs.font]) {
+      fontIndicator.textContent = 'Nível: ' + FONT_LEVELS[currentPrefs.font].label;
+    }
+
+    // 2. Dislexia
+    if (currentPrefs.dyslexia) {
+      root.setAttribute('data-a11y-dyslexia', 'true');
+      if (toggleDyslexia) toggleDyslexia.checked = true;
+    } else {
+      root.removeAttribute('data-a11y-dyslexia');
+      if (toggleDyslexia) toggleDyslexia.checked = false;
+    }
+
+    // 3. Régua de leitura
+    if (currentPrefs.ruler) {
+      root.setAttribute('data-a11y-ruler', 'true');
+      if (toggleRuler) toggleRuler.checked = true;
+      if (rulerEl) rulerEl.style.display = 'block';
+    } else {
+      root.removeAttribute('data-a11y-ruler');
+      if (toggleRuler) toggleRuler.checked = false;
+      if (rulerEl) rulerEl.style.display = 'none';
+    }
+
+    // 4. Alto Contraste
+    if (currentPrefs.contrast === 'high') {
+      root.setAttribute('data-a11y-contrast', 'high');
+      if (toggleContrast) toggleContrast.checked = true;
+    } else {
+      root.removeAttribute('data-a11y-contrast');
+      if (toggleContrast) toggleContrast.checked = false;
+    }
+
+    savePrefs();
+  }
+
+  // Régua de leitura: rastrear cursor suavemente
+  function onPointerMove(e) {
+    if (!currentPrefs.ruler || !rulerEl) return;
+    const clientY = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+    rulerEl.style.top = clientY + 'px';
+  }
+  window.addEventListener('mousemove', onPointerMove, { passive: true });
+  window.addEventListener('touchmove', onPointerMove, { passive: true });
+
+  // Abertura / Fechamento do Painel
+  let previousActiveElement = null;
+
+  function trapFocus(e) {
+    if (panel.hasAttribute('hidden')) return;
+    const focusable = panel.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+  }
+  panel.addEventListener('keydown', trapFocus);
+
+  function openPanel() {
+    previousActiveElement = document.activeElement;
+    panel.removeAttribute('hidden');
+    backdrop.classList.add('is-open');
+    triggerBtn.setAttribute('aria-expanded', 'true');
+    panel.classList.add('is-open');
+
+    // Foco inicial no botão fechar ou título
+    if (closeBtn) closeBtn.focus();
+    announce('Painel de acessibilidade aberto. Pressione Escape para fechar a qualquer momento.');
+  }
+
+  function closePanel() {
+    panel.setAttribute('hidden', '');
+    backdrop.classList.remove('is-open');
+    triggerBtn.setAttribute('aria-expanded', 'false');
+    panel.classList.remove('is-open');
+
+    if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+      previousActiveElement.focus();
+    } else if (triggerBtn) {
+      triggerBtn.focus();
+    }
+    announce('Painel de acessibilidade fechado.');
+  }
+
+  if (triggerBtn) {
+    triggerBtn.addEventListener('click', function () {
+      if (panel.hasAttribute('hidden')) {
+        openPanel();
+      } else {
+        closePanel();
+      }
+    });
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closePanel);
+  if (doneBtn) doneBtn.addEventListener('click', closePanel);
+  if (backdrop) backdrop.addEventListener('click', closePanel);
+
+  // Garantir que os skip links fiquem no topo absoluto do body para navegação imediata por teclado
+  document.addEventListener('DOMContentLoaded', function () {
+    const skipLinks = document.querySelector('.cagp-skip-links');
+    if (skipLinks && document.body.firstElementChild !== skipLinks) {
+      document.body.prepend(skipLinks);
+    }
+
+    const skipMain = document.querySelector('a[href="#quarto-document-content"]');
+    if (skipMain) {
+      skipMain.addEventListener('click', function (e) {
+        const main = document.getElementById('quarto-document-content');
+        if (main) {
+          main.setAttribute('tabindex', '-1');
+          main.focus();
+        }
+      });
+    }
+
+    const skipA11y = document.getElementById('cagp-skip-a11y');
+    if (skipA11y) {
+      skipA11y.addEventListener('click', function (e) {
+        e.preventDefault();
+        openPanel();
+      });
+    }
+  });
+
+  // Teclado: Escape fecha painel, Alt+A abre/fecha
+  window.addEventListener('keydown', function (e) {
+    // Atalho Alt + A ou Shift + Alt + A
+    if (e.altKey && (e.key === 'a' || e.key === 'A' || e.code === 'KeyA')) {
+      e.preventDefault();
+      if (panel.hasAttribute('hidden')) {
+        openPanel();
+      } else {
+        closePanel();
+      }
+    }
+
+    if (e.key === 'Escape' && !panel.hasAttribute('hidden')) {
+      e.preventDefault();
+      closePanel();
+    }
+  });
+
+  // Interações dos controles:
+  // 1. Escala de Fonte
+  fontBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const step = btn.getAttribute('data-font-step');
+      if (step && FONT_LEVELS[step]) {
+        currentPrefs.font = step;
+        applyPrefs();
+        announce('Tamanho da fonte ajustado para ' + FONT_LEVELS[step].label);
+      }
+    });
+  });
+
+  // 2. Dislexia
+  if (toggleDyslexia) {
+    toggleDyslexia.addEventListener('change', function () {
+      currentPrefs.dyslexia = toggleDyslexia.checked;
+      applyPrefs();
+      announce(currentPrefs.dyslexia ? 'Modo dislexia ativado com tipografia e espaçamento amplo.' : 'Modo dislexia desativado.');
+    });
+  }
+
+  // 3. Régua de Leitura
+  if (toggleRuler) {
+    toggleRuler.addEventListener('change', function () {
+      currentPrefs.ruler = toggleRuler.checked;
+      applyPrefs();
+      announce(currentPrefs.ruler ? 'Régua visual de foco ativada.' : 'Régua de leitura desativada.');
+    });
+  }
+
+  // 4. Alto Contraste
+  if (toggleContrast) {
+    toggleContrast.addEventListener('change', function () {
+      currentPrefs.contrast = toggleContrast.checked ? 'high' : 'normal';
+      applyPrefs();
+      announce(currentPrefs.contrast === 'high' ? 'Modo de alto contraste preto e amarelo ativado.' : 'Modo de alto contraste desativado.');
+    });
+  }
+
+  // 5. Reset
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      currentPrefs = Object.assign({}, defaultPrefs);
+      applyPrefs();
+      announce('Todas as opções de acessibilidade foram restauradas para as configurações padrão.');
+    });
+  }
+
+  // Inicialização no carregamento
+  loadPrefs();
+  applyPrefs(true);
+
+  // Expor API global no objeto window para acessibilidade programática se necessário
+  window.cagpA11y = {
+    getPrefs: function () { return Object.assign({}, currentPrefs); },
+    setFont: function (step) {
+      if (FONT_LEVELS[step]) {
+        currentPrefs.font = step;
+        applyPrefs();
+      }
+    },
+    toggleDyslexia: function (force) {
+      currentPrefs.dyslexia = typeof force === 'boolean' ? force : !currentPrefs.dyslexia;
+      applyPrefs();
+    },
+    toggleContrast: function (force) {
+      currentPrefs.contrast = (force !== undefined ? force : (currentPrefs.contrast !== 'high')) ? 'high' : 'normal';
+      applyPrefs();
+    },
+    toggleRuler: function (force) {
+      currentPrefs.ruler = typeof force === 'boolean' ? force : !currentPrefs.ruler;
+      applyPrefs();
+    },
+    reset: function () {
+      currentPrefs = Object.assign({}, defaultPrefs);
+      applyPrefs();
+    },
+    open: openPanel,
+    close: closePanel
+  };
+})();
+</script>
+<!-- Suite de PWA e Adaptação Nativa CAGP UFMG -->
+
+<!-- Barra de Navegação Inferior Adaptativa para Dispositivos Móveis (Thumb-friendly & Safe Area) -->
+<nav id="cagp-mobile-nav" class="cagp-mobile-nav" aria-label="Navegação rápida do aplicativo">
+  <a href="index.html" class="cagp-mobile-nav-item" id="cagp-mnav-inicio">
+    <i class="bi bi-house-door" aria-hidden="true"></i>
+    <span>Início</span>
+  </a>
+  <a href="percurso.html" class="cagp-mobile-nav-item" id="cagp-mnav-percurso">
+    <i class="bi bi-diagram-3" aria-hidden="true"></i>
+    <span>Percurso</span>
+  </a>
+  <a href="acg.html" class="cagp-mobile-nav-item" id="cagp-mnav-acg">
+    <i class="bi bi-calculator" aria-hidden="true"></i>
+    <span>ACG 600h</span>
+  </a>
+  <a href="faq.html" class="cagp-mobile-nav-item" id="cagp-mnav-faq">
+    <i class="bi bi-question-circle" aria-hidden="true"></i>
+    <span>FAQ</span>
+  </a>
+  <button type="button" class="cagp-mobile-nav-item cagp-mobile-nav-btn" id="cagp-mnav-install" aria-label="Instalar aplicativo CAGP">
+    <i class="bi bi-phone" aria-hidden="true"></i>
+    <span>Instalar</span>
+  </button>
+</nav>
+
+<!-- Banner Flutuante de Instalação (Brite Neo-brutalist) -->
+<div id="cagp-pwa-banner" class="cagp-pwa-banner" hidden="" role="region" aria-label="Instalação do Aplicativo CAGP">
+  <div class="cagp-pwa-banner-content">
+    <img src="imagens/pwa/pwa-192x192.png" alt="Ícone CAGP" class="cagp-pwa-banner-icon" width="44" height="44">
+    <div class="cagp-pwa-banner-text">
+      <div class="cagp-pwa-banner-title">Aplicativo CAGP UFMG</div>
+      <div class="cagp-pwa-banner-sub">Acesso instantâneo e offline no seu dispositivo.</div>
+    </div>
+  </div>
+  <div class="cagp-pwa-banner-actions">
+    <button type="button" id="cagp-pwa-btn-install" class="cagp-btn cagp-btn-primary btn-sm">
+      <i class="bi bi-download me-1"></i> Instalar
+    </button>
+    <button type="button" id="cagp-pwa-btn-dismiss" class="cagp-pwa-btn-close" aria-label="Dispensar aviso de instalação">✕</button>
+  </div>
+</div>
+
+<!-- Modal com Guia de Instalação no iOS (Safari / iPhone / iPad) -->
+<div id="cagp-ios-backdrop" class="cagp-a11y-backdrop" hidden=""></div>
+<div id="cagp-ios-sheet" class="cagp-a11y-panel cagp-ios-sheet" hidden="" role="dialog" aria-modal="true" aria-labelledby="cagp-ios-title">
+  <div class="cagp-a11y-header">
+    <div class="cagp-a11y-header-title">
+      <i class="bi bi-apple me-2" aria-hidden="true"></i>
+      <h3 id="cagp-ios-title" class="cagp-a11y-title">Instalar no iPhone / iPad</h3>
+    </div>
+    <button type="button" id="cagp-ios-close" class="cagp-a11y-close" aria-label="Fechar instruções">✕</button>
+  </div>
+  <div class="cagp-a11y-body">
+    <p class="cagp-a11y-intro">
+      Instale o portal oficial como um aplicativo na sua tela de início sem precisar da App Store:
+    </p>
+    <ol class="cagp-ios-steps">
+      <li>Toque no botão de <strong>Compartilhar</strong> (<i class="bi bi-box-arrow-up text-primary"></i>) na barra inferior do Safari;</li>
+      <li>Role a lista de ações e toque em <strong>"Adicionar à Tela de Início"</strong> (<i class="bi bi-plus-square text-dark"></i>);</li>
+      <li>Toque em <strong>"Adicionar"</strong> no canto superior direito para concluir.</li>
+    </ol>
+    <div class="cagp-ios-sheet-tip p-2 mt-2 small">
+      <i class="bi bi-check-circle-fill text-success me-1"></i> O aplicativo funcionará em tela cheia com acesso rápido a cálculos, ementas e rotas mesmo sem sinal de internet na FAFICH!
+    </div>
+  </div>
+  <div class="cagp-a11y-footer">
+    <button type="button" id="cagp-ios-ok" class="cagp-btn cagp-btn-primary w-100">
+      <i class="bi bi-check2 me-1"></i> Entendi
+    </button>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // 1. Registro do Service Worker (Offline & Cache)
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./sw.js').then(function (reg) {
+        // Service Worker registrado com sucesso
+      }).catch(function (err) {
+        console.warn('CAGP PWA: Registro do Service Worker falhou:', err);
+      });
+    });
+  }
+
+  // 2. Destaque da aba ativa na barra móvel
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navMap = {
+    'index.html': 'cagp-mnav-inicio',
+    '': 'cagp-mnav-inicio',
+    'percurso.html': 'cagp-mnav-percurso',
+    'acg.html': 'cagp-mnav-acg',
+    'faq.html': 'cagp-mnav-faq'
+  };
+
+  const activeId = navMap[currentPath];
+  if (activeId) {
+    const el = document.getElementById(activeId);
+    if (el) el.classList.add('is-active');
+  }
+
+  // 3. Detecção de modo Standalone (PWA já instalado)
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches ||
+                       window.navigator.standalone === true;
+
+  if (isStandalone) {
+    document.body.classList.add('cagp-is-standalone');
+    const mnavBtn = document.getElementById('cagp-mnav-install');
+    if (mnavBtn) {
+      mnavBtn.innerHTML = '<i class="bi bi-check2-circle" aria-hidden="true"></i><span>Instalado</span>';
+      mnavBtn.disabled = true;
+      mnavBtn.style.opacity = '0.7';
+    }
+  }
+
+  // 4. Detecção de plataforma
+  const ua = window.navigator.userAgent.toLowerCase();
+  const isIos = /iphone|ipad|ipod/.test(ua);
+
+  // 5. Instalação em navegadores Chromium / Desktop / Android
+  let deferredPrompt = null;
+  const pwaBanner = document.getElementById('cagp-pwa-banner');
+  const btnInstall = document.getElementById('cagp-pwa-btn-install');
+  const btnDismiss = document.getElementById('cagp-pwa-btn-dismiss');
+  const mnavInstall = document.getElementById('cagp-mnav-install');
+
+  const iosBackdrop = document.getElementById('cagp-ios-backdrop');
+  const iosSheet = document.getElementById('cagp-ios-sheet');
+  const iosClose = document.getElementById('cagp-ios-close');
+  const iosOk = document.getElementById('cagp-ios-ok');
+
+  function openIosGuide() {
+    if (!iosSheet || !iosBackdrop) return;
+    iosBackdrop.removeAttribute('hidden');
+    iosBackdrop.classList.add('is-open');
+    iosSheet.removeAttribute('hidden');
+    iosSheet.classList.add('is-open');
+  }
+
+  function closeIosGuide() {
+    if (!iosSheet || !iosBackdrop) return;
+    iosBackdrop.setAttribute('hidden', '');
+    iosBackdrop.classList.remove('is-open');
+    iosSheet.setAttribute('hidden', '');
+    iosSheet.classList.remove('is-open');
+  }
+
+  if (iosClose) iosClose.addEventListener('click', closeIosGuide);
+  if (iosOk) iosOk.addEventListener('click', closeIosGuide);
+  if (iosBackdrop) iosBackdrop.addEventListener('click', closeIosGuide);
+
+  window.addEventListener('beforeinstallprompt', function (e) {
+    // Previne a mini-barra padrão do navegador
+    e.preventDefault();
+    deferredPrompt = e;
+
+    const dismissed = sessionStorage.getItem('cagp_pwa_dismissed');
+    if (!isStandalone && !dismissed && pwaBanner) {
+      pwaBanner.removeAttribute('hidden');
+    }
+  });
+
+  function triggerInstall() {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(function (choiceResult) {
+        if (choiceResult.outcome === 'accepted') {
+          if (pwaBanner) pwaBanner.setAttribute('hidden', '');
+        }
+        deferredPrompt = null;
+      });
+    } else if (isIos && !isStandalone) {
+      openIosGuide();
+    } else {
+      // Se chamado em desktop sem prompt pendente, informa instrução
+      if (isIos) {
+        openIosGuide();
+      } else {
+        alert('Para instalar o CAGP no seu dispositivo, utilize o ícone de instalação na barra de endereços do seu navegador ou selecione "Instalar Aplicativo" no menu de opções.');
+      }
+    }
+  }
+
+  if (btnInstall) btnInstall.addEventListener('click', triggerInstall);
+  if (mnavInstall) mnavInstall.addEventListener('click', triggerInstall);
+
+  if (btnDismiss) {
+    btnDismiss.addEventListener('click', function () {
+      if (pwaBanner) pwaBanner.setAttribute('hidden', '');
+      sessionStorage.setItem('cagp_pwa_dismissed', 'true');
+    });
+  }
+
+  window.addEventListener('appinstalled', function () {
+    if (pwaBanner) pwaBanner.setAttribute('hidden', '');
+    document.body.classList.add('cagp-is-standalone');
+    deferredPrompt = null;
   });
 })();
 </script>

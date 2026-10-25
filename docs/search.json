@@ -4,7 +4,7 @@
     "href": "mapa-do-site.html",
     "title": "Mapa do Site",
     "section": "",
-    "text": "Índice estruturado, árvore temática completa e atalhos diretos para todas as áreas do portal do CAGP"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "mapa-do-site.html#atalhos-rapidos",
@@ -25,7 +25,7 @@
     "href": "sobre.html",
     "title": "O Centro Acadêmico",
     "section": "",
-    "text": "Regimento interno, governança em 7 diretorias, princípios da administração pública e representação discente"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "sobre.html#simbolo-candangos",
@@ -95,7 +95,7 @@
     "href": "documentos.html",
     "title": "Documentos Oficiais do Curso",
     "section": "",
-    "text": "Repositório dos atos normativos, projeto pedagógico, regulamento, ementário e matrizes curriculares"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "documentos.html#atos-cagp",
@@ -144,7 +144,7 @@
     "href": "estagio-tcc.html",
     "title": "Estágio & Trabalho de Conclusão de Curso (TCC)",
     "section": "",
-    "text": "Regulamento oficial, procedimentos de matrícula, modalidades de TCC e aproveitamento profissional"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "estagio-tcc.html#visão-geral-dos-requisitos-finais",
@@ -179,7 +179,7 @@
     "href": "calouros.html",
     "title": "Guia de Sobrevivência do Calouro",
     "section": "",
-    "text": "Manual prático e orientações para o ingressante no curso Noturno de Gestão Pública da UFMG"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "calouros.html#checklist-calouro",
@@ -242,7 +242,7 @@
     "href": "index.html",
     "title": "Centro Acadêmico de Gestão Pública",
     "section": "",
-    "text": "FAFICH • Universidade Federal de Minas Gerais"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "index.html#o-curso-de-gestão-pública-em-números-oficiais",
@@ -263,7 +263,7 @@
     "href": "curso.html",
     "title": "O Curso de Gestão Pública",
     "section": "",
-    "text": "História, excelência acadêmica, atuação dos egressos, cientometria e governança na FAFICH/UFMG"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "curso.html#dados-fundamentais",
@@ -326,7 +326,7 @@
     "href": "percurso.html",
     "title": "Percurso Curricular",
     "section": "",
-    "text": "Estrutura oficial dos 10 semestres, 27 disciplinas obrigatórias, ementário e os 3 percursos do curso"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "percurso.html#estrutura-geral-e-prazos-oficiais",
@@ -375,7 +375,7 @@
     "href": "acg.html",
     "title": "Extensão & Atividades Complementares (AAC)",
     "section": "",
-    "text": "Regulamento oficial, curricularização da extensão (300h), modalidades de AAC e validação no Colegiado"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "acg.html#quadro-geral-de-cargas-horárias",
@@ -431,7 +431,7 @@
     "href": "faq.html",
     "title": "Dúvidas Frequentes (FAQ)",
     "section": "",
-    "text": "Respostas baseadas nas Normas Gerais de Graduação da UFMG e no Regulamento Oficial do Curso"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "faq.html#questões-acadêmicas-e-regime-escolar",
@@ -445,14 +445,14 @@
     "href": "faq.html#acessibilidade",
     "title": "Dúvidas Frequentes (FAQ)",
     "section": " Acessibilidade, Usabilidade e Navegação no Portal",
-    "text": "Acessibilidade, Usabilidade e Navegação no Portal\nO portal do Centro Acadêmico de Gestão Pública da FAFICH/UFMG foi concebido sob rigorosos princípios universais de acessibilidade digital e design inclusivo, em conformidade com as Diretrizes de Acessibilidade para Conteúdo Web (WCAG 2.1) do W3C nos níveis AA e AAA:\n\n  \n    \n      \n        \n        Navegação por Teclado e Foco Visível\n      \n      \n        Todas as ferramentas interativas, botões táteis, gavetas sanfonadas, tabs e simuladores são 100% operáveis sem mouse:\n        \n          Tecla Tab: percorre todos os elementos focáveis em ordem lógica sequencial de leitura e tabulação;\n          Anel de foco evidente: contorno sólido de 3px em vinho com deslocamento nítido (outline-offset: 2px);\n          Tecla Escape: limpa instantaneamente as caixas de pesquisa e reseta filtros nos 5 buscadores;\n          Teclas de seta (← / →): alternam opções em grupos de botões de rádio e simuladores regimentais.\n        \n      \n    \n  \n\n  \n    \n      \n        \n        Contraste, Leitura e Tecnologias Assistivas\n      \n      \n        Desenvolvido com a linguagem visual Brite Neo-Brutalista com foco em clareza absoluta de informação:\n        \n          Contraste rigoroso: texto corrido com razão de até 19.8:1 (nível WCAG AAA) contra fundos brancos e superfícies suaves;\n          Leitores de tela: regiões ativas com aria-live=\"polite\" e aria-expanded informam atualizações de filtros e cálculos sem recarregar a página;\n          Redução de movimento: respeito automático à preferência do sistema operacional (prefers-reduced-motion);\n          Múltiplas vias de acesso: navegue pela barra superior, pelos atalhos de jornada ou pela visão panorâmica no Mapa do Site (WCAG 2.4.5).\n        \n      \n    \n  \n\n\n\n\n\n\n\nNotePrecisa de apoio do Centro Acadêmico?\n\n\n\nO CAGP tem representação com assento no Colegiado do Curso de Gestão Pública e na Congregação da FAFICH. Se tiver problemas com prazos ou requerimentos, procure nossa gestão na salinha do pilotis, envie um e-mail para cagp@fafich.ufmg.br ou consulte os Documentos e Regulamentos Oficiais do Curso →.\n\n\n\n  \n    \n      \n        \n          ← Passo Anterior\n          Acervo de Documentos & Formulários Oficiais\n        \n        Acesse o PPC, Regulamento, Ementário, Regimento CAGP, mais de 80 documentos e modelos em PDF e DOCX.\n      \n    \n    \n      \n        \n          Próximo Passo na Jornada →\n          Sobre o CAGP & Governança Discente\n        \n        Regimento Interno 2024, as 7 Diretorias Executivas, Assembleia Geral, Colegiado e Os Candangos."
+    "text": "Acessibilidade, Usabilidade e Navegação no Portal\nO portal do Centro Acadêmico de Gestão Pública da FAFICH/UFMG foi concebido sob rigorosos princípios universais de acessibilidade digital e design inclusivo, em conformidade com as Diretrizes de Acessibilidade para Conteúdo Web:\n\n  \n    \n      Suíte Universal de Acessibilidade CAGP\n      Você pode alterar a qualquer momento o tamanho da fonte (A- a A++), ativar a tipografia adaptada para dislexia, acionar a régua visual de foco e habilitar o modo alto contraste (preto/amarelo) pelo menu flutuante no canto inferior ou pelo atalho de teclado.\n    \n    \n      Atalho: Alt + A\n      \n         Abrir Painel de Acessibilidade\n      \n    \n  \n\n\n\n\n\n\n\nNotePrecisa de apoio do Centro Acadêmico?\n\n\n\nO CAGP tem representação com assento no Colegiado do Curso de Gestão Pública e na Congregação da FAFICH. Se tiver problemas com prazos ou requerimentos, procure nossa gestão na salinha do pilotis, envie um e-mail para cagp@fafich.ufmg.br ou consulte os Documentos e Regulamentos Oficiais do Curso →.\n\n\n\n  \n    \n      \n        \n          ← Passo Anterior\n          Acervo de Documentos & Formulários Oficiais\n        \n        Acesse o PPC, Regulamento, Ementário, Regimento CAGP, mais de 80 documentos e modelos em PDF e DOCX.\n      \n    \n    \n      \n        \n          Próximo Passo na Jornada →\n          Sobre o CAGP & Governança Discente\n        \n        Regimento Interno 2024, as 7 Diretorias Executivas, Assembleia Geral, Colegiado e Os Candangos."
   },
   {
     "objectID": "gestao.html",
     "href": "gestao.html",
     "title": "Gestão em Exercício & Equipe",
     "section": "",
-    "text": "Organograma funcional das 7 diretorias estatutárias, representação discente e canais diretos de atendimento"
+    "text": "Pular para o conteúdo principal\n  Pular para opções de acessibilidade"
   },
   {
     "objectID": "gestao.html#apresentacao-gestao",

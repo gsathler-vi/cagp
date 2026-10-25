@@ -5,6 +5,8 @@ project:
     - "documentos/**"
     - "logos/cagp/**"
     - "imagens/**"
+    - "manifest.webmanifest"
+    - "sw.js"
   render:
     - index.qmd
     - curso.qmd
@@ -93,5 +95,10 @@ format:
     toc-title: "Nesta página"
     toc-location: right
     smooth-scroll: true
-    include-after-body: _includes/back-to-top.html
+    include-in-header: _includes/pwa-meta.html
+    include-before-body: _includes/skip-links.html
+    include-after-body:
+      - _includes/back-to-top.html
+      - _includes/accessibility.html
+      - _includes/pwa-install.html
 

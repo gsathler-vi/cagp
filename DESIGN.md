@@ -21,6 +21,8 @@ colors:
   brand-fump: "#006c67"
   brand-rotas: "#2c0eeb"
   brand-bu: "#d97706"
+  a11y-high-contrast-yellow: "#ffff00"
+  a11y-high-contrast-black: "#000000"
 typography:
   display:
     fontFamily: "Oswald, Inter, sans-serif"

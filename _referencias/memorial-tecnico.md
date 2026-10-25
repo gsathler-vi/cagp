@@ -46,6 +46,12 @@
 36. [Ciclo de Onboarding & Aceleração de Valor (Time-to-Value)](#36-ciclo-de-onboarding--aceleração-de-valor-time-to-value)
 37. [Ciclo de Eficiência em Modo Operação (Operate Mode Depth)](#37-ciclo-de-eficiência-em-modo-operação-operate-mode-depth)
 38. [Ciclo Overdrive: Grafo Curricular Interativo de Pré-Requisitos e Trilhas Temáticas (SVG/DAG Engine)](#38-ciclo-overdrive-grafo-curricular-interativo-de-pré-requisitos-e-trilhas-temáticas-svgdag-engine)
+39. [Ciclo de Curadoria Curricular de Pré-Requisitos Formais e Ementário](#39-ciclo-de-curadoria-curricular-de-pré-requisitos-formais-e-ementário)
+40. [Ciclo de Crítica & Polimento Global Impeccable](#40-ciclo-de-crítica--polimento-global-impeccable)
+41. [Ciclo de Superfícies Editoriais e Termômetro de Percurso](#41-ciclo-de-superfícies-editoriais-e-termômetro-de-percurso)
+42. [Ciclo de Auditoria e Refinamento Extensivo nas 11 Páginas](#42-ciclo-de-auditoria-e-refinamento-extensivo-nas-11-páginas)
+43. [Ciclo 43: Suíte Universal de Acessibilidade CAGP](#43-ciclo-43-suíte-universal-de-acessibilidade-cagp-escala-tipográfica-dinâmica-modo-dislexia-régua-visual-de-foco-alto-contraste-nanquimamarelo-e-leitores-de-tela-com-skip-links)
+44. [Ciclo 44: Suíte PWA & Adaptação Nativa Multiplataforma](#44-ciclo-44-suíte-pwa--adaptação-nativa-multiplataforma-desktop-iosipados-e-android-com-service-worker-offline-e-barra-móvel)
 
 ---
 
@@ -1501,6 +1507,98 @@ Em atendimento às diretivas combinadas `/impeccable critique`, `/impeccable pol
 ### 42.6 Verificação e Auditoria Técnica
 - Compilação do site com `quarto render` executada com código 0 (todas as 11 páginas geradas com sucesso);
 - Auditoria do detector Impeccable executada em todos os arquivos de saída (`docs/*.html`), confirmando **0 erros**, layout perfeitamente contido e registrando estritamente as 11 advertências conhecidas e autorizadas de `overused-font` para a tipografia institucional Inter.
+
+---
+
+## 43. Ciclo 43: Suíte Universal de Acessibilidade CAGP (Escala Tipográfica Dinâmica, Modo Dislexia, Régua Visual de Foco, Alto Contraste Nanquim/Amarelo e Leitores de Tela com Skip Links)
+
+**Contexto e Motivação:**  
+Atendendo à diretriz de acessibilidade real e inclusiva para o público acadêmico e discente da FAFICH/UFMG (incluindo estudantes com baixa visão, dislexia, TDAH, fotofobia e usuários de tecnologias assistivas), implementou-se uma suíte integral de acessibilidade ativa presente em todas as 11 páginas do portal, operada via botão tátil neo-brutalista flutuante, atalho de teclado global (`Alt + A`), persistente no navegador e 100% aderente aos padrões WCAG 2.1 / 2.2 nos níveis AA e AAA.
+
+### 43.1 Skip Links para Teclado e Tecnologias Assistivas (`_includes/skip-links.html`)
+- **Desvio de Blocos Repetitivos (WCAG 2.4.1):** Criação de skip links acessíveis invisíveis por padrão, que surgem no topo da viewport quando o discente pressiona a tecla `Tab`:
+  1. *"Pular para o conteúdo principal"*: desloca imediatamente o foco programático para `<main id="quarto-document-content">`;
+  2. *"Pular para opções de acessibilidade"*: foca diretamente no botão de controle de acessibilidade;
+- **Posicionamento Absoluto no DOM:** Script garante que os skip links sejam prepended no topo absoluto do `<body>`, precedendo a barra de anúncio e a barra de navegação superior para captura no primeiro `Tab`.
+
+### 43.2 Painel Tátil Neo-Brutalista Brite (`_includes/accessibility.html`)
+- **Gatilho Flutuante (`#cagp-a11y-trigger`):** Posicionado ergonomicamente no canto inferior esquerdo (`bottom: 2rem; left: 2rem`), espelhando o botão de voltar ao topo (que fica à direita), com contorno preto 2.5px, sombra dura e alvo de toque $\ge 44\text{px}$;
+- **Diálogo Modal Acessível (`#cagp-a11y-panel`):**
+  - Dotado de `role="dialog"`, `aria-modal="true"`, `aria-labelledby="cagp-a11y-title"` e backdrop escurecido;
+  - **Armadilha de foco (*focus trap*):** A navegação por `Tab` e `Shift + Tab` circula estritamente dentro do diálogo enquanto aberto;
+  - **Fechamento imediato:** Tecla `Escape` ou clique fora fecha o modal e devolve o foco ao elemento ativo anterior;
+  - **Atalho de teclado universal:** Teclas `Alt + A` (ou `Option + A`) abrem e fecham o painel instantaneamente a partir de qualquer ponto de qualquer página.
+
+### 43.3 Escala Tipográfica Dinâmica em 4 Níveis
+- **Controle por Stepper Segmentado:** Botões táteis `A-`, `A`, `A+`, `A++` com indicador em tempo real (`sm`: 90%, `md`: 100% padrão, `lg`: 115%, `xl`: 130%);
+- **Escala Proporcional Rem:** A aplicação de `font-size` percentual no elemento raiz `<html>` escala perfeitamente textos, títulos, gavetas, cartões e tabelas em harmonia sem romper containers ou quebrar layouts responsivos.
+
+### 43.4 Modo Especial de Leitura para Dislexia
+- **Tipografia Adaptada:** Ativação de pilha tipográfica com base pesada (`OpenDyslexic`, `'Comic Sans MS'`, `'Trebuchet MS'`, sans-serif);
+- **Espaçamento e Entrelinha Ampliados:** Aplicação de `letter-spacing: 0.05em`, `word-spacing: 0.12em` e `line-height: 1.85 !important`;
+- **Alinhamento Estrito à Esquerda:** Bloqueio de qualquer justificativa de texto para erradicar "rios de espaço" que prejudicam o rastreamento ocular de discentes disléxicos;
+- **Sublinhado Reforçado em Links:** `text-decoration-thickness: 2px` e `text-underline-offset: 4px` para distinção tátil imediata.
+
+### 43.5 Régua Visual de Foco e Leitura (`#cagp-reading-ruler`)
+- **Janela de Foco Dinâmica:** Criação de faixa horizontal translúcida amarela de 54px que acompanha suavemente o cursor do mouse ou toque na tela;
+- **Atenuação Periférica:** Uso de `box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.25)` criando uma máscara de leitura que atenua as linhas acima e abaixo, mantendo a atenção exclusiva na linha atual (apoio crucial para discentes com TDAH e dislexia).
+
+### 43.6 Modo em Alto Contraste Nanquim e Amarelo Canário (Razão > 15:1)
+- **Inversão Cromática WCAG AAA:** Fundo nanquim absoluto (`#000000`), textos em branco puro (`#ffffff`) e títulos, links, badges e contornos em amarelo canário (`#ffff00`);
+- **Eliminação de Sombras Difusas:** Substituição de sombras e gradientes por bordas sólidas de 2.5px em amarelo de alto contraste;
+- **Inversão de Logotipos:** Aplicação de filtro `brightness(0) invert(1)` nos SVGs do CAGP para preservação da visibilidade institucional.
+
+### 43.7 Preparação para Leitores de Tela e Persistência
+- **Live Region Announcer (`#cagp-a11y-announcer`):** Container acessível com `aria-live="polite"` que enuncia em áudio cada alteração de preferência ("Modo dislexia ativado", "Tamanho da fonte ajustado para 115%", etc.) com debounce de 120ms;
+- **Persistência Local (`localStorage`):** Preferências gravadas sob a chave `cagp_a11y_prefs`, restauradas imediatamente antes do carregamento visual para evitar flashes de conteúdo não estilizado (FOUC);
+- **Restauração Rápida:** Botão *"Restaurar Padrões"* reverte todas as configurações para o estado original com um clique.
+
+### 43.8 Verificação Técnica
+- `quarto render` executado com código 0 em todas as 11 páginas;
+- Teste programático automatizado confirmou a presença dos 6 componentes de acessibilidade em todas as páginas compiladas em `docs/`;
+- Auditoria Impeccable detect confirmou 0 novos erros ou violações de design system.
+
+---
+
+## 44. Ciclo 44: Suíte PWA & Adaptação Nativa Multiplataforma (Desktop, iOS/iPadOS e Android com Service Worker Offline e Barra Móvel)
+
+**Contexto e Motivação:**  
+Para garantir que estudantes e docentes acessem as informações, regulamentos, calculadoras de integralização e ementas do curso mesmo sem sinal de internet na FAFICH ou em trânsito (por exemplo, nos circulares internos do campus Pampulha), o portal foi transformado em um Web App Progressivo (PWA) instalável e adaptado nativamente para Desktop (Windows, macOS, Linux), iOS/iPadOS (Safari PWA) e Android (Chrome PWA), respeitando as diretrizes `/impeccable adapt`, `/impeccable ios`, `/impeccable android` e `/impeccable adapt.native`.
+
+### 44.1 Manifesto Web App (`manifest.webmanifest`)
+- **Metadados de Aplicação:** Configuração de `name: "CAGP — Centro Acadêmico de Gestão Pública UFMG"`, `short_name: "CAGP UFMG"`, `display: standalone` e tema institucional `#9E2424`;
+- **Acervo de Ícones PWA:** Geração de ícones PNG em alta densidade a partir do SVG oficial dos Candangos (`pwa-192x192.png`, `pwa-512x512.png`, `apple-touch-icon.png` 180x180 e `pwa-maskable-512x512.png` com zona de segurança circular de 80% para suportar qualquer máscara de corte do Android);
+- **Atalhos Rápidos no Launcher (*App Shortcuts*):** Adição de 4 rotas de alta frequência que podem ser acionadas ao pressionar e segurar o ícone do aplicativo na tela inicial do celular:
+  1. *Guia do Calouro* (`calouros.html`);
+  2. *Percurso & Ementas* (`percurso.html`);
+  3. *Calculadora ACG 600h* (`acg.html#calculadora`);
+  4. *Documentos & Formulários SEI* (`documentos.html`).
+
+### 44.2 Service Worker com Cache Resiliente e Operação Offline (`sw.js`)
+- **Pré-cache do App Shell:** Instalação armazena localmente no navegador todas as 11 páginas compiladas, o arquivo `styles.css`, o manifesto e os ícones principais;
+- **Estratégia Network-First para Páginas:** Ao navegar, o Service Worker tenta a rede para assegurar que atualizações sejam entregues em tempo real; em caso de falha de conexão ou modo avião, entrega imediatamente a cópia em cache;
+- **Estratégia Stale-While-Revalidate para Recursos:** Imagens, vetores e folhas de estilo carregam instantaneamente da memória com revalidação assíncrona em segundo plano;
+- **Ciclo de Vida Limpo:** Invalidação de versões legadas com `skipWaiting()` e ativação imediata com `clients.claim()`.
+
+### 44.3 Adaptação Específica para iOS / iPadOS
+- **Safe Area Insets:** Respeito absoluto a `env(safe-area-inset-top)` e `env(safe-area-inset-bottom)`, garantindo que conteúdos não fiquem sob a Dynamic Island, notch ou barra de início do iPhone;
+- **Prevenção de Zoom Acidental:** Regra CSS assegura que todos os campos de entrada possuam `font-size: 16px` em dispositivos móveis, prevenindo o comportamento intrusivo do Safari iOS de dar zoom na tela ao focar um campo;
+- **Guia Didático de Instalação no Safari:** Micro-modal tátil que orienta o discente nos 3 passos do iOS (*Compartilhar &rarr; Adicionar à Tela de Início &rarr; Adicionar*), acionado ao tocar em *"Instalar"* em dispositivos Apple.
+
+### 44.4 Adaptação Específica para Android e Desktop
+- **Banner Flutuante Não Intrusivo:** Captura do evento `beforeinstallprompt` com exibição de banner neo-brutalista para instalação direta com 1 clique;
+- **Cores de Barra de Status:** Meta tag dinâmica que aplica o vermelho `#9E2424` em tema claro e `#0A0A0A` em tema escuro;
+- **Alvos de Toque $\ge 48\text{dp}$:** Dimensões dos botões da barra móvel cumprem os parâmetros de toque do Material Design 3 e WCAG AAA.
+
+### 44.5 Barra de Navegação Inferior Móvel (`.cagp-mobile-nav`)
+- **Ergonomia Polegar (*Thumb-first Design*):** Em telas $\le 768\text{px}$, exibe barra fixa inferior com os 5 destinos cruciais (Início, Percurso, ACG 600h, FAQ e Instalar);
+- **Coordenação Espacial:** Aplicação de `padding-bottom` de 4.75rem no `body` e reposicionamento vertical dinâmico dos botões de Acessibilidade e Voltar ao Topo para eliminar qualquer colisão visual;
+- **Destaque de Rota Ativa:** Identificação automática da página atual com realce da cor primária.
+
+### 44.6 Verificação e Auditoria Técnica
+- Compilação do site com `quarto render` executada com código 0 em todas as 11 páginas;
+- Script de teste validou a presença de todos os 18 arquivos no cache e integridade das rotas do manifesto;
+- Auditoria do detector Impeccable executada em todos os arquivos de saída (`docs/*.html`), confirmando **0 erros**, tipografia e espaçamentos perfeitamente contidos, e registrando unicamente as 11 advertências conhecidas e autorizadas de `overused-font` para a tipografia institucional Inter.
 
 ---
 

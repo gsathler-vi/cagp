@@ -4753,3 +4753,1120 @@ div.callout-tip .callout-toggle::before {
 
 
 
+
+
+/* ==========================================================================
+   SUITE UNIVERSAL DE ACESSIBILIDADE CAGP (WCAG 2.1 / 2.2 AA e AAA)
+   - Skip Links (WCAG 2.4.1 Bypass Blocks)
+   - Escala Tipográfica Dinâmica (sm, md, lg, xl)
+   - Modo Dislexia (Tipografia e espaçamento ampliado)
+   - Régua Visual de Foco e Leitura
+   - Modo Alto Contraste (Fundo Preto Nanquim #000000 e Amarelo #FFFF00, > 15:1)
+   - Painel Tátil Neo-Brutalista Brite
+   ========================================================================== */
+
+/* 1. Skip Links Acessíveis */
+.cagp-skip-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+}
+
+.cagp-skip-link {
+  position: fixed;
+  top: -120px;
+  left: 1.5rem;
+  background-color: var(--cagp-accent-gold, #e8a317);
+  color: var(--cagp-dark, #111111);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 3px solid var(--cagp-dark, #111111);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+  text-decoration: none;
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000000;
+}
+
+.cagp-skip-link:focus {
+  top: 1.5rem;
+  outline: 3px solid var(--cagp-dark, #111111);
+  outline-offset: 3px;
+}
+
+/* 2. Escala Tipográfica Dinâmica */
+html[data-a11y-font="sm"] {
+  font-size: 90% !important;
+}
+
+html[data-a11y-font="md"] {
+  font-size: 100% !important;
+}
+
+html[data-a11y-font="lg"] {
+  font-size: 115% !important;
+}
+
+html[data-a11y-font="xl"] {
+  font-size: 130% !important;
+}
+
+/* 3. Modo Especial para Dislexia */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: local('OpenDyslexic-Regular'), local('OpenDyslexic'),
+       url('https://cdn.jsdelivr.net/fontsource/fonts/open-dyslexic@latest/latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: local('OpenDyslexic-Bold'),
+       url('https://cdn.jsdelivr.net/fontsource/fonts/open-dyslexic@latest/latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html[data-a11y-dyslexia="true"] body,
+html[data-a11y-dyslexia="true"] p,
+html[data-a11y-dyslexia="true"] li,
+html[data-a11y-dyslexia="true"] a,
+html[data-a11y-dyslexia="true"] td,
+html[data-a11y-dyslexia="true"] th,
+html[data-a11y-dyslexia="true"] span,
+html[data-a11y-dyslexia="true"] blockquote,
+html[data-a11y-dyslexia="true"] .cagp-hero-desc,
+html[data-a11y-dyslexia="true"] .cagp-discipline-summary,
+html[data-a11y-dyslexia="true"] .accordion-body {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif !important;
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.12em !important;
+  line-height: 1.85 !important;
+  text-align: left !important;
+}
+
+html[data-a11y-dyslexia="true"] h1,
+html[data-a11y-dyslexia="true"] h2,
+html[data-a11y-dyslexia="true"] h3,
+html[data-a11y-dyslexia="true"] h4,
+html[data-a11y-dyslexia="true"] h5,
+html[data-a11y-dyslexia="true"] h6,
+html[data-a11y-dyslexia="true"] .cagp-display-title,
+html[data-a11y-dyslexia="true"] .cagp-section-heading,
+html[data-a11y-dyslexia="true"] .navbar-brand {
+  letter-spacing: 0.05em !important;
+  line-height: 1.35 !important;
+  text-transform: none !important;
+}
+
+html[data-a11y-dyslexia="true"] a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
+}
+
+/* 4. Régua Visual de Leitura e Foco */
+.cagp-reading-ruler {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 54px;
+  background-color: rgba(254, 240, 138, 0.22);
+  border-top: 2.5px solid #ca8a04;
+  border-bottom: 2.5px solid #ca8a04;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.25);
+}
+
+html[data-a11y-ruler="true"] .cagp-reading-ruler {
+  display: block;
+}
+
+/* 5. Modo Alto Contraste (Preto e Amarelo Canário, WCAG AAA > 15:1) */
+html[data-a11y-contrast="high"],
+html[data-a11y-contrast="high"] body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] h1,
+html[data-a11y-contrast="high"] h2,
+html[data-a11y-contrast="high"] h3,
+html[data-a11y-contrast="high"] h4,
+html[data-a11y-contrast="high"] h5,
+html[data-a11y-contrast="high"] h6,
+html[data-a11y-contrast="high"] .cagp-display-title,
+html[data-a11y-contrast="high"] .cagp-section-heading,
+html[data-a11y-contrast="high"] .navbar-brand,
+html[data-a11y-contrast="high"] .cagp-discipline-title,
+html[data-a11y-contrast="high"] .cagp-stat-number {
+  color: #ffff00 !important;
+  text-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+}
+
+html[data-a11y-contrast="high"] a:hover,
+html[data-a11y-contrast="high"] a:focus {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  outline: 3px solid #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] .card,
+html[data-a11y-contrast="high"] .cagp-card,
+html[data-a11y-contrast="high"] .cagp-surface-parchment,
+html[data-a11y-contrast="high"] .cagp-surface-timbre,
+html[data-a11y-contrast="high"] .cagp-surface-slate,
+html[data-a11y-contrast="high"] .cagp-stamp-badge,
+html[data-a11y-contrast="high"] .cagp-hero-emblem-card,
+html[data-a11y-contrast="high"] .cagp-stat-card,
+html[data-a11y-contrast="high"] .cagp-action-card,
+html[data-a11y-contrast="high"] .cagp-hub-card,
+html[data-a11y-contrast="high"] .cagp-info-callout,
+html[data-a11y-contrast="high"] .cagp-rule-box,
+html[data-a11y-contrast="high"] .cagp-discipline-card,
+html[data-a11y-contrast="high"] .cagp-calc-celebration-box,
+html[data-a11y-contrast="high"] .callout,
+html[data-a11y-contrast="high"] .accordion-item,
+html[data-a11y-contrast="high"] .accordion-button {
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+  border: 2px solid #ffff00 !important;
+  box-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] .accordion-button:not(.collapsed) {
+  background-color: #1a1a1a !important;
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .navbar,
+html[data-a11y-contrast="high"] #quarto-header {
+  background-color: #000000 !important;
+  border-bottom: 3px solid #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .nav-link {
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .nav-link:hover,
+html[data-a11y-contrast="high"] .nav-link:focus,
+html[data-a11y-contrast="high"] .nav-link.active {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+html[data-a11y-contrast="high"] .btn,
+html[data-a11y-contrast="high"] .cagp-btn,
+html[data-a11y-contrast="high"] .cagp-btn-action,
+html[data-a11y-contrast="high"] .cagp-filter-btn {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 2.5px solid #ffff00 !important;
+  box-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] .btn:hover,
+html[data-a11y-contrast="high"] .btn:focus,
+html[data-a11y-contrast="high"] .cagp-btn:hover,
+html[data-a11y-contrast="high"] .cagp-btn:focus,
+html[data-a11y-contrast="high"] .cagp-btn-action:hover,
+html[data-a11y-contrast="high"] .cagp-btn-action:focus,
+html[data-a11y-contrast="high"] .cagp-filter-btn.is-active {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+html[data-a11y-contrast="high"] table,
+html[data-a11y-contrast="high"] th,
+html[data-a11y-contrast="high"] td {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] th {
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .footer,
+html[data-a11y-contrast="high"] footer {
+  background-color: #000000 !important;
+  border-top: 3px solid #ffff00 !important;
+  color: #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] #quarto-announcement {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border-bottom: 2px solid #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .navbar-logo {
+  filter: brightness(0) invert(1) !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-badge,
+html[data-a11y-contrast="high"] .badge {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 1.5px solid #ffff00 !important;
+}
+
+/* 6. Botão Flutuante de Acessibilidade */
+.cagp-a11y-trigger {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 1040;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.15rem;
+  background-color: #ffffff;
+  color: #111111;
+  border: 2.5px solid #111111;
+  box-shadow: 3px 3px 0 #111111;
+  border-radius: 0;
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.cagp-a11y-trigger i {
+  font-size: 1.25rem;
+  color: var(--cagp-primary, #1e3a5f);
+}
+
+.cagp-a11y-trigger:hover,
+.cagp-a11y-trigger:focus {
+  background-color: #ffeb3b;
+  color: #000000;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #111111;
+  outline: 3px solid #111111;
+  outline-offset: 2px;
+}
+
+.cagp-a11y-trigger:hover i,
+.cagp-a11y-trigger:focus i {
+  color: #000000;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-trigger {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 3px solid #ffff00 !important;
+  box-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-trigger i {
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-trigger:hover,
+html[data-a11y-contrast="high"] .cagp-a11y-trigger:focus {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  outline: 3px solid #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-trigger:hover i,
+html[data-a11y-contrast="high"] .cagp-a11y-trigger:focus i {
+  color: #000000 !important;
+}
+
+/* 7. Backdrop e Painel de Acessibilidade */
+.cagp-a11y-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1050;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cagp-a11y-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cagp-a11y-panel {
+  position: fixed;
+  bottom: 5.5rem;
+  left: 2rem;
+  z-index: 1055;
+  width: min(480px, calc(100vw - 2.5rem));
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+  background-color: #ffffff;
+  border: 3px solid #111111;
+  box-shadow: 8px 8px 0 #111111;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cagp-a11y-panel[hidden] {
+  display: none !important;
+}
+
+.cagp-a11y-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: var(--cagp-primary, #1e3a5f);
+  color: #ffffff;
+  border-bottom: 2.5px solid #111111;
+}
+
+.cagp-a11y-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.cagp-a11y-header-icon {
+  font-size: 1.5rem;
+  color: #facc15;
+}
+
+.cagp-a11y-title {
+  margin: 0;
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.cagp-a11y-close {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.15s ease;
+  min-height: 36px;
+  min-width: 36px;
+}
+
+.cagp-a11y-close:hover,
+.cagp-a11y-close:focus {
+  background-color: #ffffff;
+  color: #111111;
+  outline: 3px solid #facc15;
+}
+
+.cagp-a11y-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+}
+
+.cagp-a11y-intro {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.cagp-a11y-group {
+  border: 2px solid #111111;
+  padding: 0.9rem 1rem;
+  margin: 0;
+  background-color: #fafafa;
+}
+
+.cagp-a11y-legend {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0 0.5rem;
+  color: #111111;
+  margin-bottom: 0.35rem;
+}
+
+.cagp-a11y-desc {
+  font-size: 0.825rem;
+  color: #4b5563;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.cagp-a11y-stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cagp-a11y-btn-font {
+  background-color: #ffffff;
+  color: #111111;
+  border: 2px solid #111111;
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.45rem 0.2rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #111111;
+  transition: all 0.15s ease;
+  min-height: 44px;
+}
+
+.cagp-a11y-btn-font:hover,
+.cagp-a11y-btn-font:focus {
+  background-color: #ffeb3b;
+  outline: 2px solid #111111;
+}
+
+.cagp-a11y-btn-font.is-active {
+  background-color: #111111;
+  color: #ffff00;
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.cagp-a11y-status-pill {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #374151;
+  background-color: #e5e7eb;
+  padding: 0.25rem 0.55rem;
+  display: inline-block;
+  border: 1px solid #d1d5db;
+}
+
+/* Switches Neo-brutalistas */
+.cagp-a11y-switch-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #111111;
+  user-select: none;
+  min-height: 44px;
+}
+
+.cagp-a11y-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cagp-a11y-switch-slider {
+  width: 46px;
+  height: 26px;
+  background-color: #e5e7eb;
+  border: 2px solid #111111;
+  position: relative;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cagp-a11y-switch-slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  top: 3px;
+  background-color: #111111;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.cagp-a11y-checkbox:checked + .cagp-a11y-switch-slider {
+  background-color: #16a34a;
+}
+
+.cagp-a11y-checkbox:checked + .cagp-a11y-switch-slider::before {
+  transform: translateX(20px);
+  background-color: #ffffff;
+}
+
+.cagp-a11y-checkbox:focus-visible + .cagp-a11y-switch-slider {
+  outline: 3px solid #111111;
+  outline-offset: 2px;
+}
+
+.cagp-a11y-switch-text {
+  line-height: 1.35;
+}
+
+/* Card de atalhos e teclado */
+.cagp-a11y-shortcuts-card {
+  background-color: #f3f4f6;
+  border: 2px dashed #9ca3af;
+  padding: 0.85rem 1rem;
+}
+
+.cagp-a11y-shortcuts-header {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: #111111;
+  margin-bottom: 0.5rem;
+}
+
+.cagp-a11y-shortcuts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.65rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+.cagp-a11y-shortcuts-list kbd {
+  background-color: #ffffff;
+  color: #111111;
+  border: 1px solid #111111;
+  box-shadow: 1px 1px 0 #111111;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+}
+
+.cagp-a11y-link-more {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cagp-primary, #1e3a5f);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Footer do Painel */
+.cagp-a11y-footer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  padding: 0.9rem 1.25rem;
+  background-color: #f9fafb;
+  border-top: 2.5px solid #111111;
+}
+
+.cagp-a11y-btn-reset {
+  background-color: #ffffff;
+  color: #111111;
+  border: 2px solid #111111;
+  padding: 0.55rem 0.95rem;
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #111111;
+  transition: all 0.15s ease;
+  min-height: 44px;
+}
+
+.cagp-a11y-btn-reset:hover,
+.cagp-a11y-btn-reset:focus {
+  background-color: #fee2e2;
+  color: #991b1b;
+  outline: 2px solid #111111;
+}
+
+.cagp-a11y-btn-done {
+  background-color: #16a34a;
+  color: #ffffff;
+  border: 2px solid #111111;
+  padding: 0.55rem 1.25rem;
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #111111;
+  transition: all 0.15s ease;
+  min-height: 44px;
+}
+
+.cagp-a11y-btn-done:hover,
+.cagp-a11y-btn-done:focus {
+  background-color: #15803d;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #111111;
+  outline: 2px solid #111111;
+}
+
+/* Painel no Alto Contraste */
+html[data-a11y-contrast="high"] .cagp-a11y-panel {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 3px solid #ffff00 !important;
+  box-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-header {
+  background-color: #000000 !important;
+  border-bottom: 2.5px solid #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-title {
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-close {
+  border-color: #ffff00 !important;
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-close:hover,
+html[data-a11y-contrast="high"] .cagp-a11y-close:focus {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-group {
+  background-color: #000000 !important;
+  border-color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-legend {
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-intro,
+html[data-a11y-contrast="high"] .cagp-a11y-desc,
+html[data-a11y-contrast="high"] .cagp-a11y-switch-text {
+  color: #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-btn-font {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+  box-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-btn-font.is-active {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-switch-slider {
+  background-color: #000000 !important;
+  border-color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-switch-slider::before {
+  background-color: #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-checkbox:checked + .cagp-a11y-switch-slider {
+  background-color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-checkbox:checked + .cagp-a11y-switch-slider::before {
+  background-color: #000000 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-shortcuts-card {
+  background-color: #000000 !important;
+  border-color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-shortcuts-header {
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-shortcuts-list {
+  color: #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-shortcuts-list kbd {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+  box-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-link-more {
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-footer {
+  background-color: #000000 !important;
+  border-top-color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-btn-reset {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+  box-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-btn-reset:hover,
+html[data-a11y-contrast="high"] .cagp-a11y-btn-reset:focus {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-a11y-btn-done {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  border-color: #ffff00 !important;
+  box-shadow: none !important;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .cagp-a11y-trigger {
+    bottom: 1.25rem;
+    left: 1rem;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  .cagp-a11y-panel {
+    bottom: 4.75rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    max-height: calc(100vh - 6rem);
+  }
+}
+
+
+/* ==========================================================================
+   SUITE PWA & ADAPTAÇÃO NATIVA DISPOSITIVOS (Desktop, iOS, Android)
+   - Safe Areas (env(safe-area-inset-*))
+   - Barra de Navegação Inferior Móvel (Thumb-friendly, Touch Target >= 48px)
+   - Banner & Micro-modal de Instalação PWA (Desktop, Android e iOS)
+   - Otimizações para Modo Standalone (Tela Cheia, Sem Zoom Indesejado, Overscroll)
+   ========================================================================== */
+
+/* 1. Safe Area Insets Globais */
+:root {
+  --cagp-safe-top: env(safe-area-inset-top, 0px);
+  --cagp-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --cagp-safe-left: env(safe-area-inset-left, 0px);
+  --cagp-safe-right: env(safe-area-inset-right, 0px);
+}
+
+/* Previne zoom involuntário do Safari iOS ao focar campos de formulário */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="search"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* 2. Barra de Navegação Móvel (Thumb-first & Safe Area) */
+.cagp-mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  .cagp-mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background-color: #ffffff;
+    border-top: 2.5px solid var(--cagp-dark, #111111);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+    padding-bottom: max(0.35rem, env(safe-area-inset-bottom, 0px));
+    padding-top: 0.35rem;
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    justify-content: space-around;
+    align-items: center;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .cagp-mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    color: #4b5563;
+    text-decoration: none !important;
+    font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0.2rem 0.4rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+
+  .cagp-mobile-nav-item i {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .cagp-mobile-nav-item:active {
+    transform: scale(0.92);
+  }
+
+  .cagp-mobile-nav-item.is-active {
+    color: var(--cagp-red, #9E2424);
+  }
+
+  .cagp-mobile-nav-item.is-active i {
+    transform: translateY(-1px);
+  }
+
+  /* Ajuste de elevação dos botões flutuantes para não colidir com a barra móvel */
+  .cagp-a11y-trigger {
+    bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
+    left: 1rem !important;
+  }
+
+  .cagp-back-to-top {
+    bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
+    right: 1rem !important;
+  }
+
+  .cagp-a11y-panel {
+    bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* 3. Banner Flutuante de Instalação PWA */
+.cagp-pwa-banner {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1045;
+  width: min(390px, calc(100vw - 2.5rem));
+  background-color: #ffffff;
+  border: 2.5px solid var(--cagp-dark, #111111);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  animation: cagp-fade-in 0.25s ease-out;
+}
+
+.cagp-pwa-banner[hidden] {
+  display: none !important;
+}
+
+.cagp-pwa-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cagp-pwa-banner-icon {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--cagp-dark, #111111);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  flex-shrink: 0;
+}
+
+.cagp-pwa-banner-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.cagp-pwa-banner-title {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: var(--cagp-dark, #111111);
+  line-height: 1.4;
+}
+
+.cagp-pwa-banner-sub {
+  font-size: 0.775rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.cagp-ios-sheet-tip {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 1.5px solid var(--cagp-dark, #111111);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.825rem;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+html[data-a11y-contrast="high"] .cagp-ios-sheet-tip {
+  background-color: #000000 !important;
+  border-color: #ffff00 !important;
+  color: #ffffff !important;
+}
+
+.cagp-pwa-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.cagp-pwa-btn-close {
+  background: transparent;
+  border: 1.5px solid var(--cagp-dark, #111111);
+  color: var(--cagp-dark, #111111);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+}
+
+.cagp-pwa-btn-close:hover {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+@media (max-width: 768px) {
+  .cagp-pwa-banner {
+    bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+  }
+}
+
+/* 4. Modal / Sheet iOS */
+.cagp-ios-sheet {
+  max-width: 440px;
+}
+
+.cagp-ios-steps {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0.85rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  color: #1f2937;
+  line-height: 1.45;
+}
+
+.cagp-ios-steps li strong {
+  color: var(--cagp-dark, #111111);
+}
+
+/* 5. Comportamento no Modo Standalone (App Instalado) */
+body.cagp-is-standalone {
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.cagp-is-standalone #quarto-header {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* 6. Alto Contraste para PWA e Navegação Móvel */
+html[data-a11y-contrast="high"] .cagp-mobile-nav {
+  background-color: #000000 !important;
+  border-top-color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-mobile-nav-item {
+  color: #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-mobile-nav-item.is-active {
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-pwa-banner {
+  background-color: #000000 !important;
+  border-color: #ffff00 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-pwa-banner-title {
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-pwa-banner-sub {
+  color: #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-pwa-btn-close {
+  border-color: #ffff00 !important;
+  color: #ffff00 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-pwa-btn-close:hover {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-ios-steps {
+  color: #ffffff !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-ios-steps li strong {
+  color: #ffff00 !important;
+}
