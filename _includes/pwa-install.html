@@ -1,4 +1,13 @@
-<!-- Suite de PWA e Adaptação Nativa CAGP UFMG -->
+<!-- Suite de PWA, Fluidez & Adaptação Nativa CAGP UFMG -->
+
+<!-- Barra de Progresso Superior de Leitura (Apple-style Micro-interaction) -->
+<div id="cagp-reading-progress" class="cagp-reading-progress" aria-hidden="true"></div>
+
+<!-- Cápsula / Dynamic Toast Flutuante (Feedback Tátil & Notificações) -->
+<div id="cagp-toast" class="cagp-toast" role="status" aria-live="polite" hidden>
+  <i id="cagp-toast-icon" class="bi bi-check2-circle cagp-toast-icon" aria-hidden="true"></i>
+  <span id="cagp-toast-text" class="cagp-toast-text"></span>
+</div>
 
 <!-- Barra de Navegação Inferior Adaptativa para Dispositivos Móveis (Thumb-friendly & Safe Area) -->
 <nav id="cagp-mobile-nav" class="cagp-mobile-nav" aria-label="Navegação rápida do aplicativo">
@@ -75,7 +84,76 @@
 (function () {
   'use strict';
 
-  // 1. Registro do Service Worker (Offline & Cache)
+  // 1. Barra de Leitura Superior Fluida (Apple Scroll Physics)
+  const progressBar = document.getElementById('cagp-reading-progress');
+  if (progressBar) {
+    let ticking = false;
+    const updateProgress = function () {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
+      progressBar.style.transform = 'scaleX(' + progress + ')';
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateProgress();
+  }
+
+  // 2. Sistema de Notificação Cápsula Tátil (Dynamic Island Toast)
+  const toastEl = document.getElementById('cagp-toast');
+  const toastText = document.getElementById('cagp-toast-text');
+  const toastIcon = document.getElementById('cagp-toast-icon');
+  let toastTimer = null;
+
+  window.cagpToast = function (message, iconClass, duration) {
+    if (!toastEl || !toastText) return;
+    clearTimeout(toastTimer);
+
+    toastText.textContent = message;
+    if (toastIcon) {
+      toastIcon.className = 'bi ' + (iconClass || 'bi-check2-circle') + ' cagp-toast-icon';
+    }
+
+    toastEl.removeAttribute('hidden');
+    // Forçar reflow para animar suavemente
+    void toastEl.offsetWidth;
+    toastEl.classList.add('is-visible');
+
+    toastTimer = setTimeout(function () {
+      toastEl.classList.remove('is-visible');
+      setTimeout(function () {
+        toastEl.setAttribute('hidden', '');
+      }, 350);
+    }, duration || 2400);
+  };
+
+  // Integração com feedback de cópia rápida
+  document.addEventListener('click', function (e) {
+    const copyBtn = e.target.closest('[data-copy]');
+    if (!copyBtn) return;
+    const text = copyBtn.getAttribute('data-copy');
+    if (text) {
+      setTimeout(function () {
+        window.cagpToast('Copiado: ' + text, 'bi-check2-circle', 2200);
+      }, 50);
+    }
+  });
+
+  // 3. Monitor de Conectividade com Toast de Estado
+  window.addEventListener('online', function () {
+    window.cagpToast('Conexão restabelecida.', 'bi-wifi', 2500);
+  });
+  window.addEventListener('offline', function () {
+    window.cagpToast('Modo offline: Conteúdo em cache.', 'bi-wifi-off', 3500);
+  });
+
+  // 4. Registro do Service Worker (Offline & Cache)
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
       navigator.serviceWorker.register('./sw.js').then(function (reg) {
@@ -86,7 +164,7 @@
     });
   }
 
-  // 2. Destaque da aba ativa na barra móvel
+  // 5. Destaque da aba ativa na barra móvel
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   const navMap = {
     'index.html': 'cagp-mnav-inicio',
@@ -102,7 +180,7 @@
     if (el) el.classList.add('is-active');
   }
 
-  // 3. Detecção de modo Standalone (PWA já instalado)
+  // 6. Detecção de modo Standalone (PWA já instalado)
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches ||
                        window.navigator.standalone === true;
 
@@ -116,11 +194,11 @@
     }
   }
 
-  // 4. Detecção de plataforma
+  // 7. Detecção de plataforma Apple iOS
   const ua = window.navigator.userAgent.toLowerCase();
   const isIos = /iphone|ipad|ipod/.test(ua);
 
-  // 5. Instalação em navegadores Chromium / Desktop / Android
+  // 8. Instalação em navegadores Chromium / Desktop / Android
   let deferredPrompt = null;
   const pwaBanner = document.getElementById('cagp-pwa-banner');
   const btnInstall = document.getElementById('cagp-pwa-btn-install');
@@ -153,7 +231,6 @@
   if (iosBackdrop) iosBackdrop.addEventListener('click', closeIosGuide);
 
   window.addEventListener('beforeinstallprompt', function (e) {
-    // Previne a mini-barra padrão do navegador
     e.preventDefault();
     deferredPrompt = e;
 
@@ -169,17 +246,17 @@
       deferredPrompt.userChoice.then(function (choiceResult) {
         if (choiceResult.outcome === 'accepted') {
           if (pwaBanner) pwaBanner.setAttribute('hidden', '');
+          window.cagpToast('Instalação autorizada com sucesso!', 'bi-check2-circle', 2500);
         }
         deferredPrompt = null;
       });
     } else if (isIos && !isStandalone) {
       openIosGuide();
     } else {
-      // Se chamado em desktop sem prompt pendente, informa instrução
       if (isIos) {
         openIosGuide();
       } else {
-        alert('Para instalar o CAGP no seu dispositivo, utilize o ícone de instalação na barra de endereços do seu navegador ou selecione "Instalar Aplicativo" no menu de opções.');
+        window.cagpToast('Use o ícone de instalação na barra do navegador.', 'bi-info-circle', 3000);
       }
     }
   }
@@ -197,6 +274,7 @@
   window.addEventListener('appinstalled', function () {
     if (pwaBanner) pwaBanner.setAttribute('hidden', '');
     document.body.classList.add('cagp-is-standalone');
+    window.cagpToast('Aplicativo CAGP instalado com sucesso!', 'bi-check2-circle', 3000);
     deferredPrompt = null;
   });
 })();

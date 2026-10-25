@@ -5870,3 +5870,319 @@ html[data-a11y-contrast="high"] .cagp-ios-steps {
 html[data-a11y-contrast="high"] .cagp-ios-steps li strong {
   color: #ffff00 !important;
 }
+
+
+/* ==========================================================================
+   RETOQUES DE CUIDADO, FLUIDEZ & PERSONALIDADE (Apple-grade Physics & Motion)
+   - Barra de Leitura Superior Fluida (Scroll Tracking)
+   - Notificações Cápsula (Dynamic Island Toast Brite)
+   - Micro-haptics e Curvas Spring nos Botões, Gavetas e Cartões
+   - Transições de Página Nativas (View Transitions API)
+   ========================================================================== */
+
+:root {
+  --cagp-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --cagp-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 1. Transições Nativas de Página (View Transitions API) */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 160ms var(--cagp-ease-out) both cagpPageOut;
+}
+
+::view-transition-new(root) {
+  animation: 240ms var(--cagp-spring) both cagpPageIn;
+}
+
+@keyframes cagpPageOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.995); }
+}
+
+@keyframes cagpPageIn {
+  from { opacity: 0; transform: scale(1.005); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 2. Barra de Leitura Superior Fluida */
+.cagp-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--cagp-red, #9E2424);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 9999999;
+  pointer-events: none;
+  transition: transform 0.08s ease-out;
+  will-change: transform;
+}
+
+html[data-a11y-contrast="high"] .cagp-reading-progress {
+  background-color: #ffff00 !important;
+  height: 4px;
+}
+
+/* 3. Notificação Cápsula Tátil (Dynamic Island Toast) */
+.cagp-toast {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-130%);
+  z-index: 1000005;
+  background-color: #ffffff;
+  color: var(--cagp-dark, #111111);
+  border: 2.5px solid var(--cagp-dark, #111111);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+  padding: 0.6rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.35s var(--cagp-spring), opacity 0.25s ease;
+  max-width: min(92vw, 460px);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.cagp-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.cagp-toast-icon {
+  font-size: 1.15rem;
+  color: var(--cagp-red, #9E2424);
+  flex-shrink: 0;
+}
+
+html[data-a11y-contrast="high"] .cagp-toast {
+  background-color: #000000 !important;
+  border-color: #ffff00 !important;
+  color: #ffff00 !important;
+  box-shadow: none !important;
+}
+
+html[data-a11y-contrast="high"] .cagp-toast-icon {
+  color: #ffff00 !important;
+}
+
+/* 4. Micro-haptics Táteis e Curvas Spring nos Botões */
+.cagp-btn,
+.cagp-doc-btn,
+.cagp-step-btn,
+.cagp-filter-btn {
+  transition: transform 0.14s var(--cagp-spring),
+              box-shadow 0.14s var(--cagp-spring),
+              background-color 0.15s ease,
+              color 0.15s ease !important;
+  touch-action: manipulation;
+}
+
+.cagp-btn:hover,
+.cagp-doc-btn:hover,
+.cagp-step-btn:hover,
+.cagp-filter-btn:hover {
+  transform: translate(-2px, -2px);
+}
+
+.cagp-btn:active,
+.cagp-doc-btn:active,
+.cagp-step-btn:active,
+.cagp-filter-btn:active {
+  transform: translate(1px, 1px) scale(0.98) !important;
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111) !important;
+}
+
+/* 5. Transição Suave de Gavetas e Accordions */
+details.cagp-discipline {
+  transition: border-color 0.2s ease, box-shadow 0.2s var(--cagp-spring);
+}
+
+details.cagp-discipline[open] {
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+}
+
+details.cagp-discipline summary {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+details.cagp-discipline summary:active {
+  background-color: var(--cagp-surface-mid, #e5e7eb);
+}
+
+details.cagp-discipline summary i.bi-chevron-down {
+  display: inline-block;
+  transition: transform 0.26s var(--cagp-spring);
+}
+
+details.cagp-discipline[open] summary i.bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* 6. Indicador Fluido na Barra Móvel */
+.cagp-mobile-nav-item {
+  position: relative;
+  transition: color 0.2s var(--cagp-spring), transform 0.15s var(--cagp-spring);
+  touch-action: manipulation;
+}
+
+.cagp-mobile-nav-item.is-active::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 18px;
+  height: 3px;
+  background-color: var(--cagp-red, #9E2424);
+  border-radius: 2px;
+  transition: width 0.25s var(--cagp-spring);
+}
+
+html[data-a11y-contrast="high"] .cagp-mobile-nav-item.is-active::after {
+  background-color: #ffff00 !important;
+}
+
+/* 7. Salvaguardas para Redução de Movimento */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+
+  .cagp-reading-progress,
+  .cagp-toast,
+  .cagp-btn,
+  .cagp-mobile-nav-item,
+  details.cagp-discipline summary i.bi-chevron-down {
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   SUPER APP ENGINE: TRANSIÇÕES CLIENT-SIDE, FÍSICA SPRING & ELEVAÇÃO M3
+   ========================================================================== */
+
+/* 1. Transição Client-Side Suave (SPA Transitions) */
+.cagp-page-leaving {
+  opacity: 0 !important;
+  transform: translateY(-8px) scale(0.995) !important;
+  transition: opacity 0.12s ease, transform 0.12s var(--cagp-spring) !important;
+}
+
+.cagp-page-entering {
+  animation: cagpSuperAppFadeIn 0.26s var(--cagp-spring) forwards !important;
+}
+
+@keyframes cagpSuperAppFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 2. Entrada Fluida de Conteúdo Principal */
+#quarto-document-content {
+  animation: cagpSuperAppFadeIn 0.28s var(--cagp-spring);
+  transform-origin: top center;
+  will-change: transform, opacity;
+}
+
+/* 3. Elevação Tátil e Expressiva em Cartões (Apple & M3 Expressive) */
+.card,
+.cagp-card,
+.cagp-hero-emblem-card,
+.cagp-stat-card,
+.cagp-action-card,
+.cagp-hub-card {
+  transition: transform 0.2s var(--cagp-spring),
+              box-shadow 0.2s var(--cagp-spring),
+              border-color 0.15s ease !important;
+}
+
+.card:hover,
+.cagp-card:hover,
+.cagp-stat-card:hover,
+.cagp-action-card:hover,
+.cagp-hub-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 var(--cagp-dark, #111111);
+}
+
+.card:active,
+.cagp-card:active,
+.cagp-stat-card:active,
+.cagp-action-card:active,
+.cagp-hub-card:active {
+  transform: translateY(1px) scale(0.995);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  transition-duration: 0.08s !important;
+}
+
+/* 4. Feedback Tátil Acentuado em Botões de Ação */
+.cagp-btn:active,
+.cagp-doc-btn:active,
+.cagp-step-btn:active,
+.cagp-filter-btn:active,
+.btn:active {
+  transform: translate(1px, 2px) scale(0.97) !important;
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111) !important;
+  transition: transform 0.08s var(--cagp-spring), box-shadow 0.08s var(--cagp-spring) !important;
+}
+
+/* 5. Foco Expressivo nos Campos de Busca e Entradas */
+input[type="text"]:focus,
+input[type="search"]:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--cagp-red, #9E2424) !important;
+  outline-offset: 2px !important;
+  border-color: var(--cagp-dark, #111111) !important;
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111) !important;
+  transition: box-shadow 0.18s var(--cagp-spring), outline 0.15s ease;
+}
+
+html[data-a11y-contrast="high"] input[type="text"]:focus,
+html[data-a11y-contrast="high"] input[type="search"]:focus,
+html[data-a11y-contrast="high"] select:focus,
+html[data-a11y-contrast="high"] textarea:focus {
+  outline: 3px solid #ffff00 !important;
+  border-color: #ffff00 !important;
+  box-shadow: none !important;
+}
+
+/* 6. Salvaguarda sob Redução de Movimento */
+@media (prefers-reduced-motion: reduce) {
+  #quarto-document-content,
+  .cagp-page-entering,
+  .cagp-page-leaving,
+  .card,
+  .cagp-card,
+  .cagp-stat-card,
+  .cagp-action-card,
+  .cagp-hub-card {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

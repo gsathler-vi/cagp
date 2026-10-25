@@ -1510,7 +1510,16 @@ Subsídio parcial de alimentação nos RUs, atendimento médico e odontológico 
   };
 })();
 </script>
-<!-- Suite de PWA e Adaptação Nativa CAGP UFMG -->
+<!-- Suite de PWA, Fluidez & Adaptação Nativa CAGP UFMG -->
+
+<!-- Barra de Progresso Superior de Leitura (Apple-style Micro-interaction) -->
+<div id="cagp-reading-progress" class="cagp-reading-progress" aria-hidden="true"></div>
+
+<!-- Cápsula / Dynamic Toast Flutuante (Feedback Tátil & Notificações) -->
+<div id="cagp-toast" class="cagp-toast" role="status" aria-live="polite" hidden="">
+  <i id="cagp-toast-icon" class="bi bi-check2-circle cagp-toast-icon" aria-hidden="true"></i>
+  <span id="cagp-toast-text" class="cagp-toast-text"></span>
+</div>
 
 <!-- Barra de Navegação Inferior Adaptativa para Dispositivos Móveis (Thumb-friendly & Safe Area) -->
 <nav id="cagp-mobile-nav" class="cagp-mobile-nav" aria-label="Navegação rápida do aplicativo">
@@ -1587,7 +1596,76 @@ Subsídio parcial de alimentação nos RUs, atendimento médico e odontológico 
 (function () {
   'use strict';
 
-  // 1. Registro do Service Worker (Offline & Cache)
+  // 1. Barra de Leitura Superior Fluida (Apple Scroll Physics)
+  const progressBar = document.getElementById('cagp-reading-progress');
+  if (progressBar) {
+    let ticking = false;
+    const updateProgress = function () {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
+      progressBar.style.transform = 'scaleX(' + progress + ')';
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateProgress();
+  }
+
+  // 2. Sistema de Notificação Cápsula Tátil (Dynamic Island Toast)
+  const toastEl = document.getElementById('cagp-toast');
+  const toastText = document.getElementById('cagp-toast-text');
+  const toastIcon = document.getElementById('cagp-toast-icon');
+  let toastTimer = null;
+
+  window.cagpToast = function (message, iconClass, duration) {
+    if (!toastEl || !toastText) return;
+    clearTimeout(toastTimer);
+
+    toastText.textContent = message;
+    if (toastIcon) {
+      toastIcon.className = 'bi ' + (iconClass || 'bi-check2-circle') + ' cagp-toast-icon';
+    }
+
+    toastEl.removeAttribute('hidden');
+    // Forçar reflow para animar suavemente
+    void toastEl.offsetWidth;
+    toastEl.classList.add('is-visible');
+
+    toastTimer = setTimeout(function () {
+      toastEl.classList.remove('is-visible');
+      setTimeout(function () {
+        toastEl.setAttribute('hidden', '');
+      }, 350);
+    }, duration || 2400);
+  };
+
+  // Integração com feedback de cópia rápida
+  document.addEventListener('click', function (e) {
+    const copyBtn = e.target.closest('[data-copy]');
+    if (!copyBtn) return;
+    const text = copyBtn.getAttribute('data-copy');
+    if (text) {
+      setTimeout(function () {
+        window.cagpToast('Copiado: ' + text, 'bi-check2-circle', 2200);
+      }, 50);
+    }
+  });
+
+  // 3. Monitor de Conectividade com Toast de Estado
+  window.addEventListener('online', function () {
+    window.cagpToast('Conexão restabelecida.', 'bi-wifi', 2500);
+  });
+  window.addEventListener('offline', function () {
+    window.cagpToast('Modo offline: Conteúdo em cache.', 'bi-wifi-off', 3500);
+  });
+
+  // 4. Registro do Service Worker (Offline & Cache)
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
       navigator.serviceWorker.register('./sw.js').then(function (reg) {
@@ -1598,7 +1676,7 @@ Subsídio parcial de alimentação nos RUs, atendimento médico e odontológico 
     });
   }
 
-  // 2. Destaque da aba ativa na barra móvel
+  // 5. Destaque da aba ativa na barra móvel
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   const navMap = {
     'index.html': 'cagp-mnav-inicio',
@@ -1614,7 +1692,7 @@ Subsídio parcial de alimentação nos RUs, atendimento médico e odontológico 
     if (el) el.classList.add('is-active');
   }
 
-  // 3. Detecção de modo Standalone (PWA já instalado)
+  // 6. Detecção de modo Standalone (PWA já instalado)
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches ||
                        window.navigator.standalone === true;
 
@@ -1628,11 +1706,11 @@ Subsídio parcial de alimentação nos RUs, atendimento médico e odontológico 
     }
   }
 
-  // 4. Detecção de plataforma
+  // 7. Detecção de plataforma Apple iOS
   const ua = window.navigator.userAgent.toLowerCase();
   const isIos = /iphone|ipad|ipod/.test(ua);
 
-  // 5. Instalação em navegadores Chromium / Desktop / Android
+  // 8. Instalação em navegadores Chromium / Desktop / Android
   let deferredPrompt = null;
   const pwaBanner = document.getElementById('cagp-pwa-banner');
   const btnInstall = document.getElementById('cagp-pwa-btn-install');
@@ -1665,7 +1743,6 @@ Subsídio parcial de alimentação nos RUs, atendimento médico e odontológico 
   if (iosBackdrop) iosBackdrop.addEventListener('click', closeIosGuide);
 
   window.addEventListener('beforeinstallprompt', function (e) {
-    // Previne a mini-barra padrão do navegador
     e.preventDefault();
     deferredPrompt = e;
 
@@ -1681,17 +1758,17 @@ Subsídio parcial de alimentação nos RUs, atendimento médico e odontológico 
       deferredPrompt.userChoice.then(function (choiceResult) {
         if (choiceResult.outcome === 'accepted') {
           if (pwaBanner) pwaBanner.setAttribute('hidden', '');
+          window.cagpToast('Instalação autorizada com sucesso!', 'bi-check2-circle', 2500);
         }
         deferredPrompt = null;
       });
     } else if (isIos && !isStandalone) {
       openIosGuide();
     } else {
-      // Se chamado em desktop sem prompt pendente, informa instrução
       if (isIos) {
         openIosGuide();
       } else {
-        alert('Para instalar o CAGP no seu dispositivo, utilize o ícone de instalação na barra de endereços do seu navegador ou selecione "Instalar Aplicativo" no menu de opções.');
+        window.cagpToast('Use o ícone de instalação na barra do navegador.', 'bi-info-circle', 3000);
       }
     }
   }
@@ -1709,8 +1786,263 @@ Subsídio parcial de alimentação nos RUs, atendimento médico e odontológico 
   window.addEventListener('appinstalled', function () {
     if (pwaBanner) pwaBanner.setAttribute('hidden', '');
     document.body.classList.add('cagp-is-standalone');
+    window.cagpToast('Aplicativo CAGP instalado com sucesso!', 'bi-check2-circle', 3000);
     deferredPrompt = null;
   });
+})();
+</script>
+<!-- Motor de Roteamento SPA e Transições Nativas Super App CAGP UFMG -->
+<script>
+(function () {
+  'use strict';
+
+  // Super App Client-Side Router & View Transition Engine
+  const cache = new Map();
+
+  function isInternalLink(anchor) {
+    if (!anchor || anchor.tagName !== 'A') return false;
+    const href = anchor.getAttribute('href');
+    if (!href) return false;
+    if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return false;
+    if (anchor.getAttribute('target') === '_blank' || anchor.hasAttribute('download')) return false;
+    if (anchor.getAttribute('data-no-spa') !== null) return false;
+
+    // Verificar se pertence à mesma origem
+    try {
+      const url = new URL(anchor.href, window.location.href);
+      return url.origin === window.location.origin;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function prefetch(url) {
+    if (cache.has(url)) return;
+    fetch(url, { priority: 'low' })
+      .then(function (res) {
+        if (res.ok) return res.text();
+        throw new Error('Prefetch falhou');
+      })
+      .then(function (html) {
+        cache.set(url, html);
+      })
+      .catch(function () {});
+  }
+
+  // Pré-carregamento imediato no hover e no toque (Zero-latency navigation)
+  document.addEventListener('pointerenter', function (e) {
+    const a = e.target.closest('a');
+    if (a && isInternalLink(a)) {
+      prefetch(a.href);
+    }
+  }, { capture: true, passive: true });
+
+  document.addEventListener('touchstart', function (e) {
+    const a = e.target.closest('a');
+    if (a && isInternalLink(a)) {
+      prefetch(a.href);
+    }
+  }, { capture: true, passive: true });
+
+  async function loadPage(url) {
+    if (cache.has(url)) {
+      return cache.get(url);
+    }
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const html = await res.text();
+    cache.set(url, html);
+    return html;
+  }
+
+  function updateNavigationUI(targetUrl) {
+    try {
+      const url = new URL(targetUrl, window.location.href);
+      const pathname = url.pathname.split('/').pop() || 'index.html';
+
+      // 1. Atualizar Navbar Superior do Quarto
+      document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+        const href = link.getAttribute('href');
+        if (href) {
+          const linkPath = href.split('/').pop();
+          if (linkPath === pathname || (linkPath === 'index.html' && pathname === '')) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+          } else {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+          }
+        }
+      });
+
+      // 2. Atualizar Barra Móvel Inferior (Thumb-first)
+      const mobileMap = {
+        'index.html': 'cagp-mnav-inicio',
+        '': 'cagp-mnav-inicio',
+        'percurso.html': 'cagp-mnav-percurso',
+        'acg.html': 'cagp-mnav-acg',
+        'faq.html': 'cagp-mnav-faq'
+      };
+      document.querySelectorAll('.cagp-mobile-nav-item').forEach(function (item) {
+        item.classList.remove('is-active');
+      });
+      const activeId = mobileMap[pathname];
+      if (activeId) {
+        const activeEl = document.getElementById(activeId);
+        if (activeEl) activeEl.classList.add('is-active');
+      }
+    } catch (e) {
+      console.warn('CAGP Router: Erro ao sincronizar UI de navegação:', e);
+    }
+  }
+
+  function executePageScripts(container) {
+    const scripts = container.querySelectorAll('script');
+    scripts.forEach(function (oldScript) {
+      const newScript = document.createElement('script');
+      Array.from(oldScript.attributes).forEach(function (attr) {
+        newScript.setAttribute(attr.name, attr.value);
+      });
+      newScript.textContent = oldScript.textContent;
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  }
+
+  function applyPageSwap(doc, targetUrl) {
+    // 1. Título do Documento
+    const newTitle = doc.querySelector('title');
+    if (newTitle) document.title = newTitle.textContent;
+
+    // 2. Classes do Body
+    if (doc.body) {
+      document.body.className = doc.body.className;
+    }
+
+    // 3. Margin Sidebar (TOC)
+    const currentSidebar = document.getElementById('quarto-margin-sidebar');
+    const newSidebar = doc.getElementById('quarto-margin-sidebar');
+    if (currentSidebar && newSidebar) {
+      currentSidebar.innerHTML = newSidebar.innerHTML;
+    } else if (currentSidebar && !newSidebar) {
+      currentSidebar.innerHTML = '';
+    } else if (!currentSidebar && newSidebar) {
+      const main = document.getElementById('quarto-document-content');
+      if (main && main.parentNode) {
+        main.parentNode.insertBefore(newSidebar.cloneNode(true), main);
+      }
+    }
+
+    // 4. Conteúdo Principal com Reinicialização de Scripts
+    const currentMain = document.getElementById('quarto-document-content');
+    const newMain = doc.getElementById('quarto-document-content');
+    if (currentMain && newMain) {
+      currentMain.innerHTML = newMain.innerHTML;
+      executePageScripts(currentMain);
+    }
+
+    // 5. Atualizar UI de Navegação (Navbar e Barra Móvel)
+    updateNavigationUI(targetUrl);
+
+    // 6. Controle Suave de Rolagem
+    try {
+      const url = new URL(targetUrl, window.location.href);
+      if (url.hash) {
+        const targetEl = document.querySelector(url.hash);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    } catch (e) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    // 7. Notificar Leitores de Tela via Live Region
+    const announcer = document.getElementById('cagp-a11y-announcer');
+    if (announcer && newTitle) {
+      announcer.textContent = 'Página carregada: ' + newTitle.textContent;
+    }
+
+    // 8. Disparar Eventos de Ciclo de Vida para Inicialização de Componentes
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+    window.dispatchEvent(new Event('load'));
+    document.dispatchEvent(new CustomEvent('cagp:navigated', { detail: { url: targetUrl } }));
+  }
+
+  async function navigate(targetUrl, isBack) {
+    try {
+      const html = await loadPage(targetUrl);
+      const parser = new DOMParser();
+      const newDoc = parser.parseFromString(html, 'text/html');
+
+      if (!isBack) {
+        history.pushState({ url: targetUrl }, '', targetUrl);
+      }
+
+      const mainEl = document.getElementById('quarto-document-content');
+
+      // Se o navegador suporta a View Transitions API nativa da Web
+      if (document.startViewTransition) {
+        document.startViewTransition(function () {
+          applyPageSwap(newDoc, targetUrl);
+        });
+      } else if (mainEl) {
+        // Fallback suave com animação CSS fluida
+        mainEl.classList.add('cagp-page-leaving');
+        setTimeout(function () {
+          applyPageSwap(newDoc, targetUrl);
+          mainEl.classList.remove('cagp-page-leaving');
+          mainEl.classList.add('cagp-page-entering');
+          setTimeout(function () {
+            mainEl.classList.remove('cagp-page-entering');
+          }, 280);
+        }, 120);
+      } else {
+        applyPageSwap(newDoc, targetUrl);
+      }
+    } catch (err) {
+      console.warn('CAGP Super App Router: Fallback para navegação tradicional:', err);
+      window.location.href = targetUrl;
+    }
+  }
+
+  // Interceptar cliques em links internos para navegação fluida SPA
+  document.addEventListener('click', function (e) {
+    // Permitir comportamento padrão do navegador com modificadores
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (e.defaultPrevented) return;
+
+    const anchor = e.target.closest('a');
+    if (!anchor || !isInternalLink(anchor)) return;
+
+    try {
+      const url = new URL(anchor.href, window.location.href);
+
+      // Se for apenas âncora (#) na mesma página, deixa rolagem natural
+      if (url.pathname === window.location.pathname && url.hash) {
+        return;
+      }
+
+      e.preventDefault();
+      navigate(anchor.href, false);
+    } catch (err) {
+      // Falha de URL, segue fluxo padrão
+    }
+  });
+
+  // Histórico do navegador (botão Voltar e Avançar)
+  window.addEventListener('popstate', function () {
+    navigate(window.location.href, true);
+  });
+
+  // Expor API global do Super App
+  window.cagpRouter = {
+    navigate: navigate,
+    prefetch: prefetch
+  };
 })();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

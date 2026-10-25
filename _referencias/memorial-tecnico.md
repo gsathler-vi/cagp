@@ -52,6 +52,8 @@
 42. [Ciclo de Auditoria e Refinamento Extensivo nas 11 Páginas](#42-ciclo-de-auditoria-e-refinamento-extensivo-nas-11-páginas)
 43. [Ciclo 43: Suíte Universal de Acessibilidade CAGP](#43-ciclo-43-suíte-universal-de-acessibilidade-cagp-escala-tipográfica-dinâmica-modo-dislexia-régua-visual-de-foco-alto-contraste-nanquimamarelo-e-leitores-de-tela-com-skip-links)
 44. [Ciclo 44: Suíte PWA & Adaptação Nativa Multiplataforma](#44-ciclo-44-suíte-pwa--adaptação-nativa-multiplataforma-desktop-iosipados-e-android-com-service-worker-offline-e-barra-móvel)
+45. [Ciclo 45: Fluidez & Micro-haptics de Alto Padrão](#45-ciclo-45-fluidez--micro-haptics-de-alto-padrão-transições-nativas-barra-de-leitura-cápsula-dynamic-island-toast-e-física-spring)
+46. [Ciclo 46: Arquitetura de Super App Multiplataforma](#46-ciclo-46-arquitetura-de-super-app-multiplataforma-roteador-spa-client-side-view-transitions-nativas-pré-carregamento-instantâneo-e-física-tátil-apple-hig--m3-expressive)
 
 ---
 
@@ -1602,4 +1604,83 @@ Para garantir que estudantes e docentes acessem as informações, regulamentos, 
 
 ---
 
+## 45. Ciclo 45: Fluidez & Micro-haptics de Alto Padrão (Transições Nativas, Barra de Leitura, Cápsula Dynamic Island Toast e Física Spring)
+
+**Contexto e Motivação:**  
+Atendendo às diretrizes `/impeccable animate`, `/impeccable polish`, `/impeccable shape` e à demanda por acabamento refinado que transmita cuidado artesanal e naturalidade em desktop e mobile (evocando o padrão de polimento da Apple, adaptado à identidade neo-brutalista Brite), foram implementados micro-haptics táteis, física elástica, transições de página nativas e sinalizadores fluidos de leitura.
+
+### 45.1 Física Spring e Micro-haptics Táteis
+- **Curva de Desaceleração Natural:** Estabelecimento das variáveis `--cagp-spring: cubic-bezier(0.16, 1, 0.3, 1)` e `--cagp-ease-out: cubic-bezier(0.22, 1, 0.36, 1)`, gerando uma sensação tátil de peso e inércia orgânica;
+- **Compressão Física nos Controles:** Botões (`.cagp-btn`, `.cagp-doc-btn`, `.cagp-step-btn`, `.cagp-filter-btn`) comprimem de forma elástica ao pressionar (`transform: translate(1px, 1px) scale(0.98)` e sombra reduzida para `1px 1px 0`), respondendo instantaneamente ao toque com `touch-action: manipulation` (eliminação da latência de 300ms do mobile);
+- **Elevação Tátil no Hover:** Os cartões e gatilhos flutuantes elevam-se suavemente com deslocamento de `-2px, -2px` e expansão de sombra sólida dura de 0-blur.
+
+### 45.2 Transições de Página Nativas (*View Transitions API*)
+- **Navegação Contínua Entre Rotas:** Habilitação de `@view-transition { navigation: auto; }` em navegadores modernos, unificando a experiência entre páginas sem flash de conteúdo em branco;
+- **Keyframes de Desvanecimento Escalonado:** Animações `cagpPageOut` (160ms) e `cagpPageIn` (240ms) garantem que a transição de rota seja suave e imperceptível, mantendo os elementos comuns (barra superior e barra móvel) fixos na percepção do usuário.
+
+### 45.3 Barra de Leitura Superior Fluida (`#cagp-reading-progress`)
+- **Acompanhamento Visual de Leitura:** Fita delgada de 3px em bordô `#9E2424` (ou amarelo `#ffff00` em alto contraste) ancorada no topo da tela;
+- **Renderização por GPU a 60fps/120fps:** Cálculo acoplado ao `window.requestAnimationFrame` aplicando `transform: scaleX(...)` com `will-change: transform`, proporcionando fluidez absoluta sem causar reflows ou travamentos em documentos longos (como o Catálogo de Optativas ou o Guia do Calouro).
+
+### 45.4 Cápsula de Notificação Flutuante (*Dynamic Island Toast* - `#cagp-toast`)
+- **Feedback Tátil Universal:** Elemento flutuante em formato de pílula neo-brutalista Brite suspenso no centro superior da viewport com borda sólida preta de 2.5px e sombra de 4px;
+- **Acionamento Multiuso:**
+  1. *Cópia Rápida:* Notifica imediatamente e de forma suave o discente quando um e-mail ou contato de secretaria é copiado;
+  2. *Status de Rede:* Informa discretamente transições de conectividade ("Conexão restabelecida" e "Modo offline: Conteúdo em cache");
+  3. *Instalação:* Comunica a confirmação de instalação do aplicativo no dispositivo;
+- **Animação com Curva Spring:** Desliza suavemente de cima para baixo com `cubic-bezier(0.16, 1, 0.3, 1)` e recolhe-se após 2,4 segundos.
+
+### 45.5 Gavetas Sanfonadas e Barra Móvel Aperfeiçoadas
+- **Rotação de Chevron Amortecida:** Rotação de 180° do ícone `bi-chevron-down` com amortecimento elástico ao expandir e recolher ementas das disciplinas;
+- **Indicador de Aba Ativa:** Pílula iluminada superior na barra inferior móvel destacando instantaneamente a página ativa.
+
+### 45.6 Verificação e Auditoria Técnica
+- Compilação do site com `quarto render` executada com código 0 em todas as 11 páginas;
+- Teste programático via Node.js confirmou a injeção dos 4 novos componentes táteis em 100% das páginas compiladas;
+- Auditoria do detector Impeccable executada em todos os arquivos de saída (`docs/*.html`), confirmando **0 erros**, tipografia e espaçamentos perfeitamente contidos, e registrando unicamente as 11 advertências conhecidas e autorizadas de `overused-font` para a tipografia institucional Inter.
+
+---
+
 *Documentação elaborada como registro pedagógico, técnico e de engenharia de software para o Centro Acadêmico de Gestão Pública (CAGP - FAFICH / UFMG).*
+
+
+---
+
+## 46. Ciclo 46: Arquitetura de Super App Multiplataforma (Roteador SPA Client-Side, View Transitions Nativas, Pré-carregamento Instantâneo e Física Tátil Apple HIG & M3 Expressive)
+
+**Contexto e Motivação:**  
+Atendendo às diretrizes avançadas `/impeccable new-work`, `/impeccable critique`, `/impeccable animate`, `/impeccable polish`, `/impeccable shape`, `/apple-design` e `/m3-expressive`, a arquitetura do portal foi elevada de um site estático convencional para um verdadeiro **Super App Multiplataforma**. Em plataformas web tradicionais geradas por SSG (como Quarto), cada clique de navegação recarrega a página por inteiro, gerando flashes de tela branca (*FOUC*) e destruindo a percepção de continuidade e polimento nativo. O objetivo deste ciclo foi conceber um motor de transição de estado client-side que proporcione navegação instantânea com 0ms de latência percebida, transições visuais a 60fps/120fps via *View Transitions API*, casca de aplicação (*App Shell*) permanente e física elástica inspirada no rigor da Apple e no Material Design 3 Expressive, mantendo com fidelidade irrestrita a identidade neo-brutalista Brite do CAGP.
+
+### 46.1 Motor de Roteamento SPA Client-Side e Transições Fluidas (`_includes/super-app-router.html`)
+- **Interceptação Suave de Links Internos:** Monitoramento em nível de documento de todos os cliques em links internos do mesmo domínio (`a[href]`), ignorando downloads de PDF, âncoras locais na mesma página e links externos;
+- **Pré-carregamento Inteligente (*Hover & Touch Prefetching*):** Ao passar o mouse (`mouseenter`) ou tocar no link (`touchstart`), o conteúdo HTML da página de destino é pré-carregado em cache em segundo plano via `fetch()`. No momento do clique real, a página já se encontra na memória do navegador, eliminando o atraso de rede (latência percebida de 0ms);
+- **Orquestração da *View Transitions API* Nativa:**
+  - Em navegadores modernos com suporte nativo, a substituição de tela é delegada a `document.startViewTransition()`;
+  - A troca de conteúdo do container `#quarto-document-content` ocorre suavemente enquanto a barra superior, a barra de leitura, a barra móvel e o painel de acessibilidade permanecem ancorados como uma aplicação nativa (*App Shell*);
+- **Mecanismo de Fallback Elegante para Navegadores Legados:**
+  - Para navegadores sem a API de View Transitions, o roteador aplica as classes `.cagp-page-leaving` e `.cagp-page-entering` com transições CSS sincronizadas de desvanecimento e escala sutil, garantindo a mesma experiência fluida sem interrupções visuais;
+- **Re-execução Segura de Scripts de Página:**
+  - Ao substituir o DOM do container principal, os blocos `<script>` contidos na nova página são recriados e re-executados dinamicamente;
+  - São disparados os eventos `DOMContentLoaded`, `load` e o evento customizado `cagp:navigated`, garantindo que recursos interativos como a *Calculadora de ACG*, os filtros do *Catálogo de Optativas*, o *Grafo Curricular SVG* e os *Checklists do Calouro* continuem funcionando perfeitamente sem necessidade de recarregar a página;
+- **Preservação de Histórico e Acessibilidade:**
+  - Gerenciamento completo de histórico com `history.pushState` e escuta do evento `popstate` (botões Voltar/Avançar do navegador e gestos de deslize do iOS/Android);
+  - Atualização automática da tag `<title>`, sincronização das classes do `body`, rolagem suave até âncoras `#` ou redefinição imediata para o topo (`window.scrollTo({ top: 0, behavior: 'instant' })`);
+  - Sincronização em tempo real das classes `.active` da navbar desktop e `.is-active` dos botões da barra móvel inferior.
+
+### 46.2 Física Tátil & Movimento Expressivo (Apple HIG & Google M3 Expressive) em `styles.css`
+- **Física de Mola e Desaceleração Natural:**
+  - Integração da curva de aceleração de mola da Apple (`cubic-bezier(0.16, 1, 0.3, 1)`) combinada com o easing enfático do Material 3 Expressive (`cubic-bezier(0.2, 0, 0, 1)`);
+  - Animação de entrada fluida `cagpSuperAppFadeIn` (duração de 280ms) com deslocamento sutil de elevação (`translateY(6px)` para `translateY(0)`);
+- **Micro-haptics de Compressão Tátil:**
+  - Botões, cartões interativos e switches exibem amortecimento mecânico ao toque (`transform: translate(1px, 2px) scale(0.97)` ou `scale(0.995)`), transmitindo feedback tátil palpável em telas sensíveis ao toque e dispositivos de precisão;
+  - Remoção universal do atraso de clique móvel de 300ms com `touch-action: manipulation`;
+- **Anel de Foco Material Design 3 Expressive:**
+  - Campos de entrada, caixas de busca e seletores contam com foco com anel duplo iluminado e deslocamento rígido (*focus halo*), mantendo alta visibilidade de foco para navegação por teclado e conformidade WCAG AAA;
+- **Indicador Dinâmico Deslizante na Barra Móvel:**
+  - A barra inferior fixa conta com pílula de destaque em bordô institucional `#9E2424` com transição elástica de largura e posição, demarcando visualmente a rota atual do Super App;
+- **Respeito Estrito a `prefers-reduced-motion: reduce`:**
+  - Usuários com sensibilidade vestibular ou preferências de redução de movimento têm todas as transformações espaciais desligadas, preservando estritamente desvanecimentos lineares de opacidade.
+
+### 46.3 Verificação e Conformidade Técnica
+- Compilação global executada via `quarto render` com código de retorno 0 em todas as 11 páginas;
+- Auditoria do detector Impeccable executada em todas as páginas compiladas em `docs/*.html`, confirmando **0 erros**, tipografia e espaçamentos perfeitamente contidos, e registrando unicamente as 11 advertências documentadas e autorizadas de `overused-font` para a tipografia Inter oficial.

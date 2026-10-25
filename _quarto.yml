@@ -101,4 +101,5 @@ format:
       - _includes/back-to-top.html
       - _includes/accessibility.html
       - _includes/pwa-install.html
+      - _includes/super-app-router.html
 
