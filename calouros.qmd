@@ -5,6 +5,26 @@ title-block-style: none
 toc: true
 ---
 
+```{=html}
+<nav class="cagp-breadcrumbs" aria-label="Você está aqui: Trilha de navegação">
+  <ol class="cagp-breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="cagp-breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="index.html" itemprop="item"><i class="bi bi-house-door" aria-hidden="true"></i> <span itemprop="name">Início</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+    <li class="cagp-breadcrumb-item">
+      <span class="cagp-breadcrumb-parent">Jornada Acadêmica</span>
+    </li>
+    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+    <li class="cagp-breadcrumb-item is-active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+      <span itemprop="name">Guia do Calouro (1º Período)</span>
+      <meta itemprop="position" content="2" />
+    </li>
+  </ol>
+</nav>
+```
+
 ::: {.cagp-hero}
 <div class="d-flex flex-wrap gap-2 mb-2">
   <span class="cagp-badge cagp-badge-red">Acolhimento Discente</span>
@@ -19,16 +39,16 @@ Você agora é estudante de **Gestão Pública** na **Faculdade de Filosofia e C
 ```{=html}
 <nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
   <span class="cagp-subnav-label">Nesta Página:</span>
-  <a href="#checklist-calouro" class="cagp-subnav-link">✅ Checklist 30 Dias</a>
-  <a href="#rotina-noturna" class="cagp-subnav-link">🌙 Rotina Noturna & RU</a>
-  <a href="#mapas-campus" class="cagp-subnav-link">🗺️ Mapas do Campus</a>
-  <a href="#videos-tutoriais" class="cagp-subnav-link">🎥 Vídeos Tutoriais</a>
-  <a href="#secretaria-e-ceag" class="cagp-subnav-link">🏢 CEAG & Secretaria</a>
-  <a href="#assistencia-estudantil" class="cagp-subnav-link">🤝 Assistência FUMP & PRAE</a>
+  <a href="#checklist-calouro" class="cagp-subnav-link"><i class="bi bi-check2-square" aria-hidden="true"></i> Checklist 30 Dias</a>
+  <a href="#rotina-noturna" class="cagp-subnav-link"><i class="bi bi-moon-stars" aria-hidden="true"></i> Rotina Noturna & RU</a>
+  <a href="#mapas-campus" class="cagp-subnav-link"><i class="bi bi-map" aria-hidden="true"></i> Mapas do Campus</a>
+  <a href="#videos-tutoriais" class="cagp-subnav-link"><i class="bi bi-play-circle" aria-hidden="true"></i> Vídeos Tutoriais</a>
+  <a href="#secretaria-e-ceag" class="cagp-subnav-link"><i class="bi bi-building" aria-hidden="true"></i> CEAG & Secretaria</a>
+  <a href="#assistencia-estudantil" class="cagp-subnav-link"><i class="bi bi-heart-pulse" aria-hidden="true"></i> Assistência FUMP & PRAE</a>
 </nav>
 ```
 
-## <span aria-hidden="true">✅</span> Checklist Interativo dos Primeiros 30 Dias {#checklist-calouro}
+## <i class="bi bi-check2-square" aria-hidden="true"></i> Checklist Interativo dos Primeiros 30 Dias {#checklist-calouro}
 
 Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica salvo automaticamente neste navegador:
 
@@ -58,13 +78,13 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
           <p class="small text-muted mb-2">Crie sua senha inicial em <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer">minha.ufmg.br</a> com a folha NIPs do DRCA. No computador, o portal integra o SIGA e e-mail institucional.</p>
           <div class="d-flex flex-wrap gap-2 mt-1">
             <a href="https://play.google.com/store/apps/details?id=br.ufmg.ddp.cecom.academico.sigaufmg" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar Siga UFMG para Android no Google Play">
-              <span>🤖</span> Play Store
+              <i class="bi bi-google-play" aria-hidden="true"></i> Play Store
             </a>
             <a href="https://apps.apple.com/br/app/siga-ufmg/id1456022680" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar Siga UFMG para iPhone na Apple App Store">
-              <span>🍏</span> App Store
+              <i class="bi bi-apple" aria-hidden="true"></i> App Store
             </a>
             <a href="documentos/manual-aplicativo-siga-ufmg.pdf" target="_blank" class="cagp-store-btn" aria-label="Manual do Aplicativo Siga UFMG em PDF">
-              <span>📖</span> Manual PDF
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Manual PDF
             </a>
           </div>
         </div>
@@ -119,14 +139,31 @@ Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica s
           <p class="small text-muted mb-2">Solicite classificação socioeconômica na Fundação Universitária Mendes Pimentel para desconto ou isenção no jantar do RU, auxílio transporte e moradia.</p>
           <div class="d-flex flex-wrap gap-2 mt-1">
             <a href="https://www.fump.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Acessar Portal da FUMP">
-              <span>🌐</span> Portal FUMP
+              <i class="bi bi-globe2" aria-hidden="true"></i> Portal FUMP
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.appfump" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar Aplicativo Fump no Google Play">
-              <span>🤖</span> App FUMP
+              <i class="bi bi-phone" aria-hidden="true"></i> App FUMP
             </a>
           </div>
         </div>
       </label>
+    </div>
+  </div>
+
+  <!-- Card de Celebração de 100% de Conclusão do Calouro -->
+  <div id="calouro-celebration" class="cagp-calouro-celebration" style="display: none;" role="status" aria-live="polite">
+    <div class="cagp-celebration-badge"><i class="bi bi-mortarboard-fill me-1" aria-hidden="true"></i> 100% INTEGRADO À UFMG</div>
+    <h3 class="h4 mb-2">PARABÉNS, VOCÊ ESTÁ OFICIALMENTE PRONTO PARA O SEMESTRE!</h3>
+    <p class="small text-muted mb-3 mx-auto" style="max-width: 650px;">
+      Você dominou todas as etapas fundamentais das primeiras quatro semanas: carteirinha, crachá, e-mail institucional, catálogo de matérias e rotina noturna. Conte com o CAGP em cada passo da sua trajetória acadêmica!
+    </p>
+    <div class="d-flex flex-wrap gap-2 justify-content-center">
+      <a href="percurso.html" class="cagp-doc-btn cagp-doc-btn-primary">
+        <i class="bi bi-map me-1" aria-hidden="true"></i> Conhecer o Percurso do Curso &rarr;
+      </a>
+      <a href="sobre.html" class="cagp-doc-btn cagp-doc-btn-outline">
+        <i class="bi bi-people me-1" aria-hidden="true"></i> Conhecer o Centro Acadêmico
+      </a>
     </div>
   </div>
 </section>
@@ -137,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const checkboxes = document.querySelectorAll('[data-calouro-chk]');
   const statusEl = document.getElementById('calouro-check-status');
   const barEl = document.getElementById('calouro-check-bar');
+  const celebrationEl = document.getElementById('calouro-celebration');
   const resetBtn = document.getElementById('calouro-check-reset');
 
   function loadState() {
@@ -171,6 +209,9 @@ document.addEventListener('DOMContentLoaded', function () {
       barEl.style.width = pct + '%';
       barEl.classList.toggle('is-complete', done === total);
     }
+    if (celebrationEl) {
+      celebrationEl.style.display = (total > 0 && done === total) ? 'block' : 'none';
+    }
   }
 
   const saved = loadState();
@@ -200,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ---
 
-## <span aria-hidden="true">📱</span> Aplicativos e Plataformas Essenciais do Calouro {#apps-essenciais}
+## <i class="bi bi-phone" aria-hidden="true"></i> Aplicativos e Plataformas Essenciais do Calouro {#apps-essenciais}
 
 Instale em seu smartphone os aplicativos oficiais e utilize as plataformas essenciais para sua rotina acadêmica na UFMG:
 
@@ -215,15 +256,15 @@ Instale em seu smartphone os aplicativos oficiais e utilize as plataformas essen
       <div class="cagp-app-meta">
         <h3 class="cagp-app-title">MinhaUFMG</h3>
         <div class="cagp-app-tags">
-          <span class="cagp-app-tag cagp-app-tag-cyan">Portal Desktop</span>
-          <span class="cagp-app-tag cagp-app-tag-cyan">NIPs</span>
+          <span class="cagp-app-tag cagp-app-tag-minhaufmg">Portal Desktop</span>
+          <span class="cagp-app-tag cagp-app-tag-minhaufmg">NIPs</span>
         </div>
       </div>
     </div>
     <p class="cagp-app-desc">Portal integrador de login único. Acesse pelo computador para cadastrar sua senha inicial, entrar no SIGA Web e usar o e-mail institucional @ufmg.br.</p>
     <div class="cagp-app-actions">
-      <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar MinhaUFMG no navegador">💻 Portal Web ↗</a>
-      <a href="https://sistemas.ufmg.br/nips/home.seam" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Acessar primeiro cadastro com Folha NIPs">🔑 Folha NIPs ↗</a>
+      <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar MinhaUFMG no navegador"><i class="bi bi-browser-chrome" aria-hidden="true"></i> Portal Web ↗</a>
+      <a href="https://sistemas.ufmg.br/nips/home.seam" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Acessar primeiro cadastro com Folha NIPs"><i class="bi bi-key" aria-hidden="true"></i> Folha NIPs ↗</a>
     </div>
   </article>
 
@@ -236,16 +277,16 @@ Instale em seu smartphone os aplicativos oficiais e utilize as plataformas essen
       <div class="cagp-app-meta">
         <h3 class="cagp-app-title">Siga UFMG Mobile</h3>
         <div class="cagp-app-tags">
-          <span class="cagp-app-tag cagp-app-tag-blue">App Celular</span>
-          <span class="cagp-app-tag cagp-app-tag-blue">Carteirinha</span>
+          <span class="cagp-app-tag cagp-app-tag-siga">App Celular</span>
+          <span class="cagp-app-tag cagp-app-tag-siga">Carteirinha</span>
         </div>
       </div>
     </div>
     <p class="cagp-app-desc">Aplicativo para Android e iOS: visualize horários de aula, número de faltas, notas parciais, avisos dos professores e sua carteirinha virtual de estudante.</p>
     <div class="cagp-app-actions">
-      <a href="https://play.google.com/store/apps/details?id=br.ufmg.ddp.cecom.academico.sigaufmg" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Baixar Siga UFMG para Android">🤖 Android ↗</a>
-      <a href="https://apps.apple.com/br/app/siga-ufmg/id1456022680" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Baixar Siga UFMG para iOS">🍎 iOS ↗</a>
-      <a href="documentos/manual-aplicativo-siga-ufmg.pdf" target="_blank" class="cagp-store-btn" aria-label="Baixar manual oficial do Siga UFMG">📄 Manual PDF</a>
+      <a href="https://play.google.com/store/apps/details?id=br.ufmg.ddp.cecom.academico.sigaufmg" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Baixar Siga UFMG para Android"><i class="bi bi-google-play" aria-hidden="true"></i> Android ↗</a>
+      <a href="https://apps.apple.com/br/app/siga-ufmg/id1456022680" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Baixar Siga UFMG para iOS"><i class="bi bi-apple" aria-hidden="true"></i> iOS ↗</a>
+      <a href="documentos/manual-aplicativo-siga-ufmg.pdf" target="_blank" class="cagp-store-btn" aria-label="Baixar manual oficial do Siga UFMG"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Manual PDF</a>
     </div>
   </article>
 
@@ -258,15 +299,15 @@ Instale em seu smartphone os aplicativos oficiais e utilize as plataformas essen
       <div class="cagp-app-meta">
         <h3 class="cagp-app-title">FUMP Assistência</h3>
         <div class="cagp-app-tags">
-          <span class="cagp-app-tag cagp-app-tag-orange">Bolsas &amp; RU</span>
-          <span class="cagp-app-tag cagp-app-tag-orange">Saúde</span>
+          <span class="cagp-app-tag cagp-app-tag-fump">Bolsas &amp; RU</span>
+          <span class="cagp-app-tag cagp-app-tag-fump">Saúde</span>
         </div>
       </div>
     </div>
     <p class="cagp-app-desc">Fundação Mendes Pimentel: consulte cardápios diários do Restaurante Universitário, agende consultas médicas e preencha o questionário socioeconômico.</p>
     <div class="cagp-app-actions">
-      <a href="https://play.google.com/store/apps/details?id=com.appfump" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Baixar aplicativo Fump para Android">📱 App Fump ↗</a>
-      <a href="https://www.fump.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Acessar portal web da FUMP">🌐 Portal FUMP ↗</a>
+      <a href="https://play.google.com/store/apps/details?id=com.appfump" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Baixar aplicativo Fump para Android"><i class="bi bi-phone" aria-hidden="true"></i> App Fump ↗</a>
+      <a href="https://www.fump.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Acessar portal web da FUMP"><i class="bi bi-globe2" aria-hidden="true"></i> Portal FUMP ↗</a>
     </div>
   </article>
 
@@ -274,19 +315,19 @@ Instale em seu smartphone os aplicativos oficiais e utilize as plataformas essen
   <article class="cagp-app-card cagp-app-card-rotas">
     <div class="cagp-app-header">
       <div class="cagp-app-logo-box">
-        <img src="logos/interno-rotas/logo.svg" alt="Logo do aplicativo Interno Rotas" class="cagp-app-logo" width="40" height="40">
+        <img src="logos/interno-rotas/icone.svg" alt="Logo do aplicativo Interno Rotas" class="cagp-app-logo" width="40" height="40">
       </div>
       <div class="cagp-app-meta">
         <h3 class="cagp-app-title">Interno Rotas</h3>
         <div class="cagp-app-tags">
-          <span class="cagp-app-tag cagp-app-tag-green">Circulares Noturnos</span>
-          <span class="cagp-app-tag cagp-app-tag-green">Ao Vivo</span>
+          <span class="cagp-app-tag cagp-app-tag-rotas">Circulares Noturnos</span>
+          <span class="cagp-app-tag cagp-app-tag-rotas">Ao Vivo</span>
         </div>
       </div>
     </div>
     <p class="cagp-app-desc">Rastreamento colaborativo via GPS dos ônibus circulares gratuitos no campus Pampulha. Desenvolvido por discente da UFMG sob licença livre MIT.</p>
     <div class="cagp-app-actions">
-      <a href="https://internorotas.com/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Abrir mapa em tempo real no Interno Rotas">🚌 Ver Ônibus ao Vivo ↗</a>
+      <a href="https://internorotas.com/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Abrir mapa em tempo real no Interno Rotas"><i class="bi bi-bus-front" aria-hidden="true"></i> Ver Ônibus ao Vivo ↗</a>
     </div>
   </article>
 </div>
@@ -295,14 +336,14 @@ Instale em seu smartphone os aplicativos oficiais e utilize as plataformas essen
 
 ---
 
-## <span aria-hidden="true">🌙</span> A Rotina do Estudante do Turno Noturno {#rotina-noturna}
+## <i class="bi bi-moon-stars" aria-hidden="true"></i> A Rotina do Estudante do Turno Noturno {#rotina-noturna}
 
 Estudar à noite na UFMG tem uma dinâmica própria que você precisa dominar desde a primeira semana para não perder aulas, refeições ou condução:
 
 ::: {.row .g-3 .mb-4}
 ::: {.col-md-6}
 ::: {.cagp-card}
-### <span aria-hidden="true">⏰</span> Horários das Aulas e Presença {.fs-5}
+### <i class="bi bi-clock" aria-hidden="true"></i> Horários das Aulas e Presença {.fs-5}
 - As aulas do turno noturno ocorrem de **segunda a sexta-feira, das 19h00 às 22h30**, divididas em dois blocos de 1h40 (com intervalo de 10 minutos).
 - **Assiduidade:** O regimento da UFMG exige no mínimo **75% de frequência** em cada disciplina. Planeje seu deslocamento pós-trabalho para não sofrer reprovação por falta (infrequência).
 :::
@@ -310,27 +351,35 @@ Estudar à noite na UFMG tem uma dinâmica própria que você precisa dominar de
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-### <span aria-hidden="true">🍽️</span> Logística da Alimentação Noturna (RUs) {.fs-5}
+### <i class="bi bi-cup-hot" aria-hidden="true"></i> Logística da Alimentação Noturna (RUs) {.fs-5}
 - **Jantar no Campus:** Servido exclusivamente no **RU Setorial II** (próximo ao ICB), das **17h10 às 19h30**.
 - **Café da Manhã:** Exclusivo para estudantes Níveis I, II e III da assistência estudantil no **RU Setorial I**, das **06h40 às 08h15**.
 - **Cobrança Política do CAGP:** O CAGP e o DA FAFICH cobram da PRAE e da FUMP a reabertura do jantar no Setorial I (vizinho à FAFICH) ou distribuição de marmitas no CAD 2, para evitar a subida íngreme à noite.
+
+::: {.cagp-veteran-tip}
+**💡 Dica de Veterano (Jantar no RU):** O RU Setorial II encerra o jantar pontualmente às 19h30. Se a sua aula começa às 19h00, procure chegar na fila até 18h15 para jantar com tranquilidade e evitar filas quilométricas.
+:::
 :::
 :::
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-### <span aria-hidden="true">🚌</span> Ônibus Circulares Noturnos (Linhas 3 e 4) {.fs-5}
+### <i class="bi bi-bus-front" aria-hidden="true"></i> Ônibus Circulares Noturnos (Linhas 3 e 4) {.fs-5}
 - Os **circulares internos são 100% gratuitos** e ligam as portarias da Av. Antônio Carlos e Catalão aos prédios até as 22h45.
 - Para atender ao jantar no Setorial II, a PRA reforçou as viagens nos horários de pico:
   - **Linha 3:** 16h40, 17h20, 18h00 e 19h05.
   - **Linha 4:** 16h20, 17h00, 17h40 e 18h35.
 - **Ao Vivo no Celular:** Acesse o app colaborativo livre [**Interno Rotas** (internorotas.com)](https://internorotas.com/){target="_blank" rel="noopener noreferrer"} para ver o GPS dos circulares em tempo real.
+
+::: {.cagp-veteran-tip}
+**💡 Dica de Veterano (Último Circular):** O último ônibus circular parte às 22h45. Como as aulas terminam às 22h30, caminhe com seus colegas diretamente para os pontos da FAFICH ou CAD 2 sem hesitar.
+:::
 :::
 :::
 
 ::: {.col-md-6}
 ::: {.cagp-card}
-### <span aria-hidden="true">🛡️</span> Segurança e Iluminação no Campus {.fs-5}
+### <i class="bi bi-shield-check" aria-hidden="true"></i> Segurança e Iluminação no Campus {.fs-5}
 - O campus Pampulha conta com iluminação reforçada na escadaria da Praça de Serviços até o Setorial II e rondas da vigilância interna (ramal de emergência: **3409-4444**).
 - **Dica de Ouro:** Ao término das aulas às 22h30, desça para os pontos de ônibus ou estações do MOVE (Estação UFMG e Mineirão) em grupos de colegas.
 :::
@@ -339,7 +388,7 @@ Estudar à noite na UFMG tem uma dinâmica própria que você precisa dominar de
 
 ---
 
-## <span aria-hidden="true">🗺️</span> Mapas do Campus Pampulha & Acessos Noturnos {#mapas-campus}
+## <i class="bi bi-map" aria-hidden="true"></i> Mapas do Campus Pampulha & Acessos Noturnos {#mapas-campus}
 
 Localize os principais pontos da sua vivência noturna: a FAFICH, o CAD 2 (onde ocorrem diversas aulas compartilhadas), a Praça de Serviços e os Restaurantes Universitários.
 
@@ -354,12 +403,12 @@ Localize os principais pontos da sua vivência noturna: a FAFICH, o CAD 2 (onde 
 
 ::: {.callout-note}
 ### Mapas Setoriais e Unidades Acadêmicas
-Você também pode consultar o [Mapa Integrado dos Campi da UFMG (Pampulha, Saúde e Montes Claros)](imagens/mapas-dos-campi.png){target="_blank"} para conhecer as conexões com as demais unidades da universidade.
+Você também pode consultar o [Mapa Integrado dos Campi da UFMG (Pampulha, Saúde e Montes Claros)](https://www.ufmg.br/viverufmg/conheca-a-ufmg/campi/){target="_blank"} para conhecer as conexões com as demais unidades da universidade.
 :::
 
 ---
 
-## <span aria-hidden="true">🎥</span> Tutoriais Oficiais em Vídeo (UFMG & Sistemas) {#videos-tutoriais}
+## <i class="bi bi-play-circle" aria-hidden="true"></i> Tutoriais Oficiais em Vídeo (UFMG & Sistemas) {#videos-tutoriais}
 
 Assista aos guias audiovisuais produzidos pela DTI, PRAE e canais oficiais da UFMG para tirar dúvidas rápidas sobre ferramentas e direitos:
 
@@ -441,20 +490,24 @@ Assista aos guias audiovisuais produzidos pela DTI, PRAE e canais oficiais da UF
 
 ---
 
-## <span aria-hidden="true">🏛️</span> Conhecendo a FAFICH e os Espaços do Curso
+## <i class="bi bi-building" aria-hidden="true"></i> Conhecendo a FAFICH e os Espaços do Curso
 
 A **Faculdade de Filosofia e Ciências Humanas** é uma das unidades mais tradicionais e politizadas da UFMG.
 
 ::: {.cagp-card}
-### <span aria-hidden="true">📍</span> Onde Encontrar a Gestão e Pontos-Chave
+### <i class="bi bi-geo-alt" aria-hidden="true"></i> Onde Encontrar a Gestão e Pontos-Chave
 - **Salinha do CAGP (Pilotis da FAFICH):** Espaço dos Centros Acadêmicos no pilotis térreo. Venha tomar um café, tirar dúvidas sobre professores, provas e percurso, e participar dos debates da gestão.
 - **Departamento de Ciência Política (DCP):** Departamento acadêmico de vinculação do curso de Gestão Pública, no 3º andar da FAFICH.
-- **Biblioteca Setorial da FAFICH (2º Andar):** Amplo acervo especializado em Ciência Política, Administração Pública, Sociologia, Economia e periódicos internacionais.
+- **Biblioteca Setorial da FAFICH (1º Andar):** Amplo acervo especializado em Ciência Política, Administração Pública, Sociologia e periódicos internacionais.
+
+::: {.cagp-veteran-tip}
+**💡 Dica de Veterano (Acervo FACE):** Para livros e manuais específicos de **Econometria (ECN)**, **Avaliação de Políticas Públicas** e **Estatística Aplicada**, recomendamos consultar também a **Biblioteca da FACE (Faculdade de Ciências Econômicas)**, localizada ao lado da FAFICH, que concentra o acervo mais completo nessas matérias quantitativas.
+:::
 :::
 
-### <span aria-hidden="true">🏢</span> Atendimento Acadêmico: Secretaria vs. CEAG {#secretaria-e-ceag}
+### <i class="bi bi-door-open" aria-hidden="true"></i> Atendimento Acadêmico: Secretaria vs. CEAG {#secretaria-e-ceag}
 
-Como estudante do noturno, você conta com dois guichês de atendimento presencial no **2º andar da FAFICH**:
+Como estudante do noturno, você conta com canais de atendimento presencial no **2º andar da FAFICH**:
 
 ```{=html}
 <div class="row g-4 my-2">
@@ -462,16 +515,22 @@ Como estudante do noturno, você conta com dois guichês de atendimento presenci
     <div class="cagp-card h-100">
       <div class="d-flex align-items-center justify-content-between mb-2">
         <span class="cagp-badge cagp-badge-red">Secretaria do Curso</span>
-        <span class="text-muted small">Sala 2039</span>
+        <span class="text-muted small">Sala F-2039</span>
       </div>
       <h4 class="fs-6 fw-bold text-uppercase mb-2">Secretaria de Gestão Pública</h4>
-      <p class="small text-muted mb-2">Atendimento especializado em demandas curriculares exclusivas de Gestão Pública (contato direto com a coordenação).</p>
+      <p class="small text-muted mb-2">Atendimento especializado em demandas curriculares exclusivas de Gestão Pública e contato com a Coordenação.</p>
       <ul class="small mb-3 ps-3">
-        <li><strong>Secretários Oficiais:</strong> Wander Wenceslau Pereira / Ubirajara Dutra</li>
-        <li><strong>Horário Presencial:</strong> Quarta-feira, das 13h00 às 19h00</li>
-        <li><strong>Telefone:</strong> (31) 3409-3826</li>
-        <li><strong>E-mail Oficial:</strong> <a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a></li>
-        <li><strong>Atribuições:</strong> Aproveitamento de estudos, validação de Formação Complementar Aberta (FCA), mudança de percurso e requerimentos pedagógicos.</li>
+        <li><strong>Secretária Oficial:</strong> Norma Guedes <em>(Férias regimentais: 24/11 a 05/12)</em></li>
+        <li><strong>Escala de Atendimento:</strong>
+          <ul class="ps-3 mt-1">
+            <li><strong>Segunda-feira:</strong> no CEAG, das 16h00 às 22h00</li>
+            <li><strong>Terça-feira:</strong> Presencial na Sala F-2039, das 16h30 às 19h30</li>
+            <li><strong>Quarta-feira:</strong> no CEAG, das 16h00 às 22h00</li>
+            <li><strong>Quinta e Sexta-feira:</strong> Serviços internos, das 09h00 às 15h00</li>
+          </ul>
+        </li>
+        <li><strong>Telefone:</strong> (31) 3409-3826 <button type="button" class="cagp-copy-btn" data-copy="3134093826" aria-label="Copiar telefone da secretaria"><i class="bi bi-telephone me-1" aria-hidden="true"></i>Copiar</button> • <strong>E-mail:</strong> <a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a> <button type="button" class="cagp-copy-btn" data-copy="gestaopublica@ufmg.br" aria-label="Copiar e-mail do Colegiado"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar</button></li>
+        <li><strong>Coordenação do Curso:</strong> Profª Isabele Batista Mitozo (Atendimento presencial na <strong>Sala F-4067</strong> às quartas das 17h30 às 19h00 e quintas on-line • <a href="mailto:coordgestaopublica@gmail.com">coordgestaopublica@gmail.com</a> <button type="button" class="cagp-copy-btn" data-copy="coordgestaopublica@gmail.com" aria-label="Copiar e-mail da coordenação"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar</button>).</li>
       </ul>
     </div>
   </div>
@@ -480,13 +539,14 @@ Como estudante do noturno, você conta com dois guichês de atendimento presenci
     <div class="cagp-card h-100">
       <div class="d-flex align-items-center justify-content-between mb-2">
         <span class="cagp-badge cagp-badge-dark">Cobertura Noturna Contínua</span>
-        <span class="text-muted small">2º Andar (Caixas)</span>
+        <span class="text-muted small">Sala F-2033</span>
       </div>
       <h4 class="fs-6 fw-bold text-uppercase mb-2">CEAG FAFICH (Graduação)</h4>
-      <p class="small text-muted mb-2">Centro de Atendimento à Graduação da FAFICH. Ideal para o estudante do noturno protocolar processos sem faltar ao trabalho diurno!</p>
+      <p class="small text-muted mb-2">Central de Atendimento à Graduação da FAFICH. Ideal para o estudante do noturno protocolar processos sem faltar ao trabalho diurno!</p>
       <ul class="small mb-3 ps-3">
-        <li><strong>Horário Noturno:</strong> Segunda a sexta-feira, das <strong>08h00 às 22h00</strong></li>
-        <li><strong>Localização:</strong> Guichê em frente aos caixas eletrônicos (2º piso da FAFICH)</li>
+        <li><strong>Horário Letivo:</strong> Segunda a sexta-feira, das <strong>08h00 às 22h00</strong> ininterruptamente</li>
+        <li><strong>Recesso Acadêmico:</strong> Segunda a sexta-feira, das 08h00 às 17h00</li>
+        <li><strong>Localização:</strong> Sala F-2033 (2º piso da FAFICH, ao lado dos caixas eletrônicos)</li>
         <li><strong>Atribuições:</strong> Entrega de atestados médicos de alunos, protocolos de trancamento total/parcial, colação de grau, exame especial, certidões e histórico escolar autenticado.</li>
       </ul>
     </div>
@@ -496,7 +556,7 @@ Como estudante do noturno, você conta com dois guichês de atendimento presenci
 
 ---
 
-## <span aria-hidden="true">🤝</span> Permanência Estudantil, Bolsas e Assistência {#assistencia-estudantil}
+## <i class="bi bi-heart-pulse" aria-hidden="true"></i> Permanência Estudantil, Bolsas e Assistência {#assistencia-estudantil}
 
 A Política de Permanência da UFMG é coordenada pela **PRAE** e executada pela **FUMP**, visando assegurar condições de igualdade para que todo estudante conclua o curso com dignidade.
 
@@ -562,7 +622,7 @@ Todo discente que deseja pleitear benefícios (alimentação gratuita/subsidiada
 
 ---
 
-## <span aria-hidden="true">💡</span> Dicas de Ouro dos Veteranos do CAGP
+## <i class="bi bi-lightbulb" aria-hidden="true"></i> Dicas de Ouro dos Veteranos do CAGP
 
 ::: {.callout-tip}
 ### Cuide do seu Percurso desde o 1º Período
@@ -571,7 +631,7 @@ Disciplinas como *Fundamentos da Análise Política (DCP 032)*, *Metodologia (DC
 
 ::: {.callout-important}
 ### Comece a Pensar nas Horas de Extensão (300h)
-Lembre-se de que 10% da carga horária total (300 horas) são de **Formação em Extensão Obrigatória** (Resolução CEPE nº 10/2019). Visite a página de [Extensão & AAC](acg.qmd) para entender como integralizar essas horas através de projetos PROEX e na *Equalitas Consultoria Jr.*
+Lembre-se de que 10% da carga horária total (300 horas) são de **Formação em Extensão Obrigatória** (Resolução CEPE nº 10/2019). Visite a página de [Extensão & AAC](acg.qmd) para entender como integralizar essas horas através de projetos PROEX e na *ATLAS Consultoria Jr. (antiga Equalitas)*.
 :::
 
 ::: {.callout-note}

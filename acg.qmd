@@ -5,6 +5,26 @@ title-block-style: none
 toc: true
 ---
 
+```{=html}
+<nav class="cagp-breadcrumbs" aria-label="Você está aqui: Trilha de navegação">
+  <ol class="cagp-breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="cagp-breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="index.html" itemprop="item"><i class="bi bi-house-door" aria-hidden="true"></i> <span itemprop="name">Início</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+    <li class="cagp-breadcrumb-item">
+      <span class="cagp-breadcrumb-parent">Jornada Acadêmica</span>
+    </li>
+    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+    <li class="cagp-breadcrumb-item is-active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+      <span itemprop="name">Extensão &amp; Horas AAC (600h)</span>
+      <meta itemprop="position" content="2" />
+    </li>
+  </ol>
+</nav>
+```
+
 ::: {.cagp-hero}
 <div class="d-flex flex-wrap gap-2 mb-2">
   <span class="cagp-badge cagp-badge-red">Normas Oficiais • Capítulos IV e V</span>
@@ -20,15 +40,15 @@ A formação em Gestão Pública na UFMG integra extensão comunitária obrigat�
 ```{=html}
 <nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
   <span class="cagp-subnav-label">Nesta Página:</span>
-  <a href="#calculadora-horas" class="cagp-subnav-link">🧮 Calculadora 600h</a>
-  <a href="#regulamento-categorias" class="cagp-subnav-link">📑 As 9 Categorias AAC</a>
-  <a href="#passo-a-passo" class="cagp-subnav-link">⚠️ Prazo 120 Dias & Validação</a>
-  <a href="#programa-de-imersao" class="cagp-subnav-link">🏛️ Programa de Imersão</a>
-  <a href="#nucleos-pesquisa" class="cagp-subnav-link">🔬 Núcleos de Pesquisa</a>
+  <a href="#calculadora-horas" class="cagp-subnav-link"><i class="bi bi-calculator" aria-hidden="true"></i> Calculadora 600h</a>
+  <a href="#regulamento-categorias" class="cagp-subnav-link"><i class="bi bi-card-list" aria-hidden="true"></i> As 9 Categorias AAC</a>
+  <a href="#passo-a-passo" class="cagp-subnav-link"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Prazo 120 Dias & Validação</a>
+  <a href="#programa-de-imersao" class="cagp-subnav-link"><i class="bi bi-bank" aria-hidden="true"></i> Programa de Imersão</a>
+  <a href="#nucleos-pesquisa" class="cagp-subnav-link"><i class="bi bi-search" aria-hidden="true"></i> Núcleos de Pesquisa</a>
 </nav>
 ```
 
-## <span aria-hidden="true">🎯</span> Quadro Geral de Cargas Horárias
+## <i class="bi bi-bullseye" aria-hidden="true"></i> Quadro Geral de Cargas Horárias
 
 ::: {.row .g-3 .mb-4}
 ::: {.col-md-4}
@@ -58,7 +78,7 @@ A formação em Gestão Pública na UFMG integra extensão comunitária obrigat�
 
 ---
 
-## <span aria-hidden="true">🧮</span> Calculadora & Simulador Interativo de Horas {#calculadora-horas}
+## <i class="bi bi-calculator" aria-hidden="true"></i> Calculadora & Simulador Interativo de Horas {#calculadora-horas}
 
 Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular suas horas já realizadas ou planejadas. A calculadora **respeita automaticamente o teto máximo regimental de cada categoria** e salva seu rascunho neste navegador:
 
@@ -70,6 +90,22 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
       <h3 id="calc-heading" class="h5 mb-0">SIMULADOR DE INTEGRALIZAÇÃO: EXTENSÃO (300H) + AAC (ATÉ 300H)</h3>
     </div>
     <button type="button" id="btn-calc-reset" class="cagp-chip">Zerar Simulação</button>
+  </div>
+
+  <!-- Banner Dinâmico de Progresso e Celebração 600h -->
+  <div id="cagp-calc-celebration" class="cagp-calc-celebration-box" role="status" aria-live="polite">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+      <span id="calc-status-badge" class="cagp-calc-status-badge"><i class="bi bi-compass" aria-hidden="true"></i> SIMULADOR ATIVO</span>
+      <span id="calc-combined-readout" class="small fw-bold cagp-tabular text-dark">0h / 600h simuladas (0 cr de 40 cr)</span>
+    </div>
+    <div id="calc-feedback-text" class="small mb-0">
+      Ajuste as horas abaixo usando os botões <strong>+</strong> e <strong>−</strong> para calcular sua integralização nas duas frentes obrigatórias: <strong>300h de Extensão</strong> e <strong>300h de Atividades Complementares (AAC)</strong>.
+    </div>
+    <div id="calc-action-banner" class="mt-3" style="display: none;">
+      <a href="#passo-a-passo" class="cagp-doc-btn cagp-doc-btn-primary">
+        <i class="bi bi-check2-circle me-1" aria-hidden="true"></i> Ver Passo a Passo para Dar Entrada no Colegiado
+      </a>
+    </div>
   </div>
 
   <div class="row g-4">
@@ -89,11 +125,41 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">DCP 195 — Laboratório de Gestão A</div>
             <div class="cagp-calc-desc">Disciplina de Extensão • 90h (6 créditos)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-ext_lab_a">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Laboratório A">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Laboratório A">+</button>
+          </div>
+          <div id="drawer-ext_lab_a" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Aprovação formal na disciplina prática <strong>DCP 195</strong> no 7º período;</li>
+                    <li>Desenvolvimento de diagnósticos de gestão e matrizes aplicadas a órgãos parceiros;</li>
+                    <li>Integralização direta de 90h de extensão no SIGA pela nota final.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Não é passível de dispensa por estágio supervisionado ou vivência profissional;</li>
+                    <li>Disciplinas teóricas comuns de outros departamentos sem componente extensionista;</li>
+                    <li>Reprovações exigem nova matrícula no semestre seguinte.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -101,23 +167,83 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">DCP 196 — Laboratório de Gestão B</div>
             <div class="cagp-calc-desc">Disciplina de Extensão • 90h (6 créditos)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-ext_lab_b">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Laboratório B">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Laboratório B">+</button>
           </div>
+          <div id="drawer-ext_lab_b" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Aprovação formal na disciplina prática <strong>DCP 196</strong> no 8º período;</li>
+                    <li>Execução do plano de intervenção governamental elaborado no ciclo A;</li>
+                    <li>Integralização direta de mais 90h de extensão no SIGA.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Não pode ser cursada sem ter concluído o Laboratório A (requisito pedagógico);</li>
+                    <li>Atividades de TCC ou pesquisa bibliográfica não contam como Laboratório B;</li>
+                    <li>Não permite aproveitamento retroativo de empregos anteriores.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="cagp-calc-row" data-calc-group="ext" data-calc-id="ext_equalitas" data-step="15" data-max="90">
           <div class="cagp-calc-info">
-            <div class="fw-bold small">Equalitas Consultoria Jr. (Empresa Jr.)</div>
-            <div class="cagp-calc-desc">Teto máximo: até 90h (6 créditos)</div>
+            <div class="fw-bold small">ATLAS Consultoria Jr. (antiga Equalitas)</div>
+            <div class="cagp-calc-desc">Empresa Júnior de Gestão Pública • Teto: até 90h (6 cr)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-ext_equalitas">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
-            <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Equalitas Jr.">−</button>
+            <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de ATLAS Jr.">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
-            <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Equalitas Jr.">+</button>
+            <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de ATLAS Jr.">+</button>
+          </div>
+          <div id="drawer-ext_equalitas" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Atuação efetiva em projetos de consultoria técnica em Gestão Pública;</li>
+                    <li>Cargos de diretoria executiva, gerência e atuação como trainee na ATLAS Jr.;</li>
+                    <li>Declaração emitida pela Diretoria-Executiva da Empresa Júnior com discriminação de horas.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Participação em processos seletivos sem ingresso formal ou desistência no treinamento;</li>
+                    <li>Horas que ultrapassem o teto de 90h (6 créditos) fixado no regulamento;</li>
+                    <li>Atividades puramente festivas ou comissões de formatura.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -125,11 +251,41 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">Projetos e Programas PROEX / SIEX</div>
             <div class="cagp-calc-desc">Bolsista ou voluntário • Teto: até 90h (6 cr)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-ext_proex">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de PROEX">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de PROEX">+</button>
+          </div>
+          <div id="drawer-ext_proex" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Participação como bolsista ou voluntário em projetos registrados no SIEX/PROEX;</li>
+                    <li>Certificado formal emitido pela Pró-Reitoria de Extensão (PROEX/UFMG);</li>
+                    <li>Projetos interdepartamentais que tenham interface com o setor público ou movimentos sociais.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Ações de extensão sem registro oficial prévio no sistema SIEX;</li>
+                    <li>Iniciação Científica (pertence à AAC Modalidade V, não à Extensão PROEX);</li>
+                    <li>Declarações informais de docentes sem chancela da PROEX.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -137,11 +293,41 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">Organização / Debatedor de Eventos (II)</div>
             <div class="cagp-calc-desc">Comissão ou moderador • Teto: até 60h (4 cr)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-ext_eventos">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Organização de Eventos">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Organização de Eventos">+</button>
+          </div>
+          <div id="drawer-ext_eventos" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Participação em comissão organizadora ou comitê executivo de congressos da área;</li>
+                    <li>Atuação como moderador, debatedor ou coordenador de mesa-redonda ou grupo de trabalho (GT);</li>
+                    <li>Certificado formal emitido pela comissão do evento atestando o papel exercido.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Participar apenas sentado na plateia como ouvinte (isto é AAC Modalidade III);</li>
+                    <li>Organização de calouradas, churrascos ou eventos sem caráter técnico-científico;</li>
+                    <li>Apresentação de trabalho (isto é Trabalho em Anais / Modalidade VII).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -149,11 +335,41 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">Atividades Interinstitucionais de Ensino</div>
             <div class="cagp-calc-desc">Cursos em IES públicas • Teto: até 120h (8 cr)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-ext_inter">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas Interinstitucionais">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas Interinstitucionais">+</button>
+          </div>
+          <div id="drawer-ext_inter" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Cursos de extensão e oficinas em outras Instituições Públicas de Ensino Superior (IES);</li>
+                    <li>Cursos certificados por Escolas de Governo reconhecidas (ENAP, Fundação João Pinheiro, ILB, etc.);</li>
+                    <li>Conteúdo com estrita aderência ao campo de Gestão e Políticas Públicas.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Cursos livres de plataformas comerciais privadas (Udemy, Coursera etc.) sem convalidação pública;</li>
+                    <li>Cursos que apenas reproduzam matérias obrigatórias já constantes no percurso;</li>
+                    <li>Cursos sem prova de carga horária, ementa oficial e autenticação digital.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -175,11 +391,41 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">I. Pesquisa Interinstitucional</div>
             <div class="cagp-calc-desc">Teto máximo: até 75h (5 créditos)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-aac_1">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Pesquisa Interinstitucional">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Pesquisa Interinstitucional">+</button>
+          </div>
+          <div id="drawer-aac_1" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Pesquisas em outras IES públicas ou institutos estatais reconhecidos (IPEA, FJP, etc.);</li>
+                    <li>Plano de trabalho acadêmico supervisionado por pesquisador externo qualificado;</li>
+                    <li>Relatório final com parecer formal avaliativo assinado pelo orientador.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Pesquisas desenvolvidas internamente na UFMG (pertencem à Modalidade V);</li>
+                    <li>Atividades sem comprovação acadêmica ou sem relatório avaliativo de desempenho;</li>
+                    <li>Horas que ultrapassem o teto de 75h (5 créditos).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -187,11 +433,41 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">II. Monitoria Acadêmica</div>
             <div class="cagp-calc-desc">Teto máximo: até 45h (3 créditos)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-aac_2">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Monitoria">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Monitoria">+</button>
+          </div>
+          <div id="drawer-aac_2" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Monitoria formal (bolsista ou voluntária) em disciplinas vinculadas ao curso de Gestão Pública;</li>
+                    <li>Disciplinas de Ciência Política (DCP), Sociologia (SOA), Economia (FACE) ou Estatística (ICEx);</li>
+                    <li>Relatório final com termo de encerramento assinado junto ao docente responsável da disciplina.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Aulas particulares informais ou cursinhos externos;</li>
+                    <li>Monitoria exercida sem processo seletivo ou sem cadastro no departamento da UFMG;</li>
+                    <li>Carga horária além do limite de 45h (3 créditos).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -199,11 +475,44 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">III. Eventos I — Ouvinte <span class="text-danger">(Prazo 120d!)</span></div>
             <div class="cagp-calc-desc">Teto máximo: até 60h (4 créditos)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-aac_3">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Eventos Ouvinte">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Eventos Ouvinte">+</button>
+          </div>
+          <div id="drawer-aac_3" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Participação como ouvinte em congressos, seminários, conferências e semanas acadêmicas;</li>
+                    <li>Eventos promovidos por universidades, associações científicas (ex.: ABCP, ENEAP) ou órgãos públicos;</li>
+                    <li>Certificados com carga horária expressa (converte 1 crédito a cada 15h comprovadas).</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li><strong>Certificados protocolados após 120 dias corridos do evento são indeferidos!</strong> (Art. 15, § 4º);</li>
+                    <li>Certificados sem indicação explícita da carga horária cumprida;</li>
+                    <li>Eventos puramente corporativos, comerciais ou sem relação com Gestão Pública.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="cagp-drawer-alert">
+                <i class="bi bi-exclamation-triangle-fill text-danger me-1"></i> <strong>Atenção ao Prazo Regimental de 120 Dias:</strong> Não guarde certificados de eventos para o último semestre! O Colegiado indefere requerimentos de eventos submetidos após 120 dias do término.
+              </div>
+            </div>
           </div>
         </div>
 
@@ -211,11 +520,41 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">IV. Grupos de Estudo + VI. Pesq. Bibliográfica</div>
             <div class="cagp-calc-desc">Até 30h (2 cr) cada modalidade</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-aac_4">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Grupos de Estudo">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Grupos de Estudo">+</button>
+          </div>
+          <div id="drawer-aac_4" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Participação regular em grupos de estudo cadastrados na UFMG sob tutoria docente;</li>
+                    <li>Pesquisa bibliográfica de aprofundamento teórico orientada por professor da área;</li>
+                    <li>Apresentação de texto científico original avaliado pelo orientador docente.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Grupos de estudo autônomos sem chancela docente oficial no departamento;</li>
+                    <li>Reaproveitamento de trabalhos escolares de disciplinas regulares ou do TCC;</li>
+                    <li>Trabalhos sem parecer formal avaliativo do orientador.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -223,11 +562,41 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">V. Iniciação Científica na UFMG (PIBIC/Volunt.)</div>
             <div class="cagp-calc-desc">Teto máximo: até 90h (6 créditos)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-aac_5">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Iniciação Científica">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Iniciação Científica">+</button>
+          </div>
+          <div id="drawer-aac_5" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Atuação como bolsista ou voluntário registrado na PRPq/UFMG (PIBIC, PIBITI, etc.);</li>
+                    <li>Pesquisa vinculada a núcleos do DCP (ex.: Rede Femjusp, PUBLICUS, INCT/IDDC, MARGEM, CEL) ou da FAFICH;</li>
+                    <li>Relatório final atestado pelo docente orientador no DCP/UFMG.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Pesquisas sem registro oficial no sistema da Pró-Reitoria de Pesquisa (PRPq);</li>
+                    <li>Atividades meramente operacionais sem plano metodológico de investigação científica;</li>
+                    <li>Pesquisas executadas fora da UFMG (pertencem à Modalidade I).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -235,11 +604,45 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">VII. Anais (30h) + VIII. Artigo em Periódico (60h)</div>
             <div class="cagp-calc-desc">Publicações científicas • Anais têm prazo de 120d</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-aac_7">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Publicações">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Publicações">+</button>
+          </div>
+          <div id="drawer-aac_7" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li><strong>Para Anais (até 30h / 2 cr):</strong> Apresentação de pôster ou comunicação oral em evento científico (ex.: Semana do Conhecimento UFMG, ENEAP, EnANPAD, ABCP) com resumo publicado nos anais;</li>
+                    <li><strong>Para Periódico (até 60h / 4 cr):</strong> Artigo completo publicado ou carta oficial de aceite definitivo em revista indexada com Qualis/CAPES reconhecido;</li>
+                    <li>Comprovante formal de apresentação ou exemplar do artigo com ISSN.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li><strong>Assistir como ouvinte não conta como Anais</strong> (pertence à Modalidade III - Eventos I);</li>
+                    <li><strong>Certificados de Anais entregues após 120 dias corridos do evento são indeferidos!</strong> (Art. 15, § 4º, VII);</li>
+                    <li>Trabalhos avaliativos internos de disciplinas sem apresentação em congresso;</li>
+                    <li>Textos em blogs, redes sociais, cartas de opinião ou veículos sem corpo editorial científico.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="cagp-drawer-alert">
+                <i class="bi bi-exclamation-triangle-fill text-danger me-1"></i> <strong>Atenção ao Prazo de Anais (Art. 15, § 4º, VII):</strong> O certificado de apresentação em anais precisa ser protocolado no Colegiado em até <strong>120 dias corridos</strong> após o encerramento do congresso.
+              </div>
+            </div>
           </div>
         </div>
 
@@ -247,11 +650,42 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
           <div class="cagp-calc-info">
             <div class="fw-bold small">IX. Vivência Profissional / Estágio Não-Obrig.</div>
             <div class="cagp-calc-desc">Teto máximo: até 60h (4 créditos)</div>
+            <button type="button" class="cagp-calc-drawer-toggle" aria-expanded="false" aria-controls="drawer-aac_9">
+              <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> O que conta nisso?
+              <i class="bi bi-chevron-down cagp-drawer-arrow ms-1" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="cagp-calc-controls">
             <button type="button" class="cagp-step-btn" data-action="dec" aria-label="Remover horas de Vivência Profissional">−</button>
             <span class="cagp-calc-readout">0h (0 cr)</span>
             <button type="button" class="cagp-step-btn" data-action="inc" aria-label="Adicionar horas de Vivência Profissional">+</button>
+          </div>
+          <div id="drawer-aac_9" class="cagp-calc-drawer">
+            <div class="cagp-calc-drawer-inner">
+              <div class="cagp-drawer-grid">
+                <div class="cagp-drawer-section is-accepted">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-green"><i class="bi bi-check-circle-fill me-1"></i> O QUE CONTA</span>
+                  </div>
+                  <ul>
+                    <li>Estágio não-obrigatório em órgãos públicos (prefeituras, secretarias estaduais, ministérios, tribunais) ou ONGs do campo de públicas;</li>
+                    <li>Termo de Compromisso de Estágio (TCE) regularizado e relatório final assinado pelo supervisor do órgão;</li>
+                    <li>Atuação prática em processos de gestão, análise orçamentária ou políticas públicas.</li>
+                  </ul>
+                </div>
+                <div class="cagp-drawer-section is-rejected">
+                  <div class="cagp-drawer-header">
+                    <span class="cagp-badge cagp-badge-red"><i class="bi bi-x-circle-fill me-1"></i> O QUE NÃO CONTA</span>
+                  </div>
+                  <ul>
+                    <li><strong>Horas do Estágio Curricular Obrigatório não podem ser duplicadas como AAC!</strong> (pertencem a DCP 046);</li>
+                    <li>Estágios em empresas privadas comerciais sem interface governamental comprovada;</li>
+                    <li>Funções operacionais sem relação com a formação em Gestão Pública;</li>
+                    <li>Carga horária excedente ao teto de 60h (4 créditos).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -260,63 +694,122 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
 </section>
 ```
 
-<div class="d-flex flex-wrap align-items-center justify-content-between p-3 my-4 bg-light border rounded gap-2">
-  <span class="small">📜 Todas as 9 modalidades de AAC e os prazos regimentais constam no <strong>Capítulo IV do Regulamento</strong> (Art. 13 a 17).</span>
-  <a href="documentos/regulamento-gestao-publica-ufmg.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-3">📥 Baixar Regulamento do Curso (PDF • 2 MB)</a>
+<div class="d-flex flex-wrap align-items-center justify-content-between p-3 my-4 bg-light border border-dark gap-2">
+  <span class="small"><i class="bi bi-file-earmark-text text-danger me-1"></i> Todas as modalidades de Extensão e as 9 categorias de AAC com seus prazos regimentais constam no <strong>Capítulo IV do Regulamento</strong> (Art. 13 a 17).</span>
+  <a href="documentos/regulamento-gestao-publica-ufmg.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-red py-2 px-3"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Baixar Regulamento do Curso (PDF • 2 MB)</a>
 </div>
 
 ---
 
-## <span aria-hidden="true">📑</span> Regulamento Detalhado por Categoria {#regulamento-categorias}
+## <i class="bi bi-card-list" aria-hidden="true"></i> Regulamento Detalhado por Modalidade {#regulamento-categorias}
 
-::: {.panel-tabset}
+```{=html}
+<div class="row g-4 mb-4">
+  <!-- Coluna 1: Formação em Extensão Obrigatória (300h) -->
+  <div class="col-lg-6">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <span class="cagp-badge cagp-badge-red">Resolução CEPE nº 10/2019</span>
+        <span class="fw-bold small text-muted">10% da Carga Curricular</span>
+      </div>
+      <h3 class="h5 fw-bold text-uppercase mb-2">1. Formação em Extensão Obrigatória (300h)</h3>
+      <p class="small text-muted mb-3">
+        Exigência obrigatória para colação de grau que integra a universidade à sociedade por meio de consultorias públicas, intervenções e programas comunitários:
+      </p>
+      <ul class="small mb-3 ps-3">
+        <li class="mb-2"><strong>Disciplinas de Laboratório de Extensão (DCP 195 e 196):</strong> 90 horas cada (total de até 180h / 12 créditos) em consultoria governamental e projetos aplicados no 7º e 8º períodos.</li>
+        <li class="mb-2"><strong>ATLAS Consultoria Jr. (antiga Equalitas):</strong> Atividades e projetos de consultoria desenvolvidos na empresa júnior de Gestão Pública contam como Atividades Interinstitucionais de Extensão (até 90h / 6 créditos).</li>
+        <li class="mb-2"><strong>Projetos e Programas PROEX / SIEX:</strong> Atuação bolsista ou voluntária em programas com registro ativo no Sistema de Informação da Extensão da UFMG (até 90h / 6 créditos).</li>
+        <li class="mb-2"><strong>Organização de Eventos (Eventos II):</strong> Atuação em comissão organizadora ou mediação de mesas-redondas da área (até 60h / 4 créditos).</li>
+        <li class="mb-0"><strong>Cursos Interinstitucionais de Extensão:</strong> Cursos e oficinas em outras IES públicas ou Escolas de Governo reconhecidas (ENAP, FJP, etc., até 120h / 8 créditos).</li>
+      </ul>
+      <div class="p-2 bg-light border border-dark small mt-auto">
+        <i class="bi bi-info-circle-fill text-danger me-1"></i> Conforme o Art. 14, o Colegiado designa um docente do DCP com mandato de 2 anos para analisar e despachar requerimentos de extensão <em>ad referendum</em>.
+      </div>
+    </div>
+  </div>
 
-### 1. Formação em Extensão Obrigatória (300h)
+  <!-- Coluna 2: AAC (Art. 15 - até 300h) -->
+  <div class="col-lg-6">
+    <div class="cagp-card h-100">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <span class="cagp-badge cagp-badge-dark">Capítulo IV • Art. 15</span>
+        <span class="fw-bold small text-danger">Atenção ao Prazo de 120d</span>
+      </div>
+      <h3 class="h5 fw-bold text-uppercase mb-2">2. Horas Complementares AAC (Até 300h)</h3>
+      <p class="small text-muted mb-3">
+        Atividades extracurriculares facultativas que abatem créditos do grupo de optativas (cada 15h = 1 crédito). Fique atento aos limites e comprovações:
+      </p>
+      <div class="table-responsive small">
+        <table class="table table-sm table-bordered align-middle mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>Modalidade Oficial</th>
+              <th class="text-center">Teto</th>
+              <th>Comprovação Exigida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>I. Pesquisa Interinstitucional</strong></td>
+              <td class="text-center fw-bold">75h</td>
+              <td>Relatório assinado com orientador de outra IES/órgão.</td>
+            </tr>
+            <tr>
+              <td><strong>II. Monitoria Acadêmica</strong></td>
+              <td class="text-center fw-bold">45h</td>
+              <td>Relatório final assinado com o docente titular na UFMG.</td>
+            </tr>
+            <tr>
+              <td><strong>III. Eventos I (Ouvinte)</strong></td>
+              <td class="text-center fw-bold">60h</td>
+              <td><span class="badge bg-danger">Prazo: 120 dias corridos!</span><br>Certificado com carga horária expressa.</td>
+            </tr>
+            <tr>
+              <td><strong>IV. Grupos de Estudo</strong></td>
+              <td class="text-center fw-bold">30h</td>
+              <td>Participação regular com parecer docente.</td>
+            </tr>
+            <tr>
+              <td><strong>V. Iniciação Científica (UFMG)</strong></td>
+              <td class="text-center fw-bold">90h</td>
+              <td>PIBIC/voluntário registrado na PRPq com relatório.</td>
+            </tr>
+            <tr>
+              <td><strong>VI. Pesquisa Bibliográfica</strong></td>
+              <td class="text-center fw-bold">30h</td>
+              <td>Texto científico orientado (distinto do TCC).</td>
+            </tr>
+            <tr>
+              <td><strong>VII. Trabalho em Anais</strong></td>
+              <td class="text-center fw-bold">30h</td>
+              <td><span class="badge bg-danger">Prazo: 120 dias corridos!</span><br>Apresentação oral/pôster em congresso.</td>
+            </tr>
+            <tr>
+              <td><strong>VIII. Artigo em Periódico</strong></td>
+              <td class="text-center fw-bold">60h</td>
+              <td>Artigo publicado em revista Qualis/CAPES.</td>
+            </tr>
+            <tr>
+              <td><strong>IX. Vivência Profissional</strong></td>
+              <td class="text-center fw-bold">60h</td>
+              <td>Estágio não obrigatório em órgão público ou ONG.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+```
 
-A **Resolução CEPE nº 10/2019** estabelece que 10% da carga horária de todos os cursos de graduação da UFMG deve ser composta por extensão universitária com a sociedade.
+---
 
-### Como Integralizar as 300 Horas de Extensão: {.fs-5}
-
-1. **Disciplinas Optativas de Laboratório de Extensão:**
-   - `DCP 195 - Laboratório de Gestão e Políticas Públicas A:` 90 horas (6 créditos).
-   - `DCP 196 - Laboratório de Gestão e Políticas Públicas B:` 90 horas (6 créditos).
-2. **Empresa Júnior de Gestão Pública (Equalitas UFMG Consultoria Jr.):**
-   - Atividades e projetos de consultoria desenvolvidos na *Equalitas Jr.* são convalidáveis como Atividades Interinstitucionais de Extensão (até 6 créditos / 90 horas).
-3. **Projetos e Programas de Extensão na UFMG (PROEX / SIEX):**
-   - Participação como bolsista ou voluntário em projetos registrados no Sistema de Informação da Extensão (até 6 créditos / 90 horas).
-4. **Participação em Organização de Eventos (Eventos II):**
-   - Atuação em comissão organizadora, comitê técnico-científico ou como debatedor/moderador de evento da área (até 2 créditos, extensível a 4 créditos somado a ouvinte).
-5. **Atividades Interinstitucionais de Ensino:**
-   - Cursos e oficinas promovidos por outras instituições de ensino públicas na área de Gestão Pública (até 8 créditos / 120 horas).
-
-::: {.callout-note}
-### Docente Responsável no DCP
-Conforme o Art. 14, o Colegiado designa um docente específico do Departamento de Ciência Política com mandato de 2 anos para analisar e despachar requerimentos de extensão *ad referendum*.
-:::
-
-### 2. Atividades Acadêmicas Complementares - AAC (Art. 15)
-
-As AACs são atividades facultativas de enriquecimento curricular desenvolvidas durante o vínculo com a graduação, podendo integralizar até 300 horas do grupo de optativas (Art. 15):
-
-::: {.table-responsive}
-| Modalidade Oficial (Art. 15) | Atividades Válidas | Teto Máximo | Comprovação Exigida no Colegiado |
-| :--- | :--- | :---: | :--- |
-| **I — Pesquisa Interinstitucional** | Projetos de pesquisa realizados em outras instituições voltadas para Gestão Pública. | **75h** (5 cr) | Relatório final assinado pelo discente e responsável externo, com avaliação de desempenho. |
-| **II — Monitoria Acadêmica** | Monitoria (bolsista ou voluntária) em disciplinas afins à Gestão Pública. | **45h** (3 cr) | Relatório final assinado junto ao docente responsável pela matéria. |
-| **III — Eventos I (Ouvinte)** | Congressos, seminários e palestras na área de públicas (1 crédito a cada 15h). | **60h** (4 cr) | <span class="cagp-badge cagp-badge-red mb-1">Prazo: 120 dias</span><br>Certificado com carga horária protocolado em até 120 dias corridos do evento! |
-| **IV — Grupos de Estudo** | Participação regular em grupos de estudo cadastrados na UFMG. | **30h** (2 cr) | Relatório final assinado com avaliação do docente coordenador. |
-| **V — Pesquisa na UFMG** | Iniciação Científica (PIBIC, PIBITI ou voluntária) desenvolvida na UFMG. | **90h** (6 cr) | Relatório final atestado pelo orientador da pesquisa no DCP/UFMG. |
-| **VI — Pesquisa Bibliográfica** | Aprofundamento teórico orientado por docente em tema da área, distinto do TCC. | **30h** (2 cr) | Texto científico elaborado e parecer avaliativo do docente orientador. |
-| **VII — Trabalho em Anais** | Apresentação de pôster, trabalho oral ou artigo publicado em anais de evento científico. | **30h** (2 cr) | <span class="cagp-badge cagp-badge-red mb-1">Prazo: 120 dias</span><br>Certificado de apresentação entregue em até 120 dias corridos do evento. |
-| **VIII — Artigo em Periódico** | Artigo publicado em revista científica reconhecida (Qualis/Capes). | **60h** (4 cr) | Cópia do artigo publicado ou carta oficial de aceite definitivo do periódico. |
-| **IX — Vivência Profissional** | Gestão em órgãos públicos, ONGs ou estágio não-obrigatório na área de públicas. | **60h** (4 cr) | Documento de autorização e relatório final assinado com avaliação das atribuições. |
-:::
-
-### 3. Prazos e Submissão ao Colegiado {#passo-a-passo}
+## <i class="bi bi-file-earmark-check" aria-hidden="true"></i> Guia Prático: Como Preencher e Submeter o Requerimento de AAC {#passo-a-passo}
 
 ::: {.callout-important}
-### ⚠️ Fique Atento ao Prazo Regimental de 120 Dias!
-O Art. 15, § 4º, incisos III e VII estabelece que certificados de participação e de apresentação em congressos, conferências e eventos devem ser protocolados junto ao Colegiado no **prazo máximo de 120 dias corridos após a realização do evento**! Não guarde certificados de eventos para o fim do curso.
+### <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i> Fique Atento ao Prazo Regimental de 120 Dias!
+O Art. 15, § 4º, incisos III e VII estabelece que certificados de participação (ouvinte) e de apresentação de trabalhos em anais de congressos e seminários devem ser protocolados junto ao Colegiado no **prazo máximo de 120 dias corridos após o encerramento do evento**! Não guarde certificados para o final do curso.
 :::
 
 ```{=html}
@@ -326,33 +819,35 @@ O Art. 15, § 4º, incisos III e VII estabelece que certificados de participaç�
       <span class="cagp-badge cagp-badge-red mb-1">Guia Visual Passo a Passo</span>
       <h3 id="guide-aac-title" class="h5 mb-0 text-uppercase fw-bold">Como Preencher o Requerimento de AAC (Versão N-20229)</h3>
     </div>
-    <a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-chip">📥 Baixar Requerimento Oficial (PDF)</a>
+    <a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-red py-2 px-3">
+      <i class="bi bi-file-earmark-arrow-down-fill me-1" aria-hidden="true"></i> Baixar Requerimento Oficial (PDF)
+    </a>
   </div>
   <p class="small text-muted mb-4">
-    Preencha um requerimento para cada atividade extracurricular que desejar integralizar na sua carga horária de até 300h (Art. 15). Confira os campos indispensáveis no formulário padrão:
+    Preencha um formulário para cada atividade extracurricular que desejar integralizar na sua carga horária de optativas (Art. 15). Confira os campos indispensáveis e as etapas corretas de tramitação:
   </p>
 
   <div class="row g-4">
-    <!-- Visual com Print e Pins -->
+    <!-- Visual com Print e Pins Recalibrados -->
     <div class="col-lg-6">
       <div class="cagp-doc-preview-wrapper" role="region" aria-label="Visualização anotada do formulário de Requerimento de Atividade Integralizadora de Crédito">
         <img src="imagens/tutoriais/print-requerimento-aac-1.png" alt="Formulário oficial de Requerimento de Atividade Integralizadora de Crédito AAC do Colegiado de Gestão Pública com marcações numeradas" class="cagp-doc-preview-img" loading="lazy">
         
-        <!-- Box 1 & Pin 1: Identificação -->
-        <div class="cagp-doc-box" style="top: 13%; left: 5%; width: 90%; height: 16%;" aria-hidden="true"></div>
-        <button type="button" class="cagp-doc-pin" style="top: 13%; left: 5%;" aria-label="Ponto 1: Identificação do Requerente">1</button>
+        <!-- Box 1 & Pin 1: Identificação (Alinhado exatamente à tabela) -->
+        <div class="cagp-doc-box" style="top: 15.7%; left: 13.5%; width: 76.8%; height: 6%;" aria-hidden="true"></div>
+        <button type="button" class="cagp-doc-pin" style="top: 15.7%; left: 13.5%;" aria-label="Ponto 1: Identificação do Requerente">1</button>
 
-        <!-- Box 2 & Pin 2: Dados da Atividade -->
-        <div class="cagp-doc-box" style="top: 31%; left: 5%; width: 90%; height: 26%;" aria-hidden="true"></div>
-        <button type="button" class="cagp-doc-pin" style="top: 31%; left: 5%;" aria-label="Ponto 2: Dados da Atividade e Créditos Requeridos">2</button>
+        <!-- Box 2 & Pin 2: Dados da Atividade (Alinhado exatamente à tabela) -->
+        <div class="cagp-doc-box" style="top: 23.9%; left: 13.5%; width: 76.8%; height: 22.5%;" aria-hidden="true"></div>
+        <button type="button" class="cagp-doc-pin" style="top: 23.9%; left: 13.5%;" aria-label="Ponto 2: Dados da Atividade e Créditos Requeridos">2</button>
 
-        <!-- Box 3 & Pin 3: Documentos e Assinatura -->
-        <div class="cagp-doc-box" style="top: 58%; left: 5%; width: 90%; height: 18%;" aria-hidden="true"></div>
-        <button type="button" class="cagp-doc-pin" style="top: 58%; left: 5%;" aria-label="Ponto 3: Comprovação e Assinatura">3</button>
+        <!-- Box 3 & Pin 3: Documentos e Assinatura (Alinhado exatamente à linha de assinatura) -->
+        <div class="cagp-doc-box" style="top: 49%; left: 13.5%; width: 76.8%; height: 21.2%;" aria-hidden="true"></div>
+        <button type="button" class="cagp-doc-pin" style="top: 49%; left: 13.5%;" aria-label="Ponto 3: Comprovação e Assinatura do Requerente">3</button>
       </div>
     </div>
 
-    <!-- Passos Explicativos -->
+    <!-- Passos Explicativos e Fluxo de Entrega Atualizado -->
     <div class="col-lg-6">
       <div class="cagp-step-list">
         <div class="cagp-step-card">
@@ -370,7 +865,7 @@ O Art. 15, § 4º, incisos III e VII estabelece que certificados de participaç�
           <div class="cagp-step-content">
             <h4 class="cagp-step-title">2. Classificação da Atividade & Créditos</h4>
             <p class="cagp-step-desc">
-              Indique o <strong>Tipo (Modalidades I a IX)</strong>, período de realização (início e término), órgão ou entidade promotora e a quantidade exata de créditos solicitados (1 crédito = 15h).
+              Indique o <strong>Tipo (Modalidades I a IX)</strong>, período de realização (início e término), órgão ou entidade promotora e a quantidade exata de créditos solicitados (1 crédito = 15h comprovadas).
             </p>
           </div>
         </div>
@@ -378,19 +873,19 @@ O Art. 15, § 4º, incisos III e VII estabelece que certificados de participaç�
         <div class="cagp-step-card">
           <span class="cagp-step-num">3</span>
           <div class="cagp-step-content">
-            <h4 class="cagp-step-title">3. Anexos Comprobatórios & Assinatura</h4>
+            <h4 class="cagp-step-title">3. Envio para Análise da Coordenação</h4>
             <p class="cagp-step-desc">
-              Relacione no campo de documentos os certificados com código/link de verificação de autenticidade eletrônica. Assine e date a solicitação antes da entrega.
+              Após preencher e assinar o formulário, anexe os certificados comprobatórios (com link/código de autenticidade eletrônica) e envie para o e-mail da Coordenação: <a href="mailto:coordgestaopublica@gmail.com"><strong>coordgestaopublica@gmail.com</strong></a> solicitando a análise e assinatura da Coordenadora (Profª Isabele Batista Mitozo).
             </p>
           </div>
         </div>
 
         <div class="cagp-step-card">
-          <span class="cagp-step-num">📍</span>
+          <span class="cagp-step-num"><i class="bi bi-printer-fill"></i></span>
           <div class="cagp-step-content">
-            <h4 class="cagp-step-title">Onde Entregar e Acompanhamento</h4>
+            <h4 class="cagp-step-title">4. Impressão e Protocolo na Secretaria</h4>
             <p class="cagp-step-desc">
-              Protocolar no guichê do CEAG (2º andar da FAFICH) ou conforme instrução semestral do Colegiado. Após análise do docente do DCP, os créditos constarão no seu histórico escolar no SIGA.
+              Com o documento assinado e deferido pela Coordenação, <strong>imprima o requerimento homologado</strong> e leve pessoalmente à <strong>Secretaria do Curso (Sala F-2039)</strong> para protocolar a validação e lançamento definitivo no histórico escolar do SIGA.
             </p>
           </div>
         </div>
@@ -400,11 +895,9 @@ O Art. 15, § 4º, incisos III e VII estabelece que certificados de participaç�
 </section>
 ```
 
-:::
-
 ---
 
-## <span aria-hidden="true">🏛️</span> Programa de Imersão no Campo de Públicas {#programa-de-imersao}
+## <i class="bi bi-bank" aria-hidden="true"></i> Programa de Imersão no Campo de Públicas {#programa-de-imersao}
 
 Criado no segundo semestre de 2017 pelo Colegiado de Coordenação Didática, o **Programa de Imersão no Campo de Públicas** congrega ações de ensino, pesquisa e extensão universitária. Seu objetivo é integrar a formação teórica de sala de aula à prática profissional real, prestando consultoria e assessoramento direto a órgãos públicos municipais, estaduais e organizações da sociedade civil.
 
@@ -462,37 +955,151 @@ O programa estrutura-se em **3 eixos fundamentais**:
 
 ---
 
-## <span aria-hidden="true">🔬</span> Núcleos de Pesquisa do DCP: Oportunidades de Bolsas e Iniciação Científica {#nucleos-pesquisa}
+## <i class="bi bi-search" aria-hidden="true"></i> Iniciação Científica & Núcleos de Pesquisa: Validação de até 90h de AAC {#nucleos-pesquisa}
 
-Os estudantes de Gestão Pública da UFMG têm acesso aos centros e laboratórios de pesquisa vinculados ao **Departamento de Ciência Política (DCP)** e à FAFICH. A atuação como bolsista (PIBIC, PIBITI, FAPEMIG) ou voluntário de Iniciação Científica permite integralizar horas de AAC (Modalidade V do Art. 15):
+A atuação em projetos de investigação científica nos centros e laboratórios vinculados ao **Departamento de Ciência Política (DCP)** e à FAFICH/UFMG é uma das formas mais formativas e qualificadas de integralizar créditos de **Atividades Acadêmicas Complementares (AAC)**.
+
+Conforme a **Modalidade V do Art. 15 do Regulamento do Curso**, a participação regular como bolsista de pesquisa (PIBIC/CNPq, PIBITI, FAPEMIG, PRPq) ou pesquisador voluntário formalmente registrado permite convalidar **até 90 horas (6 créditos)** para a sua integralização curricular.
 
 ```{=html}
-<div class="cagp-card mb-4">
-  <h3 class="fs-6 fw-bold text-uppercase mb-3">Principais Centros de Pesquisa do DCP / FAFICH</h3>
-  <div class="d-flex flex-wrap gap-1">
-    <span class="cagp-research-pill"><strong>Publicus:</strong> Núcleo de Estudos em Gestão e Políticas Públicas</span>
-    <span class="cagp-research-pill"><strong>PRODEP:</strong> Projeto Democracia Participativa</span>
-    <span class="cagp-research-pill"><strong>CECOMP:</strong> Centro de Estudos do Comportamento Político</span>
-    <span class="cagp-research-pill"><strong>CEDE:</strong> Centro de Estudos em Deliberação</span>
-    <span class="cagp-research-pill"><strong>CEL:</strong> Centro de Estudos Legislativos</span>
-    <span class="cagp-research-pill"><strong>CePPI:</strong> Política e Internet</span>
-    <span class="cagp-research-pill"><strong>CIAPSOC:</strong> Análise de Políticas Públicas</span>
-    <span class="cagp-research-pill"><strong>GEDAI:</strong> Deliberação, Ativismo e Inclusão</span>
-    <span class="cagp-research-pill"><strong>DECODE:</strong> Democracia e Comunicação Digital</span>
-    <span class="cagp-research-pill"><strong>Margem:</strong> Democracia e Justiça</span>
-    <span class="cagp-research-pill"><strong>NEPEM:</strong> Estudos e Pesquisas sobre a Mulher</span>
-    <span class="cagp-research-pill"><strong>NESTH:</strong> Trabalho Humano</span>
-    <span class="cagp-research-pill"><strong>Observatório da Justiça no Brasil e América Latina</strong></span>
-    <span class="cagp-research-pill"><strong>Opinião Pública:</strong> Marketing Político e Eleitoral</span>
-    <span class="cagp-research-pill"><strong>RIPPERP:</strong> Política Externa e Regime Político</span>
+<!-- PAINEL OPERACIONAL: REQUISITOS PROBATÓRIOS E TRAMITAÇÃO NO COLEGIADO -->
+<div class="cagp-card p-3 mb-4" style="background-color: var(--cagp-surface-low, #f4f5f7);">
+  <div class="d-flex align-items-center gap-2 mb-2">
+    <span class="cagp-badge cagp-badge-red">Guia Operacional</span>
+    <h3 class="h6 fw-bold text-uppercase mb-0">Do Laboratório ao SIGA: Como Comprovar e Protocolar Horas de IC</h3>
   </div>
-  <p class="small text-muted mt-3 mb-0">💡 <strong>Como ingressar:</strong> Acompanhe os editais semestrais de seleção de bolsistas e voluntários divulgados no mural da FAFICH, pelo Colegiado e pelas mídias do CAGP.</p>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="fw-bold small text-uppercase mb-1"><i class="bi bi-1-circle-fill text-danger me-1"></i> 1. Vínculo Oficial</div>
+      <p class="small text-muted mb-0">Estar cadastrado no plano de trabalho do docente na PRPq/UFMG, como bolsista remunerado ou voluntário registrado (mínimo de 1 semestre letivo).</p>
+    </div>
+    <div class="col-md-4">
+      <div class="fw-bold small text-uppercase mb-1"><i class="bi bi-2-circle-fill text-danger me-1"></i> 2. Documentação Probatória</div>
+      <p class="small text-muted mb-0">Solicitar ao orientador a <strong>Declaração de Iniciação Científica</strong> com timbre UFMG, vigência e carga horária expressa, acompanhada de um breve <strong>relatório de atividades</strong>.</p>
+    </div>
+    <div class="col-md-4">
+      <div class="fw-bold small text-uppercase mb-1"><i class="bi bi-3-circle-fill text-danger me-1"></i> 3. Protocolo (Prazo 120d)</div>
+      <p class="small text-muted mb-0">Preencher o formulário oficial (Modalidade V), enviar para <a href="mailto:coordgestaopublica@gmail.com">coordgestaopublica@gmail.com</a> e protocolar assinado na <strong>Secretaria (F-2039)</strong> em até 120 dias.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MATRIZ DOS 3 EIXOS TEMÁTICOS DE PESQUISA DO DCP -->
+<div class="row g-3 mb-4">
+  <!-- EIXO 1 -->
+  <div class="col-md-4">
+    <div class="cagp-card h-100 d-flex flex-column">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="cagp-badge cagp-badge-red">Eixo 1</span>
+        <small class="text-muted fw-bold">Gestão Governamental</small>
+      </div>
+      <h4 class="h6 fw-bold mb-1">Políticas & Burocracia</h4>
+      <p class="small text-muted mb-3 flex-grow-1">Políticas sociais, SUS, governo digital e sociologia da burocracia estatal.</p>
+      <ul class="list-unstyled small mb-3">
+        <li class="mb-2 d-flex justify-content-between align-items-center border-bottom pb-1">
+          <span><strong>PUBLICUS</strong> (SUS & Políticas Sociais)</span>
+          <a href="https://www.fafich.ufmg.br/dcp/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar página oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+        <li class="mb-2 d-flex justify-content-between align-items-center border-bottom pb-1">
+          <span><strong>CEPPI</strong> (Governo Digital & Internet)</span>
+          <a href="https://inctdd.org/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar página oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+        <li class="mb-1 d-flex justify-content-between align-items-center">
+          <span><strong>NESTH</strong> (Trabalho & Servidor Público)</span>
+          <a href="https://www.instagram.com/nucleo.nesth/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar Instagram @nucleo.nesth"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+      </ul>
+      <a href="curso.html#grupos-pesquisa" class="cagp-doc-btn w-100 text-center mt-auto">
+        <i class="bi bi-search me-1" aria-hidden="true"></i> Ver Detalhes no Catálogo
+      </a>
+    </div>
+  </div>
+
+  <!-- EIXO 2 -->
+  <div class="col-md-4">
+    <div class="cagp-card h-100 d-flex flex-column">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="cagp-badge cagp-badge-dark">Eixo 2</span>
+        <small class="text-muted fw-bold">Instituições & Justiça</small>
+      </div>
+      <h4 class="h6 fw-bold mb-1">Poder, Justiça & Segurança</h4>
+      <p class="small text-muted mb-3 flex-grow-1">Processo legislativo, segurança pública, sistema penal e relações internacionais descentralizadas.</p>
+      <ul class="list-unstyled small mb-3">
+        <li class="mb-2 d-flex justify-content-between align-items-center border-bottom pb-1">
+          <span><strong>CEL</strong> (Poder Legislativo & Orçamento)</span>
+          <a href="https://centroestudoslegislativos.com.br/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar site oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+        <li class="mb-2 d-flex justify-content-between align-items-center border-bottom pb-1">
+          <span><strong>Rede Femjusp</strong> (Violência & Prisões)</span>
+          <a href="https://femjusp.com.br/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar site oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+        <li class="mb-2 d-flex justify-content-between align-items-center border-bottom pb-1">
+          <span><strong>MARGEM & OJB</strong> (Justiça & Controle)</span>
+          <a href="https://grupomargem.org/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar site oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+        <li class="mb-1 d-flex justify-content-between align-items-center">
+          <span><strong>RIPPERP</strong> (Paradiplomacia & Redes)</span>
+          <a href="https://www.fafich.ufmg.br/dcp/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar página oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+      </ul>
+      <a href="curso.html#grupos-pesquisa" class="cagp-doc-btn w-100 text-center mt-auto">
+        <i class="bi bi-search me-1" aria-hidden="true"></i> Ver Detalhes no Catálogo
+      </a>
+    </div>
+  </div>
+
+  <!-- EIXO 3 -->
+  <div class="col-md-4">
+    <div class="cagp-card h-100 d-flex flex-column">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="cagp-badge cagp-badge-blue">Eixo 3</span>
+        <small class="text-muted fw-bold">Democracia & Sociedade</small>
+      </div>
+      <h4 class="h6 fw-bold mb-1">Participação & Direitos</h4>
+      <p class="small text-muted mb-3 flex-grow-1">Orçamento participativo, conselhos gestores, equidade de gênero e pesquisas eleitorais/amostrais.</p>
+      <ul class="list-unstyled small mb-3">
+        <li class="mb-2 d-flex justify-content-between align-items-center border-bottom pb-1">
+          <span><strong>PRODEP</strong> (Democracia Participativa)</span>
+          <a href="https://www.fafich.ufmg.br/dcp/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar página oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+        <li class="mb-2 d-flex justify-content-between align-items-center border-bottom pb-1">
+          <span><strong>INCT / IDDC</strong> (Rede Democracia CNPq)</span>
+          <a href="https://www.institutodademocracia.org/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar site oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+        <li class="mb-2 d-flex justify-content-between align-items-center border-bottom pb-1">
+          <span><strong>NEPEM</strong> (Gênero & Equidade)</span>
+          <a href="https://www.fafich.ufmg.br/nepem/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar site oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+        <li class="mb-1 d-flex justify-content-between align-items-center">
+          <span><strong>CECOMP</strong> (Comportamento Cívico)</span>
+          <a href="https://www.fafich.ufmg.br/dcp/" target="_blank" rel="noopener noreferrer" class="small text-dark text-decoration-none" title="Acessar página oficial"><i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+      </ul>
+      <a href="curso.html#grupos-pesquisa" class="cagp-doc-btn w-100 text-center mt-auto">
+        <i class="bi bi-search me-1" aria-hidden="true"></i> Ver Detalhes no Catálogo
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="cagp-card p-3 mb-4" style="background-color: var(--cagp-surface-low, #f4f5f7);">
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <div class="text-md-start">
+      <h4 class="h6 fw-bold text-uppercase mb-1">
+        <i class="bi bi-journal-text text-danger me-1" aria-hidden="true"></i> Quer conhecer a fundo os projetos, docentes e a interface de cada grupo com a Gestão Pública?
+      </h4>
+      <p class="small text-muted mb-0">Consulte o catálogo oficial completo com os 11 núcleos do DCP, histórico de publicações, redes sociais e linhas de pesquisa ativas.</p>
+    </div>
+    <a href="curso.html#grupos-pesquisa" class="cagp-btn cagp-btn-primary btn-sm text-nowrap">
+      <i class="bi bi-arrow-right-circle me-1" aria-hidden="true"></i> Acessar Catálogo Completo no Portal
+    </a>
+  </div>
 </div>
 ```
 
 ---
 
-## <span aria-hidden="true">📌</span> Principais Dúvidas sobre Horas e Atividades
+## <i class="bi bi-question-circle" aria-hidden="true"></i> Principais Dúvidas sobre Horas e Atividades
 
 ::: {.cagp-card}
 ### Dicas Práticas dos Veteranos
@@ -537,6 +1144,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const aacBadge = document.getElementById('aac-total-badge');
   const aacBar = document.getElementById('aac-progress-bar');
   const resetBtn = document.getElementById('btn-calc-reset');
+  const celebrationBox = document.getElementById('cagp-calc-celebration');
+  const statusBadge = document.getElementById('calc-status-badge');
+  const combinedReadout = document.getElementById('calc-combined-readout');
+  const feedbackText = document.getElementById('calc-feedback-text');
+  const actionBanner = document.getElementById('calc-action-banner');
 
   function loadState() {
     try {
@@ -572,7 +1184,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const decBtn = row.querySelector('[data-action="dec"]');
       const incBtn = row.querySelector('[data-action="inc"]');
       const cr = Math.round(val / 15);
-      if (readout) readout.textContent = val + 'h (' + cr + ' cr)';
+      if (readout) {
+        readout.innerHTML = val + 'h (' + cr + ' cr)' + (val >= max ? ' <span class="cagp-teto-tag">Teto</span>' : '');
+      }
       if (decBtn) decBtn.disabled = (val <= 0);
       if (incBtn) incBtn.disabled = (val >= max);
     });
@@ -593,6 +1207,38 @@ document.addEventListener('DOMContentLoaded', function () {
     if (aacBar) {
       aacBar.style.width = aacPct + '%';
       aacBar.classList.toggle('is-complete', aacCap >= 300);
+    }
+
+    const totalHours = extCap + aacCap;
+    const totalCredits = extCr + aacCr;
+    if (combinedReadout) {
+      combinedReadout.textContent = totalHours + 'h / 600h simuladas (' + totalCredits + ' cr de 40 cr)';
+    }
+
+    if (celebrationBox && statusBadge && feedbackText && actionBanner) {
+      if (extCap >= 300 && aacCap >= 300) {
+        celebrationBox.classList.add('is-all-complete');
+        statusBadge.innerHTML = '<i class="bi bi-mortarboard-fill" aria-hidden="true"></i> 100% REGULAMENTAR ATINGIDO!';
+        feedbackText.innerHTML = '<strong>Parabéns!</strong> Você preencheu integralmente as <strong>300h de Extensão (20 cr)</strong> e as <strong>300h de AAC (20 cr)</strong>. Todas as 600h necessárias para colação de grau estão cumpridas nesta simulação. Reúna seus certificados comprobatórios e confira as orientações de protocolo.';
+        actionBanner.style.display = 'block';
+      } else {
+        celebrationBox.classList.remove('is-all-complete');
+        actionBanner.style.display = 'none';
+
+        if (totalHours === 0) {
+          statusBadge.innerHTML = '<i class="bi bi-compass" aria-hidden="true"></i> SIMULADOR ATIVO';
+          feedbackText.innerHTML = 'Ajuste as horas abaixo usando os botões <strong>+</strong> e <strong>−</strong> para calcular sua integralização nas duas frentes obrigatórias: <strong>300h de Extensão</strong> e <strong>300h de AAC</strong>.';
+        } else if (extCap >= 300 && aacCap < 300) {
+          statusBadge.innerHTML = '<i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i> EXTENSÃO CUMPRIDA (300h)';
+          feedbackText.innerHTML = '✓ <strong>Formação em Extensão 100% integralizada!</strong> Agora faltam <strong>' + (300 - aacCap) + 'h</strong> de Atividades Complementares (AAC) para fechar o ciclo de 600h.';
+        } else if (aacCap >= 300 && extCap < 300) {
+          statusBadge.innerHTML = '<i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i> AAC CUMPRIDA (300h)';
+          feedbackText.innerHTML = '✓ <strong>Carga de AAC 100% integralizada!</strong> Agora faltam <strong>' + (300 - extCap) + 'h</strong> de Extensão Curricular Obrigatória (Resolução CEPE nº 10/2019).';
+        } else {
+          statusBadge.innerHTML = '<i class="bi bi-hourglass-split" aria-hidden="true"></i> PROGRESSO EM ANDAMENTO';
+          feedbackText.innerHTML = 'Você já planejou <strong>' + totalHours + 'h</strong> das 600h necessárias. Faltam <strong>' + (300 - extCap) + 'h de Extensão</strong> e <strong>' + (300 - aacCap) + 'h de AAC</strong>.';
+        }
+      }
     }
   }
 
@@ -626,6 +1272,20 @@ document.addEventListener('DOMContentLoaded', function () {
       render();
     });
   }
+
+  // Interatividade das gavetas "O que conta nisso?"
+  const drawerToggles = Array.from(document.querySelectorAll('.cagp-calc-drawer-toggle'));
+  drawerToggles.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const targetId = btn.getAttribute('aria-controls');
+      const drawer = document.getElementById(targetId);
+      if (!drawer) return;
+      const willOpen = !drawer.classList.contains('is-open');
+      drawer.classList.toggle('is-open', willOpen);
+      btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
 
   render();
 });

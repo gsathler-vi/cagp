@@ -16,6 +16,11 @@ colors:
   accent-blue: "#1e3f66"
   accent-green: "#2e7d32"
   accent-amber: "#e65100"
+  brand-siga: "#002776"
+  brand-minhaufmg: "#087f3b"
+  brand-fump: "#006c67"
+  brand-rotas: "#2c0eeb"
+  brand-bu: "#d97706"
 typography:
   display:
     fontFamily: "Oswald, Inter, sans-serif"
@@ -84,6 +89,11 @@ components:
     textColor: "{colors.secondary}"
     rounded: "{rounded.sm}"
     padding: "0.25rem 0.65rem"
+  breadcrumbs:
+    backgroundColor: "{colors.surface-low}"
+    textColor: "{colors.secondary}"
+    rounded: "{rounded.none}"
+    padding: "0.5rem 1rem"
 ---
 
 # Design System: Centro Acadêmico de Gestão Pública (CAGP) - FAFICH / UFMG
@@ -118,6 +128,15 @@ A paleta é fundamentada na tradição heráldica da gestão pública universit�
 - **Azul Reitoria UFMG** (`#1E3F66` / `#1565C0`): Referência direta à identidade oficial da universidade, utilizado em tags departamentais (EST) e callouts de notas informativas oficiais.
 - **Verde Extensão Universitária** (`#2E7D32`): Sinalização de conformidade, horas de extensão validadas e departamento parceiro (SOA).
 - **Laranja Âmbar Regulamentar** (`#E65100`): Sinalização de prazos decadenciais fatais (como o prazo de 120 dias das AAC) e advertências de trancamento.
+
+### Ecosystem & App Identity Colors (Central de Aplicativos e Sistemas UFMG)
+Para assegurar familiaridade cognitiva imediata aos discentes, cada card de sistema reflete fielmente as cores extraídas dos seus respectivos manuais de marca e logos oficiais:
+- **SIGA UFMG** (`#002776` / Pantone 280 C): Azul Profundo Tecnológico do aplicativo mobile e portal do DRCA/DTI.
+- **minhaUFMG** (`#087F3B` / `#0D9847` / Pantone 355 C): Verde Institucional das Volutas da Árvore do Conhecimento do portal integrador.
+- **FUMP Assistência Estudantil** (`#006C67` / `#00A8A8`): Verde Petróleo / Teal oficial da Fundação Mendes Pimentel.
+- **Interno Rotas** (`#2C0EEB`): Azul Elétrico Noturno do rastreamento colaborativo dos circulares da UFMG.
+- **CEAG FAFICH** (`#9E2424`): Vinho Candango FAFICH, identificador do atendimento presencial noturno à graduação.
+- **Biblioteca BU / Pergamum** (`#D97706` / `#E8A317`): Ouro / Mostarda da Biblioteca Universitária da UFMG.
 
 ### Neutral
 - **Branco Puro** (`#FFFFFF`): Fundo padrão da página e tela de contraste para cartões de conteúdo denso.
@@ -170,6 +189,27 @@ Não existem sombras difusas, simulações de iluminação ambiente ou desfoques
 ### Named Rules
 **A Regra da Sombra Dura.** Todas as declarações de `box-shadow` devem conter `0px` de blur radius e cor sólida preta (`#0a0a0a` ou `#111111`). Sombras difusas (`rgba(0,0,0,0.15) 0 4px 12px`) são explicitamente proibidas em qualquer elemento novo.
 **A Regra da Gravidade Interativa.** Componentes interativos em hover sobem para o noroeste (`transform: translate(-2px, -2px)`) com projeção de sombra aumentada; ao clique (`:active`), descem para o sudeste (`transform: translate(2px, 2px)`), afundando na página.
+
+## Motion & Mechanics (Brite Motion System)
+
+O movimento no CAGP expressa a precisão de um protocolo administrativo e a autoridade da prensa gráfica pública. O sistema rejeita elasticidade gelatinosa (*spring/bounce*), transições flutuantes ou desfoques dinâmicos. A animação é estritamente **mecânica, nítida e convicta**.
+
+### Padrões Canônicos de Transição
+- **Entrada de Carimbo Mecânico (Focal Moment):** O Emblema Oficial dos Candangos (`.cagp-hero-emblem-card`) desce firmemente na página com a convicção de um ato chancelado (`0.45s cubic-bezier(0.16, 1, 0.3, 1)` com projeção de sombra nanquim no pouso).
+- **Desdobramento de Ficha de Processo (Continuity):** Ao alternar painéis na Bússola Interativa (`.cagp-compass-panel`), o conteúdo novo revela-se com leve deslocamento vertical de 6px e opacidade (`0.22s`), evitando quebras de layout.
+- **Revelação Mecânica de Gavetas (Reveal):** As ementas obrigatórias/optativas (`.cagp-discipline-body`) e as gavetas da calculadora (`.cagp-calc-drawer`) expandem-se com descida contida de 4px e rotação precisa do chevron indicador (90° / 180°).
+- **Homologação de Marco / Conquista (Feedback):** A integralização das 600h na Calculadora e o Checklist de 100% dos Calouros destravam caixas comemorativas com pulso solene (`cagpSealUnlock`) e a barra de progresso emite iluminação discreta de conclusão (`cagpProgressComplete`).
+- **Pulso Tátil de Confirmação:** O botão de cópia rápida (`.cagp-copy-btn`) realiza micro-pulso de confirmação elástica contida (1.05x) ao copiar dados com sucesso para a área de transferência.
+
+### Escala Temporal & Curvas de Aceleração
+| Duração | Função | Curva de Aceleração |
+| :--- | :--- | :--- |
+| **100–150 ms** | Feedback tátil imediato (`:active`, cópia) | `cubic-bezier(0.2, 0, 0, 1)` |
+| **200–250 ms** | Mudança de estado, abas e gavetas retráteis | `cubic-bezier(0.16, 1, 0.3, 1)` |
+| **350–450 ms** | Entrada solene do Hero e celebração de marcos | `cubic-bezier(0.16, 1, 0.3, 1)` |
+
+### Redução de Movimento (Acessibilidade WCAG 2.1)
+Sob a diretiva `@media (prefers-reduced-motion: reduce)`, todos os deslocamentos espaciais (`transform: translateY`, `scale`) são imediatamente suprimidos e as durações são reduzidas a `0.01ms`. Apenas alternâncias essenciais de cor e opacidade são preservadas para garantir que usuários sensíveis a movimento tenham acesso integral e instantâneo ao conteúdo sem vertigem ou desconforto vestibular.
 
 ## Shapes
 
@@ -229,6 +269,29 @@ O vocabulário geométrico é cartesiano, sólido e contido:
 - **Fidelidade:** arquivo original de `logos/<entidade>/`, sem recolorir, distorcer, cortar ou aplicar sombra, borda ou efeito. Escolha a versão do arquivo adequada ao fundo (positivo em fundo claro, negativo em fundo escuro) e respeite a área de proteção descrita nos manuais de `_referencias/identidade-visual/`.
 - **Contenção:** o logo fica dentro de um contêiner neutro (branco ou off-white), com altura controlada, sem competir com o símbolo dos Candangos. A marca UFMG não aparece em navbar, rodapé, hero nem no banner da chapa.
 - **Acessibilidade:** `alt` descritivo com o nome da entidade e o destino (ex.: "Logo do SIGA UFMG").
+
+### Trilha de Navegação (Breadcrumbs)
+- **Shape & Estrutura:** Faixa horizontal com cantos retos (`border-radius: 0px`), borda sólida preta de 1.5px (`border: 1.5px solid #0a0a0a`) e sombra rígida reduzida (`box-shadow: 2px 2px 0px #0a0a0a`).
+- **Fundo:** Cinza Superfície Suave (`#f4f5f7`), com rolagem horizontal suave no mobile sem quebra de linha.
+- **Tipografia:** `Oswald` 600 bold uppercase para categorias (`0.8rem`), separadores em chevron contrastante e `Inter` 400 regular para a página ativa marcada com `aria-current="page"`.
+
+### Microinteração de Cópia Tátil (Copy Button)
+- **Shape:** Botão compacto tátil (`border-radius: 4px`), borda preta de 1.5px, sombra dura de 2px 2px 0px.
+- **Estado de Repouso:** Fundo branco (`#ffffff`), texto preto (`#0a0a0a`), ícone SVG de prancheta.
+- **Estado de Sucesso (2 segundos):** Fundo Verde Extensão (`#2e7d32`), texto branco (`#ffffff`), sombra anulada, rótulo transitório `✓ Copiado!`.
+
+### Calculadoras e Gavetas de Validação (ACG & Milestones)
+- **Gaveta "O que Conta / O que Não Conta":** Caixa expansível (`.cagp-calc-drawer`) com sumário acessível em botão tátil. Duas colunas contrastadas: verde de conformidade para atividades aceitas e laranja âmbar para indeferidas/erros comuns, destacando o prazo decadencial de 120 dias.
+- **Banners de Milestone:** Container dinâmico com feedback gradual conforme o cumprimento de metas parciais (300h) e celebração comemorativa com borda ouro FAFICH (`#e8a317`) e fundo contrastante ao completar o teto regulamentar (600h).
+- **Tag Teto:** Indicador em Ouro Alerta (`.cagp-teto-tag`) ao lado de readouts numéricos quando a modalidade atinge a carga horária máxima permitida pelo Colegiado.
+
+### Organograma Funcional & Governança
+- **Organograma Cartesiano:** Estrutura hierárquica em CSS puro (`.cagp-organogram`) conectando Assembleia Geral soberana, Junta Eleitoral independente e Presidência/Diretorias Executivas com conectores em linhas sólidas pretas de 2px.
+- **Cards de Diretoria:** Placeholders institucionais neutros com avatares estilizados, atribuições estatutárias e canal de transparência ativa (RREO e prestação contábil).
+
+### Barra de Busca e Filtros Dinâmicos (com Empty State)
+- **Filtro de Disciplinas & Optativas:** Campo de input com borda preta sólida de 2px e foco com anel vinho (`#9e2424`), pareado com pílulas de filtro departamental (DCP, ECN, SOA, Outros).
+- **Empty State Pedagógico:** Card explicativo acolhedor caso a busca textual resulte em zero ocorrências, instruindo o discente sobre as regras de Formação Livre em outras unidades da UFMG e botão de restauração instantânea.
 
 ## Do's and Don'ts
 

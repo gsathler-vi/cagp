@@ -16,6 +16,20 @@
   --cagp-shadow-sm: 2px 2px 0px var(--cagp-dark);
   --cagp-shadow-md: 4px 4px 0px var(--cagp-dark);
   --cagp-shadow-lg: 7px 7px 0px var(--cagp-dark);
+
+  /* Curricular & Department Tokens */
+  --cagp-blue: #1e3f66;
+  --cagp-green: #2e7d32;
+  --cagp-gold: #e8a317;
+  --cagp-orange: #e65100;
+
+  /* Ecosystem App Tokens (Extraídos dos manuais e logos oficiais) */
+  --app-siga: #002776;
+  --app-minhaufmg: #087f3b;
+  --app-fump: #006c67;
+  --app-rotas: #2c0eeb;
+  --app-ceag: #9e2424;
+  --app-bu: #d97706;
 }
 
 /* --------------------------------------------------------------------------
@@ -37,8 +51,75 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  line-height: 1.35 !important;
   color: var(--cagp-dark);
+}
+
+h1, .h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15 !important;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+h2, .h2 {
+  font-size: 1.75rem !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.04em;
+  text-wrap: balance;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+h3, .h3 {
+  font-size: 1.3rem !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.03em;
+  text-wrap: balance;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h4, .h4 {
+  font-size: 1.12rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+h5, .h5 {
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+h6, .h6 {
+  font-size: 0.88rem !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+p, .cagp-card-body, .callout-body {
+  text-wrap: pretty;
+}
+
+/* Vector Icon System (CAGP Republicano) */
+i.bi, .cagp-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: -0.125em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+h1 > i.bi, h2 > i.bi, h3 > i.bi,
+.h1 > i.bi, .h2 > i.bi, .h3 > i.bi {
+  color: var(--cagp-red);
+  margin-right: 0.45rem;
+  font-size: 0.9em;
+  vertical-align: -0.08em;
 }
 
 code, kbd, pre, samp {
@@ -73,6 +154,8 @@ a:hover {
 /* Accessible focus ring */
 a:focus-visible,
 button:focus-visible,
+summary:focus-visible,
+[tabindex="0"]:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
@@ -229,7 +312,14 @@ h1.cagp-hero-title,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  border: 2px solid var(--cagp-dark);
+  background-color: var(--cagp-gray-100);
+  color: var(--cagp-red);
+  box-shadow: 2px 2px 0px var(--cagp-dark);
+  font-size: 1.35rem;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -340,6 +430,11 @@ h1.cagp-hero-title,
   color: var(--cagp-white);
 }
 
+.cagp-badge-gold {
+  background-color: var(--cagp-gold, #e8a317);
+  color: var(--cagp-dark, #0a0a0a);
+}
+
 /* Department Badges */
 .badge-dcp { background-color: var(--cagp-red) !important; color: #fff !important; }
 .badge-ecn { background-color: var(--cagp-dark) !important; color: #fff !important; }
@@ -405,6 +500,10 @@ h1.cagp-hero-title,
   background-color: var(--cagp-gray-50);
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+.cagp-discipline[open] .cagp-discipline-body {
+  animation: cagpDrawerSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cagp-discipline-body p:last-child {
@@ -785,6 +884,7 @@ h1.cagp-hero-title,
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   max-width: 320px;
   margin: 0 auto;
+  animation: cagpEmblemStamp 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cagp-hero-emblem-card:hover {
@@ -923,6 +1023,11 @@ h1.cagp-hero-title,
 .cagp-doc-btn-outline:hover {
   background-color: var(--cagp-gray-100, #f8f9fa);
   color: var(--cagp-dark, #111111) !important;
+}
+
+.cagp-doc-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 transparent;
 }
 
 /* ==========================================================================
@@ -1536,7 +1641,7 @@ div.callout-tip .callout-toggle::before {
 .cagp-subnav-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.35rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.84rem;
   font-weight: 600;
@@ -1548,7 +1653,13 @@ div.callout-tip .callout-toggle::before {
   text-decoration: none !important;
   white-space: nowrap;
   box-shadow: 2px 2px 0px var(--cagp-dark);
-  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease, color 0.12s ease;
+}
+
+.cagp-subnav-link i.bi {
+  font-size: 0.95rem;
+  color: var(--cagp-red);
+  transition: color 0.12s ease;
 }
 
 .cagp-subnav-link:hover {
@@ -1556,6 +1667,10 @@ div.callout-tip .callout-toggle::before {
   color: var(--cagp-white) !important;
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px var(--cagp-dark);
+}
+
+.cagp-subnav-link:hover i.bi {
+  color: #ffffff !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -1660,6 +1775,10 @@ div.callout-tip .callout-toggle::before {
   display: none !important;
 }
 
+.cagp-compass-panel:not([hidden]) {
+  animation: cagpPanelSlideIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .cagp-action-tile {
   display: flex;
   flex-direction: column;
@@ -1714,7 +1833,8 @@ div.callout-tip .callout-toggle::before {
   box-shadow: 3px 3px 0px var(--cagp-dark);
 }
 
-.cagp-chip[aria-pressed="true"] {
+.cagp-chip[aria-pressed="true"],
+.cagp-chip.is-active {
   background-color: var(--cagp-red);
   color: var(--cagp-white);
   transform: translate(1px, 1px);
@@ -1758,7 +1878,8 @@ div.callout-tip .callout-toggle::before {
 }
 
 .cagp-progress-fill.is-complete {
-  background-color: #2e7d32;
+  background-color: var(--cagp-green, #2e7d32);
+  animation: cagpProgressComplete 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cagp-calc-row {
@@ -2067,7 +2188,7 @@ div.callout-tip .callout-toggle::before {
   box-shadow: 6px 6px 0px var(--cagp-dark, #0a0a0a);
 }
 
-/* Faixas heráldicas superiores com cores adaptadas que ornam com o Brite */
+/* Faixas heráldicas superiores com cores autênticas dos sistemas UFMG */
 .cagp-app-card::before {
   content: "";
   position: absolute;
@@ -2079,27 +2200,27 @@ div.callout-tip .callout-toggle::before {
 }
 
 .cagp-app-card-siga::before {
-  background-color: #1e3f66; /* Azul Siga / UFMG */
+  background-color: var(--app-siga, #002776); /* Azul Tecnológico SIGA */
 }
 
 .cagp-app-card-minhaufmg::before {
-  background-color: #00796b; /* Petróleo MinhaUFMG */
+  background-color: var(--app-minhaufmg, #087f3b); /* Verde das Volutas MinhaUFMG */
 }
 
 .cagp-app-card-fump::before {
-  background-color: #e65100; /* Laranja FUMP */
+  background-color: var(--app-fump, #006c67); /* Verde Petróleo FUMP */
 }
 
 .cagp-app-card-rotas::before {
-  background-color: #2e7d32; /* Verde Interno Rotas */
+  background-color: var(--app-rotas, #2c0eeb); /* Azul Elétrico Interno Rotas */
 }
 
 .cagp-app-card-ceag::before {
-  background-color: #9e2424; /* Vinho Candango FAFICH */
+  background-color: var(--app-ceag, #9e2424); /* Vinho Candango FAFICH */
 }
 
 .cagp-app-card-bu::before {
-  background-color: #e8a317; /* Ouro BU */
+  background-color: var(--app-bu, #d97706); /* Ouro BU */
 }
 
 .cagp-app-header {
@@ -2121,6 +2242,16 @@ div.callout-tip .callout-toggle::before {
   box-shadow: 2px 2px 0px var(--cagp-dark, #0a0a0a);
   flex-shrink: 0;
   padding: 4px;
+}
+
+.cagp-app-logo-box.cagp-app-logo-ceag {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--app-ceag, #9e2424);
+}
+
+.cagp-app-logo-box.cagp-app-logo-bu {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--app-bu, #d97706);
 }
 
 .cagp-app-logo {
@@ -2154,26 +2285,63 @@ div.callout-tip .callout-toggle::before {
 .cagp-app-tag {
   font-family: 'Oswald', sans-serif;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   padding: 0.15rem 0.4rem;
   border: 1px solid var(--cagp-dark, #0a0a0a);
   border-radius: 3px;
   line-height: 1;
-  background-color: var(--cagp-gray-100, #f8f9fa);
+  background-color: var(--cagp-surface-low, #f4f5f7);
   color: var(--cagp-dark, #0a0a0a);
 }
 
-.cagp-app-tag-blue { background-color: #f4f5f7; color: #0d47a1; }
-.cagp-app-tag-cyan { background-color: #f4f5f7; color: #004d40; }
-.cagp-app-tag-orange { background-color: #fbf8f3; color: #92400e; }
-.cagp-app-tag-green { background-color: #f4f5f7; color: #1b5e20; }
+/* Tags temáticas oficiais de cada ecossistema (Alto contraste WCAG AA/AAA) */
+.cagp-app-tag-siga {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--app-siga, #002776);
+  border-color: var(--app-siga, #002776);
+}
+
+.cagp-app-tag-minhaufmg {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--app-minhaufmg, #087f3b);
+  border-color: var(--app-minhaufmg, #087f3b);
+}
+
+.cagp-app-tag-fump {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--app-fump, #006c67);
+  border-color: var(--app-fump, #006c67);
+}
+
+.cagp-app-tag-rotas {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--app-rotas, #2c0eeb);
+  border-color: var(--app-rotas, #2c0eeb);
+}
+
+.cagp-app-tag-ceag {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--app-ceag, #9e2424);
+  border-color: var(--app-ceag, #9e2424);
+}
+
+.cagp-app-tag-bu {
+  background-color: var(--cagp-gold, #e8a317);
+  color: var(--cagp-dark, #0a0a0a);
+  border-color: var(--cagp-dark, #0a0a0a);
+}
+
+.cagp-app-tag-blue { background-color: #f4f5f7; color: #1e3f66; }
+.cagp-app-tag-cyan { background-color: #f4f5f7; color: #1e3f66; }
+.cagp-app-tag-orange { background-color: var(--cagp-orange, #e65100); color: var(--cagp-dark, #0a0a0a); font-weight: 700; }
+.cagp-app-tag-green { background-color: #f4f5f7; color: #2e7d32; }
 .cagp-app-tag-red { background-color: #fbf8f3; color: #9e2424; }
-.cagp-app-tag-gold { background-color: #fbf8f3; color: #78350f; }
+.cagp-app-tag-gold { background-color: var(--cagp-gold, #e8a317); color: var(--cagp-dark, #0a0a0a); font-weight: 700; }
 
 .cagp-app-desc {
   font-size: 0.85rem;
-  color: var(--cagp-gray-700, #495057);
+  color: var(--cagp-gray-600, #4b5563);
   line-height: 1.45;
   margin-bottom: 0.85rem;
   flex-grow: 1;
@@ -2226,6 +2394,109 @@ div.callout-tip .callout-toggle::before {
 .cagp-store-btn-primary:hover {
   background-color: var(--cagp-red, #9e2424);
 }
+
+/* Botões primários temáticos de cada aplicativo */
+.cagp-app-card-siga .cagp-store-btn-primary {
+  background-color: var(--app-siga, #002776);
+  color: #ffffff !important;
+}
+.cagp-app-card-siga .cagp-store-btn-primary:hover {
+  background-color: #001a4e;
+}
+
+.cagp-app-card-minhaufmg .cagp-store-btn-primary {
+  background-color: var(--app-minhaufmg, #087f3b);
+  color: #ffffff !important;
+}
+.cagp-app-card-minhaufmg .cagp-store-btn-primary:hover {
+  background-color: #065e2b;
+}
+
+.cagp-app-card-fump .cagp-store-btn-primary {
+  background-color: var(--app-fump, #006c67);
+  color: #ffffff !important;
+}
+.cagp-app-card-fump .cagp-store-btn-primary:hover {
+  background-color: #004d49;
+}
+
+.cagp-app-card-rotas .cagp-store-btn-primary {
+  background-color: var(--app-rotas, #2c0eeb);
+  color: #ffffff !important;
+}
+.cagp-app-card-rotas .cagp-store-btn-primary:hover {
+  background-color: #1f08aa;
+}
+
+.cagp-app-card-ceag .cagp-store-btn-primary {
+  background-color: var(--app-ceag, #9e2424);
+  color: #ffffff !important;
+}
+.cagp-app-card-ceag .cagp-store-btn-primary:hover {
+  background-color: #7b1a1a;
+}
+
+.cagp-app-card-bu .cagp-store-btn-primary {
+  background-color: var(--app-bu, #d97706);
+  color: #0a0a0a !important;
+  font-weight: 700;
+}
+.cagp-app-card-bu .cagp-store-btn-primary:hover {
+  background-color: #b45309;
+  color: #ffffff !important;
+}
+
+/* Hub Modules - Identidade Temática das 4 Etapas da Jornada */
+.cagp-hub-calouros,
+.cagp-hub-percurso,
+.cagp-hub-estagio,
+.cagp-hub-extensao {
+  position: relative;
+  overflow: hidden;
+}
+
+.cagp-hub-calouros::before,
+.cagp-hub-percurso::before,
+.cagp-hub-estagio::before,
+.cagp-hub-extensao::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.cagp-hub-calouros::before { background-color: var(--cagp-red, #9e2424); }
+.cagp-hub-percurso::before { background-color: var(--cagp-blue, #1e3f66); }
+.cagp-hub-estagio::before { background-color: var(--cagp-gold, #e8a317); }
+.cagp-hub-extensao::before { background-color: var(--cagp-green, #2e7d32); }
+
+.cagp-hub-calouros .cagp-card-icon {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--cagp-red, #9e2424);
+}
+
+.cagp-hub-percurso .cagp-card-icon {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--cagp-blue, #1e3f66);
+}
+
+.cagp-hub-estagio .cagp-card-icon {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--app-bu, #d97706);
+}
+
+.cagp-hub-extensao .cagp-card-icon {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  color: var(--cagp-green, #2e7d32);
+}
+
+/* Stat Cards com destaque temático nas métricas */
+.cagp-stat-card-total .cagp-stat-value { color: var(--cagp-red, #9e2424); }
+.cagp-stat-card-periodos .cagp-stat-value { color: var(--cagp-blue, #1e3f66); }
+.cagp-stat-card-extensao .cagp-stat-value { color: var(--cagp-green, #2e7d32); }
+.cagp-stat-card-estagio .cagp-stat-value { color: var(--app-bu, #d97706); }
 
 /* ==========================================================================
    Módulo Tripartite de Representação Estudantil (.cagp-rep-grid)
@@ -2321,7 +2592,7 @@ div.callout-tip .callout-toggle::before {
 .cagp-rep-scope {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--cagp-gray-700, #495057);
+  color: var(--cagp-gray-600, #4b5563);
   margin-bottom: 0.75rem;
 }
 
@@ -2468,7 +2739,7 @@ div.callout-tip .callout-toggle::before {
   max-width: 100%;
   height: auto;
   border: 1px solid var(--cagp-dark, #0a0a0a);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .cagp-map-caption {
@@ -2735,7 +3006,7 @@ div.callout-tip .callout-toggle::before {
 }
 
 .cagp-bar-fill-blue {
-  background-color: #1e3a8a;
+  background-color: #1e3f66;
 }
 
 /* Quadro de Clusters de Cientometria */
@@ -2802,10 +3073,881 @@ div.callout-tip .callout-toggle::before {
   margin-bottom: 0.2rem;
 }
 
-.cagp-member-dept {
-  font-size: 0.85rem;
-  color: var(--cagp-gray-600);
+/* ==========================================================================
+   CACLP / ACG: GAVETAS DE DETALHAMENTO DE CRITÉRIOS ("O QUE CONTA NISSO?")
+   ========================================================================== */
+
+.cagp-calc-row {
+  flex-wrap: wrap;
 }
+
+.cagp-calc-drawer-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 1.5px solid var(--cagp-black, #0f1115);
+  color: var(--cagp-black, #0f1115);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.22rem 0.55rem;
+  margin-top: 0.45rem;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 0 var(--cagp-black, #0f1115);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.cagp-calc-drawer-toggle:hover {
+  background-color: var(--cagp-red, #9e2424);
+  color: var(--cagp-white, #ffffff);
+  box-shadow: 2px 2px 0 var(--cagp-black, #0f1115);
+}
+
+.cagp-calc-drawer-toggle:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0.5px 0.5px 0 var(--cagp-black, #0f1115);
+}
+
+.cagp-calc-drawer-toggle:focus-visible {
+  outline: 2px solid var(--cagp-black, #0f1115);
+  outline-offset: 2px;
+}
+
+.cagp-drawer-arrow {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+  font-size: 0.75rem;
+}
+
+.cagp-calc-drawer-toggle[aria-expanded="true"] .cagp-drawer-arrow {
+  transform: rotate(180deg);
+}
+
+.cagp-calc-drawer {
+  flex: 0 0 100%;
+  width: 100%;
+  margin-top: 0.65rem;
+  display: none;
+}
+
+.cagp-calc-drawer.is-open {
+  display: block;
+  animation: cagpDrawerSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cagp-calc-drawer-inner {
+  background-color: var(--cagp-white, #ffffff);
+  border: 2px solid var(--cagp-black, #0f1115);
+  box-shadow: 2.5px 2.5px 0 var(--cagp-black, #0f1115);
+  padding: 0.85rem 1rem;
+}
+
+.cagp-drawer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .cagp-drawer-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
+
+.cagp-drawer-section {
+  padding: 0.65rem 0.75rem;
+  border: 1.5px solid var(--cagp-black, #0f1115);
+}
+
+.cagp-drawer-section.is-accepted {
+  background-color: #f1f8f3;
+  border-left: 4px solid var(--cagp-green, #2e7d32);
+}
+
+.cagp-drawer-section.is-rejected {
+  background-color: #fdf3f3;
+  border-left: 4px solid var(--cagp-red, #9e2424);
+}
+
+.cagp-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+.cagp-drawer-section ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--cagp-dark, #2b2b2b);
+}
+
+.cagp-drawer-section ul li {
+  margin-bottom: 0.35rem;
+}
+
+.cagp-drawer-section ul li:last-child {
+  margin-bottom: 0;
+}
+
+.cagp-drawer-alert {
+  margin-top: 0.6rem;
+  padding: 0.45rem 0.65rem;
+  background-color: #fff8e1;
+  border: 1.5px solid #f57f17;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #3e2723;
+}
+
+/* ==========================================================================
+   SOBRE O CAGP: GESTÃO EM EXERCÍCIO, ORGANOGRAMA & EQUIPE
+   ========================================================================== */
+
+.cagp-team-hero {
+  border: 2px solid var(--cagp-black, #0f1115);
+  box-shadow: 4px 4px 0 var(--cagp-black, #0f1115);
+  background-color: var(--cagp-white, #ffffff);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cagp-video-box {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 2px solid var(--cagp-black, #0f1115);
+  box-shadow: 3px 3px 0 var(--cagp-black, #0f1115);
+  padding: 1.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cagp-video-placeholder-frame {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 16 / 9;
+  background-color: #0f1115;
+  color: #ffffff;
+  border: 2px solid var(--cagp-black, #0f1115);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.cagp-video-play-btn {
+  width: 58px;
+  height: 58px;
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 2px 2px 0 #000000;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.cagp-video-play-btn:hover {
+  transform: scale(1.08);
+  background-color: #b71c1c;
+}
+
+/* Organograma Brite */
+.cagp-organogram {
+  background-color: var(--cagp-white, #ffffff);
+  border: 2px solid var(--cagp-black, #0f1115);
+  box-shadow: 4px 4px 0 var(--cagp-black, #0f1115);
+  padding: 1.5rem 1rem;
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+}
+
+.cagp-organogram-tree {
+  min-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cagp-organogram-node {
+  background-color: var(--cagp-white, #ffffff);
+  border: 2px solid var(--cagp-black, #0f1115);
+  padding: 0.6rem 1rem;
+  text-align: center;
+  box-shadow: 2.5px 2.5px 0 var(--cagp-black, #0f1115);
+  position: relative;
+}
+
+.cagp-organogram-node.is-sovereign {
+  background-color: var(--cagp-dark, #2b2b2b);
+  color: #ffffff;
+  border-color: var(--cagp-black, #0f1115);
+}
+
+.cagp-organogram-node.is-control {
+  background-color: var(--cagp-neutral-warm, #fbf8f3);
+  border: 2px dashed var(--cagp-black, #0f1115);
+}
+
+.cagp-organogram-node.is-presidency {
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff;
+  border-color: var(--cagp-black, #0f1115);
+}
+
+.cagp-organogram-connector-vertical {
+  width: 2px;
+  height: 24px;
+  background-color: var(--cagp-black, #0f1115);
+}
+
+.cagp-organogram-level-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.cagp-organogram-directorates {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  position: relative;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--cagp-black, #0f1115);
+}
+
+.cagp-organogram-directorates .cagp-organogram-node {
+  padding: 0.5rem 0.4rem;
+  font-size: 0.8rem;
+}
+
+.cagp-organogram-directorates .cagp-organogram-node::before {
+  content: '';
+  position: absolute;
+  top: -1.25rem;
+  left: 50%;
+  width: 2px;
+  height: 1.25rem;
+  background-color: var(--cagp-black, #0f1115);
+  transform: translateX(-50%);
+}
+
+/* Cards da Equipe / Chapa */
+.cagp-directorate-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--cagp-black, #0f1115);
+  padding-bottom: 0.4rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.cagp-team-card {
+  border: 2px solid var(--cagp-black, #0f1115);
+  background-color: var(--cagp-white, #ffffff);
+  box-shadow: 3px 3px 0 var(--cagp-black, #0f1115);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cagp-team-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--cagp-black, #0f1115);
+}
+
+.cagp-team-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem;
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border-bottom: 1.5px solid var(--cagp-black, #0f1115);
+}
+
+.cagp-team-avatar-box {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border: 2px solid var(--cagp-black, #0f1115);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: var(--cagp-dark, #2b2b2b);
+  box-shadow: 1.5px 1.5px 0 var(--cagp-black, #0f1115);
+  overflow: hidden;
+}
+
+.cagp-team-avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(110%);
+}
+
+.cagp-team-card-body {
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.cagp-team-bio {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--cagp-dark, #2b2b2b);
+  margin-bottom: 0.75rem;
+  flex: 1 1 auto;
+}
+
+.cagp-team-card-footer {
+  padding: 0.6rem 0.9rem;
+  border-top: 1.5px solid var(--cagp-gray-200, #e6e8eb);
+  background-color: #fafbfc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.cagp-team-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cagp-black, #0f1115);
+  text-decoration: none;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--cagp-black, #0f1115);
+  background-color: #ffffff;
+  box-shadow: 1px 1px 0 var(--cagp-black, #0f1115);
+}
+
+.cagp-team-social-link:hover {
+  background-color: var(--cagp-black, #0f1115);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   CURSO: GRUPOS E LINHAS DE PESQUISA (DCP / FAFICH / UFMG)
+   ========================================================================== */
+
+.cagp-research-card {
+  border: 2px solid var(--cagp-black, #0f1115);
+  background-color: var(--cagp-white, #ffffff);
+  box-shadow: 3px 3px 0 var(--cagp-black, #0f1115);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cagp-research-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--cagp-black, #0f1115);
+}
+
+.cagp-research-card-header {
+  padding: 1rem;
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border-bottom: 1.5px solid var(--cagp-black, #0f1115);
+}
+
+.cagp-research-card-body {
+  padding: 1rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cagp-research-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.cagp-research-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.15rem 0.4rem;
+  background-color: var(--cagp-white, #ffffff);
+  border: 1px solid var(--cagp-black, #0f1115);
+  box-shadow: 1px 1px 0 var(--cagp-black, #0f1115);
+}
+
+.cagp-research-card-footer {
+  padding: 0.65rem 1rem;
+  border-top: 1.5px solid var(--cagp-black, #0f1115);
+  background-color: #fafbfc;
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   Trilha de Navegação (Breadcrumbs Neo-Brutalista Brite)
+   ========================================================================== */
+
+.cagp-breadcrumbs {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 1.5px solid var(--cagp-dark, #111111);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  padding: 0.4rem 0.85rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.cagp-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-family: var(--cagp-font-body, 'Inter', sans-serif);
+}
+
+.cagp-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cagp-text-muted, #4b5563);
+}
+
+.cagp-breadcrumb-item a {
+  color: var(--cagp-dark, #111111);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.15s ease;
+}
+
+.cagp-breadcrumb-item a:hover {
+  color: var(--cagp-red, #9e2424);
+  text-decoration: underline;
+}
+
+.cagp-breadcrumb-parent {
+  color: var(--cagp-text-muted, #4b5563);
+  font-weight: 500;
+}
+
+.cagp-breadcrumb-item.is-active {
+  color: var(--cagp-red, #9e2424);
+  font-weight: 700;
+}
+
+.cagp-breadcrumb-separator {
+  color: var(--cagp-text-muted, #4b5563);
+  font-size: 0.85rem;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0.1rem;
+}
+
+/* ==========================================================================
+   Footer Links High Contrast (WCAG AA Compliance)
+   ========================================================================== */
+
+.nav-footer a,
+.nav-footer-left a,
+.nav-footer-right a {
+  color: var(--cagp-dark, #111111) !important;
+  text-decoration: underline !important;
+  font-weight: 500;
+}
+
+.nav-footer a:hover,
+.nav-footer-left a:hover,
+.nav-footer-right a:hover {
+  color: var(--cagp-red, #9e2424) !important;
+}
+
+/* ==========================================================================
+   Mapa do Site (Sitemap Interativo Brite)
+   ========================================================================== */
+
+.cagp-sitemap-search {
+  position: relative;
+  max-width: 540px;
+  margin: 0 auto 2rem auto;
+}
+
+.cagp-sitemap-input {
+  width: 100%;
+  padding: 0.65rem 1rem 0.65rem 2.6rem;
+  font-size: 0.95rem;
+  border: 2px solid var(--cagp-dark, #111111);
+  background-color: var(--cagp-white, #ffffff);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  font-family: var(--cagp-font-body, 'Inter', sans-serif);
+  outline: none;
+}
+
+.cagp-sitemap-input:focus {
+  border-color: var(--cagp-red, #9e2424);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-sitemap-search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: var(--cagp-text-muted, #4b5563);
+  pointer-events: none;
+}
+
+.cagp-sitemap-item-link {
+  font-weight: 700;
+  color: var(--cagp-dark, #111111);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.15s ease;
+}
+
+.cagp-sitemap-item-link:hover {
+  color: var(--cagp-red, #9e2424);
+  text-decoration: underline;
+}
+
+.cagp-sitemap-sublinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.cagp-sitemap-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 1px solid var(--cagp-dark, #111111);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+  color: var(--cagp-dark, #111111);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.cagp-sitemap-tag:hover {
+  background-color: var(--cagp-red, #9e2424);
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Personality & Delight Components (Brite Neo-Brutalist System)
+   ========================================================================== */
+
+/* 1. Calculadora: Banner e Caixa de Celebração de Horas */
+.cagp-calc-celebration-box {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.cagp-calc-celebration-box.is-all-complete {
+  background-color: var(--cagp-white, #ffffff);
+  border: 3px solid var(--cagp-dark, #111111);
+  box-shadow: 5px 5px 0 var(--cagp-dark, #111111);
+  animation: cagpSealUnlock 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cagp-calc-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.55rem;
+  background-color: var(--cagp-dark, #111111);
+  color: #ffffff;
+  border: 1px solid var(--cagp-dark, #111111);
+}
+
+.cagp-calc-celebration-box.is-all-complete .cagp-calc-status-badge {
+  background-color: var(--cagp-gold, #e8a317);
+  color: var(--cagp-dark, #111111);
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-teto-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cagp-red, #9e2424);
+  background-color: var(--cagp-gray-100, #f4f5f7);
+  border: 1px solid var(--cagp-red, #9e2424);
+  padding: 0.05rem 0.35rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+/* 2. Empty State Acolhedor de Busca (Optativas / Catálogos) */
+.cagp-empty-state {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  border: 2px dashed var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.cagp-empty-icon {
+  font-size: 2.4rem;
+  color: var(--cagp-red, #9e2424);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.cagp-empty-tips {
+  display: inline-block;
+  text-align: left;
+  max-width: 600px;
+  background-color: #ffffff;
+  border: 1px solid var(--cagp-dark, #111111);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  padding: 0.65rem 0.95rem;
+}
+
+/* 3. Celebração do Checklist dos Calouros */
+.cagp-calouro-celebration {
+  background-color: var(--cagp-white, #ffffff);
+  border: 3px solid var(--cagp-dark, #111111);
+  box-shadow: 5px 5px 0 var(--cagp-dark, #111111);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  animation: cagpSealUnlock 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cagp-celebration-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  background-color: var(--cagp-green, #2e7d32);
+  color: #ffffff;
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  margin-bottom: 0.75rem;
+}
+
+/* 4. Botão de Cópia Rápida Inline */
+.cagp-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  background-color: #ffffff;
+  color: var(--cagp-dark, #111111);
+  border: 1px solid var(--cagp-dark, #111111);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+  cursor: pointer;
+  vertical-align: middle;
+  line-height: 1.2;
+  transition: all 0.1s ease;
+  user-select: none;
+  margin-left: 0.35rem;
+}
+
+.cagp-copy-btn:hover {
+  background-color: var(--cagp-surface-low, #f4f5f7);
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-copy-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+.cagp-copy-btn.is-copied {
+  background-color: var(--cagp-green, #2e7d32);
+  color: #ffffff;
+  border-color: var(--cagp-dark, #111111);
+  animation: cagpCopyPulse 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 5. Dica de Veterano (Cards e Pílulas) */
+.cagp-veteran-tip {
+  display: block;
+  background-color: var(--cagp-gray-100, #f4f5f7);
+  border-left: 4px solid var(--cagp-gold, #e8a317);
+  border-top: 1px solid var(--cagp-dark, #111111);
+  border-right: 1px solid var(--cagp-dark, #111111);
+  border-bottom: 1px solid var(--cagp-dark, #111111);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.84rem;
+  margin-top: 0.75rem;
+  color: var(--cagp-dark, #111111);
+}
+
+.cagp-veteran-tip strong {
+  color: var(--cagp-dark, #111111);
+}
+
+/* ==========================================================================
+   Brite Mechanical Motion System (Keyframes & Accessibility)
+   ========================================================================== */
+
+/* 1. Entrada de Carimbo Mecânico (Prensa dos Candangos) */
+@keyframes cagpEmblemStamp {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+    box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 6px 6px 0 var(--cagp-dark, #111111);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 6px 6px 0 var(--cagp-dark, #111111);
+  }
+}
+
+/* 2. Revelação Mecânica de Gavetas (Ementas e Critérios) */
+@keyframes cagpDrawerSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Desdobramento de Painéis de Processo (Bússola) */
+@keyframes cagpPanelSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 4. Homologação / Deferimento de Marco (600h e Calouro) */
+@keyframes cagpSealUnlock {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.99);
+    box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 5px 5px 0 var(--cagp-dark, #111111);
+  }
+}
+
+/* 5. Pulso da Barra de Progresso Integralizada */
+@keyframes cagpProgressComplete {
+  0% {
+    filter: brightness(1.25);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+/* 6. Pulso Tátil de Confirmação de Cópia */
+@keyframes cagpCopyPulse {
+  0% {
+    transform: scale(0.94);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Redução Rigorosa de Movimento (Acessibilidade WCAG 2.1) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .cagp-hero-emblem-card,
+  .cagp-discipline[open] .cagp-discipline-body,
+  .cagp-calc-drawer.is-open,
+  .cagp-compass-panel:not([hidden]),
+  .cagp-calc-celebration-box.is-all-complete,
+  .cagp-calouro-celebration,
+  .cagp-copy-btn.is-copied,
+  .cagp-progress-fill.is-complete {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+
+
 
 
 

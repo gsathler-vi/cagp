@@ -6,7 +6,7 @@ Site institucional do Centro Acadêmico de Gestão Pública (CAGP — FAFICH/UFM
 
 | Caminho | Papel | Publicado? |
 | :--- | :--- | :--- |
-| `*.qmd` (raiz) | As 8 páginas do site. **Não mover**: o caminho define a URL pública | ✅ (renderizado) |
+| `*.qmd` (raiz) | As 11 páginas do site. **Não mover**: o caminho define a URL pública | ✅ (renderizado) |
 | `_quarto.yml` | Configuração do projeto: navbar, rodapé, anúncio da chapa, `render:` e `resources:` | — |
 | `_brand.yml` | Tokens de marca (cores, fontes, logos), detectado automaticamente pelo Quarto na raiz | — |
 | `_variables.scss` | Tema SCSS: Brite adaptado ao CAGP (`scss:defaults` + `scss:rules`) | — |
@@ -19,7 +19,7 @@ Site institucional do Centro Acadêmico de Gestão Pública (CAGP — FAFICH/UFM
 | `_referencias/sites-informacoes-oficiais/` | Capturas dos sites oficiais do Colegiado GP (`colegiado-gp/`) e do Guia Viver UFMG (`guia-viver-ufmg/`). HTML bruto fica fora do git | ❌ |
 | `_referencias/plataformas-e-acessos-externos/` | Material de serviços externos linkados no portal (ex.: `interno-rotas/`, licença MIT) | ❌ |
 | `PRODUCT.md`, `DESIGN.md`, `.impeccable/` | Contexto de produto e design da skill impeccable. **Manter na raiz** | ❌ |
-| `.agents/skills/` | Skills do workspace (impeccable, brand-yml, quarto-authoring, alt-text). Uso automático em "Roteamento de Skills" | ❌ |
+| `.agents/skills/` | Skills do workspace (impeccable, brand-yml, quarto-authoring, alt-text, playwright-core). Uso automático em "Roteamento de Skills" | ❌ |
 
 ## Fontes de verdade (consultar ANTES de escrever ou estilizar)
 

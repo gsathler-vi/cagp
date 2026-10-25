@@ -19,9 +19,9 @@ title-block-style: none
 O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de representação discente dos estudantes de Gestão Pública da FAFICH/UFMG. Estamos ao seu lado desde a recepção de calouros até a colação de grau, defendendo uma formação crítica, pública e comprometida com a transformação democrática do Estado.
 
 ::: {.d-flex .flex-wrap .gap-2 .mt-4}
-[🏛️ Conhecer o Curso](curso.qmd){.cagp-btn .cagp-btn-primary aria-label="Conhecer o Bacharelado em Gestão Pública"}
-[🚀 Sou Calouro](calouros.qmd){.cagp-btn .cagp-btn-secondary aria-label="Ir para o Guia de Sobrevivência do Calouro"}
-[🧭 Percurso (10P)](percurso.qmd){.cagp-btn .cagp-btn-outline aria-label="Visualizar a grade e os 3 percursos curriculares"}
+[<i class="bi bi-bank" aria-hidden="true"></i> Conhecer o Curso](curso.qmd){.cagp-btn .cagp-btn-primary aria-label="Conhecer o Bacharelado em Gestão Pública"}
+[<i class="bi bi-compass" aria-hidden="true"></i> Sou Calouro](calouros.qmd){.cagp-btn .cagp-btn-secondary aria-label="Ir para o Guia de Sobrevivência do Calouro"}
+[<i class="bi bi-diagram-3" aria-hidden="true"></i> Percurso (10P)](percurso.qmd){.cagp-btn .cagp-btn-outline aria-label="Visualizar a grade e os 3 percursos curriculares"}
 :::
 :::
 
@@ -42,12 +42,12 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
 ```{=html}
 <nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
   <span class="cagp-subnav-label">Saltar para:</span>
-  <a href="#bussola-interativa" class="cagp-subnav-link">🧭 Minha Jornada (4 Perfis)</a>
-  <a href="#central-sistemas" class="cagp-subnav-link">⚡ Central de Apps UFMG</a>
-  <a href="#modulos-oficiais" class="cagp-subnav-link">📚 Módulos do Curso</a>
-  <a href="#representacao-estudantil" class="cagp-subnav-link">🏛️ Representação (DCE • DA • CAGP)</a>
-  <a href="acg.html#calculadora-horas" class="cagp-subnav-link">🧮 Calculadora 600h</a>
-  <a href="percurso.html#explorador-grade" class="cagp-subnav-link">🔎 Filtrar Ementas</a>
+  <a href="#bussola-interativa" class="cagp-subnav-link"><i class="bi bi-compass" aria-hidden="true"></i> Minha Jornada (4 Perfis)</a>
+  <a href="#central-sistemas" class="cagp-subnav-link"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i> Central de Apps UFMG</a>
+  <a href="#modulos-oficiais" class="cagp-subnav-link"><i class="bi bi-journal-bookmark" aria-hidden="true"></i> Módulos do Curso</a>
+  <a href="#representacao-estudantil" class="cagp-subnav-link"><i class="bi bi-people" aria-hidden="true"></i> Representação (DCE • DA • CAGP)</a>
+  <a href="acg.html#calculadora-horas" class="cagp-subnav-link"><i class="bi bi-calculator" aria-hidden="true"></i> Calculadora 600h</a>
+  <a href="percurso.html#explorador-grade" class="cagp-subnav-link"><i class="bi bi-search" aria-hidden="true"></i> Filtrar Ementas</a>
 </nav>
 
 <section id="bussola-interativa" class="cagp-tool-box" aria-labelledby="bussola-heading">
@@ -61,19 +61,19 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
 
   <div class="cagp-compass-tabs" role="tablist" aria-label="Etapas da jornada discente">
     <button type="button" class="cagp-compass-btn" role="tab" id="tab-ingressar" aria-selected="false" aria-controls="panel-ingressar" data-compass-target="panel-ingressar">
-      <span class="cagp-compass-btn-title">🎯 1. Quero Ingressar</span>
+      <span class="cagp-compass-btn-title"><i class="bi bi-door-open" aria-hidden="true"></i> 1. Quero Ingressar</span>
       <span class="cagp-compass-btn-sub">Vestibulandos, SiSU, carreira e turno noturno</span>
     </button>
     <button type="button" class="cagp-compass-btn" role="tab" id="tab-calouro" aria-selected="true" aria-controls="panel-calouro" data-compass-target="panel-calouro">
-      <span class="cagp-compass-btn-title">🚀 2. Calouro (1º P)</span>
+      <span class="cagp-compass-btn-title"><i class="bi bi-backpack" aria-hidden="true"></i> 2. Calouro (1º P)</span>
       <span class="cagp-compass-btn-sub">Primeiros 30 dias, RU, circular e sistemas</span>
     </button>
     <button type="button" class="cagp-compass-btn" role="tab" id="tab-meio" aria-selected="false" aria-controls="panel-meio" data-compass-target="panel-meio">
-      <span class="cagp-compass-btn-title">🧭 3. Meio de Curso (2º–6º P)</span>
+      <span class="cagp-compass-btn-title"><i class="bi bi-diagram-3" aria-hidden="true"></i> 3. Meio de Curso (2º–6º P)</span>
       <span class="cagp-compass-btn-sub">Escolha de percurso, 300h Extensão e AAC</span>
     </button>
     <button type="button" class="cagp-compass-btn" role="tab" id="tab-formando" aria-selected="false" aria-controls="panel-formando" data-compass-target="panel-formando">
-      <span class="cagp-compass-btn-title">🎓 4. Reta Final (7º–10º P)</span>
+      <span class="cagp-compass-btn-title"><i class="bi bi-mortarboard" aria-hidden="true"></i> 4. Reta Final (7º–10º P)</span>
       <span class="cagp-compass-btn-sub">Estágio A/B, Dispensa Art. 41 e TCC</span>
     </button>
   </div>
@@ -297,11 +297,11 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 ```
 
-## <span aria-hidden="true">📊</span> O Curso de Gestão Pública em Números Oficiais
+## <i class="bi bi-bar-chart-line" aria-hidden="true"></i> O Curso de Gestão Pública em Números Oficiais
 
 ::: {.row .g-3 .mb-5}
 ::: {.col-md-3 .col-6}
-::: {.cagp-stat-card}
+::: {.cagp-stat-card .cagp-stat-card-total}
 <div class="cagp-stat-value">3.000 h</div>
 <div class="cagp-stat-label">Carga Horária Total</div>
 <small class="text-muted">Núcleo Específico + Geral (Plena)</small>
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
 :::
 
 ::: {.col-md-3 .col-6}
-::: {.cagp-stat-card}
+::: {.cagp-stat-card .cagp-stat-card-periodos}
 <div class="cagp-stat-value">10 Períodos</div>
 <div class="cagp-stat-label">Tempo Padrão (5 anos)</div>
 <small class="text-muted">Mínimo 8 / Máximo 17 semestres</small>
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
 :::
 
 ::: {.col-md-3 .col-6}
-::: {.cagp-stat-card}
+::: {.cagp-stat-card .cagp-stat-card-extensao}
 <div class="cagp-stat-value">300 h</div>
 <div class="cagp-stat-label">Formação em Extensão</div>
 <small class="text-muted">10% obrigatório (CEPE nº 10/19)</small>
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
 :::
 
 ::: {.col-md-3 .col-6}
-::: {.cagp-stat-card}
+::: {.cagp-stat-card .cagp-stat-card-estagio}
 <div class="cagp-stat-value">300 h</div>
 <div class="cagp-stat-label">Estágio Supervisionado</div>
 <small class="text-muted">DCP 135 (180h) + DCP 136 (120h)</small>
@@ -333,13 +333,13 @@ document.addEventListener('DOMContentLoaded', function () {
 :::
 :::
 
-## <span aria-hidden="true">🧭</span> Navegação por Módulos Oficiais {#modulos-oficiais}
+## <i class="bi bi-grid" aria-hidden="true"></i> Navegação por Módulos Oficiais {#modulos-oficiais}
 
 ::: {.row .g-4 .mb-4}
 ::: {.col-lg-3 .col-md-6 .col-12}
-::: {.cagp-card .cagp-equal-card}
+::: {.cagp-card .cagp-equal-card .cagp-hub-calouros}
 ::: {.cagp-card-header}
-<span class="cagp-card-icon" aria-hidden="true">🎓</span>
+<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-backpack"></i></span>
 <h3 class="cagp-card-title">Guia do Calouro</h3>
 :::
 ::: {.cagp-card-body}
@@ -352,9 +352,9 @@ Chegou à UFMG? Veja como funciona o **Turno Noturno**, horários (19h–22h30),
 :::
 
 ::: {.col-lg-3 .col-md-6 .col-12}
-::: {.cagp-card .cagp-equal-card}
+::: {.cagp-card .cagp-equal-card .cagp-hub-percurso}
 ::: {.cagp-card-header}
-<span class="cagp-card-icon" aria-hidden="true">🧭</span>
+<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></span>
 <h3 class="cagp-card-title">Percurso Curricular</h3>
 :::
 ::: {.cagp-card-body}
@@ -367,9 +367,9 @@ Linha do tempo dos **10 semestres**, as 27 matérias obrigatórias com ementas c
 :::
 
 ::: {.col-lg-3 .col-md-6 .col-12}
-::: {.cagp-card .cagp-equal-card}
+::: {.cagp-card .cagp-equal-card .cagp-hub-estagio}
 ::: {.cagp-card-header}
-<span class="cagp-card-icon" aria-hidden="true">💼</span>
+<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-briefcase"></i></span>
 <h3 class="cagp-card-title">Estágio & TCC</h3>
 :::
 ::: {.cagp-card-body}
@@ -382,9 +382,9 @@ Regras dos Estágios A (180h) e B (120h), aproveitamento profissional no setor p
 :::
 
 ::: {.col-lg-3 .col-md-6 .col-12}
-::: {.cagp-card .cagp-equal-card}
+::: {.cagp-card .cagp-equal-card .cagp-hub-extensao}
 ::: {.cagp-card-header}
-<span class="cagp-card-icon" aria-hidden="true">🌱</span>
+<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-award"></i></span>
 <h3 class="cagp-card-title">Extensão & AAC</h3>
 :::
 ::: {.cagp-card-body}
@@ -418,13 +418,13 @@ Entenda a **Extensão Obrigatória (300h)** e as **Atividades Complementares (at
   <div class="cagp-app-section-header">
     <div>
       <span class="cagp-badge cagp-badge-red mb-1">Acesso Direto &amp; Conectividade</span>
-      <h2 id="central-sistemas-heading" class="h4 mb-0">⚡ CENTRAL DE APLICATIVOS &amp; SISTEMAS UFMG</h2>
+      <h2 id="central-sistemas-heading" class="h4 mb-0"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i> CENTRAL DE APLICATIVOS &amp; SISTEMAS UFMG</h2>
     </div>
     <div class="cagp-app-filter-bar" role="group" aria-label="Filtrar aplicativos por tipo de acesso">
       <button type="button" class="cagp-app-filter-btn is-active" data-app-filter="all" aria-pressed="true">Todos os Sistemas</button>
-      <button type="button" class="cagp-app-filter-btn" data-app-filter="desktop" aria-pressed="false">💻 Portais Web (Desktop)</button>
-      <button type="button" class="cagp-app-filter-btn" data-app-filter="mobile" aria-pressed="false">📱 Apps de Celular (Mobile)</button>
-      <button type="button" class="cagp-app-filter-btn" data-app-filter="presencial" aria-pressed="false">🏢 Atendimento Presencial</button>
+      <button type="button" class="cagp-app-filter-btn" data-app-filter="desktop" aria-pressed="false"><i class="bi bi-display" aria-hidden="true"></i> Portais Web (Desktop)</button>
+      <button type="button" class="cagp-app-filter-btn" data-app-filter="mobile" aria-pressed="false"><i class="bi bi-phone" aria-hidden="true"></i> Apps de Celular (Mobile)</button>
+      <button type="button" class="cagp-app-filter-btn" data-app-filter="presencial" aria-pressed="false"><i class="bi bi-building" aria-hidden="true"></i> Atendimento Presencial</button>
     </div>
   </div>
 
@@ -438,17 +438,17 @@ Entenda a **Extensão Obrigatória (300h)** e as **Atividades Complementares (at
         <div class="cagp-app-meta">
           <h3 class="cagp-app-title">Siga UFMG</h3>
           <div class="cagp-app-tags">
-            <span class="cagp-app-tag cagp-app-tag-blue">Acadêmico</span>
-            <span class="cagp-app-tag cagp-app-tag-blue">Desktop + App</span>
+            <span class="cagp-app-tag cagp-app-tag-siga">Acadêmico</span>
+            <span class="cagp-app-tag cagp-app-tag-siga">Desktop + App</span>
           </div>
         </div>
       </div>
       <p class="cagp-app-desc">Sistema de gestão discente: matrícula semestral (via MinhaUFMG no desktop), histórico oficial, diário de classe e consulta de notas/salas no smartphone.</p>
       <div class="cagp-app-actions">
-        <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar SIGA Web via portal MinhaUFMG">💻 SIGA Web ↗</a>
-        <a href="https://play.google.com/store/apps/details?id=br.ufmg.ddp.cecom.academico.sigaufmg" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar aplicativo Siga UFMG para Android">🤖 Android ↗</a>
-        <a href="https://apps.apple.com/br/app/siga-ufmg/id1456022680" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar aplicativo Siga UFMG para iOS">🍎 iOS ↗</a>
-        <a href="documentos/manual-aplicativo-siga-ufmg.pdf" target="_blank" class="cagp-store-btn" aria-label="Baixar manual oficial do Siga UFMG em PDF">📄 Manual</a>
+        <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar SIGA Web via portal MinhaUFMG"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> SIGA Web ↗</a>
+        <a href="https://play.google.com/store/apps/details?id=br.ufmg.ddp.cecom.academico.sigaufmg" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar aplicativo Siga UFMG para Android"><i class="bi bi-google-play" aria-hidden="true"></i> Android ↗</a>
+        <a href="https://apps.apple.com/br/app/siga-ufmg/id1456022680" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar aplicativo Siga UFMG para iOS"><i class="bi bi-apple" aria-hidden="true"></i> iOS ↗</a>
+        <a href="documentos/manual-aplicativo-siga-ufmg.pdf" target="_blank" class="cagp-store-btn" aria-label="Baixar manual oficial do Siga UFMG em PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Manual</a>
       </div>
     </article>
 
@@ -461,15 +461,15 @@ Entenda a **Extensão Obrigatória (300h)** e as **Atividades Complementares (at
         <div class="cagp-app-meta">
           <h3 class="cagp-app-title">MinhaUFMG</h3>
           <div class="cagp-app-tags">
-            <span class="cagp-app-tag cagp-app-tag-cyan">Portal Desktop</span>
-            <span class="cagp-app-tag cagp-app-tag-cyan">Login Único</span>
+            <span class="cagp-app-tag cagp-app-tag-minhaufmg">Portal Desktop</span>
+            <span class="cagp-app-tag cagp-app-tag-minhaufmg">Login Único</span>
           </div>
         </div>
       </div>
       <p class="cagp-app-desc">Portal integrador da Universidade. É aqui que você faz o primeiro cadastro com a Folha NIPs e acessa o SIGA Web, e-mail @ufmg.br institucional e Moodle Virtual.</p>
       <div class="cagp-app-actions">
-        <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar o portal MinhaUFMG">💻 Portal Web ↗</a>
-        <a href="https://sistemas.ufmg.br/nips/home.seam" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Cadastrar primeiro acesso com a Folha NIPs">🔑 Folha NIPs ↗</a>
+        <a href="https://sistemas.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar o portal MinhaUFMG"><i class="bi bi-browser-chrome" aria-hidden="true"></i> Portal Web ↗</a>
+        <a href="https://sistemas.ufmg.br/nips/home.seam" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Cadastrar primeiro acesso com a Folha NIPs"><i class="bi bi-key" aria-hidden="true"></i> Folha NIPs ↗</a>
       </div>
     </article>
 
@@ -482,50 +482,50 @@ Entenda a **Extensão Obrigatória (300h)** e as **Atividades Complementares (at
         <div class="cagp-app-meta">
           <h3 class="cagp-app-title">FUMP Assistência</h3>
           <div class="cagp-app-tags">
-            <span class="cagp-app-tag cagp-app-tag-orange">Permanência</span>
-            <span class="cagp-app-tag cagp-app-tag-orange">Bolsas &amp; RU</span>
+            <span class="cagp-app-tag cagp-app-tag-fump">Permanência</span>
+            <span class="cagp-app-tag cagp-app-tag-fump">Bolsas &amp; RU</span>
           </div>
         </div>
       </div>
       <p class="cagp-app-desc">Fundação Mendes Pimentel: preenchimento do questionário socioeconômico, solicitação de auxílios, moradia, consultas de saúde e cardápio diário dos RUs.</p>
       <div class="cagp-app-actions">
-        <a href="https://www.fump.ufmg.br/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar Área do Aluno FUMP">🌐 Área do Aluno ↗</a>
-        <a href="https://play.google.com/store/apps/details?id=com.appfump" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar App Fump para Android">📱 App FUMP ↗</a>
-        <a href="https://wa.me/5531975370115" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Falar com a FUMP no WhatsApp">💬 WhatsApp FUMP</a>
+        <a href="https://www.fump.ufmg.br/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Acessar Área do Aluno FUMP"><i class="bi bi-globe2" aria-hidden="true"></i> Área do Aluno ↗</a>
+        <a href="https://play.google.com/store/apps/details?id=com.appfump" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Baixar App Fump para Android"><i class="bi bi-phone" aria-hidden="true"></i> App FUMP ↗</a>
+        <a href="https://wa.me/5531975370115" target="_blank" rel="noopener noreferrer" class="cagp-store-btn" aria-label="Falar com a FUMP no WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp FUMP</a>
       </div>
     </article>
 
     <!-- 4. Interno Rotas -->
-    <article class="cagp-app-card cagp-app-card-rotas" data-app-cat="mobile">
+    <article class="cagp-app-card cagp-app-card-rotas" id="circular-ufmg" data-app-cat="mobile">
       <div class="cagp-app-header">
         <div class="cagp-app-logo-box">
-          <img src="logos/interno-rotas/logo.svg" alt="Logo oficial do aplicativo Interno Rotas" class="cagp-app-logo" width="40" height="40">
+          <img src="logos/interno-rotas/icone.svg" alt="Logo oficial do aplicativo Interno Rotas" class="cagp-app-logo" width="40" height="40">
         </div>
         <div class="cagp-app-meta">
           <h3 class="cagp-app-title">Interno Rotas</h3>
           <div class="cagp-app-tags">
-            <span class="cagp-app-tag cagp-app-tag-green">Circulares Noturnos</span>
-            <span class="cagp-app-tag cagp-app-tag-green">Software Livre</span>
+            <span class="cagp-app-tag cagp-app-tag-rotas">Circulares Noturnos</span>
+            <span class="cagp-app-tag cagp-app-tag-rotas">Software Livre</span>
           </div>
         </div>
       </div>
       <p class="cagp-app-desc">Rastreamento colaborativo dos circulares gratuitos da UFMG em tempo real com GPS. Criado por estudante da universidade com licença livre MIT.</p>
       <div class="cagp-app-actions">
-        <a href="https://internorotas.com/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Abrir mapa do Interno Rotas ao vivo no navegador">🚌 Abrir Mapa ao Vivo ↗</a>
+        <a href="https://internorotas.com/" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Abrir mapa do Interno Rotas ao vivo no navegador"><i class="bi bi-bus-front" aria-hidden="true"></i> Abrir Mapa ao Vivo ↗</a>
       </div>
     </article>
 
     <!-- 5. CEAG FAFICH (Atendimento Noturno) -->
     <article class="cagp-app-card cagp-app-card-ceag" data-app-cat="presencial">
       <div class="cagp-app-header">
-        <div class="cagp-app-logo-box">
-          <span class="fs-4" aria-hidden="true">🏢</span>
+        <div class="cagp-app-logo-box cagp-app-logo-ceag">
+          <i class="bi bi-building fs-4" aria-hidden="true"></i>
         </div>
         <div class="cagp-app-meta">
           <h3 class="cagp-app-title">CEAG FAFICH</h3>
           <div class="cagp-app-tags">
-            <span class="cagp-app-tag cagp-app-tag-red">Presencial</span>
-            <span class="cagp-app-tag cagp-app-tag-red">08h às 22h</span>
+            <span class="cagp-app-tag cagp-app-tag-ceag">Presencial</span>
+            <span class="cagp-app-tag cagp-app-tag-ceag">08h às 22h</span>
           </div>
         </div>
       </div>
@@ -539,20 +539,20 @@ Entenda a **Extensão Obrigatória (300h)** e as **Atividades Complementares (at
     <!-- 6. Biblioteca Setorial BU / FAFICH -->
     <article class="cagp-app-card cagp-app-card-bu" data-app-cat="desktop presencial">
       <div class="cagp-app-header">
-        <div class="cagp-app-logo-box">
-          <span class="fs-4" aria-hidden="true">📚</span>
+        <div class="cagp-app-logo-box cagp-app-logo-bu">
+          <i class="bi bi-book fs-4" aria-hidden="true"></i>
         </div>
         <div class="cagp-app-meta">
           <h3 class="cagp-app-title">Biblioteca da FAFICH</h3>
           <div class="cagp-app-tags">
-            <span class="cagp-app-tag cagp-app-tag-gold">2º Andar FAFICH</span>
-            <span class="cagp-app-tag cagp-app-tag-gold">Acervo BU</span>
+            <span class="cagp-app-tag cagp-app-tag-bu">1º Andar FAFICH</span>
+            <span class="cagp-app-tag cagp-app-tag-bu">Acervo BU</span>
           </div>
         </div>
       </div>
       <p class="cagp-app-desc">Acervo especializado em Ciências Humanas e Sociais, salas de estudo individuais e coletivas, empréstimo domiciliar e acesso ao catálogo online Pergamum.</p>
       <div class="cagp-app-actions">
-        <a href="https://catalogobiblioteca.ufmg.br/pergamum/biblioteca/index.php" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Consultar catálogo online Pergamum da UFMG">📖 Catálogo Online ↗</a>
+        <a href="https://catalogobiblioteca.ufmg.br/pergamum/biblioteca/index.php" target="_blank" rel="noopener noreferrer" class="cagp-store-btn cagp-store-btn-primary" aria-label="Consultar catálogo online Pergamum da UFMG"><i class="bi bi-journal-bookmark" aria-hidden="true"></i> Catálogo Online ↗</a>
         <a href="calouros.html#guia-biblioteca" class="cagp-store-btn" aria-label="Ver orientações de uso da biblioteca">Guia de Uso &rarr;</a>
       </div>
     </article>
@@ -566,7 +566,7 @@ Entenda a **Extensão Obrigatória (300h)** e as **Atividades Complementares (at
   <div class="cagp-tool-header mb-1">
     <div>
       <span class="cagp-badge cagp-badge-dark mb-1">Estrutura de Defesa Discente</span>
-      <h2 id="rep-heading" class="h4 mb-0">🏛️ AS TRÊS ESFERAS DE REPRESENTAÇÃO ESTUDANTIL NA UFMG</h2>
+      <h2 id="rep-heading" class="h4 mb-0"><i class="bi bi-people" aria-hidden="true"></i> AS TRÊS ESFERAS DE REPRESENTAÇÃO ESTUDANTIL NA UFMG</h2>
     </div>
     <span class="small text-muted fw-semibold">A UFMG possui instâncias complementares de representação. Saiba quem te defende em cada nível:</span>
   </div>

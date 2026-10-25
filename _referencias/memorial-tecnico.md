@@ -27,6 +27,20 @@
 17. [Ciclo 13: Reorganização de Arquivos e Pastas](#17-ciclo-13-reorganização-de-arquivos-e-pastas)
 18. [Matriz Comparativa Completa de Arquivos (Antes vs. Depois)](#18-matriz-comparativa-completa-de-arquivos-antes-vs-depois)
 19. [Instruções de Manutenção e Publicação](#19-instruções-de-manutenção-e-publicação)
+20. [Ciclo de Curadoria das 27 Disciplinas Obrigatórias](#20-ciclo-de-curadoria-das-27-disciplinas-obrigatórias-percursoqmd)
+21. [Ciclo de Curadoria da Extensão 300h e Pesquisa](#21-ciclo-de-curadoria-da-extensão-300h-e-pesquisa-acgqmd)
+22. [Ciclo de Curadoria do Guia do Calouro](#22-ciclo-de-curadoria-do-guia-do-calouro-calourosqmd)
+23. [Ciclo de Arquitetura Institucional e Criação de 'O Curso'](#23-ciclo-de-arquitetura-institucional-e-criação-de-o-curso-cursoqmd)
+24. [Ciclo de Refinamento Geral: Eliminação de Emojis, Vetores, Tipografia e Cores](#24-ciclo-de-refinamento-geral-eliminação-de-emojis-vetores-tipografia-e-cores)
+25. [Ciclo de Harmonização Cromática e Intuitividade dos Sistemas UFMG](#25-ciclo-de-harmonização-cromática-e-intuitividade-dos-sistemas-ufmg)
+26. [Ciclo de Refinamento Baseado em Feedback Discente: ACG Interativa, Gestão e Grupos de Pesquisa](#26-ciclo-de-refinamento-baseado-em-feedback-discente-acg-interativa-gestão-e-grupos-de-pesquisa)
+27. [Ciclo de Atualização Curricular, ATLAS Jr., Optativas e Governança 2025/2](#27-ciclo-de-atualização-curricular-atlas-jr-optativas-e-governança-20252)
+28. [Ciclo de Expansão dos Grupos e Núcleos de Pesquisa do DCP/UFMG](#28-ciclo-de-expansão-dos-grupos-e-núcleos-de-pesquisa-do-dcpufmg)
+29. [Ciclo de Alinhamento Regimental de Pesquisa & AAC: Hub de Iniciação Científica](#29-ciclo-de-alinhamento-regimental-de-pesquisa--aac-hub-de-iniciação-científica)
+30. [Ciclo de Desacoplamento Institucional e Integridade Regimental: O CAGP & Gestão](#30-ciclo-de-desacoplamento-institucional-e-integridade-regimental-o-cagp--gestão)
+31. [Ciclo de Acessibilidade Universal: Trilha de Navegação (Breadcrumbs) & Mapa do Site (Sitemap)](#31-ciclo-de-acessibilidade-universal-trilha-de-navegação-breadcrumbs--mapa-do-site-sitemap)
+32. [Ciclo de Personalidade & Delight Brite: Microinterações Táteis, Milestones e Sobrevivência Noturna](#32-ciclo-de-personalidade--delight-brite-microinterações-táteis-milestones-e-sobrevivência-noturna)
+33. [Ciclo de Atualização e Consolidação do Contexto de Produto e Design System](#33-ciclo-de-atualização-e-consolidação-do-contexto-de-produto-e-design-system-productmd-designmd-impeccable-e-agentsmd)
 
 ---
 
@@ -805,6 +819,374 @@ Todos os dados foram extraídos com rigor documental da apresentação oficial d
 ### 23.3 Auditoria Técnica e Verificação
 - `quarto render`: Todas as 9 páginas do site compiladas com código 0 e **zero warnings**.
 - `impeccable detect`: Validação mecânica com zero violações de acessibilidade, contraste ou layout. Aviso sobre a fonte Inter mantido por se tratar da identidade canônica da marca (`AGENTS.md`).
+
+---
+
+## 24. Ciclo de Refinamento Geral: Eliminação de Emojis, Vetores, Tipografia e Cores
+
+Em cumprimento às diretrizes de polimento visual institucional (`/impeccable polish`, `/impeccable typeset`, `/impeccable colorize`, `/impeccable layout`), foi executada a revisão integral de interface e identidade gráfica de todas as páginas do portal:
+
+### 24.1 Erradicação Total de Emojis e Adoção de Iconografia Vetorial
+- **Substituição Integral:** Remoção de mais de 200 ocorrências de emojis unicode (`📖`, `🧭`, `⚖️`, `🎓`, `🏛️`, `🗳️`, `💬`, `🔎`, etc.) espalhados pelas 9 páginas do portal, cabeçalhos, subnavegações, cartões de serviço, botões de ação e modais/accordions.
+- **Iconografia Vetorial Padronizada:** Adoção sistemática da biblioteca **Bootstrap Icons** (`<i class="bi bi-..." aria-hidden="true"></i>`), distribuída nativamente pelo Quarto com renderização nítida em qualquer resolução (DPI), sem distorções de renderização entre plataformas móveis e desktop e sem quebra de alinhamento com a linha de base do texto.
+- **Vocabulário Iconográfico Semântico:**
+  - Normas, Colegiado e Ementas: `bi-journal-text`, `bi-book`, `bi-file-earmark-pdf`, `bi-mortarboard`;
+  - Jornada e Percursos: `bi-compass`, `bi-signpost-split`, `bi-diagram-3`, `bi-diagram-2`;
+  - Ferramentas e Filtros: `bi-search`, `bi-calculator`, `bi-sliders`, `bi-funnel`;
+  - Prazos e Calendário: `bi-calendar-event`, `bi-calendar-check`, `bi-stopwatch`, `bi-clock-history`;
+  - Assistência e Logística: `bi-bus-front`, `bi-cash-coin`, `bi-heart-pulse`, `bi-shield-check`;
+  - Democracia e Gestão: `bi-bank`, `bi-people`, `bi-box-seam`, `bi-card-checklist`, `bi-megaphone`.
+- **Componentes `.cagp-card-icon` e `.cagp-icon`:** Contêineres táteis em estilo neo-brutalista (42×42px, borda preta sólida de 2px, sombra de 2px e ícone em Vinho Candango `--cagp-red`), com microinterações suaves de transição no hover (`transform: translateY(-2px)`).
+
+### 24.2 Harmonização Tipográfica (`/impeccable typeset`)
+- **Escala de Papéis e Ratios de Tamanho:** Ajuste das dimensões de títulos para superar a barreira de 1.25:1 entre níveis adjacentes, eliminando a ocorrência de `flat-type-hierarchy`:
+  - H1: `clamp(2rem, 5vw, 3.25rem)` (line-height 1.15, uppercase, Oswald);
+  - H2: `1.75rem` / 28px (line-height 1.25, uppercase, Oswald);
+  - H3: `1.30rem` / 20.8px (line-height 1.3, uppercase, Oswald);
+  - Corpo: `0.95rem` / 15.2px (line-height 1.65, regular/semibold, Inter).
+- **Controle Avançado de Quebra:** Inclusão de `text-wrap: balance` nos títulos H1 a H4 e `text-wrap: pretty` nos parágrafos corridos, prevenindo linhas órfãs e viúvas em diferentes larguras de viewport.
+
+### 24.3 Harmonização Cromática e Acessibilidade (`/impeccable colorize`)
+- **Normalização da Paleta:** Alinhamento rigoroso de todas as classes auxiliares, tags e barras de estatística aos tokens de cor canônicos estabelecidos em `DESIGN.md` e `_brand.yml`:
+  - Azul UFMG / DCP: `#1e3f66`;
+  - Verde Institucional / SOA: `#2e7d32`;
+  - Laranja FUMP: `#e65100`;
+  - Vinho Candango: `#9e2424`;
+  - Ouro BU: `#e8a317`;
+  - Cinza Muted: `#4b5563`.
+- **Eliminação de Violações de Contraste:**
+  - Ajuste das tags `.cagp-app-tag-orange` e `.cagp-app-tag-gold` para combinarem fundo sólido com texto preto `#0a0a0a`, elevando os índices de contraste para **5.22:1** (WCAG AA) e **9.13:1** (WCAG AAA), respectivamente.
+  - Criação da classe `.cagp-badge-gold` com alto contraste para as badges curriculares (`Percurso 01-02`).
+
+### 24.4 Despoluição Espacial e Layout (`/impeccable layout`)
+- **Desaninhamento de Cartões (`nested-cards`):** Eliminação de elementos `.alert` com bordas duplas completas dentro de `.cagp-card` na página `curso.qmd`, substituindo-os por faixas laterais de destaque com borda esquerda de 4px (`border-left: 4px solid ...`) e fundo neutro (`var(--cagp-surface-low, #f4f5f7)`).
+- **Uniformização Geométrica:** Ajuste do raio de borda em pré-visualizações de imagens e mapas para 3px (`rounded.sm`), em estrita conformidade com a escala geométrica do neo-brutalismo Brite.
+
+### 24.5 Auditoria Mecânica e Validação Final
+- `quarto render`: Compilação de 9 páginas com saída limpa em `docs/` e código 0.
+- `impeccable detect --json docs/*.html`: **Zero erros**, **zero avisos de baixo contraste**, **zero cartões aninhados**, **zero discrepâncias de hierarquia tipográfica**, restando unicamente o aviso previsto sobre a fonte primária Inter, documentado como decisão de marca em `AGENTS.md`.
+- Varredura automatizada Python: 0 emojis remanescentes em todos os arquivos de código-fonte do projeto (`.qmd`, `.scss`, `.css`, `.yml`, `.html`, `.js`).
+
+---
+
+## 25. Ciclo de Harmonização Cromática e Intuitividade dos Sistemas UFMG
+
+Em atenção direta à solicitação de aprofundamento do `/impeccable colorize`, foram incorporadas cores autênticas e familiares que ampliam a intuitividade e a cognição visual da comunidade discente, sem quebrar o rigor neo-brutalista de "O Prumo Republicano":
+
+### 25.1 Extração Factual e Normatização das Marcas da Central de Aplicativos
+A partir dos manuais de identidade visual em `_referencias/identidade-visual/` e dos vetores/imagens originais em `logos/`, foram extraídas as identidades cromáticas exatas de cada ecossistema:
+1. **SIGA UFMG (`#002776` - Azul Tecnológico / Pantone 280 C):**
+   - Cor oficial do Sistema Integrado de Gestão Acadêmica da DTI/Cecom/DRCA.
+   - Aplicada na faixa superior heráldica, na tag de identificação `.cagp-app-tag-siga` (fundo suave `#f4f5f7` com borda e texto `#002776`, contraste 13.5:1 AAA) e no botão de ação primária `.cagp-store-btn-primary` (com hover em `#001a4e`).
+2. **minhaUFMG (`#087F3B` / `#0D9847` - Verde das Volutas / Pantone 355 C):**
+   - A árvore do conhecimento em espirais barrocas mineiras do portal integrador.
+   - Corrigido o erro histórico que o rotulava como ciano: agora adota o Verde Institucional no topo do card, nas tags `.cagp-app-tag-minhaufmg` (contraste 5.1:1 AA) e no botão de ação direta para o Portal Web.
+3. **FUMP Assistência Estudantil (`#006C67` / `#00A8A8` - Verde Petróleo / Teal FUMP):**
+   - A identidade real da Fundação Mendes Pimentel extraída de seus logos vetoriais (e não laranja).
+   - Aplicada na faixa superior heráldica, nas tags `.cagp-app-tag-fump` (contraste 6.3:1 AA) e no botão de ação da Área do Aluno.
+4. **Interno Rotas (`#2C0EEB` - Azul Elétrico Noturno):**
+   - O aplicativo de rastreamento dos circulares da UFMG (licença MIT), cujo mapa ao vivo e marca são reconhecidos pelo azul vibrante `#2C0EEB`.
+   - Card atualizado com a faixa em `#2C0EEB`, tags `.cagp-app-tag-rotas` (contraste 8.9:1 AAA), botão primário temático e substituição do asset gráfico pelo ícone vetorial de alta definição 1:1 (`logos/interno-rotas/icone.svg`).
+5. **CEAG FAFICH (`#9E2424` - Vinho Candango FAFICH):**
+   - Identificação do atendimento presencial no 2º andar da FAFICH com caixa de ícone e tags na cor matriz do CAGP/FAFICH.
+6. **Biblioteca da FAFICH (`#D97706` / `#E8A317` - Ouro BU / Amarelo da Biblioteca):**
+   - Ouro institucional da Biblioteca Universitária e do Pergamum, com tags douradas e botão de alto contraste (texto `#0a0a0a` no ouro, contraste 6.2:1 AA).
+
+### 25.2 Módulos da Jornada Acadêmica e Métricas Oficiais
+- **Navegação por Módulos Oficiais (Hub 4 Etapas):** Os 4 blocos de entrada em `index.qmd` foram cromatizados com faixas superiores e ícones correspondentes às suas fases curriculares:
+  - *Guia do Calouro:* Vinho Candango (`#9E2424`) — Acolhimento e vivência noturna;
+  - *Percurso Curricular:* Azul Institucional (`#1E3F66`) — As 27 matérias obrigatórias e núcleos;
+  - *Estágio & TCC:* Ouro Mérito (`#E8A317`) — A conclusão de curso e carreira pública;
+  - *Extensão & AAC:* Verde Social (`#2E7D32`) — A extensão comunitária de 300h.
+- **Destaque Semântico nos Stat Cards:** Os números de impacto (3.000h, 10P, 300h Extensão, 300h Estágio) foram sutilmente alinhados às cores temáticas de seus respectivos eixos.
+
+### 25.3 Registro Formal em `DESIGN.md` e Auditoria Mecânica
+- Atualização do bloco `colors:` no frontmatter de `DESIGN.md` com os tokens `--app-siga`, `--app-minhaufmg`, `--app-fump`, `--app-rotas` e `--app-bu`.
+- Execução de `quarto render` e `.agents/skills/impeccable/scripts/impeccable detect`: **Zero erros**, **zero avisos de contraste**, **zero desvios de cores de design system**.
+
+---
+
+## 26. Ciclo de Refinamento Baseado em Feedback Discente: ACG Interativa, Gestão e Grupos de Pesquisa
+
+A partir de feedback informal de discentes compartilhado via WhatsApp, foi conduzida uma sessão de alinhamento com os comandos `/plan` e `/grill-me`, resultando na implementação de quatro eixos de melhorias imediatas no portal:
+
+### 26.1 Calculadora e Simulador de ACG: Recurso "O Que Conta Nisso?" (`acg.qmd`)
+- **Problema resolvido:** Confusão recorrente entre os estudantes sobre quais atividades são efetivamente deferidas pelo Colegiado, em especial na modalidade de *Trabalhos em Anais* (Modalidade VII) e *Eventos* (Modalidade III), bem como o desconhecimento do prazo regimental fatal de 120 dias.
+- **Implementação:**
+  - Inserção de botões de gaveta acessíveis (`.cagp-calc-drawer-toggle`) em todas as 6 modalidades de Extensão e 7 modalidades de AAC;
+  - Gavetas inline expansíveis (`.cagp-calc-drawer`) com seções contrastadas de **O que CONTA (Aceito)** e **O que NÃO CONTA (Indeferido / Erros Comuns)**;
+  - Alertas enfáticos com destaque visual para o prazo fatal de 120 dias corridos para protocolo de certificados de eventos e anais (Art. 15, § 4º);
+  - JavaScript inline nativo e reativo gerenciando estados `aria-expanded` e a classe `.is-open`, sem interferir nos cálculos numéricos ou no `localStorage`.
+
+### 26.2 Humanização da Entidade e Aba "Gestão Atual & Equipe" (`sobre.qmd`)
+- **Problema resolvido:** A página tratava as 7 Diretorias Executivas apenas sob uma ótica estritamente abstrata e regimental, sem apresentar os membros de carne e osso, suas biografias, trajetórias e vínculos com a comunidade.
+- **Implementação:**
+  - Nova seção linear de destaque `## Gestão em Exercício & Nossa Equipe {#gestao-atual}`, perfeitamente integrada ao subnav e ao fluxo de rolagem mobile;
+  - Card hero com manifesto da gestão, canais diretos e módulo dedicado para o vídeo de apresentação do Instagram (`.cagp-video-box`);
+  - Organograma visual funcional em CSS puro (`.cagp-organogram`), expressando a hierarquia democrática entre Assembleia Geral, Junta Eleitoral, Presidência e Diretorias Executivas;
+  - Grid de perfis da equipe (`.cagp-team-card`) com avatares estilizados, identificação de cargos, semestres, minibiografias e links de redes sociais.
+
+### 26.3 Grupos e Linhas de Pesquisa do DCP/UFMG (`curso.qmd`)
+- **Problema resolvido:** Falta de um guia claro indicando onde os estudantes de Gestão Pública podem buscar oportunidades de Iniciação Científica (PIBIC/voluntária) e quais laboratórios do departamento estão ativos.
+- **Implementação:**
+  - Seção estruturada `## Grupos e Linhas de Pesquisa do DCP/UFMG {#grupos-pesquisa}`;
+  - Catálogo de núcleos consolidados: **CRISP** (Segurança Pública), **INCT/IDDC** (Democracia e Participação), **MARGEM** (Teoria Crítica e Equidade) e **Núcleo de Avaliação de Políticas Sociais**;
+  - Instruções práticas para discentes sobre como pleitear bolsas e vagas voluntárias de IC;
+  - Canal aberto de cadastramento colaborativo para docentes e coordenadores de novos núcleos.
+
+### 26.4 Esclarecimento Metodológico em Cientometria (`curso.qmd`)
+- Inclusão de nota explicativa no callout de Cientometria esclarecendo que a pesquisa de Clemente et al. (2022) utilizou uma amostra específica de 14 cursos públicos de referência com matrizes consolidadas, explicando a ausência de outras universidades similares (como a UFF) no agrupamento amostral primário.
+
+### 26.5 Auditoria Mecânica e Design System
+- Estilização desenvolvida em `styles.css` em rigorosa conformidade com o tema **Brite** (bordas de 2px a 3px pretas, sombras sólidas sem blur, cantos retos);
+- Auditoria com `quarto render` e `.agents/skills/impeccable/scripts/impeccable detect` aprovada com **zero erros**.
+
+---
+
+## 27. Ciclo de Atualização Curricular, ATLAS Jr., Optativas e Governança 2025/2
+
+Atendendo a novo conjunto de apontamentos práticos e institucionais da comunidade discente, foi implementado o Ciclo 27 de refinamentos:
+
+### 27.1 Retificação Espacial da Biblioteca da FAFICH e Dica da FACE (`index.qmd` e `calouros.qmd`)
+- Retificada a localização física da Biblioteca Setorial da FAFICH para o **1º Andar** (estava indicada incorretamente como 2º andar);
+- Inserção de recomendação prática para discentes: consulta à **Biblioteca da FACE (Faculdade de Ciências Econômicas)** no campus Pampulha para acervos avançados de Econometria (ECN), Avaliação de Políticas Públicas e Métodos Estatísticos.
+
+### 27.2 Catálogo Interativo de 68 Disciplinas Optativas & Ementas (`percurso.qmd`)
+- Mapeamento e transcrição integral das **68 disciplinas optativas** cadastradas no PPC do curso e no Ementário Geral;
+- Criação de ferramenta interativa de busca textual e filtragem por departamento (DCP • Ciência Política, ECN • Economia, SOA • Sociologia e Outros);
+- Cards retráteis padronizados no estilo Brite com botões globais "Expandir Todas" e "Recolher Todas".
+
+### 27.3 Transição de Identidade: ATLAS Consultoria Jr. (`acg.qmd` e `calouros.qmd`)
+- Atualização nominal da Empresa Júnior do curso de Gestão Pública da UFMG de Equalitas para **ATLAS Consultoria Jr. (antiga Equalitas)** na calculadora interativa, nos textos regimentais de Extensão Obrigatória e no Guia do Calouro.
+
+### 27.4 Reestruturação de ACG e Calibração dos Pins do Requerimento (`acg.qmd`)
+- Substituição do `panel-tabset` por blocos contínuos comparativos em duas colunas sólidas (Extensão 300h vs. AAC 300h);
+- Eliminação de botões destoantes (`.cagp-chip` e classes rounded), padronizando todos os links com `.cagp-doc-btn`;
+- Recalibração métrica exata dos retângulos delimitadores (`.cagp-doc-box`) e pins sobre o print do requerimento oficial (`left: 13.5%; width: 76.8%`);
+- Atualização do fluxo real de tramitação de AAC: Preenchimento $\to$ E-mail para Coordenação (`coordgestaopublica@gmail.com`) solicitando deferimento e assinatura $\to$ Impressão do documento assinado $\to$ Entrega física na Secretaria do Curso (Sala F-2039) para lançamento no SIGA.
+
+### 27.5 Governança Institucional e Horários de Atendimento 2025/2 (`curso.qmd`, `calouros.qmd`, `faq.qmd`)
+- **Coordenação do Curso:** Profª Isabele Batista Mitozo (Sala F-4067, quartas presenciais 17h30–19h00 e quintas on-line, e-mail: `coordgestaopublica@gmail.com`);
+- **Secretaria do Colegiado:** Sala F-2039, Secretária Norma Guedes com grade semanal de atendimento presencial e no CEAG;
+- **CEAG FAFICH:** Sala F-2033 (Segunda a Sexta, das 08h00 às 22h00 no período letivo).
+
+---
+
+## 28. Ciclo de Expansão dos Grupos e Núcleos de Pesquisa do DCP/UFMG
+
+Em resposta à demanda discente por maior detalhamento e transparência sobre as oportunidades de pesquisa acadêmica no Departamento de Ciência Política (DCP / FAFICH / UFMG), foi implementada uma reformulação estrutural e documental completa na seção `#grupos-pesquisa` da página `curso.qmd`:
+
+### 28.1 Levantamento Factual e Coleta Digital
+- Realizada varredura completa das bases do DCP/FAFICH, diretório do CNPq, plataformas próprias e redes oficiais dos laboratórios;
+- Mapeados e catalogados os **11 núcleos e centros de pesquisa ativos** vinculados ao departamento de vinculação do curso de Gestão Pública.
+
+### 28.2 Estrutura Neo-Brutalista em 3 Eixos Temáticos
+- **Eixo 1 (Gestão Governamental, Burocracia & Políticas Públicas):** PUBLICUS (Profa. Telma Menicucci), CEPPI (Profa. Isabele Mitozo — Sala 304 Anexo) e NESTH (Prof. Carlos Horta, Profa. Flávia Alves — `@nucleo.nesth`);
+- **Eixo 2 (Instituições Políticas, Justiça & Segurança Pública):** CEL (`centroestudoslegislativos.com.br`), Rede Femjusp (`femjusp.com.br`), MARGEM & OJB-AL (`grupomargem.org` — 10 anos) e RIPPERP (Prof. Dawisson Belém Lopes);
+- **Eixo 3 (Democracia Participativa, Direitos Humanos & Sociedade):** PRODEP (Prof. Leonardo Avritzer, Profa. Eleonora Cunha), INCT/IDDC (`institutodademocracia.org` — Rede Nacional CNPq), NEPEM (`fafich.ufmg.br/nepem` / `@nepemufmg`) e CECOMP (Comportamento Político).
+
+### 28.3 Conexão Pedagógica com a Gestão Pública e Regras de AAC
+- Cada card conta com o box destacado `Interface com a Prática do Gestor`, explicando como o tema do núcleo subsidia estágios, atuação governamental executiva e projetos de TCC;
+- Inserção de Guia Rápido de Iniciação Científica (topo) e Passo a Passo Discente (rodapé), esclarecendo sobre bolsas remuneradas (PIBIC/FAPEMIG/CNPq), voluntariado científico e a convalidação de **até 90 horas (6 créditos) de AAC na Modalidade V** (Art. 15 do Regulamento);
+- Inclusão de canais de apoio do CAGP e CTA para coordenadores docentes cadastrarem novas linhas.
+
+### 28.4 Integração da Rede Femjusp (Substituição do CRISP)
+- **Web Browsing & Extração de Dados:** Investigação realizada via subagente `/browser` e análise do portal oficial (`femjusp.com.br`), extraindo missão, estrutura, eixos temáticos (Violência, Justiça, Prisões, Socioeducativo) e portfólio de 12 projetos;
+- **Liderança & Vínculo com Gestão Pública:** Coordenada pela Profa. Dra. Ludmila Ribeiro (DCP/UFMG, representante de Sociologia no Colegiado GP) e Profa. Dra. Ana Paula Vasconcelos Gonçalves (Sociologia/UFMG), contando com discentes e egressos de Gestão Pública da UFMG em seu corpo de pesquisadores;
+- **Card Neo-Brutalista Atualizado:** Inserção do card no Eixo 2 em substituição ao CRISP, com tags especializadas, interface com a prática do gestor público e link oficial.
+
+---
+
+## 29. Ciclo de Alinhamento Regimental de Pesquisa & AAC: Hub de Iniciação Científica
+
+Em decorrência da atualização do catálogo de pesquisa em `curso.qmd`, a seção de pesquisa em `acg.qmd` foi criticamente auditada e reformulada para eliminar discrepâncias factuais e maximizar a utilidade operacional para o discente:
+
+### 29.1 Eliminação de Inconsistências e Atualização da Gaveta
+- Retificada a gaveta interativa da Calculadora de AAC (`drawer-aac_5`, Modalidade V) para substituir a menção residual ao CRISP pelas referências ativas: `(ex.: Rede Femjusp, PUBLICUS, INCT/IDDC, MARGEM, CEL)`;
+- Extinção da nuvem estática e desatualizada de tags `.cagp-research-pill` (que continha siglas obsoletas ou não oficiais como CEDE, CIAPSOC, GEDAI e DECODE).
+
+### 29.2 Hub Neo-Brutalista em 3 Eixos Temáticos (`acg.qmd`)
+- Estruturação de uma matriz compacta e interativa em 3 colunas baseadas nos eixos canônicos:
+  - **Eixo 1 (Gestão & Burocracia):** PUBLICUS, CEPPI e NESTH;
+  - **Eixo 2 (Poder, Justiça & Segurança):** CEL, Rede Femjusp, MARGEM & OJB-AL e RIPPERP;
+  - **Eixo 3 (Democracia & Sociedade):** PRODEP, INCT/IDDC, NEPEM e CECOMP.
+- Cada grupo possui links rápidos para seus canais oficiais e botões de atalho `.cagp-doc-btn` que conectam o discente diretamente ao catálogo analítico completo em `curso.html#grupos-pesquisa`.
+
+### 29.3 Painel Operacional de Validação Probatória no Colegiado
+- Inclusão do painel *"Do Laboratório ao SIGA: Como Comprovar e Protocolar Horas de IC"*, orientando sobre o vínculo PRPq, emissão da declaração com timbre UFMG pelo orientador, relatório de atividades e a estrita observância do prazo regimental de **120 dias** para protocolo presencial na Secretaria (F-2039) visando a convalidação de **até 90 horas (6 créditos)** de AAC (Art. 15, Modalidade V).
+- Validação heurística contra o antipadrão `nested-cards`, mantendo uma hierarquia visual plana e pura no sistema Brite.
+
+
+---
+
+## 30. Ciclo de Desacoplamento Institucional e Integridade Regimental: O CAGP & Gestão
+
+Em atendimento à auditoria de design (`/impeccable critique sobre.qmd` e `/impeccable shape`) e ao feedback de governança discente, foi realizada uma reformulação profunda na arquitetura de informação do portal para separar a identidade perpétua do Centro Acadêmico de sua equipe anual transitória:
+
+### 30.1 Desacoplamento da Navegação na Navbar (`_quarto.yml`)
+- **Novo Menu Suspenso "O CAGP":** A navegação principal passa a contar com menu dropdown subdividido em duas frentes com objetivos cognitivos claros:
+  - **O Centro Acadêmico (`sobre.qmd`):** Dimensão perpétua e estatutária da entidade;
+  - **Gestão em Exercício & Equipe (`gestao.qmd`):** Dimensão operacional, transitória e participativa do mandato empossado.
+- Adição obrigatória de `gestao.qmd` na lista `project.render` em conformidade com a Regra 1 de `AGENTS.md`.
+
+### 30.2 Restauração Canônica das 7 Diretorias Estatutárias (Regimento 2024)
+- **Correção da Inconsistência Factual:** Eliminada a diretoria inventada "DEDI (Diversidade & Inclusão)" e restaurada com rigor a **DIAP (Diretoria de Articulação e Assuntos Políticos)**, conforme os Arts. 24, 25 e 32 do Regimento Interno formal aprovado em 14/10/2024;
+- A estrutura do CAGP consolida-se estritamente nas 7 pastas oficiais:
+  1. **DIPRE** (Diretoria da Presidência — Art. 28);
+  2. **DIJUR** (Diretoria de Assuntos Jurídicos — Art. 29);
+  3. **DIFI** (Diretoria Financeira — Art. 30);
+  4. **DIAC** (Diretoria Acadêmica — Art. 31);
+  5. **DIAP** (Diretoria de Articulação e Assuntos Políticos — Art. 32);
+  6. **DICULT** (Diretoria de Cultura — Art. 33);
+  7. **DIMAC** (Diretoria de Marketing e Comunicação — Art. 34).
+- A pauta de diversidade e direitos humanos foi reposicionada como diretriz institucional transversal permanente da entidade (Art. 2º).
+
+### 30.3 Anonimização e Placeholders Neutros para Preenchimento Futuro (`gestao.qmd`)
+- Remoção completa de nomes de pessoas físicas reais e apelidos dos cards de diretoria;
+- Adoção de estrutura de placeholders neutros e padronizados (*"Membro a Definir / A Preencher pela Gestão Eleita"*), com fotos em avatares neutros Brite, biografias orientadas à missão do cargo e canais institucionais de contato (`cagp@fafich.ufmg.br`);
+- Inclusão de painel de **Transparência Ativa** (RREO mensal pela DIFI, Livro de Atas e Drive sob guarda da DIJUR e acesso a documentos contábeis em até 3 dias úteis conforme Art. 15, V);
+- Chamada contínua de participação discente para o corpo de **Assessores Voluntários** em todas as diretorias (Arts. 24 a 34).
+
+### 30.4 Ajustes Técnicos, Acessibilidade e Uniformização do Instagram
+- **Handle e Perfil Oficial:** Uniformizado o Instagram oficial da entidade em todas as páginas, links e metadados para **`https://www.instagram.com/cagp.ufmg`** (`@cagp.ufmg`), eliminando menções a `cagpufmg` e tratando o escape de caracteres para evitar o falso reconhecimento de chaves de citação bibliográfica pelo Pandoc (`data-cites`);
+- **Acessibilidade (a11y):** Inclusão de `tabindex="0"` no container do Organograma Funcional para permitir rolagem horizontal por teclado em dispositivos móveis, e inserção de `summary:focus-visible` e `[tabindex="0"]:focus-visible` nas regras de foco acessível em `styles.css`;
+- **Hierarquia de Títulos:** Correção de nível de heading em `gestao.qmd` sob a seção de Transparência Ativa (nivelando cards para `H3` sob `H2`, resolvendo o alerta `skipped-heading` apontado pelo `impeccable detect`).
+
+---
+
+## 31. Ciclo de Acessibilidade Universal: Trilha de Navegação (Breadcrumbs) & Mapa do Site (Sitemap)
+
+Em resposta à demanda de ampliação da acessibilidade e localização espacial no portal, foram implementadas as diretrizes internacionais da **WCAG 2.1 (Critérios 2.4.8: Localização e 2.4.5: Múltiplas Vias, Nível AA)** através do comando `/impeccable shape`:
+
+### 31.1 Trilha de Navegação (Breadcrumbs) em Estilo Neo-Brutalista Brite
+- Desenvolvimento do componente semântico `.cagp-breadcrumbs` posicionado estrategicamente abaixo da navbar e acima do Hero em todas as 9 páginas internas do portal;
+- Semântica estruturada compatível com Schema.org (`BreadcrumbList`), lista ordenada `<ol class="cagp-breadcrumb-list">` e marcação `aria-current="page"` no item ativo;
+- Visual Brite autêntico: fundo `var(--cagp-surface-low, #f4f5f7)`, borda sólida preta de 1.5px, sombra dura de 2px (sem desfoque), cantos estritamente retos (`border-radius: 0px`) e rolagem horizontal suave no mobile;
+- Mapeamento hierárquico nos 5 eixos do portal:
+  - `curso.qmd`: `Início › O Curso`;
+  - `calouros.qmd`: `Início › Jornada Acadêmica › Guia do Calouro (1º Período)`;
+  - `percurso.qmd`: `Início › Jornada Acadêmica › Percurso & Ementas (10 Semestres)`;
+  - `acg.qmd`: `Início › Jornada Acadêmica › Extensão & Horas AAC (600h)`;
+  - `estagio-tcc.qmd`: `Início › Jornada Acadêmica › Estágio Supervisionado & TCC`;
+  - `documentos.qmd`: `Início › Acervo & Ajuda › Documentos & Formulários`;
+  - `faq.qmd`: `Início › Acervo & Ajuda › Dúvidas Frequentes (FAQ)`;
+  - `sobre.qmd`: `Início › O CAGP › O Centro Acadêmico`;
+  - `gestao.qmd`: `Início › O CAGP › Gestão em Exercício & Equipe`;
+  - `mapa-do-site.qmd`: `Início › Acervo & Ajuda › Mapa do Site`.
+
+### 31.2 Criação da Página Interativa de Mapa do Site (`mapa-do-site.qmd`)
+- Criação da **11ª página oficial do portal**, oferecendo uma visão panorâmica (*bird's-eye view*) de todo o acervo do curso de Gestão Pública da FAFICH/UFMG;
+- **Painel de Atalhos de Alta Demanda:** 6 cards táteis para ferramentas essenciais (Calculadora AAC, Busca de 68 Optativas, Circular UFMG em tempo real, Regimento Interno 2024 em PDF, Atendimento Secretaria/CEAG 2025/2 e 11 Grupos do DCP);
+- **Árvore Completa em 5 Eixos:** Mapeamento exaustivo de todas as páginas, suas funções e tags de âncoras internas (H2/H3);
+- **Busca em Tempo Real:** Campo de filtro instantâneo via JavaScript vanilla leve, com notificação para tecnologias assistivas via `<div role="status" aria-live="polite">`.
+
+### 31.3 Integração no Quarto e Ajustes Cromáticos WCAG
+- Inclusão de `mapa-do-site.qmd` em `project.render` e no menu suspenso *"Acervo & Ajuda"* de `_quarto.yml`;
+- Inserção de link permanente para o Mapa do Site no rodapé (`page-footer.left`);
+- Otimização do contraste cromático de rodapé e breadcrumbs, garantindo conformidade rigorosa com a paleta de `DESIGN.md` e eliminação completa de alertas de contraste no detector Impeccable.
+
+---
+
+## 32. Ciclo de Personalidade & Delight Brite: Microinterações Táteis, Milestones e Sobrevivência Noturna
+
+Em conformidade com a solicitação explícita do comando `/impeccable delight` e com o manual de identidade visual e de produto (`PRODUCT.md` e `DESIGN.md`), foram implementados 6 toques memoráveis de personalidade e utilidade acolhedora (*earned personality*), transformando gargalos burocráticos em momentos de incentivo, alívio e clareza para os estudantes de Gestão Pública da UFMG:
+
+### 32.1 Banner Dinâmico & Celebração de Milestone de 600h na Calculadora (`acg.qmd`)
+- **Feedback Gradual:** Criação do container dinâmico `#cagp-calc-celebration` com leitura instantânea do total combinado (Extensão 300h + AAC 300h = 600h);
+- **Orientação por Etapa:**
+  - Em 0h: mensagem de incentivo à simulação de integralização;
+  - Ao cumprir 300h de Extensão: badge comemorativo e aviso de foco nas AACs;
+  - Ao cumprir 300h de AAC: badge comemorativo e aviso de foco na Extensão;
+- **Celebração do Marco Regulamentar:** Ao atingir as 600h somadas, o banner transforma-se no box comemorativo `.is-all-complete` com destaque em Ouro FAFICH (`--cagp-gold`), saudação de formatura e botão direto de atalho para as regras de protocolo e submissão ao Colegiado (`#passo-a-passo`);
+- **Indicação Visual de Teto:** Nas categorias que atingem o limite máximo por modalidade, é exibida a tag `.cagp-teto-tag` ("Teto") ao lado do readout numérico, explicando de forma transparente por que novos cliques no botão `+` foram desativados.
+
+### 32.2 Empty State Pedagógico de Busca com Apoio sobre Formação Livre (`percurso.qmd`)
+- **Prevenção da Frustração:** Quando uma busca ou filtro por departamento no catálogo de 68 Optativas resulta em zero itens, é exibido o container `#opt-empty-state`;
+- **Acolhimento Didático:** Orienta o aluno de que disciplinas de outras faculdades da UFMG (Direito, ECI, IGC, Letras, FACE) podem ser cursadas como *Formação Livre* ou solicitadas como aproveitamento no Colegiado;
+- **Botão de Recuperação Imediata:** Botão mecânico Brite *"Limpar busca e ver todas as 68 optativas"*, restaurando a visão completa sem recarregar a página.
+
+### 32.3 Celebração do Checklist dos 30 Dias e Acolhimento do Calouro (`calouros.qmd`)
+- **Momento Construtivo:** Quando o calouro conclui os 6 passos fundamentais do primeiro mês (100%), é exibido o card `#calouro-celebration`;
+- **Ponte de Continuidade:** Mensagem calorosa de boas-vindas com direcionamento tático para os próximos passos da jornada: conhecer a grade de 10 semestres (`percurso.html`) e colar na salinha do CAGP no pilotis da FAFICH (`sobre.html`).
+
+### 32.4 Microinteração Global de Cópia Rápida com Feedback Tátil (`_includes/back-to-top.html`, `styles.css`)
+- **Delegação Global:** Script leve implementado no rodapé de todas as 11 páginas via `_includes/back-to-top.html` escutando elementos com o atributo `data-copy`;
+- **Feedback Visual Instantâneo:** Ao clicar, o botão `.cagp-copy-btn` copia o endereço para a área de transferência via `navigator.clipboard` (com fallback robusto para `execCommand`) e exibe `✓ Copiado!` com fundo verde institucional por 2 segundos;
+- **Pontos Estratégicos Atendidos:** E-mails do Colegiado (`gestaopublica@ufmg.br`), da Coordenação (`coordgestaopublica@gmail.com`), da Secretaria (`(31) 3409-3826`), do CAGP (`cagp@fafich.ufmg.br`) e de docentes em `sobre.qmd`, `gestao.qmd` e `calouros.qmd`.
+
+### 32.5 Sensação Tátil Mecânica de Botão no Sistema Brite (`styles.css`)
+- **Física Neo-Brutalista:** Implementado estado `:active` nos botões `.cagp-doc-btn`, `.cagp-chip`, `.cagp-step-btn` e `.cagp-action-tile`, provocando o deslocamento mecânico `transform: translate(2px, 2px)` e anulação de projeção de sombra, simulando a prensa física de um interruptor;
+- **Acessibilidade:** Suporte estrito a `prefers-reduced-motion`, garantindo que usuários sensíveis a movimento tenham as animações e deslocamentos desativados automaticamente.
+
+### 32.6 Cartões "Dica de Veterano" nos Pontos Críticos da Rotina Noturna (`calouros.qmd`)
+- **Tensão da Fila do RU:** Dica prática alertando sobre o encerramento do jantar às 19h30 no Setorial II e orientando chegar à fila até 18h15;
+- **Tensão da Saída Noturna:** Dica sobre o último horário dos circulares internos às 22h45 para quem sai de aula às 22h30 na FAFICH/CAD 2;
+- **Acervo de Métodos Quantitativos:** Dica orientando que para livros avançados de Econometria e Avaliação de Políticas, a Biblioteca da FACE (prédio vizinho) possui acervo superior.
+
+### 32.7 Validação e Conformidade Visual
+- Todas as adições passaram pela compilação estática do Quarto (`quarto render`) e auditoria automatizada do detector Impeccable (`.agents/skills/impeccable/scripts/impeccable detect`), mantendo conformidade WCAG AAA, zero erros de contraste, cores estritamente dentro da paleta de `DESIGN.md` e zero quebras na hierarquia de cabeçalhos.
+
+---
+
+## 33. Ciclo de Atualização e Consolidação do Contexto de Produto e Design System (PRODUCT.md, DESIGN.md, .impeccable/ e AGENTS.md)
+
+Em atendimento ao comando `/impeccable new-work` para análise de todo o histórico do projeto e atualização profunda do contexto (`PRODUCT.md`, `DESIGN.md`, `.impeccable/` e `AGENTS.md`), foi realizada uma auditoria integral de sincronização documental e de engenharia de design:
+
+### 33.1 Atualização Canônica do Documento de Produto (`PRODUCT.md`)
+- **Expansão da Arquitetura para 11 Páginas:** Registrada a arquitetura completa e estável de 11 páginas renderizadas na raiz (`index.qmd`, `curso.qmd`, `calouros.qmd`, `percurso.qmd`, `estagio-tcc.qmd`, `acg.qmd`, `documentos.qmd`, `faq.qmd`, `sobre.qmd`, `gestao.qmd`, `mapa-do-site.qmd`), detalhando a função e público-alvo de cada rota;
+- **Governança e Integridade Regimental:** Formalização das 7 Diretorias Executivas estatutárias oficiais do Regimento Interno de 14/10/2024 (`DIPRE`, `DIJUR`, `DIFI`, `DIAC`, `DIAP`, `DICULT`, `DIMAC`), com diversidade e inclusão consolidadas como diretriz transversal do Art. 2º;
+- **Sistemas Acadêmicos e Entidades Conexas:** Atualização para **ATLAS Consultoria Jr. (antiga Equalitas)**, registro da Coordenação (Profª Isabele Batista Mitozo na Sala F-4067 e `coordgestaopublica@gmail.com`), Secretaria (F-2039), CEAG (F-2033) e Bibliotecas (FAFICH 1º andar e FACE);
+- **Catálogo de Capacidades Interativas Client-Side:** Documentação das trilhas de breadcrumbs (WCAG 2.1 2.4.8), mapa do site panorâmico com busca em tempo real (WCAG 2.1 2.4.5), calculadora interativa de ACG (600h) com gavetas de validação, catálogo interativo de 68 optativas com empty state didático, checklist de 30 dias do calouro e botão global de cópia rápida com feedback tátil `data-copy`.
+
+### 33.2 Sincronização do Sistema Visual e Sidecar (`DESIGN.md` e `.impeccable/design.json`)
+- **Tokens de Ecossistema UFMG:** Inclusão formal de `--app-siga` (`#002776`), `--app-minhaufmg` (`#087F3B`), `--app-fump` (`#006C67`), `--app-rotas` (`#2C0EEB`) e `--app-bu` (`#D97706`) no frontmatter YAML e na narrativa de `DESIGN.md`;
+- **Documentação de Novos Componentes Brite:**
+  - Trilha de Navegação (`.cagp-breadcrumbs`): fundo cinza suave `#f4f5f7`, borda 1.5px sólida, sombra 2px dura, cantos retos;
+  - Microinteração de Cópia Tátil (`.cagp-copy-btn`): feedback verde institucional `#2e7d32` e sombra anulada por 2 segundos;
+  - Calculadoras e Gavetas de Validação: gaveta com colunas contrastadas aceito/indeferido, banner comemorativo de milestone e tag teto;
+  - Organograma Funcional e Cards de Diretoria em CSS cartesiano;
+  - Barra de busca dinâmica com empty state acolhedor.
+- **Regeneração de `.impeccable/design.json`:** Atualizado o sidecar com schemaVersion 2, integrando metadados e rampas tonais completas para todas as cores do ecossistema, snippets HTML/CSS isolados com prefixo `ds-` para os componentes representativos e sincronização da narrativa;
+- **Auditoria de Drift com Impeccable Doctor:** Executado `.agents/skills/impeccable/scripts/impeccable doctor` confirmando: **"No drift found. Every artifact matches what this version reads."**
+
+### 33.3 Alinhamento das Regras do Workspace (`AGENTS.md`)
+- Atualizado o mapa de pastas registrando as **11 páginas canônicas** em `*.qmd`;
+- Registrada a presença da nova skill `playwright-core` no catálogo do workspace.
+
+---
+
+## 34. Ciclo de Animação Mecânica e Sistema de Movimento Brite: /impeccable animate
+
+Em resposta ao comando `/impeccable animate` e às diretrizes da skill Impeccable, foi projetado e implementado um **Sistema de Movimento Mecânico Neo-Brutalista** (*Brite Mechanical Motion System*), conferindo identidade visual única, sensação física tangível e clareza de transição entre estados em todo o portal do CAGP:
+
+### 34.1 Tese de Movimento Autoral (Prensa dos Candangos & Protocolo Público)
+- O movimento no portal do CAGP rejeita animações pastéis, elasticidade gelatinosa (*spring/bounce*) ou desfoques difusos (*blur*);
+- A animação é estritamente **mecânica, nítida e convicta**, espelhando o rigor documental da burocracia pública republicana e a prensagem tipográfica do monumento dos Candangos (Bruno Giorgi);
+- Todas as transições utilizam a curva de desaceleração afirmativa `cubic-bezier(0.16, 1, 0.3, 1)` para entradas e paradas decisivas sem oscilações fúteis.
+
+### 34.2 A Prensa dos Candangos no Hero (`cagpEmblemStamp` — Focal Moment)
+- Criação da animação autoral do Emblema Oficial (`.cagp-hero-emblem-card`) em `index.qmd`, `sobre.qmd` e `gestao.qmd`:
+  - O selo desce com firmeza em 450ms (`0.45s`) e projeta sua sombra nanquim sólida de 6px no exato instante do pouso, simulando um carimbo oficial sendo batido em papel timbrado da UFMG.
+
+### 34.3 Revelação Mecânica de Gavetas de Ementas & Critérios (`cagpDrawerSlide`)
+- As ementas obrigatórias e optativas (`.cagp-discipline[open] .cagp-discipline-body`) e as gavetas informativas da calculadora (`.cagp-calc-drawer.is-open`) abrem com descida contida de 4px e transição suave de opacidade (`0.2s`), acompanhadas da rotação precisa do chevron indicador (90° nas matérias e 180° nos critérios).
+
+### 34.4 Desdobramento de Ficha de Processo na Bússola Interativa (`cagpPanelSlideIn`)
+- Ao alternar entre as 4 etapas da jornada do estudante na página inicial (Quero Ingressar, Calouro, Meio de Curso, Reta Final), o novo painel desliza com deslocamento sutil de 6px e opacidade em 220ms (`0.22s`), transmitindo a fluidez de uma pasta de processo administrativo sendo aberta sobre a mesa sem quebras bruscas de layout.
+
+### 34.5 Deferimento de Marcos e Pulso de Conclusão da Barra de Progresso
+- **Homologação / Deferimento (`cagpSealUnlock`):** Os banners de 600h integralizadas e do Checklist dos Calouros 100% concluído surgem com animação solene de ato homologado;
+- **Pulso da Barra Integralizada (`cagpProgressComplete`):** Ao atingir 100%, a barra emite um pulso sutil de iluminação tonal, confirmando visualmente a meta atingida;
+- **Pulso Tátil de Cópia (`cagpCopyPulse`):** O botão de cópia rápida realiza micro-pulso elástico contido (1.05x) ao convalidar a cópia de e-mails para a área de transferência.
+
+### 34.6 Acessibilidade Universal & Redução Rigorosa de Movimento (WCAG 2.1)
+- Implementada diretriz abrangente em `@media (prefers-reduced-motion: reduce)` cobrindo todos os seletores e pseudoelementos:
+  - Durações forçadas a `0.01ms` e `transform: none !important`, suprimindo qualquer deslocamento espacial que possa causar vertigem ou desconforto vestibular em pessoas neurodivergentes ou sensíveis a movimento;
+  - Preservadas apenas transições imediatas de opacidade e cor necessárias para indicar feedback de estado.
+
+### 34.7 Governança e Atualização do `DESIGN.md`
+- Formalizada a seção canônica `## Motion & Mechanics (Brite Motion System)` no manual de design do projeto (`DESIGN.md`), documentando a tese de movimento, a escala de duração (100–450ms), as curvas de aceleração e as regras de acessibilidade;
+- Validação executada via `quarto render` e `.agents/skills/impeccable/scripts/impeccable detect` aprovada com **zero erros**.
 
 ---
 

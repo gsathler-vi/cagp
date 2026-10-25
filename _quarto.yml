@@ -15,6 +15,8 @@ project:
     - documentos.qmd
     - faq.qmd
     - sobre.qmd
+    - gestao.qmd
+    - mapa-do-site.qmd
 
 website:
   title: "CAGP"
@@ -57,11 +59,17 @@ website:
             text: "Documentos & Formulários"
           - href: faq.qmd
             text: "Dúvidas Frequentes (FAQ)"
-      - href: sobre.qmd
-        text: "Sobre o CAGP"
+          - href: mapa-do-site.qmd
+            text: "Mapa do Site"
+      - text: "O CAGP"
+        menu:
+          - href: sobre.qmd
+            text: "O Centro Acadêmico"
+          - href: gestao.qmd
+            text: "Gestão em Exercício & Equipe"
     right:
       - icon: instagram
-        href: "https://www.instagram.com/cagpufmg"
+        href: "https://www.instagram.com/cagp.ufmg"
         aria-label: "Instagram do CAGP UFMG"
       - icon: envelope
         href: "mailto:cagp@fafich.ufmg.br"
@@ -71,7 +79,8 @@ website:
     left: |
       **Centro Acadêmico de Gestão Pública (CAGP)**  
       FAFICH • Universidade Federal de Minas Gerais (UFMG)  
-      Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG
+      Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG  
+      [Mapa do Site](mapa-do-site.html) • [Acessibilidade](faq.html#acessibilidade)
     right: |
       Gestão Democrática e Participativa • Desenvolvido com Quarto
 

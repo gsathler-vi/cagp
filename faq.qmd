@@ -5,6 +5,26 @@ title-block-style: none
 toc: true
 ---
 
+```{=html}
+<nav class="cagp-breadcrumbs" aria-label="Você está aqui: Trilha de navegação">
+  <ol class="cagp-breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="cagp-breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="index.html" itemprop="item"><i class="bi bi-house-door" aria-hidden="true"></i> <span itemprop="name">Início</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+    <li class="cagp-breadcrumb-item">
+      <span class="cagp-breadcrumb-parent">Acervo &amp; Ajuda</span>
+    </li>
+    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+    <li class="cagp-breadcrumb-item is-active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+      <span itemprop="name">Dúvidas Frequentes (FAQ)</span>
+      <meta itemprop="position" content="2" />
+    </li>
+  </ol>
+</nav>
+```
+
 ::: {.cagp-hero}
 <div class="d-flex flex-wrap gap-2 mb-2">
   <span class="cagp-badge cagp-badge-red">Base Normativa Oficial</span>
@@ -19,10 +39,10 @@ Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas
 ```{=html}
 <nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
   <span class="cagp-subnav-label">Atalhos:</span>
-  <a href="#filtro-faq" class="cagp-subnav-link">🔎 Filtrar Dúvidas</a>
-  <a href="acg.html#calculadora-horas" class="cagp-subnav-link">🧮 Calculadora 600h</a>
-  <a href="estagio-tcc.html#simulador-art41" class="cagp-subnav-link">⚖️ Simulador Dispensa Art. 41</a>
-  <a href="documentos.html#formularios" class="cagp-subnav-link">📝 Formulários & Requerimentos</a>
+  <a href="#filtro-faq" class="cagp-subnav-link"><i class="bi bi-search" aria-hidden="true"></i> Filtrar Dúvidas</a>
+  <a href="acg.html#calculadora-horas" class="cagp-subnav-link"><i class="bi bi-calculator" aria-hidden="true"></i> Calculadora 600h</a>
+  <a href="estagio-tcc.html#simulador-art41" class="cagp-subnav-link"><i class="bi bi-scale" aria-hidden="true"></i> Simulador Dispensa Art. 41</a>
+  <a href="documentos.html#formularios" class="cagp-subnav-link"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Formulários & Requerimentos</a>
 </nav>
 
 <section id="filtro-faq" class="cagp-tool-box" aria-labelledby="faq-filter-title">
@@ -46,16 +66,16 @@ Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas
     <div class="col-md-6">
       <div class="cagp-filter-group" role="group" aria-label="Filtrar por tema">
         <button type="button" class="cagp-chip" aria-pressed="true" data-faq-tag="all">Todas (9)</button>
-        <button type="button" class="cagp-chip" aria-pressed="false" data-faq-tag="matricula">📋 Matrícula & Trancamento</button>
-        <button type="button" class="cagp-chip" aria-pressed="false" data-faq-tag="dispensa">⚖️ Dispensas & Estágio</button>
-        <button type="button" class="cagp-chip" aria-pressed="false" data-faq-tag="modalidades">🌐 Noturno, EaD & Extensão</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-faq-tag="matricula"><i class="bi bi-calendar-check" aria-hidden="true"></i> Matrícula & Trancamento</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-faq-tag="dispensa"><i class="bi bi-scale" aria-hidden="true"></i> Dispensas & Estágio</button>
+        <button type="button" class="cagp-chip" aria-pressed="false" data-faq-tag="modalidades"><i class="bi bi-globe" aria-hidden="true"></i> Noturno, EaD & Extensão</button>
       </div>
     </div>
   </div>
 </section>
 ```
 
-## <span aria-hidden="true">❓</span> Questões Acadêmicas e Regime Escolar
+## <i class="bi bi-question-circle" aria-hidden="true"></i> Questões Acadêmicas e Regime Escolar
 
 ```{=html}
 <div class="accordion mb-4" id="faqAccordion">
@@ -155,8 +175,8 @@ Compilamos as principais dúvidas que chegam à diretoria do CAGP, fundamentadas
       <div class="accordion-body">
         <p>A FAFICH dispõe de dois níveis de atendimento no 2º andar do prédio principal:</p>
         <ul>
-          <li><strong>CEAG FAFICH (Centro de Atendimento à Graduação):</strong> Funciona de <strong>segunda a sexta-feira, das 08h00 às 22h00</strong> (guichê ao lado dos caixas eletrônicos). Atende durante todo o intervalo e horário de aula do noturno para entrega de atestados médicos, certidões, protocolos de trancamento e processos gerais;</li>
-          <li><strong>Secretaria do Curso de Gestão Pública (Sala 2039):</strong> Atendimento presencial às quartas-feiras, das 13h00 às 19h00 (Secretários Wander e Ubirajara, tel 3409-3826, e-mail: <a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a>).</li>
+          <li><strong>CEAG FAFICH (Central de Atendimento à Graduação • Sala F-2033):</strong> Funciona de <strong>segunda a sexta-feira, das 08h00 às 22h00</strong> ininterruptamente no período letivo (e 8h às 17h no recesso), atendendo durante todo o horário das aulas noturnas para atestados, trancamentos e certidões gerais;</li>
+          <li><strong>Secretaria do Curso de Gestão Pública (Sala F-2039):</strong> Atendimento com a secretária Norma Guedes. Terças presenciais na sala (16h30–19h30), segundas e quartas no CEAG (16h00–22h00) e quintas/sextas serviços internos (09h00–15h00). E-mail: <a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a> • Tel: (31) 3409-3826. Coordenação: Profª Isabele Batista Mitozo (<a href="mailto:coordgestaopublica@gmail.com">coordgestaopublica@gmail.com</a>, Sala F-4067).</li>
         </ul>
       </div>
     </div>

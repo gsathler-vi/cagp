@@ -5,6 +5,26 @@ title-block-style: none
 toc: true
 ---
 
+```{=html}
+<nav class="cagp-breadcrumbs" aria-label="Você está aqui: Trilha de navegação">
+  <ol class="cagp-breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="cagp-breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="index.html" itemprop="item"><i class="bi bi-house-door" aria-hidden="true"></i> <span itemprop="name">Início</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+    <li class="cagp-breadcrumb-item">
+      <span class="cagp-breadcrumb-parent">Jornada Acadêmica</span>
+    </li>
+    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+    <li class="cagp-breadcrumb-item is-active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+      <span itemprop="name">Percurso &amp; Ementas (10 Semestres)</span>
+      <meta itemprop="position" content="2" />
+    </li>
+  </ol>
+</nav>
+```
+
 ::: {.cagp-hero}
 <div class="d-flex flex-wrap gap-2 mb-2">
 <span class="cagp-badge cagp-badge-red">Versão Curricular N-20229</span>
@@ -20,14 +40,15 @@ O curso de Gestão Pública da FAFICH/UFMG confere o grau de **Bacharel em Gest�
 ```{=html}
 <nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
   <span class="cagp-subnav-label">Nesta Página:</span>
-  <a href="#simulador-percurso" class="cagp-subnav-link">🔀 Escolher Percurso</a>
-  <a href="#explorador-grade" class="cagp-subnav-link">🔎 Filtrar Grade & Ementas</a>
-  <a href="#dicas-matricula" class="cagp-subnav-link">📌 Dicas de Matrícula</a>
-  <a href="documentos.html" class="cagp-subnav-link">📥 PDFs de Percurso</a>
+  <a href="#simulador-percurso" class="cagp-subnav-link"><i class="bi bi-signpost-split" aria-hidden="true"></i> Escolher Percurso</a>
+  <a href="#explorador-grade" class="cagp-subnav-link"><i class="bi bi-search" aria-hidden="true"></i> Filtrar Grade & Ementas</a>
+  <a href="#disciplinas-optativas" class="cagp-subnav-link"><i class="bi bi-collection" aria-hidden="true"></i> 68 Optativas</a>
+  <a href="#dicas-matricula" class="cagp-subnav-link"><i class="bi bi-lightbulb" aria-hidden="true"></i> Dicas de Matrícula</a>
+  <a href="documentos.html" class="cagp-subnav-link"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDFs de Percurso</a>
 </nav>
 ```
 
-## <span aria-hidden="true">📊</span> Estrutura Geral e Prazos Oficiais
+## <i class="bi bi-bar-chart-line" aria-hidden="true"></i> Estrutura Geral e Prazos Oficiais
 
 ::: {.row .g-3 .mb-4}
 ::: {.col-md-3 .col-6}
@@ -65,7 +86,7 @@ O curso de Gestão Pública da FAFICH/UFMG confere o grau de **Bacharel em Gest�
 
 ---
 
-## <span aria-hidden="true">🔀</span> Os Três Percursos Curriculares Oficiais {#simulador-percurso}
+## <i class="bi bi-signpost-split" aria-hidden="true"></i> Os Três Percursos Curriculares Oficiais {#simulador-percurso}
 
 Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua trajetória acadêmica através de 3 modalidades formais de formação. Explore abaixo os detalhes de cada percurso ou consulte o quadro comparativo consolidado:
 
@@ -80,9 +101,9 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
   </div>
 
   <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Perfis de formação">
-    <button type="button" class="cagp-chip" aria-pressed="true" data-track-choice="01-01">🏛️ Gestão Pública Ampla & Flexível (01-01)</button>
-    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-02">🌐 Formação Transversal ou Outro Curso (01-02)</button>
-    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-03">🔬 Carreira Acadêmica & Mestrado PPGCP (01-03)</button>
+    <button type="button" class="cagp-chip" aria-pressed="true" data-track-choice="01-01"><i class="bi bi-bank" aria-hidden="true"></i> Gestão Pública Ampla & Flexível (01-01)</button>
+    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-02"><i class="bi bi-diagram-3" aria-hidden="true"></i> Formação Transversal ou Outro Curso (01-02)</button>
+    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-03"><i class="bi bi-mortarboard" aria-hidden="true"></i> Carreira Acadêmica & Mestrado PPGCP (01-03)</button>
   </div>
 
   <div id="track-result-box" class="cagp-compass-panel cagp-panel-boxed" aria-live="polite">
@@ -94,14 +115,14 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
       <p class="small mb-3">É o percurso canônico da FAFICH/UFMG. Proporciona formação sólida e generalista em gestão pública, finanças e ciência política, com máxima autonomia na escolha de matérias optativas.</p>
       <div class="row g-2 mb-3 small">
         <div class="col-sm-6 col-12">
-          <div>📌 <strong>Obrigatórias:</strong> 1.560h (25 disciplinas) + 300h Estágio (A + B)</div>
+          <div><i class="bi bi-check-circle-fill text-danger me-1"></i> <strong>Obrigatórias:</strong> 1.560h (25 disciplinas) + 300h Estágio (A + B)</div>
         </div>
         <div class="col-sm-6 col-12">
-          <div>📌 <strong>Optativas & Livre:</strong> 1.020h optativas (DCP/Extensão/AAC) + 120h Livre</div>
+          <div><i class="bi bi-collection text-danger me-1"></i> <strong>Optativas & Livre:</strong> 1.020h optativas (DCP/Extensão/AAC) + 120h Livre</div>
         </div>
       </div>
       <div class="d-flex flex-wrap gap-2">
-        <a href="documentos/percurso-bacharelado-nucleo-geral.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">📥 Baixar Matriz Oficial 01-01 (PDF)</a>
+        <a href="documentos/percurso-bacharelado-nucleo-geral.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-download" aria-hidden="true"></i> Baixar Matriz Oficial 01-01 (PDF)</a>
       </div>
     </div>
 
@@ -113,15 +134,15 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
       <p class="small mb-3">Permite cursar <strong>300 horas em Formação Transversal</strong> (Direitos Humanos, Relações Étnico-Raciais, Meio Ambiente, Divulgação Científica) ou <strong>Formação Complementar Aberta (FCA)</strong> em outro departamento da UFMG.</p>
       <div class="row g-2 mb-3 small">
         <div class="col-sm-6 col-12">
-          <div>🌐 <strong>Formação Complementar:</strong> 300h dedicadas a área interdisciplinar</div>
+          <div><i class="bi bi-diagram-3 text-primary me-1"></i> <strong>Formação Complementar:</strong> 300h dedicadas a área interdisciplinar</div>
         </div>
         <div class="col-sm-6 col-12">
-          <div>📉 <strong>Optativas Reduzidas:</strong> Carga de optativas do DCP cai de 1.020h para <strong>720h</strong></div>
+          <div><i class="bi bi-pie-chart text-primary me-1"></i> <strong>Optativas Reduzidas:</strong> Carga de optativas do DCP cai de 1.020h para <strong>720h</strong></div>
         </div>
       </div>
       <div class="d-flex flex-wrap gap-2">
-        <a href="documentos/percurso-bacharelado-nucleo-complementar.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">📥 Baixar Matriz Oficial 01-02 (PDF)</a>
-        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline">📝 Formulário de Mudança de Percurso / FCA</a>
+        <a href="documentos/percurso-bacharelado-nucleo-complementar.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-download" aria-hidden="true"></i> Baixar Matriz Oficial 01-02 (PDF)</a>
+        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Formulário de Mudança de Percurso / FCA</a>
       </div>
     </div>
 
@@ -133,15 +154,15 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
       <p class="small mb-3">Destinado a discentes com vocação para pesquisa e carreira acadêmica. Permite cursar entre <strong>45h e 120h em disciplinas de Mestrado/Doutorado</strong> no Programa de Pós-Graduação em Ciência Política (PPGCP/FAFICH) ainda na graduação.</p>
       <div class="row g-2 mb-3 small">
         <div class="col-sm-6 col-12">
-          <div>🔬 <strong>Disciplinas de Pós:</strong> 45h a 120h com aproveitamento no mestrado</div>
+          <div><i class="bi bi-journal-bookmark text-danger me-1"></i> <strong>Disciplinas de Pós:</strong> 45h a 120h com aproveitamento no mestrado</div>
         </div>
         <div class="col-sm-6 col-12">
-          <div>🎓 <strong>Perfil:</strong> Preparação direta para processos seletivos e docência</div>
+          <div><i class="bi bi-mortarboard text-danger me-1"></i> <strong>Perfil:</strong> Preparação direta para processos seletivos e docência</div>
         </div>
       </div>
       <div class="d-flex flex-wrap gap-2">
-        <a href="documentos/percurso-bacharelado-nucleo-avancado.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">📥 Baixar Matriz Oficial 01-03 (PDF)</a>
-        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline">📝 Formulário de Mudança de Percurso</a>
+        <a href="documentos/percurso-bacharelado-nucleo-avancado.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-download" aria-hidden="true"></i> Baixar Matriz Oficial 01-03 (PDF)</a>
+        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Formulário de Mudança de Percurso</a>
       </div>
     </div>
   </div>
@@ -151,14 +172,14 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
 ::: {.table-responsive .mt-4}
 | Percurso Oficial | Código | Ingresso | Carga Optativas DCP | Foco e Diferencial de Formação | Matriz Oficial |
 | :--- | :---: | :---: | :---: | :--- | :---: |
-| **Bacharelado Geral (Padrão)** | `01-01` | 1º período (automático) | 1.020 horas | Formação ampla em Gestão Governamental, Ciência Política e Políticas Públicas | [📥 Matriz 01-01 (PDF)](documentos/percurso-bacharelado-nucleo-geral.pdf){target="_blank"} |
-| **Núcleo Complementar** | `01-02` | A partir do 5º período | 720 horas (-300h) | 300h em Formação Transversal (DH, Étnico-Racial, Ambiente) ou Formação Aberta (FCA) | [📥 Matriz 01-02 (PDF)](documentos/percurso-bacharelado-nucleo-complementar.pdf){target="_blank"} |
-| **Núcleo Avançado (Pós)** | `01-03` | A partir do 7º período | 900h a 975h | 45h a 120h em disciplinas de Mestrado/Doutorado no PPGCP/FAFICH com creditação futura | [📥 Matriz 01-03 (PDF)](documentos/percurso-bacharelado-nucleo-avancado.pdf){target="_blank"} |
+| **Bacharelado Geral (Padrão)** | `01-01` | 1º período (automático) | 1.020 horas | Formação ampla em Gestão Governamental, Ciência Política e Políticas Públicas | [<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Matriz 01-01 (PDF)](documentos/percurso-bacharelado-nucleo-geral.pdf){target="_blank"} |
+| **Núcleo Complementar** | `01-02` | A partir do 5º período | 720 horas (-300h) | 300h em Formação Transversal (DH, Étnico-Racial, Ambiente) ou Formação Aberta (FCA) | [<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Matriz 01-02 (PDF)](documentos/percurso-bacharelado-nucleo-complementar.pdf){target="_blank"} |
+| **Núcleo Avançado (Pós)** | `01-03` | A partir do 7º período | 900h a 975h | 45h a 120h em disciplinas de Mestrado/Doutorado no PPGCP/FAFICH com creditação futura | [<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Matriz 01-03 (PDF)](documentos/percurso-bacharelado-nucleo-avancado.pdf){target="_blank"} |
 :::
 
 ---
 
-## <span aria-hidden="true">🗺️</span> Linha do Tempo dos 10 Semestres com Ementário Oficial {#explorador-grade}
+## <i class="bi bi-calendar3-range" aria-hidden="true"></i> Linha do Tempo dos 10 Semestres com Ementário Oficial {#explorador-grade}
 
 Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtros dinâmicos** para isolar um período específico, filtrar por departamento ofertante ou buscar qualquer palavra nas 27 ementas oficiais:
 
@@ -566,7 +587,7 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 </div>
 </details>
 
-<div class="cagp-timeline-optative"><span>📚 <strong>1 Disciplina Optativa (60h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativa</span></div>
+<div class="cagp-timeline-optative"><span><i class="bi bi-journal-text me-1"></i> <strong>1 Disciplina Optativa (60h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativa</span></div>
 
 <div class="mt-2">
 <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Momento de planejamento: a partir do próximo semestre você pode requerer opção formal de vinculação ao Núcleo Complementar (Formação Transversal / Aberta).</small>
@@ -628,7 +649,7 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 </div>
 </details>
 
-<div class="cagp-timeline-optative"><span>📚 <strong>2 Disciplinas Optativas (120h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
+<div class="cagp-timeline-optative"><span><i class="bi bi-journal-text me-1"></i> <strong>2 Disciplinas Optativas (120h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
 
 <div class="mt-2">
 <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Início do ciclo intermediário: momento ideal para engajar-se em projetos de extensão universitária (PROEX) ou Iniciação Científica no DCP.</small>
@@ -658,7 +679,7 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 </div>
 </details>
 
-<div class="cagp-timeline-optative"><span>📚 <strong>4 Disciplinas Optativas (240h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
+<div class="cagp-timeline-optative"><span><i class="bi bi-journal-text me-1"></i> <strong>4 Disciplinas Optativas (240h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
 
 <div class="mt-2">
 <span class="cagp-badge cagp-badge-red">Dica do CAGP:</span> <small>Concentre créditos em disciplinas de seu interesse temático e comece a alinhar a vaga de Estágio Curricular Obrigatório do próximo semestre.</small>
@@ -688,10 +709,10 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 </div>
 </details>
 
-<div class="cagp-timeline-optative"><span>📚 <strong>2 Disciplinas Optativas (120h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
+<div class="cagp-timeline-optative"><span><i class="bi bi-journal-text me-1"></i> <strong>2 Disciplinas Optativas (120h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
 
 <div class="cagp-timeline-milestone">
-  <div>💼 <strong>Marco de Estágio Obrigatório (Art. 29 a 41):</strong> Início das 300h de prática supervisionada (DCP 135 • 180h). Se você já atua como servidor, contratado ou em ONG, <a href="estagio-tcc.html#simulador-art41">verifique a dispensa via Art. 41 &rarr;</a></div>
+  <div><i class="bi bi-briefcase text-danger me-1"></i> <strong>Marco de Estágio Obrigatório (Art. 29 a 41):</strong> Início das 300h de prática supervisionada (DCP 135 • 180h). Se você já atua como servidor, contratado ou em ONG, <a href="estagio-tcc.html#simulador-art41">verifique a dispensa via Art. 41 &rarr;</a></div>
 </div>
 
 <div class="mt-2">
@@ -722,10 +743,10 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 </div>
 </details>
 
-<div class="cagp-timeline-optative"><span>📚 <strong>2 Disciplinas Optativas (120h) + 1 Formação Livre (60h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas + Livre</span></div>
+<div class="cagp-timeline-optative"><span><i class="bi bi-journal-text me-1"></i> <strong>2 Disciplinas Optativas (120h) + 1 Formação Livre (60h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas + Livre</span></div>
 
 <div class="cagp-timeline-milestone">
-  <div>💼 <strong>Conclusão do Estágio (DCP 136 • 120h):</strong> Segunda etapa prática. Aproveite o contato com o campo governamental para delinear o problema de pesquisa do seu TCC.</div>
+  <div><i class="bi bi-briefcase text-danger me-1"></i> <strong>Conclusão do Estágio (DCP 136 • 120h):</strong> Segunda etapa prática. Aproveite o contato com o campo governamental para delinear o problema de pesquisa do seu TCC.</div>
 </div>
 
 <div class="mt-2">
@@ -756,10 +777,10 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 </div>
 </details>
 
-<div class="cagp-timeline-optative"><span>📚 <strong>3 Disciplinas Optativas (180h) + 1 Formação Livre (60h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas + Livre</span></div>
+<div class="cagp-timeline-optative"><span><i class="bi bi-journal-text me-1"></i> <strong>3 Disciplinas Optativas (180h) + 1 Formação Livre (60h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas + Livre</span></div>
 
 <div class="cagp-timeline-milestone">
-  <div>📝 <strong>Projeto de TCC (DCP 089 • 60h):</strong> Exige Termo de Aceite de Orientação assinado por professor(a). <a href="estagio-tcc.html#modalidades-tcc">Conheça as 4 modalidades oficiais aceitas &rarr;</a></div>
+  <div><i class="bi bi-file-earmark-text text-danger me-1"></i> <strong>Projeto de TCC (DCP 089 • 60h):</strong> Exige Termo de Aceite de Orientação assinado por professor(a). <a href="estagio-tcc.html#modalidades-tcc">Conheça as 4 modalidades oficiais aceitas &rarr;</a></div>
 </div>
 
 <div class="mt-2">
@@ -790,10 +811,10 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 </div>
 </details>
 
-<div class="cagp-timeline-optative"><span>📚 <strong>3 Disciplinas Optativas (180h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
+<div class="cagp-timeline-optative"><span><i class="bi bi-journal-text me-1"></i> <strong>3 Disciplinas Optativas (180h)</strong></span><span class="cagp-badge cagp-badge-dark">Optativas</span></div>
 
 <div class="cagp-timeline-milestone">
-  <div>🎓 <strong>Defesa Pública de TCC (DCP 137 • 120h):</strong> Apresentação perante banca examinadora de 2 docentes. Certifique-se de convalidar com antecedência todas as 300h de Extensão e AAC no Colegiado.</div>
+  <div><i class="bi bi-mortarboard text-danger me-1"></i> <strong>Defesa Pública de TCC (DCP 137 • 120h):</strong> Apresentação perante banca examinadora de 2 docentes. Certifique-se de convalidar com antecedência todas as 300h de Extensão e AAC no Colegiado.</div>
 </div>
 
 <div class="mt-2">
@@ -807,7 +828,1159 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 ---
 
 
-## <span aria-hidden="true">📌</span> Orientações Estratégicas de Matrícula do CAGP {#dicas-matricula}
+---
+
+## <i class="bi bi-collection" aria-hidden="true"></i> Catálogo de Disciplinas Optativas & Ementas {#disciplinas-optativas}
+
+Além das 27 disciplinas obrigatórias e dos estágios, o bacharelado em Gestão Pública conta com uma grade flexível de **68 disciplinas optativas oficiais** cadastradas no Projeto Pedagógico do Curso (PPC) e no Ementário Geral.
+
+Conforme a sua opção de percurso (*Geral 01-01*, *Complementar 01-02* ou *Avançado 01-03*), você deve cursar entre **720h e 1.020h de optativas** para integralizar seu diploma. Utilize o catálogo interativo abaixo para pesquisar temas de interesse e planejar suas matrículas:
+
+```{=html}
+<section class="cagp-optatives-explorer my-4" aria-labelledby="opt-heading">
+  <div class="cagp-tool-box mb-4">
+    <div class="cagp-tool-header d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <div>
+        <span class="cagp-badge cagp-badge-red mb-1">Catálogo Oficial PPC & Ementário</span>
+        <h3 id="opt-heading" class="h5 mb-0 text-uppercase fw-bold">68 Disciplinas Optativas & Ementas Oficiais</h3>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <button type="button" id="btn-opt-expand-all" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-3">Expandir Todas</button>
+        <button type="button" id="btn-opt-collapse-all" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-3">Recolher Todas</button>
+      </div>
+    </div>
+    
+    <div class="row g-3 align-items-center mt-2">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text bg-white border-dark"><i class="bi bi-search" aria-hidden="true"></i></span>
+          <input type="text" id="opt-search-input" class="form-control border-dark" placeholder="Buscar por código, nome ou tema (ex: Burocracia, Orçamento, Avaliação)..." aria-label="Buscar disciplina optativa">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex flex-wrap gap-1 align-items-center">
+          <span class="small fw-bold me-1 text-uppercase text-muted">Filtrar:</span>
+          <button type="button" class="cagp-chip is-active" data-opt-filter="all">Todas (68)</button>
+          <button type="button" class="cagp-chip" data-opt-filter="DCP">DCP (50)</button>
+          <button type="button" class="cagp-chip" data-opt-filter="ECN">Economia (12)</button>
+          <button type="button" class="cagp-chip" data-opt-filter="SOA">Sociologia (2)</button>
+          <button type="button" class="cagp-chip" data-opt-filter="OUTROS">Outros (4)</button>
+        </div>
+      </div>
+    </div>
+    <div id="opt-count-info" class="small text-muted mt-2" aria-live="polite">
+      Exibindo <strong>68</strong> disciplinas optativas cadastradas no curso de Gestão Pública.
+    </div>
+  </div>
+
+  <div id="optatives-container" class="mt-3">
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 001 teoria política contemporânea dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 001: TEORIA POLÍTICA CONTEMPORÂNEA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Teoria normativa e teoria positiva. Teorias contemporâneas da justiça, teorias marxistas e feministas; teoria da escolha racional, economia do bem-estar e teorias da justiça; liberalismo, comunitarismo, republicanismo; teorias sobre a sociedade civil; escolha pública e escolha social; modelos de "política analítica".</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 025 instituições politicas dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 025: INSTITUIÇÕES POLITICAS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Sistemas eleitorais, partidos e sistemas partidários; sistemas de governo e processos de tomada de decisão; funcionamento do Legislativo e relações entre Executivo e Legislativo.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 026 movimentos sociais e sociedade civil dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 026: MOVIMENTOS SOCIAIS E SOCIEDADE CIVIL</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Ação coletiva; identidades coletivas; paradigmas de interpretação dos movimentos sociais; movimentos sociais no Brasil.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 028 politica internacional dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 028: POLITICA INTERNACIONAL</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Atores e interações políticas próprios do espaço internacional. Identificação dos temas e princípios articuladores da política internacional. Apresentação e crítica das teorias mais difundidas das relações internacionais. Tendências de mudança na organização da economia e nos graus de autonomia dos Estados soberanos.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 030 tópicos em politica dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 030: TÓPICOS EM POLITICA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 053 genero e politicas publicas dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 053: GENERO E POLITICAS PUBLICAS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Estudo do processo de democratização e da luta de movimentos feministas e de movimentos de mulheres, desde os anos 80, no Brasil. Ênfase sobre o processo gradual de incorporação da problemática das desigualdades de gênero pela agenda governamental. Discussão da importância dos governos municipais, a partir da Constituição de 88, na redução das desigualdades de gênero. Agenda Governamental e gênero na perspectiva dos Direitos Humanos.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 055 legislativos subnacionais em perspectiva comparada dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 055: LEGISLATIVOS SUBNACIONAIS EM PERSPECTIVA COMPARADA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Análise das diferentes combinações entre instituições e condições (políticas, socioeconômicas e culturais) nas unidades subnacionais e de seus efeitos combinados sobre: os perfis e as trajetórias das elites políticas a distribuição de preferências e recursos entre os atores relevantes as atitudes, o comportamento e os padrões de interação entre os atores relevantes e seus resultados.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 061 democracia, redistribuição, reconhecimento e representacao dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 061: DEMOCRACIA, REDISTRIBUIÇÃO, RECONHECIMENTO E REPRESENTACAO</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> O Paradigma Redistributivo em contextos democráticos. Teorias do estado de bem-estar. Políticas da Identidade e Políticas da Diferença. Reconhecimento e Pertencimento. Liberalismo. A igualdade liberal. A Democracia Liberal e Poliárquica. O Comunitarismo e as esferas da justiça. As políticas de reconhecimento. Republicanismo e Democracia Deliberativa. A esfera pública, democracia e pluralismo. Teoria Política Feminista: a dicotomia público versus privado. Democracia, gênero e participação. Políticas da diferença, redistribuição e reconhecimento.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 066 governança, accountability e democracia dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 066: GOVERNANÇA, ACCOUNTABILITY E DEMOCRACIA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Democracia, autoridade e propriedade: Estado e mercado como diferentes mecanismos de alocação de recursos. Executivo, Legislativo, governança e accountability: a distribuição dos poderes de agenda e de veto entre os atores. Representantes, burocratas e cidadãos. Accountability e responsiveness: relações entre demandas, políticas e resultados.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 069 direitos e cidadania dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 069: DIREITOS E CIDADANIA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Análise de processos que conduzem à expansão dos Direitos de Cidadania, com especial ênfase na condição de vida urbana, na experiência da gestão pública em suas interfaces com as lutas sociais e políticas. Direitos humanos e cidadania na construção das lutas sociais e na constituição de novos sujeitos de direito. Discussão sobre as origens e formas de compreensão dos Direitos: direitos políticos e civis, direitos e garantias individuais, direitos sociais e econômicos, direitos difusos. Integralidade e Indivisibilidade dos Direitos. Plataforma Internacional dos Direitos Humanos. Reconstrução histórica no processo de afirmação dos Direitos Humanos na sociedade brasileira.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 071 democracia e participação dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 071: DEMOCRACIA E PARTICIPAÇÃO</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Centralidade do conceito de participação nos diferentes modelos de democracia. Análise de diferentes padrões de relação entre Estado e Sociedade Civil, identificando atores e padrões de ação diferenciados.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 074 corrupção, democracia e interesse publico dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 074: CORRUPÇÃO, DEMOCRACIA E INTERESSE PUBLICO</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Análise da corrupção e de sua relação com as concepções normativas de política. Temas básicos: (1) os conceitos de corrupção (2) as perspectivas normativas sobre corrupção na política (3) corrupção na política e o problema da legitimidade (4) a presença e as consequências da corrupção na política (4) a relação entre democracia (e suas matrizes teóricas) com o tema da corrupção (5) consequências sociais, econômicas, culturais e políticas da corrupção (6) corrupção e controle.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 079 gestão publica com foco em direitos humanos dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 079: GESTÃO PUBLICA COM FOCO EM DIREITOS HUMANOS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Políticas Públicas e Direitos Humanos. Plataforma Internacional dos Direitos Humanos. Direitos civis e políticos. Direitos Econômicos, sociais e culturais. Questões e elementos de análise de políticas e de gestão pública: violência (urbana e rural), segurança pública, meio ambiente e justiça social, acessibilidade urbana, preconceitos na convivência com deficientes, idosos, afrodescendentes e indígenas, barreiras humanas e de atitude com relação a públicos específicos tais como crianças e adolescentes, mulheres, refugiados, migrantes, populações indígenas, entre outros.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 083 tópicos em politica internacional dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 083: TÓPICOS EM POLITICA INTERNACIONAL</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 088 laboratórios de formulação, implementação e avaliação de políticas públicas dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 088: LABORATÓRIOS DE FORMULAÇÃO, IMPLEMENTAÇÃO E AVALIAÇÃO DE POLÍTICAS PÚBLICAS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Estudo de uma política pública selecionada com a ajuda de docentes encarregados das disciplinas específicas da formação em gestão pública, abordando tópicos do processo de formulação, implementação e avaliação especificados em roteiro, cuja execução é acompanhada por docentes designados para este fim.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 098 tópicos em metodologia dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 098: TÓPICOS EM METODOLOGIA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 108 atividade de mobilidade estudantil i dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 108: ATIVIDADE DE MOBILIDADE ESTUDANTIL I</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">15h • 1 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 109 atividade de mobilidade estudantil ii dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 109: ATIVIDADE DE MOBILIDADE ESTUDANTIL II</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">30h • 2 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 110 atividade de mobilidade estudantil iii dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 110: ATIVIDADE DE MOBILIDADE ESTUDANTIL III</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">45h • 3 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 111 atividade de mobilidade estudantil iv dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 111: ATIVIDADE DE MOBILIDADE ESTUDANTIL IV</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 138 análise de políticas locais dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 138: ANÁLISE DE POLÍTICAS LOCAIS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Arcabouço geral da política pública: sistema nacional, aspectos legais etc. Desenho e implementação de políticas locais: conexões lógicas, relações e impasses.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 143 burocracia pública dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 143: BUROCRACIA PÚBLICA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Aspectos teóricos e empíricos das burocracias públicas. Políticos e burocratas, política e administração: relações. Burocracia: tipos, funções e desafios. Discricionariedade burocrática na formulação e na implementação das políticas.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 144 democracia, cidadania e estado de bem estar social em perspectiva comparada dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 144: DEMOCRACIA, CIDADANIA E ESTADO DE BEM ESTAR SOCIAL EM PERSPECTIVA COMPARADA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Cidadania: conceitos, desenvolvimento e desafios para as democracias contemporâneas em perspectiva comparada. Trajetórias das lutas por direitos humanos, sociais, econômicos, culturais e socioambientais. Trajetórias de implementação de sistemas de proteção social em perspectiva comparada. Estado de Bem Estar social - desenvolvimento e transformações recentes: análise comparativa.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 145 desenho de questionários dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 145: DESENHO DE QUESTIONÁRIOS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Introdução às técnicas de desenho de questionários em pesquisas quantitativas. Princípios gerais. Questões factuais e comportamentais. Questões atitudinais. Entrevistas, questionários autopreenchidos, websurveys. O questionário como um todo. Aplicação do questionário e construção do banco de dados. Pré-testes: revisão por especialistas, codificação de comportamentos, grupos focais, entrevistas cognitivas. Análise de qualidade de escalas.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 146 esfera pública, lobby e grupos de interesses dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 146: ESFERA PÚBLICA, LOBBY E GRUPOS DE INTERESSES</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Esfera pública: conceito, gênese e desenvolvimento. Contribuição do conceito para a teoria democrática contemporânea. Padrão de ação dos atores - associações cívicas e grupos de interesse. Associativismo, esfera pública e estado: relações em contextos determinados e contribuição para a democratização. Influência do lobby e do advocacy no processo de tomada de decisão em políticas públicas.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 147 estado e sociedade no brasil dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 147: ESTADO E SOCIEDADE NO BRASIL</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Teses sobre os fundamentos do Estado brasileiro nos períodos imperial e republicano. Evolução das relações entre Estado e sociedade no período republicano. Os desafios do desenvolvimento: a questão étnico-racial, a questão agrária, a questão social, a questão socioambiental.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 148 ética na gestão pública dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 148: ÉTICA NA GESTÃO PÚBLICA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Aspectos teórico-conceituais da vida pública. Fundamentos da ética na função pública. Dimensões cognitivas e atitudinais da ética. Dimensão ética na resolução de problemas no serviço público. Código de ética profissional do servidor público civil do poder executivo.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 149 federalismo fiscal no brasil dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 149: FEDERALISMO FISCAL NO BRASIL</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conceitos de federalismo fiscal. Descentralização fiscal: prós e contras. Distribuição federativa de tributos. Transferências intergovernamentais. Distribuição federativa dos gastos públicos. Endividamento e responsabilização fiscal. Gastos governamentais em políticas sociais.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 150 governança global dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 150: GOVERNANÇA GLOBAL</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Fundamentos conceituais e empíricos das abordagens da governança global no estudo da política internacional contemporânea. Teorias das relações internacionais ea premissa da "anarquia sistêmica". Regimes internacionais e a difusão de normas e práticas de gestão pública global.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 151 indicadores sociais dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 151: INDICADORES SOCIAIS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Indicadores sociais: noções conceituais e de construção, propriedades, características e usos. Bases de dados secundárias: indicadores prontos ou estatísticas básicas. Manipulação dos indicadores sociais com base em estatística descritiva básica: tabelas, gráficos e mapas. Construção de diagnósticos de áreas sociais ou de políticas específicas, com base em dados existentes.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 154 legislativo e políticas públicas dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 154: LEGISLATIVO E POLÍTICAS PÚBLICAS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Modelos de Organização Legislativa e seus efeitos sobre o comportamento e a produção legislativos. Legística. Distribuição de atribuições, direitos e recursos legislativos entre legisladores individuais, grupos de legisladores e plenário. Partidos e Comissões. Desenvolvimento institucional. Modelos de organização legislativa e seus efeitos sobre os padrões de interação entre os atores relevantes: cidadãos, grupos de interesses, representantes eleitos e burocracias públicas.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 155 metodologias participativas de planejamento público dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 155: METODOLOGIAS PARTICIPATIVAS DE PLANEJAMENTO PÚBLICO</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Aspectos teóricos e políticos da participação social na formulação e implementação das políticas públicas. Estudo de metodologias que incorporam a participação social no planejamento de políticas, programas e projetos públicos e em decisões orçamentárias nos âmbitos nacional, estadual e local.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 156 monitoramento e avaliação de projetos dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 156: MONITORAMENTO E AVALIAÇÃO DE PROJETOS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Identificação das funções de monitoramento e avaliação no ciclo de políticas públicas. Monitoramento: definição, função, instrumentos e uso de indicadores. Avaliação: definição, funções, metodologias e instrumentos, métodos quantitativos e qualitativos de avaliação, coleta de dados e análise dos resultados.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 158 o estudo de caso como estratégia metodológica para análise e avaliação de políticas públicas dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 158: O ESTUDO DE CASO COMO ESTRATÉGIA METODOLÓGICA PARA ANÁLISE E AVALIAÇÃO DE POLÍTICAS PÚBLICAS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Estudos de caso: status científico, validade em análises e avaliações comparativas de políticas públicas. Vantagens comparativas: predições fortes e compreensão intensiva de mecanismos causais limites e possibilidades de inferência causal: o problema da indeterminação dos desenhos de pesquisa baseados em estudo de caso. Procedimentos de seleção de casos: viés de seleção e casos válidos; diferenças entre seleção aleatória (métodos quantitativos) e procedimentos de seleção não aleatória (seleção intencional de casos); tipologia das estratégias de seleção: casos típicos (representativos), diversos (heterogeneidade), extremos, desviantes, exemplares, cruciais, pathway, similares, e diferentes. Heterogeneidade causal como superação do problema da seleção de casos pela variável dependente. Estratégias de superação do problema das variáveis omitidas: variância intracasos, procedimentos de congruência e process tracing.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 159 o experimento como estratégia metodológica para avaliação de políticas públicas dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 159: O EXPERIMENTO COMO ESTRATÉGIA METODOLÓGICA PARA AVALIAÇÃO DE POLÍTICAS PÚBLICAS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Noções básicas do desenho de pesquisa experimental de modo aplicado. Relevância do experimento e do quase-experimento na avaliação de impacto de políticas públicas: conceitos básicos e aplicações práticas. Metodologia de diferença-em-diferenças. Experimento controlado e seus limites éticos, financeiros e de tempo. Quase experimento como alternativa: estimando os efeitos parciais do impacto de programas e políticas públicas sobre diferentes contextos. Noções básicas de aleatorização, seleção de casos e redução de viés de estimativa.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 160 o processo decisório no sistema político brasileiro dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 160: O PROCESSO DECISÓRIO NO SISTEMA POLÍTICO BRASILEIRO</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Processo decisório nos Poderes Executivo, Legislativo e Judiciário. Consequências das decisões no plano político e seus impactos sobre aspectos relacionados aos fundamentos, aspectos orçamentários e gerencias de políticas públicas em diversas áreas.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 161 oficina de orçamento público dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 161: OFICINA DE ORÇAMENTO PÚBLICO</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conceito, princípios e objetivos do Orçamento Público. Processo orçamento brasileiro: regulamentação e implementação. Conceitos e classificações de receitas e despesas. Elaboração do PPA. Elaboração da LDO. Elaboração da LOA. Execução orçamentária. Sistemas de Planejamento e Gestão Orçamentária (SIOP - Sistema Integrado de Planejamento e Orçamento e SIAFI - Sistema Integrado de Administração Financeira do Governo Federal)</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 165 política brasileira a dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 165: POLÍTICA BRASILEIRA A</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Autores clássicos da Ciência Política Brasileira e questões próprias ao período da colonização a 1930.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 166 política brasileira b dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 166: POLÍTICA BRASILEIRA B</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Política brasileira desde 1930 aos dias atuais: a construção da ordem, a constituição e incorporação política dos atores relevantes e a organização de sua ação política. Relações entre política e sociedades. Desafios para a construção de uma institucionalidade democrática no país: corporativismo e populismo, representação e participação política autoritarismo e transição, ação coletiva e construção da ordem.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 167 política externa brasileira dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 167: POLÍTICA EXTERNA BRASILEIRA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conceitos e modelos de análise de política externa. Formação de um sistema de política exterior no Brasil do século XIX. Princípios e tradições de política externa brasileira no Império e na República. Produção da política externa brasileira sob distintos regimes políticos. Problemas contemporâneos da política externa brasileira. Política externa e inserção do Brasil no mundo.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 168 sistema de proteção social brasileiro em perspectiva comparada dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 168: SISTEMA DE PROTEÇÃO SOCIAL BRASILEIRO EM PERSPECTIVA COMPARADA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Sistema de proteção social brasileiro (ou de políticas sociais específicas) e sistema (ou políticas) de outros países: comparação dos problemas, possibilidades e desafios para o caso brasileiro.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 169 teoria dos jogos dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 169: TEORIA DOS JOGOS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Efeitos de agregação e consequências não intencionais de ações intencionais. Escolha racional. Ação paramétrica e interação estratégica. Teoria da decisão. Otimização. Teoria dos jogos: representação de jogos em forma estratégica, dominância estrita e dominância fraca, equilíbrio de Nash, estratégias mistas, teorema de Nash, melhor resposta jogos de n jogadores, jogos de soma zero, jogos em forma extensiva, indução retrospectiva, equilíbrio perfeito de subjogos, indução prospectiva, jogos bayesianos, equilíbrio bayesiano, equilíbrio bayesiano perfeito e equilíbrio sequencial, sinalizações, reiterações. Bens públicos, ação coletiva e soluções descentralizadas. Escolha social. Escolha pública. Dinâmica institucional. Formação e falsificação de preferências. Teoria dos jogos evolucionária. Não-linearidades, retroalimentações, sistemas complexos, simulações.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 170 tópicos em análise política dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 170: TÓPICOS EM ANÁLISE POLÍTICA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 171 tópicos em gestão pública dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 171: TÓPICOS EM GESTÃO PÚBLICA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 172 tópicos em política contemporânea dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 172: TÓPICOS EM POLÍTICA CONTEMPORÂNEA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 173 tópicos em políticas públicas dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP 173: TÓPICOS EM POLÍTICAS PÚBLICAS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp xxx laboratório de gestão e políticas públicas a dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP xxx: LABORATÓRIO DE GESTÃO E POLÍTICAS PÚBLICAS A</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">90h • 6 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Identificação de problemas reais que demandam uma intervenção pública. Elaboração de projetos de intervenção, sob a forma de diagnósticos, análises de políticas públicas e pesquisas, em parceira com órgãos governamentais e não-governamentais.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp xxx laboratório de gestão e políticas públicas b dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP xxx: LABORATÓRIO DE GESTÃO E POLÍTICAS PÚBLICAS B</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">90h • 6 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Identificação de problemas reais que demandam uma intervenção pública. Elaboração de projetos de intervenção, sob a forma de diagnósticos, análises de políticas públicas e pesquisas, em parceira com órgãos governamentais e não-governamentais.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp xxx tópicos avançados a dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP xxx: TÓPICOS AVANÇADOS A</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">45h • 3 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp xxx tópicos avançados b dcp • ciência política">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
+<strong>DCP xxx: TÓPICOS AVANÇADOS B</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 033 tópicos em desenvolvimento econômico e regional ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 033: TÓPICOS EM DESENVOLVIMENTO ECONÔMICO E REGIONAL</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 051 história econômica do brasil ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 051: HISTÓRIA ECONÔMICA DO BRASIL</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> O Sistema Colonial A Economia Colonial na América Portuguesa A Constituição do Estado e da Economia Brasileira A Economia Brasileira no Século XIX A Industrialização e a Modernização no Brasil A Economia Brasileira: 1930/1960.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 055 economia política ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 055: ECONOMIA POLÍTICA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> David Ricardo: valor e distribuição. K. Marx: valor e dinheiro, capital e mais valia, reprodução e acumulação, lucro, taxa de lucro e preços de produção.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 083 economia brasileira ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 083: ECONOMIA BRASILEIRA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Desenvolvimento econômico brasileiro: plano de metas, Milagre Brasileiro e crise dos anos oitenta.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 085 economia política internacional i ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 085: ECONOMIA POLÍTICA INTERNACIONAL I</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Teoria das Relações Internacionais: Realismo, Liberalismo, Marxismo, Teoria Crítica, Construtivismo. Fundamentos teóricos da Economia Política Internacional. Economia Política e Economics. Relações Internacionais e Economia Internacional. O desenvolvimento da área a partir dos anos 1970 e seus temas centrais.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 086 métodos quantitativos aplicados i ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 086: MÉTODOS QUANTITATIVOS APLICADOS I</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Estatística descritiva. Distribuição de frequências. Introdução à probabilidade. Variáveis aleatórias discretas e contínuas. Distribuições amostrais. Estimação. Testes de hipóteses. Modelos de regressão linear.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 088 economia política internacional ii ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 088: ECONOMIA POLÍTICA INTERNACIONAL II</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> A IPE e a NEW IPE School: as escolas americana e britânica. Debates sobre a teoria da estabilidade hegemónica. Imperialismo. A escola cepalina. A escola francesa. A reconfiguração da ordem internacional: globalização, integração, fragmentação, geopolítica, potências emergentes.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 089 métodos quantitativos aplicados ii ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 089: MÉTODOS QUANTITATIVOS APLICADOS II</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Modelos econométricos de equações simultâneas. Modelos econométricos com uso de dados de painel. Econometria de séries temporais: análise clássica, co-integração e modelos ARIMA e VAR.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 090 economia da américa latina ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 090: ECONOMIA DA AMÉRICA LATINA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> História comparada: questões de método. As economias coloniais. Os processos de independência. A formação dos Estados Nacionais. A questão étnico-racial na formação social latino-americana. O desenvolvimento latino-americano em perspectiva comparada. Eixos temáticos: processos de industrialização pobreza e desigualdades endividamento inflação e planos de estabilização perspectivas de integração econômica.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 092 organização econômica internacional i ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 092: ORGANIZAÇÃO ECONÔMICA INTERNACIONAL I</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> A formação do BIS e as organizações internacionais antes da Segunda Guerra Mundial. Formação, estrutura e funcionamento das principais organizações internacionais pós Segunda Guerra Mundial. O Fundo Monetário Internacional e o Banco Mundial. O GATT e as suas rodadas de negociação. BIS e os Acordos da Basiléia. Organização Mundial do Comércio. UNCTAD e os países em desenvolvimento.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 093 sistemas econômicos comparados ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 093: SISTEMAS ECONÔMICOS COMPARADOS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> O auge do liberalismo (100 anos de paz). As experiências socialistas. O nazi-fascismo. O New Deal e a regulação keynesiana. O desenvolvimentismo e a industrialização do terceiro mundo. Os processos de Cathing up. A crise do socialismo real. O Neoliberalismo e globalização.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 181 história econômica geral ecn • economia (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
+<strong>ECN 181: HISTÓRIA ECONÔMICA GERAL</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Transição do feudalismo ao capitalismo. Sistema mercantilista e formação do Estado moderno. Revolução burguesa. Revolução Industrial. Industrialização retardatária. Imperialismo. Período entre guerras e a crise dos anos 30. Fascismo.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="SOA" data-opt-search="soa 029 tópicos em teoria sociológica soa • sociologia (fafich)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-soa">SOA • Sociologia (FAFICH)</span>
+<strong>SOA 029: TÓPICOS EM TEORIA SOCIOLÓGICA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="SOA" data-opt-search="soa 071 topicos em sociologia soa • sociologia (fafich)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-soa">SOA • Sociologia (FAFICH)</span>
+<strong>SOA 071: TOPICOS EM SOCIOLOGIA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="CIC" data-opt-search="cic 032 tópicos em contabilidade b cic • contabilidade (face)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-ecn">CIC • Contabilidade (FACE)</span>
+<strong>CIC 032: TÓPICOS EM CONTABILIDADE B</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="POP" data-opt-search="pop 004 tópicos em demografia pop • demografia (cedeplar)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-soa">POP • Demografia (Cedeplar)</span>
+<strong>POP 004: TÓPICOS EM DEMOGRAFIA</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="LET" data-opt-search="let 223 fundamentos de libras let • letras (fale)">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-est">LET • Letras (FALE)</span>
+<strong>LET 223: FUNDAMENTOS DE LIBRAS</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Aspectos históricos e conceituais da cultura surda e filosofia do bilinguismo. Fundamentos linguísticos da Língua Brasileira de Sinais (LIBRAS). Aquisição e desenvolvimento de habilidades básicas expressivas e receptivas em LIBRAS.</p>
+</div>
+</details>
+
+<details class="cagp-discipline cagp-opt-card" data-opt-dept="UNI" data-opt-search="uni 005 o sistema politico brasileiro uni • universitário">
+<summary>
+<div class="discipline-left">
+<span class="cagp-badge badge-est">UNI • Universitário</span>
+<strong>UNI 005: O SISTEMA POLITICO BRASILEIRO</strong>
+</div>
+<div>
+<span class="badge bg-light text-dark border">60h • 4 cr</span>
+<span class="discipline-chevron">▶</span>
+</div>
+</summary>
+<div class="cagp-discipline-body">
+<p><strong>Ementa Oficial:</strong> Análise do atual arranjo democrático brasileiro. A análise da democracia brasileira pós-88 abrangerá: a) o sistema eleitoral adotado para a composição dos poderes Legislativo e Executivo; b) a origem, evolução e dinâmica do atual sistema partidário; c) as características do presidencialismo brasileiro; d) as relações entre os poderes Executivo e Legislativo; e) a estrutura e organização interna do poder legislativo federal; f) a organização federativa do Estado; g) a relação entre poder Judiciário e política; h) a reforma do Estado.</p>
+</div>
+</details>
+  </div>
+
+  <!-- Empty State Acolhedor de Busca de Optativas -->
+  <div id="opt-empty-state" class="cagp-empty-state" style="display: none;" role="status">
+    <div class="cagp-empty-icon"><i class="bi bi-search" aria-hidden="true"></i></div>
+    <h4 class="h5 mb-1">NENHUMA DISCIPLINA OPTATIVA ENCONTRADA</h4>
+    <p class="small text-muted mb-3">Não encontramos disciplinas no catálogo com os termos ou filtros selecionados.</p>
+    <div class="cagp-empty-tips small mb-3">
+      <strong>💡 Dica do CAGP:</strong> Você sabia que pode cursar disciplinas de qualquer faculdade da UFMG (Direito, ECI, IGC, etc.) como <em>Formação Livre</em> e solicitar aproveitamento curricular junto ao Colegiado?
+    </div>
+    <div>
+      <button type="button" id="btn-opt-empty-reset" class="cagp-chip">
+        <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Limpar busca e ver todas as 68 optativas
+      </button>
+    </div>
+  </div>
+</section>
+```
+
+## <i class="bi bi-lightbulb" aria-hidden="true"></i> Orientações Estratégicas de Matrícula do CAGP {#dicas-matricula}
 
 ::: {.cagp-card}
 ### Como Planejar seus Semestres com Segurança
@@ -968,6 +2141,98 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (btnReset) btnReset.addEventListener('click', resetAll);
   if (btnEmptyReset) btnEmptyReset.addEventListener('click', resetAll);
+
+  /* 3. Catálogo de Disciplinas Optativas & Busca */
+  const optSearch = document.getElementById('opt-search-input');
+  const optFilters = document.querySelectorAll('[data-opt-filter]');
+  const optCards = Array.from(document.querySelectorAll('.cagp-opt-card'));
+  const optCount = document.getElementById('opt-count-info');
+  const optEmpty = document.getElementById('opt-empty-state');
+  const btnOptEmptyReset = document.getElementById('btn-opt-empty-reset');
+  const btnOptExpand = document.getElementById('btn-opt-expand-all');
+  const btnOptCollapse = document.getElementById('btn-opt-collapse-all');
+
+  let currentDept = 'all';
+  let currentSearch = '';
+
+  function filterOptatives() {
+    let visibleCount = 0;
+    optCards.forEach(function (card) {
+      const dept = card.getAttribute('data-opt-dept');
+      const text = card.getAttribute('data-opt-search') || '';
+      
+      let matchesDept = false;
+      if (currentDept === 'all') {
+        matchesDept = true;
+      } else if (currentDept === 'OUTROS') {
+        matchesDept = (dept !== 'DCP' && dept !== 'ECN' && dept !== 'SOA');
+      } else {
+        matchesDept = (dept === currentDept);
+      }
+
+      const matchesSearch = !currentSearch || text.includes(currentSearch);
+
+      if (matchesDept && matchesSearch) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (optCount) {
+      optCount.innerHTML = 'Exibindo <strong>' + visibleCount + '</strong> de 68 disciplinas optativas disponíveis.';
+    }
+
+    if (optEmpty) {
+      optEmpty.style.display = (visibleCount === 0) ? 'block' : 'none';
+    }
+  }
+
+  function resetOptatives() {
+    currentDept = 'all';
+    currentSearch = '';
+    if (optSearch) optSearch.value = '';
+    optFilters.forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-opt-filter') === 'all');
+    });
+    filterOptatives();
+  }
+
+  if (optSearch) {
+    optSearch.addEventListener('input', function () {
+      currentSearch = optSearch.value.trim().toLowerCase();
+      filterOptatives();
+    });
+  }
+
+  optFilters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      optFilters.forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      currentDept = btn.getAttribute('data-opt-filter');
+      filterOptatives();
+    });
+  });
+
+  if (btnOptEmptyReset) {
+    btnOptEmptyReset.addEventListener('click', resetOptatives);
+  }
+
+  if (btnOptExpand) {
+    btnOptExpand.addEventListener('click', function () {
+      optCards.forEach(function (card) {
+        if (card.style.display !== 'none') card.open = true;
+      });
+    });
+  }
+
+  if (btnOptCollapse) {
+    btnOptCollapse.addEventListener('click', function () {
+      optCards.forEach(function (card) { card.open = false; });
+    });
+  }
+
 });
 </script>
 ```

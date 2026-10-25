@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T11:32:45-03:00",
+  "generatedAt": "2026-10-24T22:25:00-03:00",
   "title": "Design System: Centro Acadêmico de Gestão Pública (CAGP) - FAFICH / UFMG",
   "extensions": {
     "colorMeta": {
@@ -87,6 +87,36 @@
         "displayName": "Laranja Âmbar Regulamentar",
         "canonical": "#e65100",
         "tonalRamp": ["#471800", "#732700", "#a83a00", "#e65100", "#ff6d19", "#ff8f4d", "#ffb88c", "#ffdfcc"]
+      },
+      "brand-siga": {
+        "role": "tertiary",
+        "displayName": "Azul Tecnológico SIGA UFMG",
+        "canonical": "#002776",
+        "tonalRamp": ["#000e2b", "#001a52", "#002776", "#1a4299", "#3b63bf", "#688ee6", "#9cb7f5", "#d6e2ff"]
+      },
+      "brand-minhaufmg": {
+        "role": "tertiary",
+        "displayName": "Verde Volutas minhaUFMG",
+        "canonical": "#087f3b",
+        "tonalRamp": ["#032b13", "#054721", "#087f3b", "#14a350", "#2ec76d", "#5ee394", "#99f0be", "#d7fae6"]
+      },
+      "brand-fump": {
+        "role": "tertiary",
+        "displayName": "Verde Petróleo FUMP Assistência",
+        "canonical": "#006c67",
+        "tonalRamp": ["#002422", "#00423f", "#006c67", "#0a918b", "#1bb3ab", "#45d4cc", "#85e8e2", "#cbf7f4"]
+      },
+      "brand-rotas": {
+        "role": "tertiary",
+        "displayName": "Azul Elétrico Noturno Interno Rotas",
+        "canonical": "#2c0eeb",
+        "tonalRamp": ["#0d034f", "#180682", "#2c0eeb", "#5339f5", "#7e6bfc", "#a79bff", "#d0caff", "#edeaff"]
+      },
+      "brand-bu": {
+        "role": "tertiary",
+        "displayName": "Ouro Âmbar Biblioteca BU / Pergamum",
+        "canonical": "#d97706",
+        "tonalRamp": ["#422100", "#693500", "#9e5200", "#d97706", "#f59e0b", "#fbbf24", "#fde68a", "#fef3c7"]
       }
     },
     "typographyMeta": {
@@ -179,6 +209,21 @@
       "description": "Etiquetas cromáticas oficiais para os quatro departamentos do curso (DCP, ECN, EST, SOA).",
       "html": "<div style=\"display:flex;gap:0.5rem;flex-wrap:wrap;\"><span class=\"ds-badge ds-badge-dcp\">DCP</span><span class=\"ds-badge ds-badge-ecn\">ECN</span><span class=\"ds-badge ds-badge-est\">EST</span><span class=\"ds-badge ds-badge-soa\">SOA</span></div>",
       "css": ".ds-badge { display: inline-block; font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.25rem 0.65rem; border: 1.5px solid #0a0a0a; border-radius: 3px; box-shadow: 2px 2px 0px #0a0a0a; } .ds-badge-dcp { background-color: #9e2424; color: #ffffff; } .ds-badge-ecn { background-color: #0a0a0a; color: #ffffff; } .ds-badge-est { background-color: #1565c0; color: #ffffff; } .ds-badge-soa { background-color: #2e7d32; color: #ffffff; }"
+    },
+    {
+      "name": "Breadcrumbs Navigation",
+      "kind": "nav",
+      "refersTo": "breadcrumbs",
+      "description": "Trilha semântica e acessível (WCAG 2.1 AA) de localização posicionado abaixo da navbar.",
+      "html": "<nav class=\"ds-breadcrumbs\" aria-label=\"Trilha de navegação\"><ol class=\"ds-breadcrumb-list\"><li><a href=\"#\">Início</a></li><span class=\"ds-breadcrumb-sep\">›</span><li><a href=\"#\">Jornada Acadêmica</a></li><span class=\"ds-breadcrumb-sep\">›</span><li aria-current=\"page\">Guia do Calouro</li></ol></nav>",
+      "css": ".ds-breadcrumbs { background-color: #f4f5f7; border: 1.5px solid #0a0a0a; box-shadow: 2px 2px 0px #0a0a0a; border-radius: 0px; padding: 0.45rem 1rem; margin-bottom: 1.5rem; overflow-x: auto; } .ds-breadcrumb-list { display: flex; align-items: center; gap: 0.5rem; list-style: none; margin: 0; padding: 0; font-family: 'Inter', sans-serif; font-size: 0.85rem; white-space: nowrap; } .ds-breadcrumb-list a { font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; color: #0a0a0a; text-decoration: none; } .ds-breadcrumb-list a:hover { color: #9e2424; text-decoration: underline; } .ds-breadcrumb-sep { color: #4b5563; font-weight: bold; } .ds-breadcrumb-list li[aria-current='page'] { color: #4b5563; font-weight: 500; }"
+    },
+    {
+      "name": "Tactile Copy Button",
+      "kind": "button",
+      "description": "Microinteração tátil de clique-para-copiar contatos com feedback instantâneo de sucesso.",
+      "html": "<button class=\"ds-copy-btn\" data-copy=\"cagp@fafich.ufmg.br\"><span class=\"ds-copy-text\">Copiar E-mail</span></button>",
+      "css": ".ds-copy-btn { display: inline-flex; align-items: center; gap: 0.35rem; font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; padding: 0.25rem 0.55rem; background-color: #ffffff; color: #0a0a0a; border: 1.5px solid #0a0a0a; border-radius: 3px; box-shadow: 2px 2px 0px #0a0a0a; cursor: pointer; transition: transform 0.1s ease, background-color 0.15s ease; } .ds-copy-btn:hover { background-color: #f4f5f7; transform: translate(-1px, -1px); box-shadow: 3px 3px 0px #0a0a0a; } .ds-copy-btn:active { transform: translate(1px, 1px); box-shadow: 0px 0px 0px #0a0a0a; } .ds-copy-btn.copied { background-color: #2e7d32; color: #ffffff; border-color: #0a0a0a; }"
     },
     {
       "name": "Quarto Callout Note",
