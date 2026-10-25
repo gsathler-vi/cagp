@@ -5,6 +5,94 @@ toc: false
 title-block-style: none
 ---
 
+```{=html}
+<!-- Central do Campus em Tempo Real & Mobile Super App Hub (Visível exclusivamente em telas móveis e dobráveis) -->
+<section id="cagp-mobile-superapp-hub" class="cagp-mobile-superapp-hub" aria-label="Central do Campus em Tempo Real">
+  <div class="cagp-mobile-hub-inner">
+    <div class="cagp-mobile-hub-header">
+      <div class="cagp-mobile-hub-live">
+        <i class="bi bi-broadcast me-1 text-success" aria-hidden="true"></i>
+        <span class="cagp-mobile-hub-live-text">CAMPUS AO VIVO</span>
+      </div>
+      <div class="cagp-mobile-hub-clock">
+        <i class="bi bi-clock me-1" aria-hidden="true"></i>
+        <span id="cagp-live-clock">--:--</span>
+      </div>
+    </div>
+
+    <!-- Grade de Status do Campus em Tempo Real -->
+    <div class="cagp-campus-status-grid">
+      <a href="calouros.html#ru-alimentacao" class="cagp-campus-status-card" data-cagp-nav>
+        <div class="cagp-campus-status-icon cagp-bg-gold">
+          <i class="bi bi-egg-fried" aria-hidden="true"></i>
+        </div>
+        <div class="cagp-campus-status-info">
+          <div class="cagp-campus-status-label">RU II • FAFICH</div>
+          <div id="cagp-status-ru" class="cagp-campus-status-val">Consultando...</div>
+        </div>
+      </a>
+
+      <a href="calouros.html#circulares-noturnos" class="cagp-campus-status-card" data-cagp-nav>
+        <div class="cagp-campus-status-icon cagp-bg-blue">
+          <i class="bi bi-bus-front" aria-hidden="true"></i>
+        </div>
+        <div class="cagp-campus-status-info">
+          <div class="cagp-campus-status-label">Circulares UFMG</div>
+          <div id="cagp-status-circulares" class="cagp-campus-status-val">Consultando...</div>
+        </div>
+      </a>
+
+      <a href="curso.html#secretaria-colegiado" class="cagp-campus-status-card" data-cagp-nav>
+        <div class="cagp-campus-status-icon cagp-bg-bordeaux">
+          <i class="bi bi-door-open" aria-hidden="true"></i>
+        </div>
+        <div class="cagp-campus-status-info">
+          <div class="cagp-campus-status-label">Secretaria & CEAG</div>
+          <div id="cagp-status-secretaria" class="cagp-campus-status-val">Consultando...</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Card Inteligente de Incentivo de Instalação (Adaptado à Plataforma: iOS vs Android) -->
+    <div id="cagp-platform-incentive-container" class="cagp-platform-incentive-box"></div>
+
+    <!-- Quick Actions Pocket (6 Atalhos de Alta Frequência no Mobile) -->
+    <div class="cagp-pocket-actions-section">
+      <div class="cagp-pocket-actions-title">
+        <i class="bi bi-grid-fill me-1 text-danger" aria-hidden="true"></i>
+        <span>Ações Rápidas de Bolso</span>
+      </div>
+      <div class="cagp-pocket-actions-grid">
+        <a href="calouros.html#ru-alimentacao" class="cagp-pocket-btn" data-cagp-nav>
+          <i class="bi bi-egg-fried" aria-hidden="true"></i>
+          <span>RU Hoje</span>
+        </a>
+        <a href="calouros.html#circulares-noturnos" class="cagp-pocket-btn" data-cagp-nav>
+          <i class="bi bi-bus-front" aria-hidden="true"></i>
+          <span>Circulares</span>
+        </a>
+        <a href="acg.html#calculadora" class="cagp-pocket-btn" data-cagp-nav>
+          <i class="bi bi-calculator" aria-hidden="true"></i>
+          <span>Calculadora</span>
+        </a>
+        <a href="percurso.html#catalogo-optativas" class="cagp-pocket-btn" data-cagp-nav>
+          <i class="bi bi-journal-text" aria-hidden="true"></i>
+          <span>68 Optativas</span>
+        </a>
+        <a href="curso.html#secretaria-colegiado" class="cagp-pocket-btn" data-cagp-nav>
+          <i class="bi bi-geo-alt" aria-hidden="true"></i>
+          <span>Secretaria</span>
+        </a>
+        <a href="documentos.html" class="cagp-pocket-btn" data-cagp-nav>
+          <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+          <span>Documentos</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
 ::: {.cagp-hero}
 ::: {.row .align-items-center}
 ::: {.col-lg-8}

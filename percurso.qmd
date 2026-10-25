@@ -1094,13 +1094,15 @@ Conforme a sua opção de percurso (*Geral 01-01*, *Complementar 01-02* ou *Avan
         </div>
       </div>
       <div class="col-md-6">
-        <div class="d-flex flex-wrap gap-1 align-items-center">
+        <div class="d-flex flex-wrap gap-2 align-items-center">
           <span class="small fw-bold me-1 text-uppercase text-muted">Filtrar:</span>
-          <button type="button" class="cagp-chip is-active" data-opt-filter="all">Todas (68)</button>
-          <button type="button" class="cagp-chip" data-opt-filter="DCP">DCP (50)</button>
-          <button type="button" class="cagp-chip" data-opt-filter="ECN">Economia (12)</button>
-          <button type="button" class="cagp-chip" data-opt-filter="SOA">Sociologia (2)</button>
-          <button type="button" class="cagp-chip" data-opt-filter="OUTROS">Outros (4)</button>
+          <div class="cagp-segmented-control" role="group" aria-label="Filtrar optativas por departamento">
+            <button type="button" class="cagp-segmented-btn is-active" data-opt-filter="all">Todas (68)</button>
+            <button type="button" class="cagp-segmented-btn" data-opt-filter="DCP">DCP (50)</button>
+            <button type="button" class="cagp-segmented-btn" data-opt-filter="ECN">Economia (12)</button>
+            <button type="button" class="cagp-segmented-btn" data-opt-filter="SOA">Sociologia (2)</button>
+            <button type="button" class="cagp-segmented-btn" data-opt-filter="OUTROS">Outros (4)</button>
+          </div>
         </div>
       </div>
     </div>

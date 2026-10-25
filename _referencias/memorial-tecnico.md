@@ -54,6 +54,8 @@
 44. [Ciclo 44: Suíte PWA & Adaptação Nativa Multiplataforma](#44-ciclo-44-suíte-pwa--adaptação-nativa-multiplataforma-desktop-iosipados-e-android-com-service-worker-offline-e-barra-móvel)
 45. [Ciclo 45: Fluidez & Micro-haptics de Alto Padrão](#45-ciclo-45-fluidez--micro-haptics-de-alto-padrão-transições-nativas-barra-de-leitura-cápsula-dynamic-island-toast-e-física-spring)
 46. [Ciclo 46: Arquitetura de Super App Multiplataforma](#46-ciclo-46-arquitetura-de-super-app-multiplataforma-roteador-spa-client-side-view-transitions-nativas-pré-carregamento-instantâneo-e-física-tátil-apple-hig--m3-expressive)
+47. [Ciclo 47: Spotlight Command Palette & Suíte UI/UX Apple HIG & M3 Expressive](#47-ciclo-47-spotlight-command-palette--suíte-uiux-apple-hig--m3-expressive)
+48. [Ciclo 48: Floating Island Navbar, Mobile Super App & Detecção Inteligente de Plataforma](#48-ciclo-48-floating-island-navbar-mobile-super-app--detecção-inteligente-de-plataforma-ios-vs-android-widget-campus-hoje-e-layout-para-dobráveis)
 
 ---
 
@@ -1684,3 +1686,97 @@ Atendendo às diretrizes avançadas `/impeccable new-work`, `/impeccable critiqu
 ### 46.3 Verificação e Conformidade Técnica
 - Compilação global executada via `quarto render` com código de retorno 0 em todas as 11 páginas;
 - Auditoria do detector Impeccable executada em todas as páginas compiladas em `docs/*.html`, confirmando **0 erros**, tipografia e espaçamentos perfeitamente contidos, e registrando unicamente as 11 advertências documentadas e autorizadas de `overused-font` para a tipografia Inter oficial.
+
+
+---
+
+## 47. Ciclo 47: Spotlight Command Palette & Suíte UI/UX Apple HIG & M3 Expressive (Busca Desacoplada, Atalho ⌘K, Segmented Controls e Bottom Sheets)
+
+**Contexto e Motivação:**  
+Atendendo às diretrizes avançadas `/impeccable new-work`, `/apple-design`, `/m3-expressive`, e à observação pontual de que a ferramenta de pesquisa nativa do gerador de sites Quarto destoava da linguagem visual e dos fluxos do portal, concebeu-se uma solução completa de busca global e refinamento de interação. O buscador genérico do Bootstrap injetava elementos sem estilização, textos em inglês e janelas modais com cantos arredondados e sombras suaves que quebravam a coesão neo-brutalista Brite. Este ciclo substituiu integralmente o buscador por uma **Paleta de Comandos / Spotlight Search nativo** (`⌘K` / `Ctrl+K`), além de implementar uma suíte de refinamentos ergonômicos e táteis inspirada no **Apple HIG** e no **Google Material Design 3 Expressive**.
+
+### 47.1 Desacoplamento da Busca Legada do Quarto
+- **Remoção de Bibliotecas Desnecessárias:** Configuração de `search: false` sob a chave `website:` em `_quarto.yml`, eliminando a injeção automática de bibliotecas externas pesadas (`quarto-search.js`, `fuse.min.js`, `autocomplete.umd.js`);
+- **Eliminação do Elemento Intrusivo na Navbar:** Remoção completa da tag unstyled `<div id="quarto-search">` que causava desalinhamentos entre o logo e o botão de menu nos dispositivos móveis.
+
+### 47.2 Motor de Busca e Paleta de Comandos Spotlight (`_includes/spotlight-search.html`)
+- **Acervo Unificado em Memória:**
+  - 11 páginas oficiais do portal com metadados e rotas canônicas;
+  - 8 ferramentas interativas e seções críticas (Calculadora ACG 600h, Catálogo de 68 Optativas, Grafo de Pré-Requisitos, Circulares Noturnos e Rotas, RU II, Secretaria F-2039 e CEAG);
+  - 27 disciplinas obrigatórias do PPC com códigos, nomes e semestres;
+  - 11 grupos e núcleos de pesquisa do DCP;
+  - 8 documentos normativos, resoluções e formulários oficiais em PDF;
+- **Ações Rápidas ao Abrir:**
+  - Quando acionado e com o campo vazio, exibe grid com 6 cartões táteis de alta frequência para navegação com um toque;
+- **Busca Fuzzy em Tempo Real com Normalização Fonética:**
+  - Remoção de diacríticos e acentos via `.normalize('NFD')`, permitindo que consultas como *"politica"*, *"estagio"* ou *"ru"* localizem imediatamente os conteúdos correspondentes;
+  - Destaque visual (*highlighting*) dos termos coincidentes nos títulos dos resultados;
+- **Navegação por Teclado e Acessibilidade:**
+  - Suporte completo a navegação por setas (`ArrowDown` e `ArrowUp`), seleção via `Enter` e fechamento com `Escape`;
+  - Semântica ARIA estrita (`role="dialog"`, `aria-modal="true"`, `aria-autocomplete="list"`, `role="listbox"`, `role="option"`);
+- **Integração com o Roteador SPA do Super App:**
+  - A seleção de qualquer resultado aciona diretamente `cagpNavigate(href)`, realizando a transição contínua sem recarregar a página do navegador;
+- **Atalhos Globais:**
+  - Abertura instantânea via `⌘K` (macOS/iOS) e `Ctrl+K` (Windows/Linux), além da tecla `/` quando fora de campos de texto.
+
+### 47.3 Pontos de Entrada Ergonômicos
+- **Pílula de Busca no Cabeçalho Superior (`.cagp-nav-search-btn`):**
+  - Botão neo-brutalista Brite na navbar com ícone de lupa, rótulo *"Buscar no portal..."* e badge com o atalho `⌘K`, adaptando-se compactamente em telas móveis;
+- **Aba "Buscar" na Barra Móvel Inferior (`#cagp-mobile-nav`):**
+  - Substituição da aba "Instalar" (já contemplada pelo banner superior e guia Safari) pelo botão *"Buscar"*, alinhando o portal aos aplicativos de referência da Apple (onde a busca é uma das abas primárias da barra inferior).
+
+### 47.4 Componentes Táteis Apple HIG & Material 3 Expressive em `styles.css`
+- **Segmented Controls Táteis (`.cagp-segmented-control` e `.cagp-segmented-btn`):**
+  - Aplicados no filtro departamental do Catálogo de 68 Optativas em `percurso.qmd` e no seletor de vínculo do Art. 41 em `estagio-tcc.qmd`;
+  - Fundo em container sutil (`var(--cagp-surface-low)`), borda preta sólida de 2.5px, sobra rígida de 3px e botão ativo que se destaca com fundo branco, borda sólida e elevação tátil;
+- **Bottom Sheets com Alça de Arraste (`.cagp-sheet-handle`):**
+  - Em telas móveis ($\le 768	ext{px}$), tanto o Spotlight quanto o modal de guia de instalação no Safari transformam-se em folhas inferiores (*Bottom Sheets*) com alça superior ergonômica de toque;
+- **Harmonização de Cores e Tokens de Superfície M3:**
+  - Padronização de tokens `--cagp-surface`, `--cagp-surface-container` e `--cagp-surface-container-high`, com estrita adesão às cores oficiais de `DESIGN.md` e substituição de tons literais por `var(--cagp-text-muted, #4b5563)`.
+
+### 47.5 Verificação e Auditoria Técnica
+- Compilação global executada via `quarto render` com código de retorno 0 em todas as 11 páginas;
+- Auditoria do detector Impeccable executada em todas as páginas compiladas em `docs/*.html`, confirmando **0 erros**, ausência total de avisos de cor ou espaçamento, e registrando unicamente as 11 advertências documentadas e autorizadas de `overused-font` para a tipografia Inter oficial.
+
+
+---
+
+## 48. Ciclo 48: Floating Island Navbar, Mobile Super App & Detecção Inteligente de Plataforma (iOS vs Android, Widget Campus Hoje e Layout para Dobráveis)
+
+**Contexto e Motivação:**  
+Atendendo às diretrizes avançadas `/impeccable new-work`, `/apple-design` e `/m3-expressive`, a arquitetura visual e funcional do portal foi refinada para um modelo **assimétrico entre Desktop e Mobile**:
+1. **No Desktop:** Redesenho da barra de navegação no estilo **Floating Island Navbar** (suspensa, desacoplada do topo, com margens respiradas, borda sólida Brite de 2.5px e sombra de 4px dura), conferindo sobriedade institucional para estudos de percurso e leitura aprofundada;
+2. **No Mobile (iPhone, Smartphones e Dobráveis):** Criação de uma central de operações discente exclusiva, o **Widget "Campus Hoje / Modo Presencial"**, com **relógio em tempo real**, **cálculo dinâmico dos horários do RU II, circulares noturnos e secretaria**, **hub de ações rápidas de bolso (Quick Actions Pocket)** e **motor de detecção inteligente de plataforma** que incentiva a instalação do PWA tanto no iOS (Safari) quanto no Android (Chrome/Chromium), além de layout adaptativo em 2 colunas para aparelhos dobráveis (Samsung Fold, Pixel Fold e iPad Split View).
+
+### 48.1 Floating Island Navbar no Desktop (`styles.css`)
+- **Desacoplamento Espacial:** Em resoluções $\ge 992\text{px}$, `#quarto-header` opera com fundo transparente e `pointer-events: none`, permitindo cliques ao redor da barra;
+- **Ilha Flutuante Suspensa:** A `.navbar` possui `max-width: 1240px; margin: 0 auto 0.75rem auto;`, borda sólida de 2.5px nanquim, sombra dura de 4px e fundo branco puro, elevando-se suavemente no hover (`translateY(-1px)`);
+- **Barra de Anúncio Integrada:** O `#quarto-announcement` alinha-se perfeitamente com a mesma largura máxima da barra de navegação;
+- **Adaptação Móvel Compacta:** Em telas $< 992\text{px}$, a barra mantém-se fixa no topo de ponta a ponta sem margens externas, otimizando o espaço vertical para leitura.
+
+### 48.2 Widget "Campus Hoje / Modo Presencial" (`index.qmd` e `_includes/pwa-install.html`)
+- **Horário do RU II Dinâmico:**
+  - Almoço (11h15–14h00): Sinal verde *"Almoço Aberto no RU II (até 14h00)"*;
+  - Jantar (17h30–19h30): Sinal verde *"Jantar Aberto no RU II (até 19h30 • Fila 18h15)"*;
+  - Noturno (> 19h30): Sinal vermelho *"Jantar Encerrado hoje"*;
+  - Intervalos: Sinal âmbar com horário da próxima refeição;
+- **Circulares Noturnos:**
+  - Sinal verde entre 18h00 e 22h45 com link para rastreamento no app Interno Rotas;
+- **Secretaria e CEAG:**
+  - Sinal verde de atendimento presencial e suporte do CEAG F-2033 até 22h00;
+- **Relógio Sincronizado:** Exibição da hora local atualizada a cada 30 segundos com indicador de sinal ao vivo.
+
+### 48.3 Detecção Inteligente de Plataforma e Incentivo à Instalação PWA
+- **Segmentação Contextualizada por Sistema Operacional:**
+  - **Apple iOS / iPadOS (Safari):** Identifica o ecossistema Apple e orienta o discente a tocar em *Compartilhar &rarr; Adicionar à Tela de Início*, destacando as vantagens de navegação em tela cheia sem barra de URL e acesso off-line no campus;
+  - **Google Android (Chrome / Chromium):** Identifica o ambiente Android e disponibiliza botão direto de instalação de 1 toque sem gastar memória da Play Store;
+  - **Modo Standalone (Já Instalado):** Oculta os banners promocionais e aciona automaticamente o badge de status *"⚡ Modo Super App Ativo • Offline Habilitado"*.
+
+### 48.4 Quick Actions Pocket & Layout Adaptativo para Dobráveis
+- **Grade Tátil de 1 Toque:** 6 botões ergonômicos no mobile (*RU Hoje*, *Circulares*, *Calculadora*, *68 Optativas*, *Secretaria* e *Documentos*);
+- **Suporte a Dobráveis e Telas Divididas:**
+  - Regras de media queries para `@media (horizontal-viewport-segments: 2)` e tablets em orientação paisagem organizam a central de status e as ações em duas colunas balanceadas (*Master-Detail*), garantindo que nenhum texto ou controle fique sob a dobra do dispositivo.
+
+### 48.5 Verificação Técnica e Auditoria Impeccable
+- Compilação estática Quarto executada com código de retorno 0 em todas as 11 páginas;
+- Auditoria do detector Impeccable em `docs/*.html` confirmou **0 erros**, registrando exclusivamente as 11 advertências autorizadas de `overused-font` para a tipografia Inter oficial.

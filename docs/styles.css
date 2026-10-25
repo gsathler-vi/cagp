@@ -6186,3 +6186,944 @@ html[data-a11y-contrast="high"] textarea:focus {
     transform: none !important;
   }
 }
+
+
+/* ==========================================================================
+   Ciclo 47: Spotlight Command Palette & Suíte UI/UX Apple HIG & M3 Expressive
+   ========================================================================== */
+
+/* 1. Botão de Busca Rápida na Barra Superior (Spotlight Trigger) */
+.cagp-nav-search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--cagp-white, #ffffff);
+  color: var(--cagp-dark, #111111);
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  padding: 0.35rem 0.65rem;
+  font-family: var(--cagp-font-sans, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s var(--cagp-spring, cubic-bezier(0.16, 1, 0.3, 1));
+  margin-right: 0.75rem;
+  touch-action: manipulation;
+  border-radius: 0;
+  line-height: 1.4;
+}
+
+.cagp-nav-search-btn:hover {
+  background: var(--cagp-surface-container, #fbf8f3);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-nav-search-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-nav-search-icon {
+  font-size: 0.85rem;
+  color: var(--cagp-red, #9E2424);
+}
+
+.cagp-nav-search-label {
+  display: inline-block;
+}
+
+.cagp-nav-search-kbd {
+  background: var(--cagp-dark, #111111);
+  color: var(--cagp-white, #ffffff);
+  font-family: monospace;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.35rem;
+  font-weight: 700;
+  border-radius: 0;
+  line-height: 1.2;
+}
+
+@media (max-width: 991.98px) {
+  .cagp-nav-search-label,
+  .cagp-nav-search-kbd {
+    display: none;
+  }
+  .cagp-nav-search-btn {
+    padding: 0.35rem 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+/* 2. Spotlight Modal Container & Backdrop */
+body.cagp-spotlight-open {
+  overflow: hidden !important;
+}
+
+.cagp-spotlight-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.cagp-spotlight-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: cagpSpotlightFade 0.18s ease-out;
+}
+
+@keyframes cagpSpotlightFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cagp-spotlight-dialog {
+  position: relative;
+  z-index: 10051;
+  width: 100%;
+  max-width: 660px;
+  max-height: 80vh;
+  background: var(--cagp-white, #ffffff);
+  border: 3px solid var(--cagp-dark, #111111);
+  box-shadow: 8px 8px 0 var(--cagp-dark, #111111);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: cagpSpotlightSpring 0.22s var(--cagp-spring, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+@keyframes cagpSpotlightSpring {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Alça de Arraste (Apple Bottom Sheet & M3 Standard) */
+.cagp-sheet-handle {
+  display: none;
+  width: 40px;
+  height: 5px;
+  background: var(--cagp-dark, #111111);
+  margin: 0.6rem auto 0.2rem auto;
+}
+
+/* Barra de Pesquisa Spotlight */
+.cagp-spotlight-searchbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--cagp-surface-container, #fbf8f3);
+  border-bottom: 2.5px solid var(--cagp-dark, #111111);
+}
+
+.cagp-spotlight-searchbar-icon {
+  font-size: 1.2rem;
+  color: var(--cagp-red, #9E2424);
+  flex-shrink: 0;
+}
+
+.cagp-spotlight-input {
+  flex: 1;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-family: var(--cagp-font-sans, 'Inter', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cagp-dark, #111111);
+  padding: 0 !important;
+  line-height: 1.4;
+}
+
+.cagp-spotlight-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cagp-spotlight-clear-btn {
+  border: none;
+  background: transparent;
+  color: var(--cagp-text-muted, #4b5563);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.cagp-spotlight-clear-btn:hover {
+  color: var(--cagp-dark, #111111);
+}
+
+.cagp-spotlight-close-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cagp-spotlight-kbd {
+  background: var(--cagp-dark, #111111);
+  color: var(--cagp-white, #ffffff);
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0;
+  line-height: 1.2;
+}
+
+/* Corpo Rolável */
+.cagp-spotlight-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem;
+  max-height: 60vh;
+  background: var(--cagp-white, #ffffff);
+}
+
+/* Seções e Ações Rápidas */
+.cagp-spotlight-section-title {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cagp-text-muted, #4b5563);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.35;
+}
+
+.cagp-spotlight-section-title i {
+  color: var(--cagp-gold, #E8A317);
+}
+
+.cagp-spotlight-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.65rem;
+}
+
+.cagp-spotlight-quick-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border: 2px solid var(--cagp-dark, #111111);
+  background: var(--cagp-white, #ffffff);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  text-decoration: none !important;
+  color: var(--cagp-dark, #111111) !important;
+  transition: all 0.12s var(--cagp-spring);
+  touch-action: manipulation;
+  line-height: 1.35;
+}
+
+.cagp-spotlight-quick-card:hover {
+  background: var(--cagp-surface-container, #fbf8f3);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-spotlight-quick-card:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-spotlight-quick-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--cagp-dark, #111111);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cagp-bg-gold { background: #fff3d6; color: #8a5b00; }
+.cagp-bg-bordeaux { background: #fae8eb; color: #9E2424; }
+.cagp-bg-blue { background: #e0f2fe; color: #0369a1; }
+.cagp-bg-green { background: #dcfce7; color: #15803d; }
+.cagp-bg-charcoal { background: #f3f4f6; color: #1f2937; }
+.cagp-bg-sand { background: #fef3c7; color: #78350f; }
+
+.cagp-spotlight-quick-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cagp-spotlight-quick-label {
+  font-family: var(--cagp-font-sans, 'Inter', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.35;
+}
+
+.cagp-spotlight-quick-sub {
+  font-size: 0.72rem;
+  color: var(--cagp-text-muted, #4b5563);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.35;
+}
+
+/* Resultados Filtrados */
+.cagp-spotlight-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cagp-spotlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border: 2px solid transparent;
+  background: var(--cagp-white, #ffffff);
+  color: var(--cagp-dark, #111111) !important;
+  text-decoration: none !important;
+  transition: all 0.1s ease;
+  line-height: 1.35;
+}
+
+.cagp-spotlight-item:hover,
+.cagp-spotlight-item.is-active {
+  background: var(--cagp-surface-container, #fbf8f3);
+  border-color: var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  transform: translateX(2px);
+}
+
+.cagp-spotlight-item-badge {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border: 1.5px solid var(--cagp-dark, #111111);
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.cagp-badge-page { background: var(--cagp-red, #9E2424); color: #ffffff; }
+.cagp-badge-tool { background: var(--cagp-gold, #E8A317); color: #111111; }
+.cagp-badge-research { background: #1B4965; color: #ffffff; }
+.cagp-badge-doc { background: #2D6A4F; color: #ffffff; }
+
+.cagp-spotlight-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.cagp-spotlight-item-title {
+  font-family: var(--cagp-font-sans, 'Inter', sans-serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--cagp-dark, #111111);
+  line-height: 1.35;
+}
+
+.cagp-spotlight-item-desc {
+  font-size: 0.76rem;
+  color: var(--cagp-text-muted, #4b5563);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.cagp-spotlight-highlight {
+  background: #ffe066;
+  color: #111111;
+  font-weight: 700;
+  padding: 0 2px;
+}
+
+.cagp-spotlight-item-arrow {
+  font-size: 1rem;
+  color: var(--cagp-text-muted, #4b5563);
+  transition: transform 0.15s ease;
+}
+
+.cagp-spotlight-item:hover .cagp-spotlight-item-arrow,
+.cagp-spotlight-item.is-active .cagp-spotlight-item-arrow {
+  transform: translateX(3px);
+  color: var(--cagp-dark, #111111);
+}
+
+/* Estado Vazio */
+.cagp-spotlight-empty {
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.cagp-spotlight-empty-icon {
+  font-size: 2rem;
+  color: var(--cagp-text-muted, #4b5563);
+  margin-bottom: 0.5rem;
+}
+
+.cagp-spotlight-empty-title {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
+}
+
+.cagp-spotlight-empty-desc {
+  font-size: 0.85rem;
+  color: var(--cagp-text-muted, #4b5563);
+  max-width: 380px;
+  margin: 0 auto;
+  line-height: 1.45;
+}
+
+.cagp-spotlight-empty-link {
+  color: var(--cagp-red, #9E2424);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Rodapé */
+.cagp-spotlight-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  background: var(--cagp-surface-container, #fbf8f3);
+  border-top: 2px solid var(--cagp-dark, #111111);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.cagp-spotlight-footer-tips {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--cagp-text-muted, #4b5563);
+}
+
+.cagp-spotlight-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.cagp-spotlight-tip kbd {
+  background: var(--cagp-white, #ffffff);
+  border: 1px solid var(--cagp-dark, #111111);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+  color: var(--cagp-dark, #111111);
+  font-family: monospace;
+  font-size: 0.68rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0;
+  line-height: 1.2;
+}
+
+.cagp-spotlight-tag {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--cagp-red, #9E2424);
+  line-height: 1.35;
+}
+
+/* Adaptação Móvel: Apple HIG Bottom Sheet */
+@media (max-width: 768px) {
+  .cagp-spotlight-modal {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    align-items: flex-end;
+  }
+
+  .cagp-spotlight-dialog {
+    max-width: 100%;
+    max-height: 85vh;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0 -4px 0 var(--cagp-dark, #111111);
+    animation: cagpSpotlightSlideUp 0.24s var(--cagp-spring, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+
+  @keyframes cagpSpotlightSlideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .cagp-sheet-handle {
+    display: block;
+  }
+
+  .cagp-spotlight-footer-tips {
+    display: none;
+  }
+}
+
+/* 3. Segmented Controls Táteis (Apple HIG & Google M3 Expressive) */
+.cagp-segmented-control {
+  display: inline-flex;
+  background: var(--cagp-surface-low, #f4f5f7);
+  border: 2.5px solid var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  padding: 3px;
+  gap: 3px;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cagp-segmented-btn {
+  border: 1.5px solid transparent;
+  background: transparent;
+  padding: 0.45rem 0.9rem;
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--cagp-text-muted, #4b5563);
+  cursor: pointer;
+  transition: all 0.15s var(--cagp-spring);
+  touch-action: manipulation;
+  white-space: nowrap;
+  border-radius: 0;
+  line-height: 1.35;
+}
+
+.cagp-segmented-btn:hover {
+  color: var(--cagp-dark, #111111);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.cagp-segmented-btn.is-selected,
+.cagp-segmented-btn.active {
+  background: var(--cagp-white, #ffffff) !important;
+  color: var(--cagp-dark, #111111) !important;
+  border-color: var(--cagp-dark, #111111) !important;
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  transform: translateY(-1px);
+}
+
+.cagp-segmented-btn:active {
+  transform: translate(1px, 1px) scale(0.98);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+}
+
+/* 4. M3 Expressive Surface Hierarchy & Containment */
+:root {
+  --cagp-surface: #ffffff;
+  --cagp-surface-container: #fbf8f3;
+  --cagp-surface-container-high: #f2ece1;
+}
+
+.cagp-surface-elevated {
+  background: var(--cagp-surface, #ffffff);
+  border: 2.5px solid var(--cagp-dark, #111111);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-surface-contained {
+  background: var(--cagp-surface-container, #fbf8f3);
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+}
+
+
+/* ==========================================================================
+   Ciclo 48: Floating Island Navbar & Mobile Super App com Detecção iOS/Android
+   ========================================================================== */
+
+/* 1. Redesenho da Navbar em Floating Island no Desktop */
+@media (min-width: 992px) {
+  #quarto-header {
+    background: transparent !important;
+    pointer-events: none;
+    padding-top: 0.5rem;
+  }
+
+  #quarto-header > * {
+    pointer-events: auto;
+  }
+
+  #quarto-announcement {
+    max-width: 1240px;
+    margin: 0.4rem auto 0.35rem auto !important;
+    border: 2px solid var(--cagp-dark, #111111) !important;
+    box-shadow: 3px 3px 0 var(--cagp-dark, #111111) !important;
+    line-height: 1.4 !important;
+  }
+
+  .navbar {
+    max-width: 1240px;
+    margin: 0 auto 0.75rem auto !important;
+    border: 2.5px solid var(--cagp-dark, #111111) !important;
+    box-shadow: 4px 4px 0 var(--cagp-dark, #111111) !important;
+    background-color: var(--cagp-white, #ffffff) !important;
+    border-radius: 0 !important;
+    padding: 0.45rem 1.25rem !important;
+    transition: box-shadow 0.2s var(--cagp-spring), transform 0.2s var(--cagp-spring);
+  }
+
+  .navbar:hover {
+    box-shadow: 6px 6px 0 var(--cagp-dark, #111111) !important;
+    transform: translateY(-1px);
+  }
+
+  /* Ajuste no padding do conteúdo para respirar sob a floating island */
+  body.nav-fixed {
+    padding-top: 6.25rem !important;
+  }
+}
+
+/* 2. Mobile Super App Hub (Oculto no Desktop, Ativo no Mobile) */
+.cagp-mobile-superapp-hub {
+  display: block;
+  margin: 0.85rem 0 1.5rem 0;
+  border: 2.5px solid var(--cagp-dark, #111111);
+  background: var(--cagp-white, #ffffff);
+  box-shadow: 4px 4px 0 var(--cagp-dark, #111111);
+  padding: 1.25rem 1rem !important;
+}
+
+@media (min-width: 992px) {
+  .cagp-mobile-superapp-hub {
+    display: none !important;
+  }
+}
+
+.cagp-mobile-hub-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 0.25rem 0 0 0;
+}
+
+/* Cabeçalho do Hub com Relógio Local */
+.cagp-mobile-hub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--cagp-dark, #111111);
+  padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+  line-height: 1.35;
+}
+
+.cagp-mobile-hub-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cagp-mobile-hub-live-text {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cagp-dark, #111111);
+}
+
+.cagp-mobile-hub-clock {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cagp-dark, #111111);
+  display: flex;
+  align-items: center;
+}
+
+/* Grade de Status do Campus */
+.cagp-campus-status-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.cagp-campus-status-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--cagp-dark, #111111);
+  background: var(--cagp-surface-container, #fbf8f3);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  text-decoration: none !important;
+  color: var(--cagp-dark, #111111) !important;
+  transition: all 0.12s var(--cagp-spring);
+  touch-action: manipulation;
+  line-height: 1.35;
+}
+
+.cagp-campus-status-card:hover,
+.cagp-campus-status-card:active {
+  background: var(--cagp-white, #ffffff);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-campus-status-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--cagp-dark, #111111);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.cagp-campus-status-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cagp-campus-status-label {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cagp-text-muted, #4b5563);
+  line-height: 1.2;
+}
+
+.cagp-campus-status-val {
+  font-family: var(--cagp-font-sans, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  line-height: 1.35;
+}
+
+.cagp-dot-online {
+  width: 7px;
+  height: 7px;
+  background-color: var(--cagp-accent-green, #2e7d32);
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.cagp-dot-offline {
+  width: 7px;
+  height: 7px;
+  background-color: var(--cagp-red, #9e2424);
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.cagp-dot-pending {
+  width: 7px;
+  height: 7px;
+  background-color: var(--cagp-accent-amber, #e65100);
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Card Inteligente de Incentivo de Instalação */
+.cagp-platform-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 3px 3px 0 var(--cagp-dark, #111111);
+  background: var(--cagp-white, #ffffff);
+  line-height: 1.35;
+}
+
+.cagp-platform-card.is-ios {
+  border-left: 6px solid var(--cagp-dark, #111111);
+}
+
+.cagp-platform-card.is-android {
+  border-left: 6px solid var(--cagp-accent-green, #2e7d32);
+}
+
+.cagp-platform-card.is-standalone {
+  border-left: 6px solid var(--cagp-gold, #e8a317);
+  background: #fffdf5;
+}
+
+.cagp-platform-icon {
+  font-size: 1.4rem;
+  color: var(--cagp-dark, #111111);
+  flex-shrink: 0;
+}
+
+.cagp-platform-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cagp-platform-title {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cagp-dark, #111111);
+  line-height: 1.25;
+}
+
+.cagp-platform-desc {
+  font-size: 0.76rem;
+  color: var(--cagp-text-muted, #4b5563);
+  line-height: 1.35;
+  display: block;
+}
+
+.cagp-platform-btn {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  border: 2px solid var(--cagp-dark, #111111);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  background: var(--cagp-white, #ffffff);
+  color: var(--cagp-dark, #111111);
+  cursor: pointer;
+  flex-shrink: 0;
+  touch-action: manipulation;
+  transition: all 0.12s var(--cagp-spring);
+  border-radius: 0;
+  line-height: 1.2;
+}
+
+.cagp-platform-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+}
+
+.cagp-btn-ios {
+  background: var(--cagp-dark, #111111) !important;
+  color: var(--cagp-white, #ffffff) !important;
+}
+
+.cagp-btn-android {
+  background: var(--cagp-accent-green, #2e7d32) !important;
+  color: var(--cagp-white, #ffffff) !important;
+}
+
+/* Quick Actions Pocket */
+.cagp-pocket-actions-section {
+  border-top: 1.5px dashed var(--cagp-dark, #111111);
+  padding-top: 0.65rem;
+}
+
+.cagp-pocket-actions-title {
+  font-family: var(--cagp-font-heading, 'Oswald', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cagp-dark, #111111);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.cagp-pocket-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+}
+
+.cagp-pocket-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.6rem 0.25rem;
+  border: 1.5px solid var(--cagp-dark, #111111);
+  background: var(--cagp-white, #ffffff);
+  box-shadow: 2px 2px 0 var(--cagp-dark, #111111);
+  text-decoration: none !important;
+  color: var(--cagp-dark, #111111) !important;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  font-family: var(--cagp-font-sans, 'Inter', sans-serif);
+  transition: all 0.12s var(--cagp-spring);
+  touch-action: manipulation;
+  line-height: 1.2;
+}
+
+.cagp-pocket-btn i {
+  font-size: 1.1rem;
+  color: var(--cagp-red, #9E2424);
+}
+
+.cagp-pocket-btn:hover,
+.cagp-pocket-btn:active {
+  background: var(--cagp-surface-container, #fbf8f3);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--cagp-dark, #111111);
+}
+
+/* 3. Adaptação para Telas Dobráveis e iPad Split View */
+@media (horizontal-viewport-segments: 2), (min-width: 680px) and (max-width: 991.98px) {
+  .cagp-campus-status-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+  }
+
+  .cagp-pocket-actions-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cagp-mobile-superapp-hub {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}

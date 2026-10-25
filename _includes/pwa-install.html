@@ -27,9 +27,9 @@
     <i class="bi bi-question-circle" aria-hidden="true"></i>
     <span>FAQ</span>
   </a>
-  <button type="button" class="cagp-mobile-nav-item cagp-mobile-nav-btn" id="cagp-mnav-install" aria-label="Instalar aplicativo CAGP">
-    <i class="bi bi-phone" aria-hidden="true"></i>
-    <span>Instalar</span>
+  <button type="button" class="cagp-mobile-nav-item cagp-mobile-nav-btn" id="cagp-mnav-buscar" onclick="window.openCagpSpotlight &amp;&amp; window.openCagpSpotlight()" aria-label="Abrir busca global e comandos">
+    <i class="bi bi-search" aria-hidden="true"></i>
+    <span>Buscar</span>
   </button>
 </nav>
 
@@ -53,6 +53,8 @@
 <!-- Modal com Guia de Instalação no iOS (Safari / iPhone / iPad) -->
 <div id="cagp-ios-backdrop" class="cagp-a11y-backdrop" hidden></div>
 <div id="cagp-ios-sheet" class="cagp-a11y-panel cagp-ios-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="cagp-ios-title">
+  <!-- Drag Handle para ergonomia móvel (Apple Bottom Sheet & M3 Standard) -->
+  <div class="cagp-sheet-handle" aria-hidden="true"></div>
   <div class="cagp-a11y-header">
     <div class="cagp-a11y-header-title">
       <i class="bi bi-apple me-2" aria-hidden="true"></i>
@@ -261,6 +263,9 @@
     }
   }
 
+  window.openCagpIosGuide = openIosGuide;
+  window.triggerCagpInstall = triggerInstall;
+
   if (btnInstall) btnInstall.addEventListener('click', triggerInstall);
   if (mnavInstall) mnavInstall.addEventListener('click', triggerInstall);
 
@@ -276,6 +281,116 @@
     document.body.classList.add('cagp-is-standalone');
     window.cagpToast('Aplicativo CAGP instalado com sucesso!', 'bi-check2-circle', 3000);
     deferredPrompt = null;
+    updateCampusHub();
   });
+
+  // 9. Atualização em Tempo Real do Campus & Detecção de Plataforma (Mobile Super App Hub)
+  function updateCampusHub() {
+    const hub = document.getElementById('cagp-mobile-superapp-hub');
+    if (!hub) return;
+
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const timeVal = hours * 60 + minutes;
+
+    // Relógio
+    const clockEl = document.getElementById('cagp-live-clock');
+    if (clockEl) {
+      clockEl.textContent = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0');
+    }
+
+    // Status do RU II
+    const ruEl = document.getElementById('cagp-status-ru');
+    if (ruEl) {
+      if (timeVal >= 11 * 60 + 15 && timeVal <= 14 * 60) {
+        ruEl.innerHTML = '<span class="cagp-dot-online"></span> Almoço Aberto (até 14h00)';
+      } else if (timeVal >= 17 * 60 + 30 && timeVal <= 19 * 60 + 30) {
+        ruEl.innerHTML = '<span class="cagp-dot-online"></span> Jantar Aberto (até 19h30 • Fila 18h15)';
+      } else if (timeVal > 19 * 60 + 30) {
+        ruEl.innerHTML = '<span class="cagp-dot-offline"></span> Jantar Encerrado hoje';
+      } else {
+        ruEl.innerHTML = '<span class="cagp-dot-pending"></span> Próxima: Almoço 11h15 / Jantar 17h30';
+      }
+    }
+
+    // Status dos Circulares Noturnos
+    const circEl = document.getElementById('cagp-status-circulares');
+    if (circEl) {
+      if (timeVal >= 18 * 60 && timeVal <= 22 * 60 + 45) {
+        circEl.innerHTML = '<span class="cagp-dot-online"></span> Em Operação (até 22h45)';
+      } else if (timeVal > 22 * 60 + 45 || timeVal < 6 * 60) {
+        circEl.innerHTML = '<span class="cagp-dot-offline"></span> Encerrados por hoje';
+      } else {
+        circEl.innerHTML = '<span class="cagp-dot-pending"></span> Diurnos ativos • Noturno às 18h';
+      }
+    }
+
+    // Status do CEAG / Secretaria F-2039
+    const secEl = document.getElementById('cagp-status-secretaria');
+    if (secEl) {
+      if (timeVal >= 8 * 60 && timeVal <= 22 * 60) {
+        secEl.innerHTML = '<span class="cagp-dot-online"></span> CEAG F-2033 Aberto (até 22h)';
+      } else {
+        secEl.innerHTML = '<span class="cagp-dot-offline"></span> Atendimento Fechado';
+      }
+    }
+
+    // Incentivo de Instalação Adaptado à Plataforma
+    const container = document.getElementById('cagp-platform-incentive-container');
+    if (container) {
+      if (isStandalone) {
+        container.innerHTML = 
+          '<div class="cagp-platform-card is-standalone">' +
+            '<div class="cagp-platform-icon"><i class="bi bi-patch-check-fill text-success"></i></div>' +
+            '<div class="cagp-platform-info">' +
+              '<div class="cagp-platform-title">Modo Super App Ativo</div>' +
+              '<div class="cagp-platform-desc">Acesso em tela cheia com armazenamento off-line habilitado na FAFICH.</div>' +
+            '</div>' +
+          '</div>';
+      } else if (isIos) {
+        container.innerHTML =
+          '<div class="cagp-platform-card is-ios">' +
+            '<div class="cagp-platform-icon"><i class="bi bi-apple"></i></div>' +
+            '<div class="cagp-platform-info">' +
+              '<div class="cagp-platform-title">Instale no seu iPhone / iPad</div>' +
+              '<div class="cagp-platform-desc">Consulte ementas, rotas e cálculos de ACG mesmo sem sinal 4G/Wi-Fi na FAFICH.</div>' +
+            '</div>' +
+            '<button type="button" class="cagp-platform-btn cagp-btn-ios" onclick="window.openCagpIosGuide && window.openCagpIosGuide()">' +
+              '<i class="bi bi-box-arrow-up me-1"></i> Instalar' +
+            '</button>' +
+          '</div>';
+      } else if (isAndroid) {
+        container.innerHTML =
+          '<div class="cagp-platform-card is-android">' +
+            '<div class="cagp-platform-icon"><i class="bi bi-android2"></i></div>' +
+            '<div class="cagp-platform-info">' +
+              '<div class="cagp-platform-title">Instale o Web App no Android</div>' +
+              '<div class="cagp-platform-desc">1 toque, sem ocupar a Play Store e com acesso offline nas salas de aula.</div>' +
+            '</div>' +
+            '<button type="button" class="cagp-platform-btn cagp-btn-android" onclick="window.triggerCagpInstall && window.triggerCagpInstall()">' +
+              '<i class="bi bi-download me-1"></i> Instalar' +
+            '</button>' +
+          '</div>';
+      } else {
+        container.innerHTML =
+          '<div class="cagp-platform-card is-desktop-mobile">' +
+            '<div class="cagp-platform-icon"><i class="bi bi-laptop"></i></div>' +
+            '<div class="cagp-platform-info">' +
+              '<div class="cagp-platform-title">Aplicativo Multiplataforma CAGP</div>' +
+              '<div class="cagp-platform-desc">Instale no seu dispositivo para acesso instantâneo e offline.</div>' +
+            '</div>' +
+            '<button type="button" class="cagp-platform-btn" onclick="window.triggerCagpInstall && window.triggerCagpInstall()">' +
+              '<i class="bi bi-download me-1"></i> Instalar' +
+            '</button>' +
+          '</div>';
+      }
+    }
+  }
+
+  // Executar e agendar atualização
+  updateCampusHub();
+  setInterval(updateCampusHub, 30000);
+  window.addEventListener('cagp:navigated', updateCampusHub);
 })();
 </script>
