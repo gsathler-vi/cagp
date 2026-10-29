@@ -2,289 +2,74 @@
 title: "Percurso Curricular"
 subtitle: "Estrutura oficial dos 10 semestres, 27 disciplinas obrigatórias, ementário e os 3 percursos do curso"
 title-block-style: none
-toc: true
+toc: false
 ---
 
 ```{=html}
-<nav class="cagp-breadcrumbs" aria-label="Você está aqui: Trilha de navegação">
-  <ol class="cagp-breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-    <li class="cagp-breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="index.html" itemprop="item"><i class="bi bi-house-door" aria-hidden="true"></i> <span itemprop="name">Início</span></a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
-    <li class="cagp-breadcrumb-item">
-      <span class="cagp-breadcrumb-parent">Jornada Acadêmica</span>
-    </li>
-    <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
-    <li class="cagp-breadcrumb-item is-active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
-      <span itemprop="name">Percurso &amp; Ementas (10 Semestres)</span>
-      <meta itemprop="position" content="2" />
-    </li>
-  </ol>
-</nav>
-```
-
-::: {.cagp-hero}
-<div class="d-flex flex-wrap gap-2 mb-2">
-<span class="cagp-badge cagp-badge-red">Versão Curricular N-20229</span>
-<span class="cagp-badge cagp-badge-dark">Turno Noturno</span>
-<span class="cagp-badge cagp-badge-blue">3.000 Horas Totais</span>
-</div>
-
-# A TRAJETÓRIA EM GESTÃO PÚBLICA {.cagp-hero-title}
-
-O curso de Gestão Pública da FAFICH/UFMG confere o grau de **Bacharel em Gestão Pública** e é estruturado para formar lideranças técnicas com domínio analítico, visão ética e compromisso democrático com as políticas públicas brasileiras.
-:::
-
-```{=html}
-<nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
-  <span class="cagp-subnav-label">Nesta Página:</span>
-  <a href="#grafo-curricular" class="cagp-subnav-link"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i> Mapa de Pré-Requisitos</a>
-  <a href="#simulador-percurso" class="cagp-subnav-link"><i class="bi bi-signpost-split" aria-hidden="true"></i> Escolher Percurso</a>
-  <a href="#explorador-grade" class="cagp-subnav-link"><i class="bi bi-search" aria-hidden="true"></i> Filtrar Grade & Ementas</a>
-  <a href="#disciplinas-optativas" class="cagp-subnav-link"><i class="bi bi-collection" aria-hidden="true"></i> 68 Optativas</a>
-  <a href="#dicas-matricula" class="cagp-subnav-link"><i class="bi bi-lightbulb" aria-hidden="true"></i> Dicas de Matrícula</a>
-  <a href="documentos.html" class="cagp-subnav-link"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDFs de Percurso</a>
-</nav>
-```
-
-## <i class="bi bi-bar-chart-line" aria-hidden="true"></i> Estrutura Geral e Prazos Oficiais
-
-::: {.row .g-3 .mb-4}
-::: {.col-md-3 .col-6}
-::: {.cagp-stat-card}
-<div class="cagp-stat-value">10 Semestres</div>
-<div class="cagp-stat-label">Tempo Padrão</div>
-<small class="text-muted">Mínimo 8 • Máximo 17 semestres</small>
-:::
-:::
-
-::: {.col-md-3 .col-6}
-::: {.cagp-stat-card}
-<div class="cagp-stat-value">3.000 h</div>
-<div class="cagp-stat-label">Carga Horária Total</div>
-<small class="text-muted">2.880h NE + 120h Formação Livre</small>
-:::
-:::
-
-::: {.col-md-3 .col-6}
-::: {.cagp-stat-card}
-<div class="cagp-stat-value">180 h / sem.</div>
-<div class="cagp-stat-label">Matrícula Mínima</div>
-<small class="text-muted">12 créditos regimentais por período</small>
-:::
-:::
-
-::: {.col-md-3 .col-6}
-::: {.cagp-stat-card}
-<div class="cagp-stat-value">3 Percursos</div>
-<div class="cagp-stat-label">Opções de Formação</div>
-<small class="text-muted">Geral, Complementar e Avançado</small>
-:::
-:::
-:::
-
----
-
-## <i class="bi bi-signpost-split" aria-hidden="true"></i> Os Três Percursos Curriculares Oficiais {#simulador-percurso}
-<span id="quiz-percurso" class="cagp-anchor-alias" aria-hidden="true"></span>
-
-Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua trajetória acadêmica através de 3 modalidades formais de formação. Explore abaixo os detalhes de cada percurso ou consulte o quadro comparativo consolidado:
-
-```{=html}
-<!-- Termômetro de Percurso (Mini-Localizador em 3 Cliques) -->
-<div class="cagp-thermometer-box mb-4" id="cagp-thermometer">
-  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-dark">
-    <div class="d-flex align-items-center gap-2">
-      <span class="cagp-badge cagp-badge-red"><i class="bi bi-thermometer-half me-1"></i> Termômetro Vocacional</span>
-      <h3 class="h6 fw-bold mb-0 text-uppercase">Descubra seu Percurso em 3 Cliques</h3>
-    </div>
-    <button type="button" class="cagp-chip py-1 px-2" id="quiz-reset-btn" style="font-size:0.8rem;"><i class="bi bi-arrow-counterclockwise me-1"></i> Reiniciar Teste</button>
-  </div>
-
-  <!-- Pergunta 1 -->
-  <div class="cagp-quiz-step is-active" data-quiz-step="1">
-    <div class="d-flex align-items-center justify-content-between mb-2">
-      <span class="small fw-bold text-muted text-uppercase">Pergunta 1 de 3 • Vocação &amp; Carreira</span>
-      <span class="cagp-badge cagp-badge-dark">Etapa 1/3</span>
-    </div>
-    <div class="cagp-quiz-q-title">O que mais atrai você após a conclusão da graduação?</div>
-    <div class="cagp-quiz-options">
-      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-01">
-        <div class="cagp-quiz-btn-title"><i class="bi bi-bank" aria-hidden="true"></i> Concurso / Gestão Geral</div>
-        <p class="cagp-quiz-btn-desc">Quero atuar em ministérios, secretarias de estado ou prefeituras na gestão e coordenação ampla de políticas governamentais.</p>
-      </button>
-      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-02">
-        <div class="cagp-quiz-btn-title"><i class="bi bi-diagram-3" aria-hidden="true"></i> Interdisciplinaridade / 3º Setor</div>
-        <p class="cagp-quiz-btn-desc">Quero cruzar a gestão pública com Meio Ambiente, Direitos Humanos, Direito ou outras faculdades da UFMG.</p>
-      </button>
-      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-03">
-        <div class="cagp-quiz-btn-title"><i class="bi bi-mortarboard" aria-hidden="true"></i> Mestrado / Carreira Acadêmica</div>
-        <p class="cagp-quiz-btn-desc">Quero seguir no PPGCP (Mestrado/Doutorado), focar em análise quantitativa de dados e ser pesquisador(a) ou professor(a).</p>
-      </button>
+<header class="cagp-workspace-header" role="region" aria-label="Cabeçalho e Sub-Views do Percurso Curricular">
+  <div class="cagp-workspace-eyebrow">
+    <nav class="cagp-breadcrumbs" aria-label="Você está aqui: Trilha de navegação">
+      <ol class="cagp-breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="cagp-breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="index.html" itemprop="item"><i class="bi bi-house-door" aria-hidden="true"></i> <span itemprop="name">Início</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+        <li class="cagp-breadcrumb-item">
+          <span class="cagp-breadcrumb-parent">Currículo &amp; Horas</span>
+        </li>
+        <li class="cagp-breadcrumb-separator" aria-hidden="true">&rsaquo;</li>
+        <li class="cagp-breadcrumb-item is-active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+          <span itemprop="name">Percurso &amp; Ementas (10 Semestres)</span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </nav>
+    <div class="d-flex flex-wrap gap-1">
+      <span class="cagp-badge cagp-badge-red">Versão Curricular N-20229</span>
+      <span class="cagp-badge cagp-badge-dark">Turno Noturno • 10 Semestres</span>
+      <span class="cagp-badge cagp-badge-blue">3.000 Horas Totais (2.880h NE + 120h Livre)</span>
     </div>
   </div>
-
-  <!-- Pergunta 2 -->
-  <div class="cagp-quiz-step" data-quiz-step="2">
-    <div class="d-flex align-items-center justify-content-between mb-2">
-      <span class="small fw-bold text-muted text-uppercase">Pergunta 2 de 3 • Matriz Curricular</span>
-      <span class="cagp-badge cagp-badge-dark">Etapa 2/3</span>
-    </div>
-    <div class="cagp-quiz-q-title">Como você prefere preencher suas horas flexíveis da graduação?</div>
-    <div class="cagp-quiz-options">
-      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-01">
-        <div class="cagp-quiz-btn-title"><i class="bi bi-collection" aria-hidden="true"></i> Máxima Liberdade de Escolha</div>
-        <p class="cagp-quiz-btn-desc">Prefiro escolher matérias livremente no catálogo do DCP, projetos de extensão da FAFICH e horas complementares (AAC).</p>
-      </button>
-      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-02">
-        <div class="cagp-quiz-btn-title"><i class="bi bi-intersect" aria-hidden="true"></i> Bloco de 300h em Outra Área</div>
-        <p class="cagp-quiz-btn-desc">Prefiro certificar uma Formação Transversal (300h) ou um pacote de disciplinas em outro curso (Formação Aberta - FCA).</p>
-      </button>
-      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-03">
-        <div class="cagp-quiz-btn-title"><i class="bi bi-journal-code" aria-hidden="true"></i> Matérias da Pós-Graduação</div>
-        <p class="cagp-quiz-btn-desc">Prefiro cursar disciplinas avançadas do Mestrado em Ciência Política (DCP) e pesquisas avançadas de metodologia.</p>
-      </button>
-    </div>
-  </div>
-
-  <!-- Pergunta 3 -->
-  <div class="cagp-quiz-step" data-quiz-step="3">
-    <div class="d-flex align-items-center justify-content-between mb-2">
-      <span class="small fw-bold text-muted text-uppercase">Pergunta 3 de 3 • Momento Acadêmico</span>
-      <span class="cagp-badge cagp-badge-dark">Etapa 3/3</span>
-    </div>
-    <div class="cagp-quiz-q-title">Em qual etapa do curso você se encontra atualmente?</div>
-    <div class="cagp-quiz-options">
-      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-01">
-        <div class="cagp-quiz-btn-title"><i class="bi bi-backpack" aria-hidden="true"></i> Início de Curso (1º ao 4ºP)</div>
-        <p class="cagp-quiz-btn-desc">Estou nos semestres iniciais cumprindo as matérias fundamentais do ciclo obrigatório.</p>
-      </button>
-      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-02">
-        <div class="cagp-quiz-btn-title"><i class="bi bi-compass" aria-hidden="true"></i> Meio de Curso (5º ao 7ºP)</div>
-        <p class="cagp-quiz-btn-desc">Estou no momento ideal para planejar a migração curricular formal junto ao Colegiado do Curso.</p>
-      </button>
-      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-03">
-        <div class="cagp-quiz-btn-title"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Reta Final / Formando (8º ao 10ºP)</div>
-        <p class="cagp-quiz-btn-desc">Estou focado(a) no cumprimento de TCC, estágio supervisionado e colação de grau.</p>
-      </button>
-    </div>
-  </div>
-
-  <!-- Painel de Resultado -->
-  <div class="cagp-quiz-result-box" id="quiz-result-box">
-    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-      <span id="quiz-result-stamp" class="cagp-stamp-badge is-deferido"><i class="bi bi-patch-check-fill me-1" aria-hidden="true"></i> RECOMENDAÇÃO: PERCURSO 01-01</span>
-      <span class="small fw-bold text-muted">Resultado Personalizado do Teste</span>
-    </div>
-    <h4 class="h5 fw-bold text-uppercase mb-2" id="quiz-result-title">Percurso 01-01 • Núcleo Específico e Geral</h4>
-    <p class="small text-muted mb-3" id="quiz-result-desc">
-      Com base nas suas preferências, o Percurso 01-01 é o mais indicado. Ele confere a você máxima flexibilidade e autonomia para escolher suas optativas em qualquer área do DCP e validar horas de extensão e AAC com total liberdade.
-    </p>
-    <div class="d-flex flex-wrap gap-2">
-      <a id="quiz-pdf-link" href="documentos/percurso-bacharelado-nucleo-geral.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">
-        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Baixar Matriz Curricular Oficial (PDF)
-      </a>
-      <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline">
-        <i class="bi bi-pencil-square me-1" aria-hidden="true"></i> Ver Requerimento de Mudança de Percurso
-      </a>
-      <button type="button" class="cagp-doc-btn cagp-doc-btn-outline" id="quiz-retake-btn">
-        <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Refazer Teste
-      </button>
-    </div>
-  </div>
-</div>
-
-<section class="cagp-tool-box" aria-labelledby="track-finder-title">
-  <div class="cagp-tool-header">
+  <div class="cagp-workspace-title-row">
     <div>
-      <span class="cagp-badge cagp-badge-red mb-1">Árvore de Decisão • Art. 3º</span>
-      <h3 id="track-finder-title" class="h5 mb-0">QUAL DOS 3 PERCURSOS É MELHOR PARA VOCÊ?</h3>
+      <h1 class="cagp-workspace-title">A Trajetória em Gestão Pública</h1>
+      <p class="cagp-workspace-subtitle">O curso confere o grau de <strong>Bacharel em Gestão Pública</strong> (<code>3.000h</code> totais, mínimo <code>180h</code>/<code>12 créditos</code> por período). Alterne entre as <strong>3 Sub-Views</strong> para usar o <strong>Grafo Interativo das 27 Obrigatórias</strong>, a <strong>Linha do Tempo dos 10 Semestres</strong> ou o <strong>Simulador dos 3 Percursos</strong> (<code>01-01</code>, <code>01-02</code>, <code>01-03</code>).</p>
     </div>
-    <span class="small text-muted fw-semibold">Clique no seu objetivo principal de formação:</span>
-  </div>
-
-  <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Perfis de formação">
-    <button type="button" class="cagp-chip" aria-pressed="true" data-track-choice="01-01"><i class="bi bi-bank" aria-hidden="true"></i> Gestão Pública Ampla & Flexível (01-01)</button>
-    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-02"><i class="bi bi-diagram-3" aria-hidden="true"></i> Formação Transversal ou Outro Curso (01-02)</button>
-    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-03"><i class="bi bi-mortarboard" aria-hidden="true"></i> Carreira Acadêmica & Mestrado PPGCP (01-03)</button>
-  </div>
-
-  <div id="track-result-box" class="cagp-compass-panel cagp-panel-boxed" aria-live="polite">
-    <div id="track-res-01-01">
-      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-        <span class="cagp-badge cagp-badge-dark">Percurso 01-01 • Bacharelado com Núcleo Específico e Núcleo Geral</span>
-        <span class="small fw-bold text-success">Vínculo Automático no 1º Período</span>
-      </div>
-      <p class="small mb-3">É o percurso canônico da FAFICH/UFMG. Proporciona formação sólida e generalista em gestão pública, finanças e ciência política, com máxima autonomia na escolha de matérias optativas.</p>
-      <div class="row g-2 mb-3 small">
-        <div class="col-sm-6 col-12">
-          <div><i class="bi bi-check-circle-fill text-danger me-1"></i> <strong>Obrigatórias:</strong> 1.560h (25 disciplinas) + 300h Estágio (A + B)</div>
-        </div>
-        <div class="col-sm-6 col-12">
-          <div><i class="bi bi-collection text-danger me-1"></i> <strong>Optativas & Livre:</strong> 1.020h optativas (DCP/Extensão/AAC) + 120h Livre</div>
-        </div>
-      </div>
-      <div class="d-flex flex-wrap gap-2">
-        <a href="documentos/percurso-bacharelado-nucleo-geral.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-download" aria-hidden="true"></i> Baixar Matriz Oficial 01-01 (PDF)</a>
-      </div>
-    </div>
-
-    <div id="track-res-01-02" hidden>
-      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-        <span class="cagp-badge cagp-badge-red">Percurso 01-02 • Núcleo Complementar (Transversal / Aberta)</span>
-        <span class="small fw-bold text-danger">Requerimento a partir do 5º Período</span>
-      </div>
-      <p class="small mb-3">Permite cursar <strong>300 horas em Formação Transversal</strong> (Direitos Humanos, Relações Étnico-Raciais, Meio Ambiente, Divulgação Científica) ou <strong>Formação Complementar Aberta (FCA)</strong> em outro departamento da UFMG.</p>
-      <div class="row g-2 mb-3 small">
-        <div class="col-sm-6 col-12">
-          <div><i class="bi bi-diagram-3 text-primary me-1"></i> <strong>Formação Complementar:</strong> 300h dedicadas a área interdisciplinar</div>
-        </div>
-        <div class="col-sm-6 col-12">
-          <div><i class="bi bi-pie-chart text-primary me-1"></i> <strong>Optativas Reduzidas:</strong> Carga de optativas do DCP cai de 1.020h para <strong>720h</strong></div>
-        </div>
-      </div>
-      <div class="d-flex flex-wrap gap-2">
-        <a href="documentos/percurso-bacharelado-nucleo-complementar.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-download" aria-hidden="true"></i> Baixar Matriz Oficial 01-02 (PDF)</a>
-        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Formulário de Mudança de Percurso / FCA</a>
-      </div>
-    </div>
-
-    <div id="track-res-01-03" hidden>
-      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-        <span class="cagp-badge cagp-badge-blue">Percurso 01-03 • Núcleo Avançado (Articulação com Pós-Graduação)</span>
-        <span class="small fw-bold text-primary">Requerimento a partir do 7º Período</span>
-      </div>
-      <p class="small mb-3">Destinado a discentes com vocação para pesquisa e carreira acadêmica. Permite cursar entre <strong>45h e 120h em disciplinas de Mestrado/Doutorado</strong> no Programa de Pós-Graduação em Ciência Política (PPGCP/FAFICH) ainda na graduação.</p>
-      <div class="row g-2 mb-3 small">
-        <div class="col-sm-6 col-12">
-          <div><i class="bi bi-journal-bookmark text-danger me-1"></i> <strong>Disciplinas de Pós:</strong> 45h a 120h com aproveitamento no mestrado</div>
-        </div>
-        <div class="col-sm-6 col-12">
-          <div><i class="bi bi-mortarboard text-danger me-1"></i> <strong>Perfil:</strong> Preparação direta para processos seletivos e docência</div>
-        </div>
-      </div>
-      <div class="d-flex flex-wrap gap-2">
-        <a href="documentos/percurso-bacharelado-nucleo-avancado.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-download" aria-hidden="true"></i> Baixar Matriz Oficial 01-03 (PDF)</a>
-        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Formulário de Mudança de Percurso</a>
-      </div>
+    <div class="cagp-workspace-actions">
+      <a href="optativas.html" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-collection-fill me-1" aria-hidden="true"></i> 68 Optativas &amp; Livre &rarr;</a>
     </div>
   </div>
-</section>
+  <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas do Percurso Curricular">
+    <span class="cagp-workspace-bar-label"><i class="bi bi-layers-half" aria-hidden="true"></i> Sub-View:</span>
+    <div class="cagp-workspace-tabs" role="tablist">
+      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#grafo-curricular">
+        <i class="bi bi-diagram-3-fill" aria-hidden="true"></i> 1. Grafo &amp; Minha Grade
+        <span class="cagp-workspace-tab-badge">27 Obrig.</span>
+      </button>
+      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#explorador-grade">
+        <i class="bi bi-calendar3-range" aria-hidden="true"></i> 2. Ementas (1º ao 10ºP)
+        <span class="cagp-workspace-tab-badge">10 Sem.</span>
+      </button>
+      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#simulador-percurso">
+        <i class="bi bi-signpost-split" aria-hidden="true"></i> 3. Simulador de Percursos
+        <span class="cagp-workspace-tab-badge">01-01/02/03</span>
+      </button>
+      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__">
+        <i class="bi bi-arrows-expand" aria-hidden="true"></i> Ver Tudo
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ======================================================================= -->
+<!-- VIEW 1: GRAFO INTERATIVO DE PRÉ-REQUISITOS & CARTEIRA MINHA GRADE       -->
+<!-- ======================================================================= -->
+<div class="cagp-workspace-view is-active" data-ws-view="v1">
 ```
-
-::: {.table-responsive .mt-4}
-| Percurso Oficial | Código | Ingresso | Carga Optativas DCP | Foco e Diferencial de Formação | Matriz Oficial |
-| :--- | :---: | :---: | :---: | :--- | :---: |
-| **Bacharelado Geral (Padrão)** | `01-01` | 1º período (automático) | 1.020 horas | Formação ampla em Gestão Governamental, Ciência Política e Políticas Públicas | [<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Matriz 01-01 (PDF)](documentos/percurso-bacharelado-nucleo-geral.pdf){target="_blank"} |
-| **Núcleo Complementar** | `01-02` | A partir do 5º período | 720 horas (-300h) | 300h em Formação Transversal (DH, Étnico-Racial, Ambiente) ou Formação Aberta (FCA) | [<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Matriz 01-02 (PDF)](documentos/percurso-bacharelado-nucleo-complementar.pdf){target="_blank"} |
-| **Núcleo Avançado (Pós)** | `01-03` | A partir do 7º período | 900h a 975h | 45h a 120h em disciplinas de Mestrado/Doutorado no PPGCP/FAFICH com creditação futura | [<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Matriz 01-03 (PDF)](documentos/percurso-bacharelado-nucleo-avancado.pdf){target="_blank"} |
-:::
-
----
 
 ## <i class="bi bi-diagram-3-fill" aria-hidden="true"></i> Mapa Interativo de Pré-Requisitos & Trilhas do Curso {#grafo-curricular}
+<span id="grafo-pre-requisitos" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 ::: {.callout-note appearance="default"}
 ## Regra Oficial de Pré-Requisitos no Colegiado de Gestão Pública & SIGA UFMG
@@ -295,44 +80,84 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
 :::
 
 ```{=html}
+<!-- PAINEL UNIFICADO "MINHA GRADE" (PROGRESSO DAS 27 OBRIGATÓRIAS + OPTATIVAS FAVORITAS) -->
+<section id="cagp-my-grade-panel" class="cagp-my-grade-bar" aria-labelledby="my-grade-heading">
+  <div class="cagp-my-grade-header">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1"><i class="bi bi-mortarboard-fill me-1" aria-hidden="true"></i> Carteira Curricular • Minha Grade</span>
+      <h3 id="my-grade-heading" class="h5 mb-0 text-uppercase fw-bold">SEU PROGRESSO NAS 27 OBRIGATÓRIAS &amp; OPTATIVAS DE INTERESSE</h3>
+    </div>
+    <div class="d-flex flex-wrap align-items-center gap-2">
+      <span id="my-grade-completed-badge" class="cagp-badge cagp-badge-dark cagp-tabular" aria-live="polite">0 / 27 obrigatórias (0%)</span>
+      <span id="my-grade-fav-badge" class="cagp-badge cagp-badge-gold cagp-tabular" aria-live="polite">0 optativas favoritas ★</span>
+      <button type="button" id="btn-clear-my-grade" class="cagp-chip py-1 px-2" style="display: none;">
+        <i class="bi bi-trash3 me-1" aria-hidden="true"></i>Limpar Marcações
+      </button>
+    </div>
+  </div>
+  <div class="cagp-my-grade-body">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-1">
+      <span class="small fw-bold text-uppercase text-dark">Integralização de Disciplinas Obrigatórias &amp; Estágios (1.860h):</span>
+      <span id="my-grade-hours-readout" class="small fw-bold font-monospace cagp-tabular text-danger">0h / 1.860h concluídas</span>
+    </div>
+    <div class="cagp-progress-track mb-2" aria-hidden="true">
+      <div id="my-grade-progress-bar" class="cagp-progress-fill" style="width: 0%;"></div>
+    </div>
+    <p class="small text-muted mb-0">
+      Toque em qualquer disciplina no <strong>Mapa Interativo</strong> ou na <strong>Lista de Ementas</strong> abaixo para abrir a ficha completa no Bottom Sheet e marcar matérias como <strong>✓ Já Cursada</strong> ou <strong>★ Favorita</strong>. Seu progresso fica salvo neste aparelho.
+    </p>
+  </div>
+</section>
+
 <section class="cagp-tool-box" aria-labelledby="grafo-heading">
   <div class="cagp-tool-header">
     <div>
       <span class="cagp-badge cagp-badge-red mb-1">Visualização Cartográfica • 27 Disciplinas Obrigatórias</span>
-      <h3 id="grafo-heading" class="h5 mb-0">MAPA INTERATIVO DE PRÉ-REQUISITOS & TRILHAS TEMÁTICAS</h3>
+      <h3 id="grafo-heading" class="h5 mb-0">MAPA INTERATIVO DE PRÉ-REQUISITOS &amp; TRILHAS TEMÁTICAS</h3>
     </div>
-    <div class="d-flex align-items-center gap-2">
+    <div class="d-flex flex-wrap align-items-center gap-2">
       <span id="grafo-active-indicator" class="cagp-badge cagp-badge-dark cagp-tabular" aria-live="polite">Clique em uma disciplina para mapear conexões</span>
       <button type="button" id="btn-grafo-reset" class="cagp-chip" disabled><i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i>Restaurar Visão Geral</button>
     </div>
   </div>
 
-  <!-- Seletor de Trilhas Temáticas com base nas Ementas Oficiais -->
-  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-    <div class="d-flex flex-wrap gap-1 align-items-center" role="group" aria-label="Isolar trilha temática">
-      <span class="small fw-bold text-uppercase text-muted me-1">Trilhas:</span>
-      <button type="button" class="cagp-chip is-active" data-trilha-filter="all">Todas as 27 Disciplinas</button>
-      <button type="button" class="cagp-chip" data-trilha-filter="gestao">Gestão &amp; Organizações</button>
-      <button type="button" class="cagp-chip" data-trilha-filter="politicas">Políticas Públicas &amp; Avaliação</button>
-      <button type="button" class="cagp-chip" data-trilha-filter="sociedade">Ciência Política &amp; Direito</button>
-      <button type="button" class="cagp-chip" data-trilha-filter="economia">Economia &amp; Finanças</button>
-      <button type="button" class="cagp-chip" data-trilha-filter="metodos">Metodologia &amp; Métodos</button>
-      <button type="button" class="cagp-chip" data-trilha-filter="pratica">Prática &amp; TCC</button>
+  <!-- Seletor de Trilhas Temáticas em Barra de Chips Deslizantes M3 -->
+  <div class="mb-3">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+      <span class="small fw-bold text-uppercase text-muted">Filtrar Trilha Temática no Grafo:</span>
+      <div class="small text-muted d-none d-md-flex flex-wrap align-items-center gap-2">
+        <span class="cagp-legend-pill"><span class="cagp-legend-line-formal"></span> <strong>Trava Formal no SIGA</strong> (ECN 044)</span>
+        <span class="cagp-legend-pill"><span class="cagp-legend-line-suggested"></span> Encadeamento Sugerido</span>
+        <span class="cagp-legend-pill"><span class="cagp-legend-dot" style="background-color: var(--cagp-gold, #E8A317);"></span> Base Recomendada</span>
+        <span class="cagp-legend-pill"><span class="cagp-legend-dot" style="background-color: var(--cagp-green, #2E7D32);"></span> Continuidade</span>
+      </div>
     </div>
-    <div class="small text-muted d-none d-md-flex flex-wrap align-items-center gap-2">
-      <span class="cagp-legend-pill"><span class="cagp-legend-line-formal"></span> <strong>Trava Formal no SIGA</strong> (ECN 044)</span>
-      <span class="cagp-legend-pill"><span class="cagp-legend-line-suggested"></span> Encadeamento Sugerido</span>
-      <span class="cagp-legend-pill"><span class="cagp-legend-dot" style="background-color: var(--cagp-gold, #E8A317);"></span> Base Recomendada (Anterior)</span>
-      <span class="cagp-legend-pill"><span class="cagp-legend-dot" style="background-color: var(--cagp-green, #2E7D32);"></span> Continuidade (Posterior)</span>
+    <div class="cagp-chip-rail" role="group" aria-label="Isolar trilha temática">
+      <button type="button" class="cagp-chip cagp-chip-m3 is-active active" aria-pressed="true" data-trilha-filter="all">Todas as 27 Disciplinas</button>
+      <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-trilha-filter="gestao">Gestão &amp; Organizações</button>
+      <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-trilha-filter="politicas">Políticas Públicas &amp; Avaliação</button>
+      <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-trilha-filter="sociedade">Ciência Política &amp; Direito</button>
+      <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-trilha-filter="economia">Economia &amp; Finanças</button>
+      <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-trilha-filter="metodos">Metodologia &amp; Métodos</button>
+      <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-trilha-filter="pratica">Prática &amp; TCC</button>
     </div>
   </div>
 
   <div class="small text-muted mb-2 d-xl-none">
-    <i class="bi bi-arrows-expand me-1" aria-hidden="true"></i> Deslize horizontalmente ou use o scroll lateral para navegar pelos 10 períodos curriculares.
+    <i class="bi bi-arrows-expand me-1" aria-hidden="true"></i> Deslize horizontalmente para navegar pelos 10 períodos curriculares. Toque em um card para abrir conexões e ficha tátil.
   </div>
 
   <!-- Viewport SVG do Grafo -->
   <div class="cagp-grafo-viewport" tabindex="0" role="region" aria-label="Mapa cartográfico do percurso curricular de Gestão Pública da UFMG">
+    <div id="cagp-grafo-skeleton" class="cagp-grafo-skeleton" aria-hidden="true" hidden>
+      <div class="cagp-grafo-skeleton-cols">
+        <div class="cagp-grafo-skeleton-col cagp-shimmer"></div>
+        <div class="cagp-grafo-skeleton-col cagp-shimmer"></div>
+        <div class="cagp-grafo-skeleton-col cagp-shimmer"></div>
+        <div class="cagp-grafo-skeleton-col cagp-shimmer"></div>
+        <div class="cagp-grafo-skeleton-col cagp-shimmer"></div>
+      </div>
+    </div>
     <svg id="cagp-grafo-svg" class="cagp-grafo-svg" viewBox="0 0 1205 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
       <defs>
         <marker id="arrow-default" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -372,9 +197,15 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
           <div class="small fw-bold text-uppercase text-muted mb-1"><i class="bi bi-card-text me-1" aria-hidden="true"></i> Resumo da Ementa Oficial:</div>
           <p id="detail-desc" class="small text-dark mb-0">Papel da avaliação no ciclo governamental, desenhos de avaliação, indicadores de eficácia, eficiência e efetividade.</p>
         </div>
-        <div class="mt-2">
+        <div class="d-flex flex-wrap gap-2 mt-2">
+          <button type="button" id="btn-detail-toggle-completed" class="cagp-disc-action-chip">
+            <i class="bi bi-check2-circle" aria-hidden="true"></i> Marcar como Já Cursada
+          </button>
+          <button type="button" id="btn-detail-open-sheet" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-3">
+            <i class="bi bi-window-stack me-1" aria-hidden="true"></i> Ficha Completa (Bottom Sheet)
+          </button>
           <a id="btn-jump-ementa" href="#explorador-grade" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-3">
-            <i class="bi bi-book me-1" aria-hidden="true"></i> Ver Ementa Completa na Grade &rarr;
+            <i class="bi bi-book me-1" aria-hidden="true"></i> Ver na Grade &rarr;
           </a>
         </div>
       </div>
@@ -396,19 +227,23 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
     </div>
   </div>
 </section>
-```
+</div>
 
----
+<!-- ======================================================================= -->
+<!-- VIEW 2: LINHA DO TEMPO DOS 10 SEMESTRES & 27 EMENTAS OBRIGATÓRIAS       -->
+<!-- ======================================================================= -->
+<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+```
 
 ## <i class="bi bi-calendar3-range" aria-hidden="true"></i> Linha do Tempo dos 10 Semestres com Ementário Oficial {#explorador-grade}
 
-Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtros dinâmicos** para isolar um período específico, filtrar por departamento ofertante ou buscar qualquer palavra nas 27 ementas oficiais:
+Explore abaixo a trajetória recomendada semestre a semestre. Utilize a **barra de controle estilo E-commerce** para isolar um período específico, filtrar por departamento ofertante, filtrar pelo status na sua grade ou buscar qualquer palavra nas 27 ementas oficiais:
 
 ```{=html}
 <section class="cagp-tool-box" aria-labelledby="grade-filter-title">
   <div class="cagp-tool-header">
     <div>
-      <span class="cagp-badge cagp-badge-dark mb-1">Filtro Instantâneo • 27 Obrigatórias</span>
+      <span class="cagp-badge cagp-badge-dark mb-1">Catálogo E-Commerce • 27 Obrigatórias</span>
       <h3 id="grade-filter-title" class="h5 mb-0">EXPLORADOR INTERATIVO DA GRADE E EMENTAS</h3>
     </div>
     <div class="d-flex flex-wrap align-items-center gap-2">
@@ -419,37 +254,48 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
     </div>
   </div>
 
-  <div class="row g-3 mb-3">
-    <div class="col-lg-6">
-      <label for="grade-search-input" class="small fw-bold text-uppercase d-block mb-1">Buscar por nome, código (ex: DCP 032, ECN 140) ou assunto da ementa:</label>
-      <input type="search" id="grade-search-input" class="cagp-search-input" placeholder="Digite ex: orçamento, econometria, constitucional, estágio...">
-    </div>
-    <div class="col-lg-6">
-      <span class="small fw-bold text-uppercase d-block mb-1">Filtrar por Departamento Ofertante:</span>
-      <div class="cagp-filter-group" role="group" aria-label="Filtrar por departamento">
-        <button type="button" class="cagp-chip" aria-pressed="true" data-dept-filter="all">Todos (27)</button>
-        <button type="button" class="cagp-chip" aria-pressed="false" data-dept-filter="DCP">DCP • Ciência Política</button>
-        <button type="button" class="cagp-chip" aria-pressed="false" data-dept-filter="ECN">ECN • Economia</button>
-        <button type="button" class="cagp-chip" aria-pressed="false" data-dept-filter="EST">EST • Estatística</button>
-        <button type="button" class="cagp-chip" aria-pressed="false" data-dept-filter="SOA">SOA • Sociologia</button>
+  <!-- Barra de Controle Sticky (Busca + Chips Deslizantes M3) -->
+  <div class="cagp-sticky-search-bar mb-3">
+    <div class="row g-2 align-items-center mb-2">
+      <div class="col-lg-7">
+        <label for="grade-search-input" class="visually-hidden">Buscar por nome, código ou assunto da ementa</label>
+        <input type="search" id="grade-search-input" class="cagp-search-input" placeholder="Buscar por código (ex: DCP 032, ECN 140) ou assunto da ementa...">
+      </div>
+      <div class="col-lg-5">
+        <div class="cagp-chip-rail" role="group" aria-label="Filtrar por status na Minha Grade">
+          <button type="button" class="cagp-chip cagp-chip-m3 active" aria-pressed="true" data-grade-status-filter="all">Todas (27)</button>
+          <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-grade-status-filter="pending"><i class="bi bi-hourglass-split me-1" aria-hidden="true"></i>Pendentes</button>
+          <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-grade-status-filter="completed"><i class="bi bi-check2-circle me-1" aria-hidden="true"></i>Já Cursadas ✓</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div>
-    <span class="small fw-bold text-uppercase d-block mb-1">Isolar Período Semestral:</span>
-    <div class="cagp-filter-group" role="group" aria-label="Filtrar por período">
-      <button type="button" class="cagp-chip" aria-pressed="true" data-period-filter="all">Todos (1º–10º)</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="1º">1ºP</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="2º">2ºP</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="3º">3ºP</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="4º">4ºP</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="5º">5ºP</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="6º">6ºP</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="7º">7ºP</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="8º">8ºP</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="9º">9ºP</button>
-      <button type="button" class="cagp-chip" aria-pressed="false" data-period-filter="10º">10ºP</button>
+    <div class="mb-2">
+      <span class="small fw-bold text-uppercase text-muted d-block mb-1">Departamento Ofertante:</span>
+      <div class="cagp-chip-rail" role="group" aria-label="Filtrar por departamento">
+        <button type="button" class="cagp-chip cagp-chip-m3 active" aria-pressed="true" data-dept-filter="all">Todos (27)</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-dept-filter="DCP">DCP • Ciência Política</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-dept-filter="ECN">ECN • Economia</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-dept-filter="EST">EST • Estatística</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-dept-filter="SOA">SOA • Sociologia</button>
+      </div>
+    </div>
+
+    <div>
+      <span class="small fw-bold text-uppercase text-muted d-block mb-1">Período Semestral:</span>
+      <div class="cagp-chip-rail" role="group" aria-label="Filtrar por período">
+        <button type="button" class="cagp-chip cagp-chip-m3 active" aria-pressed="true" data-period-filter="all">Todos (1º–10º)</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="1º">1ºP</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="2º">2ºP</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="3º">3ºP</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="4º">4ºP</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="5º">5ºP</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="6º">6ºP</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="7º">7ºP</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="8º">8ºP</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="9º">9ºP</button>
+        <button type="button" class="cagp-chip cagp-chip-m3" aria-pressed="false" data-period-filter="10º">10ºP</button>
+      </div>
     </div>
   </div>
 
@@ -457,9 +303,9 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
   <div id="grade-empty-state" class="cagp-empty-state mt-3" style="display: none;" role="status">
     <div class="cagp-empty-icon"><i class="bi bi-search" aria-hidden="true"></i></div>
     <h4 class="h5 mb-1 text-dark">NENHUMA DISCIPLINA OBRIGATÓRIA ENCONTRADA</h4>
-    <p class="small text-muted mb-3">Não encontramos disciplinas obrigatórias para os termos ou departamento selecionados.</p>
+    <p class="small text-muted mb-3">Não encontramos disciplinas obrigatórias para os termos ou filtros selecionados.</p>
     <div class="cagp-empty-tips small mb-3">
-      <strong>💡 Dica do Colegiado:</strong> Tente buscar por códigos de disciplinas (ex.: <code>DCP 032</code>, <code>ECN 140</code>, <code>EST 057</code>) ou palavras-chave de ementas como <em>"orçamento"</em>, <em>"políticas"</em>, <em>"avaliação"</em> ou <em>"estado"</em>.
+      <strong><i class="bi bi-lightbulb-fill text-warning me-1" aria-hidden="true"></i>Dica do Colegiado:</strong> Tente buscar por códigos de disciplinas (ex.: <code>DCP 032</code>, <code>ECN 140</code>, <code>EST 057</code>) ou palavras-chave de ementas como <em>"orçamento"</em>, <em>"políticas"</em>, <em>"avaliação"</em> ou <em>"estado"</em>.
     </div>
     <div>
       <button type="button" id="btn-empty-reset" class="cagp-chip">
@@ -1056,1170 +902,6 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize os **filtr
 
 </div>
 
----
-
-
----
-
-## <i class="bi bi-collection" aria-hidden="true"></i> Catálogo de Disciplinas Optativas & Ementas {#disciplinas-optativas}
-<span id="catalogo-optativas" class="cagp-anchor-alias" aria-hidden="true"></span>
-
-Além das 27 disciplinas obrigatórias e dos estágios, o bacharelado em Gestão Pública conta com uma grade flexível de **68 disciplinas optativas oficiais** cadastradas no Projeto Pedagógico do Curso (PPC) e no Ementário Geral.
-
-Conforme a sua opção de percurso (*Geral 01-01*, *Complementar 01-02* ou *Avançado 01-03*), você deve cursar entre **720h e 1.020h de optativas** para integralizar seu diploma. Utilize o catálogo interativo abaixo para pesquisar temas de interesse e planejar suas matrículas:
-
-```{=html}
-<section class="cagp-optatives-explorer my-4" aria-labelledby="opt-heading">
-  <div class="cagp-tool-box mb-4">
-    <div class="cagp-tool-header d-flex flex-wrap align-items-center justify-content-between gap-2">
-      <div>
-        <span class="cagp-badge cagp-badge-red mb-1">Catálogo Oficial PPC & Ementário</span>
-        <h3 id="opt-heading" class="h5 mb-0 text-uppercase fw-bold">68 Disciplinas Optativas & Ementas Oficiais</h3>
-      </div>
-      <div class="d-flex flex-wrap gap-2">
-        <button type="button" id="btn-opt-expand-all" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-3">Expandir Todas</button>
-        <button type="button" id="btn-opt-collapse-all" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-3">Recolher Todas</button>
-      </div>
-    </div>
-    
-    <div class="row g-3 align-items-center mt-2">
-      <div class="col-md-6">
-        <label for="opt-search-input" class="visually-hidden">Buscar disciplina optativa</label>
-        <input type="search" id="opt-search-input" class="cagp-search-input" placeholder="Buscar por código, nome ou tema (ex: Burocracia, Orçamento, Avaliação)...">
-        <div class="cagp-search-presets">
-          <span class="small text-muted fw-bold me-1">Atalhos rápidos:</span>
-          <button type="button" class="cagp-preset-btn" data-preset="avaliação">Avaliação</button>
-          <button type="button" class="cagp-preset-btn" data-preset="orçamento">Orçamento</button>
-          <button type="button" class="cagp-preset-btn" data-preset="governança">Governança</button>
-          <button type="button" class="cagp-preset-btn" data-preset="metodologia">Metodologia</button>
-          <button type="button" class="cagp-preset-btn" data-preset="economia">Economia</button>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="d-flex flex-wrap gap-2 align-items-center">
-          <span class="small fw-bold me-1 text-uppercase text-muted">Filtrar:</span>
-          <div class="cagp-segmented-control" role="group" aria-label="Filtrar optativas por departamento">
-            <button type="button" class="cagp-segmented-btn is-active" data-opt-filter="all">Todas (68)</button>
-            <button type="button" class="cagp-segmented-btn" data-opt-filter="DCP">DCP (50)</button>
-            <button type="button" class="cagp-segmented-btn" data-opt-filter="ECN">Economia (12)</button>
-            <button type="button" class="cagp-segmented-btn" data-opt-filter="SOA">Sociologia (2)</button>
-            <button type="button" class="cagp-segmented-btn" data-opt-filter="OUTROS">Outros (4)</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="opt-count-info" class="small text-muted mt-2" aria-live="polite">
-      Exibindo <strong>68</strong> disciplinas optativas cadastradas no curso de Gestão Pública.
-    </div>
-  </div>
-
-  <div id="optatives-container" class="mt-3">
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 001 teoria política contemporânea dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 001: TEORIA POLÍTICA CONTEMPORÂNEA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Teoria normativa e teoria positiva. Teorias contemporâneas da justiça, teorias marxistas e feministas; teoria da escolha racional, economia do bem-estar e teorias da justiça; liberalismo, comunitarismo, republicanismo; teorias sobre a sociedade civil; escolha pública e escolha social; modelos de "política analítica".</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 025 instituições politicas dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 025: INSTITUIÇÕES POLITICAS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Sistemas eleitorais, partidos e sistemas partidários; sistemas de governo e processos de tomada de decisão; funcionamento do Legislativo e relações entre Executivo e Legislativo.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 026 movimentos sociais e sociedade civil dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 026: MOVIMENTOS SOCIAIS E SOCIEDADE CIVIL</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Ação coletiva; identidades coletivas; paradigmas de interpretação dos movimentos sociais; movimentos sociais no Brasil.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 028 politica internacional dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 028: POLITICA INTERNACIONAL</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Atores e interações políticas próprios do espaço internacional. Identificação dos temas e princípios articuladores da política internacional. Apresentação e crítica das teorias mais difundidas das relações internacionais. Tendências de mudança na organização da economia e nos graus de autonomia dos Estados soberanos.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 030 tópicos em politica dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 030: TÓPICOS EM POLITICA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 053 genero e politicas publicas dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 053: GENERO E POLITICAS PUBLICAS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Estudo do processo de democratização e da luta de movimentos feministas e de movimentos de mulheres, desde os anos 80, no Brasil. Ênfase sobre o processo gradual de incorporação da problemática das desigualdades de gênero pela agenda governamental. Discussão da importância dos governos municipais, a partir da Constituição de 88, na redução das desigualdades de gênero. Agenda Governamental e gênero na perspectiva dos Direitos Humanos.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 055 legislativos subnacionais em perspectiva comparada dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 055: LEGISLATIVOS SUBNACIONAIS EM PERSPECTIVA COMPARADA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Análise das diferentes combinações entre instituições e condições (políticas, socioeconômicas e culturais) nas unidades subnacionais e de seus efeitos combinados sobre: os perfis e as trajetórias das elites políticas a distribuição de preferências e recursos entre os atores relevantes as atitudes, o comportamento e os padrões de interação entre os atores relevantes e seus resultados.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 061 democracia, redistribuição, reconhecimento e representacao dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 061: DEMOCRACIA, REDISTRIBUIÇÃO, RECONHECIMENTO E REPRESENTACAO</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> O Paradigma Redistributivo em contextos democráticos. Teorias do estado de bem-estar. Políticas da Identidade e Políticas da Diferença. Reconhecimento e Pertencimento. Liberalismo. A igualdade liberal. A Democracia Liberal e Poliárquica. O Comunitarismo e as esferas da justiça. As políticas de reconhecimento. Republicanismo e Democracia Deliberativa. A esfera pública, democracia e pluralismo. Teoria Política Feminista: a dicotomia público versus privado. Democracia, gênero e participação. Políticas da diferença, redistribuição e reconhecimento.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 066 governança, accountability e democracia dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 066: GOVERNANÇA, ACCOUNTABILITY E DEMOCRACIA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Democracia, autoridade e propriedade: Estado e mercado como diferentes mecanismos de alocação de recursos. Executivo, Legislativo, governança e accountability: a distribuição dos poderes de agenda e de veto entre os atores. Representantes, burocratas e cidadãos. Accountability e responsiveness: relações entre demandas, políticas e resultados.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 069 direitos e cidadania dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 069: DIREITOS E CIDADANIA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Análise de processos que conduzem à expansão dos Direitos de Cidadania, com especial ênfase na condição de vida urbana, na experiência da gestão pública em suas interfaces com as lutas sociais e políticas. Direitos humanos e cidadania na construção das lutas sociais e na constituição de novos sujeitos de direito. Discussão sobre as origens e formas de compreensão dos Direitos: direitos políticos e civis, direitos e garantias individuais, direitos sociais e econômicos, direitos difusos. Integralidade e Indivisibilidade dos Direitos. Plataforma Internacional dos Direitos Humanos. Reconstrução histórica no processo de afirmação dos Direitos Humanos na sociedade brasileira.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 071 democracia e participação dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 071: DEMOCRACIA E PARTICIPAÇÃO</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Centralidade do conceito de participação nos diferentes modelos de democracia. Análise de diferentes padrões de relação entre Estado e Sociedade Civil, identificando atores e padrões de ação diferenciados.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 074 corrupção, democracia e interesse publico dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 074: CORRUPÇÃO, DEMOCRACIA E INTERESSE PUBLICO</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Análise da corrupção e de sua relação com as concepções normativas de política. Temas básicos: (1) os conceitos de corrupção (2) as perspectivas normativas sobre corrupção na política (3) corrupção na política e o problema da legitimidade (4) a presença e as consequências da corrupção na política (4) a relação entre democracia (e suas matrizes teóricas) com o tema da corrupção (5) consequências sociais, econômicas, culturais e políticas da corrupção (6) corrupção e controle.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 079 gestão publica com foco em direitos humanos dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 079: GESTÃO PUBLICA COM FOCO EM DIREITOS HUMANOS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Políticas Públicas e Direitos Humanos. Plataforma Internacional dos Direitos Humanos. Direitos civis e políticos. Direitos Econômicos, sociais e culturais. Questões e elementos de análise de políticas e de gestão pública: violência (urbana e rural), segurança pública, meio ambiente e justiça social, acessibilidade urbana, preconceitos na convivência com deficientes, idosos, afrodescendentes e indígenas, barreiras humanas e de atitude com relação a públicos específicos tais como crianças e adolescentes, mulheres, refugiados, migrantes, populações indígenas, entre outros.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 083 tópicos em politica internacional dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 083: TÓPICOS EM POLITICA INTERNACIONAL</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 088 laboratórios de formulação, implementação e avaliação de políticas públicas dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 088: LABORATÓRIOS DE FORMULAÇÃO, IMPLEMENTAÇÃO E AVALIAÇÃO DE POLÍTICAS PÚBLICAS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Estudo de uma política pública selecionada com a ajuda de docentes encarregados das disciplinas específicas da formação em gestão pública, abordando tópicos do processo de formulação, implementação e avaliação especificados em roteiro, cuja execução é acompanhada por docentes designados para este fim.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 098 tópicos em metodologia dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 098: TÓPICOS EM METODOLOGIA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 108 atividade de mobilidade estudantil i dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 108: ATIVIDADE DE MOBILIDADE ESTUDANTIL I</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">15h • 1 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 109 atividade de mobilidade estudantil ii dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 109: ATIVIDADE DE MOBILIDADE ESTUDANTIL II</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">30h • 2 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 110 atividade de mobilidade estudantil iii dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 110: ATIVIDADE DE MOBILIDADE ESTUDANTIL III</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">45h • 3 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 111 atividade de mobilidade estudantil iv dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 111: ATIVIDADE DE MOBILIDADE ESTUDANTIL IV</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 138 análise de políticas locais dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 138: ANÁLISE DE POLÍTICAS LOCAIS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Arcabouço geral da política pública: sistema nacional, aspectos legais etc. Desenho e implementação de políticas locais: conexões lógicas, relações e impasses.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 143 burocracia pública dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 143: BUROCRACIA PÚBLICA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Aspectos teóricos e empíricos das burocracias públicas. Políticos e burocratas, política e administração: relações. Burocracia: tipos, funções e desafios. Discricionariedade burocrática na formulação e na implementação das políticas.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 144 democracia, cidadania e estado de bem estar social em perspectiva comparada dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 144: DEMOCRACIA, CIDADANIA E ESTADO DE BEM ESTAR SOCIAL EM PERSPECTIVA COMPARADA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Cidadania: conceitos, desenvolvimento e desafios para as democracias contemporâneas em perspectiva comparada. Trajetórias das lutas por direitos humanos, sociais, econômicos, culturais e socioambientais. Trajetórias de implementação de sistemas de proteção social em perspectiva comparada. Estado de Bem Estar social - desenvolvimento e transformações recentes: análise comparativa.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 145 desenho de questionários dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 145: DESENHO DE QUESTIONÁRIOS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Introdução às técnicas de desenho de questionários em pesquisas quantitativas. Princípios gerais. Questões factuais e comportamentais. Questões atitudinais. Entrevistas, questionários autopreenchidos, websurveys. O questionário como um todo. Aplicação do questionário e construção do banco de dados. Pré-testes: revisão por especialistas, codificação de comportamentos, grupos focais, entrevistas cognitivas. Análise de qualidade de escalas.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 146 esfera pública, lobby e grupos de interesses dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 146: ESFERA PÚBLICA, LOBBY E GRUPOS DE INTERESSES</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Esfera pública: conceito, gênese e desenvolvimento. Contribuição do conceito para a teoria democrática contemporânea. Padrão de ação dos atores - associações cívicas e grupos de interesse. Associativismo, esfera pública e estado: relações em contextos determinados e contribuição para a democratização. Influência do lobby e do advocacy no processo de tomada de decisão em políticas públicas.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 147 estado e sociedade no brasil dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 147: ESTADO E SOCIEDADE NO BRASIL</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Teses sobre os fundamentos do Estado brasileiro nos períodos imperial e republicano. Evolução das relações entre Estado e sociedade no período republicano. Os desafios do desenvolvimento: a questão étnico-racial, a questão agrária, a questão social, a questão socioambiental.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 148 ética na gestão pública dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 148: ÉTICA NA GESTÃO PÚBLICA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Aspectos teórico-conceituais da vida pública. Fundamentos da ética na função pública. Dimensões cognitivas e atitudinais da ética. Dimensão ética na resolução de problemas no serviço público. Código de ética profissional do servidor público civil do poder executivo.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 149 federalismo fiscal no brasil dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 149: FEDERALISMO FISCAL NO BRASIL</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conceitos de federalismo fiscal. Descentralização fiscal: prós e contras. Distribuição federativa de tributos. Transferências intergovernamentais. Distribuição federativa dos gastos públicos. Endividamento e responsabilização fiscal. Gastos governamentais em políticas sociais.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 150 governança global dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 150: GOVERNANÇA GLOBAL</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Fundamentos conceituais e empíricos das abordagens da governança global no estudo da política internacional contemporânea. Teorias das relações internacionais ea premissa da "anarquia sistêmica". Regimes internacionais e a difusão de normas e práticas de gestão pública global.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 151 indicadores sociais dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 151: INDICADORES SOCIAIS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Indicadores sociais: noções conceituais e de construção, propriedades, características e usos. Bases de dados secundárias: indicadores prontos ou estatísticas básicas. Manipulação dos indicadores sociais com base em estatística descritiva básica: tabelas, gráficos e mapas. Construção de diagnósticos de áreas sociais ou de políticas específicas, com base em dados existentes.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 154 legislativo e políticas públicas dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 154: LEGISLATIVO E POLÍTICAS PÚBLICAS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Modelos de Organização Legislativa e seus efeitos sobre o comportamento e a produção legislativos. Legística. Distribuição de atribuições, direitos e recursos legislativos entre legisladores individuais, grupos de legisladores e plenário. Partidos e Comissões. Desenvolvimento institucional. Modelos de organização legislativa e seus efeitos sobre os padrões de interação entre os atores relevantes: cidadãos, grupos de interesses, representantes eleitos e burocracias públicas.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 155 metodologias participativas de planejamento público dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 155: METODOLOGIAS PARTICIPATIVAS DE PLANEJAMENTO PÚBLICO</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Aspectos teóricos e políticos da participação social na formulação e implementação das políticas públicas. Estudo de metodologias que incorporam a participação social no planejamento de políticas, programas e projetos públicos e em decisões orçamentárias nos âmbitos nacional, estadual e local.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 156 monitoramento e avaliação de projetos dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 156: MONITORAMENTO E AVALIAÇÃO DE PROJETOS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Identificação das funções de monitoramento e avaliação no ciclo de políticas públicas. Monitoramento: definição, função, instrumentos e uso de indicadores. Avaliação: definição, funções, metodologias e instrumentos, métodos quantitativos e qualitativos de avaliação, coleta de dados e análise dos resultados.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 158 o estudo de caso como estratégia metodológica para análise e avaliação de políticas públicas dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 158: O ESTUDO DE CASO COMO ESTRATÉGIA METODOLÓGICA PARA ANÁLISE E AVALIAÇÃO DE POLÍTICAS PÚBLICAS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Estudos de caso: status científico, validade em análises e avaliações comparativas de políticas públicas. Vantagens comparativas: predições fortes e compreensão intensiva de mecanismos causais limites e possibilidades de inferência causal: o problema da indeterminação dos desenhos de pesquisa baseados em estudo de caso. Procedimentos de seleção de casos: viés de seleção e casos válidos; diferenças entre seleção aleatória (métodos quantitativos) e procedimentos de seleção não aleatória (seleção intencional de casos); tipologia das estratégias de seleção: casos típicos (representativos), diversos (heterogeneidade), extremos, desviantes, exemplares, cruciais, pathway, similares, e diferentes. Heterogeneidade causal como superação do problema da seleção de casos pela variável dependente. Estratégias de superação do problema das variáveis omitidas: variância intracasos, procedimentos de congruência e process tracing.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 159 o experimento como estratégia metodológica para avaliação de políticas públicas dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 159: O EXPERIMENTO COMO ESTRATÉGIA METODOLÓGICA PARA AVALIAÇÃO DE POLÍTICAS PÚBLICAS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Noções básicas do desenho de pesquisa experimental de modo aplicado. Relevância do experimento e do quase-experimento na avaliação de impacto de políticas públicas: conceitos básicos e aplicações práticas. Metodologia de diferença-em-diferenças. Experimento controlado e seus limites éticos, financeiros e de tempo. Quase experimento como alternativa: estimando os efeitos parciais do impacto de programas e políticas públicas sobre diferentes contextos. Noções básicas de aleatorização, seleção de casos e redução de viés de estimativa.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 160 o processo decisório no sistema político brasileiro dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 160: O PROCESSO DECISÓRIO NO SISTEMA POLÍTICO BRASILEIRO</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Processo decisório nos Poderes Executivo, Legislativo e Judiciário. Consequências das decisões no plano político e seus impactos sobre aspectos relacionados aos fundamentos, aspectos orçamentários e gerencias de políticas públicas em diversas áreas.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 161 oficina de orçamento público dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 161: OFICINA DE ORÇAMENTO PÚBLICO</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conceito, princípios e objetivos do Orçamento Público. Processo orçamento brasileiro: regulamentação e implementação. Conceitos e classificações de receitas e despesas. Elaboração do PPA. Elaboração da LDO. Elaboração da LOA. Execução orçamentária. Sistemas de Planejamento e Gestão Orçamentária (SIOP - Sistema Integrado de Planejamento e Orçamento e SIAFI - Sistema Integrado de Administração Financeira do Governo Federal)</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 165 política brasileira a dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 165: POLÍTICA BRASILEIRA A</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Autores clássicos da Ciência Política Brasileira e questões próprias ao período da colonização a 1930.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 166 política brasileira b dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 166: POLÍTICA BRASILEIRA B</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Política brasileira desde 1930 aos dias atuais: a construção da ordem, a constituição e incorporação política dos atores relevantes e a organização de sua ação política. Relações entre política e sociedades. Desafios para a construção de uma institucionalidade democrática no país: corporativismo e populismo, representação e participação política autoritarismo e transição, ação coletiva e construção da ordem.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 167 política externa brasileira dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 167: POLÍTICA EXTERNA BRASILEIRA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conceitos e modelos de análise de política externa. Formação de um sistema de política exterior no Brasil do século XIX. Princípios e tradições de política externa brasileira no Império e na República. Produção da política externa brasileira sob distintos regimes políticos. Problemas contemporâneos da política externa brasileira. Política externa e inserção do Brasil no mundo.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 168 sistema de proteção social brasileiro em perspectiva comparada dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 168: SISTEMA DE PROTEÇÃO SOCIAL BRASILEIRO EM PERSPECTIVA COMPARADA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Sistema de proteção social brasileiro (ou de políticas sociais específicas) e sistema (ou políticas) de outros países: comparação dos problemas, possibilidades e desafios para o caso brasileiro.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 169 teoria dos jogos dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 169: TEORIA DOS JOGOS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Efeitos de agregação e consequências não intencionais de ações intencionais. Escolha racional. Ação paramétrica e interação estratégica. Teoria da decisão. Otimização. Teoria dos jogos: representação de jogos em forma estratégica, dominância estrita e dominância fraca, equilíbrio de Nash, estratégias mistas, teorema de Nash, melhor resposta jogos de n jogadores, jogos de soma zero, jogos em forma extensiva, indução retrospectiva, equilíbrio perfeito de subjogos, indução prospectiva, jogos bayesianos, equilíbrio bayesiano, equilíbrio bayesiano perfeito e equilíbrio sequencial, sinalizações, reiterações. Bens públicos, ação coletiva e soluções descentralizadas. Escolha social. Escolha pública. Dinâmica institucional. Formação e falsificação de preferências. Teoria dos jogos evolucionária. Não-linearidades, retroalimentações, sistemas complexos, simulações.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 170 tópicos em análise política dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 170: TÓPICOS EM ANÁLISE POLÍTICA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 171 tópicos em gestão pública dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 171: TÓPICOS EM GESTÃO PÚBLICA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 172 tópicos em política contemporânea dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 172: TÓPICOS EM POLÍTICA CONTEMPORÂNEA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp 173 tópicos em políticas públicas dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP 173: TÓPICOS EM POLÍTICAS PÚBLICAS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp xxx laboratório de gestão e políticas públicas a dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP xxx: LABORATÓRIO DE GESTÃO E POLÍTICAS PÚBLICAS A</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">90h • 6 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Identificação de problemas reais que demandam uma intervenção pública. Elaboração de projetos de intervenção, sob a forma de diagnósticos, análises de políticas públicas e pesquisas, em parceira com órgãos governamentais e não-governamentais.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp xxx laboratório de gestão e políticas públicas b dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP xxx: LABORATÓRIO DE GESTÃO E POLÍTICAS PÚBLICAS B</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">90h • 6 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Identificação de problemas reais que demandam uma intervenção pública. Elaboração de projetos de intervenção, sob a forma de diagnósticos, análises de políticas públicas e pesquisas, em parceira com órgãos governamentais e não-governamentais.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp xxx tópicos avançados a dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP xxx: TÓPICOS AVANÇADOS A</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">45h • 3 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="DCP" data-opt-search="dcp xxx tópicos avançados b dcp • ciência política">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-dcp">DCP • Ciência Política</span>
-<strong>DCP xxx: TÓPICOS AVANÇADOS B</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 033 tópicos em desenvolvimento econômico e regional ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 033: TÓPICOS EM DESENVOLVIMENTO ECONÔMICO E REGIONAL</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 051 história econômica do brasil ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 051: HISTÓRIA ECONÔMICA DO BRASIL</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> O Sistema Colonial A Economia Colonial na América Portuguesa A Constituição do Estado e da Economia Brasileira A Economia Brasileira no Século XIX A Industrialização e a Modernização no Brasil A Economia Brasileira: 1930/1960.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 055 economia política ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 055: ECONOMIA POLÍTICA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> David Ricardo: valor e distribuição. K. Marx: valor e dinheiro, capital e mais valia, reprodução e acumulação, lucro, taxa de lucro e preços de produção.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 083 economia brasileira ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 083: ECONOMIA BRASILEIRA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Desenvolvimento econômico brasileiro: plano de metas, Milagre Brasileiro e crise dos anos oitenta.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 085 economia política internacional i ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 085: ECONOMIA POLÍTICA INTERNACIONAL I</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Teoria das Relações Internacionais: Realismo, Liberalismo, Marxismo, Teoria Crítica, Construtivismo. Fundamentos teóricos da Economia Política Internacional. Economia Política e Economics. Relações Internacionais e Economia Internacional. O desenvolvimento da área a partir dos anos 1970 e seus temas centrais.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 086 métodos quantitativos aplicados i ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 086: MÉTODOS QUANTITATIVOS APLICADOS I</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Estatística descritiva. Distribuição de frequências. Introdução à probabilidade. Variáveis aleatórias discretas e contínuas. Distribuições amostrais. Estimação. Testes de hipóteses. Modelos de regressão linear.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 088 economia política internacional ii ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 088: ECONOMIA POLÍTICA INTERNACIONAL II</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> A IPE e a NEW IPE School: as escolas americana e britânica. Debates sobre a teoria da estabilidade hegemónica. Imperialismo. A escola cepalina. A escola francesa. A reconfiguração da ordem internacional: globalização, integração, fragmentação, geopolítica, potências emergentes.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 089 métodos quantitativos aplicados ii ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 089: MÉTODOS QUANTITATIVOS APLICADOS II</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Modelos econométricos de equações simultâneas. Modelos econométricos com uso de dados de painel. Econometria de séries temporais: análise clássica, co-integração e modelos ARIMA e VAR.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 090 economia da américa latina ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 090: ECONOMIA DA AMÉRICA LATINA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> História comparada: questões de método. As economias coloniais. Os processos de independência. A formação dos Estados Nacionais. A questão étnico-racial na formação social latino-americana. O desenvolvimento latino-americano em perspectiva comparada. Eixos temáticos: processos de industrialização pobreza e desigualdades endividamento inflação e planos de estabilização perspectivas de integração econômica.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 092 organização econômica internacional i ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 092: ORGANIZAÇÃO ECONÔMICA INTERNACIONAL I</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> A formação do BIS e as organizações internacionais antes da Segunda Guerra Mundial. Formação, estrutura e funcionamento das principais organizações internacionais pós Segunda Guerra Mundial. O Fundo Monetário Internacional e o Banco Mundial. O GATT e as suas rodadas de negociação. BIS e os Acordos da Basiléia. Organização Mundial do Comércio. UNCTAD e os países em desenvolvimento.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 093 sistemas econômicos comparados ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 093: SISTEMAS ECONÔMICOS COMPARADOS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> O auge do liberalismo (100 anos de paz). As experiências socialistas. O nazi-fascismo. O New Deal e a regulação keynesiana. O desenvolvimentismo e a industrialização do terceiro mundo. Os processos de Cathing up. A crise do socialismo real. O Neoliberalismo e globalização.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="ECN" data-opt-search="ecn 181 história econômica geral ecn • economia (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">ECN • Economia (FACE)</span>
-<strong>ECN 181: HISTÓRIA ECONÔMICA GERAL</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Transição do feudalismo ao capitalismo. Sistema mercantilista e formação do Estado moderno. Revolução burguesa. Revolução Industrial. Industrialização retardatária. Imperialismo. Período entre guerras e a crise dos anos 30. Fascismo.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="SOA" data-opt-search="soa 029 tópicos em teoria sociológica soa • sociologia (fafich)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-soa">SOA • Sociologia (FAFICH)</span>
-<strong>SOA 029: TÓPICOS EM TEORIA SOCIOLÓGICA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="SOA" data-opt-search="soa 071 topicos em sociologia soa • sociologia (fafich)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-soa">SOA • Sociologia (FAFICH)</span>
-<strong>SOA 071: TOPICOS EM SOCIOLOGIA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="CIC" data-opt-search="cic 032 tópicos em contabilidade b cic • contabilidade (face)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-ecn">CIC • Contabilidade (FACE)</span>
-<strong>CIC 032: TÓPICOS EM CONTABILIDADE B</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="POP" data-opt-search="pop 004 tópicos em demografia pop • demografia (cedeplar)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-soa">POP • Demografia (Cedeplar)</span>
-<strong>POP 004: TÓPICOS EM DEMOGRAFIA</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Conteúdo variável.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="LET" data-opt-search="let 223 fundamentos de libras let • letras (fale)">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-est">LET • Letras (FALE)</span>
-<strong>LET 223: FUNDAMENTOS DE LIBRAS</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Aspectos históricos e conceituais da cultura surda e filosofia do bilinguismo. Fundamentos linguísticos da Língua Brasileira de Sinais (LIBRAS). Aquisição e desenvolvimento de habilidades básicas expressivas e receptivas em LIBRAS.</p>
-</div>
-</details>
-
-<details class="cagp-discipline cagp-opt-card" data-opt-dept="UNI" data-opt-search="uni 005 o sistema politico brasileiro uni • universitário">
-<summary>
-<div class="discipline-left">
-<span class="cagp-badge badge-est">UNI • Universitário</span>
-<strong>UNI 005: O SISTEMA POLITICO BRASILEIRO</strong>
-</div>
-<div>
-<span class="badge bg-light text-dark border">60h • 4 cr</span>
-<span class="discipline-chevron">▶</span>
-</div>
-</summary>
-<div class="cagp-discipline-body">
-<p><strong>Ementa Oficial:</strong> Análise do atual arranjo democrático brasileiro. A análise da democracia brasileira pós-88 abrangerá: a) o sistema eleitoral adotado para a composição dos poderes Legislativo e Executivo; b) a origem, evolução e dinâmica do atual sistema partidário; c) as características do presidencialismo brasileiro; d) as relações entre os poderes Executivo e Legislativo; e) a estrutura e organização interna do poder legislativo federal; f) a organização federativa do Estado; g) a relação entre poder Judiciário e política; h) a reforma do Estado.</p>
-</div>
-</details>
-  </div>
-
-  <!-- Empty State Acolhedor de Busca de Optativas -->
-  <div id="opt-empty-state" class="cagp-empty-state" style="display: none;" role="status">
-    <div class="cagp-empty-icon"><i class="bi bi-search" aria-hidden="true"></i></div>
-    <h4 class="h5 mb-1">NENHUMA DISCIPLINA OPTATIVA ENCONTRADA</h4>
-    <p class="small text-muted mb-3">Não encontramos disciplinas no catálogo com os termos ou filtros selecionados.</p>
-    <div class="cagp-empty-tips small mb-3">
-      <strong>💡 Dica do CAGP (Formação Livre até 120h):</strong> Não encontrou o que procurava neste catálogo? O regulamento do curso permite cursar matérias eletivas em qualquer departamento da UFMG (Direito, Economia, Engenharia, Ciência da Informação, etc.) e integralizar até <strong>120 horas (8 créditos)</strong> como Formação Livre (PPC 2020, Art. 13), ampliando sua formação transdisciplinar.
-    </div>
-    <div>
-      <button type="button" id="btn-opt-empty-reset" class="cagp-chip">
-        <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Limpar busca e ver todas as 68 optativas
-      </button>
-    </div>
-  </div>
-</section>
-```
-
 ## <i class="bi bi-lightbulb" aria-hidden="true"></i> Orientações Estratégicas de Matrícula do CAGP {#dicas-matricula}
 
 ::: {.cagp-card}
@@ -2231,6 +913,260 @@ Conforme a sua opção de percurso (*Geral 01-01*, *Complementar 01-02* ou *Avan
 :::
 
 ```{=html}
+</div>
+
+<!-- ======================================================================= -->
+<!-- VIEW 3: SIMULADOR DOS 3 PERCURSOS (01-01, 01-02, 01-03) & PRAZOS        -->
+<!-- ======================================================================= -->
+<div class="cagp-workspace-view" data-ws-view="v3" hidden>
+```
+
+## <i class="bi bi-bar-chart-line" aria-hidden="true"></i> Estrutura Geral e Prazos Oficiais
+
+::: {.row .g-3 .mb-4}
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">10 Semestres</div>
+<div class="cagp-stat-label">Tempo Padrão</div>
+<small class="text-muted">Mínimo 8 • Máximo 17 semestres</small>
+:::
+:::
+
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">3.000 h</div>
+<div class="cagp-stat-label">Carga Horária Total</div>
+<small class="text-muted">2.880h NE + 120h Formação Livre</small>
+:::
+:::
+
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">180 h / sem.</div>
+<div class="cagp-stat-label">Matrícula Mínima</div>
+<small class="text-muted">12 créditos regimentais por período</small>
+:::
+:::
+
+::: {.col-md-3 .col-6}
+::: {.cagp-stat-card}
+<div class="cagp-stat-value">3 Percursos</div>
+<div class="cagp-stat-label">Opções de Formação</div>
+<small class="text-muted">Geral, Complementar e Avançado</small>
+:::
+:::
+:::
+
+## <i class="bi bi-signpost-split" aria-hidden="true"></i> Os Três Percursos Curriculares Oficiais {#simulador-percurso}
+<span id="quiz-percurso" class="cagp-anchor-alias" aria-hidden="true"></span>
+<span id="termometro-percurso" class="cagp-anchor-alias" aria-hidden="true"></span>
+
+Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua trajetória acadêmica através de 3 modalidades formais de formação. Explore abaixo os detalhes de cada percurso ou consulte o quadro comparativo consolidado:
+
+```{=html}
+<!-- Termômetro de Percurso (Mini-Localizador em 3 Cliques) -->
+<div class="cagp-thermometer-box mb-4" id="cagp-thermometer">
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-dark">
+    <div class="d-flex align-items-center gap-2">
+      <span class="cagp-badge cagp-badge-red"><i class="bi bi-thermometer-half me-1"></i> Termômetro Vocacional</span>
+      <h3 class="h6 fw-bold mb-0 text-uppercase">Descubra seu Percurso em 3 Cliques</h3>
+    </div>
+    <button type="button" class="cagp-chip py-1 px-2" id="quiz-reset-btn" style="font-size:0.8rem;"><i class="bi bi-arrow-counterclockwise me-1"></i> Reiniciar Teste</button>
+  </div>
+
+  <!-- Pergunta 1 -->
+  <div class="cagp-quiz-step is-active" data-quiz-step="1">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <span class="small fw-bold text-muted text-uppercase">Pergunta 1 de 3 • Vocação &amp; Carreira</span>
+      <span class="cagp-badge cagp-badge-dark">Etapa 1/3</span>
+    </div>
+    <div class="cagp-quiz-q-title">O que mais atrai você após a conclusão da graduação?</div>
+    <div class="cagp-quiz-options">
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-01">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-bank" aria-hidden="true"></i> Concurso / Gestão Geral</div>
+        <p class="cagp-quiz-btn-desc">Quero atuar em ministérios, secretarias de estado ou prefeituras na gestão e coordenação ampla de políticas governamentais.</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-02">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-diagram-3" aria-hidden="true"></i> Interdisciplinaridade / 3º Setor</div>
+        <p class="cagp-quiz-btn-desc">Quero cruzar a gestão pública com Meio Ambiente, Direitos Humanos, Direito ou outras faculdades da UFMG.</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-03">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-mortarboard" aria-hidden="true"></i> Mestrado / Carreira Acadêmica</div>
+        <p class="cagp-quiz-btn-desc">Quero seguir no PPGCP (Mestrado/Doutorado), focar em análise quantitativa de dados e ser pesquisador(a) ou professor(a).</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Pergunta 2 -->
+  <div class="cagp-quiz-step" data-quiz-step="2">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <span class="small fw-bold text-muted text-uppercase">Pergunta 2 de 3 • Matriz Curricular</span>
+      <span class="cagp-badge cagp-badge-dark">Etapa 2/3</span>
+    </div>
+    <div class="cagp-quiz-q-title">Como você prefere preencher suas horas flexíveis da graduação?</div>
+    <div class="cagp-quiz-options">
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-01">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-collection" aria-hidden="true"></i> Máxima Liberdade de Escolha</div>
+        <p class="cagp-quiz-btn-desc">Prefiro escolher matérias livremente no catálogo do DCP, projetos de extensão da FAFICH e horas complementares (AAC).</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-02">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-intersect" aria-hidden="true"></i> Bloco de 300h em Outra Área</div>
+        <p class="cagp-quiz-btn-desc">Prefiro certificar uma Formação Transversal (300h) ou um pacote de disciplinas em outro curso (Formação Aberta - FCA).</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-03">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-journal-code" aria-hidden="true"></i> Matérias da Pós-Graduação</div>
+        <p class="cagp-quiz-btn-desc">Prefiro cursar disciplinas avançadas do Mestrado em Ciência Política (DCP) e pesquisas avançadas de metodologia.</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Pergunta 3 -->
+  <div class="cagp-quiz-step" data-quiz-step="3">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <span class="small fw-bold text-muted text-uppercase">Pergunta 3 de 3 • Momento Acadêmico</span>
+      <span class="cagp-badge cagp-badge-dark">Etapa 3/3</span>
+    </div>
+    <div class="cagp-quiz-q-title">Em qual etapa do curso você se encontra atualmente?</div>
+    <div class="cagp-quiz-options">
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-01">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-backpack" aria-hidden="true"></i> Início de Curso (1º ao 4ºP)</div>
+        <p class="cagp-quiz-btn-desc">Estou nos semestres iniciais cumprindo as matérias fundamentais do ciclo obrigatório.</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-02">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-compass" aria-hidden="true"></i> Meio de Curso (5º ao 7ºP)</div>
+        <p class="cagp-quiz-btn-desc">Estou no momento ideal para planejar a migração curricular formal junto ao Colegiado do Curso.</p>
+      </button>
+      <button type="button" class="cagp-quiz-btn" data-quiz-choice="01-03">
+        <div class="cagp-quiz-btn-title"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Reta Final / Formando (8º ao 10ºP)</div>
+        <p class="cagp-quiz-btn-desc">Estou focado(a) no cumprimento de TCC, estágio supervisionado e colação de grau.</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Painel de Resultado -->
+  <div class="cagp-quiz-result-box" id="quiz-result-box">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+      <span id="quiz-result-stamp" class="cagp-stamp-badge is-deferido"><i class="bi bi-patch-check-fill me-1" aria-hidden="true"></i> RECOMENDAÇÃO: PERCURSO 01-01</span>
+      <span class="small fw-bold text-muted">Resultado Personalizado do Teste</span>
+    </div>
+    <h4 class="h5 fw-bold text-uppercase mb-2" id="quiz-result-title">Percurso 01-01 • Núcleo Específico e Geral</h4>
+    <p class="small text-muted mb-3" id="quiz-result-desc">
+      Com base nas suas preferências, o Percurso 01-01 é o mais indicado. Ele confere a você máxima flexibilidade e autonomia para escolher suas optativas em qualquer área do DCP e validar horas de extensão e AAC com total liberdade.
+    </p>
+    <div class="d-flex flex-wrap gap-2">
+      <a id="quiz-pdf-link" href="documentos/percurso-bacharelado-nucleo-geral.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary">
+        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Baixar Matriz Curricular Oficial (PDF)
+      </a>
+      <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline">
+        <i class="bi bi-pencil-square me-1" aria-hidden="true"></i> Ver Requerimento de Mudança de Percurso
+      </a>
+      <button type="button" class="cagp-doc-btn cagp-doc-btn-outline" id="quiz-retake-btn">
+        <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Refazer Teste
+      </button>
+    </div>
+  </div>
+</div>
+
+<section class="cagp-tool-box" aria-labelledby="track-finder-title">
+  <div class="cagp-tool-header">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1">Árvore de Decisão • Art. 3º</span>
+      <h3 id="track-finder-title" class="h5 mb-0">QUAL DOS 3 PERCURSOS É MELHOR PARA VOCÊ?</h3>
+    </div>
+    <span class="small text-muted fw-semibold">Clique no seu objetivo principal de formação:</span>
+  </div>
+
+  <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Perfis de formação">
+    <button type="button" class="cagp-chip" aria-pressed="true" data-track-choice="01-01"><i class="bi bi-bank" aria-hidden="true"></i> Gestão Pública Ampla & Flexível (01-01)</button>
+    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-02"><i class="bi bi-diagram-3" aria-hidden="true"></i> Formação Transversal ou Outro Curso (01-02)</button>
+    <button type="button" class="cagp-chip" aria-pressed="false" data-track-choice="01-03"><i class="bi bi-mortarboard" aria-hidden="true"></i> Carreira Acadêmica & Mestrado PPGCP (01-03)</button>
+  </div>
+
+  <div id="track-result-box" class="cagp-compass-panel cagp-panel-boxed" aria-live="polite">
+    <div id="track-res-01-01">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-dark">Percurso 01-01 • Bacharelado com Núcleo Específico e Núcleo Geral</span>
+        <span class="small fw-bold text-success">Vínculo Automático no 1º Período</span>
+      </div>
+      <p class="small mb-3">É o percurso canônico da FAFICH/UFMG. Proporciona formação sólida e generalista em gestão pública, finanças e ciência política, com máxima autonomia na escolha de matérias optativas.</p>
+      <div class="row g-2 mb-3 small">
+        <div class="col-sm-6 col-12">
+          <div><i class="bi bi-check-circle-fill text-danger me-1"></i> <strong>Obrigatórias:</strong> 1.560h (25 disciplinas) + 300h Estágio (A + B)</div>
+        </div>
+        <div class="col-sm-6 col-12">
+          <div><i class="bi bi-collection text-danger me-1"></i> <strong>Optativas & Livre:</strong> 1.020h optativas (DCP/Extensão/AAC) + 120h Livre</div>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="documentos/percurso-bacharelado-nucleo-geral.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-download" aria-hidden="true"></i> Baixar Matriz Oficial 01-01 (PDF)</a>
+      </div>
+    </div>
+
+    <div id="track-res-01-02" hidden>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-red">Percurso 01-02 • Núcleo Complementar (Transversal / Aberta)</span>
+        <span class="small fw-bold text-danger">Requerimento a partir do 5º Período</span>
+      </div>
+      <p class="small mb-3">Permite cursar <strong>300 horas em Formação Transversal</strong> (Direitos Humanos, Relações Étnico-Raciais, Meio Ambiente, Divulgação Científica) ou <strong>Formação Complementar Aberta (FCA)</strong> em outro departamento da UFMG.</p>
+      <div class="row g-2 mb-3 small">
+        <div class="col-sm-6 col-12">
+          <div><i class="bi bi-diagram-3 text-primary me-1"></i> <strong>Formação Complementar:</strong> 300h dedicadas a área interdisciplinar</div>
+        </div>
+        <div class="col-sm-6 col-12">
+          <div><i class="bi bi-pie-chart text-primary me-1"></i> <strong>Optativas Reduzidas:</strong> Carga de optativas do DCP cai de 1.020h para <strong>720h</strong></div>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="documentos/percurso-bacharelado-nucleo-complementar.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-download" aria-hidden="true"></i> Baixar Matriz Oficial 01-02 (PDF)</a>
+        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Formulário de Mudança de Percurso / FCA</a>
+      </div>
+    </div>
+
+    <div id="track-res-01-03" hidden>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="cagp-badge cagp-badge-blue">Percurso 01-03 • Núcleo Avançado (Articulação com Pós-Graduação)</span>
+        <span class="small fw-bold text-primary">Requerimento a partir do 7º Período</span>
+      </div>
+      <p class="small mb-3">Destinado a discentes com vocação para pesquisa e carreira acadêmica. Permite cursar entre <strong>45h e 120h em disciplinas de Mestrado/Doutorado</strong> no Programa de Pós-Graduação em Ciência Política (PPGCP/FAFICH) ainda na graduação.</p>
+      <div class="row g-2 mb-3 small">
+        <div class="col-sm-6 col-12">
+          <div><i class="bi bi-journal-bookmark text-danger me-1"></i> <strong>Disciplinas de Pós:</strong> 45h a 120h com aproveitamento no mestrado</div>
+        </div>
+        <div class="col-sm-6 col-12">
+          <div><i class="bi bi-mortarboard text-danger me-1"></i> <strong>Perfil:</strong> Preparação direta para processos seletivos e docência</div>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="documentos/percurso-bacharelado-nucleo-avancado.pdf" target="_blank" class="cagp-doc-btn cagp-doc-btn-primary"><i class="bi bi-download" aria-hidden="true"></i> Baixar Matriz Oficial 01-03 (PDF)</a>
+        <a href="documentos.html#formularios" class="cagp-doc-btn cagp-doc-btn-outline"><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Formulário de Mudança de Percurso</a>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+::: {.table-responsive .mt-4}
+| Percurso Oficial | Código | Ingresso | Carga Optativas DCP | Foco e Diferencial de Formação | Matriz Oficial |
+| :--- | :---: | :---: | :---: | :--- | :---: |
+| **Bacharelado Geral (Padrão)** | `01-01` | 1º período (automático) | 1.020 horas | Formação ampla em Gestão Governamental, Ciência Política e Políticas Públicas | [<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Matriz 01-01 (PDF)](documentos/percurso-bacharelado-nucleo-geral.pdf){target="_blank"} |
+| **Núcleo Complementar** | `01-02` | A partir do 5º período | 720 horas (-300h) | 300h em Formação Transversal (DH, Étnico-Racial, Ambiente) ou Formação Aberta (FCA) | [<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Matriz 01-02 (PDF)](documentos/percurso-bacharelado-nucleo-complementar.pdf){target="_blank"} |
+| **Núcleo Avançado (Pós)** | `01-03` | A partir do 7º período | 900h a 975h | 45h a 120h em disciplinas de Mestrado/Doutorado no PPGCP/FAFICH com creditação futura | [<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Matriz 01-03 (PDF)](documentos/percurso-bacharelado-nucleo-avancado.pdf){target="_blank"} |
+:::
+
+```{=html}
+  <div id="disciplinas-optativas" class="cagp-redirect-bridge mt-4" data-cagp-redirect="optativas.html#catalogo-optativas">
+    <span id="catalogo-optativas" class="cagp-anchor-alias" aria-hidden="true"></span>
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1">Módulo Dedicado • 68 Optativas</span>
+      <h4 class="h6 fw-bold text-uppercase mb-1">Catálogo das 68 Disciplinas Optativas &amp; Formação Livre (120h)</h4>
+      <p class="small text-muted mb-0">Para navegação ultrarrápida sem rolagem excessiva, o catálogo completo das 68 disciplinas optativas conta agora com página exclusiva.</p>
+    </div>
+    <a href="optativas.html#catalogo-optativas" class="cagp-doc-btn cagp-doc-btn-primary">
+      <i class="bi bi-collection-fill me-1" aria-hidden="true"></i> Abrir Catálogo de 68 Optativas &rarr;
+    </a>
+  </div>
+</div>
+
 <nav class="cagp-journey-nav" aria-label="Continuidade da jornada acadêmica">
   <div class="row g-3">
     <div class="col-md-6">
@@ -2255,8 +1191,11 @@ Conforme a sua opção de percurso (*Geral 01-01*, *Complementar 01-02* ou *Avan
 </nav>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  /* 0. Termômetro de Percurso ("Descubra seu Percurso em 3 Cliques") */
+(function () {
+  function initPercursoPage() {
+  /* 0. Termômetro de Percurso ("Descubra seu Percurso em 3 Cliques") — Chave: cagp_percurso_quiz_v1 */
+  const QUIZ_KEY = 'cagp_percurso_quiz_v1';
+  const GRADE_KEY = 'cagp_minha_grade_v1';
   const quizSteps = Array.from(document.querySelectorAll('[data-quiz-step]'));
   const quizBtns = document.querySelectorAll('[data-quiz-choice]');
   const quizResultBox = document.getElementById('quiz-result-box');
@@ -2270,48 +1209,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentStep = 1;
   const userChoices = [];
 
-  function resetQuiz() {
-    currentStep = 1;
-    userChoices.length = 0;
-    quizSteps.forEach(function (step) {
-      const stepNum = parseInt(step.getAttribute('data-quiz-step'), 10);
-      step.classList.toggle('is-active', stepNum === 1);
-    });
-    if (quizResultBox) quizResultBox.style.display = 'none';
-  }
-
-  if (quizResetBtn) quizResetBtn.addEventListener('click', resetQuiz);
-  if (quizRetakeBtn) quizRetakeBtn.addEventListener('click', resetQuiz);
-
-  quizBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      const choice = btn.getAttribute('data-quiz-choice');
-      userChoices.push(choice);
-
-      if (currentStep < 3) {
-        currentStep++;
-        quizSteps.forEach(function (step) {
-          const stepNum = parseInt(step.getAttribute('data-quiz-step'), 10);
-          step.classList.toggle('is-active', stepNum === currentStep);
-        });
-      } else {
-        quizSteps.forEach(function (step) { step.classList.remove('is-active'); });
-        computeRecommendation();
-      }
-    });
-  });
-
-  function computeRecommendation() {
+  function showQuizRecommendation(topChoice, persist) {
     if (!quizResultBox) return;
-    const scores = { '01-01': 0, '01-02': 0, '01-03': 0 };
-    userChoices.forEach(function (c) {
-      if (scores[c] !== undefined) scores[c]++;
-    });
-
-    let topChoice = '01-01';
-    if (scores['01-02'] > scores[topChoice]) topChoice = '01-02';
-    if (scores['01-03'] > scores[topChoice]) topChoice = '01-03';
-
     if (topChoice === '01-01') {
       if (quizResultStamp) quizResultStamp.innerHTML = '<i class="bi bi-patch-check-fill me-1" aria-hidden="true"></i> RECOMENDAÇÃO: PERCURSO 01-01';
       if (quizResultTitle) quizResultTitle.textContent = 'Percurso 01-01 • Núcleo Específico e Geral';
@@ -2329,6 +1228,13 @@ document.addEventListener('DOMContentLoaded', function () {
       if (quizPdfLink) quizPdfLink.href = 'documentos/percurso-bacharelado-nucleo-avancado.pdf';
     }
 
+    if (persist) {
+      try {
+        localStorage.setItem(QUIZ_KEY, topChoice);
+        if (window.refreshCagpVault) window.refreshCagpVault();
+      } catch (e) {}
+    }
+
     quizResultBox.style.display = 'block';
     const stamp = quizResultBox.querySelector('.cagp-stamp-badge');
     if (stamp) {
@@ -2338,10 +1244,66 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  function resetQuiz() {
+    currentStep = 1;
+    userChoices.length = 0;
+    try {
+      localStorage.removeItem(QUIZ_KEY);
+      if (window.refreshCagpVault) window.refreshCagpVault();
+    } catch (e) {}
+    quizSteps.forEach(function (step) {
+      const stepNum = parseInt(step.getAttribute('data-quiz-step'), 10);
+      step.classList.toggle('is-active', stepNum === 1);
+    });
+    if (quizResultBox) quizResultBox.style.display = 'none';
+  }
+
+  if (quizResetBtn) quizResetBtn.onclick = resetQuiz;
+  if (quizRetakeBtn) quizRetakeBtn.onclick = resetQuiz;
+
+  quizBtns.forEach(function (btn) {
+    btn.onclick = function () {
+      const choice = btn.getAttribute('data-quiz-choice');
+      userChoices.push(choice);
+
+      if (currentStep < 3) {
+        currentStep++;
+        quizSteps.forEach(function (step) {
+          const stepNum = parseInt(step.getAttribute('data-quiz-step'), 10);
+          step.classList.toggle('is-active', stepNum === currentStep);
+        });
+      } else {
+        quizSteps.forEach(function (step) { step.classList.remove('is-active'); });
+        computeRecommendation();
+      }
+    };
+  });
+
+  function computeRecommendation() {
+    if (!quizResultBox) return;
+    const scores = { '01-01': 0, '01-02': 0, '01-03': 0 };
+    userChoices.forEach(function (c) {
+      if (scores[c] !== undefined) scores[c]++;
+    });
+
+    let topChoice = '01-01';
+    if (scores['01-02'] > scores[topChoice]) topChoice = '01-02';
+    if (scores['01-03'] > scores[topChoice]) topChoice = '01-03';
+    showQuizRecommendation(topChoice, true);
+  }
+
+  try {
+    const savedQuiz = localStorage.getItem(QUIZ_KEY);
+    if (savedQuiz && (savedQuiz === '01-01' || savedQuiz === '01-02' || savedQuiz === '01-03')) {
+      quizSteps.forEach(function (step) { step.classList.remove('is-active'); });
+      showQuizRecommendation(savedQuiz, false);
+    }
+  } catch (e) {}
+
   /* 1. Simulador de Percurso (01-01, 01-02, 01-03) */
   const trackBtns = document.querySelectorAll('[data-track-choice]');
   trackBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    btn.onclick = function () {
       const code = btn.getAttribute('data-track-choice');
       trackBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
       btn.setAttribute('aria-pressed', 'true');
@@ -2349,8 +1311,42 @@ document.addEventListener('DOMContentLoaded', function () {
         const el = document.getElementById('track-res-' + k);
         if (el) el.hidden = (k !== code);
       });
-    });
+    };
   });
+
+  /* 1.5. Estado Unificado "Minha Grade" (cagp_minha_grade_v1) */
+  function loadGradeState() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(GRADE_KEY) || '{}');
+      return {
+        completed: Array.isArray(raw.completed) ? raw.completed : [],
+        favorites: Array.isArray(raw.favorites) ? raw.favorites : []
+      };
+    } catch (e) {
+      return { completed: [], favorites: [] };
+    }
+  }
+
+  let gradeState = loadGradeState();
+
+  function saveGradeState() {
+    try {
+      localStorage.setItem(GRADE_KEY, JSON.stringify(gradeState));
+      if (window.refreshCagpVault) window.refreshCagpVault();
+    } catch (e) {}
+  }
+
+  function extractDiscCode(discEl) {
+    if (!discEl) return '';
+    const existing = discEl.getAttribute('data-disc-code');
+    if (existing) return existing;
+    const strong = discEl.querySelector('summary strong');
+    const txt = strong ? strong.textContent.trim() : '';
+    const m = txt.match(/^([A-Z]{3}\s*\d{3})/);
+    const code = m ? m[1].replace(/\s+/g, '') : txt.slice(0, 8).replace(/\s+/g, '');
+    discEl.setAttribute('data-disc-code', code);
+    return code;
+  }
 
   /* 2. Explorador Dinâmico da Grade & Ementas */
   const steps = Array.from(document.querySelectorAll('#cagp-grade-timeline .cagp-timeline-step'));
@@ -2358,6 +1354,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.getElementById('grade-search-input');
   const deptBtns = document.querySelectorAll('[data-dept-filter]');
   const periodBtns = document.querySelectorAll('[data-period-filter]');
+  const gradeStatusBtns = document.querySelectorAll('[data-grade-status-filter]');
   const statusEl = document.getElementById('grade-filter-status');
   const emptyState = document.getElementById('grade-empty-state');
   const btnExpandAll = document.getElementById('btn-expand-all');
@@ -2367,6 +1364,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let activeDept = 'all';
   let activePeriod = 'all';
+  let activeGradeStatus = 'all';
 
   function normalize(str) {
     return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -2386,12 +1384,19 @@ document.addEventListener('DOMContentLoaded', function () {
       let stepVisibleDisciplines = 0;
 
       stepDisciplines.forEach(function (disc) {
+        const code = extractDiscCode(disc);
+        const isDone = gradeState.completed.indexOf(code) !== -1;
+        const statusMatches =
+          activeGradeStatus === 'all' ||
+          (activeGradeStatus === 'completed' && isDone) ||
+          (activeGradeStatus === 'pending' && !isDone);
+
         const badge = disc.querySelector('.cagp-badge');
         const badgeText = badge ? badge.textContent : '';
         const deptMatches = (activeDept === 'all' || badgeText.indexOf(activeDept) !== -1);
         const textMatches = (!query || normalize(disc.textContent).indexOf(query) !== -1);
 
-        if (periodMatches && deptMatches && textMatches) {
+        if (periodMatches && deptMatches && statusMatches && textMatches) {
           disc.hidden = false;
           if (query.length >= 2) disc.open = true;
           visibleCount++;
@@ -2418,57 +1423,89 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   deptBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    btn.onclick = function () {
       activeDept = btn.getAttribute('data-dept-filter');
-      deptBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-      btn.setAttribute('aria-pressed', 'true');
+      deptBtns.forEach(function (b) {
+        const active = b === btn;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
       applyFilters();
-    });
+    };
   });
 
   periodBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    btn.onclick = function () {
       activePeriod = btn.getAttribute('data-period-filter');
-      periodBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-      btn.setAttribute('aria-pressed', 'true');
+      periodBtns.forEach(function (b) {
+        const active = b === btn;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
       applyFilters();
-    });
+    };
+  });
+
+  gradeStatusBtns.forEach(function (btn) {
+    btn.onclick = function () {
+      activeGradeStatus = btn.getAttribute('data-grade-status-filter') || 'all';
+      gradeStatusBtns.forEach(function (b) {
+        const active = b === btn;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      applyFilters();
+    };
   });
 
   if (searchInput) {
-    searchInput.addEventListener('input', applyFilters);
-    searchInput.addEventListener('keydown', function (e) {
+    searchInput.oninput = applyFilters;
+    searchInput.onkeydown = function (e) {
       if (e.key === 'Escape') {
         searchInput.value = '';
         applyFilters();
       }
-    });
+    };
   }
 
   if (btnExpandAll) {
-    btnExpandAll.addEventListener('click', function () {
+    btnExpandAll.onclick = function () {
       allDisciplines.forEach(function (d) { if (!d.hidden) d.open = true; });
-    });
+    };
   }
 
   if (btnCollapseAll) {
-    btnCollapseAll.addEventListener('click', function () {
+    btnCollapseAll.onclick = function () {
       allDisciplines.forEach(function (d) { d.open = false; });
-    });
+    };
   }
 
   function resetAll() {
     activeDept = 'all';
     activePeriod = 'all';
+    activeGradeStatus = 'all';
     if (searchInput) searchInput.value = '';
-    deptBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-dept-filter') === 'all' ? 'true' : 'false'); });
-    periodBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-period-filter') === 'all' ? 'true' : 'false'); });
+    deptBtns.forEach(function (b) {
+      const isAll = b.getAttribute('data-dept-filter') === 'all';
+      b.classList.toggle('active', isAll);
+      b.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+    });
+    periodBtns.forEach(function (b) {
+      const isAll = b.getAttribute('data-period-filter') === 'all';
+      b.classList.toggle('active', isAll);
+      b.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+    });
+    gradeStatusBtns.forEach(function (b) {
+      const isAll = b.getAttribute('data-grade-status-filter') === 'all';
+      b.classList.toggle('active', isAll);
+      b.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+    });
     allDisciplines.forEach(function (d) { d.open = false; });
     applyFilters();
   }
 
-  if (btnReset) btnReset.addEventListener('click', resetAll);
-  if (btnEmptyReset) btnEmptyReset.addEventListener('click', resetAll);
+  if (btnReset) btnReset.onclick = resetAll;
+  if (btnEmptyReset) btnEmptyReset.onclick = resetAll;
 
   /* 3. Catálogo de Disciplinas Optativas & Busca */
   const optSearch = document.getElementById('opt-search-input');
@@ -2486,19 +1523,23 @@ document.addEventListener('DOMContentLoaded', function () {
   function filterOptatives() {
     let visibleCount = 0;
     optCards.forEach(function (card) {
+      const code = extractDiscCode(card);
       const dept = card.getAttribute('data-opt-dept');
       const text = card.getAttribute('data-opt-search') || '';
-      
+      const isFav = gradeState.favorites.indexOf(code) !== -1;
+
       let matchesDept = false;
       if (currentDept === 'all') {
         matchesDept = true;
+      } else if (currentDept === 'FAV') {
+        matchesDept = isFav;
       } else if (currentDept === 'OUTROS') {
         matchesDept = (dept !== 'DCP' && dept !== 'ECN' && dept !== 'SOA');
       } else {
         matchesDept = (dept === currentDept);
       }
 
-      const matchesSearch = !currentSearch || text.includes(currentSearch);
+      const matchesSearch = !currentSearch || text.includes(currentSearch) || normalize(card.textContent).includes(normalize(currentSearch));
 
       if (matchesDept && matchesSearch) {
         card.style.display = '';
@@ -2522,60 +1563,67 @@ document.addEventListener('DOMContentLoaded', function () {
     currentSearch = '';
     if (optSearch) optSearch.value = '';
     optFilters.forEach(function (b) {
-      b.classList.toggle('is-active', b.getAttribute('data-opt-filter') === 'all');
+      const isAll = b.getAttribute('data-opt-filter') === 'all';
+      b.classList.toggle('is-active', isAll);
+      b.classList.toggle('active', isAll);
+      b.setAttribute('aria-pressed', isAll ? 'true' : 'false');
     });
     filterOptatives();
   }
 
   if (optSearch) {
-    optSearch.addEventListener('input', function () {
+    optSearch.oninput = function () {
       currentSearch = optSearch.value.trim().toLowerCase();
       filterOptatives();
-    });
-    optSearch.addEventListener('keydown', function (e) {
+    };
+    optSearch.onkeydown = function (e) {
       if (e.key === 'Escape') {
         optSearch.value = '';
         currentSearch = '';
         filterOptatives();
       }
-    });
+    };
   }
 
   const presetBtns = document.querySelectorAll('.cagp-preset-btn');
   presetBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    btn.onclick = function () {
       const preset = btn.getAttribute('data-preset') || '';
       if (optSearch) optSearch.value = preset;
       currentSearch = preset.toLowerCase();
       filterOptatives();
-    });
+    };
   });
 
   optFilters.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      optFilters.forEach(function (b) { b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
+    btn.onclick = function () {
+      optFilters.forEach(function (b) {
+        b.classList.remove('is-active', 'active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('is-active', 'active');
+      btn.setAttribute('aria-pressed', 'true');
       currentDept = btn.getAttribute('data-opt-filter');
       filterOptatives();
-    });
+    };
   });
 
   if (btnOptEmptyReset) {
-    btnOptEmptyReset.addEventListener('click', resetOptatives);
+    btnOptEmptyReset.onclick = resetOptatives;
   }
 
   if (btnOptExpand) {
-    btnOptExpand.addEventListener('click', function () {
+    btnOptExpand.onclick = function () {
       optCards.forEach(function (card) {
         if (card.style.display !== 'none') card.open = true;
       });
-    });
+    };
   }
 
   if (btnOptCollapse) {
-    btnOptCollapse.addEventListener('click', function () {
+    btnOptCollapse.onclick = function () {
       optCards.forEach(function (card) { card.open = false; });
-    });
+    };
   }
 
   /* 4. Grafo Interativo Curricular SVG / DAG Engine (Overdrive Mode Refinado) */
@@ -3008,7 +2056,7 @@ document.addEventListener('DOMContentLoaded', function () {
         lockText.setAttribute('x', x + 78);
         lockText.setAttribute('y', y + 15.5);
         lockText.setAttribute('text-anchor', 'middle');
-        lockText.textContent = '🔒 TRAVA';
+        lockText.textContent = 'TRAVA';
         g.appendChild(lockText);
       } else {
         const badge = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -3081,7 +2129,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (d.isFormalLock) {
         metaRight.setAttribute('fill', '#9e2424');
         metaRight.setAttribute('font-weight', '700');
-        metaRight.textContent = '🔒 Trava SIGA';
+        metaRight.textContent = 'Trava SIGA';
       } else {
         metaRight.setAttribute('fill', '#059669');
         metaRight.textContent = '✓ Aberto';
@@ -3202,9 +2250,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Atualizar indicador
     if (indicator) {
       if (d.isFormalLock) {
-        indicator.innerHTML = `<strong>${d.code}:</strong> 🔒 Pré-requisito Formal no SIGA: ECN 140`;
+        indicator.innerHTML = `<strong>${d.code}:</strong> <i class="bi bi-lock-fill me-1" aria-hidden="true"></i>Pré-requisito Formal no SIGA: ECN 140`;
       } else if (d.formalUnlocks.length > 0) {
-        indicator.innerHTML = `<strong>${d.code}:</strong> 🔑 Chave de destravamento formal de ECN 044 no SIGA`;
+        indicator.innerHTML = `<strong>${d.code}:</strong> <i class="bi bi-key-fill me-1" aria-hidden="true"></i>Chave de destravamento formal de ECN 044 no SIGA`;
       } else {
         const totalReqs = d.suggestedReqs.length;
         const totalUnlocks = d.suggestedUnlocks.length;
@@ -3245,6 +2293,76 @@ document.addEventListener('DOMContentLoaded', function () {
     if (detailDrawer) detailDrawer.style.display = 'none';
   }
 
+  function openDisciplineBottomSheet(codeKey) {
+    if (!window.cagpSheet) return;
+    const cleanKey = (codeKey || '').replace(/\s+/g, '');
+    const grafoData = DISCIPLINAS_GRAFO[cleanKey];
+    let discCard = null;
+    allDisciplines.concat(optCards).forEach(function (card) {
+      if (extractDiscCode(card) === cleanKey) discCard = card;
+    });
+
+    const isObrig = Boolean(grafoData);
+    const title = grafoData
+      ? grafoData.code + ': ' + grafoData.name
+      : (discCard && discCard.querySelector('summary strong') ? discCard.querySelector('summary strong').textContent.trim() : cleanKey);
+    const ementaBodyEl = discCard ? discCard.querySelector('.cagp-discipline-body p') : null;
+    const fullEmentaHtml = ementaBodyEl ? ementaBodyEl.innerHTML : (grafoData ? '<strong>Resumo da Ementa:</strong> ' + grafoData.desc : '');
+
+    let metaBadge = isObrig
+      ? grafoData.period + 'º Período • ' + grafoData.ch + 'h (' + grafoData.cr + ' cr)'
+      : 'Disciplina Optativa • 60h (4 cr)';
+
+    const isDone = gradeState.completed.indexOf(cleanKey) !== -1;
+    const isFav = gradeState.favorites.indexOf(cleanKey) !== -1;
+
+    let sigaAlertHtml = '';
+    if (grafoData) {
+      if (grafoData.isFormalLock) {
+        sigaAlertHtml = '<div class="p-2 border border-2 border-dark bg-light mb-3 small"><strong class="text-danger"><i class="bi bi-lock-fill me-1"></i>Trava Formal no SIGA:</strong> Exige aprovação prévia em <strong>ECN 140 (Introdução à Economia)</strong>.</div>';
+      } else if (grafoData.formalUnlocks && grafoData.formalUnlocks.length > 0) {
+        sigaAlertHtml = '<div class="p-2 border border-2 border-dark bg-light mb-3 small"><strong class="text-danger"><i class="bi bi-key-fill me-1"></i>Chave no SIGA:</strong> Libera matrícula em <strong>ECN 044 (Economia do Bem-Estar)</strong>.</div>';
+      } else {
+        sigaAlertHtml = '<div class="p-2 border border-2 border-dark bg-light mb-3 small"><strong class="text-success"><i class="bi bi-unlock-fill me-1"></i>Matrícula Destravada no SIGA:</strong> Sem bloqueio automático no sistema.</div>';
+      }
+    }
+
+    const html =
+      '<div class="cagp-surface-low p-3 border border-2 border-dark mb-3">' +
+        '<div class="small fw-bold text-uppercase text-danger mb-1">' + metaBadge + '</div>' +
+        '<div class="small text-dark">' + fullEmentaHtml + '</div>' +
+      '</div>' +
+      sigaAlertHtml;
+
+    const actionBtnHtml = isObrig
+      ? '<button type="button" class="cagp-btn ' + (isDone ? 'cagp-btn-outline' : 'cagp-btn-primary') + ' btn-sm" onclick="window.cagpToggleGradeCompleted(\'' + cleanKey + '\'); window.cagpOpenDiscSheet(\'' + cleanKey + '\');">' +
+          '<i class="bi ' + (isDone ? 'bi-check2-circle' : 'bi-plus-circle') + ' me-1"></i>' +
+          (isDone ? 'Já Cursada ✓ (Toque p/ Desmarcar)' : 'Marcar como Já Cursada ✓') +
+        '</button>'
+      : '<button type="button" class="cagp-btn ' + (isFav ? 'cagp-btn-outline' : 'cagp-btn-primary') + ' btn-sm" onclick="window.cagpToggleGradeFav(\'' + cleanKey + '\'); window.cagpOpenDiscSheet(\'' + cleanKey + '\');">' +
+          '<i class="bi ' + (isFav ? 'bi-star-fill text-warning' : 'bi-star') + ' me-1"></i>' +
+          (isFav ? 'Optativa Favorita ★ (Desmarcar)' : 'Salvar nas Favoritas ★') +
+        '</button>';
+
+    const shareBtnHtml =
+      '<button type="button" class="cagp-btn cagp-btn-outline btn-sm" data-cagp-share="true" ' +
+        'data-share-title="' + title.replace(/"/g, '&quot;') + ' • Gestão Pública UFMG" ' +
+        'data-share-text="Confira a ementa oficial de ' + title.replace(/"/g, '&quot;') + ' (' + metaBadge + ') no Super App CAGP UFMG:" ' +
+        'data-share-url="percurso.html#explorador-grade">' +
+        '<i class="bi bi-share me-1" aria-hidden="true"></i> Compartilhar' +
+      '</button>';
+
+    window.cagpSheet.open({
+      title: title,
+      badge: isObrig ? 'OBRIGATÓRIA' : 'OPTATIVA PPC',
+      detent: 'medium',
+      html: html,
+      footerHtml: actionBtnHtml + shareBtnHtml + '<button type="button" class="cagp-btn cagp-btn-outline btn-sm" onclick="window.cagpSheet.close()">Fechar</button>'
+    });
+  }
+
+  window.cagpOpenDiscSheet = openDisciplineBottomSheet;
+
   function renderDetailDrawer(id) {
     if (!detailDrawer) return;
     const d = DISCIPLINAS_GRAFO[id];
@@ -3257,6 +2375,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const titleText = document.getElementById('detail-title');
     const descText = document.getElementById('detail-desc');
     const jumpBtn = document.getElementById('btn-jump-ementa');
+    const toggleCompBtn = document.getElementById('btn-detail-toggle-completed');
+    const openSheetBtn = document.getElementById('btn-detail-open-sheet');
     const sigaBox = document.getElementById('detail-siga-box');
     const reqsList = document.getElementById('detail-reqs-list');
     const reqsNote = document.getElementById('detail-reqs-note');
@@ -3280,10 +2400,28 @@ document.addEventListener('DOMContentLoaded', function () {
       descText.textContent = d.desc;
     }
 
-    // Box 1: Status no SIGA
+    if (toggleCompBtn) {
+      const isDone = gradeState.completed.indexOf(id) !== -1;
+      toggleCompBtn.classList.toggle('is-completed', isDone);
+      toggleCompBtn.innerHTML = isDone
+        ? '<i class="bi bi-check2-circle" aria-hidden="true"></i> Já Cursada ✓'
+        : '<i class="bi bi-check2-circle" aria-hidden="true"></i> Marcar como Já Cursada';
+      toggleCompBtn.onclick = function () {
+        window.cagpToggleGradeCompleted(id);
+        renderDetailDrawer(id);
+      };
+    }
+
+    if (openSheetBtn) {
+      openSheetBtn.onclick = function () {
+        openDisciplineBottomSheet(id);
+      };
+    }
+
+    // Box 1: Status no SIGA (sem side-tab border-left)
     if (sigaBox) {
+      sigaBox.style.borderLeft = '';
       if (d.isFormalLock) {
-        sigaBox.style.borderLeft = '4px solid var(--cagp-red, #9E2424)';
         sigaBox.innerHTML = `
           <div class="small fw-bold text-danger mb-1">
             <i class="bi bi-lock-fill me-1"></i> Pré-Requisito Formal no SIGA (Trava de Matrícula):
@@ -3296,7 +2434,6 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="small text-muted"><strong>Bloqueio no Sistema:</strong> Esta é a <strong>única matéria do curso com trava de matrícula cadastrada no SIGA</strong>. O sistema bloqueia a inscrição caso você não tenha aprovação prévia em Introdução à Economia.</div>
         `;
       } else if (d.formalUnlocks && d.formalUnlocks.length > 0) {
-        sigaBox.style.borderLeft = '4px solid var(--cagp-red, #9E2424)';
         sigaBox.innerHTML = `
           <div class="small fw-bold text-danger mb-1">
             <i class="bi bi-key-fill me-1"></i> Chave Formal de Destravamento no SIGA:
@@ -3311,7 +2448,6 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="small text-muted">Aprovação nesta matéria é exigência estrita do Colegiado para que o SIGA libere o acesso a Economia do Bem-Estar (ECN 044).</div>
         `;
       } else {
-        sigaBox.style.borderLeft = '4px solid var(--cagp-green, #2E7D32)';
         sigaBox.innerHTML = `
           <div class="small fw-bold text-success mb-1">
             <i class="bi bi-unlock-fill me-1"></i> Status no SIGA: Matrícula Destravada
@@ -3351,6 +2487,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (jumpBtn) {
       jumpBtn.onclick = function (e) {
         e.preventDefault();
+        if (window.cagpActivateWorkspaceView) {
+          window.cagpActivateWorkspaceView(null, 'v2', { updateHash: false });
+        }
         const detailsCards = Array.from(document.querySelectorAll('.cagp-discipline'));
         const targetCard = detailsCards.find(function (c) {
           return (c.textContent || '').includes(d.code);
@@ -3376,29 +2515,33 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   if (resetGrafoBtn) {
-    resetGrafoBtn.addEventListener('click', clearSelection);
+    resetGrafoBtn.onclick = clearSelection;
   }
   if (closeDetailBtn) {
-    closeDetailBtn.addEventListener('click', function () {
+    closeDetailBtn.onclick = function () {
       if (detailDrawer) detailDrawer.style.display = 'none';
-    });
+    };
   }
 
   // Atalho Escape no Grafo
   const grafoViewport = document.querySelector('.cagp-grafo-viewport');
   if (grafoViewport) {
-    grafoViewport.addEventListener('keydown', function (e) {
+    grafoViewport.onkeydown = function (e) {
       if (e.key === 'Escape') {
         clearSelection();
       }
-    });
+    };
   }
 
   // Filtros por Trilha Temática Oficial
   trilhaBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      trilhaBtns.forEach(function (b) { b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
+    btn.onclick = function () {
+      trilhaBtns.forEach(function (b) {
+        b.classList.remove('is-active', 'active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('is-active', 'active');
+      btn.setAttribute('aria-pressed', 'true');
       activeTrilha = btn.getAttribute('data-trilha-filter') || 'all';
 
       clearSelection();
@@ -3411,12 +2554,275 @@ document.addEventListener('DOMContentLoaded', function () {
           n.classList.add('is-dimmed');
         }
       });
-    });
+    };
   });
 
-  // Inicializar renderização do grafo SVG
+  // Inicializar renderização do grafo SVG (evitando duplicação em navegação SPA)
+  colsGroup.innerHTML = '';
+  linksGroup.innerHTML = '';
+  nodesGroup.innerHTML = '';
   initGrafo();
 
-});
+  /* 5. Sincronização Visual de "Minha Grade" nos Cards, Barra e Grafo SVG */
+  const completedBadgeEl = document.getElementById('my-grade-completed-badge');
+  const favBadgeEl = document.getElementById('my-grade-fav-badge');
+  const hoursReadoutEl = document.getElementById('my-grade-hours-readout');
+  const progressBarEl = document.getElementById('my-grade-progress-bar');
+  const clearGradeBtn = document.getElementById('btn-clear-my-grade');
+
+  function ensureDisciplineActionToolbar() {
+    allDisciplines.forEach(function (disc) {
+      const code = extractDiscCode(disc);
+      const titleEl = disc.querySelector('summary strong');
+      const fullTitle = (titleEl ? titleEl.textContent.trim() : code).replace(/"/g, '&quot;');
+      const body = disc.querySelector('.cagp-discipline-body');
+      if (!body || body.querySelector('.cagp-disc-toolbar')) return;
+      const bar = document.createElement('div');
+      bar.className = 'cagp-disc-toolbar d-flex flex-wrap gap-2 mt-2 pt-2 border-top';
+      bar.innerHTML =
+        '<button type="button" class="cagp-disc-action-chip" data-toggle-completed="' + code + '">' +
+          '<i class="bi bi-check2-circle" aria-hidden="true"></i> <span class="js-comp-label">Marcar como Já Cursada</span>' +
+        '</button>' +
+        '<button type="button" class="cagp-disc-action-chip" data-open-disc-sheet="' + code + '">' +
+          '<i class="bi bi-window-stack" aria-hidden="true"></i> Ficha no Bottom Sheet' +
+        '</button>' +
+        '<button type="button" class="cagp-disc-action-chip" data-cagp-share="true" ' +
+          'data-share-title="' + fullTitle + ' • Gestão Pública UFMG" ' +
+          'data-share-text="Ementa oficial da disciplina obrigatória ' + fullTitle + ' no Portal CAGP UFMG:" ' +
+          'data-share-url="percurso.html#explorador-grade">' +
+          '<i class="bi bi-share" aria-hidden="true"></i> Compartilhar' +
+        '</button>';
+      body.appendChild(bar);
+    });
+
+    optCards.forEach(function (card) {
+      const code = extractDiscCode(card);
+      const titleEl = card.querySelector('summary strong');
+      const fullTitle = (titleEl ? titleEl.textContent.trim() : code).replace(/"/g, '&quot;');
+      const body = card.querySelector('.cagp-discipline-body');
+      if (!body || body.querySelector('.cagp-disc-toolbar')) return;
+      const bar = document.createElement('div');
+      bar.className = 'cagp-disc-toolbar d-flex flex-wrap gap-2 mt-2 pt-2 border-top';
+      bar.innerHTML =
+        '<button type="button" class="cagp-disc-action-chip" data-toggle-fav="' + code + '">' +
+          '<i class="bi bi-star" aria-hidden="true"></i> <span class="js-fav-label">Favoritar Optativa ★</span>' +
+        '</button>' +
+        '<button type="button" class="cagp-disc-action-chip" data-open-disc-sheet="' + code + '">' +
+          '<i class="bi bi-window-stack" aria-hidden="true"></i> Ficha no Bottom Sheet' +
+        '</button>' +
+        '<button type="button" class="cagp-disc-action-chip" data-cagp-share="true" ' +
+          'data-share-title="' + fullTitle + ' • Optativa Gestão Pública UFMG" ' +
+          'data-share-text="Ementa oficial da disciplina optativa ' + fullTitle + ' no Portal CAGP UFMG:" ' +
+          'data-share-url="percurso.html#catalogo-optativas">' +
+          '<i class="bi bi-share" aria-hidden="true"></i> Compartilhar' +
+        '</button>';
+      body.appendChild(bar);
+    });
+
+    document.querySelectorAll('[data-toggle-completed]').forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.stopPropagation();
+        window.cagpToggleGradeCompleted(btn.getAttribute('data-toggle-completed'));
+      };
+    });
+
+    document.querySelectorAll('[data-toggle-fav]').forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.stopPropagation();
+        window.cagpToggleGradeFav(btn.getAttribute('data-toggle-fav'));
+      };
+    });
+
+    document.querySelectorAll('[data-open-disc-sheet]').forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.stopPropagation();
+        openDisciplineBottomSheet(btn.getAttribute('data-open-disc-sheet'));
+      };
+    });
+  }
+
+  function syncMyGradeUI() {
+    let completedHours = 0;
+    const validCompleted = gradeState.completed.filter(function (c) {
+      if (DISCIPLINAS_GRAFO[c]) {
+        completedHours += DISCIPLINAS_GRAFO[c].ch || 60;
+        return true;
+      }
+      return false;
+    });
+
+    const compCount = validCompleted.length;
+    const pct = Math.min(100, Math.round((compCount / 27) * 100));
+    const favCount = gradeState.favorites.length;
+
+    if (completedBadgeEl) {
+      if (window.cagpAnimateNumber) {
+        window.cagpAnimateNumber(completedBadgeEl, compCount, {
+          formatter: function (n) {
+            const c = Math.round(n);
+            const p = Math.min(100, Math.round((c / 27) * 100));
+            return c + ' / 27 obrigatórias (' + p + '%)';
+          }
+        });
+      } else {
+        completedBadgeEl.textContent = compCount + ' / 27 obrigatórias (' + pct + '%)';
+      }
+    }
+    if (favBadgeEl) {
+      favBadgeEl.textContent = favCount + ' optativa' + (favCount === 1 ? '' : 's') + ' favorita' + (favCount === 1 ? '' : 's') + ' ★';
+    }
+    if (hoursReadoutEl) {
+      if (window.cagpAnimateNumber) {
+        window.cagpAnimateNumber(hoursReadoutEl, completedHours, { suffix: 'h / 1.860h concluídas' });
+      } else {
+        hoursReadoutEl.textContent = completedHours + 'h / 1.860h concluídas';
+      }
+    }
+    if (progressBarEl) {
+      if (window.cagpPulseProgress) {
+        window.cagpPulseProgress(progressBarEl, pct);
+      } else {
+        progressBarEl.style.width = pct + '%';
+      }
+      progressBarEl.classList.toggle('is-complete', compCount >= 27);
+    }
+    if (clearGradeBtn) {
+      clearGradeBtn.style.display = (compCount > 0 || favCount > 0) ? '' : 'none';
+    }
+
+    // Atualizar nós do Grafo SVG
+    Object.keys(DISCIPLINAS_GRAFO).forEach(function (id) {
+      const nodeEl = document.getElementById('node-' + id);
+      if (nodeEl) {
+        nodeEl.classList.toggle('is-completed', validCompleted.indexOf(id) !== -1);
+      }
+    });
+
+    // Atualizar cards de obrigatórias
+    allDisciplines.forEach(function (disc) {
+      const code = extractDiscCode(disc);
+      const isDone = validCompleted.indexOf(code) !== -1;
+      disc.classList.toggle('is-completed', isDone);
+      const btn = disc.querySelector('[data-toggle-completed]');
+      if (btn) {
+        btn.classList.toggle('is-completed', isDone);
+        const lbl = btn.querySelector('.js-comp-label');
+        if (lbl) lbl.textContent = isDone ? 'Já Cursada ✓' : 'Marcar como Já Cursada';
+      }
+    });
+
+    // Atualizar cards de optativas
+    optCards.forEach(function (card) {
+      const code = extractDiscCode(card);
+      const isFav = gradeState.favorites.indexOf(code) !== -1;
+      card.classList.toggle('is-favorite', isFav);
+      const btn = card.querySelector('[data-toggle-fav]');
+      if (btn) {
+        btn.classList.toggle('is-favorite', isFav);
+        const lbl = btn.querySelector('.js-fav-label');
+        if (lbl) lbl.textContent = isFav ? 'Optativa Favorita ★' : 'Favoritar Optativa ★';
+      }
+    });
+
+    applyFilters();
+    filterOptatives();
+  }
+
+  window.cagpToggleGradeCompleted = function (code) {
+    const clean = (code || '').replace(/\s+/g, '');
+    if (!clean) return;
+    if (window.cagpHaptic) window.cagpHaptic(8);
+    const idx = gradeState.completed.indexOf(clean);
+    if (idx === -1) {
+      gradeState.completed.push(clean);
+    } else {
+      gradeState.completed.splice(idx, 1);
+    }
+    saveGradeState();
+    syncMyGradeUI();
+  };
+
+  window.cagpToggleGradeFav = function (code) {
+    const clean = (code || '').replace(/\s+/g, '');
+    if (!clean) return;
+    if (window.cagpHaptic) window.cagpHaptic(8);
+    const idx = gradeState.favorites.indexOf(clean);
+    if (idx === -1) {
+      gradeState.favorites.push(clean);
+    } else {
+      gradeState.favorites.splice(idx, 1);
+    }
+    saveGradeState();
+    syncMyGradeUI();
+  };
+
+  if (clearGradeBtn) {
+    clearGradeBtn.onclick = function () {
+      gradeState = { completed: [], favorites: [] };
+      saveGradeState();
+      syncMyGradeUI();
+    };
+  }
+
+  function syncPercursoWithProfile() {
+    try {
+      let prof = null;
+      if (window.cagpProfile && typeof window.cagpProfile.get === 'function') {
+        prof = window.cagpProfile.get();
+      } else {
+        const raw = localStorage.getItem('cagp_student_profile_v1');
+        if (raw) prof = JSON.parse(raw);
+      }
+      if (!prof) return;
+      const curP = String(prof.period || '1').replace(/[^0-9]/g, '') || '1';
+      const curPOrd = curP + 'º';
+      document.querySelectorAll('[data-period-filter], [data-filter-period]').forEach(function (btn) {
+        const rawVal = btn.getAttribute('data-period-filter') || btn.getAttribute('data-filter-period') || '';
+        const cleanVal = rawVal.replace(/º$/, '');
+        if (cleanVal && cleanVal !== 'all') {
+          btn.setAttribute('data-filter-period', cleanVal);
+        }
+        const isCur = (rawVal === curPOrd || cleanVal === curP);
+        btn.classList.toggle('is-student-period', isCur);
+        if (isCur) {
+          btn.setAttribute('title', 'Seu período atual configurado no Passaporte Acadêmico (' + curP + 'º Período)');
+        }
+      });
+      document.querySelectorAll('.cagp-timeline-step, .cagp-period-block[data-period]').forEach(function (block) {
+        block.classList.add('cagp-period-block');
+        const marker = block.querySelector('.cagp-timeline-marker');
+        const pVal = block.getAttribute('data-period') || (marker ? marker.textContent.trim().replace(/[^0-9]/g, '') : '');
+        if (pVal) block.setAttribute('data-period', pVal);
+        const isCur = pVal === curP;
+        block.classList.toggle('is-student-current-period', isCur);
+      });
+    } catch (e) {}
+  }
+
+  if (window.__cagpPercursoSyncHandler) {
+    window.removeEventListener('cagp:vault-synced', window.__cagpPercursoSyncHandler);
+    window.removeEventListener('cagp:vault-cleared', window.__cagpPercursoSyncHandler);
+    window.removeEventListener('cagp:profile-updated', window.__cagpPercursoSyncHandler);
+  }
+  window.__cagpPercursoSyncHandler = function () {
+    gradeState = loadGradeState();
+    syncMyGradeUI();
+    syncPercursoWithProfile();
+  };
+  window.addEventListener('cagp:vault-synced', window.__cagpPercursoSyncHandler);
+  window.addEventListener('cagp:vault-cleared', window.__cagpPercursoSyncHandler);
+  window.addEventListener('cagp:profile-updated', window.__cagpPercursoSyncHandler);
+
+  ensureDisciplineActionToolbar();
+  syncMyGradeUI();
+  syncPercursoWithProfile();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPercursoPage, { once: true });
+  } else {
+    initPercursoPage();
+  }
+})();
 </script>
 ```

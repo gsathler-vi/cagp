@@ -60,6 +60,7 @@
 50. [Ciclo 50: Arquitetura Dual Web vs. Super App Instalado, Catálogo dos 8 Micro-Apps e Offline Student Vault](#50-ciclo-50-arquitetura-dual-web-vs-super-app-instalado-catálogo-dos-8-micro-apps-e-offline-student-vault)
 51. [Ciclo 51: Polimento Global de Links, Resolução Infallível de Âncoras e Restauração do Anúncio da Chapa](#51-ciclo-51-polimento-global-de-links-resolução-infallível-de-âncoras-e-restauração-do-anúncio-da-chapa-impeccable-polish)
 52. [Ciclo 52: Refatoração Integral da UI/UX Mobile do Super App, Nova Bottom Tab Bar de 5 Destinos, Central de PDFs Offline e Relógio Síncrono Zero Latência](#52-ciclo-52-refatoração-integral-da-uiux-mobile-do-super-app-nova-bottom-tab-bar-de-5-destinos-central-de-pdfs-offline-e-relógio-síncrono-zero-latência-apple-hig--impeccable-adapt)
+53. [Ciclo 53: Física iOS Liquid Glass Zero Blur, Busca Mobile com visualViewport, Benchmarks de Bancos & Música e Ícones do HUB de Apps](#53-ciclo-53-física-ios-liquid-glass-zero-blur-busca-mobile-com-visualviewport-benchmarks-de-bancos--música-e-ícones-do-hub-de-apps-apple-design--impeccable-shape)
 
 ---
 
@@ -1975,3 +1976,73 @@ Seguindo as diretrizes de Product Design, `/apple-design`, `/impeccable polish`,
 - Script de auditoria Python comprovando **0 links quebrados** em 170 links analisados;
 - Compilação Quarto (`quarto render`) finalizada com código 0;
 - Detector `impeccable detect` registrando **0 erros**, adequação total do type ramp ($\ge 11\text{px}$) e conformidade de raios com a escala de `DESIGN.md`.
+
+
+---
+
+## 53. Ciclo 53: Física iOS Liquid Glass Zero Blur, Busca Mobile com visualViewport, Benchmarks de Bancos & Música e Ícones do HUB de Apps (Apple Design & Impeccable Shape)
+
+**Contexto e Motivação:**  
+Dando continuidade ao aprimoramento do Super App estudantil CAGP UFMG com o ferramental de `/apple-design`, `/impeccable polish`, `/impeccable shape` e `/impeccable adapt`, este ciclo concentrou-se na implementação de física tátil fluida do iOS sem o uso de desfoque, resolução de bugs de teclado virtual na busca mobile, benchmarks visuais dos maiores apps bancários e de música, e correção de contrastes nos ícones do HUB.
+
+### 53.1 Ícones do HUB de Apps & Campus ao Vivo Adaptativo para Tablets e Desktop
+- **Resolução de Contraste Invisível nos Badges:** Identificado que as classes `.cagp-bg-amber`, `.cagp-bg-dark` e `.cagp-bg-red` não possuíam definições de fundo sólidas no CSS, ocasionando ícones brancos sobre fundo branco na Calculadora ACG, 68 Optativas e Guia do Calouro. Foram injetadas classes de alto contraste vinculadas estritamente aos tokens de marca de `DESIGN.md` (`accent-amber: #e65100`, `primary-red: #9e2424`, `dark: #111111`);
+- **Campus ao Vivo Soberano em Telas Grandes:** Eliminada a regra restritiva `@media (min-width: 992px) { display: none !important; }`. O widget do campus em tempo real (RU II, Circulares e Secretaria F-2033) agora se adapta dinamicamente como um elegante dashboard em 3 colunas para iPads/tablets em modo paisagem e computadores desktop.
+
+### 53.2 Busca Mobile vs. Teclado Virtual (Ancoragem Superior & visualViewport)
+- **Top-Docked Mobile Spotlight:** No mobile (`@media (max-width: 680px)`), o modal de busca foi ancorado no topo da tela (`align-items: flex-start; top: 0;`), garantindo que o campo de pesquisa nunca seja encoberto pelo teclado virtual;
+- **Altura Dinâmica (`100dvh` & `window.visualViewport`):** Implementados listeners reativos aos eventos `resize` e `scroll` do `visualViewport`. Quando o teclado virtual sobe, a altura do diálogo e a lista de resultados roláveis ajustam-se exatamente ao espaço útil visível acima do teclado;
+- **Atributos Semânticos:** O campo de busca recebeu `inputmode="search"` e `enterkeyhint="search"`, exibindo o botão nativo de ação "Buscar" no teclado do iOS e Android.
+
+### 53.3 Física de Animações iOS "Liquid Glass" SEM Desfoque (Zero Blur)
+- **Eliminação Completa de `backdrop-filter: blur`:** Todos os backdrops de modais e gavetas foram convertidos para máscaras sólidas e limpas de alto contraste (`rgba(10, 10, 10, 0.72)`), eliminando 100% de borrões e garantindo máxima legibilidade neo-brutalista e alta taxa de quadros (60fps);
+- **Curvas de Mola do iOS:** Tokens de física de movimento atualizados para as curvas canônicas da Apple: `--cagp-spring: cubic-bezier(0.32, 0.72, 0, 1)` e `--cagp-spring-press: cubic-bezier(0.2, 0, 0, 1)`;
+- **Microinterações Táteis (Scale Morphing):** Adicionado feedback de compressão tátil ao toque (`:active`) com `transform: scale(0.97) translate(1px, 2px)` para todos os cartões, botões e abas de navegação, retornando suavemente na liberação.
+
+### 53.4 Benchmark de Bancos (Nubank, Inter) & Música (Apple Music, Spotify)
+- **Carrossel Horizontal de Ações Rápidas (Nubank/Inter):** A seção de ações rápidas no Início foi transformada em um slider horizontal com encaixe tátil magnético (`scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;`), permitindo acesso veloz aos atalhos de alta frequência (RU, Circulares, Calculadora, Optativas, Secretaria, Documentos);
+- **Biblioteca Offline Discente (Apple Music / Spotify):** Em `documentos.qmd`, a central de PDFs foi aprimorada com o conceito de biblioteca de downloads offline. A função `window.cagpCheckCachedPdfs()` inspeciona dinamicamente a Cache Storage da PWA e exibe badges em tempo real (`8 de 8 PDFs Salvos Offline`) com download mestre em 1 toque.
+
+### 53.5 Auditoria e Verificação
+- **Auditoria de Links Python:** 967 links internos e âncoras testados com **0 links quebrados**;
+- **Compilação Quarto (`quarto render`):** 11 de 11 páginas renderizadas sem qualquer erro;
+- **Detector `impeccable detect`:** Executado em todos os arquivos de `docs/`, registrando **0 erros** de acessibilidade, raio ou espaçamento.
+
+---
+
+## 54. Ciclos 54 a 58: Reengenharia Integral em 5 Fases (Diagnóstico Forense, Casca Blindada, Páginas Editoriais, Módulos Operacionais, Novas Features Client-Side e Auditoria `/browser`)
+
+### 54.1 Fase 1 (Ciclo 54) — Diagnóstico Forense e Governança Soberana
+- **Entrega de Governança Quádrupla:** Consolidação de [`RELATORIO.md`](file:///home/gsathler/Nextcloud/Projects/cagp/RELATORIO.md), [`AGENTS.md`](file:///home/gsathler/Nextcloud/Projects/cagp/AGENTS.md), [`PRODUCT.md`](file:///home/gsathler/Nextcloud/Projects/cagp/PRODUCT.md) e [`DESIGN.md`](file:///home/gsathler/Nextcloud/Projects/cagp/DESIGN.md) sincronizados com `.impeccable/design.json` (`impeccable doctor` 100% PASS).
+- **Regra de Arbitragem em 3 Camadas:**
+  - *Camada 1 (Soberana — Brite / CAGP):* Bordas pretas `#0A0A0A` (`2px`–`3px`), sombras duras sem blur (`0px`), cantos retos (`0px`–`4px`), zero glassmorphism e tipografia `Oswald` + `Inter` + `JetBrains Mono`.
+  - *Camada 2 (`apple-design`):* Ergonomia espacial, Safe Areas (`viewport-fit=cover`), Spotlight adaptativo ao teclado (`visualViewport`), Top Command Bar (`52px`), Bottom Tab Bar (`60px`, 5 abas) e Bottom Sheet Global (`#cagp-global-bottom-sheet`).
+  - *Camada 3 (`m3-expressive`):* Hierarquia tonal de superfícies (`--cagp-surface-base`, `--cagp-surface-card`, `--cagp-surface-low`, `--cagp-surface-high`), zero `nested-cards`, trilhos de chips deslizantes M3 e carimbos brutais de status.
+
+### 54.2 Fase 2 (Ciclo 55) — Fundação Global, Casca do Super App e Blindagem Técnica
+- **Zero Zoom Acidental & Viewport Blindado (`_includes/pwa-meta.html` & `styles.css`):** Inputs e selects com `font-size >= 16px`, `touch-action: manipulation` em controles interativos e `overflow-x: clip` global.
+- **Escala Canônica de `z-index` (`1020` a `1100`):** Eliminação de inflação de `z-index` e coordenação Single-Sheet (`window.cagpCloseAllOverlays`).
+- **Roteador SPA Idempotente (`_includes/super-app-router.html`):** Remoção de disparos sintéticos de `DOMContentLoaded`/`load`, adoção do evento canônico `cagp:navigated` e preservação dos atributos `data-a11y-*` em `<html>`.
+- **Service Worker v2 (`sw.js`):** Estratégia *Network-First* para HTML/CSS/JS e *Cache-First* para os 8 PDFs oficiais (`cagp-pdfs-oficiais-v1`).
+
+### 54.3 Fase 3 (Ciclo 56) — Reengenharia de Layout e UX das 7 Páginas Editoriais e de Governança
+- Refatoração estrutural e visual de `index.qmd`, `curso.qmd`, `calouros.qmd`, `sobre.qmd`, `gestao.qmd`, `faq.qmd` e `mapa-do-site.qmd` eliminando 100% dos `nested-cards`, emojis como ícones e `center-everything`, preservando 100% dos dados factuais.
+
+### 54.4 Fase 4 (Ciclo 57) — Reengenharia dos 4 Módulos Operacionais e Auditoria Multi-Viewport `/browser`
+- **`percurso.qmd`:** Catálogo em padrão E-commerce + Grafo SVG interativo + **"Minha Grade"** (`cagp_minha_grade_v1`) + inspeção de ementa no `#cagp-global-bottom-sheet`.
+- **`acg.qmd`:** Dashboard de Limites e Metas de Horas estilo Nubank/Inter (`600h = 40 créditos`) + barras proporcionais de teto por categoria + carimbos brutais (`TETO`, `INTEGRALIZAÇÃO APTA`).
+- **`estagio-tcc.qmd`:** Simulador segmentado de Dispensa de Estágio (Art. 41) com carimbos brutais (`DEFERIDO — ART. 41` vs `INELEGÍVEL`) + checklist documental persistente (`cagp_art41_checklist_v1`) + 4 modalidades de TCC (Art. 26).
+- **`documentos.qmd`:** Biblioteca Offline estilo Spotify/Apple Music sincronizada com `CacheStorage` (`cagp-pdfs-oficiais-v1`), pílulas individuais por documento e filtro "Salvos no Aparelho".
+- **Auditoria Multi-Viewport com Subagente Nativo `/browser`:** Substituição definitiva do `playwright-core` pelo subagente `/browser` nas 4 classes de tela (`320px`, `360px`, `375px`, `430px`, `680px`, `768px`, `840px`, `991px`, `1024px`, `1440px`) com `0` erros de console e `0` overflow horizontal.
+
+### 54.5 Fase 5 (Ciclo 58) — Novas Funcionalidades Client-Side de Alto Valor e Fechamento E2E
+1. **Sistema Inteligente de Notificações, Lembretes Noturnos e Guardião de 120 Dias (`sw.js`, `_includes/pwa-install.html`, `acg.qmd`):**
+   - Alertas configuráveis em `#cagp-settings-sheet` para **Jantar no RU II (`18h15`)**, **Último Circular Noturno (`22h30`)** e **Prazo Fatal de 120 Dias das AAC** (`cagp_notifications_prefs_v1`).
+   - Painel **`#guardiao-120-dias`** em `acg.qmd` (`cagp_aac_120d_certs_v1`) calculando os **120 dias corridos (Art. 15, § 4º do Regulamento N-20229)** para certificados das Modalidades III e VII, exibindo faixas **Verde (`> 30d`)**, **Âmbar (`<= 30d`)** e **Vermelho Crítico (`<= 10d` / Vencido)**, atualizando `navigator.setAppBadge` e destacando alertas na barra **Campus Agora**.
+2. **Gerador de Espelho Oficial para o Requerimento N-20229 (`acg.qmd`):**
+   - Botão **"Gerar Resumo para Formulário N-20229"** que monta a ficha oficial de conferência no `#cagp-global-bottom-sheet` e em folha de impressão A4 (`@media print`) com conversão automática de horas em créditos (`15h = 1 crédito`), texto pronto para copiar no SEI e link para o formulário oficial.
+3. **Integração com Agenda Nativa (`.ics`) e Compartilhamento (`Web Share API`):**
+   - Utilitários globais `window.cagpCalendar.downloadIcs` e `window.cagpShare` integrados em `index.qmd`, `curso.qmd`, `calouros.qmd`, `acg.qmd`, `percurso.qmd`, `documentos.qmd` e `faq.qmd`.
+4. **"Meu CAGP Sync" — Backup e Portabilidade Zero-Servidor (`#cagp-settings-sheet`):**
+   - Exportação e restauração completa das 8 chaves canônicas do Cofre Acadêmico via arquivo `.json` (`meu-cagp-backup-YYYY-MM-DD.json`) ou código compacto Base64 (`CAGP1:...`) com sincronização instantânea (`cagp:vault-synced`) sem recarregar a página.
+

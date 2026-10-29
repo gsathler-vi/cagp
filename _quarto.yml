@@ -10,15 +10,21 @@ project:
   render:
     - index.qmd
     - curso.qmd
+    - pesquisa.qmd
     - calouros.qmd
     - percurso.qmd
-    - estagio-tcc.qmd
+    - optativas.qmd
     - acg.qmd
+    - estagio.qmd
+    - tcc.qmd
+    - estagio-tcc.qmd
     - documentos.qmd
     - faq.qmd
     - sobre.qmd
     - gestao.qmd
     - mapa-do-site.qmd
+
+lang: pt-BR
 
 website:
   title: "CAGP"
@@ -33,7 +39,7 @@ website:
     position: above-navbar
     type: danger
     content: |
-      <span class="cagp-announcement-badge">PROPOSTA DE CHAPA</span> Este portal é uma proposta e projeto da <strong class="cagp-chapa-highlight">Chapa [Nome da Chapa a Definir]</strong> para a gestão do <strong>CAGP (FAFICH/UFMG)</strong>. Como nosso compromisso prioritário é com os discentes, <strong>independentemente do resultado da eleição, disponibilizaremos este projeto completo para a gestão vencedora</strong>, pois a transparência e o acesso à informação são de interesse coletivo de todo o curso.
+      <span class="cagp-announcement-badge">PROPOSTA DE CHAPA</span> <span class="cagp-announcement-text">Este portal é uma proposta e projeto da <strong class="cagp-chapa-highlight">Chapa [Nome da Chapa a Definir]</strong> para a gestão do <strong>CAGP (FAFICH/UFMG)</strong>. Como nosso compromisso prioritário é com os discentes, <strong>independentemente do resultado da eleição, disponibilizaremos este projeto completo para a gestão vencedora</strong>, pois a transparência e o acesso à informação são de interesse coletivo de todo o curso.</span> <button type="button" class="cagp-chapa-toggle-btn" onclick="window.cagpToggleChapaBanner &amp;&amp; window.cagpToggleChapaBanner()" aria-label="Alternar visualização compacta do aviso da chapa"><span class="cagp-chapa-toggle-label">Compactar ▲</span></button>
 
   page-footer:
     left: |
@@ -49,9 +55,7 @@ format:
     theme:
       - _variables.scss
     css: styles.css
-    toc: true
-    toc-title: "Nesta página"
-    toc-location: right
+    toc: false
     smooth-scroll: true
     include-in-header: _includes/pwa-meta.html
     include-before-body:
@@ -60,7 +64,6 @@ format:
     include-after-body:
       - _includes/back-to-top.html
       - _includes/accessibility.html
-      - _includes/app-launcher.html
       - _includes/pwa-install.html
       - _includes/super-app-router.html
       - _includes/spotlight-search.html

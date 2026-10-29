@@ -6,310 +6,70 @@ title-block-style: none
 ---
 
 ```{=html}
-<!-- Central do Campus em Tempo Real & Mobile Super App Hub (Visível exclusivamente em telas móveis e dobráveis) -->
-<section id="cagp-mobile-superapp-hub" class="cagp-mobile-superapp-hub" aria-label="Central do Campus em Tempo Real">
-  <div class="cagp-mobile-hub-inner">
-    <div class="cagp-mobile-hub-header">
-      <div class="cagp-mobile-hub-live">
-        <i class="bi bi-broadcast me-1 text-success" aria-hidden="true"></i>
-        <span class="cagp-mobile-hub-live-text">CAMPUS AO VIVO</span>
-      </div>
-      <div class="cagp-mobile-hub-clock">
-        <i class="bi bi-clock me-1" aria-hidden="true"></i>
-        <span id="cagp-live-clock">--:--</span>
-      </div>
+<header class="cagp-workspace-header" role="region" aria-label="Cabeçalho Principal do Portal e Super App CAGP UFMG">
+  <div class="cagp-workspace-eyebrow">
+    <div class="d-flex flex-wrap gap-1 align-items-center">
+      <span class="cagp-badge cagp-badge-red">Turno Noturno</span>
+      <span class="cagp-badge cagp-badge-dark">10 Semestres • 3.000h</span>
+      <span class="cagp-badge cagp-badge-blue">Bacharelado FAFICH / UFMG</span>
     </div>
-
-    <!-- Grade de Status do Campus em Tempo Real -->
-    <div class="cagp-campus-status-grid">
-      <a href="calouros.html#ru-alimentacao" class="cagp-campus-status-card" data-cagp-nav>
-        <div class="cagp-campus-status-icon cagp-bg-gold">
-          <i class="bi bi-egg-fried" aria-hidden="true"></i>
-        </div>
-        <div class="cagp-campus-status-info">
-          <div class="cagp-campus-status-label">RU II • FAFICH</div>
-          <div id="cagp-status-ru" class="cagp-campus-status-val">Consultando...</div>
-        </div>
-      </a>
-
-      <a href="calouros.html#circulares-noturnos" class="cagp-campus-status-card" data-cagp-nav>
-        <div class="cagp-campus-status-icon cagp-bg-blue">
-          <i class="bi bi-bus-front" aria-hidden="true"></i>
-        </div>
-        <div class="cagp-campus-status-info">
-          <div class="cagp-campus-status-label">Circulares UFMG</div>
-          <div id="cagp-status-circulares" class="cagp-campus-status-val">Consultando...</div>
-        </div>
-      </a>
-
-      <a href="curso.html#secretaria-colegiado" class="cagp-campus-status-card" data-cagp-nav>
-        <div class="cagp-campus-status-icon cagp-bg-bordeaux">
-          <i class="bi bi-door-open" aria-hidden="true"></i>
-        </div>
-        <div class="cagp-campus-status-info">
-          <div class="cagp-campus-status-label">Secretaria & CEAG</div>
-          <div id="cagp-status-secretaria" class="cagp-campus-status-val">Consultando...</div>
-        </div>
-      </a>
-    </div>
-
-    <!-- Card Inteligente de Incentivo de Instalação (Adaptado à Plataforma: iOS vs Android) -->
-    <div id="cagp-platform-incentive-container" class="cagp-platform-incentive-box"></div>
-
-    <!-- Quick Actions Pocket (Benchmark Bancos: Nubank / Inter — 6 Atalhos Horizontais de Bolso) -->
-    <div class="cagp-pocket-actions-section">
-      <div class="d-flex align-items-center justify-content-between mb-2">
-        <div class="cagp-pocket-actions-title mb-0">
-          <i class="bi bi-grid-fill me-1 text-danger" aria-hidden="true"></i>
-          <span>Ações Rápidas de Bolso</span>
-        </div>
-        <span class="small text-muted d-sm-none font-display text-uppercase" style="font-size: 0.72rem;">Deslize &rarr;</span>
-      </div>
-      <div class="cagp-pocket-actions-grid">
-        <a href="calouros.html#ru-alimentacao" class="cagp-pocket-btn" data-cagp-nav>
-          <div class="cagp-pocket-icon-wrap cagp-bg-gold"><i class="bi bi-egg-fried" aria-hidden="true"></i></div>
-          <span>RU Hoje</span>
-        </a>
-        <a href="calouros.html#circulares-noturnos" class="cagp-pocket-btn" data-cagp-nav>
-          <div class="cagp-pocket-icon-wrap cagp-bg-blue"><i class="bi bi-bus-front" aria-hidden="true"></i></div>
-          <span>Circulares</span>
-        </a>
-        <a href="acg.html#calculadora" class="cagp-pocket-btn" data-cagp-nav>
-          <div class="cagp-pocket-icon-wrap cagp-bg-amber"><i class="bi bi-calculator" aria-hidden="true"></i></div>
-          <span>Calculadora</span>
-        </a>
-        <a href="percurso.html#catalogo-optativas" class="cagp-pocket-btn" data-cagp-nav>
-          <div class="cagp-pocket-icon-wrap cagp-bg-dark"><i class="bi bi-journal-text" aria-hidden="true"></i></div>
-          <span>68 Optativas</span>
-        </a>
-        <a href="curso.html#secretaria-colegiado" class="cagp-pocket-btn" data-cagp-nav>
-          <div class="cagp-pocket-icon-wrap cagp-bg-charcoal"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
-          <span>Secretaria</span>
-        </a>
-        <a href="documentos.html" class="cagp-pocket-btn" data-cagp-nav>
-          <div class="cagp-pocket-icon-wrap cagp-bg-bordeaux"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></div>
-          <span>Documentos</span>
-        </a>
-      </div>
+    <div class="d-flex flex-wrap gap-1 align-items-center">
+      <span class="cagp-badge cagp-badge-gold"><i class="bi bi-shield-check me-1" aria-hidden="true"></i>Portal &amp; Super App Discente</span>
     </div>
   </div>
-</section>
-<script>if (window.applyCagpCampusState) window.applyCagpCampusState();</script>
 
-<!-- Central dos 8 Micro-Apps do Curso (Exclusivo Super App Instalado) -->
-<section id="micro-apps-hub" class="cagp-superapp-only cagp-superapp-hub-section" aria-label="Central dos Micro-Apps CAGP">
-  
-  <!-- Card de Boas-Vindas do Super App -->
-  <div class="cagp-superapp-welcome-card">
-    <div class="d-flex align-items-center justify-content-between mb-2">
-      <span class="cagp-badge cagp-badge-red">Super App Instalado</span>
-      <span class="cagp-badge cagp-badge-dark"><i class="bi bi-shield-check text-warning me-1"></i> Modo Bolso Ativo</span>
+  <div class="cagp-workspace-title-row">
+    <div>
+      <h1 class="cagp-workspace-title"><i class="bi bi-bank me-2 text-danger" aria-hidden="true"></i>CENTRO ACADÊMICO DE GESTÃO PÚBLICA — UFMG</h1>
+      <p class="cagp-workspace-subtitle">
+        Entidade legítima de representação discente da FAFICH/UFMG. Simule horas de Extensão e AAC (<strong>600h</strong>), consulte as <strong>27 obrigatórias</strong> e <strong>68 optativas</strong>, verifique dispensa de estágio (<strong>Art. 41</strong>) e acesse os <strong>8 PDFs normativos offline</strong>.
+      </p>
     </div>
-    <h2 class="h5 font-display text-uppercase mb-1">Central de Micro-Apps CAGP</h2>
-    <p class="small text-muted mb-0">Ferramentas focadas, ementas sem rolagem e cálculos salvos no seu dispositivo.</p>
+    <div class="cagp-workspace-actions">
+      <a href="calouros.html" class="cagp-doc-btn cagp-doc-btn-primary">
+        <i class="bi bi-compass me-1" aria-hidden="true"></i> Sou Calouro (1º P)
+      </a>
+      <a href="percurso.html" class="cagp-doc-btn cagp-doc-btn-outline">
+        <i class="bi bi-diagram-3 me-1" aria-hidden="true"></i> Grade 10P
+      </a>
+      <a href="curso.html" class="cagp-doc-btn cagp-doc-btn-outline">
+        <i class="bi bi-mortarboard me-1" aria-hidden="true"></i> O Curso
+      </a>
+    </div>
   </div>
 
-  <!-- Preview das Minhas Metas Acadêmicas (Offline Vault) -->
-  <div class="cagp-vault-section mb-3">
-    <div class="d-flex align-items-center justify-content-between mb-2">
-      <div class="cagp-vault-title font-display fw-bold text-uppercase fs-6 mb-0">
-        <i class="bi bi-safe2-fill me-1 text-warning"></i> Minhas Metas Salvas
-      </div>
-      <button type="button" class="btn btn-sm btn-link p-0 text-decoration-none small font-display fw-bold" onclick="window.openCagpAppSettings &amp;&amp; window.openCagpAppSettings()">
-        Ver Ajustes &rarr;
+  <nav class="cagp-workspace-bar" aria-label="Sub-visualizações da Central Inicial">
+    <span class="cagp-workspace-bar-label"><i class="bi bi-layers me-1" aria-hidden="true"></i>Central:</span>
+    <div class="cagp-workspace-tabs" role="tablist">
+      <button type="button" class="cagp-workspace-tab is-active" role="tab" data-ws-tab="v1" data-ws-hash="#bussola-interativa" aria-selected="true">
+        <i class="bi bi-compass" aria-hidden="true"></i>
+        <span>1. Bússola Discente, Carteira &amp; Campus</span>
+        <span class="cagp-ws-badge">4 Perfis</span>
+      </button>
+      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v2" data-ws-hash="#central-sistemas" aria-selected="false">
+        <i class="bi bi-grid-3x3-gap" aria-hidden="true"></i>
+        <span>2. Sistemas UFMG &amp; 8 Micro-Apps</span>
+        <span class="cagp-ws-badge">SIGA • Ferramentas</span>
+      </button>
+      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v3" data-ws-hash="#modulos-oficiais" aria-selected="false">
+        <i class="bi bi-diagram-2" aria-hidden="true"></i>
+        <span>3. Módulos do Curso &amp; Representação</span>
+        <span class="cagp-ws-badge">CAGP • DA • DCE</span>
+      </button>
+      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="__all__" aria-selected="false" title="Exibir todas as seções simultaneamente">
+        <i class="bi bi-arrows-expand" aria-hidden="true"></i>
+        <span>Ver Tudo</span>
       </button>
     </div>
-    <div class="cagp-vault-cards">
-      <div class="cagp-vault-card">
-        <div class="cagp-vault-card-label">Horas ACG</div>
-        <div class="cagp-vault-card-val" id="cagp-hub-vault-acg">0h / 600h</div>
-        <a href="acg.html#calculadora" class="cagp-vault-card-link" data-cagp-nav>Calculadora &rarr;</a>
-      </div>
-      <div class="cagp-vault-card">
-        <div class="cagp-vault-card-label">Checklist Calouro</div>
-        <div class="cagp-vault-card-val" id="cagp-hub-vault-checklist">0 de 6 passos</div>
-        <a href="calouros.html#checklist" class="cagp-vault-card-link" data-cagp-nav>Checklist &rarr;</a>
-      </div>
-      <div class="cagp-vault-card">
-        <div class="cagp-vault-card-label">Percurso Vocacional</div>
-        <div class="cagp-vault-card-val" id="cagp-hub-vault-percurso">Não simulado</div>
-        <a href="percurso.html#quiz-percurso" class="cagp-vault-card-link" data-cagp-nav>Mini-Quiz &rarr;</a>
-      </div>
-    </div>
-  </div>
+  </nav>
+</header>
 
-  <!-- Grade Canônica dos 8 Micro-Apps -->
-  <div class="d-flex align-items-center justify-content-between mb-2">
-    <div class="font-display fw-bold text-uppercase fs-6">
-      <i class="bi bi-grid-3x3-gap-fill me-1 text-danger"></i> Catálogo dos 8 Micro-Apps
-    </div>
-    <span class="small text-muted">1 toque</span>
-  </div>
-
-  <div class="cagp-microapp-grid">
-    <!-- 1. Campus Hoje -->
-    <a href="#cagp-mobile-superapp-hub" class="cagp-microapp-card">
-      <div class="cagp-microapp-top">
-        <div class="cagp-microapp-icon-badge cagp-bg-gold">
-          <i class="bi bi-building"></i>
-        </div>
-        <span class="cagp-microapp-tag">Campus</span>
-      </div>
-      <div>
-        <h3 class="cagp-microapp-title">Campus Hoje</h3>
-        <p class="cagp-microapp-desc">RU II, circulares e atendimento CEAG até 22h.</p>
-      </div>
-    </a>
-
-    <!-- 2. Calculadora ACG 600h -->
-    <a href="acg.html#calculadora" class="cagp-microapp-card" data-cagp-nav>
-      <div class="cagp-microapp-top">
-        <div class="cagp-microapp-icon-badge cagp-bg-amber">
-          <i class="bi bi-calculator"></i>
-        </div>
-        <span class="cagp-microapp-tag">Simulador</span>
-      </div>
-      <div>
-        <h3 class="cagp-microapp-title">Calculadora ACG</h3>
-        <p class="cagp-microapp-desc">Extensão 300h + AAC 300h e prazo fatal 120 dias.</p>
-      </div>
-    </a>
-
-    <!-- 3. Termômetro & Matriz -->
-    <a href="percurso.html#quiz-percurso" class="cagp-microapp-card" data-cagp-nav>
-      <div class="cagp-microapp-top">
-        <div class="cagp-microapp-icon-badge cagp-bg-blue">
-          <i class="bi bi-diagram-3"></i>
-        </div>
-        <span class="cagp-microapp-tag">Matriz</span>
-      </div>
-      <div>
-        <h3 class="cagp-microapp-title">Termômetro &amp; Grade</h3>
-        <p class="cagp-microapp-desc">Quiz de percurso e 27 obrigatórias sem rolagem.</p>
-      </div>
-    </a>
-
-    <!-- 4. 68 Optativas -->
-    <a href="percurso.html#catalogo-optativas" class="cagp-microapp-card" data-cagp-nav>
-      <div class="cagp-microapp-top">
-        <div class="cagp-microapp-icon-badge cagp-bg-dark">
-          <i class="bi bi-journal-text"></i>
-        </div>
-        <span class="cagp-microapp-tag">Catálogo</span>
-      </div>
-      <div>
-        <h3 class="cagp-microapp-title">68 Optativas</h3>
-        <p class="cagp-microapp-desc">Busca rápida e filtro por departamentos DCP/ECN/SOA.</p>
-      </div>
-    </a>
-
-    <!-- 5. Estágio Art. 41 & TCC -->
-    <a href="estagio-tcc.html#simulador-art41" class="cagp-microapp-card" data-cagp-nav>
-      <div class="cagp-microapp-top">
-        <div class="cagp-microapp-icon-badge cagp-bg-green">
-          <i class="bi bi-briefcase"></i>
-        </div>
-        <span class="cagp-microapp-tag">Regras</span>
-      </div>
-      <div>
-        <h3 class="cagp-microapp-title">Estágio &amp; Art. 41</h3>
-        <p class="cagp-microapp-desc">Simulador de dispensa profissional e termo TCC.</p>
-      </div>
-    </a>
-
-    <!-- 6. Guia do Calouro -->
-    <a href="calouros.html#checklist" class="cagp-microapp-card" data-cagp-nav>
-      <div class="cagp-microapp-top">
-        <div class="cagp-microapp-icon-badge cagp-bg-red">
-          <i class="bi bi-compass"></i>
-        </div>
-        <span class="cagp-microapp-tag">Guia</span>
-      </div>
-      <div>
-        <h3 class="cagp-microapp-title">Guia do Calouro</h3>
-        <p class="cagp-microapp-desc">Checklist 30 dias e dicas de sobrevivência noturna.</p>
-      </div>
-    </a>
-
-    <!-- 7. Central de Normas -->
-    <a href="documentos.html" class="cagp-microapp-card" data-cagp-nav>
-      <div class="cagp-microapp-top">
-        <div class="cagp-microapp-icon-badge cagp-bg-bordeaux">
-          <i class="bi bi-file-earmark-pdf"></i>
-        </div>
-        <span class="cagp-microapp-tag">Acervo</span>
-      </div>
-      <div>
-        <h3 class="cagp-microapp-title">Central de Normas</h3>
-        <p class="cagp-microapp-desc">8 PDFs oficiais, formulários e protocolo SEI.</p>
-      </div>
-    </a>
-
-    <!-- 8. Hub de Pesquisa IC -->
-    <a href="acg.html#nucleos-pesquisa" class="cagp-microapp-card" data-cagp-nav>
-      <div class="cagp-microapp-top">
-        <div class="cagp-microapp-icon-badge cagp-bg-blue">
-          <i class="bi bi-mortarboard"></i>
-        </div>
-        <span class="cagp-microapp-tag">Ciência</span>
-      </div>
-      <div>
-        <h3 class="cagp-microapp-title">Pesquisa &amp; IC DCP</h3>
-        <p class="cagp-microapp-desc">11 núcleos temáticos para bolsas e extensão.</p>
-      </div>
-    </a>
-  </div>
-</section>
-```
-
-::: {.cagp-web-only}
-::: {.cagp-hero}
-::: {.row .align-items-center}
-::: {.col-lg-8}
-<div class="d-flex flex-wrap gap-2 mb-3">
-  <span class="cagp-badge cagp-badge-red">Turno Noturno</span>
-  <span class="cagp-badge cagp-badge-dark">10 Semestres • 3.000 Horas</span>
-  <span class="cagp-badge cagp-badge-blue">Bacharelado FAFICH / UFMG</span>
-</div>
-
-# BEM-VINDO(A) AO CAGP UFMG {.cagp-hero-title}
-
-O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de representação discente dos estudantes de Gestão Pública da FAFICH/UFMG. Estamos ao seu lado desde a recepção de calouros até a colação de grau, defendendo uma formação crítica, pública e comprometida com a transformação democrática do Estado.
-
-::: {.d-flex .flex-wrap .gap-2 .mt-4}
-[<i class="bi bi-bank" aria-hidden="true"></i> Conhecer o Curso](curso.qmd){.cagp-btn .cagp-btn-primary aria-label="Conhecer o Bacharelado em Gestão Pública"}
-[<i class="bi bi-compass" aria-hidden="true"></i> Sou Calouro](calouros.qmd){.cagp-btn .cagp-btn-secondary aria-label="Ir para o Guia de Sobrevivência do Calouro"}
-[<i class="bi bi-diagram-3" aria-hidden="true"></i> Percurso (10P)](percurso.qmd){.cagp-btn .cagp-btn-outline aria-label="Visualizar a grade e os 3 percursos curriculares"}
-:::
-:::
-
-::: {.col-lg-4 .col-md-5 .col-12 .text-center .mt-4 .mt-lg-0}
-```{=html}
-<div class="cagp-hero-emblem-card">
-  <img src="logos/cagp/10_simbolo_transparente_positivo.svg" alt="Símbolo oficial dos Candangos do Centro Acadêmico de Gestão Pública da UFMG" class="cagp-hero-emblem-img" width="160" height="160">
-  <div class="cagp-hero-emblem-seal">
-    <div class="cagp-hero-emblem-title">CAGP UFMG</div>
-    <div class="cagp-hero-emblem-sub">• FAFICH •</div>
-  </div>
-</div>
-```
-:::
-:::
-:::
-
-```{=html}
-<nav class="cagp-subnav" aria-label="Atalhos rápidos desta página">
-  <span class="cagp-subnav-label">Saltar para:</span>
-  <a href="#bussola-interativa" class="cagp-subnav-link"><i class="bi bi-compass" aria-hidden="true"></i> Minha Jornada (4 Perfis)</a>
-  <a href="#central-sistemas" class="cagp-subnav-link"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i> Central de Apps UFMG</a>
-  <a href="#modulos-oficiais" class="cagp-subnav-link"><i class="bi bi-journal-bookmark" aria-hidden="true"></i> Módulos do Curso</a>
-  <a href="#representacao-estudantil" class="cagp-subnav-link"><i class="bi bi-people" aria-hidden="true"></i> Representação (DCE • DA • CAGP)</a>
-  <a href="acg.html#calculadora-horas" class="cagp-subnav-link"><i class="bi bi-calculator" aria-hidden="true"></i> Calculadora 600h</a>
-  <a href="percurso.html#explorador-grade" class="cagp-subnav-link"><i class="bi bi-search" aria-hidden="true"></i> Filtrar Ementas</a>
-</nav>
+<div class="cagp-workspace-deck" data-ws-deck="index">
+<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<span id="bussola" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 <!-- Banner de Onboarding e Primeiro Acesso -->
-<div id="cagp-onboarding-banner" class="cagp-onboard-banner" role="region" aria-label="Boas-vindas e primeiros passos no portal">
+<div id="cagp-onboarding-banner" class="cagp-onboard-banner mb-3" role="region" aria-label="Boas-vindas e primeiros passos no portal">
   <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
     <div class="d-flex align-items-center gap-3">
       <div class="cagp-onboard-icon"><i class="bi bi-compass-fill" aria-hidden="true"></i></div>
@@ -319,13 +79,13 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
       </div>
     </div>
     <div class="d-flex align-items-center gap-2">
-      <a href="calouros.html" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-2" style="font-size: 0.78rem;"><i class="bi bi-backpack me-1"></i> Sou Calouro</a>
+      <a href="calouros.html" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-2" style="font-size: 0.78rem;"><i class="bi bi-backpack me-1" aria-hidden="true"></i> Sou Calouro</a>
       <button type="button" id="btn-dismiss-onboard" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-2" style="font-size: 0.78rem;" aria-label="Dispensar aviso de boas-vindas e não exibir novamente">✕ Entendi, fechar aviso</button>
     </div>
   </div>
 </div>
 
-<section id="bussola-interativa" class="cagp-tool-box" aria-labelledby="bussola-heading">
+<section id="bussola-interativa" class="cagp-tool-box mb-3" aria-labelledby="bussola-heading">
   <div class="cagp-tool-header">
     <div>
       <span class="cagp-badge cagp-badge-red mb-1">Navegação Guiada por Momento</span>
@@ -361,7 +121,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
           <div>
             <span class="cagp-badge cagp-badge-red mb-2">Carreira &amp; Mercado</span>
             <h3 class="h6 fw-bold mb-1">O que Faz o Gestor Público?</h3>
-            <p class="small text-muted mb-2">Formação no DCP/FAFICH, Nota 4 MEC, cientometria (cluster UFMG/USP/UFABC), 65% no Executivo e 55% com salários > R$ 5k.</p>
+            <p class="small text-muted mb-2">Formação no DCP/FAFICH, Nota 4 MEC, cientometria (cluster UFMG/USP/UFABC), 65% no Executivo e 55% com salários &gt; R$ 5k.</p>
           </div>
           <span class="small fw-bold text-danger">Conhecer o Curso &rarr;</span>
         </a>
@@ -442,7 +202,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
         <a href="acg.html#calculadora-horas" class="cagp-action-tile">
           <div>
             <span class="cagp-badge cagp-badge-green mb-2">Simulador 600h</span>
-            <h3 class="h6 fw-bold mb-1">Calculadora de Extensão & AAC</h3>
+            <h3 class="h6 fw-bold mb-1">Calculadora de Extensão &amp; AAC</h3>
             <p class="small text-muted mb-2">Some suas horas de Extensão (300h) e AAC (até 300h) respeitando o teto de cada uma das 9 categorias e o prazo de 120 dias.</p>
           </div>
           <span class="small fw-bold text-danger">Calcular Minhas Horas &rarr;</span>
@@ -465,7 +225,7 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
   <div id="panel-formando" class="cagp-compass-panel" role="tabpanel" aria-labelledby="tab-formando" hidden>
     <div class="row g-3">
       <div class="col-md-4">
-        <a href="estagio-tcc.html#simulador-art41" class="cagp-action-tile">
+        <a href="estagio.html#simulador-art41" class="cagp-action-tile">
           <div>
             <span class="cagp-badge cagp-badge-red mb-2">Art. 41 do Regulamento</span>
             <h3 class="h6 fw-bold mb-1">Simulador de Dispensa de Estágio</h3>
@@ -475,10 +235,10 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
         </a>
       </div>
       <div class="col-md-4">
-        <a href="estagio-tcc.html#modalidades-tcc" class="cagp-action-tile">
+        <a href="tcc.html#modalidades-tcc" class="cagp-action-tile">
           <div>
             <span class="cagp-badge cagp-badge-dark mb-2">9º e 10º Períodos</span>
-            <h3 class="h6 fw-bold mb-1">As 4 Modalidades de TCC & Aceite</h3>
+            <h3 class="h6 fw-bold mb-1">As 4 Modalidades de TCC &amp; Aceite</h3>
             <p class="small text-muted mb-2">Monografia, Projeto de Intervenção, Artigo ou Projeto de IC + download direto do Termo de Aceite de Orientador.</p>
           </div>
           <span class="small fw-bold text-danger">Planejar TCC &rarr;</span>
@@ -498,226 +258,265 @@ O **Centro Acadêmico de Gestão Pública (CAGP)** é a entidade legítima de re
   </div>
 </section>
 
+<!-- Dashboard Carteira Acadêmica + Campus Ao Vivo -->
+<section id="cagp-mobile-superapp-hub" class="mb-3" aria-label="Carteira Acadêmica do Estudante e Central do Campus em Tempo Real">
+  <div class="cagp-mobile-hub-inner">
+
+    <!-- 1. Passaporte Acadêmico CAGP & Carteira Discente (cagp_student_profile_v1) -->
+    <div id="cagp-home-passport-card" class="cagp-wallet-card cagp-passport-card" aria-label="Passaporte Acadêmico CAGP e Carteira Discente">
+      <div class="cagp-passport-topbar">
+        <div class="cagp-passport-inst">
+          <i class="bi bi-bank2 me-1 text-warning" aria-hidden="true"></i>
+          <span>UNIVERSIDADE FEDERAL DE MINAS GERAIS • FAFICH • CAGP</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <span class="cagp-passport-stamp" data-cagp-passport-stamp>CALOURO • 1ºP</span>
+          <button type="button" class="cagp-passport-top-btn" data-cagp-open-passport="true" aria-label="Editar Passaporte Acadêmico e Foto">
+            <i class="bi bi-pencil-square me-1" aria-hidden="true"></i> Editar Perfil
+          </button>
+        </div>
+      </div>
+
+      <div class="cagp-passport-body">
+        <button type="button" class="cagp-passport-avatar-btn" data-cagp-action="pick-photo" aria-label="Trocar foto de perfil do Passaporte Acadêmico" title="Clique para enviar ou tirar foto (256x256 WebP)">
+          <span class="cagp-avatar-frame cagp-avatar-frame--lg" data-cagp-avatar-host>
+            <img class="cagp-profile-avatar-img" src="imagens/carteirinha.png" alt="Foto do estudante no Passaporte CAGP" width="72" height="72" hidden>
+            <span class="cagp-profile-avatar-fallback" aria-hidden="true"><i class="bi bi-person-badge-fill"></i></span>
+            <span class="cagp-pride-pin cagp-pride-pin--lg" data-cagp-pride-pin hidden aria-hidden="true"></span>
+          </span>
+          <span class="cagp-avatar-cam-badge" aria-hidden="true"><i class="bi bi-camera-fill"></i></span>
+        </button>
+
+        <div class="cagp-passport-identity">
+          <div class="cagp-passport-name-row mb-1">
+            <span class="cagp-passport-name" data-cagp-profile-name-display>Estudante de Gestão Pública</span>
+            <span class="cagp-passport-pronouns" data-cagp-profile-pronouns-display hidden></span>
+          </div>
+          <div class="cagp-passport-badges">
+            <span class="cagp-badge cagp-badge-red" data-cagp-profile-period-display>1º Período</span>
+            <span class="cagp-badge cagp-badge-dark font-mono" data-cagp-profile-semester-display>Ingresso 2026/1</span>
+            <span class="cagp-badge cagp-badge-blue" data-cagp-profile-pathway-display>01-01 • Geral</span>
+            <span class="cagp-pride-tag" data-cagp-pride-tag hidden>
+              <span class="cagp-pride-tag-swatch" data-cagp-pride-swatch aria-hidden="true"></span>
+              <span class="cagp-pride-tag-label" data-cagp-pride-label>Orgulho</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 ms-auto">
+          <div class="cagp-metric-ring" id="cagp-hub-vault-ring" style="--ring-pct: 0; --ring-size: 52px;" title="Índice Global de Integralização do Curso">
+            <div class="cagp-metric-ring-inner" id="cagp-hub-vault-ring-val">0%</div>
+          </div>
+          <button type="button" class="cagp-chip py-1 px-2 d-none d-sm-inline-flex" data-cagp-open-passport="vault" aria-label="Abrir Cofre Acadêmico e Sync">
+            <i class="bi bi-safe2-fill me-1 text-warning" aria-hidden="true"></i> Cofre &amp; Sync
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Dupla de Conclusão do Curso (27 Obrigatórias + 600h ACG) -->
+      <div class="cagp-passport-progress-grid mb-2">
+        <div class="cagp-passport-progress-item">
+          <div class="d-flex justify-content-between align-items-center small mb-1">
+            <span class="fw-bold text-uppercase font-display" style="font-size: 0.72rem;">Disciplinas Obrigatórias (27)</span>
+            <span class="font-mono fw-bold cagp-tabular" style="font-size: 0.74rem;" data-cagp-passport-obrig-text>0/27 (0%)</span>
+          </div>
+          <div class="cagp-passport-mini-track" aria-hidden="true">
+            <div class="cagp-passport-mini-fill is-obrig" data-cagp-passport-obrig-bar style="width: 0%;"></div>
+          </div>
+        </div>
+        <div class="cagp-passport-progress-item">
+          <div class="d-flex justify-content-between align-items-center small mb-1">
+            <span class="fw-bold text-uppercase font-display" style="font-size: 0.72rem;">Extensão &amp; Horas AAC (600h)</span>
+            <span class="font-mono fw-bold cagp-tabular" style="font-size: 0.74rem;" data-cagp-passport-acg-text>0h/600h (0%)</span>
+          </div>
+          <div class="cagp-passport-mini-track" aria-hidden="true">
+            <div class="cagp-passport-mini-fill is-acg" data-cagp-passport-acg-bar style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cagp-wallet-metrics-row">
+        <a href="acg.html#calculadora" class="cagp-wallet-metric-slot" data-cagp-nav>
+          <span class="cagp-vault-card-label">Horas ACG (600h)</span>
+          <span class="cagp-vault-card-val cagp-tabular" id="cagp-hub-vault-acg">0h / 600h</span>
+          <span class="cagp-vault-card-link mt-1">Simular &rarr;</span>
+        </a>
+        <a href="acg.html#guardiao-120-dias" class="cagp-wallet-metric-slot" data-cagp-nav>
+          <span class="cagp-vault-card-label">Guardião 120 Dias</span>
+          <span class="cagp-vault-card-val cagp-tabular" id="cagp-hub-vault-120d">0 certificados</span>
+          <span class="cagp-vault-card-link mt-1">Prazos &rarr;</span>
+        </a>
+        <a href="calouros.html#checklist" class="cagp-wallet-metric-slot" data-cagp-nav>
+          <span class="cagp-vault-card-label">Checklist 30 Dias</span>
+          <span class="cagp-vault-card-val cagp-tabular" id="cagp-hub-vault-checklist">0 de 6 passos</span>
+          <span class="cagp-vault-card-link mt-1">Conferir &rarr;</span>
+        </a>
+        <a href="percurso.html#quiz-percurso" class="cagp-wallet-metric-slot" data-cagp-nav>
+          <span class="cagp-vault-card-label">Percurso Oficial</span>
+          <span class="cagp-vault-card-val" id="cagp-hub-vault-percurso">Não simulado</span>
+          <span class="cagp-vault-card-link mt-1">Testar &rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. Carrossel Magnético de Ações Rápidas de Bolso -->
+    <div class="cagp-pocket-actions-section">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <div class="cagp-pocket-actions-title mb-0">
+          <i class="bi bi-lightning-charge-fill me-1 text-danger" aria-hidden="true"></i>
+          <span>Ações Rápidas de Bolso</span>
+        </div>
+        <span class="small text-muted d-sm-none font-display text-uppercase" style="font-size: 0.72rem;">Deslize &rarr;</span>
+      </div>
+      <div class="cagp-pocket-actions-grid">
+        <a href="calouros.html#ru-alimentacao" class="cagp-pocket-btn" data-cagp-nav>
+          <div class="cagp-pocket-icon-wrap cagp-bg-gold"><i class="bi bi-egg-fried" aria-hidden="true"></i></div>
+          <span>RU Hoje</span>
+        </a>
+        <a href="calouros.html#circulares-noturnos" class="cagp-pocket-btn" data-cagp-nav>
+          <div class="cagp-pocket-icon-wrap cagp-bg-blue"><i class="bi bi-bus-front" aria-hidden="true"></i></div>
+          <span>Circulares</span>
+        </a>
+        <a href="acg.html#calculadora" class="cagp-pocket-btn" data-cagp-nav>
+          <div class="cagp-pocket-icon-wrap cagp-bg-amber"><i class="bi bi-calculator" aria-hidden="true"></i></div>
+          <span>Calculadora</span>
+        </a>
+        <a href="optativas.html#catalogo-optativas" class="cagp-pocket-btn" data-cagp-nav>
+          <div class="cagp-pocket-icon-wrap cagp-bg-dark"><i class="bi bi-journal-text" aria-hidden="true"></i></div>
+          <span>68 Optativas</span>
+        </a>
+        <a href="curso.html#secretaria-colegiado" class="cagp-pocket-btn" data-cagp-nav>
+          <div class="cagp-pocket-icon-wrap cagp-bg-charcoal"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
+          <span>Secretaria</span>
+        </a>
+        <a href="documentos.html" class="cagp-pocket-btn" data-cagp-nav>
+          <div class="cagp-pocket-icon-wrap cagp-bg-bordeaux"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></div>
+          <span>Documentos</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 3. Status Ao Vivo do Campus Noturno -->
+    <div class="cagp-card p-3 mb-2">
+      <div class="cagp-mobile-hub-header mb-2">
+        <div class="cagp-mobile-hub-live">
+          <i class="bi bi-broadcast me-1 text-success" aria-hidden="true"></i>
+          <span class="cagp-mobile-hub-live-text">CAMPUS AO VIVO</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <div class="cagp-mobile-hub-clock">
+            <i class="bi bi-clock me-1" aria-hidden="true"></i>
+            <span id="cagp-live-clock" class="cagp-tabular">--:--</span>
+          </div>
+          <button type="button" class="cagp-chip py-0 px-2" style="min-height: 32px; font-size: 0.72rem;" onclick="window.cagpOpenCampusSheet &amp;&amp; window.cagpOpenCampusSheet()">
+            Detalhes
+          </button>
+        </div>
+      </div>
+
+      <div class="cagp-campus-status-grid">
+        <a href="calouros.html#ru-alimentacao" class="cagp-campus-status-card" data-cagp-nav>
+          <div class="cagp-campus-status-icon cagp-bg-gold">
+            <i class="bi bi-egg-fried" aria-hidden="true"></i>
+          </div>
+          <div class="cagp-campus-status-info">
+            <div class="cagp-campus-status-label">RU II • FAFICH</div>
+            <div id="cagp-status-ru" class="cagp-campus-status-val">Consultando...</div>
+          </div>
+        </a>
+
+        <a href="calouros.html#circulares-noturnos" class="cagp-campus-status-card" data-cagp-nav>
+          <div class="cagp-campus-status-icon cagp-bg-blue">
+            <i class="bi bi-bus-front" aria-hidden="true"></i>
+          </div>
+          <div class="cagp-campus-status-info">
+            <div class="cagp-campus-status-label">Circulares UFMG</div>
+            <div id="cagp-status-circulares" class="cagp-campus-status-val">Consultando...</div>
+          </div>
+        </a>
+
+        <a href="curso.html#secretaria-colegiado" class="cagp-campus-status-card" data-cagp-nav>
+          <div class="cagp-campus-status-icon cagp-bg-bordeaux">
+            <i class="bi bi-door-open" aria-hidden="true"></i>
+          </div>
+          <div class="cagp-campus-status-info">
+            <div class="cagp-campus-status-label">Secretaria &amp; CEAG</div>
+            <div id="cagp-status-secretaria" class="cagp-campus-status-val">Consultando...</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card Inteligente de Incentivo de Instalação (Adaptado à Plataforma: iOS vs Android) -->
+    <div id="cagp-platform-incentive-container" class="cagp-platform-incentive-box"></div>
+  </div>
+</section>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelectorAll('[data-compass-target]');
-  const panels = document.querySelectorAll('.cagp-compass-panel');
-
-  function activateTab(targetId, updateHash = true) {
-    const activeTab = document.querySelector(`[data-compass-target="${targetId}"]`);
-    if (!activeTab) return;
-
-    tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
-    panels.forEach(function (p) { p.hidden = true; });
-
-    activeTab.setAttribute('aria-selected', 'true');
-    const targetPanel = document.getElementById(targetId);
-    if (targetPanel) targetPanel.hidden = false;
-
-    if (updateHash) {
-      const hashKey = targetId.replace('panel-', '');
-      history.replaceState(null, '', `#bussola=${hashKey}`);
-    }
-  }
-
-  // Click handler
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      const targetId = tab.getAttribute('data-compass-target');
-      activateTab(targetId);
-    });
-
-    // WAI-ARIA Keyboard navigation (ArrowLeft, ArrowRight, Home, End)
-    tab.addEventListener('keydown', function (e) {
-      const tabList = Array.from(tabs);
-      const index = tabList.indexOf(tab);
-      let nextIndex = null;
-
-      if (e.key === 'ArrowRight') {
-        nextIndex = (index + 1) % tabList.length;
-      } else if (e.key === 'ArrowLeft') {
-        nextIndex = (index - 1 + tabList.length) % tabList.length;
-      } else if (e.key === 'Home') {
-        nextIndex = 0;
-      } else if (e.key === 'End') {
-        nextIndex = tabList.length - 1;
-      }
-
-      if (nextIndex !== null) {
-        e.preventDefault();
-        tabList[nextIndex].focus();
-        const nextTargetId = tabList[nextIndex].getAttribute('data-compass-target');
-        activateTab(nextTargetId);
-      }
-    });
-  });
-
-  // URL Hash Deep-linking support (ex: #bussola=ingressar, #bussola=calouro, #bussola=meio, #bussola=formando)
-  function checkHash() {
-    const hash = window.location.hash;
-    if (hash && hash.startsWith('#bussola=')) {
-      const key = hash.replace('#bussola=', '');
-      const targetPanelId = `panel-${key}`;
-      activateTab(targetPanelId, false);
-      const bussolaSection = document.getElementById('bussola-interativa');
-      if (bussolaSection) {
-        bussolaSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }
-
-  checkHash();
-  window.addEventListener('hashchange', checkHash);
-
-  // Onboarding Banner Dismissal Logic (LocalStorage)
-  const onboardBanner = document.getElementById('cagp-onboarding-banner');
-  const btnDismissOnboard = document.getElementById('btn-dismiss-onboard');
-  if (onboardBanner && btnDismissOnboard) {
-    try {
-      if (localStorage.getItem('cagp_onboard_v1_dismissed') === 'true') {
-        onboardBanner.style.display = 'none';
-      }
-    } catch (e) {}
-
-    btnDismissOnboard.addEventListener('click', function () {
-      onboardBanner.style.display = 'none';
-      try {
-        localStorage.setItem('cagp_onboard_v1_dismissed', 'true');
-      } catch (e) {}
-    });
-  }
-});
+  if (window.applyCagpCampusState) window.applyCagpCampusState();
+  if (window.refreshCagpVault) window.refreshCagpVault();
 </script>
 ```
 
 ## <i class="bi bi-bar-chart-line" aria-hidden="true"></i> O Curso de Gestão Pública em Números Oficiais
 
-::: {.row .g-3 .mb-5}
-::: {.col-md-3 .col-6}
-::: {.cagp-stat-card .cagp-stat-card-total}
-<div class="cagp-stat-value">3.000 h</div>
-<div class="cagp-stat-label">Carga Horária Total</div>
-<small class="text-muted">Núcleo Específico + Geral (Plena)</small>
-:::
-:::
-
-::: {.col-md-3 .col-6}
-::: {.cagp-stat-card .cagp-stat-card-periodos}
-<div class="cagp-stat-value">10 Períodos</div>
-<div class="cagp-stat-label">Tempo Padrão (5 anos)</div>
-<small class="text-muted">Mínimo 8 / Máximo 17 semestres</small>
-:::
-:::
-
-::: {.col-md-3 .col-6}
-::: {.cagp-stat-card .cagp-stat-card-extensao}
-<div class="cagp-stat-value">300 h</div>
-<div class="cagp-stat-label">Formação em Extensão</div>
-<small class="text-muted">10% obrigatório (CEPE nº 10/19)</small>
-:::
-:::
-
-::: {.col-md-3 .col-6}
-::: {.cagp-stat-card .cagp-stat-card-estagio}
-<div class="cagp-stat-value">300 h</div>
-<div class="cagp-stat-label">Estágio Supervisionado</div>
-<small class="text-muted">DCP 135 (180h) + DCP 136 (120h)</small>
-:::
-:::
-:::
-
-## <i class="bi bi-grid" aria-hidden="true"></i> Navegação por Módulos Oficiais {#modulos-oficiais}
-
-::: {.row .g-4 .mb-4}
-::: {.col-lg-3 .col-md-6 .col-12}
-::: {.cagp-card .cagp-equal-card .cagp-hub-calouros}
-::: {.cagp-card-header}
-<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-backpack"></i></span>
-<h3 class="cagp-card-title">Guia do Calouro</h3>
-:::
-::: {.cagp-card-body}
-Chegou à UFMG? Veja como funciona o **Turno Noturno**, horários (19h–22h30), emissão de carteirinha, jantar no RU e matrícula mínima de 180h.
-:::
-<div class="cagp-card-footer">
-[Acessar Guia &rarr;](calouros.qmd){.cagp-btn .cagp-btn-outline .w-100 aria-label="Acessar Guia de Sobrevivência do Calouro"}
-</div>
-:::
-:::
-
-::: {.col-lg-3 .col-md-6 .col-12}
-::: {.cagp-card .cagp-equal-card .cagp-hub-percurso}
-::: {.cagp-card-header}
-<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></span>
-<h3 class="cagp-card-title">Percurso Curricular</h3>
-:::
-::: {.cagp-card-body}
-Linha do tempo dos **10 semestres**, as 27 matérias obrigatórias com ementas completas e os 3 percursos: Geral, Complementar e Avançado.
-:::
-<div class="cagp-card-footer">
-[Ver Percurso &rarr;](percurso.qmd){.cagp-btn .cagp-btn-outline .w-100 aria-label="Ver Linha do Tempo do Percurso Curricular"}
-</div>
-:::
-:::
-
-::: {.col-lg-3 .col-md-6 .col-12}
-::: {.cagp-card .cagp-equal-card .cagp-hub-estagio}
-::: {.cagp-card-header}
-<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-briefcase"></i></span>
-<h3 class="cagp-card-title">Estágio & TCC</h3>
-:::
-::: {.cagp-card-body}
-Regras dos Estágios A (180h) e B (120h), aproveitamento profissional no setor público (Art. 41) e as 4 modalidades de TCC da UFMG.
-:::
-<div class="cagp-card-footer">
-[Estágio & TCC &rarr;](estagio-tcc.qmd){.cagp-btn .cagp-btn-outline .w-100 aria-label="Acessar Regras Oficiais de Estágio e TCC"}
-</div>
-:::
-:::
-
-::: {.col-lg-3 .col-md-6 .col-12}
-::: {.cagp-card .cagp-equal-card .cagp-hub-extensao}
-::: {.cagp-card-header}
-<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-award"></i></span>
-<h3 class="cagp-card-title">Extensão & AAC</h3>
-:::
-::: {.cagp-card-body}
-Entenda a **Extensão Obrigatória (300h)** e as **Atividades Complementares (até 300h)** em 9 categorias com teto e prazo fatal de 120 dias.
-:::
-<div class="cagp-card-footer">
-[Extensão & AAC &rarr;](acg.qmd){.cagp-btn .cagp-btn-outline .w-100 aria-label="Consultar Diretrizes de Extensão Obrigatória e AAC"}
-</div>
-:::
-:::
-:::
-
-::: {.cagp-card .mb-5}
-::: {.row .align-items-center}
-::: {.col-md-8}
-<span class="cagp-badge cagp-badge-red mb-2">Acervo Oficial em PDF</span>
-<h3 class="mb-2">Acesse os Documentos Oficiais e Regulamentares do Curso</h3>
-<p class="text-muted small mb-0">Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, do <strong>Regulamento Oficial da Graduação</strong>, do <strong>Ementário das 27 Disciplinas</strong> e das <strong>Matrizes Curriculares dos 3 Percursos</strong> em formato PDF original da UFMG.</p>
-:::
-::: {.col-md-4 .text-md-end .mt-3 .mt-md-0}
-[Consultar Acervo em PDF &rarr;](documentos.qmd){.cagp-btn .cagp-btn-primary aria-label="Consultar acervo de documentos e resoluções em PDF"}
-:::
-:::
-:::
-
 ```{=html}
+<div class="cagp-bento-grid">
+  <div class="cagp-bento-cell cagp-stat-card-total">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-2">Matriz PPC 2020</span>
+      <div class="cagp-bento-kpi text-danger">3.000 h</div>
+      <div class="cagp-stat-label">Carga Horária Total</div>
+    </div>
+    <small class="text-muted mt-2">Núcleo Específico (2.880h) + Formação Livre (120h)</small>
+  </div>
+
+  <div class="cagp-bento-cell cagp-stat-card-periodos">
+    <div>
+      <span class="cagp-badge cagp-badge-dark mb-2">Turno Noturno</span>
+      <div class="cagp-bento-kpi">10 Períodos</div>
+      <div class="cagp-stat-label">Tempo Padrão (5 anos)</div>
+    </div>
+    <small class="text-muted mt-2">Mínimo 8 / Máximo 17 semestres letivos</small>
+  </div>
+
+  <div class="cagp-bento-cell cagp-stat-card-extensao">
+    <div>
+      <span class="cagp-badge cagp-badge-green mb-2">Res. CEPE 10/19</span>
+      <div class="cagp-bento-kpi text-success">300 h</div>
+      <div class="cagp-stat-label">Formação em Extensão</div>
+    </div>
+    <small class="text-muted mt-2">10% obrigatório + até 300h em AAC (Art. 15)</small>
+  </div>
+
+  <div class="cagp-bento-cell cagp-stat-card-estagio">
+    <div>
+      <span class="cagp-badge cagp-badge-blue mb-2">Prática Aplicada</span>
+      <div class="cagp-bento-kpi">300 h</div>
+      <div class="cagp-stat-label">Estágio Supervisionado</div>
+    </div>
+    <small class="text-muted mt-2">DCP 135 (180h) + DCP 136 (120h) ou Dispensa Art. 41</small>
+  </div>
+</div>
+</div>
+
 <!-- ==========================================================================
-     Central de Aplicativos e Sistemas UFMG (Novo Hub Brite 2.0)
+     View 2: Sistemas UFMG & 8 Micro-Apps
      ========================================================================== -->
+<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<span id="sistemas" class="cagp-anchor-alias" aria-hidden="true"></span>
+<span id="avisos" class="cagp-anchor-alias" aria-hidden="true"></span>
+
 <section id="central-sistemas" class="cagp-app-section" aria-labelledby="central-sistemas-heading">
   <div class="cagp-app-section-header">
     <div>
       <span class="cagp-badge cagp-badge-red mb-1">Acesso Direto &amp; Conectividade</span>
       <h2 id="central-sistemas-heading" class="h4 mb-0"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i> CENTRAL DE APLICATIVOS &amp; SISTEMAS UFMG</h2>
     </div>
-    <div class="cagp-app-filter-bar" role="group" aria-label="Filtrar aplicativos por tipo de acesso">
-      <button type="button" class="cagp-app-filter-btn is-active" data-app-filter="all" aria-pressed="true">Todos os Sistemas</button>
-      <button type="button" class="cagp-app-filter-btn" data-app-filter="desktop" aria-pressed="false"><i class="bi bi-display" aria-hidden="true"></i> Portais Web (Desktop)</button>
-      <button type="button" class="cagp-app-filter-btn" data-app-filter="mobile" aria-pressed="false"><i class="bi bi-phone" aria-hidden="true"></i> Apps de Celular (Mobile)</button>
-      <button type="button" class="cagp-app-filter-btn" data-app-filter="presencial" aria-pressed="false"><i class="bi bi-building" aria-hidden="true"></i> Atendimento Presencial</button>
+    <div class="cagp-chip-rail" role="group" aria-label="Filtrar aplicativos por tipo de acesso">
+      <button type="button" class="cagp-filter-chip cagp-app-filter-btn is-active" data-app-filter="all" aria-pressed="true">Todos os Sistemas (6)</button>
+      <button type="button" class="cagp-filter-chip cagp-app-filter-btn" data-app-filter="desktop" aria-pressed="false"><i class="bi bi-display" aria-hidden="true"></i> Portais Web (Desktop)</button>
+      <button type="button" class="cagp-filter-chip cagp-app-filter-btn" data-app-filter="mobile" aria-pressed="false"><i class="bi bi-phone" aria-hidden="true"></i> Apps de Celular (Mobile)</button>
+      <button type="button" class="cagp-filter-chip cagp-app-filter-btn" data-app-filter="presencial" aria-pressed="false"><i class="bi bi-building" aria-hidden="true"></i> Atendimento Presencial</button>
     </div>
   </div>
 
@@ -852,6 +651,211 @@ Entenda a **Extensão Obrigatória (300h)** e as **Atividades Complementares (at
   </div>
 </section>
 
+<!-- 4. Grade Bento Tátil dos 8 Micro-Apps do Curso (#micro-apps-hub) -->
+<div id="micro-apps-hub" class="pt-3" aria-label="Central dos 8 Micro-Apps CAGP">
+  <div class="d-flex align-items-center justify-content-between mb-2">
+    <h2 class="font-display fw-bold text-uppercase fs-5 mb-0">
+      <i class="bi bi-grid-3x3-gap-fill me-1 text-danger" aria-hidden="true"></i> Catálogo dos 8 Micro-Apps Interativos
+    </h2>
+    <span class="cagp-badge cagp-badge-dark">Acesso em 1 Toque</span>
+  </div>
+
+  <div class="cagp-microapp-grid">
+    <a href="#cagp-mobile-superapp-hub" class="cagp-microapp-card" onclick="if(window.cagpOpenCampusSheet){window.cagpOpenCampusSheet(); return false;}">
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-gold">
+          <i class="bi bi-building" aria-hidden="true"></i>
+        </div>
+        <span class="cagp-microapp-tag">Campus</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Campus Hoje</h3>
+        <p class="cagp-microapp-desc">RU II, circulares e atendimento CEAG até 22h.</p>
+      </div>
+    </a>
+
+    <a href="acg.html#calculadora" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-amber">
+          <i class="bi bi-calculator" aria-hidden="true"></i>
+        </div>
+        <span class="cagp-microapp-tag">Simulador</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Calculadora ACG</h3>
+        <p class="cagp-microapp-desc">Extensão 300h + AAC 300h e prazo fatal 120 dias.</p>
+      </div>
+    </a>
+
+    <a href="percurso.html#quiz-percurso" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-blue">
+          <i class="bi bi-diagram-3" aria-hidden="true"></i>
+        </div>
+        <span class="cagp-microapp-tag">Matriz</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Termômetro &amp; Grade</h3>
+        <p class="cagp-microapp-desc">Quiz de percurso e 27 obrigatórias sem rolagem.</p>
+      </div>
+    </a>
+
+    <a href="optativas.html#catalogo-optativas" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-dark">
+          <i class="bi bi-journal-text" aria-hidden="true"></i>
+        </div>
+        <span class="cagp-microapp-tag">Catálogo</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">68 Optativas</h3>
+        <p class="cagp-microapp-desc">Busca rápida e filtro por departamentos DCP/ECN/SOA.</p>
+      </div>
+    </a>
+
+    <a href="estagio.html#simulador-art41" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-green">
+          <i class="bi bi-briefcase" aria-hidden="true"></i>
+        </div>
+        <span class="cagp-microapp-tag">Regras</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Estágio &amp; Art. 41</h3>
+        <p class="cagp-microapp-desc">Simulador de dispensa profissional e TCE anotado.</p>
+      </div>
+    </a>
+
+    <a href="calouros.html#checklist" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-red">
+          <i class="bi bi-compass" aria-hidden="true"></i>
+        </div>
+        <span class="cagp-microapp-tag">Guia</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Guia do Calouro</h3>
+        <p class="cagp-microapp-desc">Checklist 30 dias e dicas de sobrevivência noturna.</p>
+      </div>
+    </a>
+
+    <a href="documentos.html" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-bordeaux">
+          <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+        </div>
+        <span class="cagp-microapp-tag">Acervo</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Central de Normas</h3>
+        <p class="cagp-microapp-desc">8 PDFs oficiais, formulários e protocolo SEI.</p>
+      </div>
+    </a>
+
+    <a href="pesquisa.html#grupos-pesquisa" class="cagp-microapp-card" data-cagp-nav>
+      <div class="cagp-microapp-top">
+        <div class="cagp-microapp-icon-badge cagp-bg-blue">
+          <i class="bi bi-mortarboard" aria-hidden="true"></i>
+        </div>
+        <span class="cagp-microapp-tag">Ciência</span>
+      </div>
+      <div>
+        <h3 class="cagp-microapp-title">Pesquisa &amp; IC DCP</h3>
+        <p class="cagp-microapp-desc">11 núcleos temáticos para bolsas e extensão.</p>
+      </div>
+    </a>
+  </div>
+</div>
+</div>
+
+<!-- ==========================================================================
+     View 3: Módulos do Curso & Representação Discente
+     ========================================================================== -->
+<div class="cagp-workspace-view" data-ws-view="v3" hidden>
+<span id="jornada" class="cagp-anchor-alias" aria-hidden="true"></span>
+```
+
+## <i class="bi bi-grid" aria-hidden="true"></i> Navegação por Módulos Oficiais {#modulos-oficiais}
+
+::: {.row .g-4 .mb-4}
+::: {.col-lg-3 .col-md-6 .col-12}
+::: {.cagp-card .cagp-equal-card .cagp-hub-calouros}
+::: {.cagp-card-header}
+<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-backpack"></i></span>
+<h3 class="cagp-card-title">Guia do Calouro</h3>
+:::
+::: {.cagp-card-body}
+Chegou à UFMG? Veja como funciona o **Turno Noturno**, horários (19h–22h30), emissão de carteirinha, jantar no RU e matrícula mínima de 180h.
+:::
+<div class="cagp-card-footer">
+[Acessar Guia &rarr;](calouros.qmd){.cagp-btn .cagp-btn-outline .w-100 aria-label="Acessar Guia de Sobrevivência do Calouro"}
+</div>
+:::
+:::
+
+::: {.col-lg-3 .col-md-6 .col-12}
+::: {.cagp-card .cagp-equal-card .cagp-hub-percurso}
+::: {.cagp-card-header}
+<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></span>
+<h3 class="cagp-card-title">Percurso & Optativas</h3>
+:::
+::: {.cagp-card-body}
+Linha do tempo dos **10 semestres**, as 27 matérias obrigatórias com ementas, os 3 percursos oficiais e o catálogo das **68 optativas**.
+:::
+<div class="cagp-card-footer d-flex gap-1">
+[27 Obrigatórias](percurso.qmd){.cagp-btn .cagp-btn-outline .w-50 aria-label="Ver 27 obrigatórias"}
+[68 Optativas](optativas.qmd){.cagp-btn .cagp-btn-outline .w-50 aria-label="Ver 68 optativas"}
+</div>
+:::
+:::
+
+::: {.col-lg-3 .col-md-6 .col-12}
+::: {.cagp-card .cagp-equal-card .cagp-hub-estagio}
+::: {.cagp-card-header}
+<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-briefcase"></i></span>
+<h3 class="cagp-card-title">Estágio & TCC</h3>
+:::
+::: {.cagp-card-body}
+Regras dos Estágios A (180h) e B (120h), dispensa profissional no setor público (Art. 41) e as 4 modalidades de TCC (DCP 089/137).
+:::
+<div class="cagp-card-footer d-flex gap-1">
+[Estágio](estagio.qmd){.cagp-btn .cagp-btn-outline .w-50 aria-label="Acessar Estágio e Art. 41"}
+[TCC](tcc.qmd){.cagp-btn .cagp-btn-outline .w-50 aria-label="Acessar TCC"}
+</div>
+:::
+:::
+
+::: {.col-lg-3 .col-md-6 .col-12}
+::: {.cagp-card .cagp-equal-card .cagp-hub-extensao}
+::: {.cagp-card-header}
+<span class="cagp-card-icon" aria-hidden="true"><i class="bi bi-award"></i></span>
+<h3 class="cagp-card-title">Extensão, AAC & IC</h3>
+:::
+::: {.cagp-card-body}
+Entenda a **Extensão Obrigatória (300h)**, as **AAC (até 300h)** com prazo de 120 dias e os **11 Núcleos de Pesquisa do DCP**.
+:::
+<div class="cagp-card-footer d-flex gap-1">
+[600h ACG](acg.qmd){.cagp-btn .cagp-btn-outline .w-50 aria-label="Consultar Extensão e AAC"}
+[Pesquisa](pesquisa.qmd){.cagp-btn .cagp-btn-outline .w-50 aria-label="Consultar 11 Grupos de Pesquisa"}
+</div>
+:::
+:::
+:::
+
+::: {.cagp-card .mb-4}
+::: {.row .align-items-center}
+::: {.col-md-8}
+<span class="cagp-badge cagp-badge-red mb-2">Acervo Oficial em PDF</span>
+<h3 class="mb-2">Acesse os Documentos Oficiais e Regulamentares do Curso</h3>
+<p class="text-muted small mb-0">Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, do <strong>Regulamento Oficial da Graduação</strong>, do <strong>Ementário das 27 Disciplinas</strong> e das <strong>Matrizes Curriculares dos 3 Percursos</strong> em formato PDF original da UFMG.</p>
+:::
+::: {.col-md-4 .text-md-end .mt-3 .mt-md-0}
+[Consultar Acervo em PDF &rarr;](documentos.qmd){.cagp-btn .cagp-btn-primary aria-label="Consultar acervo de documentos e resoluções em PDF"}
+:::
+:::
+:::
+
+```{=html}
 <!-- ==========================================================================
      Módulo Tripartite de Representação Estudantil (DCE, DA FAFICH, CAGP)
      ========================================================================== -->
@@ -908,42 +912,158 @@ Entenda a **Extensão Obrigatória (300h)** e as **Atividades Complementares (at
     </article>
   </div>
 </section>
+</div>
+</div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  // Filtro de Aplicativos da Central de Apps
-  const filterButtons = document.querySelectorAll('.cagp-app-filter-btn');
-  const appCards = document.querySelectorAll('.cagp-app-card');
+(function () {
+  function initIndexPage() {
+    var tabs = document.querySelectorAll('[data-compass-target]');
+    var panels = document.querySelectorAll('.cagp-compass-panel');
 
-  filterButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      filterButtons.forEach(function (b) {
-        b.classList.remove('is-active');
-        b.setAttribute('aria-pressed', 'false');
-      });
-      btn.classList.add('is-active');
-      btn.setAttribute('aria-pressed', 'true');
+    function activateTab(targetId, updateHash) {
+      if (updateHash === undefined) updateHash = true;
+      var activeTab = document.querySelector('[data-compass-target="' + targetId + '"]');
+      if (!activeTab) return;
 
-      const filter = btn.getAttribute('data-app-filter');
-      appCards.forEach(function (card) {
-        if (filter === 'all') {
-          card.style.display = 'flex';
+      tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(function (p) { p.hidden = true; });
+
+      activeTab.setAttribute('aria-selected', 'true');
+      var targetPanel = document.getElementById(targetId);
+      if (targetPanel) targetPanel.hidden = false;
+
+      if (updateHash) {
+        var hashKey = targetId.replace('panel-', '');
+        history.replaceState(null, '', '#bussola=' + hashKey);
+      }
+    }
+
+    tabs.forEach(function (tab) {
+      tab.onclick = function () {
+        var targetId = tab.getAttribute('data-compass-target');
+        activateTab(targetId);
+      };
+
+      tab.onkeydown = function (e) {
+        var tabList = Array.from(tabs);
+        var index = tabList.indexOf(tab);
+        var nextIndex = null;
+
+        if (e.key === 'ArrowRight') {
+          nextIndex = (index + 1) % tabList.length;
+        } else if (e.key === 'ArrowLeft') {
+          nextIndex = (index - 1 + tabList.length) % tabList.length;
+        } else if (e.key === 'Home') {
+          nextIndex = 0;
+        } else if (e.key === 'End') {
+          nextIndex = tabList.length - 1;
+        }
+
+        if (nextIndex !== null) {
+          e.preventDefault();
+          tabList[nextIndex].focus();
+          var nextTargetId = tabList[nextIndex].getAttribute('data-compass-target');
+          activateTab(nextTargetId);
+        }
+      };
+    });
+
+    function checkHash() {
+      var hash = window.location.hash;
+      if (hash && hash.indexOf('#bussola=') === 0) {
+        var key = hash.replace('#bussola=', '');
+        var targetPanelId = 'panel-' + key;
+        activateTab(targetPanelId, false);
+        var bussolaSection = document.getElementById('bussola-interativa');
+        if (bussolaSection) {
+          bussolaSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+
+    function syncCompassWithProfile() {
+      if (window.location.hash && window.location.hash.indexOf('#bussola=') === 0) return;
+      try {
+        var rawProf = localStorage.getItem('cagp_student_profile_v1');
+        if (!rawProf) return;
+        var prof = JSON.parse(rawProf);
+        if (!prof || !prof.period) return;
+        var pNum = parseInt(prof.period, 10);
+        var targetPanel = 'panel-calouro';
+        if (prof.period === 'egresso' || pNum >= 7) {
+          targetPanel = 'panel-formando';
+        } else if (pNum >= 2 && pNum <= 6) {
+          targetPanel = 'panel-meio';
         } else {
-          const cardCat = card.getAttribute('data-app-cat') || '';
-          if (cardCat.includes(filter)) {
+          targetPanel = 'panel-calouro';
+        }
+        activateTab(targetPanel, false);
+      } catch (e) {}
+    }
+
+    checkHash();
+    syncCompassWithProfile();
+    if (window.refreshCagpVault) window.refreshCagpVault();
+
+    if (window.__cagpIndexProfileListener) {
+      window.removeEventListener('cagp:profile-updated', window.__cagpIndexProfileListener);
+    }
+    window.__cagpIndexProfileListener = function () {
+      syncCompassWithProfile();
+    };
+    window.addEventListener('cagp:profile-updated', window.__cagpIndexProfileListener);
+
+    var onboardBanner = document.getElementById('cagp-onboarding-banner');
+    var btnDismissOnboard = document.getElementById('btn-dismiss-onboard');
+    if (onboardBanner && btnDismissOnboard) {
+      try {
+        if (localStorage.getItem('cagp_onboard_v1_dismissed') === 'true') {
+          onboardBanner.style.display = 'none';
+        }
+      } catch (e) {}
+
+      btnDismissOnboard.onclick = function () {
+        onboardBanner.style.display = 'none';
+        try {
+          localStorage.setItem('cagp_onboard_v1_dismissed', 'true');
+        } catch (e) {}
+      };
+    }
+
+    var filterButtons = document.querySelectorAll('.cagp-app-filter-btn');
+    var appCards = document.querySelectorAll('.cagp-app-card');
+
+    filterButtons.forEach(function (btn) {
+      btn.onclick = function () {
+        filterButtons.forEach(function (b) {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        var filter = btn.getAttribute('data-app-filter');
+        appCards.forEach(function (card) {
+          if (filter === 'all') {
             card.style.display = 'flex';
           } else {
-            card.style.display = 'none';
+            var cardCat = card.getAttribute('data-app-cat') || '';
+            card.style.display = cardCat.indexOf(filter) !== -1 ? 'flex' : 'none';
           }
-        }
-      });
+        });
+      };
     });
-  });
-});
-</script>
-```
+  }
 
-```{=html}
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initIndexPage, { once: true });
+  } else {
+    initIndexPage();
+  }
+})();
+</script>
+
 <nav class="cagp-journey-nav" aria-label="Continuidade da jornada acadêmica">
   <div class="row g-3">
     <div class="col-md-6">
@@ -959,7 +1079,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <a href="percurso.html" class="cagp-journey-link">
         <div>
           <div class="cagp-journey-dir">Planejamento do Curso &rarr;</div>
-          <div class="cagp-journey-title">Percurso Curricular & Explorador de Ementas</div>
+          <div class="cagp-journey-title">Percurso Curricular &amp; Explorador de Ementas</div>
         </div>
         <p class="cagp-journey-desc">Filtre as 27 matérias obrigatórias por semestre e departamento e compare os 3 percursos oficiais.</p>
       </a>
@@ -967,4 +1087,3 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </nav>
 ```
-:::

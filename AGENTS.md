@@ -1,136 +1,117 @@
-# AGENTS.md — Regras do Projeto CAGP UFMG
+# AGENTS.md — Manual de Arquitetura, Governança e Roteamento de Skills
+**Repositório:** Portal Institucional & Super App Discente — Centro Acadêmico de Gestão Pública (CAGP FAFICH/UFMG)  
+**Documentos Relacionados:** [`PRODUCT.md`](file:///home/gsathler/Nextcloud/Projects/cagp/PRODUCT.md) • [`DESIGN.md`](file:///home/gsathler/Nextcloud/Projects/cagp/DESIGN.md) • [`RELATORIO.md`](file:///home/gsathler/Nextcloud/Projects/cagp/RELATORIO.md) • [`_brand.yml`](file:///home/gsathler/Nextcloud/Projects/cagp/_brand.yml)
 
-Site institucional do Centro Acadêmico de Gestão Pública (CAGP — FAFICH/UFMG), feito com **Quarto** (website), publicado no GitHub Pages a partir de `docs/`. Idioma do conteúdo: **português do Brasil**.
+---
 
-## Mapa de pastas
+## 1. Regras Inegociáveis de Conteúdo Factual e Marca (Cláusulas Pétreas)
 
-| Caminho | Papel | Publicado? |
+1. **Integridade Factual Absoluta (100% Zero Invenção / Zero Supressão):**
+   - Todos os dados acadêmicos, regras regimentais (PPC 2020, Regulamento do Curso Versão `N-20229`, Regimento Interno do CAGP de `14/10/2024`, Resoluções CEPE/UFMG), cargas horárias (`3.000h` totais, `2.880h` Núcleo Específico, `120h` Formação Livre, `300h` Extensão Obrigatória, até `300h` AAC, `300h` Estágio Supervisionado A+B), códigos e ementas das `27` disciplinas obrigatórias e `68` optativas, prazos fatais (`120 dias corridos` para protocolo de Eventos I e Anais em AAC — Art. 15, § 4º; final do `2º período letivo` para aproveitamento de estudos — Res. CEPE 06/2019), horários operacionais (`RU II Setorial`, linhas do Circular Interno, `Secretaria Sala F-2039` com Norma Guedes, `CEAG FAFICH` das 08h às 22h), links oficiais e arquivos em `documentos/` e `_referencias/` **estão 100% corretos e verificados**.
+   - **Proibição Estrita:** Nenhum agente pode inventar dados, alterar cargas horárias, suprimir regras regimentais, modificar códigos de matérias ou alterar links/nomes reais dos PDFs da pasta `documentos/`.
+2. **Identidade Gráfica Base Soberana — Neo-Brutalismo Brite / CAGP:**
+   - Governada por [`_brand.yml`](file:///home/gsathler/Nextcloud/Projects/cagp/_brand.yml), [`manual-de-identidade-visual-cagp-ufmg.md`](file:///home/gsathler/Nextcloud/Projects/cagp/_referencias/identidade-visual/manual-de-identidade-visual-cagp-ufmg.md) e [`DESIGN.md`](file:///home/gsathler/Nextcloud/Projects/cagp/DESIGN.md):
+     - **Bordas:** Sólidas em Preto Candango `#0A0A0A` (`2px` em controles/chips/inputs; `3px` em cards, barras, tabelas e modais).
+     - **Sombras:** Duras e deslocadas com **`0px` de blur** (`2px 2px 0px #0A0A0A`, `4px 4px 0px #0A0A0A`, `6px 6px 0px #0A0A0A`).
+     - **Cantos:** Retos ou micro-contidos (`0px` a `4px`). **Proibido** usar `border-radius > 4px` ou `9999px` (exceto em indicadores circulares estritos como pinos numerados de tutorial ou avatar redondo com borda `#0A0A0A`).
+     - **Zero Glassmorphism:** **Proibido** usar `backdrop-filter: blur()` em qualquer barra, modal, drawer ou card. Toda superfície elevada é 100% opaca.
+     - **Tipografia:** `Oswald` (700, uppercase, para títulos/display/cabeçalhos), `Inter` (400/500/600/700 para leitura corrida e controles) e `JetBrains Mono` (para códigos de disciplinas, contadores tabulares e chaves).
+     - **Paleta:** Vinho Candango `#9E2424` / Institucional `#8B1E2D`, Ouro `#E8A317`, Creme Papel `#FBF8F3`, Preto `#0A0A0A` e cores semânticas dos sistemas UFMG (SIGA `#9E2424`, MinhaUFMG `#005A9C`, Moodle `#D9531E`, SEI `#1E6B3A`, BU `#5B2C6F`).
+
+---
+
+## 2. Regra de Arbitragem em 3 Camadas (Brite + Apple HIG + M3 Expressive)
+
+Quando diretrizes das skills `impeccable`, `apple-design` e `m3-expressive` parecerem divergir, aplique obrigatoriamente esta hierarquia de 3 camadas:
+
+### Camada 1 — Pele, Geometria e Marca (Soberana: 100% Brite / CAGP)
+- Define cores, tipografia, bordas pretas (`2px`–`3px`), sombras duras (`0px` blur), cantos retos (`0px`–`4px`) e opacidade sólida (`100%`).
+- **Poder de Veto:** Veta qualquer sugestão de *Liquid Glass* / `backdrop-filter: blur` ou cantos arredondados (`12px`–`24px`) da skill `apple-design`, e veta cantos *pill* (`9999px`), sombras difusas de elevação ou paletas pastel estranhas à marca vindas da skill `m3-expressive`.
+
+### Camada 2 — Ergonomia, Navegação Espacial e Física (`apple-design`)
+- Define a arquitetura do Shell Web/Standalone, zonas de alcance do polegar (*Thumb Zones* com alvos de toque mínimos de `48x48px`), respeito às *Safe Areas* (`viewport-fit=cover` + `env(safe-area-inset-*)`), adaptação do Spotlight ao teclado virtual (`window.visualViewport`), componentes espaciais (Top Command Bar de `52px`, Bottom Tab Bar de `60px` com no máximo 5 abas, Bottom Sheets com *grabber*, Segmented Controls) e curvas de mola física (`cubic-bezier(0.32, 0.72, 0, 1)` com fallback instantâneo em `prefers-reduced-motion: reduce`).
+
+### Camada 3 — Contenção, Densidade e Estados Operacionais (`m3-expressive`)
+- Define como organizar dados densos sem poluição visual:
+  - **Hierarquia Tonal de Superfícies (Proibição de `nested-cards`):** Nunca coloque um `.cagp-card` com borda e sombra dura dentro de outro `.cagp-card` com sombra dura. Use níveis tonais de superfície (`--cagp-surface-base: #FBF8F3`, `--cagp-surface-card: #FFFFFF`, `--cagp-surface-low: #F4F1EA`, `--cagp-surface-high: #EAE5DC`) e divisores internos (`1px` ou `2px solid #0A0A0A`).
+  - **Barras de Chips Deslizantes no Mobile:** Grupos de filtros (como períodos `1ºP`–`10ºP` ou departamentos) devem usar rolagem horizontal suave (`overflow-x: auto; flex-wrap: nowrap; scroll-snap-type: x mandatory`) em telas móveis, evitando muros de botões empilhados.
+  - **Feedback de Estado:** Barras de progresso com metas numéricas explícitas (`300h`, `600h`), carimbos brutais de status (`DEFERIDO`, `TETO`, `TRAVA SIGA`) e estados vazios (*empty states*) pedagógicos com botão de reset em 1 clique.
+
+---
+
+## 3. Roteamento Cirúrgico de Skills (Como Ler Sem Estourar a Janela de Contexto)
+
+> [!CAUTION]
+> **Regra de Ouro de Contexto:** NUNCA leia todos os arquivos das pastas `references/` ou `reference/` de uma skill de uma só vez. Carregue apenas o `SKILL.md` e o arquivo específico exigido pela subtarefa abaixo:
+
+| Tarefa / Domínio | Skill Principal | Arquivos Permitidos para Leitura Inicial |
 | :--- | :--- | :--- |
-| `*.qmd` (raiz) | As 11 páginas do site. **Não mover**: o caminho define a URL pública | ✅ (renderizado) |
-| `_quarto.yml` | Configuração do projeto: navbar, rodapé, anúncio da chapa, `render:` e `resources:` | — |
-| `_brand.yml` | Tokens de marca (cores, fontes, logos), detectado automaticamente pelo Quarto na raiz | — |
-| `_variables.scss` | Tema SCSS: Brite adaptado ao CAGP (`scss:defaults` + `scss:rules`) | — |
-| `styles.css` | Componentes próprios do CAGP (`.cagp-*`, callouts) | ✅ |
-| `documentos/` | PDFs oficiais para download (nomes kebab-case sem acento) | ✅ |
-| `logos/` | Acervo de marcas, **uma subpasta por entidade** (`cagp/`, `ufmg/`, `minhaufmg/`, `siga/`, `fump/`, `interno-rotas/`) | ⚠️ só `logos/cagp/**` por padrão (ver regra 4) |
-| `imagens/` | Fotos e imagens de conteúdo | ✅ |
-| `docs/` | **Saída do render. Nunca editar à mão** | ✅ (é o site) |
-| `_referencias/` | Material de apoio, ignorado pelo Quarto | ❌ |
-| `_referencias/sites-informacoes-oficiais/` | Capturas dos sites oficiais do Colegiado GP (`colegiado-gp/`) e do Guia Viver UFMG (`guia-viver-ufmg/`). HTML bruto fica fora do git | ❌ |
-| `_referencias/plataformas-e-acessos-externos/` | Material de serviços externos linkados no portal (ex.: `interno-rotas/`, licença MIT) | ❌ |
-| `PRODUCT.md`, `DESIGN.md`, `.impeccable/` | Contexto de produto e design da skill impeccable. **Manter na raiz** | ❌ |
-| `.agents/skills/` | Skills do workspace (impeccable, brand-yml, quarto-authoring, alt-text, playwright-core). Uso automático em "Roteamento de Skills" | ❌ |
+| **Orquestração de UI/UX, Auditoria Visual, Polimento e Validação de `DESIGN.md` / `PRODUCT.md`** | [`impeccable`](file:///home/gsathler/Nextcloud/Projects/cagp/.agents/skills/impeccable/SKILL.md) | 1. `.agents/skills/impeccable/SKILL.md`<br>2. `.agents/skills/impeccable/reference/routing.md`<br>3. Apenas 1 arquivo de comando por vez (`doctor.md`, `audit.md`, `critique.md`, `distill.md`, `polish.md`, `harden.md`, `typeset.md`). |
+| **Navegação Mobile/Standalone, Tab Bar, Bottom Sheets, Safe Areas, Spotlight e Física** | [`apple-design`](file:///home/gsathler/Nextcloud/Projects/cagp/.agents/skills/apple-design/SKILL.md) | 1. `.agents/skills/apple-design/SKILL.md`<br>2. `.agents/skills/apple-design/references/hig-lookup.md`<br>3. `.agents/skills/apple-design/references/cross-platform.md`<br>4. `.agents/skills/apple-design/references/code-audit.md` |
+| **Calculadoras, Filtros, Chips Deslizantes, Listas Segmentadas e Superfícies Tonais** | [`m3-expressive`](file:///home/gsathler/Nextcloud/Projects/cagp/.agents/skills/m3-expressive/SKILL.md) | 1. `.agents/skills/m3-expressive/SKILL.md`<br>2. Sob demanda: `references/components-core.md` ou `references/motion-and-tokens.md`. |
+| **Estrutura Quarto, YAML, Callouts, Pandoc Divs e Build `docs/`** | [`quarto-authoring`](file:///home/gsathler/Nextcloud/Projects/cagp/.agents/skills/quarto-authoring/SKILL.md) | 1. `.agents/skills/quarto-authoring/SKILL.md` |
+| **Tokens de Marca e Sincronização `_brand.yml` <-> SCSS/CSS** | [`brand-yml`](file:///home/gsathler/Nextcloud/Projects/cagp/.agents/skills/brand-yml/SKILL.md) | 1. `.agents/skills/brand-yml/SKILL.md` |
+| **Auditoria de Textos Alternativos (`alt`, `fig-alt`, `aria-label`)** | [`alt-text`](file:///home/gsathler/Nextcloud/Projects/cagp/.agents/skills/alt-text/SKILL.md) | 1. `.agents/skills/alt-text/SKILL.md` |
+| **Governança de Customizações, Skills e Rules do Antigravity** | `agy-customizations` (Built-in) | 1. `~/.gemini/antigravity/builtin/skills/agy-customizations/SKILL.md` |
+| **Auditoria E2E, Runtime, Console JS e Multi-Viewport (4 Classes de Tela)** | Subagente Nativo `/browser` (`invoke_subagent` `TypeName: "browser"`) | Uso obrigatório do subagente `/browser` sobre servidor HTTP local servindo `docs/` (substitui `playwright-core`). |
 
-## Fontes de verdade (consultar ANTES de escrever ou estilizar)
+---
 
-**Conteúdo acadêmico, regimental e operacional**, em ordem de precedência:
+## 4. Contratos Técnicos Obrigatórios (Arquitetura JS, SPA Router, Cofre e CSS)
 
-1. **Normas** (cargas horárias, códigos de disciplina, prazos regimentais) → `_referencias/documentos-oficiais/*.md` (transcrições). O **PDF** em `documentos/` prevalece. Na página, cite e linke sempre o PDF. Nunca invente regras, cargas horárias ou códigos de disciplina.
-2. **Informação operacional e mutável** (horários, salas, contatos, passo a passo, formulários) → site oficial do Colegiado em `_referencias/sites-informacoes-oficiais/colegiado-gp/`. Na página, linke a **URL oficial viva** e indique a **data da captura**. Se o site e um PDF divergirem em informação operacional, vale o mais recente, e o conflito deve ser sinalizado ao responsável.
-3. **Complemento institucional da UFMG** → `_referencias/sites-informacoes-oficiais/guia-viver-ufmg/`. Quando o Guia Viver UFMG e o Colegiado tratarem do mesmo tema, mescle as informações, mas **prevalece o que é específico do curso/Colegiado**.
+### 4.1. Contrato do Roteador SPA ([`_includes/super-app-router.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/super-app-router.html))
+1. **Proibição de Eventos Globais Sintéticos:** O roteador SPA **JAMAIS** deve disparar `document.dispatchEvent(new Event('DOMContentLoaded'))` ou `window.dispatchEvent(new Event('load'))` durante trocas de página (`applyPageSwap`), pois isso re-executa listeners acumulados de páginas anteriores e vaza memória.
+2. **Evento Canônico de Navegação (`cagp:navigated`):** A cada transição concluída, disparar `window.dispatchEvent(new CustomEvent('cagp:navigated', { detail: { url: targetUrl } }))` e `document.dispatchEvent(new CustomEvent('cagp:navigated', { bubbles: true, detail: { url: targetUrl } }))`.
+3. **Blindagem de Includes Persistentes:** Scripts pertencentes a componentes persistentes na raiz do `<body>` (`_includes/super-app-header.html`, `_includes/accessibility.html`, `_includes/pwa-install.html`, `_includes/spotlight-search.html`, `_includes/app-launcher.html`, `_includes/back-to-top.html`) devem possuir guarda de idempotência (`if (window.__cagpHeaderMounted) return;`) e/ou atributo `data-cagp-persistent-script="true"` ignorado por `executePageScripts(currentMain)`.
+4. **Inicialização de Scripts de Página (`.qmd`):** Todo script inline de página (`.qmd`) deve executar sua função `initPage()` imediatamente caso `document.readyState !== 'loading'` (o que permite re-execução limpa via `executePageScripts(currentMain)` na troca de página SPA sem depender de `DOMContentLoaded`) e nunca anexar listeners em `window` ou `document` sem antes remover o listener anterior ou verificar uma flag global.
 
-Demais fontes:
+### 4.2. Contrato de Chaves do Cofre Acadêmico (`localStorage` & `CacheStorage`)
+Qualquer leitura ou escrita de dados locais do estudante deve usar **exclusivamente** as seguintes chaves canônicas:
 
-- **Produto, público e tom** → `PRODUCT.md`.
-- **Sistema visual** → `DESIGN.md`.
-- **Linguagem visual Brite** → `_referencias/tema-brite-original/`. É a referência obrigatória para criar ou ajustar componentes no estilo Brite (bordas pretas, sombras duras, cantos retos). Leia o `README.md` da pasta.
-- **Marca do CAGP** → `_brand.yml` + `_referencias/identidade-visual/manual-de-identidade-visual-cagp-ufmg.md`.
-- **Marcas de terceiros** → `_referencias/identidade-visual/manual-de-identidade-visual-ufmg.md` e `manual-de-identidade-visual-minhaufmg.md` (versões, áreas de proteção e usos por fundo).
-- **Histórico de decisões** → `_referencias/memorial-tecnico.md`.
+| Recurso / Micro-App | Chave Canônica no `localStorage` | Formato do Valor | Consumidores Sincronizados |
+| :--- | :--- | :--- | :--- |
+| **Calculadora 600h (Extensão + AAC)** | `cagp_calc_ext_aac_v1` | JSON Object (`{ "ext_lab_a": 90, "aac_5": 90, ... }`) | [`acg.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/acg.qmd) (escrita/leitura) e [`_includes/pwa-install.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/pwa-install.html) (`refreshVaultData` + `#cagp-clear-vault-btn` + `cagpSync`) |
+| **Guardião de 120 Dias das AAC (Art. 15, § 4º)** | `cagp_aac_120d_certs_v1` | JSON Array (`[{ id, title, mod, date, hours }]`) | [`acg.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/acg.qmd) (`#guardiao-120-dias` + Espelho N-20229), [`_includes/pwa-install.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/pwa-install.html) (`setAppBadge` + `refreshVaultData` + `cagpSync`) e [`_includes/super-app-header.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/super-app-header.html) (`Campus Agora`) |
+| **Alertas & Sobrevivência Noturna (Notificações)** | `cagp_notifications_prefs_v1` | JSON Object (`{ ru1815, circular2230, aac120d, lastFired }`) | [`_includes/pwa-install.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/pwa-install.html) (`window.cagpNotifications` + `cagpSync`) e [`sw.js`](file:///home/gsathler/Nextcloud/Projects/cagp/sw.js) (`SHOW_NOTIFICATION` + `notificationclick`) |
+| **Checklist do Calouro (6 Passos)** | `cagp_calouro_checklist_v1` | JSON Object/Array de IDs | [`calouros.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/calouros.qmd) (escrita/leitura) e [`_includes/pwa-install.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/pwa-install.html) (`refreshVaultData` + `#cagp-clear-vault-btn` + `cagpSync`) |
+| **Simulador / Termômetro de Percurso** | `cagp_percurso_quiz_v1` | String (`"01-01"`, `"01-02"` ou `"01-03"`) | [`percurso.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/percurso.qmd) (escrita/leitura) e [`_includes/pwa-install.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/pwa-install.html) (`refreshVaultData` + `#cagp-clear-vault-btn`) |
+| **Minha Grade (27 Obrigatórias + 68 Optativas)** | `cagp_minha_grade_v1` | JSON Object (`{ "completed": ["DCP124", ...], "favorites": ["DCP001", ...] }`) | [`percurso.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/percurso.qmd), [`optativas.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/optativas.qmd) (escrita/leitura) e [`_includes/pwa-install.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/pwa-install.html) (`refreshVaultData` + `#cagp-clear-vault-btn` + `cagpSync`) |
+| **Checklist de Dispensa de Estágio (Art. 41)** | `cagp_art41_checklist_v1` | JSON Object (`{ "srv_1": true, ... }`) | [`estagio.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/estagio.qmd), [`estagio-tcc.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/estagio-tcc.qmd) (escrita/leitura) e [`_includes/pwa-install.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/pwa-install.html) (`refreshVaultData` + `#cagp-clear-vault-btn` + `cagpSync`) |
+| **Preferências de Acessibilidade** | `cagp_a11y_prefs_v2` | JSON Object (`{ font, contrast, dyslexia, spacing, motion, links, ruler, readingMask }`) | [`_includes/accessibility.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/accessibility.html) e [`_includes/super-app-router.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/super-app-router.html) (preserva atributos `data-a11y-*` em `<html>`) |
+| **Perfil & Passaporte Acadêmico Discente** | `cagp_student_profile_v1` | JSON Object (`{ name, pronouns, period, entrySemester, pathway, avatarMode, avatarPreset, photoDataUrl, prideFlag, updatedAt }`) | [`_includes/pwa-install.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/pwa-install.html) (`window.cagpProfile` + `<canvas>` 256×256 WebP + `#cagp-settings-sheet` + `#cagp-clear-vault-btn` + `cagpSync`), [`_includes/super-app-header.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/super-app-header.html) (`#cagp-header-profile-btn` + `#cagp-topbar-profile-btn`), [`index.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/index.qmd) (Passaporte Acadêmico + Bússola), [`percurso.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/percurso.qmd) (destaque de período/percurso) e [`acg.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/acg.qmd) (cabeçalho do Espelho Oficial N-20229) |
+| **Cofre de 8 PDFs Normativos Offline** | CacheStorage: `cagp-pdfs-oficiais-v1` | 8 URLs exatas da pasta `documentos/`:<br>1. `documentos/ppc-gestao-publica-ufmg.pdf`<br>2. `documentos/regulamento-gestao-publica-ufmg.pdf`<br>3. `documentos/ementario-gestao-publica-ufmg.pdf`<br>4. `documentos/percurso-bacharelado-nucleo-geral.pdf`<br>5. `documentos/percurso-bacharelado-nucleo-complementar.pdf`<br>6. `documentos/percurso-bacharelado-nucleo-avancado.pdf`<br>7. `documentos/termo-aceite-orientador-tcc.pdf`<br>8. `documentos/regimento-interno-cagp-ufmg.pdf` | [`documentos.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/documentos.qmd) e [`sw.js`](file:///home/gsathler/Nextcloud/Projects/cagp/sw.js) |
 
-## Roteamento de Skills
+### 4.3. Escala Unificada de `z-index` (Proibido Inflacionar Valores)
+Nenhum componente pode inventar valores arbitrários como `9999999`. Toda camada posicionada deve obedecer à escada de 10 níveis definida em [`DESIGN.md`](file:///home/gsathler/Nextcloud/Projects/cagp/DESIGN.md):
+- `1020`: Régua de leitura e barra de progresso de topo (`.cagp-reading-progress`, `.cagp-reading-ruler`)
+- `1030`: Banners de aviso no fluxo superior (`#quarto-announcement`, `#cagp-chapa-banner`) e botões flutuantes secundários (`.cagp-back-to-top`, `.cagp-a11y-trigger`)
+- `1040`: Navegação primária fixa (`.cagp-superapp-header`, `.cagp-mobile-nav`, `.cagp-superapp-topbar`, `.cagp-superapp-tabbar`, `.cagp-pwa-banner`)
+- `1050`: Menus dropdown do cabeçalho (`.cagp-island-dropdown-menu`)
+- `1060`: Gaveta de navegação mobile off-canvas (`.cagp-mobile-drawer`) e Modal do App Launcher (`.cagp-launcher-modal`)
+- `1070`: Modal do Spotlight / Command Palette (`.cagp-spotlight-modal`, `.cagp-spotlight-dialog`)
+- `1080`: Backdrop de Bottom Sheets / Acessibilidade (`.cagp-a11y-backdrop`)
+- `1090`: Painéis e Bottom Sheets modais (`.cagp-a11y-panel`, `#cagp-settings-sheet`, `#cagp-ios-sheet`, `#cagp-global-bottom-sheet`) — **sempre acima do Launcher e do Drawer para poderem ser abertos a partir deles**
+- `1100`: Toasts de feedback rápido (`.cagp-toast`) e Skip Links em `:focus` (`.cagp-skip-link:focus`)
 
-As skills em `.agents/skills/` só mostram nome e descrição até serem ativadas. **Ative-as por conta própria** seguindo esta seção, sem esperar o usuário pedir. Antes de ativar, leia o `SKILL.md` inteiro e abra apenas os `references/` que a tarefa exigir.
+---
 
-### Precedência
+## 5. Protocolo Oficial de Verificação Obrigatória (Tríade A + B + C)
 
-1. `AGENTS.md`, `PRODUCT.md` e `DESIGN.md` do projeto.
-2. A skill acionada.
-3. O padrão geral do agente.
-
-A linguagem **Brite** (bordas pretas, sombras duras, cantos retos; ver `DESIGN.md`) é o *brief fixado* da `impeccable`: a skill manda honrar o brief mesmo quando ele conflita com suas proibições gerais. Exemplos genéricos das skills (ex.: `theme: cosmo`) **não valem** aqui.
-
-### Matriz de decisão
-
-| Se a tarefa é… | Skill | Como |
-| :--- | :--- | :--- |
-| Criar, redesenhar, revisar, polir ou auditar interface (layout, tipografia, cor, responsivo, UX copy, acessibilidade visual, componentes `.cagp-*`) | `impeccable` | Escolha o comando na tabela abaixo. Rode `.agents/skills/impeccable/scripts/impeccable context` uma vez por sessão |
-| Escrever ou editar `.qmd`, `_quarto.yml`, callouts, divs, tabsets, layout, shortcodes, navbar, `render:` | `quarto-authoring` | `SKILL.md` e, conforme o caso, as referências `callouts`, `divs-and-spans`, `layout`, `shortcodes`, `yaml-front-matter`, `figures`, `tables`, `extensions` |
-| Mudar cores, fontes ou logos da marca em `_brand.yml` | `brand-yml` | Só "Creating", "Modifying", "Troubleshooting" e `references/quarto.md` |
-| Adicionar ou revisar `alt` de imagem ou logo | `alt-text` | Adaptada ao formato do portal (ver "Limites") |
-| Dúvida sobre o Antigravity (CLI, IDE, slash commands) | `antigravity-guide` | Só quando perguntado |
-| Criar ou ajustar skills, regras, hooks ou plugins do projeto | `agy-customizations` | Só quando pedido |
-| Conteúdo acadêmico, regimental ou operacional | *(nenhuma)* | Siga "Fontes de verdade" |
-
-### `impeccable`: qual comando, e quando
-
-| Situação | Comando |
-| :--- | :--- |
-| Nova seção, página ou componente | `shape`, depois o fluxo "new-work" |
-| `PRODUCT.md` ou `DESIGN.md` desatualizado | `init` ou `document`; `doctor` detecta desvios |
-| Avaliar uma página existente | `critique <página>` (relatórios em `.impeccable/critique/`) |
-| Problemas técnicos (a11y, desempenho, responsivo) | `audit <alvo>` |
-| Acabamento antes de publicar | `polish <alvo>` |
-| Página longa ou carregada | `distill` e `layout` |
-| Hierarquia tipográfica | `typeset` |
-| Textos, rótulos, mensagens | `clarify` |
-| Mobile, tablet, desktop | `adapt` |
-| Extrair tokens ou componentes de `styles.css` | `extract` |
-
-Nunca rode comando sem argumento. Não use `overdrive`, `delight` nem `bolder` sem pedido (o tom é institucional e a marca já é forte). `live` e `generate` só com `quarto preview` rodando.
-
-### Limites (o que **não** usar)
-
-- `quarto-authoring`: ignore células de código, cache, citações/BibTeX, `engines` e as seis `references/conversion-*`. O portal é estático e não tem células executáveis.
-- `brand-yml`: ignore `shiny-r`, `shiny-python` e `brand-yml-in-r`.
-- `alt-text`: foi escrita para gráficos de dados e procura `#| label: fig-`, que não existe aqui. Aplique só o espírito: diga o tipo da imagem primeiro, o que ela mostra e por que está na página, sem "imagem de". Para logos: nome da entidade e função (ex.: "Logo do SIGA UFMG"). O texto vai em `alt=` no HTML e em `fig-alt=` no Markdown.
-
-### Playbooks por tarefa
-
-| Tarefa | Ordem |
-| :--- | :--- |
-| **Página nova** | `quarto-authoring` (criar `.qmd`, `render:` e navbar) → `impeccable shape` → `impeccable polish` → verificação |
-| **Conteúdo novo ou corrigido** | "Fontes de verdade" (PDF > site do Colegiado > Guia Viver) → `quarto-authoring` → `impeccable clarify` → verificação |
-| **Componente visual** | `impeccable shape` + `_referencias/tema-brite-original/` → editar `styles.css` ou `_variables.scss` → `impeccable audit` → verificação |
-| **Logo ou imagem nova** | Regras 3 e 4 de manutenção → `alt-text` → verificação |
-| **Mudança de marca** | `brand-yml` → conferir o manual → `impeccable document` se o `DESIGN.md` ficar desatualizado → verificação |
-| **Revisão geral de uma página** | `impeccable critique` → `audit` → `polish` |
-
-### Verificação obrigatória
-
-Depois de mexer em `.qmd`, `styles.css`, `_variables.scss` ou `_quarto.yml`:
-
-```bash
-quarto render
-.agents/skills/impeccable/scripts/impeccable detect --json docs/*.html
-```
-
-Corrija o que o detector apontar antes de dar a tarefa por concluída. Exceção conhecida: o aviso `overused-font` para **Inter** é esperado, pois a tipografia (Oswald + Inter) faz parte da marca fixada em `_brand.yml` e `DESIGN.md`; não troque a fonte por causa dele. Não ative o hook do detector sem pedido.
-
-### Skills built-in e dependências
-
-- `plugin`, `automation` e `generative_ui` só sob pedido explícito. `migrate-workflows` e `ui-plugin-navigation` não se aplicam.
-- A `impeccable` está **versionada em `.agents/skills/impeccable/`** (v4.7.0, com binário Linux x64; em outro sistema a própria skill baixa o binário na primeira execução). Para atualizar, use `impeccable update` e registre a versão no memorial.
-
-## Regras de manutenção
-
-1. **Página nova**: crie o `.qmd` na raiz e adicione-o em `project.render` **e** na navbar de `_quarto.yml`. A lista `render:` é explícita de propósito: impede que `README.md`, `AGENTS.md`, `PRODUCT.md` etc. virem páginas.
-2. **PDF novo**: vai em `documentos/` (kebab-case, sem acento). Se houver transcrição, ela fica em `_referencias/documentos-oficiais/` com o mesmo nome-base, registrada na tabela do README da pasta.
-3. **Imagem nova**: vai em `imagens/`, sempre com `fig-alt` descritivo (skill alt-text).
-4. **Logo novo**: vai em `logos/<entidade>/`.
-   - **CAGP** (`logos/cagp/`): somente SVG. É a única subpasta publicada por padrão (`resources: logos/cagp/**` em `_quarto.yml`).
-   - **Terceiros** (UFMG, minhaUFMG, SIGA, FUMP, Interno Rotas): só uso **referencial**, para identificar um serviço ou sistema. Use o arquivo sem alterar (sem recolorir, distorcer ou cortar), com `alt` descritivo e respeitando o manual da marca. Um logo de terceiro só vai para `docs/` quando uma página o referencia (o Quarto copia automaticamente), sem entrar em `resources`.
-   - A **marca UFMG nunca aparece em cabeçalho, navbar, rodapé ou hero**, para não sugerir que o portal é institucional.
-   - **Interno Rotas** (MIT): onde o app for citado, linke `https://internorotas.com/` e mantenha o crédito. A licença fica em `_referencias/plataformas-e-acessos-externos/interno-rotas/LICENSE`.
-5. **Nomes de arquivos e pastas**: kebab-case, **sem acento e sem espaço** (ex.: `manual-de-identidade-visual-minhaufmg.md`). Exceções: as variações oficiais do CAGP em `logos/cagp/` (`NN_nome.svg`, catalogadas no manual), `README`/`LICENSE`, e os HTML brutos capturados, que mantêm o nome original.
-6. **Capturas de sites**: não versione HTML bruto nem as pastas `*_files/` (~120 MB). O `.gitignore` já cobre `_referencias/sites-informacoes-oficiais/`. Versione só transcrições `.md` e PDFs. Ao capturar de novo, registre origem e data em `_referencias/sites-informacoes-oficiais/README.md`.
-7. **Estilos**: variáveis e regras do tema em `_variables.scss`; componentes em `styles.css`. **Nunca** edite nem importe os arquivos de `_referencias/tema-brite-original/`.
-8. **Não editar `docs/`**: rode o render. Para limpar arquivos órfãos, use `rm -rf docs && quarto render`.
-9. Ao concluir um ciclo relevante de mudanças, registre-o em `_referencias/memorial-tecnico.md`, incluindo mudanças nas skills (versão da `impeccable`, skills novas ou ajustes de roteamento).
-
-## Comandos
-
-```bash
-quarto preview   # servidor local com live-reload
-quarto render    # gera docs/ para publicação
-```
+1. **Idioma e Viewport no Quarto:**
+   - [`_quarto.yml`](file:///home/gsathler/Nextcloud/Projects/cagp/_quarto.yml) deve manter `lang: pt-BR`.
+   - [`_includes/pwa-meta.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/pwa-meta.html) deve garantir via script síncrono que a `<meta name="viewport">` renderizada pelo Quarto receba `viewport-fit=cover`.
+2. **Tríade Oficial de Verificação Obrigatória após Alterações (Zero Uso de `playwright-core`):**
+   - **Passo A — Build Limpo & Impeccable CLI:**
+     ```bash
+     rm -rf docs && quarto render
+     .agents/skills/impeccable/scripts/impeccable doctor
+     .agents/skills/impeccable/scripts/impeccable detect --json docs/*.html
+     ```
+   - **Passo B — Integridade de Links, Ativos e Âncoras (`#hash`) via Python:**
+     - Executar script Python sobre `docs/*.html` comprovando `0` arquivos ausentes e `0` âncoras internas ou cruzadas (`#hash`) quebradas.
+   - **Passo C — Auditoria Multi-Viewport e Runtime com Subagente Nativo `/browser`:**
+     - Subir servidor HTTP local servindo `docs/` em background (`python3 -m http.server 8765 --directory docs --bind 127.0.0.1`) e acionar o subagente nativo `/browser` (`invoke_subagent` com `TypeName: "browser"`) para inspecionar o DOM renderizado, console JS (`0` erros), roteador SPA e responsividade nas **4 classes de tela**:
+       1. **Classe A — Mobile Smartphone:** `320x568`, `375x812`, `430x932`
+       2. **Classe B — Foldable (Dobrável):** `360x800` (fechado), `680x840` e `840x900` (aberto)
+       3. **Classe C — Tablet:** `768x1024` (retrato), `991x800` (limite de transição) e `1024x768` (paisagem)
+       4. **Classe D — Desktop & Widescreen:** `1280x800`, `1440x900`, `1920x1080`

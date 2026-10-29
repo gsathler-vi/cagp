@@ -10,3 +10,82 @@
 <link rel="icon" type="image/png" sizes="512x512" href="imagens/pwa/pwa-512x512.png">
 <meta name="application-name" content="CAGP UFMG">
 <meta name="msapplication-TileColor" content="#9E2424">
+<script data-cagp-persistent-script="true">
+(function () {
+  'use strict';
+
+  var root = document.documentElement;
+
+  // 1. Detecção Síncrona de Modo Standalone (Zero FOUC entre Portal Web e Super App)
+  function detectStandalone() {
+    try {
+      var forced = sessionStorage.getItem('cagp_force_app_mode');
+      if (forced === 'true') return true;
+      if (forced === 'false') return false;
+    } catch (e) {}
+    return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
+           window.navigator.standalone === true ||
+           (document.referrer && document.referrer.indexOf('android-app://') !== -1);
+  }
+
+  // 2. Blindagem Síncrona da Meta Viewport (Sobrescreve tag gerada pelo Quarto)
+  function syncViewportMeta(isStandalone) {
+    var vp = document.querySelector('meta[name="viewport"]');
+    if (!vp) {
+      vp = document.createElement('meta');
+      vp.name = 'viewport';
+      document.head.appendChild(vp);
+    }
+    if (isStandalone) {
+      vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+      root.classList.add('cagp-is-standalone');
+    } else {
+      vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover');
+      root.classList.remove('cagp-is-standalone');
+    }
+  }
+
+  var initialStandalone = detectStandalone();
+  syncViewportMeta(initialStandalone);
+  window.cagpSyncViewportMeta = syncViewportMeta;
+
+  // 3. Restauração Síncrona de Preferências de Acessibilidade (cagp_a11y_prefs_v2)
+  try {
+    var rawPrefs = localStorage.getItem('cagp_a11y_prefs_v2') || localStorage.getItem('cagp_a11y_prefs');
+    if (rawPrefs) {
+      var prefs = JSON.parse(rawPrefs);
+      if (prefs && typeof prefs === 'object') {
+        root.setAttribute('data-a11y-font', prefs.font || 'md');
+        if (prefs.dyslexia) root.setAttribute('data-a11y-dyslexia', 'true');
+        if (prefs.ruler) root.setAttribute('data-a11y-ruler', 'true');
+        if (prefs.contrast === 'high') root.setAttribute('data-a11y-contrast', 'high');
+        if (prefs.motion === 'reduce') root.setAttribute('data-a11y-motion', 'reduce');
+        if (prefs.links) root.setAttribute('data-a11y-links', 'true');
+      }
+    }
+  } catch (e) {}
+
+  // 4. Prevenção de Pinch/Gesture Zoom Acidental no Modo Standalone (Sem afetar #cagp-a11y-panel)
+  if (!window.__cagpZoomGuardMounted) {
+    window.__cagpZoomGuardMounted = true;
+
+    document.addEventListener('gesturestart', function (e) {
+      if (root.classList.contains('cagp-is-standalone')) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    document.addEventListener('gesturechange', function (e) {
+      if (root.classList.contains('cagp-is-standalone')) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    document.addEventListener('touchmove', function (e) {
+      if (root.classList.contains('cagp-is-standalone') && e.touches && e.touches.length > 1) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  }
+})();
+</script>

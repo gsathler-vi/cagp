@@ -1,17 +1,24 @@
 /* ==========================================================================
-   CAGP UFMG — Service Worker Oficial (PWA Offline & Cache Engine)
+   CAGP UFMG — Service Worker Oficial (PWA Offline & Cache Engine v2)
+   Estratégia: Network-First para HTML/CSS/JS (Atualização Imediata no GitHub Pages)
+   + Cache-First para os 8 PDFs Normativos Oficiais e Ícones (100% Offline FAFICH)
    ========================================================================== */
 
-const CACHE_NAME = 'cagp-pwa-v1';
+const CACHE_NAME = 'cagp-pwa-v2';
+const PDF_CACHE_NAME = 'cagp-pdfs-oficiais-v1';
 
 const CORE_ASSETS = [
   './',
   'index.html',
   'curso.html',
+  'pesquisa.html',
   'calouros.html',
   'percurso.html',
-  'estagio-tcc.html',
+  'optativas.html',
   'acg.html',
+  'estagio.html',
+  'tcc.html',
+  'estagio-tcc.html',
   'documentos.html',
   'faq.html',
   'sobre.html',
@@ -25,44 +32,143 @@ const CORE_ASSETS = [
   'logos/cagp/10_simbolo_transparente_positivo.svg'
 ];
 
-// Instalação: Pré-cache do App Shell
+const OFFICIAL_PDFS = [
+  'documentos/ppc-gestao-publica-ufmg.pdf',
+  'documentos/regulamento-gestao-publica-ufmg.pdf',
+  'documentos/ementario-gestao-publica-ufmg.pdf',
+  'documentos/percurso-bacharelado-nucleo-geral.pdf',
+  'documentos/percurso-bacharelado-nucleo-complementar.pdf',
+  'documentos/percurso-bacharelado-nucleo-avancado.pdf',
+  'documentos/termo-aceite-orientador-tcc.pdf',
+  'documentos/regimento-interno-cagp-ufmg.pdf'
+];
+
+// 1. Instalação: Pré-cache do App Shell e ativação imediata
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(CORE_ASSETS);
-    }).then(() => self.skipWaiting())
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.addAll(CORE_ASSETS))
+      .then(() => self.skipWaiting())
   );
 });
 
-// Ativação: Limpeza de caches obsoletos e controle imediato
+// 2. Ativação: Limpeza de caches obsoletos e notificação via Dynamic Island Toast
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            return caches.delete(cache);
+    (async () => {
+      const cacheNames = await caches.keys();
+      let updatedFromPrevious = false;
+
+      await Promise.all(
+        cacheNames.map((name) => {
+          if (name !== CACHE_NAME && name !== PDF_CACHE_NAME) {
+            if (name.startsWith('cagp-pwa-')) {
+              updatedFromPrevious = true;
+            }
+            return caches.delete(name);
           }
+          return Promise.resolve();
         })
       );
-    }).then(() => self.clients.claim())
+
+      await self.clients.claim();
+
+      if (updatedFromPrevious) {
+        const allClients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+        allClients.forEach((client) => {
+          client.postMessage({
+            type: 'CAGP_SW_UPDATED',
+            version: CACHE_NAME
+          });
+        });
+      }
+    })()
   );
 });
 
-// Interceptação de requisições
+// Suporte a comandos diretos do cliente (ex.: forçar atualização, pré-cache de PDFs ou disparar notificação nativa)
+self.addEventListener('message', (event) => {
+  if (!event.data) return;
+  if (event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  } else if (event.data.type === 'CACHE_OFFICIAL_PDFS') {
+    event.waitUntil(
+      caches.open(PDF_CACHE_NAME).then((cache) => cache.addAll(OFFICIAL_PDFS))
+    );
+  } else if (event.data.type === 'SHOW_NOTIFICATION') {
+    const title = event.data.title || 'CAGP • Gestão Pública UFMG';
+    const options = Object.assign({
+      icon: 'imagens/pwa/pwa-192x192.png',
+      badge: 'imagens/pwa/pwa-192x192.png',
+      vibrate: [120, 60, 120],
+      data: { url: event.data.url || 'index.html' }
+    }, event.data.options || {});
+    if (self.registration && self.registration.showNotification) {
+      event.waitUntil(self.registration.showNotification(title, options));
+    }
+  }
+});
+
+// Clique em Notificação Nativa: Foca aba aberta do Super App ou navega até a rota-alvo
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const targetUrl = (event.notification.data && event.notification.data.url) ? event.notification.data.url : 'index.html';
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+      for (const client of clientList) {
+        if ('focus' in client) {
+          client.focus();
+          client.postMessage({ type: 'CAGP_NOTIFICATION_CLICK', url: targetUrl });
+          return;
+        }
+      }
+      if (self.clients.openWindow) {
+        return self.clients.openWindow(targetUrl);
+      }
+    })
+  );
+});
+
+// 3. Interceptação Inteligente de Requisições
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   if (request.method !== 'GET') return;
 
   const url = new URL(request.url);
 
-  // Requisições externas ou não HTTP(S) ignoradas pelo cache local
-  if (url.origin !== self.origin) {
+  // Ignorar origens externas
+  if (url.origin !== self.location.origin) {
     return;
   }
 
-  // 1. Navegação de Páginas HTML: Network-first com fallback para Cache
-  if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
+  // A. PDFs Normativos Oficiais: Cache-First (Cofre Offline + Fallback de Rede)
+  if (url.pathname.endsWith('.pdf') || url.pathname.includes('/documentos/')) {
+    event.respondWith(
+      caches.match(request).then((cachedPdf) => {
+        if (cachedPdf) return cachedPdf;
+        return fetch(request).then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const clone = networkResponse.clone();
+            caches.open(PDF_CACHE_NAME).then((cache) => cache.put(request, clone));
+          }
+          return networkResponse;
+        });
+      })
+    );
+    return;
+  }
+
+  // B. Páginas HTML, CSS e JS: Network-First para refletir novos builds do GitHub Pages imediatamente
+  const acceptHeader = request.headers.get('accept') || '';
+  const isHtmlOrCode =
+    request.mode === 'navigate' ||
+    acceptHeader.includes('text/html') ||
+    url.pathname.endsWith('.html') ||
+    url.pathname.endsWith('.css') ||
+    url.pathname.endsWith('.js') ||
+    url.pathname.endsWith('.webmanifest');
+
+  if (isHtmlOrCode) {
     event.respondWith(
       fetch(request)
         .then((networkResponse) => {
@@ -76,30 +182,31 @@ self.addEventListener('fetch', (event) => {
         })
         .catch(() => {
           return caches.match(request).then((cachedResponse) => {
-            if (cachedResponse) {
-              return cachedResponse;
+            if (cachedResponse) return cachedResponse;
+            if (request.mode === 'navigate' || acceptHeader.includes('text/html')) {
+              return caches.match('index.html');
             }
-            return caches.match('index.html');
+            return new Response('', { status: 503, statusText: 'Offline' });
           });
         })
     );
     return;
   }
 
-  // 2. Estilos, scripts e imagens: Stale-While-Revalidate
+  // C. Imagens, Ícones e Vetores SVG: Stale-While-Revalidate
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
-      const fetchPromise = fetch(request).then((networkResponse) => {
-        if (networkResponse && networkResponse.status === 200) {
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(request, responseClone);
-          });
-        }
-        return networkResponse;
-      }).catch(() => {
-        // Se a rede falhar e não houver cache, silencia sem quebrar
-      });
+      const fetchPromise = fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(request, responseClone);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => cachedResponse);
 
       return cachedResponse || fetchPromise;
     })

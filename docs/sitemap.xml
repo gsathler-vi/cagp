@@ -2,46 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cagp-ufmg.github.io/mapa-do-site.html</loc>
-    <lastmod>2026-10-25T14:34:49.643Z</lastmod>
+    <lastmod>2026-10-29T03:46:00.759Z</lastmod>
   </url>
   <url>
     <loc>https://cagp-ufmg.github.io/sobre.html</loc>
-    <lastmod>2026-10-25T14:41:40.738Z</lastmod>
+    <lastmod>2026-10-29T03:45:34.011Z</lastmod>
   </url>
   <url>
     <loc>https://cagp-ufmg.github.io/documentos.html</loc>
-    <lastmod>2026-10-25T18:04:12.320Z</lastmod>
+    <lastmod>2026-10-29T03:15:58.235Z</lastmod>
   </url>
   <url>
-    <loc>https://cagp-ufmg.github.io/estagio-tcc.html</loc>
-    <lastmod>2026-10-25T15:43:52.908Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cagp-ufmg.github.io/calouros.html</loc>
-    <lastmod>2026-10-25T17:18:10.959Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cagp-ufmg.github.io/index.html</loc>
-    <lastmod>2026-10-25T18:03:52.796Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cagp-ufmg.github.io/curso.html</loc>
-    <lastmod>2026-10-25T17:19:27.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cagp-ufmg.github.io/percurso.html</loc>
-    <lastmod>2026-10-25T17:18:58.231Z</lastmod>
+    <loc>https://cagp-ufmg.github.io/tcc.html</loc>
+    <lastmod>2026-10-29T02:00:37.417Z</lastmod>
   </url>
   <url>
     <loc>https://cagp-ufmg.github.io/acg.html</loc>
-    <lastmod>2026-10-25T17:18:16.638Z</lastmod>
+    <lastmod>2026-10-29T03:13:07.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cagp-ufmg.github.io/percurso.html</loc>
+    <lastmod>2026-10-29T03:45:27.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cagp-ufmg.github.io/pesquisa.html</loc>
+    <lastmod>2026-10-29T01:53:42.759Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cagp-ufmg.github.io/index.html</loc>
+    <lastmod>2026-10-29T03:42:48.132Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cagp-ufmg.github.io/curso.html</loc>
+    <lastmod>2026-10-29T01:53:44.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cagp-ufmg.github.io/calouros.html</loc>
+    <lastmod>2026-10-29T03:16:35.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cagp-ufmg.github.io/optativas.html</loc>
+    <lastmod>2026-10-29T03:45:29.722Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cagp-ufmg.github.io/estagio.html</loc>
+    <lastmod>2026-10-29T03:16:37.193Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cagp-ufmg.github.io/estagio-tcc.html</loc>
+    <lastmod>2026-10-29T02:00:38.706Z</lastmod>
   </url>
   <url>
     <loc>https://cagp-ufmg.github.io/faq.html</loc>
-    <lastmod>2026-10-25T14:57:51.586Z</lastmod>
+    <lastmod>2026-10-29T03:45:31.387Z</lastmod>
   </url>
   <url>
     <loc>https://cagp-ufmg.github.io/gestao.html</loc>
-    <lastmod>2026-10-25T17:39:31.877Z</lastmod>
+    <lastmod>2026-10-29T03:45:32.597Z</lastmod>
   </url>
 </urlset>

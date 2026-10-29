@@ -8,7 +8,8 @@
         aria-haspopup="dialog" 
         aria-expanded="false" 
         aria-controls="cagp-a11y-panel"
-        title="Opções de Acessibilidade (Atalho: Alt + A)">
+        title="Opções de Acessibilidade (Atalho: Alt + A)"
+        hidden>
   <i class="bi bi-universal-access" aria-hidden="true"></i>
   <span class="cagp-a11y-trigger-text">Acessibilidade</span>
 </button>
@@ -94,6 +95,19 @@
       </label>
     </fieldset>
 
+    <!-- 5. Pausar Animações / Movimento Reduzido -->
+    <fieldset class="cagp-a11y-group">
+      <legend class="cagp-a11y-legend">
+        <i class="bi bi-pause-circle me-1" aria-hidden="true"></i> Pausar Animações
+      </legend>
+      <p class="cagp-a11y-desc">Desativa instantaneamente deslocamentos espaciais, transições direcionais, coreografias escalonadas e contadores rolantes, mantendo apenas feedback direto de cor e opacidade.</p>
+      <label class="cagp-a11y-switch-label" for="cagp-a11y-toggle-motion">
+        <input type="checkbox" id="cagp-a11y-toggle-motion" class="cagp-a11y-checkbox">
+        <span class="cagp-a11y-switch-slider"></span>
+        <span class="cagp-a11y-switch-text">Pausar animações e deslocamentos espaciais</span>
+      </label>
+    </fieldset>
+
     <!-- 5. Guia Rápido de Teclado -->
     <div class="cagp-a11y-shortcuts-card">
       <div class="cagp-a11y-shortcuts-header">
@@ -122,11 +136,15 @@
 
 <div id="cagp-a11y-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
 
-<script>
+<script data-cagp-persistent-script="true">
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'cagp_a11y_prefs';
+  if (window.__cagpA11yMounted) return;
+  window.__cagpA11yMounted = true;
+
+  const STORAGE_KEY = 'cagp_a11y_prefs_v2';
+  const LEGACY_STORAGE_KEY = 'cagp_a11y_prefs';
   const FONT_LEVELS = {
     sm: { label: '90% (Reduzido)', scale: 'sm' },
     md: { label: '100% (Padrão)', scale: 'md' },
@@ -138,14 +156,15 @@
     font: 'md',
     dyslexia: false,
     ruler: false,
-    contrast: 'normal'
+    contrast: 'normal',
+    motion: 'normal'
   };
 
   let currentPrefs = Object.assign({}, defaultPrefs);
 
   function loadPrefs() {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
+      const stored = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
         if (parsed && typeof parsed === 'object') {
@@ -159,7 +178,9 @@
 
   function savePrefs() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(currentPrefs));
+      const serialized = JSON.stringify(currentPrefs);
+      localStorage.setItem(STORAGE_KEY, serialized);
+      localStorage.setItem(LEGACY_STORAGE_KEY, serialized);
     } catch (e) {
       console.warn('CAGP A11y: Erro ao salvar preferências no localStorage', e);
     }
@@ -190,6 +211,16 @@
   const toggleDyslexia = document.getElementById('cagp-a11y-toggle-dyslexia');
   const toggleRuler = document.getElementById('cagp-a11y-toggle-ruler');
   const toggleContrast = document.getElementById('cagp-a11y-toggle-contrast');
+  const toggleMotion = document.getElementById('cagp-a11y-toggle-motion');
+
+  window.cagpIsReducedMotion = function () {
+    const attr = root.getAttribute('data-a11y-motion');
+    return (
+      attr === 'reduced' ||
+      attr === 'reduce' ||
+      Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+    );
+  };
 
   function applyPrefs(silent) {
     // 1. Fonte
@@ -237,6 +268,19 @@
       if (toggleContrast) toggleContrast.checked = false;
     }
 
+    // 5. Movimento Reduzido / Pausar Animações
+    const isMotionReduced =
+      currentPrefs.motion === 'reduced' ||
+      currentPrefs.motion === 'reduce' ||
+      currentPrefs.motion === true;
+    if (isMotionReduced) {
+      root.setAttribute('data-a11y-motion', 'reduced');
+      if (toggleMotion) toggleMotion.checked = true;
+    } else {
+      root.removeAttribute('data-a11y-motion');
+      if (toggleMotion) toggleMotion.checked = false;
+    }
+
     savePrefs();
   }
 
@@ -275,11 +319,32 @@
   }
   panel.addEventListener('keydown', trapFocus);
 
+  function hoistA11yToBody() {
+    ['cagp-reading-ruler', 'cagp-a11y-trigger', 'cagp-a11y-backdrop', 'cagp-a11y-panel', 'cagp-a11y-announcer'].forEach(function (id) {
+      const nodes = document.querySelectorAll('#' + id);
+      if (nodes.length > 1) {
+        for (let i = 1; i < nodes.length; i++) nodes[i].remove();
+      }
+      const el = nodes[0];
+      if (el && document.body && el.parentElement !== document.body) {
+        document.body.appendChild(el);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', hoistA11yToBody);
+  } else {
+    hoistA11yToBody();
+  }
+
   function openPanel() {
+    hoistA11yToBody();
+    if (window.cagpCloseAllOverlays) window.cagpCloseAllOverlays('cagp-a11y-panel');
     previousActiveElement = document.activeElement;
     panel.removeAttribute('hidden');
     backdrop.classList.add('is-open');
-    triggerBtn.setAttribute('aria-expanded', 'true');
+    if (triggerBtn) triggerBtn.setAttribute('aria-expanded', 'true');
     panel.classList.add('is-open');
 
     // Foco inicial no botão fechar ou título
@@ -288,9 +353,10 @@
   }
 
   function closePanel() {
+    if (!panel || panel.hasAttribute('hidden')) return;
     panel.setAttribute('hidden', '');
     backdrop.classList.remove('is-open');
-    triggerBtn.setAttribute('aria-expanded', 'false');
+    if (triggerBtn) triggerBtn.setAttribute('aria-expanded', 'false');
     panel.classList.remove('is-open');
 
     if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
@@ -400,6 +466,15 @@
     });
   }
 
+  // 5. Pausar Animações
+  if (toggleMotion) {
+    toggleMotion.addEventListener('change', function () {
+      currentPrefs.motion = toggleMotion.checked ? 'reduced' : 'normal';
+      applyPrefs();
+      announce(currentPrefs.motion === 'reduced' ? 'Animações e deslocamentos espaciais pausados.' : 'Animações reativadas.');
+    });
+  }
+
   // 5. Reset
   if (resetBtn) {
     resetBtn.addEventListener('click', function () {
@@ -432,6 +507,11 @@
     },
     toggleRuler: function (force) {
       currentPrefs.ruler = typeof force === 'boolean' ? force : !currentPrefs.ruler;
+      applyPrefs();
+    },
+    toggleMotion: function (force) {
+      const next = force !== undefined ? Boolean(force) : (currentPrefs.motion !== 'reduced' && currentPrefs.motion !== 'reduce');
+      currentPrefs.motion = next ? 'reduced' : 'normal';
       applyPrefs();
     },
     reset: function () {

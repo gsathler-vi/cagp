@@ -1,318 +1,301 @@
 ---
-name: Centro Acadêmico de Gestão Pública (CAGP) - FAFICH / UFMG
-description: Sistema de design neo-brutalista institucional e tátil para o portal discente e normativo de Gestão Pública da UFMG
+name: "CAGP FAFICH/UFMG — Neo-Brutalismo Brite & Super App"
+description: "Sistema de Design Neo-Brutalista Brite do Centro Acadêmico de Gestão Pública da UFMG, combinando geometria brutalista soberana, ergonomia espacial Apple HIG e contenção tonal Material 3 Expressive."
 colors:
-  primary: "#9e2424"
-  primary-hover: "#7b1a1a"
-  primary-bordeaux: "#8b1e2d"
-  secondary: "#0a0a0a"
-  dark: "#111111"
-  neutral-bg: "#ffffff"
-  neutral-warm: "#fbf8f3"
-  surface-low: "#f4f5f7"
-  surface-mid: "#e5e7eb"
-  text-muted: "#4b5563"
-  accent-gold: "#e8a317"
-  highlight-gold: "#ffd54f"
-  accent-blue: "#1e3f66"
-  accent-green: "#2e7d32"
-  accent-amber: "#e65100"
-  brand-siga: "#002776"
-  brand-minhaufmg: "#087f3b"
-  brand-fump: "#006c67"
-  brand-rotas: "#2c0eeb"
-  brand-bu: "#d97706"
-  a11y-high-contrast-yellow: "#ffff00"
-  a11y-high-contrast-black: "#000000"
+  candango-wine: "#9E2424"
+  candango-bordeaux: "#8B1E2D"
+  candango-wine-hover: "#7A1B1B"
+  candango-gold: "#E8A317"
+  candango-amber: "#E65100"
+  ufmg-blue: "#005A9C"
+  sei-green: "#2E7D32"
+  moodle-orange: "#D9531E"
+  bu-purple: "#5B2C6F"
+  candango-black: "#0A0A0A"
+  surface-cream: "#FBF8F3"
+  surface-card: "#FFFFFF"
+  surface-low: "#F4F1EA"
+  surface-high: "#EAE5DC"
+  text-charcoal: "#222222"
+  text-muted: "#4A4A4A"
 typography:
   display:
-    fontFamily: "Oswald, Inter, sans-serif"
-    fontSize: "clamp(2rem, 5vw, 3.25rem)"
+    fontFamily: "'Oswald', 'Roboto Condensed', sans-serif"
+    fontSize: "clamp(1.85rem, 3.5vw, 2.75rem)"
     fontWeight: 700
-    lineHeight: 1.1
+    lineHeight: 1.12
     letterSpacing: "0.02em"
   headline:
-    fontFamily: "Oswald, Inter, sans-serif"
-    fontSize: "1.55rem"
+    fontFamily: "'Oswald', 'Roboto Condensed', sans-serif"
+    fontSize: "clamp(1.35rem, 2.4vw, 1.85rem)"
     fontWeight: 700
     lineHeight: 1.2
-    letterSpacing: "0.05em"
+    letterSpacing: "0.02em"
   title:
-    fontFamily: "Oswald, Inter, sans-serif"
-    fontSize: "1.25rem"
+    fontFamily: "'Oswald', 'Roboto Condensed', sans-serif"
+    fontSize: "1.15rem"
     fontWeight: 700
     lineHeight: 1.25
-    letterSpacing: "0.03em"
+    letterSpacing: "0.015em"
   body:
-    fontFamily: "Inter, system-ui, -apple-system, sans-serif"
-    fontSize: "0.95rem"
+    fontFamily: "'Inter', system-ui, -apple-system, sans-serif"
+    fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.65
     letterSpacing: "normal"
   label:
-    fontFamily: "Oswald, sans-serif"
-    fontSize: "0.8rem"
-    fontWeight: 600
-    lineHeight: 1
+    fontFamily: "'JetBrains Mono', monospace"
+    fontSize: "0.8125rem"
+    fontWeight: 700
+    lineHeight: 1.2
     letterSpacing: "0.04em"
+  dyslexia:
+    fontFamily: "'OpenDyslexic', 'Comic Sans MS', 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif"
+    fontSize: "1.05rem"
+    fontWeight: 400
+    lineHeight: 1.85
+    letterSpacing: "0.05em"
 rounded:
   none: "0px"
-  sm: "3px"
+  sm: "2px"
   md: "4px"
-  lg: "6px"
 spacing:
   xs: "4px"
   sm: "8px"
   md: "16px"
   lg: "24px"
   xl: "32px"
+  2xl: "48px"
 components:
   button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.neutral-bg}"
-    rounded: "{rounded.md}"
-    padding: "0.65rem 1.4rem"
-  button-primary-hover:
-    backgroundColor: "{colors.primary-hover}"
-    textColor: "{colors.neutral-bg}"
-    rounded: "{rounded.md}"
-    padding: "0.65rem 1.4rem"
-  button-outline:
-    backgroundColor: "{colors.neutral-bg}"
-    textColor: "{colors.secondary}"
-    rounded: "{rounded.md}"
-    padding: "0.65rem 1.4rem"
-  card:
-    backgroundColor: "{colors.neutral-bg}"
-    textColor: "{colors.secondary}"
-    rounded: "{rounded.md}"
-    padding: "1.5rem"
-  badge:
-    backgroundColor: "{colors.neutral-bg}"
-    textColor: "{colors.secondary}"
+    backgroundColor: "{colors.candango-wine}"
+    textColor: "{colors.surface-card}"
+    typography: "{typography.title}"
     rounded: "{rounded.sm}"
-    padding: "0.25rem 0.65rem"
-  breadcrumbs:
-    backgroundColor: "{colors.surface-low}"
-    textColor: "{colors.secondary}"
-    rounded: "{rounded.none}"
-    padding: "0.5rem 1rem"
+    padding: "12px 20px"
+    height: "48px"
+  button-primary-hover:
+    backgroundColor: "{colors.candango-wine-hover}"
+    textColor: "{colors.surface-card}"
+    rounded: "{rounded.sm}"
+    padding: "12px 20px"
+    height: "48px"
+  button-outline:
+    backgroundColor: "{colors.surface-card}"
+    textColor: "{colors.candango-black}"
+    typography: "{typography.title}"
+    rounded: "{rounded.sm}"
+    padding: "12px 20px"
+    height: "48px"
+  chip-filter:
+    backgroundColor: "{colors.surface-card}"
+    textColor: "{colors.candango-black}"
+    typography: "{typography.body}"
+    rounded: "{rounded.sm}"
+    padding: "8px 14px"
+    height: "40px"
+  chip-filter-active:
+    backgroundColor: "{colors.candango-wine}"
+    textColor: "{colors.surface-card}"
+    typography: "{typography.body}"
+    rounded: "{rounded.sm}"
+    padding: "8px 14px"
+    height: "40px"
+  card-brutalist:
+    backgroundColor: "{colors.surface-card}"
+    textColor: "{colors.text-charcoal}"
+    rounded: "{rounded.md}"
+    padding: "20px"
+  input-search:
+    backgroundColor: "{colors.surface-card}"
+    textColor: "{colors.candango-black}"
+    typography: "{typography.body}"
+    rounded: "{rounded.sm}"
+    padding: "12px 16px"
+    height: "48px"
 ---
 
-# Design System: Centro Acadêmico de Gestão Pública (CAGP) - FAFICH / UFMG
+# Design System: CAGP FAFICH/UFMG — Neo-Brutalismo Brite & Super App
 
 ## Overview
 
-**Creative North Star: "O Prumo Republicano"**
+**Creative North Star: "O Prumo Republicano dos Candangos (Neo-Brutalismo Cívico)"**
 
-O sistema de design do CAGP nasce da convergência entre a autoridade documental da administração pública e a combatividade do movimento estudantil da FAFICH/UFMG. Inspirado pelo monumento "Os Candangos (Dois Guerreiros)" de Bruno Giorgi — símbolo máximo do trabalho coletivo anônimo e da construção republicana —, o sistema adota o neo-brutalismo funcional (Brite System) como postura estética e ética: não há adornos cosméticos, sombras com desfoque artificial ou gradientes assépticos. Cada linha divisória, cada contraste e cada bloco de informação serve ao propósito de desmistificar a burocracia acadêmica e emancipar os discentes.
+O sistema visual do **Centro Acadêmico de Gestão Pública (CAGP FAFICH/UFMG)** traduz a força escultórica do monumento *"Os Candangos"* (Bruno Giorgi, 1959) e o rigor documental da administração pública brasileira em uma interface **Neo-Brutalista Brite** autêntica, tátil e acessível. Cada elemento parece impresso ou carimbado sobre papel creme editorial (`#FBF8F3`), delimitado por linhas estruturais pretas sólidas (`#0A0A0A`) e projetado no espaço por sombras duras sem qualquer desfoque (`0px` blur).
 
-A experiência equilibra a gravidade institucional exigida pela consulta a atos normativos e resoluções do CEPE com a urgência ergonômica de quem acessa o portal à noite, no intervalo das aulas presenciais (19h00 às 22h30) ou no trajeto do transporte universitário. O resultado é um ambiente tátil, firme e de altíssima legibilidade, onde botões e caixas de diálogo reagem fisicamente à interação, simulando o peso mecânico de documentos autenticados e painéis urbanos de informação pública.
+Para operar simultaneamente como **Portal Institucional Web** e **Super App Universitário Instalável (PWA)** sem conflitos entre referências de design, o sistema é regido pela **Regra de Arbitragem em 3 Camadas**:
+1. **Camada 1 — Pele, Geometria e Marca (Soberana: 100% Brite / CAGP):** Governa cores, tipografia (`Oswald` + `Inter` + `JetBrains Mono`), bordas pretas sólidas (`2px`–`3px`), sombras duras (`0px` blur) e cantos retos/contidos (`0px`–`4px`). **Veta terminantemente** qualquer efeito de vidro (`backdrop-filter: blur`), superfícies translúcidas, sombras difusas e cantos arredondados estilo iOS (`> 4px`) ou pílula (`9999px`).
+2. **Camada 2 — Ergonomia, Navegação Espacial e Física (Apple HIG):** Governa a clareza de hierarquia (*Clarity, Deference, Depth sem blur*), o respeito às áreas seguras de tela (`viewport-fit=cover` e `env(safe-area-inset-*)`), a zona de alcance do polegar (*Thumb Zones* `>= 48px`), o posicionamento do Spotlight sobre o teclado virtual (`visualViewport`), a arquitetura de barras/gavetas (Top Command Bar, Bottom Tab Bar de 5 itens, Bottom Sheets com *grabber*, Segmented Controls) e a física de movimento por molas (`cubic-bezier(0.32, 0.72, 0, 1)`).
+3. **Camada 3 — Contenção, Densidade e Estados Operacionais (Material 3 Expressive):** Governa a organização de alta densidade informacional através de **níveis tonais de superfície** (proibindo *nested cards* com sombras duplicadas), **barras de chips horizontalmente deslizantes** no mobile e indicadores expressivos de progresso e validação regimental (`DEFERIDO`, `TETO`, `TRAVA SIGA`).
 
 **Key Characteristics:**
-- **Neo-Brutalismo Estrutural:** Bordas pretas sólidas de 2px a 3px e sombras duras ortogonais (0px de blur) que conferem presença física a cada elemento.
-- **Tipografia de Dupla Força:** Títulos condensados e enérgicos em caixa alta com `Oswald`, ancorados em parágrafos neutros, arejados e confortáveis com `Inter`.
-- **Disciplina Cromática Republicana:** O Vinho Candango atua como autoridade dirigente e liderança discente, o Ouro Alerta conduz avisos e acolhimento, e o Preto Nanquim delimita fronteiras cartesianas irredutíveis.
-- **Transparência e Acessibilidade:** Conformidade WCAG 2.1 AA/AAA em todos os pares cromáticos, com estados de foco explícitos (outline de 3px) e estrutura navegável por teclado e leitores de tela.
+- **Geometria Brutalista de Prumo Reto:** Bordas sólidas de `2px` a `3px` em `#0A0A0A`, cantos de `0px` a `4px` e sombras gráficas rígidas (`0px` blur).
+- **Contraste Editorial Quente (WCAG 2.1 AAA):** Fundo base em Creme Candango (`#FBF8F3`) combinado com cartões brancos puros (`#FFFFFF`) e tinta preta (`#0A0A0A`), eliminando o cansaço visual da leitura noturna prolongada.
+- **Tactilidade Mecânica de Carimbo:** Botões e cartões interativos respondem ao toque e ao clique com deslocamento físico real (`transform: translate(-2px, -2px)` na elevação e compressão na ativação).
+- **Hierarquia Tonal sem Aninhamento de Sombras:** Sub-blocos internos utilizam degraus tonais (`#F4F1EA` e `#EAE5DC`) e linhas divisórias secas em vez de cartões aninhados.
+- **Ergonomia Mobile-First para o Turno Noturno:** Alvos mínimos de `48x48px`, fontes de formulário travadas em `>= 16px` (zero zoom acidental) e navegação inferior dedicada.
 
 ## Colors
 
-A paleta é fundamentada na tradição heráldica da gestão pública universitária mineira, confrontando a austeridade do preto nanquim com a energia do vinho e do ouro.
+A paleta combina a sobriedade institucional do **Vinho Candango** e do **Preto Gráfico** com o calor do **Creme Papel** e acentos semânticos de alto contraste inspirados nos sistemas oficiais da UFMG.
 
 ### Primary
-- **Vinho Candango** (`#9E2424` / hover `#7B1A1A`): A cor matriz da entidade discente. Aplicada em botões de ação principal, emblemas hero, divisores destacados e cabeçalhos de advertências estruturais.
-- **Vinho Bordeaux Institucional** (`#8B1E2D`): Variação tonal fechada utilizada na faixa superior perene de anúncio institucional e em callouts de importância regimental crítica.
+- **Vinho Candango Operacional** (`#9E2424`): Cor primária de ação, cabeçalhos de destaque, selos principais, links ativos e indicadores de trava regimental no SIGA.
+- **Vinho Candango Institucional** (`#8B1E2D`): Tom heráldico oficial do manual de marca do CAGP, empregado em insígnias institucionais, timbres e cabeçalhos solenes.
+- **Vinho Candango Profundo (Hover)** (`#7A1B1B`): Estado de acionamento e foco profundo para botões primários.
 
 ### Secondary
-- **Preto Nanquim Estrutural** (`#0A0A0A` / `#111111`): A tinta de impressão de contratos e atas. Define 100% das bordas, sombras projetadas, títulos de navegação e rodapés institucionais.
+- **Ouro Candango (Destaque & Alerta)** (`#E8A317`): Cor de destaque secundário usada em emblemas de governança (Junta Eleitoral, Presidência), indicadores de pré-requisito recomendado no grafo e alertas de atenção; sempre combinada com texto e borda em `#0A0A0A` para garantir contraste AAA.
+- **Âmbar de Prazo Regimental** (`#E65100`): Empregado em alertas de prazos decadenciais (como os 120 dias de AAC) e avisos operacionais.
 
 ### Tertiary
-- **Ouro Alerta FAFICH** (`#E8A317` / `#D97706`): O tom da madeira de prumo e das lanternas noturnas. Empregado em destaques pedagógicos, callouts de dicas úteis para calouros e marcadores temporais.
-- **Azul Reitoria UFMG** (`#1E3F66` / `#1565C0`): Referência direta à identidade oficial da universidade, utilizado em tags departamentais (EST) e callouts de notas informativas oficiais.
-- **Verde Extensão Universitária** (`#2E7D32`): Sinalização de conformidade, horas de extensão validadas e departamento parceiro (SOA).
-- **Laranja Âmbar Regulamentar** (`#E65100`): Sinalização de prazos decadenciais fatais (como o prazo de 120 dias das AAC) e advertências de trancamento.
-
-### Ecosystem & App Identity Colors (Central de Aplicativos e Sistemas UFMG)
-Para assegurar familiaridade cognitiva imediata aos discentes, cada card de sistema reflete fielmente as cores extraídas dos seus respectivos manuais de marca e logos oficiais:
-- **SIGA UFMG** (`#002776` / Pantone 280 C): Azul Profundo Tecnológico do aplicativo mobile e portal do DRCA/DTI.
-- **minhaUFMG** (`#087F3B` / `#0D9847` / Pantone 355 C): Verde Institucional das Volutas da Árvore do Conhecimento do portal integrador.
-- **FUMP Assistência Estudantil** (`#006C67` / `#00A8A8`): Verde Petróleo / Teal oficial da Fundação Mendes Pimentel.
-- **Interno Rotas** (`#2C0EEB`): Azul Elétrico Noturno do rastreamento colaborativo dos circulares da UFMG.
-- **CEAG FAFICH** (`#9E2424`): Vinho Candango FAFICH, identificador do atendimento presencial noturno à graduação.
-- **Biblioteca BU / Pergamum** (`#D97706` / `#E8A317`): Ouro / Mostarda da Biblioteca Universitária da UFMG.
+- **Azul Institucional MinhaUFMG / ICEx** (`#005A9C`): Identifica o ecossistema MinhaUFMG, o Departamento de Estatística (`EST`), o Percurso Avançado (`01-03`) e links de sistemas acadêmicos.
+- **Verde SEI / Deferimento Regimental** (`#2E7D32`): Indica status aberto/deferido, cumprimento de metas de horas (`300h`/`600h`), o Departamento de Sociologia (`SOA`) e o sistema SEI! UFMG.
+- **Laranja Moodle UFMG** (`#D9531E`): Identificador semântico exclusivo do ambiente virtual Moodle.
+- **Roxo Biblioteca Universitária (BU)** (`#5B2C6F`): Identificador semântico do sistema Pergamum e bibliotecas da UFMG.
 
 ### Neutral
-- **Branco Puro** (`#FFFFFF`): Fundo padrão da página e tela de contraste para cartões de conteúdo denso.
-- **Off-White Quente** (`#FBF8F3`): Fundo exclusivo do Card de Emblema Hero oficial dos Candangos, evocando papel timbrado governamental.
-- **Cinza Superfície Suave** (`#F4F5F7` / `#F8F9FA`): Fundo de gavetas retráteis de ementário, tabelas e estados neutros de navegação.
-- **Cinza Borda Interna** (`#E5E7EB` / `#CED4DA`): Divisórias secundárias e pontilhados internos que não competem com as bordas pretas estruturais.
-- **Cinza Texto Secundário** (`#4B5563`): Metadados, subtítulos e legendas de baixa prioridade hierárquica.
+- **Preto Candango Estrutural** (`#0A0A0A`): Cor obrigatória de todas as bordas (`2px`/`3px`), sombras duras (`0px` blur), títulos principais e fundo do cabeçalho soberano.
+- **Creme Candango (Superfície Base)** (`#FBF8F3`): Plano de fundo global do portal (`--cagp-surface-base`), proporcionando conforto óptico superior ao branco frio.
+- **Branco Puro de Cartão** (`#FFFFFF`): Superfície primária de cartões, modais, inputs e painéis elevados (`--cagp-surface-card`).
+- **Areia Tonal Baixa** (`#F4F1EA`): Superfície de contenção interna (`--cagp-surface-low`) usada dentro de ferramentas e calculadoras para agrupar linhas sem usar `box-shadow`.
+- **Areia Tonal Alta** (`#EAE5DC`): Superfície de contraste interno (`--cagp-surface-high`) para cabeçalhos de tabelas, barras de abas segmentadas e blocos de código.
+- **Carvão de Leitura** (`#222222`): Cor padrão do texto corrido sobre superfícies claras (contraste `> 14:1`).
+- **Cinza Grafite Secundário** (`#4A4A4A`): Metadados, subtítulos e legendas secundárias (contraste `> 7:1` AAA).
 
 ### Named Rules
-**A Regra da Autoridade Vermelha.** O Vinho Candango é um marcador de liderança discente e foco resolutivo; ele nunca deve ultrapassar 15% da área cromática de qualquer viewport. Se tudo grita em vermelho, a autoridade se esvai.
-**A Regra do Nanquim Irredutível.** Nenhum contêiner, botão ou gaveta existe no vácuo: todo bloco interativo ou de conteúdo possui contorno preto nítido (`#0A0A0A` ou `#111111`), proibindo gradientes suaves de delimitação.
+**The Solid Ink Border Rule.** Todo componente de superfície, botão, badge, input ou modal deve ser delimitado por uma borda sólida em Preto Candango (`#0A0A0A`) de `2px` ou `3px`; bordas cinzas translúcidas ou invisíveis descaracterizam a linguagem Brite.
+
+**The Semantic System Color Rule.** As cores de sistemas externos (`#005A9C` MinhaUFMG, `#D9531E` Moodle, `#2E7D32` SEI, `#5B2C6F` BU) e departamentos (`DCP`, `ECN`, `SOA`, `EST`) são estritamente semânticas e jamais devem ser trocadas de significado.
 
 ## Typography
 
-**Display Font:** Oswald (com fallbacks `Inter`, sans-serif)  
-**Body Font:** Inter (com fallbacks system-ui, -apple-system, sans-serif)  
-**Label/Mono Font:** Oswald para badges e botões; monospace de sistema para códigos de percurso curricular (`01-01`, `01-02`, `01-03`) e códigos de disciplinas (`DCP001`, `ECN001`).
+**Display Font:** `Oswald` (com fallback `'Roboto Condensed', sans-serif`)
+**Body Font:** `Inter` (com fallback `system-ui, -apple-system, sans-serif`)
+**Label/Mono Font:** `JetBrains Mono` (com fallback `monospace`)
 
-**Character:** Tensão harmônica entre o vigor industrial condensado do `Oswald` (lembrando as inscrições cravadas em pedra dos monumentos públicos) e o equilíbrio humanista neutro do `Inter` (projetado para leitura contínua e técnica em dispositivos móveis e desktops).
+**Character:** A combinação contrapõe a autoridade vertical e condensada da `Oswald` em caixa-alta (inspirada na verticalidade do monumento *Os Candangos* e em manchetes de diários oficiais) com a legibilidade neutra da `Inter` para textos normativos longos e a precisão tabular da `JetBrains Mono` para códigos de disciplinas (`DCP 032`, `ECN 140`) e contadores de horas (`300h / 20 cr`).
 
 ### Hierarchy
-- **Display** (700 bold, `clamp(2rem, 5vw, 3.25rem)`, line-height 1.1, uppercase, tracking `0.02em`): Grandes títulos de hero das páginas principais (`index.qmd`, `documentos.qmd`).
-- **Headline** (700 bold, `1.55rem`, line-height 1.2, uppercase, tracking `0.05em`): Título da barra de navegação (`CAGP`) e cabeçalhos de seções H1/H2 principais.
-- **Title** (700 bold, `1.25rem` a `1.35rem`, line-height 1.25, uppercase, tracking `0.03em`): Títulos de cartões de serviço, títulos de documentos e títulos de callout.
-- **Body** (400 regular / 600 semibold, `0.95rem` [15.2px], line-height 1.65, max line length 75ch): Parágrafos de leitura, descrições regimentais e ementas analíticas.
-- **Label** (600 semibold / 700 bold, `0.75rem` a `0.85rem`, uppercase, tracking `0.04em`): Textos de botões táteis, badges de departamentos e metadados de status.
+- **Display** (`700`, `clamp(1.85rem, 3.5vw, 2.75rem)`, `line-height: 1.12`, `uppercase`): Títulos de Hero (`.cagp-hero-title`) e chamadas inaugurais de página.
+- **Headline** (`700`, `clamp(1.35rem, 2.4vw, 1.85rem)`, `line-height: 1.2`, `uppercase`): Cabeçalhos de seção (`h2`) acompanhados de ícone semântico e linha divisória inferior de `2px solid #0A0A0A`.
+- **Title** (`700`, `1.15rem`, `line-height: 1.25`, `uppercase`): Títulos de cartões (`h3`, `.cagp-card-title`), cabeçalhos de micro-apps (`.cagp-tool-header`) e botões principais.
+- **Body** (`400` / `600`, `1rem` = `16px`, `line-height: 1.65`): Texto regimental corrido, ementas e descrições, com largura de linha confortável (`60ch`–`75ch`).
+- **Label** (`700`, `0.8125rem` = `13px`, `letter-spacing: 0.04em`, `uppercase`, `font-variant-numeric: tabular-nums`): Badges, carimbos de status, códigos de disciplinas, contadores de créditos e atalhos de teclado (`⌘K`).
 
 ### Named Rules
-**A Regra da Caixa Alta nos Títulos.** Todos os títulos H1, H2, H3, botões e badges usam `text-transform: uppercase` e fonte `Oswald`. Parágrafos, ementas e listas nunca usam caixa alta forçada, garantindo fluidez e conforto visual na leitura densa.
+**The 16px Input Floor Rule.** Todo elemento de entrada (`input`, `select`, `textarea`, `.cagp-search-input`, `.cagp-sitemap-input`) deve ter `font-size: max(16px, 1rem)` em todos os breakpoints (`320px` a `1440px+`) para impedir qualquer zoom automático acidental no iOS/iPadOS e Android.
+
+**The Tabular Metric Rule.** Todo contador numérico dinâmico (horas de extensão/AAC, créditos, relógio ao vivo, progresso do cofre e códigos de disciplinas) deve aplicar `font-variant-numeric: tabular-nums` (`.cagp-tabular`) para evitar trepidação horizontal durante atualizações.
 
 ## Layout
 
-O sistema opera sobre um grid responsivo de 12 colunas do Bootstrap 5 / Quarto, complementado por um modelo espacial cartesiano rigoroso:
+O sistema espacial opera em um container máximo de `1280px` centrado, com padding horizontal fluido (`16px` em mobile `320px`–`767px`, `24px` em tablet `768px`–`991px`, `32px` em desktop `>= 992px`) e ritmo vertical múltiplos de `8px` (`8px`, `16px`, `24px`, `32px`, `48px`).
 
-- **Contêineres Centrais:** Largura máxima de conteúdo em 1200px (`max-width: 1200px`), assegurando leitura equilibrada e foco visual.
-- **Ritmo Espacial de Espaçamento:** Múltiplos estritos de 4px e 8px: microespaçamento entre ícone e rótulo (`0.5rem` / 8px), padding padrão de cartões (`1.25rem` a `1.5rem`), margem entre blocos (`1.5rem` / 24px) e espaçamento de seções hero (`2.5rem` / 40px).
-- **Densidade Informativa:** O portal é projetado para alta densidade útil sem sensação de claustrofobia. O uso de gavetas retráteis (`<details>/<summary>`) e abas (`panel-tabset`) permite compactar 27 ementas obrigatórias e 10 períodos curriculares sem rolagem infinita fatigante.
-- **Adaptação Mobile:** Em viewports inferiores a 768px, os botões primários assumem largura total (`width: 100%`), o hero padding reduz-se de 2.5rem para 1.75rem, e as trilhas de linha do tempo estreitam suas margens à esquerda de 2rem para 1.5rem.
+- **Breakpoints Canônicos de Auditoria:** `320px` (mobile compacto / iPhone SE), `375px` (mobile padrão), `768px` (tablet / iPad mini), `992px` (transição de navegação mobile para desktop) e `1440px` (desktop amplo).
+- **Separação Estrita entre Modo Web e Modo Standalone (`html.cagp-is-standalone`):**
+  - **Modo Web:** Exibe a barra soberana `#cagp-superapp-header` (`52px`) no topo e a `#cagp-mobile-nav` (apenas `< 992px`) na base.
+  - **Modo Standalone Instalado (`html.cagp-is-standalone`):** Oculta obrigatoriamente `#quarto-announcement`, `#cagp-chapa-banner`, `#cagp-superapp-header` e `#cagp-mobile-nav`, ativando a `#cagp-superapp-topbar` (com suporte a `env(safe-area-inset-top)`) e a `#cagp-superapp-tabbar` (com suporte a `env(safe-area-inset-bottom)`), além de evitar duplicação entre `#cagp-mobile-superapp-hub` e `#micro-apps-hub`.
+- **Contenção Horizontal de Filtros (Camada 3 — M3 Expressive):** Em telas `< 768px`, barras de chips de filtro (`.cagp-filter-group`, seletor de trilhas do grafo e subnavs) devem usar `display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch`, evitando empilhamento vertical de mais de 2 linhas.
 
 ## Elevation & Depth
 
-Não existem sombras difusas, simulações de iluminação ambiente ou desfoques de lente no sistema do CAGP. A profundidade é estritamente **tátil, plana e mecânica** (Hard-Shadow Neo-Brutalism).
+A profundidade no sistema CAGP é **100% estrutural, opaca e gráfica (Camada 1 + Camada 2 sem blur)**. Não existem sombras difusas nem transparências esfumaçadas: a elevação de um elemento é comunicada pela combinação de **plano de cor sólido + borda `#0A0A0A` + deslocamento de sombra dura (`0px` blur)**. Para elementos internos dentro de um mesmo container (Camada 3), a profundidade é expressa por **degraus tonais de superfície** (`#FFFFFF` sobre `#F4F1EA` sobre `#FBF8F3`), sem adicionar novas sombras.
 
 ### Shadow Vocabulary
-- **Sombra Nanquim Reduzida** (`box-shadow: 2px 2px 0px #0a0a0a`): Aplicada em badges informativos, pequenos botões de ação e caixas de formulário em repouso.
-- **Sombra Nanquim Média** (`box-shadow: 4px 4px 0px #0a0a0a`): A elevação padrão de descanso para todos os `.cagp-card`, callouts do Quarto, tabelas responsivas e cartões de governança.
-- **Sombra Nanquim Elevada** (`box-shadow: 6px 6px 0px #0a0a0a` a `7px 7px 0px #0a0a0a`): Aplicada no estado `:hover` de cartões e no card do emblema oficial dos Candangos.
-- **Deslocamento Ativo de Impressão** (`box-shadow: 1px 1px 0px #0a0a0a` com `transform: translate(2px, 2px)`): A sensação de carimbo sob pressão mecânica quando um botão tátil é pressionado (`:active`).
+- **Sombra de Controle / Chip (`--cagp-shadow-sm`)** (`box-shadow: 2px 2px 0px #0A0A0A`): Aplicada a botões compactos, chips de filtro, badges interativos e botões de passo (`-` / `+`).
+- **Sombra de Cartão / Container (`--cagp-shadow-md`)** (`box-shadow: 4px 4px 0px #0A0A0A`): Elevação padrão em repouso para `.cagp-card`, `.cagp-tool-box`, callouts e blocos de diretoria.
+- **Sombra de Elevação Ativa / Modal (`--cagp-shadow-lg`)** (`box-shadow: 6px 6px 0px #0A0A0A`): Estado `:hover` de cartões interativos, Hero principal e caixas de diálogo modais (Spotlight, App Launcher).
+- **Estado Comprimido (`:active`)** (`box-shadow: 0px 0px 0px #0A0A0A; transform: translate(2px, 2px)`): Resposta tátil imediata ao clique/toque.
+
+### Escala Unificada de `z-index` (10 Níveis Blindados)
+1. `1020`: `.cagp-reading-progress`, `.cagp-reading-ruler`
+2. `1030`: `#quarto-announcement`, `#cagp-chapa-banner`, `.cagp-back-to-top`, `.cagp-a11y-trigger`
+3. `1040`: `.cagp-superapp-header`, `.cagp-mobile-nav`, `.cagp-superapp-topbar`, `.cagp-superapp-tabbar`, `.cagp-pwa-banner`
+4. `1050`: `.cagp-island-dropdown-menu`
+5. `1060`: `.cagp-mobile-drawer`, `.cagp-launcher-modal`
+6. `1070`: `.cagp-spotlight-modal`, `.cagp-spotlight-dialog`
+7. `1080`: `.cagp-a11y-backdrop`
+8. `1090`: `.cagp-a11y-panel`, `#cagp-settings-sheet`, `#cagp-ios-sheet` *(sempre acima do Launcher e do Drawer)*
+9. `1100`: `.cagp-toast`, `.cagp-skip-link:focus`
 
 ### Named Rules
-**A Regra da Sombra Dura.** Todas as declarações de `box-shadow` devem conter `0px` de blur radius e cor sólida preta (`#0a0a0a` ou `#111111`). Sombras difusas (`rgba(0,0,0,0.15) 0 4px 12px`) são explicitamente proibidas em qualquer elemento novo.
-**A Regra da Gravidade Interativa.** Componentes interativos em hover sobem para o noroeste (`transform: translate(-2px, -2px)`) com projeção de sombra aumentada; ao clique (`:active`), descem para o sudeste (`transform: translate(2px, 2px)`), afundando na página.
+**The Zero-Blur Rule.** `backdrop-filter: blur()` e `box-shadow` com raio de desfoque maior que `0px` são estritamente proibidos em todo o repositório; toda sombra tem `0px` de blur e toda superfície flutuante tem `100%` de opacidade.
 
-## Motion & Mechanics (Brite Motion System)
-
-O movimento no CAGP expressa a precisão de um protocolo administrativo e a autoridade da prensa gráfica pública. O sistema rejeita elasticidade gelatinosa (*spring/bounce*), transições flutuantes ou desfoques dinâmicos. A animação é estritamente **mecânica, nítida e convicta**.
-
-### Padrões Canônicos de Transição
-- **Entrada de Carimbo Mecânico (Focal Moment):** O Emblema Oficial dos Candangos (`.cagp-hero-emblem-card`) desce firmemente na página com a convicção de um ato chancelado (`0.45s cubic-bezier(0.16, 1, 0.3, 1)` com projeção de sombra nanquim no pouso).
-- **Impacto de Carimbo Burocrático (Stamp Impact):** Os selos institucionais (`.cagp-stamp-badge` — *DEFERIDO*, *INDEFERIDO*, *HOMOLOGADO*, *VISTO*) atingem a superfície com impacto rápido de prensa em 180ms (`scale(1.25) rotate(-6deg)` &rarr; `scale(1) rotate(-3deg)` com projeção instantânea de sombra dura 3px), reforçando a estética de registro público e chancela administrativa nos simuladores.
-- **Desdobramento de Ficha de Processo (Continuity):** Ao alternar painéis na Bússola Interativa (`.cagp-compass-panel`), o conteúdo novo revela-se com leve deslocamento vertical de 6px e opacidade (`0.22s`), evitando quebras de layout.
-- **Revelação Mecânica de Gavetas (Reveal):** As ementas obrigatórias/optativas (`.cagp-discipline-body`) e as gavetas da calculadora (`.cagp-calc-drawer`) expandem-se com descida contida de 4px e rotação precisa do chevron indicador (90° / 180°).
-- **Homologação de Marco / Conquista (Feedback):** A integralização das 600h na Calculadora e o Checklist de 100% dos Calouros destravam caixas comemorativas com pulso solene (`cagpSealUnlock`) e a barra de progresso emite iluminação discreta de conclusão (`cagpProgressComplete`).
-- **Pulso Tátil de Confirmação:** O botão de cópia rápida (`.cagp-copy-btn`) realiza micro-pulso de confirmação elástica contida (1.05x) ao copiar dados com sucesso para a área de transferência.
-
-### Escala Temporal & Curvas de Aceleração
-| Duração | Função | Curva de Aceleração |
-| :--- | :--- | :--- |
-| **100–150 ms** | Feedback tátil imediato (`:active`, cópia) | `cubic-bezier(0.2, 0, 0, 1)` |
-| **200–250 ms** | Mudança de estado, abas e gavetas retráteis | `cubic-bezier(0.16, 1, 0.3, 1)` |
-| **350–450 ms** | Entrada solene do Hero e celebração de marcos | `cubic-bezier(0.16, 1, 0.3, 1)` |
-
-### Redução de Movimento (Acessibilidade WCAG 2.1)
-Sob a diretiva `@media (prefers-reduced-motion: reduce)`, todos os deslocamentos espaciais (`transform: translateY`, `scale`) são imediatamente suprimidos e as durações são reduzidas a `0.01ms`. Apenas alternâncias essenciais de cor e opacidade são preservadas para garantir que usuários sensíveis a movimento tenham acesso integral e instantâneo ao conteúdo sem vertigem ou desconforto vestibular.
+**The No-Nested-Shadow Rule.** Um componente com `--cagp-shadow-md` ou `--cagp-shadow-lg` jamais pode conter filhos que também apliquem `--cagp-shadow-md`; sub-containers internos usam apenas fundo tonal (`#F4F1EA`) e borda seca (`1px` ou `2px solid #0A0A0A`).
 
 ## Shapes
 
-O vocabulário geométrico é cartesiano, sólido e contido:
-
-- **Cantos Quase Retos (Sub-rounded):**
-  - Botões, cartões padrão e gavetas utilizam raio suave de 4px (`border-radius: 4px`), mantendo a autoridade de blocos impressos sem ferir a ergonomia em telas de toque.
-  - Badges e pílulas utilizam raio de 3px (`border-radius: 3px`).
-  - Callouts e anúncios utilizam cantos 100% retos (`border-radius: 0px`).
-  - Círculos perfeitos (`border-radius: 50%`) são admitidos unicamente nos marcadores numéricos da linha do tempo curricular (`.cagp-timeline-marker`).
-- **Bordas Estruturais:** Espessura padrão de 2px (`border: 2px solid #0a0a0a`), expandida para 3px em elementos de máxima autoridade como o Emblema Hero e os Callouts regimentais.
-- **Fita Lateral de Assinatura:** Cartões de destaque e o Hero principal exibem uma faixa lateral sólida de 8px em Vinho Candango (`#9E2424`) ou Ouro (`#E8A317`), demarcando a prioridade visual.
+A linguagem formal é retangular, arquitetônica e disciplinada:
+- **Cantos de Controles e Chips (`--cagp-radius-sm: 2px`):** Botões, inputs, chips, badges e células de código.
+- **Cantos de Cartões e Painéis (`--cagp-radius-md: 4px`):** Cartões `.cagp-card`, caixas de ferramentas `.cagp-tool-box` e modais.
+- **Bordas Superiores deBottom Sheets (`12px 12px 0 0` apenas na borda externa do Sheet mobile):** Única concessão ergonômica da Camada 2 para sinalizar uma folha deslizante inferior com *grabber* horizontal (`40px x 4px` em `#0A0A0A`), mantendo `border-top: 3px solid #0A0A0A`.
+- **Animações Separadas por Eixo & Sistema Físico de Tokens Cinéticos (Apple HIG + M3 Expressive + Brite):**
+  - **Spatial Springs (Geometria, Posição, Escala, Altura, Chevron):**
+    - `--cagp-spring: cubic-bezier(0.32, 0.72, 0, 1)` (Apple HIG — navegação espacial, sheets e drill-down `0.98 ↔ 1.0`).
+    - `--cagp-m3-spatial-fast: cubic-bezier(0.42, 1.67, 0.21, 0.90)` (`350ms` — micro-interações táteis, botões `+`/`-`, carimbos e rotação elástica de chevrons).
+    - `--cagp-m3-spatial-default: cubic-bezier(0.38, 1.21, 0.22, 1.00)` (`500ms` — preenchimento elástico de barras de progresso e pulso de `100%`).
+    - `--cagp-m3-spatial-standard: cubic-bezier(0.27, 1.06, 0.18, 1.00)` (`320ms` — interpolação fluida de altura `grid-template-rows: 0fr -> 1fr` em gavetas e acordeões).
+  - **Effects Springs (Opacidade, Cor, Borda — Zero Overshoot conforme M3 Expressive):**
+    - `--cagp-m3-effects-fast: cubic-bezier(0.31, 0.94, 0.34, 1.00)` (`150ms`).
+    - `--cagp-m3-effects-default: cubic-bezier(0.34, 0.80, 0.34, 1.00)` (`200ms`).
+  - **Transições Direcionais de Rota & Sub-Views:** Deslizamento lateral (`±18px` + crossfade `220ms`) entre abas irmãs da barra principal; escala de profundidade (`0.98 ↔ 1.0` com `--cagp-spring`) em navegações *Drill-Down* / `[← Hub]`; e deslizamento direcional suave (`±14px`) entre Sub-Views de um Workspace com estabilização de altura.
+  - **Coreografia Escalonada (`--stagger-index: 0..7` × `35ms`), Odômetro `requestAnimationFrame` (`280ms`), Háptica (`navigator.vibrate(8)`) e Skeletons Brite:** Entrada escalonada limitada aos primeiros 8 cards visíveis; contadores numéricos animados em `280ms`; barra superior de progresso de rota (`#cagp-route-progress-bar`, `z-index: 1020`); e respeito integral a `@media (prefers-reduced-motion: reduce)` e `html[data-a11y-motion="reduced"]`.
+  - `@keyframes cagpDrawerSlide`: Revelação vertical (`translateY(-4px)` -> `translateY(0)`) exclusiva para acordeões de ementas, gavetas da calculadora, etapas de quiz e detalhes do grafo.
+  - `@keyframes cagpOffcanvasSlide`: Deslizamento horizontal (`translateX(100%)` -> `translateX(0)`) exclusivo para o painel lateral `.cagp-mobile-drawer-panel`.
 
 ## Components
 
 ### Buttons
-- **Shape:** Retangular com cantos sutilmente contidos (`border-radius: 4px`), borda preta sólida de 2px (`border: 2px solid #0a0a0a`).
-- **Primary:** Fundo Vinho Candango (`#9e2424`), texto branco (`#ffffff`), padding de 0.65rem 1.4rem, tipografia `Oswald` 600 bold uppercase com tracking de 0.03em. Sombra sólida de 4px 4px 0px.
-- **Hover / Focus:** Hover desloca o botão em `translate(-2px, -2px)` com sombra expandida para `7px 7px 0px #0a0a0a` e cor de fundo Vinho Escuro (`#7b1a1a`). Focus exibe anel de acessibilidade `outline: 3px solid #9e2424` com `outline-offset: 2px`.
-- **Active:** `transform: translate(2px, 2px)` com sombra reduzida para `1px 1px 0px #0a0a0a`.
-- **Secondary / Outline:** Fundo branco (`#ffffff`) com texto preto (`#0a0a0a`) e borda 2px preta. Ao hover ganha fundo cinza claro (`#f4f5f7`).
+Botões táteis, assertivos e com área mínima de toque de `48px` de altura.
+- **Shape:** Cantos micro-contidos (`2px` radius) com borda sólida `2px solid #0A0A0A` e sombra dura `2px 2px 0px #0A0A0A`.
+- **Primary (`.cagp-btn-primary`, `.cagp-doc-btn-primary`):** Fundo Vinho Candango (`#9E2424`), texto branco (`#FFFFFF`), tipografia `Oswald` `700` uppercase, padding `12px 20px`.
+- **Hover / Focus:** Elevação mecânica `transform: translate(-1px, -1px)` com sombra `3px 3px 0px #0A0A0A` e fundo `#7A1B1B`; anel de foco `:focus-visible` com `outline: 3px solid #E8A317; outline-offset: 2px`.
+- **Secondary / Outline (`.cagp-btn-outline`, `.cagp-doc-btn-outline`):** Fundo branco (`#FFFFFF`), texto `#0A0A0A`, borda `2px solid #0A0A0A`; no `:hover`, recebe fundo `#F4F1EA`.
 
-### Badges & Tags
-- **Style:** Compacto, tipografia `Oswald` 600 bold em caixa alta (`0.75rem` a `0.8rem`), padding de `0.25rem 0.65rem`, borda preta de 1.5px a 2px e sombra sólida de 2px 2px 0px.
-- **Departamentos:**
-  - `DCP` (Ciência Política / Gestão Pública): Vinho Candango (`#9E2424`) com texto branco.
-  - `ECN` (Economia): Preto Nanquim (`#0A0A0A`) com texto branco.
-  - `EST` (Estatística): Azul Institucional (`#1565C0`) com texto branco.
-  - `SOA` (Sociologia e Antropologia): Verde Floresta (`#2E7D32`) com texto branco.
+### Chips
+Filtros rápidos e seletores de categoria inspirados na contenção M3 Expressive com pele Brite.
+- **Style:** Fundo `#FFFFFF`, texto `#0A0A0A`, borda `2px solid #0A0A0A`, raio `2px`, altura mínima `40px` (`44px` em barras de toque mobile), sombra `2px 2px 0px #0A0A0A`.
+- **State:**Quando selecionado (`.is-active` ou `aria-pressed="true"`), assume fundo `#9E2424` (ou `#0A0A0A`), texto `#FFFFFF` e peso `700`.
 
 ### Cards / Containers
-- **Corner Style:** 4px de raio (`border-radius: 4px`), borda de 2px preta sólida.
-- **Background:** Branco puro (`#ffffff`), com fundo off-white quente (`#fbf8f3`) reservado ao Emblema Hero.
-- **Shadow Strategy:** 4px 4px 0px em descanso; 7px 7px 0px com deslocamento `-3px, -3px` em hover.
-- **Internal Padding:** `1.25rem` a `1.5rem` de respiro interno com flexbox vertical.
+Unidades modulares de informação institucional e ferramentas interativas.
+- **Corner Style:** Cantos contidos (`4px` radius).
+- **Background:** Branco puro (`#FFFFFF`) sobre o canvas creme (`#FBF8F3`), ou superfície tonal areia (`#F4F1EA`) para sub-painéis internos.
+- **Shadow Strategy:** `4px 4px 0px #0A0A0A` para cartões de primeiro nível; zero sombra para sub-containers aninhados.
+- **Border:** `2px solid #0A0A0A` (`3px solid #0A0A0A` em `.cagp-hero` e `.cagp-tool-box`).
+- **Internal Padding:** `20px` (`16px` em viewports `< 576px`).
 
-### Ementário Interativo (Discipline Drawers)
-- **Componente de Assinatura:** Gavetas sanfonadas `<details class="cagp-discipline">` com sumário em `<summary>`.
-- **Estrutura:** Borda de 2px preta, fundo branco, sombra dura de 2px.
-- **Interação:** O ícone de chevron gira 90° e muda para Vinho Candango quando aberta. O corpo aberto (`.cagp-discipline-body`) ganha fundo cinza suave (`#fbfbfc`) com borda lateral esquerda de 4px sólida em Vinho Candango.
+### Inputs / Fields
+Campos de busca instantânea e filtragem de matrizes/documentos.
+- **Style:** Borda `2px solid #0A0A0A`, fundo `#FFFFFF`, raio `2px`, altura mínima `48px`, `font-size: 16px` (`1rem`) obrigatório.
+- **Focus:** `outline: none`, `border-color: #9E2424`, `box-shadow: 4px 4px 0px #9E2424`.
+- **Error / Disabled:** Fundo `#EAE5DC`, opacidade `0.65` e cursor `not-allowed` quando desabilitado.
 
-### Quarto Callouts (Neo-Brutalist)
-- **Header:** Borda inferior preta de 2px, cantos retos (0px), título em `Oswald` 700 uppercase.
-- **Variantes Semânticas:**
-  - `callout-important`: Header Vinho Bordeaux (`#8B1E2D`), ícone invertido para branco.
-  - `callout-tip`: Header Ouro Alerta (`#E8A317`), ícone preto.
-  - `callout-note`: Header Azul UFMG (`#1E3F66`), ícone branco.
-  - `callout-warning`: Header Laranja Âmbar (`#E65100`), ícone branco.
-  - `callout-caution`: Header Vermelho Alerta (`#B71C1C`), ícone branco.
+### Navigation
+Arquitetura de navegação adaptativa Web + Super App sem sobreposição de barras.
+- **Desktop Header (`#cagp-superapp-header`):** Barra fixa de `52px` em `#0A0A0A` com borda inferior `3px solid #9E2424`, links em `Oswald` uppercase, 3 menus dropdown idempotentes (`Jornada Acadêmica`, `Acervo & Ajuda`, `O CAGP`), gatilho do Spotlight (`⌘K`), App Launcher e Acessibilidade.
+- **Mobile Bottom Bar (`#cagp-mobile-nav` / `#cagp-superapp-tabbar`):** Barra inferior de `60px` + `env(safe-area-inset-bottom)` com 5 alvos de `>= 48x48px` e indicador ativo em Vinho Candango (`#9E2424`) ou Ouro (`#E8A317`).
+- **Segmented Control (`.cagp-segmented-nav`):** Alternador de visão de página (ex.: `A Gestão em Exercício` vs `O Centro Acadêmico`) posicionado acima do conteúdo mutável, com fundo tonal `#EAE5DC`, borda `2px solid #0A0A0A` e aba ativa elevada em `#9E2424`.
 
-### Navigation (Navbar & Announcement Banner)
-- **Banner de Proposta:** Faixa vermelha superior contínua e não dispensável (`website.announcement`), com badge preto contrastante `PROPOSTA DE CHAPA` e texto destacado em amarelo claro (`#FFD54F`).
-- **Navbar:** Fundo branco puro com borda inferior preta de 2px, logotipo oficial dos Candangos com altura fixa de 40px, links com peso 600 que se colorem em Vinho Candango no hover/active. O símbolo vem de `logos/cagp/10_simbolo_transparente_positivo.svg`.
-
-### Marcas de Terceiros (UFMG, minhaUFMG, SIGA, FUMP, Interno Rotas)
-- **Função:** identificar o serviço ou sistema para onde um card ou botão leva. Nunca decoram, nunca assinam o portal.
-- **Fidelidade:** arquivo original de `logos/<entidade>/`, sem recolorir, distorcer, cortar ou aplicar sombra, borda ou efeito. Escolha a versão do arquivo adequada ao fundo (positivo em fundo claro, negativo em fundo escuro) e respeite a área de proteção descrita nos manuais de `_referencias/identidade-visual/`.
-- **Contenção:** o logo fica dentro de um contêiner neutro (branco ou off-white), com altura controlada, sem competir com o símbolo dos Candangos. A marca UFMG não aparece em navbar, rodapé, hero nem no banner da chapa.
-- **Acessibilidade:** `alt` descritivo com o nome da entidade e o destino (ex.: "Logo do SIGA UFMG").
-
-### Trilha de Navegação (Breadcrumbs)
-- **Shape & Estrutura:** Faixa horizontal com cantos retos (`border-radius: 0px`), borda sólida preta de 1.5px (`border: 1.5px solid #0a0a0a`) e sombra rígida reduzida (`box-shadow: 2px 2px 0px #0a0a0a`).
-- **Fundo:** Cinza Superfície Suave (`#f4f5f7`), com rolagem horizontal suave no mobile sem quebra de linha.
-- **Tipografia:** `Oswald` 600 bold uppercase para categorias (`0.8rem`), separadores em chevron contrastante e `Inter` 400 regular para a página ativa marcada com `aria-current="page"`.
-
-### Microinteração de Cópia Tátil (Copy Button)
-- **Shape:** Botão compacto tátil (`border-radius: 4px`), borda preta de 1.5px, sombra dura de 2px 2px 0px.
-- **Estado de Repouso:** Fundo branco (`#ffffff`), texto preto (`#0a0a0a`), ícone SVG de prancheta.
-- **Estado de Sucesso (2 segundos):** Fundo Verde Extensão (`#2e7d32`), texto branco (`#ffffff`), sombra anulada, rótulo transitório `✓ Copiado!`.
-
-### Calculadoras e Gavetas de Validação (ACG & Milestones)
-- **Gaveta "O que Conta / O que Não Conta":** Caixa expansível (`.cagp-calc-drawer`) com sumário acessível em botão tátil. Duas colunas contrastadas: verde de conformidade para atividades aceitas e laranja âmbar para indeferidas/erros comuns, destacando o prazo decadencial de 120 dias.
-- **Banners de Milestone:** Container dinâmico com feedback gradual conforme o cumprimento de metas parciais (300h) e celebração comemorativa com borda ouro FAFICH (`#e8a317`) e fundo contrastante ao completar o teto regulamentar (600h).
-- **Tag Teto:** Indicador em Ouro Alerta (`.cagp-teto-tag`) ao lado de readouts numéricos quando a modalidade atinge a carga horária máxima permitida pelo Colegiado.
-
-### Organograma Funcional & Governança
-- **Organograma Cartesiano:** Estrutura hierárquica em CSS puro (`.cagp-organogram`) conectando Assembleia Geral soberana, Junta Eleitoral independente e Presidência/Diretorias Executivas com conectores em linhas sólidas pretas de 2px.
-- **Cards de Diretoria:** Placeholders institucionais neutros com avatares estilizados, atribuições estatutárias e canal de transparência ativa (RREO e prestação contábil).
-
-### Barra de Busca e Filtros Dinâmicos (com Empty State & Teclado)
-- **Filtro Unificado (`.cagp-search-input`):** Campo de busca padronizado com borda preta sólida de 2px, cantos de 4px, sombra rígida de 2px e foco em Vinho Candango (`#9e2424`).
-- **Atalhos Operacionais de Teclado:** Tecla `Escape` limpa imediatamente a consulta e restaura o catálogo completo em todos os 5 buscadores do portal. No simulador de estágio (Art. 41), teclas de seta (`ArrowLeft` / `ArrowRight`) alternam a situação profissional com WAI-ARIA Radio Group pattern.
-- **Empty States Pedagógicos com Recuperação em 1 Clique:** Em caso de zero resultados (Optativas, FAQ, Documentos e Mapa do Site), exibição de card acolhedor tracejado em cinza superfície com orientações institucionais e botão tátil de restauração imediata.
-- **Estados Desabilitados (`:disabled`):** Botões de zerar simulação e desmarcar checklist são automaticamente desabilitados quando não há ações a reverter (`opacity: 0.45; pointer-events: none; box-shadow: 1px 1px 0px #111111`).
+### Signature Components (Micro-Apps, Passaporte Acadêmico & Acordeões de Ementa)
+- **Passaporte / Crachá Acadêmico CAGP (`.cagp-passport-card`):** Componente de identidade persistente (`cagp_student_profile_v1`) inspirado na Carteira Estudantil da UFMG e nos cartões Apple Wallet / Nubank Ultravioleta com pele Neo-Brutalista Brite. Combina fundo com micro-grid técnico pontilhado (`radial-gradient(#0A0A0A 1px, transparent 1px)` em baixa opacidade), avatar `72x72px` (`256x256px` WebP gerado via `<canvas>` client-side ou presets ilustrados Brite), **Pin Esmaltado de Orgulho LGBTQIAPN+** (`.cagp-pride-pin`) no canto inferior direito do avatar, **Tag Editorial de Bandeira + Pronomes** (`.cagp-pride-tag`), barra dupla de integralização (`%` das 27 obrigatórias + `%` das 600h de ACG) e carimbo dinâmico de situação acadêmica.
+- **Hierarquia Editorial de Bordas & Superfícies Tonais:** Molduras principais de Workspaces, Passaporte, Modais e Tool Boxes usam borda estrutural `3px solid #0A0A0A`; cartões clicáveis, botões e chips interativos usam `2px solid #0A0A0A` com sombra deslocada; divisores internos, células de tabelas e sub-linhas dentro de painéis tonais (`#F4F1EA` e `#EAE5DC`) usam bordas suavizadas de `1.5px solid #0A0A0A` ou `1px solid rgba(10, 10, 10, 0.22)` e zero sombra projetada, criando contraste imediato entre container de fundo estático e controle clicável.
+- **Acordeão de Disciplina (`.cagp-discipline`):** Elemento `<details>` com cabeçalho flexível exibindo badge de departamento (`DCP`, `ECN`, `SOA`, `EST`), código em `JetBrains Mono`, carga horária (`60h • 4 cr`) e corpo de ementa com abertura vertical suave (`@keyframes cagpDrawerSlide`).
+- **Linha de Calculadora Regimental (`.cagp-calc-row`):** Linha estruturada com título, teto máximo em créditos, gaveta expansível *"O que conta / O que não conta"*, botões passo a passo (`-` / `+` de `40x40px` mín.) e carimbo automático `TETO` ao atingir o limite do Art. 15.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** utilizar bordas pretas sólidas de 2px a 3px (`#0A0A0A` / `#111111`) em todos os botões, cartões, gavetas e caixas de alerta.
-- **Do** projetar sombras 100% rígidas com zero desfoque (`box-shadow: 2px 2px 0px #0a0a0a` a `7px 7px 0px #0a0a0a`).
-- **Do** utilizar `Oswald` em caixa alta para títulos, manches, cabeçalhos de tabela, botões e badges.
-- **Do** manter `Inter` para todo o corpo de texto, descrições normativas e ementas, priorizando legibilidade contínua.
-- **Do** assegurar contraste WCAG AAA para leitura crítica e manter foco visível explícito (`outline: 3px solid #9e2424`).
-- **Do** utilizar o componente de gaveta retrátil (`<details class="cagp-discipline">`) para conter ementas densas sem poluir o fluxo de página.
+- **Do** aplicar a **Regra de Arbitragem em 3 Camadas**: pele 100% Brite/CAGP (Camada 1), ergonomia e física Apple HIG (Camada 2) e contenção de densidade/superfícies tonais M3 Expressive (Camada 3).
+- **Do** manter `font-size: max(16px, 1rem)` em todos os inputs de busca e formulário em qualquer resolução para evitar auto-zoom acidental.
+- **Do** usar degraus tonais (`#F4F1EA` e `#EAE5DC`) e divisores de `1px`/`2px solid #0A0A0A` para organizar o interior de calculadoras e ferramentas sem criar `nested-cards`.
+- **Do** usar barras de chips com rolagem horizontal (`overflow-x: auto; flex-wrap: nowrap`) em telas móveis quando houver mais de 4 filtros.
+- **Do** garantir que toda animação utilize `cubic-bezier(0.32, 0.72, 0, 1)` e seja desativada em `@media (prefers-reduced-motion: reduce)`.
 
 ### Don't:
-- **Don't** utilizar sombras difusas com blur (`box-shadow: 0 4px 20px rgba(0,0,0,0.1)`). O sistema rejeita desfoques que diluem a nitidez tátil.
-- **Don't** arredondar cantos em estilo "pílula gigante" em botões ou cartões (`border-radius: 9999px` ou `24px`). O vocabulário formal é estritamente de cantos contidos (0px a 4px).
-- **Don't** utilizar gradientes pastéis suaves, efeitos de vidro (glassmorphism/backdrop-filter) ou estéticas corporativas assépticas.
-- **Don't** espalhar a cor Vinho Candango por toda a tela como plano de fundo dominante; ela deve servir exclusivamente a pontos de comando, liderança e âncoras focais (≤15% da área).
-- **Don't** suprimir o anel de foco de acessibilidade (`outline: none` sem substituto é estritamente proibido).
-- **Don't** abreviar títulos regimentais ou eliminar o respaldo normativo dos atos citados nas páginas.
+- **Don't** usar `backdrop-filter: blur()`, glassmorphism, gradientes suaves ou sombras com blur (`> 0px`) em nenhum componente.
+- **Don't** usar cantos arredondados maiores que `4px` em cartões/botões ou formato pílula (`9999px`) em chips e botões.
+- **Don't** aninhar um cartão com `box-shadow` duro dentro de outro container que já possua `box-shadow` duro (`nested-cards`).
+- **Don't** reutilizar o mesmo nome de `@keyframes` para animações de eixos diferentes (`cagpDrawerSlide` é estritamente vertical; `cagpOffcanvasSlide` é estritamente horizontal).
+- **Don't** exibir `#quarto-announcement` ou `#cagp-chapa-banner` quando o aplicativo estiver rodando em modo instalado (`html.cagp-is-standalone`).

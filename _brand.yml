@@ -10,16 +10,29 @@ logo:
 color:
   palette:
     cagp-red: "#9E2424"
+    cagp-wine-inst: "#8B1E2D"
+    cagp-gold: "#E8A317"
+    cagp-paper: "#FBF8F3"
+    cagp-surface-low: "#F4F1EA"
+    cagp-surface-high: "#EAE5DC"
     cagp-dark: "#0A0A0A"
     cagp-white: "#FFFFFF"
     cagp-gray-100: "#F8F9FA"
     cagp-gray-200: "#E9ECEF"
     cagp-gray-800: "#212529"
+    ufmg-siga: "#9E2424"
+    ufmg-minha: "#005A9C"
+    ufmg-moodle: "#D9531E"
+    ufmg-sei: "#1E6B3A"
+    ufmg-bu: "#5B2C6F"
   foreground: cagp-dark
-  background: cagp-white
+  background: cagp-paper
   primary: cagp-red
   secondary: cagp-dark
-  light: cagp-gray-100
+  warning: cagp-gold
+  success: ufmg-sei
+  info: ufmg-minha
+  light: cagp-paper
   dark: cagp-dark
 
 typography:
@@ -30,6 +43,9 @@ typography:
     - family: Inter
       source: google
       weight: [400, 500, 600, 700]
+    - family: JetBrains Mono
+      source: google
+      weight: [500, 600, 700]
   base:
     family: Inter
     weight: 400
@@ -38,3 +54,7 @@ typography:
   headings:
     family: Oswald
     weight: 700
+  monospace:
+    family: JetBrains Mono
+    weight: 500
+    size: 0.9em

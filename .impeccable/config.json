@@ -1,3 +1,17 @@
 {
-  "buildPath": "code"
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [
+      "docs/site_libs/**"
+    ],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-28T21:43:37.510Z",
+        "reason": "Fonte oficial do corpo definida em _brand.yml e Manual de Identidade Visual CAGP UFMG"
+      }
+    ]
+  }
 }

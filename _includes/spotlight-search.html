@@ -43,18 +43,18 @@
               <span class="cagp-spotlight-quick-sub">Extensão 300h + AAC 300h</span>
             </div>
           </a>
-          <a href="percurso.html#catalogo-optativas" class="cagp-spotlight-quick-card" data-cagp-nav>
+          <a href="optativas.html#catalogo-optativas" class="cagp-spotlight-quick-card" data-cagp-nav>
             <div class="cagp-spotlight-quick-icon cagp-bg-bordeaux"><i class="bi bi-journal-text"></i></div>
             <div class="cagp-spotlight-quick-info">
               <span class="cagp-spotlight-quick-label">Catálogo de 68 Optativas</span>
               <span class="cagp-spotlight-quick-sub">Filtros DCP, ECN, SOC e Formação Livre</span>
             </div>
           </a>
-          <a href="calouros.html#circulares-noturnos" class="cagp-spotlight-quick-card" data-cagp-nav>
-            <div class="cagp-spotlight-quick-icon cagp-bg-blue"><i class="bi bi-bus-front"></i></div>
+          <a href="pesquisa.html#grupos-pesquisa" class="cagp-spotlight-quick-card" data-cagp-nav>
+            <div class="cagp-spotlight-quick-icon cagp-bg-blue"><i class="bi bi-diagram-3-fill"></i></div>
             <div class="cagp-spotlight-quick-info">
-              <span class="cagp-spotlight-quick-label">Circulares Noturnos</span>
-              <span class="cagp-spotlight-quick-sub">Até 22h45 e App Interno Rotas</span>
+              <span class="cagp-spotlight-quick-label">Pesquisa & 11 Núcleos DCP</span>
+              <span class="cagp-spotlight-quick-sub">Iniciação Científica (90h) e Imersão</span>
             </div>
           </a>
           <a href="documentos.html" class="cagp-spotlight-quick-card" data-cagp-nav>
@@ -64,20 +64,34 @@
               <span class="cagp-spotlight-quick-sub">PPC N-20229, Regimento e Formulários</span>
             </div>
           </a>
-          <a href="curso.html#secretaria-colegiado" class="cagp-spotlight-quick-card" data-cagp-nav>
-            <div class="cagp-spotlight-quick-icon cagp-bg-charcoal"><i class="bi bi-geo-alt"></i></div>
+          <a href="estagio.html#simulador-art41" class="cagp-spotlight-quick-card" data-cagp-nav>
+            <div class="cagp-spotlight-quick-icon cagp-bg-charcoal"><i class="bi bi-briefcase-fill"></i></div>
             <div class="cagp-spotlight-quick-info">
-              <span class="cagp-spotlight-quick-label">Secretaria F-2039 & CEAG</span>
-              <span class="cagp-spotlight-quick-sub">Horários, e-mails e atendimento</span>
+              <span class="cagp-spotlight-quick-label">Estágio & Dispensa Art. 41</span>
+              <span class="cagp-spotlight-quick-sub">Simulador 300h e Termo TCE</span>
             </div>
           </a>
-          <a href="mapa-do-site.html" class="cagp-spotlight-quick-card" data-cagp-nav>
-            <div class="cagp-spotlight-quick-icon cagp-bg-sand"><i class="bi bi-diagram-3"></i></div>
+          <a href="tcc.html#modalidades-tcc" class="cagp-spotlight-quick-card" data-cagp-nav>
+            <div class="cagp-spotlight-quick-icon cagp-bg-sand"><i class="bi bi-mortarboard-fill"></i></div>
             <div class="cagp-spotlight-quick-info">
-              <span class="cagp-spotlight-quick-label">Mapa Completo do Site</span>
-              <span class="cagp-spotlight-quick-sub">Visão panorâmica em 5 eixos</span>
+              <span class="cagp-spotlight-quick-label">TCC &amp; 4 Modalidades</span>
+              <span class="cagp-spotlight-quick-sub">DCP 089/137 e Termo de Aceite</span>
             </div>
           </a>
+          <button type="button" class="cagp-spotlight-quick-card text-start" onclick="window.closeCagpSpotlight(); window.cagpOpenCampusSheet &amp;&amp; window.cagpOpenCampusSheet()">
+            <div class="cagp-spotlight-quick-icon cagp-bg-gold"><i class="bi bi-clock-history"></i></div>
+            <div class="cagp-spotlight-quick-info">
+              <span class="cagp-spotlight-quick-label">Campus Agora (Noturno)</span>
+              <span class="cagp-spotlight-quick-sub">Status ao vivo: RU II, Circular 22h45 e CEAG</span>
+            </div>
+          </button>
+          <button type="button" class="cagp-spotlight-quick-card text-start" data-cagp-open-passport="true">
+            <div class="cagp-spotlight-quick-icon cagp-bg-bordeaux"><i class="bi bi-person-vcard-fill"></i></div>
+            <div class="cagp-spotlight-quick-info">
+              <span class="cagp-spotlight-quick-label">Passaporte &amp; Foto (Perfil)</span>
+              <span class="cagp-spotlight-quick-sub">Editar foto 256×256, período, bandeira e Sync</span>
+            </div>
+          </button>
         </div>
       </div>
 
@@ -108,28 +122,37 @@
   </div>
 </div>
 
-<script>
+<script data-cagp-persistent-script="true">
 (function () {
   'use strict';
 
+  if (window.__cagpSpotlightMounted) return;
+  window.__cagpSpotlightMounted = true;
+
   // 1. Catálogo Mestre Indexado em Memória
   const CAGP_CATALOG = [
-    // --- Páginas Principais ---
+    // --- Páginas Principais (14 Rotas Canônicas) ---
     { title: "Início (Página Inicial)", cat: "Página", badge: "Hub", href: "index.html", desc: "Portal do CAGP, acolhimento discente, atalhos para sistemas UFMG e avisos prioritários.", keywords: "home inicio portal sistemas fafich chapa colegiado" },
-    { title: "O Curso de Gestão Pública", cat: "Página", badge: "Graduação", href: "curso.html", desc: "História, corpo docente, cientometria nacional, perfil do egresso e grupos do DCP.", keywords: "curso fafich corpo docente professores nucleos dcp competencias egresso" },
+    { title: "O Curso de Gestão Pública", cat: "Página", badge: "Graduação", href: "curso.html", desc: "História, corpo docente, cientometria nacional, perfil do egresso e Colegiado.", keywords: "curso fafich corpo docente professores cientometria competencias egresso colegiado" },
+    { title: "Pesquisa, IC & 11 Núcleos do DCP", cat: "Página", badge: "Pesquisa", href: "pesquisa.html", desc: "Diretório dos 11 grupos de pesquisa do DCP, guia de Iniciação Científica (90h AAC) e Programa de Imersão.", keywords: "pesquisa iniciacao cientifica ic pibic fapemig cnpq nucleos grupos dcp imersao campo de publicas" },
     { title: "Guia do Calouro (1º Período)", cat: "Página", badge: "Acolhimento", href: "calouros.html", desc: "Rotina noturna, refeições no RU II, circulares Interno Rotas, carteirinha e checklist.", keywords: "calouros primeiro periodo ru restaurante universitario onibus circulares carteirinha fump prae biblioteca face" },
-    { title: "Percurso & Ementas (10 Semestres)", cat: "Página", badge: "Matriz", href: "percurso.html", desc: "27 obrigatórias, 3 percursos oficiais e catálogo completo de 68 disciplinas optativas.", keywords: "percurso ementas matriz curricular obrigatorias optativas grade periodos pre-requisitos" },
-    { title: "Extensão & Horas AAC (600h)", cat: "Página", badge: "Integralização", href: "acg.html", desc: "Calculadora de integralização, Extensão 300h, 7 modalidades de AAC e prazo de 120 dias.", keywords: "acg aac extensao 300h 600h horas complementares calculadora pibic estagio voluntariado colegiado" },
-    { title: "Estágio Supervisionado & TCC", cat: "Página", badge: "Diretrizes", href: "estagio-tcc.html", desc: "Estágio A (180h) e B (120h), Art. 41 de dispensa profissional e 4 modalidades de TCC.", keywords: "estagio tcc trabalho conclusao curso dispensa profissional vinculo termo aceite estagio obrigatorio" },
-    { title: "Documentos & Formulários Oficiais", cat: "Página", badge: "Acervo", href: "documentos.html", desc: "8 PDFs na íntegra, PPC N-20229, Regimento 2024, regulamentos e instruções SEI-UFMG.", keywords: "documentos pdfs ppc regimento regulamento estagio sei requerimento normas resolucoes" },
+    { title: "Percurso & Ementas (10 Semestres)", cat: "Página", badge: "Matriz", href: "percurso.html", desc: "27 disciplinas obrigatórias, grafo interativo de pré-requisitos e simulador dos 3 percursos.", keywords: "percurso ementas matriz curricular obrigatorias grade periodos pre-requisitos grafo" },
+    { title: "Catálogo de 68 Optativas & Formação Livre", cat: "Página", badge: "Optativas", href: "optativas.html", desc: "Catálogo interativo das 68 disciplinas optativas por departamento (DCP, ECN, SOC, CAD, DEM, DIR) e regras de 120h de Formação Livre.", keywords: "optativas catalogo 68 disciplinas eletivas formacao livre 120h dcp economia sociologia favoritos" },
+    { title: "Extensão & Horas AAC (600h)", cat: "Página", badge: "Integralização", href: "acg.html", desc: "Calculadora de integralização 600h, Extensão 300h, 7 modalidades de AAC e Guardião de 120 dias.", keywords: "acg aac extensao 300h 600h horas complementares calculadora guardiao 120 dias voluntariado colegiado" },
+    { title: "Estágio Supervisionado & Dispensa Art. 41", cat: "Página", badge: "Estágio", href: "estagio.html", desc: "Estágio Obrigatório A (DCP 135, 180h) e B (DCP 136, 120h), simulador de dispensa Art. 41 e tutorial TCE.", keywords: "estagio supervisionado obrigatorio nao obrigatorio dcp135 dcp136 art 41 dispensa profissional vinculo tce" },
+    { title: "Trabalho de Conclusão de Curso (TCC)", cat: "Página", badge: "TCC", href: "tcc.html", desc: "Projeto (DCP 089, 60h) e Defesa (DCP 137, 120h), as 4 modalidades oficiais de TCC e Termo de Aceite.", keywords: "tcc trabalho conclusao curso dcp089 dcp137 monografia artigo cientifico relatorio tecnico projeto intervencao orientador" },
+    { title: "Documentos & Formulários Oficiais", cat: "Página", badge: "Acervo", href: "documentos.html", desc: "Cofre de 8 PDFs na íntegra offline, PPC N-20229, Regimento 2024, formulários e instruções SEI-UFMG.", keywords: "documentos pdfs ppc regimento regulamento estagio sei requerimento normas resolucoes cofre offline" },
     { title: "Dúvidas Frequentes (FAQ)", cat: "Página", badge: "Ajuda", href: "faq.html", desc: "Respostas diretas sobre CEAG, mobilidade, trancamento, aproveitamento e prazos.", keywords: "faq duvidas perguntas frequentes ceag trancamento prazos secretaria colegiado" },
     { title: "O Centro Acadêmico (Sobre o CAGP)", cat: "Página", badge: "Institucional", href: "sobre.html", desc: "Regimento 2024, Os Candangos, Bruno Giorgi, Assembleia Geral e Junta Eleitoral.", keywords: "sobre cagp candangos bruno giorgi estatuto regimento interno historia diretoria representacao" },
     { title: "Gestão em Exercício & Equipe", cat: "Página", badge: "Governança", href: "gestao.html", desc: "Organograma, as 7 diretorias canônicas, transparência ativa e chamada para assessores.", keywords: "gestao equipe diretorias dipre dijur difi diac diap dicult dimac transparencia contas" },
-    { title: "Mapa do Site", cat: "Página", badge: "Navegação", href: "mapa-do-site.html", desc: "Visão panorâmica em 5 eixos e busca em tempo real com leitor de tela WCAG 2.1.", keywords: "mapa site sitemap navegacao panoramica atalhos indice busca" },
+    { title: "Mapa do Site", cat: "Página", badge: "Navegação", href: "mapa-do-site.html", desc: "Visão panorâmica das 14 rotas em 5 eixos e busca em tempo real com leitor de tela WCAG 2.1.", keywords: "mapa site sitemap navegacao panoramica atalhos indice busca" },
 
     // --- Ferramentas Interativas & Seções de Alta Demanda ---
     { title: "Calculadora de ACG (600h)", cat: "Ferramenta", badge: "Calculadora", href: "acg.html#calculadora", desc: "Simulador interativo no navegador com gavetas O que conta / O que não conta e tags de teto.", keywords: "calculadora acg horas simulador extensao aac 600h 300h modalidades teto" },
-    { title: "Catálogo Interativo de 68 Optativas", cat: "Ferramenta", badge: "Catálogo", href: "percurso.html#catalogo-optativas", desc: "Filtro dinâmico por departamento (DCP, Economia, Sociologia) e busca textual por ementa.", keywords: "optativas catalogo 68 disciplinas eletivas dcp ecn sociologia formacao livre" },
+    { title: "Guardião de 120 Dias das AAC (Art. 15, § 4º)", cat: "Ferramenta", badge: "Prazo Fatal", href: "acg.html#guardiao-120-dias", desc: "Monitor de contagem regressiva de 120 dias corridos para eventos e publicações em anais.", keywords: "guardiao 120 dias prazo decadencial eventos anais certificados alerta" },
+    { title: "Simulador de Dispensa de Estágio (Art. 41)", cat: "Ferramenta", badge: "Simulador", href: "estagio.html#simulador-art41", desc: "Checklist interativo para abater até 300h de Estágio A e B com vínculo profissional ou público.", keywords: "simulador art 41 dispensa estagio vinculo servidor clt estagio nao obrigatorio" },
+    { title: "4 Modalidades Oficiais de TCC (Art. 47)", cat: "Ferramenta", badge: "TCC", href: "tcc.html#modalidades-tcc", desc: "Comparativo de Monografia, Artigo Científico, Relatório Técnico e Projeto de Intervenção.", keywords: "modalidades tcc monografia artigo relatorio tecnico intervencao art 47" },
+    { title: "Catálogo Interativo de 68 Optativas", cat: "Ferramenta", badge: "Catálogo", href: "optativas.html#catalogo-optativas", desc: "Filtro dinâmico por departamento (DCP, Economia, Sociologia) e busca textual por ementa.", keywords: "optativas catalogo 68 disciplinas eletivas dcp ecn sociologia formacao livre" },
     { title: "Grafo Curricular de Pré-Requisitos", cat: "Ferramenta", badge: "Grafo Interativo", href: "percurso.html#grafo-pre-requisitos", desc: "Mapa de dependências e trilhas conceituais (Economia, Metodologia, Gestão Governamental).", keywords: "grafo pre requisitos trilhas encadeamento mapa visual dependencias introdutorias" },
     { title: "Circulares Noturnos & App Interno Rotas", cat: "Ferramenta", badge: "Mobilidade", href: "calouros.html#circulares-noturnos", desc: "Linhas internas no campus Pampulha até 22h45 e link para rastreamento em tempo real.", keywords: "onibus circulares interno rotas itinerario horarios pampulha transporte noturno" },
     { title: "Refeições no RU II da FAFICH", cat: "Ferramenta", badge: "Alimentação", href: "calouros.html#ru-alimentacao", desc: "Jantar das 17h30 às 19h30, fila estratégica às 18h15 e acesso pela carteirinha digital.", keywords: "bandejao ru restaurante universitario alimentacao jantar fump fafich 19h30" },
@@ -138,15 +161,15 @@
     { title: "Checklist Interativo dos 30 Primeiros Dias", cat: "Ferramenta", badge: "Checklist", href: "calouros.html#checklist-calouro", desc: "6 etapas de sobrevivência para o calouro com celebração de boas-vindas.", keywords: "checklist calouro 30 dias passos sobrevivencia acolhimento carteirinha cracha comprovante" },
 
     // --- Núcleos de Pesquisa do DCP ---
-    { title: "PUBLICUS — Políticas Públicas e Gestão Governamental", cat: "Pesquisa", badge: "DCP/UFMG", href: "curso.html#grupos-pesquisa", desc: "Liderança Profa. Telma Menicucci. Análise de políticas públicas, burocracia e seguridade social.", keywords: "publicus telma menicucci politicas publicas burocracia gestao governamental dcp" },
-    { title: "CEPPI — Políticas Públicas e Inovação", cat: "Pesquisa", badge: "DCP/UFMG", href: "curso.html#grupos-pesquisa", desc: "Liderança Profa. Isabele Mitozo. Governança digital, comunicação pública e inovação.", keywords: "ceppi isabele mitozo inovacao governanca digital comunicacao politica dcp" },
-    { title: "NESTH — Segurança, Trabalho e Cidadania", cat: "Pesquisa", badge: "DCP/UFMG", href: "curso.html#grupos-pesquisa", desc: "Liderança Prof. Carlos Horta e Profa. Flávia Alves. Gestão de segurança e direitos.", keywords: "nesth seguranca publica trabalho direitos humanos carlos horta flavia alves" },
-    { title: "CEL — Centro de Estudos Legislativos", cat: "Pesquisa", badge: "DCP/UFMG", href: "curso.html#grupos-pesquisa", desc: "Liderança Profa. Magna Inácio. Produção legislativa, coalizões e relações Executivo-Legislativo.", keywords: "cel centro estudos legislativos magna inacio legislativo congresso coalizoes" },
-    { title: "Rede Femjusp — Justiça e Segurança Pública", cat: "Pesquisa", badge: "DCP/UFMG", href: "curso.html#grupos-pesquisa", desc: "Liderança Profa. Ludmila Ribeiro. Sistema de justiça criminal e segurança sob perspectiva de gênero.", keywords: "femjusp ludmila ribeiro justica criminal seguranca genero crisp dcp" },
-    { title: "MARGEM & OJB-AL — Democracia e Justiça", cat: "Pesquisa", badge: "DCP/UFMG", href: "curso.html#grupos-pesquisa", desc: "Liderança Profª Marjorie Marona. Observatório de Justiça Brasileira e instituições judiciais.", keywords: "margem marjorie marona ojb stf judiciario democracia justica dcp" },
-    { title: "INCT / IDDC — Instituto da Democracia", cat: "Pesquisa", badge: "Rede Nacional", href: "curso.html#grupos-pesquisa", desc: "Coordenação Prof. Leonardo Avritzer. Rede nacional CNPq de monitoramento democrático.", keywords: "inct iddc leonardo avritzer instituto democracia comunicacao participacao cnpq" },
-    { title: "PRODEP — Projeto Democracia Participativa", cat: "Pesquisa", badge: "DCP/UFMG", href: "curso.html#grupos-pesquisa", desc: "Liderança Profa. Eleonora Cunha. Conselhos gestores, orçamento participativo e deliberação.", keywords: "prodep eleonora cunha orcamento participativo conselhos gestores participacao" },
-    { title: "NEPEM — Estudos sobre a Mulher", cat: "Pesquisa", badge: "DCP/UFMG", href: "curso.html#grupos-pesquisa", desc: "Pioneirismo em políticas de gênero, desigualdade e representação feminina.", keywords: "nepem genero mulheres politicas publicas feminismo dcp fafich" },
+    { title: "PUBLICUS — Políticas Públicas e Gestão Governamental", cat: "Pesquisa", badge: "DCP/UFMG", href: "pesquisa.html#grupos-pesquisa", desc: "Liderança Profa. Telma Menicucci. Análise de políticas públicas, burocracia e seguridade social.", keywords: "publicus telma menicucci politicas publicas burocracia gestao governamental dcp" },
+    { title: "CEPPI — Políticas Públicas e Inovação", cat: "Pesquisa", badge: "DCP/UFMG", href: "pesquisa.html#grupos-pesquisa", desc: "Liderança Profa. Isabele Mitozo. Governança digital, comunicação pública e inovação.", keywords: "ceppi isabele mitozo inovacao governanca digital comunicacao politica dcp" },
+    { title: "NESTH — Segurança, Trabalho e Cidadania", cat: "Pesquisa", badge: "DCP/UFMG", href: "pesquisa.html#grupos-pesquisa", desc: "Liderança Prof. Carlos Horta e Profa. Flávia Alves. Gestão de segurança e direitos.", keywords: "nesth seguranca publica trabalho direitos humanos carlos horta flavia alves" },
+    { title: "CEL — Centro de Estudos Legislativos", cat: "Pesquisa", badge: "DCP/UFMG", href: "pesquisa.html#grupos-pesquisa", desc: "Liderança Profa. Magna Inácio. Produção legislativa, coalizões e relações Executivo-Legislativo.", keywords: "cel centro estudos legislativos magna inacio legislativo congresso coalizoes" },
+    { title: "Rede Femjusp — Justiça e Segurança Pública", cat: "Pesquisa", badge: "DCP/UFMG", href: "pesquisa.html#grupos-pesquisa", desc: "Liderança Profa. Ludmila Ribeiro. Sistema de justiça criminal e segurança sob perspectiva de gênero.", keywords: "femjusp ludmila ribeiro justica criminal seguranca genero crisp dcp" },
+    { title: "MARGEM & OJB-AL — Democracia e Justiça", cat: "Pesquisa", badge: "DCP/UFMG", href: "pesquisa.html#grupos-pesquisa", desc: "Liderança Profª Marjorie Marona. Observatório de Justiça Brasileira e instituições judiciais.", keywords: "margem marjorie marona ojb stf judiciario democracia justica dcp" },
+    { title: "INCT / IDDC — Instituto da Democracia", cat: "Pesquisa", badge: "Rede Nacional", href: "pesquisa.html#grupos-pesquisa", desc: "Coordenação Prof. Leonardo Avritzer. Rede nacional CNPq de monitoramento democrático.", keywords: "inct iddc leonardo avritzer instituto democracia comunicacao participacao cnpq" },
+    { title: "PRODEP — Projeto Democracia Participativa", cat: "Pesquisa", badge: "DCP/UFMG", href: "pesquisa.html#grupos-pesquisa", desc: "Liderança Profa. Eleonora Cunha. Conselhos gestores, orçamento participativo e deliberação.", keywords: "prodep eleonora cunha orcamento participativo conselhos gestores participacao" },
+    { title: "NEPEM — Estudos sobre a Mulher", cat: "Pesquisa", badge: "DCP/UFMG", href: "pesquisa.html#grupos-pesquisa", desc: "Pioneirismo em políticas de gênero, desigualdade e representação feminina.", keywords: "nepem genero mulheres politicas publicas feminismo dcp fafich" },
 
     // --- Documentos Normativos Oficiais ---
     { title: "PPC Oficial do Curso de Gestão Pública", cat: "Documento", badge: "PDF", href: "documentos.html", desc: "Projeto Pedagógico do Curso integral (Versão N-20229) homologado pelo CEPE/UFMG.", keywords: "ppc projeto pedagogico normas creditos horas matriz curricular resolucao" },
@@ -190,6 +213,10 @@
   // Abrir Spotlight
   window.openCagpSpotlight = function () {
     if (!modal) return;
+    if (window.cagpCloseAllOverlays) window.cagpCloseAllOverlays('cagp-spotlight-modal');
+    if (modal.parentElement !== document.body) {
+      document.body.appendChild(modal);
+    }
     modal.removeAttribute('hidden');
     document.body.classList.add('cagp-spotlight-open');
     if (window.visualViewport) {
@@ -370,9 +397,9 @@
     if (item) {
       const href = item.getAttribute('href');
       window.closeCagpSpotlight();
-      if (href && window.cagpNavigate) {
+      if (href && window.cagpRouter && window.cagpRouter.navigate) {
         e.preventDefault();
-        window.cagpNavigate(href);
+        window.cagpRouter.navigate(href, false);
       }
     }
   });
@@ -390,7 +417,7 @@
       return;
     }
 
-    if (e.key === '/' && !modal.hasAttribute('hidden')) {
+    if (e.key === '/' && modal && !modal.hasAttribute('hidden')) {
       return;
     }
 
@@ -401,42 +428,6 @@
       window.openCagpSpotlight();
     }
   });
-
-  // Injetar Botão de Busca na Barra de Navegação se ainda não existir
-  function injectNavbarSearchButton() {
-    if (document.getElementById('cagp-nav-search-trigger')) return;
-    const navbar = document.querySelector('.navbar .navbar-container');
-    if (!navbar) return;
-
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.id = 'cagp-nav-search-trigger';
-    btn.className = 'cagp-nav-search-btn';
-    btn.setAttribute('aria-label', 'Abrir busca global e paleta de comandos (Atalho: Ctrl+K / Cmd+K)');
-    btn.setAttribute('title', 'Buscar no portal (Ctrl+K ou ⌘K)');
-    btn.innerHTML = '<i class="bi bi-search cagp-nav-search-icon" aria-hidden="true"></i>' +
-                    '<span class="cagp-nav-search-label">Buscar no portal...</span>' +
-                    '<kbd class="cagp-nav-search-kbd">⌘K</kbd>';
-
-    btn.addEventListener('click', window.openCagpSpotlight);
-
-    // Inserir antes do navbar-toggler ou no container
-    const toggler = navbar.querySelector('.navbar-toggler');
-    if (toggler) {
-      navbar.insertBefore(btn, toggler);
-    } else {
-      navbar.appendChild(btn);
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectNavbarSearchButton);
-  } else {
-    injectNavbarSearchButton();
-  }
-
-  // Reinjetar se a navegação SPA atualizar o topo
-  window.addEventListener('cagp:navigated', injectNavbarSearchButton);
 
 })();
 </script>

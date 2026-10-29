@@ -1,10 +1,22 @@
 <!-- Motor de Roteamento SPA e Transições Nativas Super App CAGP UFMG -->
-<script>
+<script data-cagp-persistent-script="true">
 (function () {
   'use strict';
 
-  // Super App Client-Side Router & View Transition Engine
+  if (window.__cagpRouterMounted) return;
+  window.__cagpRouterMounted = true;
+
   const cache = new Map();
+  let activePageDisposers = [];
+
+  function cleanupPreviousPageListeners() {
+    while (activePageDisposers.length > 0) {
+      const dispose = activePageDisposers.pop();
+      try {
+        dispose();
+      } catch (e) {}
+    }
+  }
 
   function isInternalLink(anchor) {
     if (!anchor || anchor.tagName !== 'A') return false;
@@ -13,8 +25,8 @@
     if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return false;
     if (anchor.getAttribute('target') === '_blank' || anchor.hasAttribute('download')) return false;
     if (anchor.getAttribute('data-no-spa') !== null) return false;
+    if (href.endsWith('.pdf')) return false;
 
-    // Verificar se pertence à mesma origem
     try {
       const url = new URL(anchor.href, window.location.href);
       return url.origin === window.location.origin;
@@ -36,16 +48,15 @@
       .catch(function () {});
   }
 
-  // Pré-carregamento imediato no hover e no toque (Zero-latency navigation)
   document.addEventListener('pointerenter', function (e) {
-    const a = e.target.closest('a');
+    const a = e.target && e.target.closest ? e.target.closest('a') : null;
     if (a && isInternalLink(a)) {
       prefetch(a.href);
     }
   }, { capture: true, passive: true });
 
   document.addEventListener('touchstart', function (e) {
-    const a = e.target.closest('a');
+    const a = e.target && e.target.closest ? e.target.closest('a') : null;
     if (a && isInternalLink(a)) {
       prefetch(a.href);
     }
@@ -62,49 +73,56 @@
     return html;
   }
 
+  function resolveMobileTabId(pathname) {
+    const map = {
+      'index.html': 'cagp-mnav-inicio',
+      '': 'cagp-mnav-inicio',
+      'calouros.html': 'cagp-mnav-inicio',
+      'curso.html': 'cagp-mnav-inicio',
+      'pesquisa.html': 'cagp-mnav-inicio',
+      'percurso.html': 'cagp-mnav-percurso',
+      'optativas.html': 'cagp-mnav-percurso',
+      'acg.html': 'cagp-mnav-acg',
+      'estagio.html': 'cagp-mnav-acg',
+      'tcc.html': 'cagp-mnav-acg',
+      'estagio-tcc.html': 'cagp-mnav-acg',
+      'documentos.html': 'cagp-mnav-docs',
+      'faq.html': 'cagp-mnav-docs',
+      'mapa-do-site.html': 'cagp-mnav-docs',
+      'gestao.html': 'cagp-mnav-cagp',
+      'sobre.html': 'cagp-mnav-cagp'
+    };
+    return map[pathname] || 'cagp-mnav-inicio';
+  }
+
   function updateNavigationUI(targetUrl) {
     try {
       const url = new URL(targetUrl, window.location.href);
       const pathname = url.pathname.split('/').pop() || 'index.html';
 
-      // 1. Atualizar Navbar Superior do Quarto
-      document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
-        const href = link.getAttribute('href');
-        if (href) {
-          const linkPath = href.split('/').pop();
-          if (linkPath === pathname || (linkPath === 'index.html' && pathname === '')) {
-            link.classList.add('active');
-            link.setAttribute('aria-current', 'page');
-          } else {
-            link.classList.remove('active');
-            link.removeAttribute('aria-current');
-          }
-        }
-      });
-
-      // 2. Atualizar Barra Móvel Inferior (Thumb-first)
-      const mobileMap = {
-        'index.html': 'cagp-mnav-inicio',
-        '': 'cagp-mnav-inicio',
-        'percurso.html': 'cagp-mnav-percurso',
-        'documentos.html': 'cagp-mnav-docs',
-        'gestao.html': 'cagp-mnav-cagp',
-        'sobre.html': 'cagp-mnav-cagp'
-      };
+      // 1. Atualizar Barra Móvel Inferior (Web Mobile)
       document.querySelectorAll('.cagp-mobile-nav-item').forEach(function (item) {
         item.classList.remove('is-active');
+        item.removeAttribute('aria-current');
       });
-      const activeId = mobileMap[pathname];
+      const activeId = resolveMobileTabId(pathname);
       if (activeId) {
         const activeEl = document.getElementById(activeId);
-        if (activeEl) activeEl.classList.add('is-active');
+        if (activeEl) {
+          activeEl.classList.add('is-active');
+          activeEl.setAttribute('aria-current', 'page');
+        }
       }
 
-      // 3. Atualizar Bespoke Super App Floating Island Navbar
+      // 2. Atualizar Cabeçalho Institucional Desktop (Island Nav & Dropdowns)
       document.querySelectorAll('.cagp-island-nav-link').forEach(function (link) {
         const route = link.getAttribute('data-route');
-        link.classList.toggle('is-active', route === pathname || (route === 'index.html' && pathname === ''));
+        const active = route === pathname || (route === 'index.html' && pathname === '');
+        link.classList.toggle('is-active', active);
+        if (active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
       });
+
       document.querySelectorAll('.cagp-island-dropdown').forEach(function (dd) {
         const items = dd.querySelectorAll('.cagp-island-dropdown-item');
         let parentActive = false;
@@ -122,15 +140,66 @@
     }
   }
 
+  /**
+   * Executa os scripts locais da página recém-injetada em <main> sem disparar
+   * DOMContentLoaded global no document (evitando re-execução de listeners da casca)
+   * e registrando listeners de página para limpeza automática na próxima troca.
+   */
   function executePageScripts(container) {
+    cleanupPreviousPageListeners();
+
     const scripts = container.querySelectorAll('script');
     scripts.forEach(function (oldScript) {
+      if (oldScript.hasAttribute('data-cagp-persistent-script')) {
+        return;
+      }
+
       const newScript = document.createElement('script');
       Array.from(oldScript.attributes).forEach(function (attr) {
         newScript.setAttribute(attr.name, attr.value);
       });
       newScript.textContent = oldScript.textContent;
-      oldScript.parentNode.replaceChild(newScript, oldScript);
+
+      const immediateCallbacks = [];
+      const origDocAdd = document.addEventListener.bind(document);
+      const origWinAdd = window.addEventListener.bind(window);
+
+      document.addEventListener = function (type, listener, options) {
+        if (type === 'DOMContentLoaded' && typeof listener === 'function') {
+          immediateCallbacks.push(listener);
+          return;
+        }
+        origDocAdd(type, listener, options);
+        activePageDisposers.push(function () {
+          document.removeEventListener(type, listener, options);
+        });
+      };
+
+      window.addEventListener = function (type, listener, options) {
+        if (type === 'load' && typeof listener === 'function') {
+          immediateCallbacks.push(listener);
+          return;
+        }
+        origWinAdd(type, listener, options);
+        activePageDisposers.push(function () {
+          window.removeEventListener(type, listener, options);
+        });
+      };
+
+      try {
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+      } finally {
+        document.addEventListener = origDocAdd;
+        window.addEventListener = origWinAdd;
+      }
+
+      immediateCallbacks.forEach(function (fn) {
+        try {
+          fn(new Event('DOMContentLoaded'));
+        } catch (err) {
+          console.warn('CAGP Router: Erro ao inicializar script de página:', err);
+        }
+      });
     });
   }
 
@@ -190,50 +259,54 @@
       }
     }
 
-    // 4. Conteúdo Principal com Reinicialização de Scripts
+    // 4. Conteúdo Principal com Reinicialização Isolada de Scripts
     const currentMain = document.getElementById('quarto-document-content');
     const newMain = doc.getElementById('quarto-document-content');
     if (currentMain && newMain) {
-      // Remover componentes do Shell persistente que possam vir embutidos no HTML estático recebido,
-      // pois eles já vivem de forma soberana e persistente na raiz do <body>
-      const dupBanner = newMain.querySelector('#quarto-announcement') || newMain.querySelector('#cagp-chapa-banner');
-      if (dupBanner) dupBanner.remove();
+      const shellIdsToRemove = [
+        '#quarto-announcement',
+        '#cagp-chapa-banner',
+        '#cagp-superapp-header',
+        '#cagp-superapp-topbar',
+        '#cagp-superapp-tabbar',
+        '#cagp-live-pill-bar',
+        '#cagp-global-bottom-sheet',
+        '#cagp-global-sheet-backdrop',
+        '#cagp-settings-sheet',
+        '#cagp-settings-backdrop',
+        '#cagp-ios-sheet',
+        '#cagp-ios-backdrop',
+        '#cagp-mobile-drawer',
+        '.cagp-skip-links',
+        '#cagp-spotlight-modal',
+        '#cagp-a11y-panel',
+        '#cagp-a11y-backdrop'
+      ];
+      shellIdsToRemove.forEach(function (sel) {
+        const dup = newMain.querySelector(sel);
+        if (dup) dup.remove();
+      });
 
-      const dupHeader = newMain.querySelector('#cagp-superapp-header');
-      if (dupHeader) dupHeader.remove();
-
-      const dupTopbar = newMain.querySelector('#cagp-superapp-topbar');
-      if (dupTopbar) dupTopbar.remove();
-
-      const dupTabbar = newMain.querySelector('#cagp-superapp-tabbar');
-      if (dupTabbar) dupTabbar.remove();
-
-      const dupSettings = newMain.querySelector('#cagp-settings-sheet');
-      if (dupSettings) dupSettings.remove();
-
-      const dupBackdrop = newMain.querySelector('#cagp-settings-backdrop');
-      if (dupBackdrop) dupBackdrop.remove();
-
-      const dupDrawer = newMain.querySelector('#cagp-mobile-drawer');
-      if (dupDrawer) dupDrawer.remove();
-
-      const dupSkipLinks = newMain.querySelector('.cagp-skip-links');
-      if (dupSkipLinks) dupSkipLinks.remove();
-
-      const dupLauncher = newMain.querySelector('#cagp-app-launcher-modal');
-      if (dupLauncher) dupLauncher.remove();
-
-      // Fechar gaveta móvel ou modais abertos durante a navegação
+      // Fechar modais/sheets abertos durante a navegação
       if (window.closeCagpMobileDrawer) window.closeCagpMobileDrawer();
-      if (window.closeCagpAppLauncher) window.closeCagpAppLauncher();
       if (window.closeCagpSpotlight) window.closeCagpSpotlight();
       if (window.closeCagpAppSettings) window.closeCagpAppSettings();
+      if (window.cagpSheet && window.cagpSheet.close) window.cagpSheet.close();
 
       currentMain.innerHTML = newMain.innerHTML;
       if (window.applyCagpCampusState) {
         window.applyCagpCampusState(currentMain);
       }
       executePageScripts(currentMain);
+      if (window.cagpMountWorkspace) {
+        window.cagpMountWorkspace(currentMain);
+      }
+      if (window.cagpBindDetailsMotion) {
+        window.cagpBindDetailsMotion(currentMain);
+      }
+      if (window.cagpApplyStagger) {
+        window.cagpApplyStagger(currentMain);
+      }
     }
 
     // 5. Atualizar UI de Navegação (Navbar, Barra Móvel e Super App)
@@ -242,10 +315,15 @@
       window.updateSuperAppUI(targetUrl);
     }
 
-    // 6. Controle Suave de Rolagem
+    // 6. Controle Suave de Rolagem e Sincronização de Sub-View Workspace
+    let pathname = 'index.html';
     try {
       const url = new URL(targetUrl, window.location.href);
+      pathname = url.pathname.split('/').pop() || 'index.html';
       if (url.hash) {
+        if (window.cagpSyncWorkspaceFromHash) {
+          window.cagpSyncWorkspaceFromHash(url.hash, { container: currentMain, scroll: true });
+        }
         requestAnimationFrame(function () {
           const targetEl = findHashElement(url.hash);
           if (targetEl) {
@@ -267,19 +345,351 @@
       announcer.textContent = 'Página carregada: ' + newTitle.textContent;
     }
 
-    // 8. Disparar Eventos de Ciclo de Vida para Inicialização de Componentes
-    document.dispatchEvent(new Event('DOMContentLoaded'));
-    window.dispatchEvent(new Event('load'));
-    document.dispatchEvent(new CustomEvent('cagp:navigated', { detail: { url: targetUrl } }));
+    // 8. Disparar Eventos Canônicos de Ciclo de Vida (ZERO DOMContentLoaded global)
+    const detailPayload = { url: targetUrl, path: pathname };
+    document.dispatchEvent(new CustomEvent('cagp:page-mount', { bubbles: true, detail: detailPayload }));
+    window.dispatchEvent(new CustomEvent('cagp:page-mount', { detail: detailPayload }));
+    document.dispatchEvent(new CustomEvent('cagp:navigated', { bubbles: true, detail: detailPayload }));
+    window.dispatchEvent(new CustomEvent('cagp:navigated', { detail: detailPayload }));
   }
+
+  // =========================================================================
+  // FASE 3: MOTOR DE FÍSICA ESPACIAL, ODÔMETRO rAF, HÁPTICA, STAGGER & BARRA DE ROTA
+  // =========================================================================
+
+  const ROUTE_META = {
+    'index.html': { group: 0, depth: 0 },
+    '': { group: 0, depth: 0 },
+    'calouros.html': { group: 0, depth: 1, parent: 'index.html' },
+    'curso.html': { group: 0, depth: 1, parent: 'index.html' },
+    'pesquisa.html': { group: 0, depth: 1, parent: 'index.html' },
+    'percurso.html': { group: 1, depth: 0 },
+    'optativas.html': { group: 1, depth: 1, parent: 'percurso.html' },
+    'acg.html': { group: 2, depth: 0 },
+    'estagio.html': { group: 2, depth: 1, parent: 'acg.html' },
+    'tcc.html': { group: 2, depth: 1, parent: 'acg.html' },
+    'estagio-tcc.html': { group: 2, depth: 1, parent: 'acg.html' },
+    'documentos.html': { group: 3, depth: 0 },
+    'faq.html': { group: 3, depth: 1, parent: 'documentos.html' },
+    'mapa-do-site.html': { group: 3, depth: 1, parent: 'documentos.html' },
+    'sobre.html': { group: 4, depth: 0 },
+    'gestao.html': { group: 4, depth: 0 }
+  };
+
+  function isMotionReduced() {
+    if (window.cagpIsReducedMotion && typeof window.cagpIsReducedMotion === 'function') {
+      return window.cagpIsReducedMotion();
+    }
+    const attr = document.documentElement.getAttribute('data-a11y-motion');
+    return (
+      attr === 'reduced' ||
+      attr === 'reduce' ||
+      Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+    );
+  }
+
+  function computeNavDirection(fromUrl, toUrl, isBack, triggerAnchor) {
+    try {
+      if (triggerAnchor) {
+        if (triggerAnchor.hasAttribute('data-nav-drill-out')) {
+          return 'drill-out';
+        }
+        if (triggerAnchor.hasAttribute('data-nav-drill-in')) {
+          return 'drill-in';
+        }
+      }
+      const fromPath = new URL(fromUrl, window.location.href).pathname.split('/').pop() || 'index.html';
+      const toPath = new URL(toUrl, window.location.href).pathname.split('/').pop() || 'index.html';
+      const fm = ROUTE_META[fromPath] || { group: 0, depth: 0 };
+      const tm = ROUTE_META[toPath] || { group: 0, depth: 0 };
+
+      if (fm.group === tm.group && fm.depth !== tm.depth) {
+        return tm.depth > fm.depth ? 'drill-in' : 'drill-out';
+      }
+      if (fromPath === 'index.html' && tm.depth > 0) {
+        return 'drill-in';
+      }
+      if (fm.depth > 0 && toPath === 'index.html') {
+        return 'drill-out';
+      }
+      if (tm.group > fm.group) return 'forward';
+      if (tm.group < fm.group) return 'backward';
+      return isBack ? 'backward' : 'forward';
+    } catch (e) {
+      return isBack ? 'backward' : 'forward';
+    }
+  }
+
+  // Barra Superior de Carregamento de Rota (#cagp-route-progress-bar, z-index: 1020)
+  let routeProgressEl = null;
+  let routeProgressFill = null;
+  let routeProgressTimer = null;
+
+  function ensureRouteProgressBar() {
+    if (routeProgressEl && document.body.contains(routeProgressEl)) return routeProgressEl;
+    routeProgressEl = document.getElementById('cagp-route-progress-bar');
+    if (!routeProgressEl) {
+      routeProgressEl = document.createElement('div');
+      routeProgressEl.id = 'cagp-route-progress-bar';
+      routeProgressEl.className = 'cagp-route-progress-bar';
+      routeProgressEl.setAttribute('aria-hidden', 'true');
+      routeProgressEl.innerHTML = '<div class="cagp-route-progress-fill"></div>';
+      if (document.body) {
+        document.body.prepend(routeProgressEl);
+      }
+    }
+    routeProgressFill = routeProgressEl.querySelector('.cagp-route-progress-fill');
+    return routeProgressEl;
+  }
+
+  window.cagpRouteProgress = {
+    start: function () {
+      ensureRouteProgressBar();
+      clearTimeout(routeProgressTimer);
+      routeProgressEl.classList.add('is-active');
+      if (routeProgressFill) {
+        routeProgressFill.style.width = '18%';
+        requestAnimationFrame(function () {
+          if (routeProgressFill) routeProgressFill.style.width = '76%';
+        });
+      }
+    },
+    finish: function () {
+      ensureRouteProgressBar();
+      clearTimeout(routeProgressTimer);
+      if (routeProgressFill) {
+        routeProgressFill.style.width = '100%';
+      }
+      routeProgressTimer = setTimeout(function () {
+        if (routeProgressEl) routeProgressEl.classList.remove('is-active');
+        setTimeout(function () {
+          if (routeProgressFill && (!routeProgressEl || !routeProgressEl.classList.contains('is-active'))) {
+            routeProgressFill.style.width = '0%';
+          }
+        }, 180);
+      }, 160);
+    }
+  };
+
+  // Feedback Tátil (Web Vibration API)
+  window.cagpHaptic = function (pattern) {
+    try {
+      if (isMotionReduced()) return false;
+      if (navigator && typeof navigator.vibrate === 'function') {
+        return navigator.vibrate(pattern || 8);
+      }
+    } catch (e) {}
+    return false;
+  };
+
+  // Odômetro Numérico a 60/120fps via requestAnimationFrame (280ms)
+  window.cagpAnimateNumber = function (el, targetVal, opts) {
+    if (!el) return;
+    const options = opts || {};
+    const endNum = Number(targetVal) || 0;
+    const prefix = options.prefix || '';
+    const suffix = options.suffix || '';
+    const decimals = typeof options.decimals === 'number' ? options.decimals : 0;
+    const duration = typeof options.duration === 'number' ? options.duration : 280;
+    const formatFn = typeof options.formatter === 'function'
+      ? options.formatter
+      : function (n) {
+          const rounded = decimals > 0 ? n.toFixed(decimals) : String(Math.round(n));
+          return prefix + rounded + suffix;
+        };
+
+    if (el._cagpRafId) {
+      cancelAnimationFrame(el._cagpRafId);
+      el._cagpRafId = null;
+    }
+
+    let startNum = typeof el._cagpNumCurrent === 'number' ? el._cagpNumCurrent : null;
+    if (startNum === null) {
+      const m = (el.textContent || '').match(/-?\d+(?:[.,]\d+)?/);
+      startNum = m ? parseFloat(m[0].replace(',', '.')) : endNum;
+    }
+
+    if (isMotionReduced() || Math.abs(endNum - startNum) < 0.01 || duration <= 0) {
+      el._cagpNumCurrent = endNum;
+      el.textContent = formatFn(endNum);
+      return;
+    }
+
+    const startTime = performance.now();
+    el.classList.add('is-rolling-number');
+
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / duration);
+      // Curva de desaceleração natural cubic-out: 1 - (1 - t)^3
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = startNum + (endNum - startNum) * eased;
+      el._cagpNumCurrent = current;
+      el.textContent = formatFn(current);
+
+      if (progress < 1) {
+        el._cagpRafId = requestAnimationFrame(tick);
+      } else {
+        el._cagpNumCurrent = endNum;
+        el.textContent = formatFn(endNum);
+        el._cagpRafId = null;
+        el.classList.remove('is-rolling-number');
+      }
+    }
+
+    el._cagpRafId = requestAnimationFrame(tick);
+  };
+
+  // Pulso Tátil em Barras de Progresso ao atingir 100%
+  window.cagpPulseProgress = function (fillEl, pct) {
+    if (!fillEl) return;
+    const clamped = Math.max(0, Math.min(100, Number(pct) || 0));
+    const wasComplete = fillEl.getAttribute('data-was-100') === 'true';
+    fillEl.style.width = clamped + '%';
+
+    if (clamped >= 100) {
+      fillEl.setAttribute('data-was-100', 'true');
+      if (!wasComplete && !isMotionReduced()) {
+        fillEl.classList.remove('is-pulse-100');
+        void fillEl.offsetWidth;
+        fillEl.classList.add('is-pulse-100');
+        window.cagpHaptic([8, 24, 12]);
+        setTimeout(function () {
+          fillEl.classList.remove('is-pulse-100');
+        }, 560);
+      }
+    } else {
+      fillEl.setAttribute('data-was-100', 'false');
+      fillEl.classList.remove('is-pulse-100');
+    }
+  };
+
+  // Coreografia de Entrada Escalonada (Staggered Reveal — máx. 8 primeiros itens visíveis)
+  window.cagpApplyStagger = function (rootContainer) {
+    if (isMotionReduced()) return;
+    const container = rootContainer || document.getElementById('quarto-document-content') || document;
+    const candidates = Array.from(
+      container.querySelectorAll(
+        '.cagp-passport-card, .cagp-bento-card, .cagp-card, .cagp-tool-box, .cagp-calc-row, .cagp-120d-item, .cagp-timeline-step, .cagp-doc-card'
+      )
+    );
+    const visible = [];
+    for (let i = 0; i < candidates.length; i++) {
+      const el = candidates[i];
+      if (el.closest('[hidden]')) continue;
+      if (el.offsetParent === null) continue;
+      visible.push(el);
+      if (visible.length >= 8) break;
+    }
+
+    visible.forEach(function (el, idx) {
+      el.style.setProperty('--stagger-index', String(idx));
+      el.classList.remove('cagp-stagger-enter');
+      void el.offsetWidth;
+      el.classList.add('cagp-stagger-enter');
+      const cleanupDelay = 360 + idx * 35;
+      setTimeout(function () {
+        el.classList.remove('cagp-stagger-enter');
+        el.style.removeProperty('--stagger-index');
+      }, cleanupDelay);
+    });
+  };
+
+  // Interpolação Fluida de Altura em Acordeões (<details class="cagp-discipline" / "cagp-faq-item">)
+  window.cagpBindDetailsMotion = function (rootContainer) {
+    const container = rootContainer || document.getElementById('quarto-document-content') || document;
+    const detailsList = container.querySelectorAll('details.cagp-discipline, details.cagp-faq-item');
+    detailsList.forEach(function (details) {
+      if (details.getAttribute('data-cagp-motion-bound') === 'true') return;
+      const summary = details.querySelector('summary');
+      const body = details.querySelector('.cagp-discipline-body, .cagp-faq-body');
+      if (!summary || !body) return;
+      details.setAttribute('data-cagp-motion-bound', 'true');
+
+      summary.addEventListener('click', function (e) {
+        // Ignorar cliques em botões de ação dentro do summary (ex: Minha Grade)
+        if (e.target && e.target.closest && e.target.closest('button, a, .cagp-disc-actions')) {
+          return;
+        }
+        if (isMotionReduced() || typeof body.animate !== 'function') {
+          return;
+        }
+
+        e.preventDefault();
+        window.cagpHaptic(6);
+
+        if (details._cagpAnim) {
+          details._cagpAnim.cancel();
+          details._cagpAnim = null;
+        }
+
+        const isClosing = details.hasAttribute('open');
+        if (isClosing) {
+          details.classList.add('is-closing');
+          const startHeight = body.offsetHeight;
+          body.style.overflow = 'hidden';
+          const anim = body.animate(
+            [
+              { height: startHeight + 'px', opacity: 1 },
+              { height: '0px', opacity: 0 }
+            ],
+            { duration: 240, easing: 'cubic-bezier(0.27, 1.06, 0.18, 1)' }
+          );
+          details._cagpAnim = anim;
+          anim.onfinish = function () {
+            details.removeAttribute('open');
+            details.classList.remove('is-closing');
+            body.style.height = '';
+            body.style.overflow = '';
+            details._cagpAnim = null;
+          };
+          anim.oncancel = function () {
+            details.classList.remove('is-closing');
+            body.style.height = '';
+            body.style.overflow = '';
+            details._cagpAnim = null;
+          };
+        } else {
+          details.setAttribute('open', '');
+          const endHeight = body.offsetHeight;
+          body.style.overflow = 'hidden';
+          const anim = body.animate(
+            [
+              { height: '0px', opacity: 0 },
+              { height: endHeight + 'px', opacity: 1 }
+            ],
+            { duration: 280, easing: 'cubic-bezier(0.27, 1.06, 0.18, 1)' }
+          );
+          details._cagpAnim = anim;
+          anim.onfinish = function () {
+            body.style.height = '';
+            body.style.overflow = '';
+            details._cagpAnim = null;
+          };
+          anim.oncancel = function () {
+            body.style.height = '';
+            body.style.overflow = '';
+            details._cagpAnim = null;
+          };
+        }
+      });
+    });
+  };
 
   function showSkeleton(container) {
     if (!container) return;
-    container.innerHTML = 
+    container.innerHTML =
       '<div class="cagp-skeleton-container" aria-busy="true" aria-label="Carregando conteúdo...">' +
-        '<div class="cagp-skeleton-header cagp-shimmer"></div>' +
-        '<div class="cagp-skeleton-line cagp-skeleton-title cagp-shimmer"></div>' +
-        '<div class="cagp-skeleton-line cagp-skeleton-sub cagp-shimmer"></div>' +
+        '<div class="cagp-skeleton-workspace-bar">' +
+          '<div class="cagp-skeleton-eyebrow cagp-shimmer"></div>' +
+          '<div class="cagp-skeleton-line cagp-skeleton-title cagp-shimmer"></div>' +
+          '<div class="cagp-skeleton-line cagp-skeleton-sub cagp-shimmer"></div>' +
+          '<div class="cagp-skeleton-pills">' +
+            '<div class="cagp-skeleton-pill cagp-shimmer"></div>' +
+            '<div class="cagp-skeleton-pill cagp-shimmer"></div>' +
+            '<div class="cagp-skeleton-pill cagp-shimmer"></div>' +
+          '</div>' +
+        '</div>' +
         '<div class="cagp-skeleton-grid">' +
           '<div class="cagp-skeleton-card cagp-shimmer"></div>' +
           '<div class="cagp-skeleton-card cagp-shimmer"></div>' +
@@ -288,84 +698,116 @@
       '</div>';
   }
 
-  async function navigate(targetUrl, isBack) {
+  async function navigate(targetUrl, isBack, triggerAnchor) {
     try {
+      const fromUrl = window.location.href;
+      const resolvedUrl = new URL(targetUrl, fromUrl).href;
+      const navDir = computeNavDirection(fromUrl, resolvedUrl, Boolean(isBack), triggerAnchor);
       const mainEl = document.getElementById('quarto-document-content');
+
+      document.documentElement.setAttribute('data-nav-dir', navDir);
+      if (mainEl) mainEl.setAttribute('data-nav-dir', navDir);
+
+      window.cagpRouteProgress.start();
+
       let skeletonTimer = null;
-      if (!cache.has(targetUrl) && mainEl) {
+      if (!cache.has(resolvedUrl) && mainEl) {
         skeletonTimer = setTimeout(function () {
           showSkeleton(mainEl);
         }, 80);
       }
 
-      const html = await loadPage(targetUrl);
+      const html = await loadPage(resolvedUrl);
       clearTimeout(skeletonTimer);
 
       const parser = new DOMParser();
       const newDoc = parser.parseFromString(html, 'text/html');
 
       if (!isBack) {
-        history.pushState({ url: targetUrl }, '', targetUrl);
+        history.pushState({ url: resolvedUrl, dir: navDir }, '', resolvedUrl);
       }
 
-      // Se o navegador suporta a View Transitions API nativa da Web
-      if (document.startViewTransition) {
-        document.startViewTransition(function () {
-          applyPageSwap(newDoc, targetUrl);
+      const prefersReducedMotion = isMotionReduced();
+
+      if (document.startViewTransition && !prefersReducedMotion) {
+        const vt = document.startViewTransition(function () {
+          applyPageSwap(newDoc, resolvedUrl);
         });
-      } else if (mainEl) {
-        // Fallback suave com animação CSS fluida
+        if (vt && vt.updateCallbackDone) {
+          await vt.updateCallbackDone;
+        }
+      } else if (mainEl && !prefersReducedMotion) {
         mainEl.classList.add('cagp-page-leaving');
-        setTimeout(function () {
-          applyPageSwap(newDoc, targetUrl);
-          mainEl.classList.remove('cagp-page-leaving');
-          mainEl.classList.add('cagp-page-entering');
+        await new Promise(function (resolve) {
           setTimeout(function () {
-            mainEl.classList.remove('cagp-page-entering');
-          }, 280);
-        }, 120);
+            applyPageSwap(newDoc, resolvedUrl);
+            mainEl.classList.remove('cagp-page-leaving');
+            mainEl.classList.add('cagp-page-entering');
+            setTimeout(function () {
+              mainEl.classList.remove('cagp-page-entering');
+            }, 240);
+            resolve();
+          }, 90);
+        });
       } else {
-        applyPageSwap(newDoc, targetUrl);
+        applyPageSwap(newDoc, resolvedUrl);
       }
+
+      window.cagpRouteProgress.finish();
     } catch (err) {
+      window.cagpRouteProgress.finish();
       console.warn('CAGP Super App Router: Fallback para navegação tradicional:', err);
       window.location.href = targetUrl;
     }
   }
 
-  // Interceptar cliques em links internos para navegação fluida SPA
   document.addEventListener('click', function (e) {
-    // Permitir comportamento padrão do navegador com modificadores
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     if (e.defaultPrevented) return;
 
-    const anchor = e.target.closest('a');
+    const anchor = e.target && e.target.closest ? e.target.closest('a') : null;
     if (!anchor || !isInternalLink(anchor)) return;
 
     try {
       const url = new URL(anchor.href, window.location.href);
-
-      // Se for apenas âncora (#) na mesma página, deixa rolagem natural
       if (url.pathname === window.location.pathname && url.hash) {
+        if (window.cagpSyncWorkspaceFromHash) {
+          window.cagpSyncWorkspaceFromHash(url.hash, { scroll: true });
+        }
         return;
       }
-
       e.preventDefault();
-      navigate(anchor.href, false);
-    } catch (err) {
-      // Falha de URL, segue fluxo padrão
-    }
+      window.cagpHaptic(6);
+      navigate(anchor.href, false, anchor);
+    } catch (err) {}
   });
 
-  // Histórico do navegador (botão Voltar e Avançar)
   window.addEventListener('popstate', function () {
-    navigate(window.location.href, true);
+    navigate(window.location.href, true, null);
   });
 
-  // Expor API global do Super App
+  function initKineticCurrentPage() {
+    ensureRouteProgressBar();
+    const mainEl = document.getElementById('quarto-document-content');
+    if (mainEl) {
+      window.cagpBindDetailsMotion(mainEl);
+      window.cagpApplyStagger(mainEl);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initKineticCurrentPage, { once: true });
+  } else {
+    initKineticCurrentPage();
+  }
+
   window.cagpRouter = {
     navigate: navigate,
-    prefetch: prefetch
+    prefetch: prefetch,
+    computeNavDirection: computeNavDirection
+  };
+  window.cagpNavigate = function (url) {
+    return navigate(url, false, null);
   };
 })();
 </script>
