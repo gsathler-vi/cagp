@@ -20,11 +20,11 @@ Portal oficial e **Super App Discente (PWA Offline-First)** do **Centro Acadêmi
 | [`calouros.qmd`](calouros.qmd) | `calouros.html` | **Workspace de Sobrevivência Noturna:** Sub-Views para Checklist interativo de 30 dias (6 passos), logística do jantar no RU Setorial II (`18h15`), Circulares Noturnos (`22h30`/`23h05`), FUMP/PRAE/NAI, MinhaUFMG e App Siga. |
 | [`percurso.qmd`](percurso.qmd) | `percurso.html` | **Workspace do Percurso Curricular (10 Semestres):** Sub-Views para Grafo SVG/DAG interativo de pré-requisitos (destacando a trava formal `ECN 140 -> ECN 044` e o período atual do aluno), Linha do Tempo das **27 obrigatórias** sincronizada com *Minha Grade* e Simulador Vocacional (`01-01`, `01-02`, `01-03`). |
 | [`optativas.qmd`](optativas.qmd) | `optativas.html` | **Catálogo das 68 Optativas & Formação Livre (120h):** Explorador pesquisável e filtrável por departamento (`DCP`, `ECN`, `SOA`, `EST`, `DEM`, `CIC`, `LET`) sincronizado com *Minha Grade* + guia das `120h` de Formação Livre. |
-| [`acg.qmd`](acg.qmd) | `acg.html` | **Workspace 600h (Extensão + AAC):** Sub-Views para Calculadora Interativa de **300h de Extensão Obrigatória** + **300h de AAC (Art. 15)** com odômetro `rAF`, **Guardião do Prazo Fatal de 120 Dias Corridos** (Art. 15, § 4º), Tabela das 9 Modalidades e **Gerador de Espelho Oficial N-20229** com impressão A4. |
+| [`acg.qmd`](acg.qmd) | `acg.html` | **Workspace 600h (Extensão + AAC):** Sub-Views para Calculadora Interativa de **300h de Extensão Obrigatória** + **300h de AAC (Art. 15)** com odômetro `rAF`, **Guardião do Prazo Fatal de 120 Dias Corridos** (Art. 15, § 4º), Tabela das 9 Modalidades e **Acesso aos Formulários Oficiais N-20229 Autênticos (PDF/DOCX)** da Sala F-2039. |
 | [`estagio.qmd`](estagio.qmd) | `estagio.html` | **Workspace de Estágio Supervisionado (`300h`) & Art. 41:** Regras de Estágio A (`DCP 135`, 180h) e B (`DCP 136`, 120h), Simulador e Checklist persistente de **Dispensa por Atuação Profissional (Art. 41)** e tutorial anotado do TCE. |
 | [`tcc.qmd`](tcc.qmd) | `tcc.html` | **Trabalho de Conclusão de Curso (`180h`):** Elaboração (`DCP 089`, 60h) e Defesa (`DCP 137`, 120h), as **4 modalidades oficiais de TCC** (Art. 26) e download do Termo de Aceite de Orientador. |
 | [`estagio-tcc.qmd`](estagio-tcc.qmd) | `estagio-tcc.html` | **Ponte de Compatibilidade Regimental:** Redireciona instantaneamente links e `#hash` legados para `estagio.html` ou `tcc.html`. |
-| [`documentos.qmd`](documentos.qmd) | `documentos.html` | **Workspace de Normas & Cofre Offline:** Sub-Views para o **Cofre Offline de 8 PDFs Essenciais** via `CacheStorage`, Central de Formulários Administrativos (+80 PDFs e DOCXs) e tutorial de requerimento DRCA. |
+| [`documentos.qmd`](documentos.qmd) | `documentos.html` | **Workspace de Normas & Cofre Offline:** Sub-Views para o **Cofre Offline de 9 PDFs Oficiais Essenciais** via `CacheStorage`, Central de Formulários Administrativos (+80 PDFs e DOCXs) e tutorial de requerimento DRCA. |
 | [`faq.qmd`](faq.qmd) | `faq.html` | **Central Resolutiva de Dúvidas (FAQ):** Base regimental pesquisável com filtros por categoria e compartilhamento direto (`Web Share API`). |
 | [`sobre.qmd`](sobre.qmd) | `sobre.html` | **Identidade Perpétua do CAGP:** Regimento Interno (`14/10/2024`), Assembleia Geral, Junta Eleitoral, 7 Diretorias Estatutárias, Colegiado/NDE, representação tripartite CAGP/DA/DCE e história d'*Os Candangos* (Bruno Giorgi). |
 | [`gestao.qmd`](gestao.qmd) | `gestao.html` | **Gestão em Exercício & Transparência:** Organograma das 7 Diretorias e 6 Comissões, instrumentos de transparência ativa (RREO mensal, acesso em até 3 dias úteis — Art. 15, V) e ouvidoria discente. |
@@ -40,8 +40,8 @@ Portal oficial e **Super App Discente (PWA Offline-First)** do **Centro Acadêmi
 2. **Sistema Híbrido de Notificações & Guardião de 120 Dias (`Notifications API` + `Service Worker` + `Badging API` + `.ics`):**
    - Alertas configuráveis para o **Jantar no RU II (`18h15`)**, **Último Circular Noturno (`22h30`)** e **Prazo Fatal de 120 Dias das AAC**.
    - Contagem regressiva automática dos **120 dias corridos (Art. 15, § 4º)** em `acg.qmd#guardiao-120-dias` com carimbos brutais (**Verde `> 30d`**, **Âmbar `<= 30d`**, **Vermelho Crítico `<= 10d` / Vencido**) e `navigator.setAppBadge`.
-3. **Gerador de Espelho Oficial para o Requerimento N-20229 (`acg.qmd`):**
-   - Converte automaticamente as horas simuladas em créditos (`15h = 1 crédito`) respeitando os tetos regimentais, pré-preenche o cabeçalho com os dados do Passaporte Acadêmico, monta a ficha oficial no `#cagp-global-bottom-sheet` e em folha A4 (`@media print`) e gera o texto pronto para o SEI.
+3. **Acesso Direto e Rápido aos Formulários Oficiais N-20229 (`acg.qmd`):**
+   - Integração com os formulários autênticos da Secretaria do Curso (Sala F-2039) em PDF local no acervo e DOCX oficial para download, com texto explicativo e instruções diretas de protocolo via SEI/UFMG sem inventar ou truncar formulários.
 4. **"Meu CAGP Sync" — Backup e Portabilidade Zero-Servidor (9 Chaves Canônicas):**
    - Exportação e restauração completa entre PC e celular via arquivo `.json` (`meu-cagp-backup-YYYY-MM-DD.json`) ou código compacto Base64 (`CAGP1:...`), sincronizando as **9 chaves canônicas do `localStorage`**:
      - `cagp_calc_ext_aac_v1` (Calculadora 600h)
@@ -85,3 +85,20 @@ python3 -m http.server 8765 --directory docs --bind 127.0.0.1
 ## 5. Publicação no GitHub Pages
 
 O GitHub Pages serve diretamente a pasta `/docs` da branch `main` (**Settings → Pages → Deploy from a branch → `main` / `/docs`**). Após executar a Tríade Oficial de Verificação sem erros, basta commitar as alterações (incluindo `docs/`) e realizar `git push`.
+
+---
+
+## 6. Verificação e Auditoria (Matriz Global 152 Células & Homologação dos Gates G0 a G4)
+
+O Super App CAGP passou pelo ciclo mais rigoroso de auditoria automatizada e validação humana documentado em [`AGENTS.md`](AGENTS.md) e [`_designs/plano_mestre_superapp_cagp.md`](_designs/plano_mestre_superapp_cagp.md):
+
+1. **Matriz Multiformato Global (152 Células Testadas e 100% Aprovadas):**
+   - **Camada A (60 células):** 15 rotas testadas em 4 viewports canônicos (`360×640`, `412×915`, `768×1024`, `1440×900`).
+   - **Camada B (32 células):** Páginas interativas sob estresse de acessibilidade (alto contraste AAA, fonte ampliada XL, dislexia, movimento reduzido, tema escuro e impressão).
+   - **Camada C (60 células):** As 4 rotas do core discente (`index`, `acg`, `documentos`, `percurso`) auditadas em 15 dimensões multiformato (incluindo foldables `280px` e `700px`, zoom de 200%, navegação estrita por teclado, PWA standalone e modo avião offline).
+   - **Resultados:** `M1` (zero transbordamento horizontal) = **152/152 Aprovados**; `M2` (controle segmentado sem rolagem) = **152/152 Aprovados**; `M5` (exatamente um H1 por página) = **152/152 Aprovados**; `M6` (zero erros de runtime no console) = **152/152 Aprovados**.
+2. **Homologação em Hardware Real — Checklist Humano (Anexo C):**
+   - **C1 a C7 100% Homologados:** WebViews in-app (WhatsApp/Instagram), Leitores de Tela nativos (TalkBack/VoiceOver com hierarquia semântica e roving tabindex), PWA Standalone em Modo Avião com Service Worker `cagp-pwa-v6`, telas dobráveis Galaxy Z Fold, gestos nativos de voltar do SO sem conflito com swipes, caneta Stylus em telas `@3x` retina e cartões ricos Open Graph/Twitter.
+3. **Cadeia Formal de Gates (G0 a G4):**
+   - Registro permanente em [`_designs/evidencias_v2/gates.md`](_designs/evidencias_v2/gates.md) atestando que nenhuma regra regimental, ementa ou carga horária foi inventada ou suprimida (149/149 fatos íntegros verificados via script estático).
+   - Relatório Final Interativo com mapa de calor completo acessível nos artefatos da plataforma.
