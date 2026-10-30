@@ -67,9 +67,9 @@ toc: false
 ```
 
 ## <i class="bi bi-collection" aria-hidden="true"></i> Catálogo de Disciplinas Optativas & Ementas {#disciplinas-optativas}
-<span id="catalogo-optativas" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 ```{=html}
+<span id="catalogo-optativas" class="cagp-anchor-alias" aria-hidden="true"></span>
 <section class="cagp-optatives-explorer my-2" aria-labelledby="opt-heading">
   <div class="cagp-tool-box mb-4">
     <div class="cagp-tool-header d-flex flex-wrap align-items-center justify-content-between gap-2">

@@ -198,7 +198,7 @@ Conforme o **Parágrafo Único do Art. 19**, o estudante pode optar pelo formato
         <i class="bi bi-file-earmark-pdf-fill me-1" aria-hidden="true"></i> Baixar Termo de Aceite (PDF)
       </a>
       <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/TERMO-DE-ACEITE-ORIENTADOR-TCC.docx" target="_blank" rel="noopener noreferrer" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-3">
-        <i class="bi bi-file-earmark-word me-1" aria-hidden="true"></i> Versão Editável (DOCX)
+        <i class="bi bi-file-earmark-word me-1" aria-hidden="true"></i> Versão Editável (DOCX — requer internet)
       </a>
     </div>
   </div>

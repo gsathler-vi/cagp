@@ -126,3 +126,46 @@
   - `passo0.sh` executado com exit code 0 (55/55 skills válidas).
   - `check_fatos.sh` executado com exit code 0 (149/149 fatos preservados).
 - **Homologação:** **GATE G3a HOMOLOGADO COM SUCESSO.** Autorizada a transição para a Onda 3b (Demais 11 Rotas Acadêmicas e Institucionais).
+
+---
+
+## Gate G3b: Onda 3b (Demais 11 Rotas Acadêmicas e Institucionais)
+
+- **Status:** **APROVADO (HOMOLOGADO)**
+- **Data/Hora:** 2026-10-30T02:44:00Z
+- **Branch:** `plano-v2-execucao`
+- **Rotas Acadêmicas e Institucionais Auditadas:**
+  - `estagio.qmd` (A2 Ferramenta, Eixo 3)
+  - `optativas.qmd` (A3 Catálogo, Eixo 3)
+  - `mapa-do-site.qmd` (A3 Catálogo, Eixo 4)
+  - `curso.qmd` (A4 Guia, Eixo 2)
+  - `calouros.qmd` (A4 Guia, Eixo 2)
+  - `pesquisa.qmd` (A4 Guia, Eixo 2)
+  - `tcc.qmd` (A4 Guia, Eixo 3)
+  - `faq.qmd` (A4 Guia, Eixo 4)
+  - `sobre.qmd` (A4 Guia, Eixo 5)
+  - `gestao.qmd` (A4 Guia, Eixo 5)
+  - `estagio-tcc.qmd` (A5 Hub Legado)
+- **Entregas Canônicas Validadas:**
+  - **Padronização Numérica Global:** Textos informativos padronizados para "9 PDFs oficiais essenciais" em `documentos.qmd`, `index.qmd`, `mapa-do-site.qmd`, `super-app-header.html`, `spotlight-search.html` e `pwa-install.html`.
+  - **`estagio.qmd`:** Simulador Art. 41 ativo com primeiro controle em `y = 299px` (≤ 300px); tutorial TCE em `<details>` e links para modelos autênticos em `documentos/`.
+  - **`optativas.qmd`:** 68 disciplinas em `<details>` recolhidos; filtro e busca no topo; grid responsivo `#optatives-container` implementado em 1 coluna (`< 768px`), 2 colunas (`>= 768px`) e 3 colunas (`>= 1280px`).
+  - **`mapa-do-site.qmd`:** Árvore estática baseada em `CAGP_TAXONOMY_V1` com 1º link em `y = 251px` (≤ 300px); contagem de 14 páginas conferida.
+  - **`calouros.qmd`:** Checklist de sobrevivência de 30 dias na 1ª dobra em `y = 299px` (≤ 300px / ≤ 340px); iframes dos 6 tutoriais com `loading="lazy"`; links diretos de discagem `href="tel:..."` nos telefones da secretaria, FUMP e NAI.
+  - **`pesquisa.qmd`:** Catálogo dos 11 núcleos em 1 coluna no mobile (`col-md-6 col-lg-4`); link da Iniciação Científica (90h AAC) apontando para `acg.html#calculadora-horas`.
+  - **`tcc.qmd`:** Termo de Aceite com link para PDF local autêntico e versão DOCX externa rotulada com "(requer internet)".
+  - **`faq.qmd`:** Questões regimentais em `<details>`; âncora fixa `faq.html#acessibilidade` preservada e sincronizada com a sub-view 2.
+  - **`sobre.qmd`:** Artigos estatutários 1º–8º e 20–45 integrais preservados em `<details>` com sumários concisos.
+  - **`gestao.qmd`:** Organograma funcional das 7 diretorias; compromisso estatutário de transparência e acesso discente às contas/RREO em até 3 dias úteis.
+  - **`estagio-tcc.qmd`:** Hub legado preservado com `<meta name="robots" content="noindex">` e direcionamento por âncora.
+  - **Tabelas Contidas:** Regras `.table-responsive, .cagp-table-wrapper` com `overflow-x: auto !important` garantindo contenção estrita sem transbordamento da viewport.
+- **Auditoria Empírica (76 Células: 44 Camada A + 32 Camada B):**
+  - Registrado em `_designs/evidencias_v2/fase3/findings_3b.jsonl`: 76/76 células aprovadas (100% de aprovação).
+  - Camada A das 11 rotas restantes: 44 células (`A005`–`A016`, `A021`–`A024`, `A029`–`A036`, `A041`–`A060`) 100% aprovadas.
+  - Camada B completa: 32 células (`B001`–`B032`) cobrindo `calouros`, `faq`, `estagio` e `optativas` sob condições de estresse 100% aprovadas.
+  - Critérios de saída: `M1 = true` (sem transbordamento horizontal), `M2 = true` (segmented control sem rolagem), `M5 = 1` (exatamente 1 H1 semântico), `M6 = 0` (zero erros de console).
+- **Compilação e Fatos:**
+  - `quarto render` executado com exit code 0 nas 15 rotas.
+  - `passo0.sh` executado com exit code 0 (55/55 skills válidas).
+  - `check_fatos.sh` executado com exit code 0 (149/149 fatos preservados).
+- **Homologação:** **GATE G3b HOMOLOGADO COM SUCESSO.** Fase 3 integralmente concluída (Ondas 3a + 3b). Autorizada a transição para a Fase 4 (Auditoria Final, Relatório Interativo e Documentação).

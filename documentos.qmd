@@ -29,11 +29,11 @@ toc: false
     <div class="cagp-workspace-badges">
       <span class="cagp-badge cagp-badge-red">Acervo Oficial FAFICH/UFMG</span>
       <span class="cagp-badge cagp-badge-dark">Versão Curricular N-20229</span>
-      <span class="cagp-badge cagp-badge-blue">8 PDFs Offline + 17 Modelos</span>
+      <span class="cagp-badge cagp-badge-blue">9 PDFs Offline + 17 Modelos</span>
     </div>
   </div>
   <h1 class="cagp-workspace-title">REPOSITÓRIO NORMATIVO DE GESTÃO PÚBLICA</h1>
-  <p class="cagp-workspace-subtitle">Cofre Offline dos 8 PDFs normativos essenciais (PPC 2020, Regulamento N-20229, Ementário, 3 Percursos, Termo de TCC e Regimento CAGP), formulários editáveis em PDF/DOCX e tutorial do DRCA.</p>
+  <p class="cagp-workspace-subtitle">Cofre Offline dos 9 PDFs normativos essenciais (PPC 2020, Regulamento N-20229, Ementário, 3 Percursos, Termo de TCC, Regimento CAGP e Requerimento N-20229), formulários editáveis em PDF/DOCX e tutorial do DRCA.</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar categorias de Documentos">
     <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">

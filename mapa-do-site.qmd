@@ -45,7 +45,7 @@ toc: false
         <i class="bi bi-search me-1" aria-hidden="true"></i> Spotlight (⌘K)
       </button>
       <a href="documentos.html" class="cagp-doc-btn cagp-doc-btn-primary">
-        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> 8 PDFs Oficiais &rarr;
+        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> 9 PDFs Oficiais &rarr;
       </a>
     </div>
   </div>
@@ -283,7 +283,7 @@ toc: false
         <a href="documentos.html" class="cagp-sitemap-item-link">
           <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> 10. Documentos &amp; Formulários Oficiais
         </a>
-        <p class="small text-muted mb-1">Cofre Offline com 8 PDFs normativos oficiais, requerimentos administrativos da FAFICH (DOCX/PDF) e tutorial de peticionamento DRCA/SEI.</p>
+        <p class="small text-muted mb-1">Cofre Offline com 9 PDFs normativos oficiais essenciais, requerimentos administrativos da FAFICH (DOCX/PDF) e tutorial de peticionamento DRCA/SEI.</p>
         <div class="cagp-sitemap-sublinks">
           <a href="documentos.html#atos-curso" class="cagp-sitemap-tag">PPC &amp; Regulamento</a>
           <a href="documentos.html#matrizes-percursos" class="cagp-sitemap-tag">Matrizes dos 3 Percursos</a>
@@ -465,7 +465,7 @@ Acesso direto às ferramentas interativas, normativas e rotinas operacionais mai
           <div class="cagp-journey-dir">Próximo Passo &rarr;</div>
           <div class="cagp-journey-title">Documentos &amp; Formulários Oficiais</div>
         </div>
-        <p class="cagp-journey-desc">Acesse e baixe os 8 PDFs normativos do curso e os requerimentos administrativos.</p>
+        <p class="cagp-journey-desc">Acesse e baixe os 9 PDFs normativos oficiais do curso e os requerimentos administrativos.</p>
       </a>
     </div>
   </div>

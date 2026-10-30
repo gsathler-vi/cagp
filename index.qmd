@@ -815,7 +815,7 @@ title-block-style: none
       </div>
       <div>
         <h3 class="cagp-microapp-title">Central de Normas</h3>
-        <p class="cagp-microapp-desc">8 PDFs oficiais, formulários e protocolo SEI.</p>
+        <p class="cagp-microapp-desc">9 PDFs oficiais essenciais, formulários e protocolo SEI.</p>
       </div>
     </a>
 
