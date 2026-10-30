@@ -1948,11 +1948,11 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
       // When filtering by category or search query, ensure matching workspace views are visible
       if (q || activeCat !== 'all') {
         if (activeCat === 'formulario' || activeCat === 'estagio') {
-          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView('v2', { scroll: false });
+          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView('v2');
         } else if (activeCat === 'normativo' || activeCat === 'percurso') {
-          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView('v1', { scroll: false });
+          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView('v1');
         } else {
-          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView('__all__', { scroll: false });
+          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView('__all__');
         }
       }
 

@@ -94,3 +94,35 @@
   - `passo0.sh` executado com exit code 0 (55/55 skills válidas).
   - `check_fatos.sh` executado com exit code 0 (149/149 fatos preservados).
 - **Homologação:** **GATE G2 HOMOLOGADO COM SUCESSO.** Pronto para início da Fase 3.
+
+---
+
+## Gate G3a: Onda 3a (Rotas Críticas do Core Discente)
+
+- **Status:** **APROVADO (HOMOLOGADO)**
+- **Data/Hora:** 2026-10-30T02:32:00Z
+- **Branch:** `plano-v2-execucao`
+- **Rotas Core Discente Auditadas:**
+  - `index.qmd` (A1 Hub, Eixo 1)
+  - `acg.qmd` (A2 Ferramenta, Eixo 3)
+  - `documentos.qmd` (A3 Catálogo, Eixo 4)
+  - `percurso.qmd` (A2 Ferramenta, Eixo 3)
+- **Entregas Canônicas Validadas:**
+  - **`acg.qmd`:** Remoção total e definitiva do espelho N-20229 legada confirmada (zero menções a `#cagp-n20229-print-sheet`); HUD linear compacto de 64px ativo (`#cagp-calc-hud-linear`); links diretos aos formulários oficiais autênticos em PDF local (`documentos/requerimento-atividade-integralizadora-credito-v20229.pdf`) e DOCX externo consolidados na Aba 3; limpeza de listeners no evento `cagp:navigated`.
+  - **`documentos.qmd`:** Faixa inline de status offline (`#cagp-offline-status-strip`, 44px) consolidada no topo; filtro de busca ajustado para invocar `cagpActivateWorkspaceView('v2')`, `'v1'` e `'__all__'` sem o argumento quebrado `{ scroll: false }`; botões do `.cagp-chip-rail` protegidos contra quebra vertical de texto com `white-space: nowrap !important` e `flex: 0 0 auto !important`.
+  - **`percurso.qmd`:** Callout regimental de 145 palavras encapsulado em `<details class="cagp-normative-details">`; roving tabindex com navegação bidirecional por setas do teclado (`ArrowRight`, `ArrowLeft`, `ArrowUp`, `ArrowDown`) 100% funcional nos 27 nós do grafo SVG (`#cagp-grafo-svg`); 28 ementas em `<details>` preservadas com títulos limpos.
+  - **`index.qmd`:** Bento Grid consolidado com classes nativas `row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 g-md-3` nos 5 Eixos Canônicos (proibição de `col-lg-2-4` respeitada); botão "Ver Tudo" (`__all__`) sincronizado com `data-ws-hash="#visao-completa"`.
+- **Métricas de 1ª Dobra (M3 a 360×640):**
+  - `index.html`: `bar_top = 177px` (≤ 200px), `first_ctrl = 263px` (≤ 300px) — **CONFORME**
+  - `acg.html`: `bar_top = 166px` (≤ 200px), `first_ctrl = 248px` (≤ 300px) — **CONFORME**
+  - `documentos.html`: `bar_top = 166px` (≤ 200px), `first_ctrl = 248px` (≤ 300px) — **CONFORME**
+  - `percurso.html`: `bar_top = 155px` (≤ 200px), `first_ctrl = 280px` (≤ 300px) — **CONFORME**
+- **Auditoria Empírica (Camada C — 60 Células C001 a C060):**
+  - Registrado em `_designs/evidencias_v2/fase3/findings_3a.jsonl`: 60/60 células aprovadas (100% de aprovação).
+  - Stress testing sob 15 dimensões (contrast, dyslexia, font-xl, reduced-motion, dark, print, zoom200, keyboard, standalone, offline, 412x915, 700x900, 507x800, 1024x768, 640x360).
+  - Critérios de saída: `M1 = true` (sem transbordamento horizontal), `M2 = true` (segmented control sem rolagem), `M5 = 1` (exatamente 1 H1 semântico), `M6 = 0` (zero erros de console).
+- **Compilação e Fatos:**
+  - `quarto render` executado com exit code 0 nas 15 rotas.
+  - `passo0.sh` executado com exit code 0 (55/55 skills válidas).
+  - `check_fatos.sh` executado com exit code 0 (149/149 fatos preservados).
+- **Homologação:** **GATE G3a HOMOLOGADO COM SUCESSO.** Autorizada a transição para a Onda 3b (Demais 11 Rotas Acadêmicas e Institucionais).

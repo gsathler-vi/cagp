@@ -8599,6 +8599,14 @@ html.cagp-is-standalone body {
   display: none;
 }
 
+.cagp-chip-rail .cagp-chip,
+.cagp-chip-rail .cagp-chip-m3,
+.cagp-chip-rail .cagp-filter-chip {
+  scroll-snap-align: start;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
 @media (min-width: 992px) {
   .cagp-chip-rail.is-wrap-desktop {
     flex-wrap: wrap;
@@ -9789,14 +9797,33 @@ html[data-a11y-contrast="high"] .cagp-bottom-sheet {
   background-color: var(--cagp-gold, #e8a317);
 }
 
+#quarto-announcement.is-compact {
+  min-height: 36px !important;
+  max-height: 40px !important;
+  padding: 0.2rem 0.5rem !important;
+  overflow: hidden !important;
+  font-size: 0.76rem !important;
+}
+
+#quarto-announcement.is-compact .cagp-announcement-text {
+  display: none !important;
+}
+
+#quarto-announcement.is-compact .quarto-announcement-content p {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
 #quarto-announcement.is-compact .cagp-chapa-banner-desc {
-  display: inline;
-  font-size: 0.78rem;
+  display: none !important;
 }
 
 #quarto-announcement.is-compact .cagp-chapa-banner-inner {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+  padding-top: 0.15rem !important;
+  padding-bottom: 0.15rem !important;
 }
 
 /* 5. Compact Workspace Header & Segmented Sub-View Deck (.cagp-workspace-header & .cagp-workspace-bar) */
@@ -10015,8 +10042,19 @@ html[data-a11y-contrast="high"] .cagp-bottom-sheet {
 
   .cagp-workspace-eyebrow,
   .cagp-workspace-toprow {
-    padding-bottom: 0.35rem !important;
-    margin-bottom: 0.45rem !important;
+    display: none !important;
+  }
+
+  .cagp-axis-pill-strip {
+    display: none !important;
+  }
+
+  .cagp-workspace-actions {
+    display: none !important;
+  }
+
+  .cagp-workspace-header .cagp-workspace-subtitle {
+    display: none !important;
   }
 
   .cagp-breadcrumbs {
@@ -10025,7 +10063,7 @@ html[data-a11y-contrast="high"] .cagp-bottom-sheet {
 
   .cagp-workspace-bar {
     padding: 0.25rem !important;
-    margin: 0.35rem 0 0.65rem 0 !important;
+    margin: 0.25rem 0 0.5rem 0 !important;
     overflow-x: hidden !important;
   }
 
@@ -10037,6 +10075,44 @@ html[data-a11y-contrast="high"] .cagp-bottom-sheet {
   .cagp-workspace-tab .cagp-ws-badge,
   .cagp-workspace-tab .cagp-workspace-tab-badge {
     display: none !important;
+  }
+
+  .cagp-tab-label-full {
+    display: none !important;
+  }
+
+  .cagp-tab-label-short {
+    display: inline !important;
+  }
+
+  .cagp-workspace-view {
+    margin-top: 0.25rem !important;
+  }
+
+  .cagp-workspace-view .level2 {
+    margin-top: 0.15rem !important;
+  }
+
+  .cagp-workspace-view h2,
+  .cagp-workspace-view .level2 > h2,
+  .cagp-workspace-view > h2:first-child,
+  .cagp-workspace-view > h2:first-of-type,
+  .cagp-workspace-view > *:first-child {
+    font-size: 1rem !important;
+    margin-top: 0.15rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .cagp-tool-box {
+    padding: 0.65rem 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .cagp-tool-header {
+    padding-bottom: 0.4rem !important;
+    margin-bottom: 0.4rem !important;
+    gap: 0.35rem !important;
   }
 }
 
@@ -10061,12 +10137,12 @@ html[data-a11y-contrast="high"] .cagp-bottom-sheet {
   border-radius: 4px;
 }
 
-/* Rótulos adaptativos para telas estreitas (< 340px) e escala de fonte aumentada */
+/* Rótulos adaptativos para telas estreitas (< 768px) e escala de fonte aumentada (Errata E2) */
 .cagp-tab-label-short {
   display: none;
 }
 
-@media (max-width: 340px) {
+@media (max-width: 767.98px) {
   .cagp-tab-label-full {
     display: none !important;
   }

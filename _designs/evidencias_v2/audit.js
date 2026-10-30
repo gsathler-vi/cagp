@@ -39,13 +39,26 @@
     m3.bar_top = Math.round(br.top);
   }
   const activeView = document.querySelector('.cagp-workspace-view.is-active, .cagp-workspace-view:not([hidden])');
-  const scope = activeView || document.querySelector('#quarto-document-content') || document.body;
-  if (scope) {
-    const firstInteractive = scope.querySelector('button, input, select, textarea, .cagp-calc-btn, .cagp-doc-card a, .cagp-tool-box, .cagp-calc-hud-linear, .cagp-offline-strip, [tabindex="0"]');
-    if (firstInteractive) {
-      const ir = firstInteractive.getBoundingClientRect();
-      m3.first_ctrl = Math.round(ir.top);
+  let firstInteractive = null;
+  const barBottom = bar ? bar.getBoundingClientRect().bottom : 0;
+  const interactiveCandidates = Array.from(document.querySelectorAll('#quarto-document-content button, #quarto-document-content summary, #quarto-document-content input, #quarto-document-content select, #quarto-document-content textarea, .cagp-calc-btn, .cagp-doc-card a, .cagp-tool-box, .cagp-calc-hud-linear, .cagp-offline-strip, [tabindex="0"]'));
+  for (const el of interactiveCandidates) {
+    const parentView = el.closest('.cagp-workspace-view');
+    if (parentView && parentView !== activeView) continue;
+    if (el.closest('.cagp-workspace-bar')) continue;
+    const r = el.getBoundingClientRect();
+    const s = window.getComputedStyle(el);
+    if (r.top >= barBottom - 5 && r.height > 0 && s.display !== 'none' && s.visibility !== 'hidden') {
+      firstInteractive = el;
+      break;
     }
+  }
+  if (!firstInteractive && activeView) {
+    firstInteractive = activeView.querySelector('button, summary, input, select, textarea, .cagp-calc-btn, .cagp-doc-card a, .cagp-tool-box, .cagp-calc-hud-linear, .cagp-offline-strip, [tabindex="0"]');
+  }
+  if (firstInteractive) {
+    const ir = firstInteractive.getBoundingClientRect();
+    m3.first_ctrl = Math.round(ir.top);
   }
   result.M3 = m3;
 
