@@ -35,29 +35,37 @@ toc: false
   <p class="cagp-workspace-subtitle">Checklist interativo dos primeiros 30 dias na UFMG, linha do tempo da rotina noturna (RU Setorial II às 18h15 e último Circular às 22h45), espaços da FAFICH e bolsas da FUMP/PRAE.</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas do Guia do Calouro">
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#checklist-calouro">
-        <i class="bi bi-check2-square" aria-hidden="true"></i> <span>1. Checklist 30d &amp; Apps</span> <span class="cagp-ws-badge">6 Passos</span>
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="4">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#checklist-calouro">
+        <i class="bi bi-check2-square" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Checklist 30d &amp; Apps</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Checklist</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#rotina-noturna">
-        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i> <span>2. Rotina Noturna, RU &amp; Mapas</span> <span class="cagp-ws-badge">18h15 • 22h45</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#rotina-noturna">
+        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Rotina Noturna &amp; RU</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Rotina</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#biblioteca-espacos">
-        <i class="bi bi-building" aria-hidden="true"></i> <span>3. FAFICH, Secretaria &amp; CEAG</span> <span class="cagp-ws-badge">F-2039</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#biblioteca-espacos">
+        <i class="bi bi-building" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">3. FAFICH, Sec &amp; CEAG</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">FAFICH</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v4" data-ws-hash="#assistencia-estudantil">
-        <i class="bi bi-heart-pulse-fill" aria-hidden="true"></i> <span>4. FUMP, PRAE &amp; Vídeos</span> <span class="cagp-ws-badge">Níveis I–III</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> <span>Ver Tudo</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v4" role="tab" aria-controls="ws-panel-v4" aria-selected="false" tabindex="-1" data-ws-tab="v4" data-ws-hash="#assistencia-estudantil">
+        <i class="bi bi-heart-pulse-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">4. FUMP &amp; Apoio</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">FUMP</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```
 
 ```{=html}
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 ```
 
 ## <i class="bi bi-check2-square" aria-hidden="true"></i> Checklist Interativo dos Primeiros 30 Dias {#checklist-calouro}
@@ -302,7 +310,7 @@ Instale em seu smartphone os aplicativos oficiais e utilize as plataformas essen
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 ```
 
 ## <i class="bi bi-moon-stars" aria-hidden="true"></i> A Rotina do Estudante do Turno Noturno (Linha do Tempo Operacional) {#rotina-noturna}
@@ -463,7 +471,7 @@ Você também pode consultar o [Mapa Integrado dos Campi da UFMG (Pampulha, Saú
 ```{=html}
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
+<div id="ws-panel-v3" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden>
 ```
 
 ## <i class="bi bi-building" aria-hidden="true"></i> Conhecendo a FAFICH e os Espaços do Curso
@@ -585,7 +593,7 @@ Como estudante do noturno, você conta com canais de atendimento presencial no *
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v4" hidden>
+<div id="ws-panel-v4" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v4" data-ws-view="v4" hidden>
 ```
 
 ## <i class="bi bi-heart-pulse" aria-hidden="true"></i> Permanência Estudantil, Bolsas e Assistência {#assistencia-estudantil}

@@ -649,9 +649,10 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
     const container = options.container || document.getElementById('quarto-document-content') || document;
     const views = Array.from(container.querySelectorAll('.cagp-workspace-view[data-ws-view]'));
     const tabs = Array.from(container.querySelectorAll('.cagp-workspace-tab[data-ws-tab]'));
+    const viewallBtn = container.querySelector('.cagp-workspace-viewall[data-ws-tab]');
     if (views.length === 0 || tabs.length === 0) return false;
 
-    const prevActiveBtn = tabs.find(function (b) { return b.classList.contains('is-active'); });
+    const prevActiveBtn = tabs.find(function (b) { return b.classList.contains('is-active'); }) || (viewallBtn && viewallBtn.classList.contains('is-active') ? viewallBtn : null);
     const prevIdx = prevActiveBtn ? tabs.indexOf(prevActiveBtn) : 0;
     const nextIdx = tabs.findIndex(function (b) { return b.getAttribute('data-ws-tab') === tabKey; });
     const wsDir = nextIdx >= 0 && nextIdx < prevIdx ? 'backward' : 'forward';
@@ -699,11 +700,18 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
     let activeTabBtn = null;
     tabs.forEach(function (btn) {
       const bKey = btn.getAttribute('data-ws-tab');
-      const active = bKey === tabKey;
+      const active = !isAll && bKey === tabKey;
       btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      btn.setAttribute('tabindex', active ? '0' : '-1');
       if (active) activeTabBtn = btn;
     });
+
+    if (viewallBtn) {
+      viewallBtn.classList.toggle('is-active', isAll);
+      viewallBtn.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+      if (isAll) activeTabBtn = viewallBtn;
+    }
 
     if (isInteractiveSwitch && matchedView) {
       if (window.cagpBindDetailsMotion) window.cagpBindDetailsMotion(matchedView);
@@ -718,14 +726,16 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
         } catch (e) {}
       } else if (tabKey === '__all__') {
         try {
-          history.replaceState(history.state, '', window.location.pathname);
+          history.replaceState(history.state, '', '#visao-completa');
         } catch (e) {}
       }
     }
 
-    try {
-      window.dispatchEvent(new Event('resize'));
-    } catch (e) {}
+    if (document.getElementById('cagp-grafo-svg')) {
+      try {
+        window.dispatchEvent(new Event('resize'));
+      } catch (e) {}
+    }
 
     return Boolean(matchedView || isAll);
   };
@@ -757,13 +767,15 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
 
     const views = Array.from(container.querySelectorAll('.cagp-workspace-view[data-ws-view]'));
     const tabs = Array.from(container.querySelectorAll('.cagp-workspace-tab[data-ws-tab]'));
+    const viewallBtn = container.querySelector('.cagp-workspace-viewall[data-ws-tab]');
     if (views.length === 0 || tabs.length === 0) return false;
 
     const rawId = hash.startsWith('#') ? hash.slice(1) : hash;
+    const allButtons = tabs.concat(viewallBtn ? [viewallBtn] : []);
 
     // 2. Verificar correspondência direta com data-ws-tab ou data-ws-hash
-    for (let i = 0; i < tabs.length; i++) {
-      const btn = tabs[i];
+    for (let i = 0; i < allButtons.length; i++) {
+      const btn = allButtons[i];
       const bTab = btn.getAttribute('data-ws-tab');
       const bHash = btn.getAttribute('data-ws-hash');
       if (bTab === rawId || bHash === hash || bHash === '#' + rawId) {
@@ -799,6 +811,7 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
     const container = rootContainer || document.getElementById('quarto-document-content') || document;
     const tabs = Array.from(container.querySelectorAll('.cagp-workspace-tab[data-ws-tab]'));
     const views = Array.from(container.querySelectorAll('.cagp-workspace-view[data-ws-view]'));
+    const viewallBtn = container.querySelector('.cagp-workspace-viewall[data-ws-tab]');
     if (tabs.length === 0 || views.length === 0) {
       // Mesmo sem workspace, checar redirecionamento de hash legado
       if (window.location.hash) {
@@ -829,6 +842,19 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
         }
       });
     });
+
+    if (viewallBtn && viewallBtn.getAttribute('data-ws-bound') !== 'true') {
+      viewallBtn.setAttribute('data-ws-bound', 'true');
+      viewallBtn.addEventListener('click', function () {
+        const isCurrentlyActive = viewallBtn.classList.contains('is-active');
+        if (isCurrentlyActive) {
+          const firstTab = tabs[0];
+          if (firstTab) window.cagpActivateWorkspaceView(firstTab.getAttribute('data-ws-tab'), { container: container, updateHash: true });
+        } else {
+          window.cagpActivateWorkspaceView('__all__', { container: container, updateHash: true });
+        }
+      });
+    }
 
     // Ativar view a partir do hash atual ou manter a primeira view ativa
     if (!window.cagpSyncWorkspaceFromHash(window.location.hash, { container: container, scroll: Boolean(window.location.hash) })) {

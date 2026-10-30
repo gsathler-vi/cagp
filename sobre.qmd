@@ -50,35 +50,33 @@ toc: false
   </div>
 
   <nav class="cagp-workspace-bar" aria-label="Sub-visualizações do Centro Acadêmico">
-    <span class="cagp-workspace-bar-label"><i class="bi bi-layers me-1" aria-hidden="true"></i>Módulos:</span>
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" data-ws-tab="v1" data-ws-hash="#simbolo-candangos" aria-selected="true">
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#simbolo-candangos">
         <i class="bi bi-bank" aria-hidden="true"></i>
-        <span>1. Candangos, Princípios &amp; Sede</span>
-        <span class="cagp-ws-badge">Arts. 1º–8º</span>
+        <span class="cagp-tab-label-full">1. Candangos &amp; Princípios</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Princípios</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v2" data-ws-hash="#governanca-institucional" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#governanca-institucional">
         <i class="bi bi-building-check" aria-hidden="true"></i>
-        <span>2. Governança, 7 Diretorias &amp; Eleições</span>
-        <span class="cagp-ws-badge">Arts. 20–45</span>
+        <span class="cagp-tab-label-full">2. Governança &amp; Eleições</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Governança</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v3" data-ws-hash="#representacao-tripartite" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#representacao-tripartite">
         <i class="bi bi-diagram-2" aria-hidden="true"></i>
-        <span>3. Representação (CAGP • DA • DCE) &amp; Colegiado</span>
-        <span class="cagp-ws-badge">3 Esferas</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="__all__" aria-selected="false" title="Exibir todas as seções simultaneamente">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i>
-        <span>Ver Tudo</span>
+        <span class="cagp-tab-label-full">3. Representação Estudantil</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Esferas</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```
 
 ```{=html}
 <div class="cagp-workspace-deck" data-ws-deck="sobre">
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 <span id="identidade-simbolos" class="cagp-anchor-alias" aria-hidden="true"></span>
 <span id="historia" class="cagp-anchor-alias" aria-hidden="true"></span>
 ```
@@ -180,7 +178,7 @@ Conforme o **Art. 6º do Regimento**, a sede e o foro da entidade situam-se no c
 
 ```{=html}
 </div>
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 <span id="organizacao-instancias" class="cagp-anchor-alias" aria-hidden="true"></span>
 <span id="direito-de-voz" class="cagp-anchor-alias" aria-hidden="true"></span>
 ```
@@ -532,7 +530,7 @@ Conforme o **Título VI do Regimento Interno (Arts. 41 a 45)**, as eleições do
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
+<div id="ws-panel-v3" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden>
 <span id="representacao-sistema" class="cagp-anchor-alias" aria-hidden="true"></span>
 <span id="documentos-oficiais" class="cagp-anchor-alias" aria-hidden="true"></span>
 ```

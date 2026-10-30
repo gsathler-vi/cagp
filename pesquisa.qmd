@@ -37,26 +37,32 @@ toc: false
   <p class="cagp-workspace-subtitle">Diretório completo dos 11 grupos de pesquisa do Departamento de Ciência Política (FAFICH/UFMG), guia de validação de até 90h de AAC (Modalidade V — Art. 15) e o Programa de Imersão no Campo de Públicas.</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas de Pesquisa e Imersão">
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#grupos-pesquisa">
-        <i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i> <span>1. Os 11 Núcleos do DCP</span> <span class="cagp-ws-badge">Catálogo</span>
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#grupos-pesquisa">
+        <i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Núcleos de Pesquisa (11)</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Núcleos</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#nucleos-pesquisa">
-        <i class="bi bi-award-fill" aria-hidden="true"></i> <span>2. Iniciação Científica (90h AAC)</span> <span class="cagp-ws-badge">Mod. V</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#nucleos-pesquisa">
+        <i class="bi bi-award-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Iniciação Científica (IC)</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Iniciação</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#programa-de-imersao">
-        <i class="bi bi-bank2" aria-hidden="true"></i> <span>3. Programa de Imersão</span> <span class="cagp-ws-badge">3 Eixos</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> <span>Ver Tudo</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#programa-de-imersao">
+        <i class="bi bi-bank2" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">3. Imersão &amp; Extensão</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Imersão</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```
 
 ```{=html}
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 ```
 
 ## <i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i> Grupos e Linhas de Pesquisa do DCP/UFMG {#grupos-pesquisa}
@@ -607,7 +613,7 @@ Essa inserção acadêmica de vanguarda oferece aos discentes a oportunidade de 
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 ```
 
 ## <i class="bi bi-search" aria-hidden="true"></i> Iniciação Científica & Núcleos de Pesquisa: Validação de até 90h de AAC {#nucleos-pesquisa}
@@ -668,7 +674,7 @@ Conforme a **Modalidade V do Art. 15 do Regulamento do Curso**, a participação
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
+<div id="ws-panel-v3" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden>
 ```
 
 ## <i class="bi bi-bank" aria-hidden="true"></i> Programa de Imersão no Campo de Públicas {#programa-de-imersao}

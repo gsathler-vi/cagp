@@ -50,28 +50,26 @@ toc: false
   </div>
 
   <nav class="cagp-workspace-bar" aria-label="Sub-visualizações do Mapa do Site">
-    <span class="cagp-workspace-bar-label"><i class="bi bi-layers me-1" aria-hidden="true"></i>Visualização:</span>
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" data-ws-tab="v1" data-ws-hash="#arvore-eixos" aria-selected="true">
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="2">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#arvore-eixos">
         <i class="bi bi-diagram-3" aria-hidden="true"></i>
-        <span>1. Árvore Completa (14 Rotas em 5 Eixos)</span>
-        <span class="cagp-ws-badge">14 Páginas</span>
+        <span class="cagp-tab-label-full">1. Árvore Completa (5 Eixos)</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Árvore</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v2" data-ws-hash="#atalhos-rapidos" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#atalhos-rapidos">
         <i class="bi bi-lightning-charge" aria-hidden="true"></i>
-        <span>2. Atalhos de Alta Demanda</span>
-        <span class="cagp-ws-badge">6 Ferramentas</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="__all__" aria-selected="false" title="Exibir todas as seções simultaneamente">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i>
-        <span>Ver Tudo</span>
+        <span class="cagp-tab-label-full">2. Atalhos de Alta Demanda</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Atalhos</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 
 <div class="cagp-workspace-deck" data-ws-deck="sitemap">
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 
 <!-- Barra Sticky de Busca e Chips Deslizantes M3 do Mapa do Site -->
 <div class="cagp-sticky-search-bar mb-4" role="region" aria-label="Filtro instantâneo e seleção de eixos do mapa do site">
@@ -370,7 +368,7 @@ toc: false
 </div>
 
 <!-- View 2: Atalhos de Alta Demanda -->
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 ```
 
 ## <i class="bi bi-lightning-charge" aria-hidden="true"></i> Atalhos de Alta Demanda {#atalhos-rapidos}

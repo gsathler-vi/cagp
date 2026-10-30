@@ -36,28 +36,26 @@ toc: false
   <p class="cagp-workspace-subtitle">Simulador interativo com trava automática de tetos regimentais, Guardião do prazo fatal de 120 dias corridos (Art. 15, § 4º) e tutorial passo a passo do Formulário Oficial N-20229.</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas de Extensão e AAC">
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#calculadora-horas">
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#calculadora-horas">
         <i class="bi bi-calculator-fill" aria-hidden="true"></i>
         <span class="cagp-tab-label-full">1. Calculadora 600h</span>
-        <span class="cagp-tab-label-short" aria-hidden="true">Calc</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Calculadora</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#guardiao-120-dias">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#guardiao-120-dias">
         <i class="bi bi-shield-exclamation" aria-hidden="true"></i>
         <span class="cagp-tab-label-full">2. Guardião 120 Dias</span>
-        <span class="cagp-tab-label-short" aria-hidden="true">120d</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">120 dias</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#regulamento-categorias">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#regulamento-categorias">
         <i class="bi bi-card-list" aria-hidden="true"></i>
         <span class="cagp-tab-label-full">3. Guia &amp; Tramitação</span>
         <span class="cagp-tab-label-short" aria-hidden="true">Guia</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" id="ws-tab-all" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i>
-        <span class="cagp-tab-label-full">Ver Tudo</span>
-        <span class="cagp-tab-label-short" aria-hidden="true">Tudo</span>
-      </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```

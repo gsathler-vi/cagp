@@ -32,29 +32,37 @@ toc: false
   <p class="cagp-workspace-subtitle">Formação pública de excelência voltada para a formulação, implementação e avaliação de políticas públicas no Estado democrático brasileiro, sediada no Departamento de Ciência Política da UFMG (Conceito 7 CAPES).</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar seções de O Curso">
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#dados-fundamentais">
-        <i class="bi bi-bank" aria-hidden="true"></i> <span>1. Visão Geral &amp; Cientometria</span> <span class="cagp-ws-badge">3 Percursos</span>
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="4">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#dados-fundamentais">
+        <i class="bi bi-bank" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Visão Geral &amp; Cientometria</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Visão</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#mercado-egressos">
-        <i class="bi bi-briefcase-fill" aria-hidden="true"></i> <span>2. Egressos &amp; Salários</span> <span class="cagp-ws-badge">n = 89</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#mercado-egressos">
+        <i class="bi bi-briefcase-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Egressos &amp; Salários</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Egressos</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#colegiado">
-        <i class="bi bi-people-fill" aria-hidden="true"></i> <span>3. Colegiado &amp; Secretaria</span> <span class="cagp-ws-badge">F-2039</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#colegiado">
+        <i class="bi bi-people-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">3. Colegiado &amp; Secretaria</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Colegiado</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v4" data-ws-hash="#ingresso">
-        <i class="bi bi-door-open-fill" aria-hidden="true"></i> <span>4. Formas de Ingresso</span> <span class="cagp-ws-badge">SiSU • 80 Vagas</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> <span>Ver Tudo</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v4" role="tab" aria-controls="ws-panel-v4" aria-selected="false" tabindex="-1" data-ws-tab="v4" data-ws-hash="#ingresso">
+        <i class="bi bi-door-open-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">4. Formas de Ingresso</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Ingresso</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```
 
 ```{=html}
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 ```
 
 ## <i class="bi bi-bank" aria-hidden="true"></i> Dados Fundamentais e Identidade Institucional {#dados-fundamentais}
@@ -305,7 +313,7 @@ O currículo do curso é estruturado de forma flexível para que o discente pers
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 ```
 
 ## <i class="bi bi-briefcase" aria-hidden="true"></i> Onde Atuam Nossos Egressos e Remuneração {#mercado-egressos}
@@ -472,7 +480,7 @@ A inserção profissional dos graduados em Gestão Pública da UFMG é sistemati
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
+<div id="ws-panel-v3" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden>
 ```
 
 ## <i class="bi bi-people" aria-hidden="true"></i> A Coordenação & O Colegiado do Curso {#colegiado}
@@ -689,7 +697,7 @@ Além da Coordenação, o Colegiado de Gestão Pública é integrado por represe
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v4" hidden>
+<div id="ws-panel-v4" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v4" data-ws-view="v4" hidden>
 ```
 
 ## <i class="bi bi-door-open" aria-hidden="true"></i> Formas de Ingresso e Reopção {#ingresso}

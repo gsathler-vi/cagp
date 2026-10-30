@@ -50,35 +50,33 @@ toc: false
   </div>
 
   <nav class="cagp-workspace-bar" aria-label="Sub-visualizações da Gestão em Exercício">
-    <span class="cagp-workspace-bar-label"><i class="bi bi-layers me-1" aria-hidden="true"></i>Módulos:</span>
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" data-ws-tab="v1" data-ws-hash="#organograma-funcional" aria-selected="true">
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#organograma-funcional">
         <i class="bi bi-diagram-3" aria-hidden="true"></i>
-        <span>1. Organograma Funcional &amp; Comunicação</span>
-        <span class="cagp-ws-badge">Hierarquia</span>
+        <span class="cagp-tab-label-full">1. Organograma Funcional</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Organograma</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v2" data-ws-hash="#diretoria-presidencia" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#diretoria-presidencia">
         <i class="bi bi-people" aria-hidden="true"></i>
-        <span>2. Equipe das 7 Diretorias &amp; Assessoria</span>
-        <span class="cagp-ws-badge">Quadros</span>
+        <span class="cagp-tab-label-full">2. Equipe de Gestão</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Equipe</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v3" data-ws-hash="#transparencia-ativa" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#transparencia-ativa">
         <i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i>
-        <span>3. Prestação de Contas (RREO &amp; Atas)</span>
-        <span class="cagp-ws-badge">3 Dias Úteis</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="__all__" aria-selected="false" title="Exibir todas as seções simultaneamente">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i>
-        <span>Ver Tudo</span>
+        <span class="cagp-tab-label-full">3. Prestação de Contas</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Contas</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```
 
 ```{=html}
 <div class="cagp-workspace-deck" data-ws-deck="gestao">
-<div class="cagp-workspace-view is-active" data-ws-view="v1" id="cagp-section-gestao">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1" id="cagp-section-gestao">
 <span id="organograma-interativo" class="cagp-anchor-alias" aria-hidden="true"></span>
 ```
 
@@ -200,7 +198,7 @@ O fluxo deliberativo e executivo do Centro Acadêmico obedece ao sistema de frei
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 <span id="diretorias-estrategicas" class="cagp-anchor-alias" aria-hidden="true"></span>
 <span id="assessores-chamada" class="cagp-anchor-alias" aria-hidden="true"></span>
 ```
@@ -515,7 +513,7 @@ Todas as 7 diretorias executivas possuem previsão regimental para inclusão de 
 ```{=html}
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
+<div id="ws-panel-v3" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden>
 <span id="prestacao-contas" class="cagp-anchor-alias" aria-hidden="true"></span>
 <span id="acervo-institucional" class="cagp-anchor-alias" aria-hidden="true"></span>
 ```

@@ -41,26 +41,28 @@ toc: false
     </div>
   </div>
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas de disciplinas optativas">
-    <span class="cagp-workspace-bar-label"><i class="bi bi-layers-half" aria-hidden="true"></i> Sub-View:</span>
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#catalogo-optativas">
-        <i class="bi bi-collection-fill" aria-hidden="true"></i> 1. Catálogo de 68 Optativas
-        <span class="cagp-workspace-tab-badge">68</span>
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="2">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#catalogo-optativas">
+        <i class="bi bi-collection-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Catálogo de Optativas (68)</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Catálogo</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#formacao-livre">
-        <i class="bi bi-compass-fill" aria-hidden="true"></i> 2. Formação Livre (120h) &amp; Cotas por Percurso
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> Ver Tudo
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#formacao-livre">
+        <i class="bi bi-compass-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Formação Livre (120h)</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Formação Livre</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 
 <!-- ======================================================================= -->
 <!-- VIEW 1: CATÁLOGO INTERATIVO DAS 68 OPTATIVAS (ATIVA NO VIEWPORT 1)       -->
 <!-- ======================================================================= -->
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 ```
 
 ## <i class="bi bi-collection" aria-hidden="true"></i> Catálogo de Disciplinas Optativas & Ementas {#disciplinas-optativas}
@@ -1224,7 +1226,7 @@ toc: false
 <!-- ======================================================================= -->
 <!-- VIEW 2: FORMAÇÃO LIVRE (120H) & COTAS DE OPTATIVAS POR PERCURSO          -->
 <!-- ======================================================================= -->
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 ```
 
 ## <i class="bi bi-compass-fill" aria-hidden="true"></i> Regras de Formação Livre (120h) & Cotas por Percurso {#formacao-livre}

@@ -41,29 +41,26 @@ toc: false
     </div>
   </div>
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas do Percurso Curricular">
-    <span class="cagp-workspace-bar-label"><i class="bi bi-layers-half" aria-hidden="true"></i> Sub-View:</span>
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#grafo-curricular">
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#grafo-curricular">
         <i class="bi bi-diagram-3-fill" aria-hidden="true"></i>
         <span class="cagp-tab-label-full">1. Grafo &amp; Grade</span>
         <span class="cagp-tab-label-short" aria-hidden="true">Grafo</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#explorador-grade">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#explorador-grade">
         <i class="bi bi-calendar3-range" aria-hidden="true"></i>
         <span class="cagp-tab-label-full">2. Ementas (1º-10ºP)</span>
         <span class="cagp-tab-label-short" aria-hidden="true">Ementas</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#simulador-percurso">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#simulador-percurso">
         <i class="bi bi-signpost-split" aria-hidden="true"></i>
         <span class="cagp-tab-label-full">3. 3 Percursos</span>
         <span class="cagp-tab-label-short" aria-hidden="true">Percursos</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" id="ws-tab-all" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i>
-        <span class="cagp-tab-label-full">Ver Tudo</span>
-        <span class="cagp-tab-label-short" aria-hidden="true">Tudo</span>
-      </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```

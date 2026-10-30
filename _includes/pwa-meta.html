@@ -37,7 +37,7 @@
       document.head.appendChild(vp);
     }
     if (isStandalone) {
-      vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+      vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover');
       root.classList.add('cagp-is-standalone');
     } else {
       vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover');
@@ -59,33 +59,11 @@
         if (prefs.dyslexia) root.setAttribute('data-a11y-dyslexia', 'true');
         if (prefs.ruler) root.setAttribute('data-a11y-ruler', 'true');
         if (prefs.contrast === 'high') root.setAttribute('data-a11y-contrast', 'high');
-        if (prefs.motion === 'reduce') root.setAttribute('data-a11y-motion', 'reduce');
+        if (prefs.motion === 'reduce' || prefs.motion === 'reduced') root.setAttribute('data-a11y-motion', 'reduced');
         if (prefs.links) root.setAttribute('data-a11y-links', 'true');
       }
     }
   } catch (e) {}
-
-  // 4. Prevenção de Pinch/Gesture Zoom Acidental no Modo Standalone (Sem afetar #cagp-a11y-panel)
-  if (!window.__cagpZoomGuardMounted) {
-    window.__cagpZoomGuardMounted = true;
-
-    document.addEventListener('gesturestart', function (e) {
-      if (root.classList.contains('cagp-is-standalone')) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    document.addEventListener('gesturechange', function (e) {
-      if (root.classList.contains('cagp-is-standalone')) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    document.addEventListener('touchmove', function (e) {
-      if (root.classList.contains('cagp-is-standalone') && e.touches && e.touches.length > 1) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-  }
 })();
 </script>
+<noscript><style>.cagp-workspace-view[hidden]{display:block!important;}</style></noscript>

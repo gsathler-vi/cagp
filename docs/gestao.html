@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
       document.head.appendChild(vp);
     }
     if (isStandalone) {
-      vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+      vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover');
       root.classList.add('cagp-is-standalone');
     } else {
       vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover');
@@ -123,36 +123,14 @@ ul.task-list li input[type="checkbox"] {
         if (prefs.dyslexia) root.setAttribute('data-a11y-dyslexia', 'true');
         if (prefs.ruler) root.setAttribute('data-a11y-ruler', 'true');
         if (prefs.contrast === 'high') root.setAttribute('data-a11y-contrast', 'high');
-        if (prefs.motion === 'reduce') root.setAttribute('data-a11y-motion', 'reduce');
+        if (prefs.motion === 'reduce' || prefs.motion === 'reduced') root.setAttribute('data-a11y-motion', 'reduced');
         if (prefs.links) root.setAttribute('data-a11y-links', 'true');
       }
     }
   } catch (e) {}
-
-  // 4. Prevenção de Pinch/Gesture Zoom Acidental no Modo Standalone (Sem afetar #cagp-a11y-panel)
-  if (!window.__cagpZoomGuardMounted) {
-    window.__cagpZoomGuardMounted = true;
-
-    document.addEventListener('gesturestart', function (e) {
-      if (root.classList.contains('cagp-is-standalone')) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    document.addEventListener('gesturechange', function (e) {
-      if (root.classList.contains('cagp-is-standalone')) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    document.addEventListener('touchmove', function (e) {
-      if (root.classList.contains('cagp-is-standalone') && e.touches && e.touches.length > 1) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-  }
 })();
 </script>
+<noscript><style>.cagp-workspace-view[hidden]{display:block!important;}</style></noscript>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -828,9 +806,10 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
     const container = options.container || document.getElementById('quarto-document-content') || document;
     const views = Array.from(container.querySelectorAll('.cagp-workspace-view[data-ws-view]'));
     const tabs = Array.from(container.querySelectorAll('.cagp-workspace-tab[data-ws-tab]'));
+    const viewallBtn = container.querySelector('.cagp-workspace-viewall[data-ws-tab]');
     if (views.length === 0 || tabs.length === 0) return false;
 
-    const prevActiveBtn = tabs.find(function (b) { return b.classList.contains('is-active'); });
+    const prevActiveBtn = tabs.find(function (b) { return b.classList.contains('is-active'); }) || (viewallBtn && viewallBtn.classList.contains('is-active') ? viewallBtn : null);
     const prevIdx = prevActiveBtn ? tabs.indexOf(prevActiveBtn) : 0;
     const nextIdx = tabs.findIndex(function (b) { return b.getAttribute('data-ws-tab') === tabKey; });
     const wsDir = nextIdx >= 0 && nextIdx < prevIdx ? 'backward' : 'forward';
@@ -878,11 +857,18 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
     let activeTabBtn = null;
     tabs.forEach(function (btn) {
       const bKey = btn.getAttribute('data-ws-tab');
-      const active = bKey === tabKey;
+      const active = !isAll && bKey === tabKey;
       btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      btn.setAttribute('tabindex', active ? '0' : '-1');
       if (active) activeTabBtn = btn;
     });
+
+    if (viewallBtn) {
+      viewallBtn.classList.toggle('is-active', isAll);
+      viewallBtn.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+      if (isAll) activeTabBtn = viewallBtn;
+    }
 
     if (isInteractiveSwitch && matchedView) {
       if (window.cagpBindDetailsMotion) window.cagpBindDetailsMotion(matchedView);
@@ -897,14 +883,16 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
         } catch (e) {}
       } else if (tabKey === '__all__') {
         try {
-          history.replaceState(history.state, '', window.location.pathname);
+          history.replaceState(history.state, '', '#visao-completa');
         } catch (e) {}
       }
     }
 
-    try {
-      window.dispatchEvent(new Event('resize'));
-    } catch (e) {}
+    if (document.getElementById('cagp-grafo-svg')) {
+      try {
+        window.dispatchEvent(new Event('resize'));
+      } catch (e) {}
+    }
 
     return Boolean(matchedView || isAll);
   };
@@ -936,13 +924,15 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
 
     const views = Array.from(container.querySelectorAll('.cagp-workspace-view[data-ws-view]'));
     const tabs = Array.from(container.querySelectorAll('.cagp-workspace-tab[data-ws-tab]'));
+    const viewallBtn = container.querySelector('.cagp-workspace-viewall[data-ws-tab]');
     if (views.length === 0 || tabs.length === 0) return false;
 
     const rawId = hash.startsWith('#') ? hash.slice(1) : hash;
+    const allButtons = tabs.concat(viewallBtn ? [viewallBtn] : []);
 
     // 2. Verificar correspondência direta com data-ws-tab ou data-ws-hash
-    for (let i = 0; i < tabs.length; i++) {
-      const btn = tabs[i];
+    for (let i = 0; i < allButtons.length; i++) {
+      const btn = allButtons[i];
       const bTab = btn.getAttribute('data-ws-tab');
       const bHash = btn.getAttribute('data-ws-hash');
       if (bTab === rawId || bHash === hash || bHash === '#' + rawId) {
@@ -978,6 +968,7 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
     const container = rootContainer || document.getElementById('quarto-document-content') || document;
     const tabs = Array.from(container.querySelectorAll('.cagp-workspace-tab[data-ws-tab]'));
     const views = Array.from(container.querySelectorAll('.cagp-workspace-view[data-ws-view]'));
+    const viewallBtn = container.querySelector('.cagp-workspace-viewall[data-ws-tab]');
     if (tabs.length === 0 || views.length === 0) {
       // Mesmo sem workspace, checar redirecionamento de hash legado
       if (window.location.hash) {
@@ -1008,6 +999,19 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
         }
       });
     });
+
+    if (viewallBtn && viewallBtn.getAttribute('data-ws-bound') !== 'true') {
+      viewallBtn.setAttribute('data-ws-bound', 'true');
+      viewallBtn.addEventListener('click', function () {
+        const isCurrentlyActive = viewallBtn.classList.contains('is-active');
+        if (isCurrentlyActive) {
+          const firstTab = tabs[0];
+          if (firstTab) window.cagpActivateWorkspaceView(firstTab.getAttribute('data-ws-tab'), { container: container, updateHash: true });
+        } else {
+          window.cagpActivateWorkspaceView('__all__', { container: container, updateHash: true });
+        }
+      });
+    }
 
     // Ativar view a partir do hash atual ou manter a primeira view ativa
     if (!window.cagpSyncWorkspaceFromHash(window.location.hash, { container: container, scroll: Boolean(window.location.hash) })) {
@@ -1306,32 +1310,30 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
   </div>
 
   <nav class="cagp-workspace-bar" aria-label="Sub-visualizações da Gestão em Exercício">
-    <span class="cagp-workspace-bar-label"><i class="bi bi-layers me-1" aria-hidden="true"></i>Módulos:</span>
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" data-ws-tab="v1" data-ws-hash="#organograma-funcional" aria-selected="true">
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#organograma-funcional">
         <i class="bi bi-diagram-3" aria-hidden="true"></i>
-        <span>1. Organograma Funcional &amp; Comunicação</span>
-        <span class="cagp-ws-badge">Hierarquia</span>
+        <span class="cagp-tab-label-full">1. Organograma Funcional</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Organograma</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v2" data-ws-hash="#diretoria-presidencia" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#diretoria-presidencia">
         <i class="bi bi-people" aria-hidden="true"></i>
-        <span>2. Equipe das 7 Diretorias &amp; Assessoria</span>
-        <span class="cagp-ws-badge">Quadros</span>
+        <span class="cagp-tab-label-full">2. Equipe de Gestão</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Equipe</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v3" data-ws-hash="#transparencia-ativa" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#transparencia-ativa">
         <i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i>
-        <span>3. Prestação de Contas (RREO &amp; Atas)</span>
-        <span class="cagp-ws-badge">3 Dias Úteis</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="__all__" aria-selected="false" title="Exibir todas as seções simultaneamente">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i>
-        <span>Ver Tudo</span>
+        <span class="cagp-tab-label-full">3. Prestação de Contas</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Contas</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 <div class="cagp-workspace-deck" data-ws-deck="gestao">
-<div class="cagp-workspace-view is-active" data-ws-view="v1" id="cagp-section-gestao">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 <span id="organograma-interativo" class="cagp-anchor-alias" aria-hidden="true"></span>
 <section id="apresentacao-gestao" class="level2">
 <h2 class="anchored" data-anchor-id="apresentacao-gestao"><i class="bi bi-megaphone" aria-hidden="true"></i> Comunicação Oficial e Apresentação da Gestão</h2>
@@ -1445,7 +1447,7 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
 </div>
 </section></div>
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden="">
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden="">
 <span id="diretorias-estrategicas" class="cagp-anchor-alias" aria-hidden="true"></span>
 <span id="assessores-chamada" class="cagp-anchor-alias" aria-hidden="true"></span>
 
@@ -1749,7 +1751,7 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
 </div>
 </section></div>
 
-<div class="cagp-workspace-view" data-ws-view="v3" hidden="">
+<div id="ws-panel-v3" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden="">
 <span id="prestacao-contas" class="cagp-anchor-alias" aria-hidden="true"></span>
 <span id="acervo-institucional" class="cagp-anchor-alias" aria-hidden="true"></span>
 
@@ -5034,6 +5036,7 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
 
   const cache = new Map();
   let activePageDisposers = [];
+  let currentPath = window.location.pathname;
 
   function cleanupPreviousPageListeners() {
     while (activePageDisposers.length > 0) {
@@ -5272,6 +5275,10 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
   }
 
   function applyPageSwap(doc, targetUrl) {
+    try {
+      currentPath = new URL(targetUrl, window.location.origin).pathname;
+    } catch (e) {}
+
     // 1. Título do Documento
     const newTitle = doc.querySelector('title');
     if (newTitle) document.title = newTitle.textContent;
@@ -5282,9 +5289,14 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
                                document.body.classList.contains('cagp-is-standalone');
     const isDyslexia = rootEl.classList.contains('cagp-dyslexia') || document.body.classList.contains('cagp-dyslexia');
     const isContrast = rootEl.classList.contains('cagp-high-contrast') || document.body.classList.contains('cagp-high-contrast');
-    const contrastAttr = rootEl.getAttribute('data-a11y-contrast');
-    const fontScaleAttr = rootEl.getAttribute('data-a11y-font-scale');
-    const motionAttr = rootEl.getAttribute('data-a11y-motion');
+
+    // Preservar todos os atributos data-a11y-* em documentElement
+    const a11yAttrs = {};
+    Array.from(rootEl.attributes).forEach(function (attr) {
+      if (attr.name.startsWith('data-a11y-')) {
+        a11yAttrs[attr.name] = attr.value;
+      }
+    });
 
     if (doc.body) {
       document.body.className = doc.body.className;
@@ -5300,9 +5312,9 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
         rootEl.classList.add('cagp-high-contrast');
         document.body.classList.add('cagp-high-contrast');
       }
-      if (contrastAttr) rootEl.setAttribute('data-a11y-contrast', contrastAttr);
-      if (fontScaleAttr) rootEl.setAttribute('data-a11y-font-scale', fontScaleAttr);
-      if (motionAttr) rootEl.setAttribute('data-a11y-motion', motionAttr);
+      Object.keys(a11yAttrs).forEach(function (key) {
+        rootEl.setAttribute(key, a11yAttrs[key]);
+      });
     }
 
     // 3. Margin Sidebar (TOC)
@@ -5773,7 +5785,7 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
         if (window.cagpSyncWorkspaceFromHash) {
           window.cagpSyncWorkspaceFromHash(toObj.hash, { scroll: true });
         }
-        window.cagpRouteProgress.done();
+        window.cagpRouteProgress.finish();
         return;
       }
 
@@ -5858,11 +5870,16 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
   });
 
   window.addEventListener('popstate', function () {
-    if (window.location.hash && window.cagpSyncWorkspaceFromHash) {
-      if (window.cagpSyncWorkspaceFromHash(window.location.hash, { scroll: false })) {
-        return;
+    try {
+      const newPath = new URL(window.location.href).pathname;
+      if (newPath === currentPath) {
+        if (window.location.hash && window.cagpSyncWorkspaceFromHash) {
+          if (window.cagpSyncWorkspaceFromHash(window.location.hash, { scroll: false })) {
+            return;
+          }
+        }
       }
-    }
+    } catch (e) {}
     navigate(window.location.href, true, null);
   });
 

@@ -8,6 +8,7 @@
 
   const cache = new Map();
   let activePageDisposers = [];
+  let currentPath = window.location.pathname;
 
   function cleanupPreviousPageListeners() {
     while (activePageDisposers.length > 0) {
@@ -246,6 +247,10 @@
   }
 
   function applyPageSwap(doc, targetUrl) {
+    try {
+      currentPath = new URL(targetUrl, window.location.origin).pathname;
+    } catch (e) {}
+
     // 1. Título do Documento
     const newTitle = doc.querySelector('title');
     if (newTitle) document.title = newTitle.textContent;
@@ -256,9 +261,14 @@
                                document.body.classList.contains('cagp-is-standalone');
     const isDyslexia = rootEl.classList.contains('cagp-dyslexia') || document.body.classList.contains('cagp-dyslexia');
     const isContrast = rootEl.classList.contains('cagp-high-contrast') || document.body.classList.contains('cagp-high-contrast');
-    const contrastAttr = rootEl.getAttribute('data-a11y-contrast');
-    const fontScaleAttr = rootEl.getAttribute('data-a11y-font-scale');
-    const motionAttr = rootEl.getAttribute('data-a11y-motion');
+
+    // Preservar todos os atributos data-a11y-* em documentElement
+    const a11yAttrs = {};
+    Array.from(rootEl.attributes).forEach(function (attr) {
+      if (attr.name.startsWith('data-a11y-')) {
+        a11yAttrs[attr.name] = attr.value;
+      }
+    });
 
     if (doc.body) {
       document.body.className = doc.body.className;
@@ -274,9 +284,9 @@
         rootEl.classList.add('cagp-high-contrast');
         document.body.classList.add('cagp-high-contrast');
       }
-      if (contrastAttr) rootEl.setAttribute('data-a11y-contrast', contrastAttr);
-      if (fontScaleAttr) rootEl.setAttribute('data-a11y-font-scale', fontScaleAttr);
-      if (motionAttr) rootEl.setAttribute('data-a11y-motion', motionAttr);
+      Object.keys(a11yAttrs).forEach(function (key) {
+        rootEl.setAttribute(key, a11yAttrs[key]);
+      });
     }
 
     // 3. Margin Sidebar (TOC)
@@ -747,7 +757,7 @@
         if (window.cagpSyncWorkspaceFromHash) {
           window.cagpSyncWorkspaceFromHash(toObj.hash, { scroll: true });
         }
-        window.cagpRouteProgress.done();
+        window.cagpRouteProgress.finish();
         return;
       }
 
@@ -832,11 +842,16 @@
   });
 
   window.addEventListener('popstate', function () {
-    if (window.location.hash && window.cagpSyncWorkspaceFromHash) {
-      if (window.cagpSyncWorkspaceFromHash(window.location.hash, { scroll: false })) {
-        return;
+    try {
+      const newPath = new URL(window.location.href).pathname;
+      if (newPath === currentPath) {
+        if (window.location.hash && window.cagpSyncWorkspaceFromHash) {
+          if (window.cagpSyncWorkspaceFromHash(window.location.hash, { scroll: false })) {
+            return;
+          }
+        }
       }
-    }
+    } catch (e) {}
     navigate(window.location.href, true, null);
   });
 
