@@ -95,6 +95,15 @@ toc: false
 Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular suas horas já realizadas ou planejadas. A calculadora **respeita automaticamente o teto máximo regimental de cada categoria** e salva seu rascunho neste navegador:
 
 ```{=html}
+<div class="cagp-tipkit-card" id="tip-acg-vault" role="note">
+  <div class="cagp-tipkit-icon"><i class="bi bi-shield-lock-fill text-danger" aria-hidden="true"></i></div>
+  <div class="cagp-tipkit-content">
+    <div class="cagp-tipkit-title">Cofre Discente 100% Local</div>
+    <p class="cagp-tipkit-desc">Suas horas e certificados são salvos automaticamente no seu navegador. Você pode gerar um código de backup <code>CAGP1:...</code> no <strong>Passaporte Discente</strong> no topo para transferir para o celular sem criar conta.</p>
+  </div>
+  <button type="button" class="cagp-tipkit-close" data-dismiss-tip="tip-acg-vault" aria-label="Dispensar dica sobre o cofre discente">✕</button>
+</div>
+
 <section class="cagp-tool-box" aria-labelledby="calc-heading">
   <div class="cagp-tool-header">
     <div>

@@ -96,6 +96,16 @@ toc: false
   </div>
 </section>
 
+<!-- Dica Contextual TipKit -->
+<div class="cagp-tipkit-card" id="tip-docs-cache" role="note">
+  <div class="cagp-tipkit-icon"><i class="bi bi-cloud-check-fill text-success" aria-hidden="true"></i></div>
+  <div class="cagp-tipkit-content">
+    <div class="cagp-tipkit-title">Acervo Salvo para Consulta Offline</div>
+    <p class="cagp-tipkit-desc">Os 9 PDFs oficiais essenciais e todas as 14 rotas ficam guardados no cache do seu navegador. Use a pílula <strong>"Baixados Offline ✓"</strong> para filtrar os arquivos disponíveis mesmo sem sinal de internet.</p>
+  </div>
+  <button type="button" class="cagp-tipkit-close" data-dismiss-tip="tip-docs-cache" aria-label="Dispensar dica de uso offline do acervo">✕</button>
+</div>
+
 <!-- Empty State Acolhedor de Busca de Documentos -->
 <div id="doc-empty-state" class="cagp-empty-state mb-4" style="display: none;" role="status">
   <div class="cagp-empty-icon"><i class="bi bi-file-earmark-x" aria-hidden="true"></i></div>

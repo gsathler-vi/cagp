@@ -25,9 +25,9 @@
 
   // Handler unificado de cópia rápida com feedback tátil + Dynamic Island Toast
   document.addEventListener('click', function (e) {
-    const copyBtn = e.target && e.target.closest ? e.target.closest('[data-copy]') : null;
+    const copyBtn = e.target && e.target.closest ? (e.target.closest('[data-cagp-copy]') || e.target.closest('[data-copy]')) : null;
     if (!copyBtn) return;
-    const text = copyBtn.getAttribute('data-copy');
+    const text = copyBtn.getAttribute('data-cagp-copy') || copyBtn.getAttribute('data-copy');
     if (!text) return;
 
     const copyAction = function () {
@@ -69,5 +69,49 @@
       copyAction();
     }
   });
+
+  // Gerenciamento Global do Padrão TipKit Contextual (Apple HIG TipKit)
+  function initTipKitCards() {
+    document.querySelectorAll('.cagp-tipkit-card[id]').forEach(function (card) {
+      const tipId = card.id;
+      try {
+        if (localStorage.getItem('cagp_tip_' + tipId) === 'dismissed') {
+          card.style.display = 'none';
+          return;
+        }
+      } catch (e) {}
+      card.style.display = '';
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    const closeBtn = e.target && e.target.closest ? e.target.closest('[data-dismiss-tip]') : null;
+    if (!closeBtn) return;
+    const tipId = closeBtn.getAttribute('data-dismiss-tip');
+    const card = document.getElementById(tipId) || closeBtn.closest('.cagp-tipkit-card');
+    if (card) {
+      card.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(-4px)';
+      setTimeout(function () {
+        card.style.display = 'none';
+      }, 200);
+      try {
+        localStorage.setItem('cagp_tip_' + (tipId || card.id), 'dismissed');
+      } catch (e) {}
+    }
+  });
+
+  window.cagpResetTips = function () {
+    try {
+      Object.keys(localStorage).forEach(function (k) {
+        if (k.startsWith('cagp_tip_')) localStorage.removeItem(k);
+      });
+      initTipKitCards();
+    } catch (e) {}
+  };
+
+  initTipKitCards();
+  window.addEventListener('cagp:navigated', initTipKitCards);
 })();
 </script>

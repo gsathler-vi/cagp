@@ -150,6 +150,15 @@ toc: false
     </div>
   </div>
 
+  <div class="cagp-tipkit-card" id="tip-grafo-nav" role="note">
+    <div class="cagp-tipkit-icon"><i class="bi bi-keyboard-fill text-primary" aria-hidden="true"></i></div>
+    <div class="cagp-tipkit-content">
+      <div class="cagp-tipkit-title">Navegação Acessível no Grafo</div>
+      <p class="cagp-tipkit-desc">Toque ou clique em qualquer disciplina para abrir sua ficha tátil e encadeamento. Com o foco no mapa, você pode usar as <strong>setas do teclado (← → ↑ ↓)</strong> para circular entre as 27 obrigatórias.</p>
+    </div>
+    <button type="button" class="cagp-tipkit-close" data-dismiss-tip="tip-grafo-nav" aria-label="Dispensar dica de navegação do grafo">✕</button>
+  </div>
+
   <div class="small text-muted mb-2 d-xl-none">
     <i class="bi bi-arrows-expand me-1" aria-hidden="true"></i> Deslize horizontalmente para navegar pelos 10 períodos curriculares. Toque em um card para abrir conexões e ficha tátil.
   </div>
@@ -2517,7 +2526,7 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
       jumpBtn.onclick = function (e) {
         e.preventDefault();
         if (window.cagpActivateWorkspaceView) {
-          window.cagpActivateWorkspaceView(null, 'v2', { updateHash: false });
+          window.cagpActivateWorkspaceView('v2', { updateHash: false });
         }
         const detailsCards = Array.from(document.querySelectorAll('.cagp-discipline'));
         const targetCard = detailsCards.find(function (c) {

@@ -133,19 +133,20 @@ title-block-style: none
 </section>
 <span id="bussola" class="cagp-anchor-alias" aria-hidden="true"></span>
 
-<!-- Banner de Onboarding e Primeiro Acesso -->
+<!-- Banner de Onboarding e Primeiro Acesso (Recuperável & TipKit) -->
 <div id="cagp-onboarding-banner" class="cagp-onboard-banner mb-3" role="region" aria-label="Boas-vindas e primeiros passos no portal">
   <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
     <div class="d-flex align-items-center gap-3">
       <div class="cagp-onboard-icon"><i class="bi bi-compass-fill" aria-hidden="true"></i></div>
       <div>
-        <div class="fw-bold fs-6 text-uppercase">Primeira vez no Portal do CAGP?</div>
-        <p class="small text-muted mb-0">Selecione seu perfil na Bússola abaixo (Vestibulando, Calouro, Meio de Curso ou Formando) para ver atalhos diretos e eliminar burocracias.</p>
+        <div class="fw-bold fs-6 text-uppercase">Boas-vindas ao Portal &amp; Super App CAGP!</div>
+        <p class="small text-muted mb-0">Use a Bússola abaixo para navegar por momento ou personalize seu Passaporte Acadêmico no topo.</p>
       </div>
     </div>
-    <div class="d-flex align-items-center gap-2">
-      <a href="calouros.html" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-2" style="font-size: 0.78rem;"><i class="bi bi-backpack me-1" aria-hidden="true"></i> Sou Calouro</a>
-      <button type="button" id="btn-dismiss-onboard" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-2" style="font-size: 0.78rem;" aria-label="Dispensar aviso de boas-vindas e não exibir novamente">✕ Entendi, fechar aviso</button>
+    <div class="d-flex align-items-center flex-wrap gap-2">
+      <a href="calouros.html" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-2" style="font-size: 0.78rem;"><i class="bi bi-backpack me-1" aria-hidden="true"></i> Guia do Calouro</a>
+      <button type="button" id="btn-onboard-passport" class="cagp-doc-btn cagp-doc-btn-secondary py-1 px-2" style="font-size: 0.78rem;" onclick="(window.cagpOpenAppSettings || window.openCagpAppSettings) &amp;&amp; (window.cagpOpenAppSettings || window.openCagpAppSettings)()"><i class="bi bi-person-vcard me-1" aria-hidden="true"></i> Meu Perfil</button>
+      <button type="button" id="btn-dismiss-onboard" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-2" style="font-size: 0.78rem;" aria-label="Dispensar aviso de boas-vindas e não exibir novamente">✕ Fechar</button>
     </div>
   </div>
 </div>
@@ -999,7 +1000,12 @@ Entenda a **Extensão Obrigatória (300h)**, as **AAC (até 300h)** com prazo de
 
       activeTab.setAttribute('aria-selected', 'true');
       var targetPanel = document.getElementById(targetId);
-      if (targetPanel) targetPanel.hidden = false;
+      if (targetPanel) {
+        targetPanel.hidden = false;
+        targetPanel.classList.remove('is-entering');
+        void targetPanel.offsetWidth; // trigger reflow para animação
+        targetPanel.classList.add('is-entering');
+      }
 
       if (updateHash) {
         var hashKey = targetId.replace('panel-', '');
@@ -1084,6 +1090,27 @@ Entenda a **Extensão Obrigatória (300h)**, as **AAC (até 300h)** com prazo de
 
     var onboardBanner = document.getElementById('cagp-onboarding-banner');
     var btnDismissOnboard = document.getElementById('btn-dismiss-onboard');
+
+    window.cagpResetOnboarding = function () {
+      try {
+        localStorage.removeItem('cagp_onboard_v1_dismissed');
+      } catch (e) {}
+      if (onboardBanner) {
+        onboardBanner.style.display = 'block';
+        onboardBanner.style.opacity = '0';
+        onboardBanner.style.transform = 'translateY(-4px)';
+        requestAnimationFrame(function () {
+          onboardBanner.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+          onboardBanner.style.opacity = '1';
+          onboardBanner.style.transform = 'translateY(0)';
+        });
+        onboardBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      if (window.cagpToast) {
+        window.cagpToast('Dicas e tour de boas-vindas reativados!', 'bi-compass', 2800);
+      }
+    };
+
     if (onboardBanner && btnDismissOnboard) {
       try {
         if (localStorage.getItem('cagp_onboard_v1_dismissed') === 'true') {
@@ -1092,10 +1119,18 @@ Entenda a **Extensão Obrigatória (300h)**, as **AAC (até 300h)** com prazo de
       } catch (e) {}
 
       btnDismissOnboard.onclick = function () {
-        onboardBanner.style.display = 'none';
+        onboardBanner.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+        onboardBanner.style.opacity = '0';
+        onboardBanner.style.transform = 'translateY(-4px)';
+        setTimeout(function () {
+          onboardBanner.style.display = 'none';
+        }, 200);
         try {
           localStorage.setItem('cagp_onboard_v1_dismissed', 'true');
         } catch (e) {}
+        if (window.cagpToast) {
+          window.cagpToast('Você pode rever as dicas a qualquer momento no Passaporte Discente.', 'bi-info-circle', 2800);
+        }
       };
     }
 
