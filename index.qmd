@@ -984,7 +984,7 @@ Entenda a **Extensão Obrigatória (300h)**, as **AAC (até 300h)** com prazo de
 ```
 :::
 :::
-
+```{=html}
 <script>
 (function () {
   function initIndexPage() {
