@@ -1,6 +1,7 @@
 ---
 title: "Extensão & Atividades Complementares (AAC)"
 subtitle: "Regulamento oficial, curricularização da extensão (300h), modalidades de AAC e validação no Colegiado"
+description: "Calculadora de 600h de Extensão e Atividades Acadêmicas Complementares (AAC), Guardião de 120 dias e formulários N-20229 da FAFICH/UFMG."
 title-block-style: none
 toc: false
 ---
@@ -36,26 +37,56 @@ toc: false
   <p class="cagp-workspace-subtitle">Simulador interativo com trava automática de tetos regimentais, Guardião do prazo fatal de 120 dias corridos (Art. 15, § 4º) e tutorial passo a passo do Formulário Oficial N-20229.</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas de Extensão e AAC">
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#calculadora-horas">
-        <i class="bi bi-calculator-fill" aria-hidden="true"></i> <span>1. Calculadora 600h &amp; N-20229</span> <span class="cagp-ws-badge">Simulador</span>
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#calculadora-horas">
+        <i class="bi bi-calculator-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Calculadora 600h</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Calculadora</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#guardiao-120-dias">
-        <i class="bi bi-shield-exclamation" aria-hidden="true"></i> <span>2. Guardião de 120 Dias</span> <span class="cagp-ws-badge">Art. 15 §4º</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#guardiao-120-dias">
+        <i class="bi bi-shield-exclamation" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Guardião 120 Dias</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">120 dias</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#regulamento-categorias">
-        <i class="bi bi-card-list" aria-hidden="true"></i> <span>3. As 9 Categorias &amp; Formulário</span> <span class="cagp-ws-badge">Tutorial</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> <span>Ver Tudo</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#regulamento-categorias">
+        <i class="bi bi-card-list" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">3. Guia &amp; Tramitação</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Guia</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```
 
+::: {#ws-panel-v1 .cagp-workspace-view .is-active role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1"}
+
 ```{=html}
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<!-- HUD Linear Compacto de 64px para 1ª Dobra (Extensão 300h + AAC 300h) -->
+<div id="cagp-calc-hud-linear" class="cagp-calc-hud-linear mb-3 p-2 border border-1 border-dark bg-light" role="region" aria-label="Progresso de Integralização 600h">
+  <div class="row g-2">
+    <div class="col-12 col-md-6">
+      <div class="d-flex justify-content-between align-items-center mb-1">
+        <span class="small fw-bold text-uppercase">Extensão Obrigatória</span>
+        <span id="hud-ext-val" class="font-mono small fw-bold">0/300h (0 cr)</span>
+      </div>
+      <div class="progress" style="height: 8px;">
+        <div id="hud-ext-bar" class="progress-bar bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="300"></div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="d-flex justify-content-between align-items-center mb-1">
+        <span class="small fw-bold text-uppercase">Atividades Complementares (AAC)</span>
+        <span id="hud-aac-val" class="font-mono small fw-bold">0/300h (0 cr)</span>
+      </div>
+      <div class="progress" style="height: 8px;">
+        <div id="hud-aac-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="300"></div>
+      </div>
+    </div>
+  </div>
+</div>
 ```
 
 ## <i class="bi bi-calculator" aria-hidden="true"></i> Calculadora & Simulador Interativo de Horas {#calculadora-horas}
@@ -71,9 +102,9 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
       <h3 id="calc-heading" class="h5 mb-0">SIMULADOR DE INTEGRALIZAÇÃO: EXTENSÃO (300H) + AAC (ATÉ 300H)</h3>
     </div>
     <div class="d-flex flex-wrap align-items-center gap-2">
-      <button type="button" id="btn-gerar-resumo-n20229" class="cagp-btn cagp-btn-primary btn-sm">
-        <i class="bi bi-file-earmark-spreadsheet me-1" aria-hidden="true"></i> Gerar Resumo para Formulário N-20229
-      </button>
+      <a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-btn cagp-btn-primary btn-sm">
+        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Formulário Oficial N-20229 (PDF)
+      </a>
       <button type="button" id="btn-calc-sample" class="cagp-chip"><i class="bi bi-play-circle me-1" aria-hidden="true"></i>Exemplo (360h)</button>
       <button type="button" id="btn-calc-reset" class="cagp-chip">Zerar Simulação</button>
     </div>
@@ -718,18 +749,18 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
     </div>
   </div>
 
-  <!-- Barra de Fechamento da Calculadora: Gerador de Espelho Oficial N-20229 & Protocolo -->
-  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 p-3 mt-4 border border-2 border-dark" style="background-color: var(--cagp-surface-low, #F4F1EA);">
+  <!-- Barra de Fechamento da Calculadora: Protocolo e Formulário Oficial N-20229 -->
+  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 p-3 mt-4 border border-1 border-dark bg-light">
     <div>
       <div class="fw-bold font-display text-uppercase small text-dark">
-        <i class="bi bi-file-earmark-spreadsheet-fill text-danger me-1" aria-hidden="true"></i> Pronto para Conferência ou Protocolo no Colegiado?
+        <i class="bi bi-file-earmark-check text-danger me-1" aria-hidden="true"></i> Protocolo no Colegiado (Sala F-2039)
       </div>
-      <div class="small text-muted">Gere o espelho oficial das horas simuladas com conversão automática em créditos (15h = 1 cr) para preencher o Requerimento N-20229 ou colar no SEI.</div>
+      <div class="small text-muted">Baixe o Requerimento Oficial N-20229 em PDF, anexe seus comprovantes autenticáveis e entregue na Secretaria do Curso ou via SEI UFMG.</div>
     </div>
     <div class="d-flex flex-wrap gap-2">
-      <button type="button" id="btn-gerar-resumo-n20229-bottom" class="cagp-btn cagp-btn-primary btn-sm">
-        <i class="bi bi-file-earmark-spreadsheet me-1" aria-hidden="true"></i> Gerar Resumo para Formulário N-20229
-      </button>
+      <a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-btn cagp-btn-primary btn-sm">
+        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Baixar N-20229 (PDF)
+      </a>
       <button type="button" class="cagp-action-chip" data-cagp-ics="protocolo-aac-semestral">
         <i class="bi bi-calendar-plus" aria-hidden="true"></i> <span>Lembrete Protocolo (.ics)</span>
       </button>
@@ -768,10 +799,10 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
 :::
 :::
 
-```{=html}
-</div>
+:::
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+::: {#ws-panel-v2 .cagp-workspace-view role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden="true"}
+```{=html}
 <!-- =========================================================================
      GUARDIÃO DO PRAZO FATAL DE 120 DIAS DAS AAC (ART. 15, § 4º • N-20229)
      ========================================================================= -->
@@ -851,10 +882,10 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
   <!-- Lista de Certificados Monitorados -->
   <div id="guardiao-120d-list" class="cagp-120d-list" aria-live="polite"></div>
 </section>
-</div>
-
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
 ```
+:::
+
+::: {#ws-panel-v3 .cagp-workspace-view role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden="true"}
 
 ## <i class="bi bi-card-list" aria-hidden="true"></i> Regulamento Detalhado por Modalidade {#regulamento-categorias}
 
@@ -1154,10 +1185,8 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
     </div>
   </div>
 </nav>
-</div>
-
-<!-- Folha Oculta de Impressão A4 para o Espelho Oficial N-20229 (@media print) -->
-<div id="cagp-n20229-print-sheet" class="cagp-n20229-print-sheet" aria-hidden="true"></div>
+```
+:::
 
 <script>
 (function () {
@@ -1319,6 +1348,26 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
         aacBar.style.width = aacPct + '%';
       }
       aacBar.classList.toggle('is-complete', aacCap >= 300);
+    }
+
+    // Atualização reativa do HUD Linear Compacto de 64px
+    const hudExtBar = document.getElementById('hud-ext-bar');
+    const hudAacBar = document.getElementById('hud-aac-bar');
+    const hudExtVal = document.getElementById('hud-ext-val');
+    const hudAacVal = document.getElementById('hud-aac-val');
+    if (hudExtBar) {
+      hudExtBar.style.width = Math.min(100, extPct) + '%';
+      hudExtBar.setAttribute('aria-valuenow', extCap);
+    }
+    if (hudAacBar) {
+      hudAacBar.style.width = Math.min(100, aacPct) + '%';
+      hudAacBar.setAttribute('aria-valuenow', aacCap);
+    }
+    if (hudExtVal) {
+      hudExtVal.textContent = extCap + '/300h (' + extCr + ' cr)';
+    }
+    if (hudAacVal) {
+      hudAacVal.textContent = aacCap + '/300h (' + aacCr + ' cr)';
     }
 
     const totalHours = extCap + aacCap;
@@ -1774,289 +1823,6 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
     };
   }
 
-  // =========================================================================
-  // GERADOR DE ESPELHO / RESUMO PARA O FORMULÁRIO OFICIAL N-20229
-  // =========================================================================
-  const CATEGORY_META = {
-    ext_lab_a: { group: 'Extensão Obrigatória (Art. 14)', code: 'DCP 195', name: 'Laboratório de Gestão e Políticas Públicas A', max: 90 },
-    ext_lab_b: { group: 'Extensão Obrigatória (Art. 14)', code: 'DCP 196', name: 'Laboratório de Gestão e Políticas Públicas B', max: 90 },
-    ext_equalitas: { group: 'Extensão Obrigatória (Art. 14)', code: 'DCP 040', name: 'ATLAS Consultoria Jr. (Equipes de Trabalho)', max: 90 },
-    ext_proex: { group: 'Extensão Obrigatória (Art. 14)', code: 'DCP 041', name: 'Projetos e Programas PROEX / SIEX', max: 90 },
-    ext_eventos: { group: 'Extensão Obrigatória (Art. 14)', code: 'Eventos II', name: 'Organização / Debatedor de Eventos', max: 60 },
-    ext_inter: { group: 'Extensão Obrigatória (Art. 14)', code: 'Interinst.', name: 'Atividades Interinstitucionais de Ensino', max: 120 },
-    aac_1: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. I', name: 'Pesquisa Interinstitucional', max: 75 },
-    aac_2: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. II', name: 'Monitoria Acadêmica na UFMG', max: 45 },
-    aac_3: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. III', name: 'Eventos I — Participação como Ouvinte (Prazo 120d)', max: 60 },
-    aac_4: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. IV/VI', name: 'Grupos de Estudo / Pesquisa Bibliográfica', max: 30 },
-    aac_5: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. V', name: 'Iniciação Científica na UFMG (PIBIC/Volunt.)', max: 90 },
-    aac_7: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. VII/VIII', name: 'Trabalho em Anais (30h, 120d) / Artigo em Periódico (60h)', max: 90 },
-    aac_9: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. IX', name: 'Vivência Profissional / Estágio Não-Obrigatório', max: 60 }
-  };
-
-  function buildResumoN20229Data() {
-    const extItems = [];
-    const aacItems = [];
-    let extRaw = 0;
-    let aacRaw = 0;
-
-    Object.keys(CATEGORY_META).forEach(function (id) {
-      const meta = CATEGORY_META[id];
-      const hrs = Math.min(meta.max, Math.max(0, parseInt(values[id] || 0, 10)));
-      if (hrs > 0) {
-        const cr = Math.round(hrs / 15);
-        const entry = {
-          id: id,
-          code: meta.code,
-          name: meta.name,
-          hours: hrs,
-          max: meta.max,
-          credits: cr
-        };
-        if (id.indexOf('ext_') === 0) {
-          extItems.push(entry);
-          extRaw += hrs;
-        } else {
-          aacItems.push(entry);
-          aacRaw += hrs;
-        }
-      }
-    });
-
-    const extCap = Math.min(300, extRaw);
-    const aacCap = Math.min(300, aacRaw);
-    const extCr = Math.round(extCap / 15);
-    const aacCr = Math.round(aacCap / 15);
-    const certsSummary = window.cagpGet120dSummary ? window.cagpGet120dSummary() : { items: [], urgentCount: 0 };
-
-    let prof = { name: '', pronouns: '', period: '1', entrySemester: '2026/1', pathway: '01-01' };
-    try {
-      if (window.cagpProfile && typeof window.cagpProfile.get === 'function') {
-        prof = Object.assign(prof, window.cagpProfile.get());
-      } else {
-        const rawProf = localStorage.getItem('cagp_student_profile_v1');
-        if (rawProf) prof = Object.assign(prof, JSON.parse(rawProf));
-      }
-    } catch (e) {}
-
-    const studentName = (prof.name && prof.name.trim()) ? prof.name.trim() : 'Estudante de Gestão Pública (Não informado)';
-    const pronounsSuffix = (prof.pronouns && prof.pronouns.trim()) ? (' (' + prof.pronouns.trim() + ')') : '';
-    const periodLabel = prof.period === 'egresso' ? 'Egresso / Visitante' : ((prof.period || '1') + 'º Período');
-    const pathwayMap = {
-      '01-01': '01-01 • Núcleo Geral (N-20229)',
-      '01-02': '01-02 • Complementar / Transversal (N-20229)',
-      '01-03': '01-03 • Avançado PPGCP (N-20229)'
-    };
-    const pathwayLabel = pathwayMap[prof.pathway] || '01-01 • Núcleo Geral (N-20229)';
-
-    // Texto formatado para o SEI / E-mail da Coordenação
-    const lines = [
-      'ESPELHO DE CONFERÊNCIA — REQUERIMENTO DE ATIVIDADES INTEGRALIZADORAS (VERSÃO N-20229)',
-      'Requerente: ' + studentName + pronounsSuffix,
-      'Período Atual: ' + periodLabel + ' • Ingresso: ' + (prof.entrySemester || '2026/1') + ' • Percurso: ' + pathwayLabel,
-      'Curso: Bacharelado em Gestão Pública — FAFICH/UFMG (Turno Noturno)',
-      'Data de Emissão: ' + new Date().toLocaleDateString('pt-BR'),
-      'Regra de Conversão Oficial: 15 horas = 1 crédito (Art. 14 e Art. 15 do Regulamento)',
-      '------------------------------------------------------------------------',
-      '1. FORMAÇÃO EM EXTENSÃO OBRIGATÓRIA (Meta: 300h = 20 créditos)',
-      '   Subtotal Aproveitado: ' + extCap + 'h / 300h (' + extCr + ' créditos de 20 cr)'
-    ];
-    if (extItems.length === 0) {
-      lines.push('   - Nenhuma atividade de extensão lançada na simulação.');
-    } else {
-      extItems.forEach(function (it) {
-        lines.push('   - [' + it.code + '] ' + it.name + ': ' + it.hours + 'h = ' + it.credits + ' cr (Teto: ' + it.max + 'h)');
-      });
-    }
-
-    lines.push(
-      '------------------------------------------------------------------------',
-      '2. ATIVIDADES ACADÊMICAS COMPLEMENTARES — AAC (Teto: 300h = 20 créditos)',
-      '   Subtotal Aproveitado: ' + aacCap + 'h / 300h (' + aacCr + ' créditos de 20 cr)'
-    );
-    if (aacItems.length === 0) {
-      lines.push('   - Nenhuma modalidade de AAC lançada na simulação.');
-    } else {
-      aacItems.forEach(function (it) {
-        lines.push('   - [' + it.code + '] ' + it.name + ': ' + it.hours + 'h = ' + it.credits + ' cr (Teto: ' + it.max + 'h)');
-      });
-    }
-
-    if (certsSummary.items.length > 0) {
-      lines.push(
-        '------------------------------------------------------------------------',
-        '3. CERTIFICADOS MONITORADOS NO GUARDIÃO DE 120 DIAS (Art. 15, § 4º):'
-      );
-      certsSummary.items.forEach(function (c) {
-        lines.push('   - ' + c.title + ' (' + c.mod + ', ' + c.hours + 'h) • Limite 120d: ' + c.deadlineBr + ' (' + c.daysLeft + ' dias restantes)');
-      });
-    }
-
-    lines.push(
-      '------------------------------------------------------------------------',
-      'TOTAL INTEGRALIZADO SIMULADO: ' + (extCap + aacCap) + 'h / 600h (' + (extCr + aacCr) + ' créditos de 40 créditos)',
-      'Tramitação Oficial: Enviar formulário N-20229 + certificados autenticáveis para coordgestaopublica@gmail.com e protocolar assinado na Secretaria do Curso (Sala F-2039 FAFICH).'
-    );
-
-    return {
-      studentName: studentName + pronounsSuffix,
-      periodLabel: periodLabel,
-      entrySemester: prof.entrySemester || '2026/1',
-      pathwayLabel: pathwayLabel,
-      extItems: extItems,
-      aacItems: aacItems,
-      extCap: extCap,
-      aacCap: aacCap,
-      extCr: extCr,
-      aacCr: aacCr,
-      totalHours: extCap + aacCap,
-      totalCredits: extCr + aacCr,
-      certs: certsSummary.items,
-      seiText: lines.join('\n')
-    };
-  }
-
-  function renderMirrorHtml(data) {
-    function buildRowsHtml(items, emptyMsg) {
-      if (items.length === 0) {
-        return '<tr><td colspan="4" class="text-center text-muted small py-2">' + emptyMsg + '</td></tr>';
-      }
-      return items.map(function (it) {
-        return (
-          '<tr>' +
-            '<td class="font-mono fw-bold small">' + it.code + '</td>' +
-            '<td class="small">' + it.name + '</td>' +
-            '<td class="text-center font-mono small">' + it.hours + 'h <span class="text-muted">/' + it.max + 'h</span></td>' +
-            '<td class="text-center font-mono fw-bold small">' + it.credits + ' cr</td>' +
-          '</tr>'
-        );
-      }).join('');
-    }
-
-    const certsHtml = data.certs.length > 0
-      ? '<div class="mt-3 p-2 border border-2 border-dark" style="background:#FFF3CD;">' +
-          '<div class="fw-bold font-display text-uppercase small text-danger mb-1">' +
-            '<i class="bi bi-shield-exclamation me-1"></i> Certificados no Guardião de 120 Dias (Art. 15, § 4º)' +
-          '</div>' +
-          '<ul class="small mb-0 ps-3">' +
-            data.certs.map(function (c) {
-              return '<li><strong>' + c.title + '</strong> (' + c.mod + ', ' + c.hours + 'h) — Data fatal: <strong>' + c.deadlineBr + '</strong> (' + c.daysLeft + 'd)</li>';
-            }).join('') +
-          '</ul>' +
-        '</div>'
-      : '';
-
-    return (
-      '<div class="cagp-n20229-mirror">' +
-        '<div class="p-3 mb-3 border border-2 border-dark" style="background: var(--cagp-surface-low, #F4F1EA);">' +
-          '<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-1">' +
-            '<span class="cagp-badge cagp-badge-red">Espelho Oficial • Versão N-20229</span>' +
-            '<span class="font-mono small fw-bold">15h = 1 crédito</span>' +
-          '</div>' +
-          '<div class="h5 font-display text-uppercase fw-bold mb-1">Resumo para Requerimento de Integralização (Extensão + AAC)</div>' +
-          '<div class="cagp-n20229-student-strip p-2 my-2 bg-white border border-dark small">' +
-            '<div><strong>Requerente:</strong> <span data-n20229-student-name>' + data.studentName + '</span></div>' +
-            '<div class="text-muted"><strong>Vínculo:</strong> <span data-n20229-student-period>' + data.periodLabel + '</span> • <strong>Ingresso:</strong> ' + data.entrySemester + ' • <strong>Percurso:</strong> ' + data.pathwayLabel + '</div>' +
-          '</div>' +
-          '<div class="small text-muted">Total Simulado: <strong>' + data.totalHours + 'h / 600h (' + data.totalCredits + ' créditos de 40 cr)</strong> • Secretaria do Colegiado: <strong>Sala F-2039 (Norma Guedes)</strong></div>' +
-        '</div>' +
-
-        '<h4 class="h6 font-display text-uppercase fw-bold mb-2">1. Formação em Extensão Obrigatória (' + data.extCap + 'h / 300h = ' + data.extCr + ' cr)</h4>' +
-        '<div class="table-responsive mb-3">' +
-          '<' + 'table class="table table-sm table-bordered border-dark align-middle mb-0">' +
-            '<thead class="table-dark">' +
-              '<tr><th>Código</th><th>Modalidade / Disciplina</th><th class="text-center">Horas</th><th class="text-center">Créditos</th></tr>' +
-            '</thead>' +
-            '<tbody>' + buildRowsHtml(data.extItems, 'Nenhuma hora de Extensão preenchida na calculadora.') + '</tbody>' +
-          '</' + 'table>' +
-        '</div>' +
-
-        '<h4 class="h6 font-display text-uppercase fw-bold mb-2">2. Atividades Complementares — AAC Art. 15 (' + data.aacCap + 'h / 300h = ' + data.aacCr + ' cr)</h4>' +
-        '<div class="table-responsive mb-2">' +
-          '<' + 'table class="table table-sm table-bordered border-dark align-middle mb-0">' +
-            '<thead class="table-dark">' +
-              '<tr><th>Mod.</th><th>Categoria Regimental (Art. 15)</th><th class="text-center">Horas</th><th class="text-center">Créditos</th></tr>' +
-            '</thead>' +
-            '<tbody>' + buildRowsHtml(data.aacItems, 'Nenhuma hora de AAC preenchida na calculadora.') + '</tbody>' +
-          '</' + 'table>' +
-        '</div>' +
-        certsHtml +
-        '<div class="mt-3">' +
-          '<label for="cagp-n20229-sei-textarea" class="small fw-bold font-display text-uppercase mb-1 d-block">Texto Pronto para Copiar (SEI / E-mail Coordenação):</label>' +
-          '<textarea id="cagp-n20229-sei-textarea" class="form-control border-dark font-mono small" rows="5" readonly>' + data.seiText + '</textarea>' +
-        '</div>' +
-      '</div>'
-    );
-  }
-
-  function openResumoN20229Modal() {
-    const data = buildResumoN20229Data();
-    const mirrorHtml = renderMirrorHtml(data);
-    const printContainer = document.getElementById('cagp-n20229-print-sheet');
-    if (printContainer) {
-      printContainer.innerHTML = mirrorHtml;
-    }
-
-    const footerHtml =
-      '<button type="button" id="btn-copy-n20229-sei" class="cagp-btn cagp-btn-primary btn-sm">' +
-        '<i class="bi bi-clipboard-check me-1" aria-hidden="true"></i> Copiar para o SEI' +
-      '</button>' +
-      '<button type="button" id="btn-print-n20229" class="cagp-btn cagp-btn-secondary btn-sm">' +
-        '<i class="bi bi-printer me-1" aria-hidden="true"></i> Imprimir / Salvar PDF' +
-      '</button>' +
-      '<a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-btn cagp-btn-outline btn-sm">' +
-        '<i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Formulário N-20229' +
-      '</a>';
-
-    if (window.cagpSheet && window.cagpSheet.open) {
-      window.cagpSheet.open({
-        title: 'Espelho Oficial • Requerimento N-20229',
-        badge: data.totalHours + 'h (' + data.totalCredits + ' CR)',
-        detent: 'large',
-        html: mirrorHtml,
-        footerHtml: footerHtml
-      });
-
-      const copyBtn = document.getElementById('btn-copy-n20229-sei');
-      if (copyBtn) {
-        copyBtn.onclick = function () {
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(data.seiText).then(function () {
-              if (window.cagpToast) window.cagpToast('Resumo N-20229 copiado para a área de transferência!', 'bi-clipboard-check-fill', 2800);
-            });
-          } else {
-            const ta = document.getElementById('cagp-n20229-sei-textarea');
-            if (ta) {
-              ta.select();
-              document.execCommand('copy');
-              if (window.cagpToast) window.cagpToast('Resumo N-20229 copiado!', 'bi-clipboard-check-fill', 2600);
-            }
-          }
-        };
-      }
-
-      const printBtn = document.getElementById('btn-print-n20229');
-      if (printBtn) {
-        printBtn.onclick = function () {
-          window.print();
-        };
-      }
-    }
-  }
-
-  ['btn-gerar-resumo-n20229', 'btn-gerar-resumo-n20229-bottom'].forEach(function (btnId) {
-    const btn = document.getElementById(btnId);
-    if (btn) {
-      btn.onclick = openResumoN20229Modal;
-    }
-  });
-
-  function syncPrintSheet() {
-    const printContainer = document.getElementById('cagp-n20229-print-sheet');
-    if (printContainer) {
-      printContainer.innerHTML = renderMirrorHtml(buildResumoN20229Data());
-    }
-  }
-
   // Sincronização em tempo real quando o aluno restaura, limpa o Cofre ou edita o Passaporte
   if (window.__cagpAcgSyncHandler) {
     window.removeEventListener('cagp:vault-synced', window.__cagpAcgSyncHandler);
@@ -2069,15 +1835,23 @@ Use os botões **`-`** e **`+`** (em blocos de 15h = 1 crédito) para simular su
     Object.keys(fresh).forEach(function (k) { values[k] = fresh[k]; });
     render();
     renderGuardiao120d();
-    syncPrintSheet();
   };
   window.addEventListener('cagp:vault-synced', window.__cagpAcgSyncHandler);
   window.addEventListener('cagp:vault-cleared', window.__cagpAcgSyncHandler);
   window.addEventListener('cagp:profile-updated', window.__cagpAcgSyncHandler);
 
+  // Limpeza de listeners ao navegar via SPA
+  window.addEventListener('cagp:navigated', function () {
+    rows.forEach(function (row) {
+      const decBtn = row.querySelector('[data-action="dec"]');
+      const incBtn = row.querySelector('[data-action="inc"]');
+      if (decBtn) decBtn.onclick = null;
+      if (incBtn) incBtn.onclick = null;
+    });
+  }, { once: true });
+
   render();
   renderGuardiao120d();
-  syncPrintSheet();
   }
 
   if (document.readyState === 'loading') {

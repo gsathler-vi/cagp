@@ -1,6 +1,7 @@
 ---
 title: "Documentos Oficiais do Curso"
 subtitle: "Repositório dos atos normativos, projeto pedagógico, regulamento, ementário e matrizes curriculares"
+description: "Acervo de atos normativos, PPC 2020, regulamento N-20229 e os 9 formulários oficiais essenciais em PDF disponíveis para acesso offline."
 title-block-style: none
 toc: false
 ---
@@ -28,53 +29,45 @@ toc: false
     <div class="cagp-workspace-badges">
       <span class="cagp-badge cagp-badge-red">Acervo Oficial FAFICH/UFMG</span>
       <span class="cagp-badge cagp-badge-dark">Versão Curricular N-20229</span>
-      <span class="cagp-badge cagp-badge-blue">8 PDFs Offline + 17 Modelos</span>
+      <span class="cagp-badge cagp-badge-blue">9 PDFs Offline + 17 Modelos</span>
     </div>
   </div>
   <h1 class="cagp-workspace-title">REPOSITÓRIO NORMATIVO DE GESTÃO PÚBLICA</h1>
-  <p class="cagp-workspace-subtitle">Cofre Offline dos 8 PDFs normativos essenciais (PPC 2020, Regulamento N-20229, Ementário, 3 Percursos, Termo de TCC e Regimento CAGP), formulários editáveis em PDF/DOCX e tutorial do DRCA.</p>
+  <p class="cagp-workspace-subtitle">Cofre Offline dos 9 PDFs normativos essenciais (PPC 2020, Regulamento N-20229, Ementário, 3 Percursos, Termo de TCC, Regimento CAGP e Requerimento N-20229), formulários editáveis em PDF/DOCX e tutorial do DRCA.</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar categorias de Documentos">
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#atos-cagp">
-        <i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i> <span>1. Atos Normativos &amp; 3 Percursos</span> <span class="cagp-ws-badge">8 PDFs</span>
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#atos-cagp">
+        <i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Atos Normativos</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Atos</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#formularios">
-        <i class="bi bi-pencil-square" aria-hidden="true"></i> <span>2. Formulários &amp; Estágio</span> <span class="cagp-ws-badge">PDF / DOCX</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#formularios">
+        <i class="bi bi-pencil-square" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Formulários</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Formulários</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#tutorial-drca">
-        <i class="bi bi-journal-text" aria-hidden="true"></i> <span>3. Tutorial Mudança Percurso</span> <span class="cagp-ws-badge">DRCA</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> <span>Ver Tudo</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#tutorial-drca">
+        <i class="bi bi-journal-text" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">3. Instruções DRCA</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">DRCA</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 
-<!-- Painel de Disponibilidade Offline (Super App Offline Vault - Estilo Spotify / Apple Music) -->
-<div id="cagp-spotify-vault" class="cagp-spotify-vault-bar mb-3" role="region" aria-label="Sua Biblioteca de Documentos Offline">
-  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
-    <div class="d-flex align-items-center flex-wrap gap-2">
-      <span id="cagp-vault-status-badge" class="cagp-badge cagp-badge-green">
-        <i class="bi bi-cloud-check-fill me-1" aria-hidden="true"></i> Sua Biblioteca Offline
-      </span>
-      <span id="cagp-vault-count-text" class="small font-display fw-bold text-uppercase text-dark cagp-tabular">
-        0 de 8 PDFs Essenciais Salvos no Aparelho
-      </span>
-    </div>
-    <div class="d-flex flex-wrap gap-2">
-      <button type="button" class="cagp-chip py-1 px-3" id="btn-cache-all-docs">
-        <i class="bi bi-arrow-down-circle-fill me-1 text-success" aria-hidden="true"></i> Sincronizar 8 PDFs Offline
-      </button>
-    </div>
+<!-- Faixa Inline de Status Offline (44px) -->
+<div id="cagp-offline-status-strip" class="cagp-offline-strip mb-3 d-flex align-items-center justify-content-between p-2 border border-1 border-dark bg-light" style="min-height: 44px;">
+  <div class="d-flex align-items-center gap-2 small">
+    <i class="bi bi-cloud-check-fill text-success" aria-hidden="true"></i>
+    <span id="cagp-vault-status-indicator">✓ 9/9 PDFs oficiais essenciais disponíveis offline</span>
   </div>
-  <div class="cagp-progress-track mb-2" aria-hidden="true">
-    <div id="cagp-vault-progress-bar" class="cagp-progress-fill" style="width: 0%;"></div>
-  </div>
-  <p class="small text-muted mb-0">
-    Grave os <strong>8 PDFs normativos essenciais</strong> (PPC, Regulamento, Ementário, 3 Percursos, Termo de TCC e Regimento CAGP) ou qualquer requerimento individual na memória local do navegador (<code>cagp-pdfs-oficiais-v1</code>) para leitura instantânea sem internet na FAFICH.
-  </p>
+  <button type="button" id="cagp-vault-sync-pill" class="cagp-btn cagp-btn-outline btn-sm py-1" onclick="window.cagpCacheAllPdfs()">
+    <i class="bi bi-arrow-repeat me-1"></i> Sincronizar
+  </button>
 </div>
 
 <section id="filtro-documentos" class="cagp-tool-box mb-4" aria-labelledby="doc-filter-heading">
@@ -119,8 +112,8 @@ toc: false
 </div>
 ```
 
+::: {#ws-panel-v1 .cagp-workspace-view .is-active role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1"}
 ```{=html}
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
 <!-- Atalhos de Alta Urgência / Documentos Mais Solicitados -->
 <div class="cagp-urgent-grid mb-4">
   <div class="cagp-urgent-card cagp-surface-timbre">
@@ -321,11 +314,9 @@ Conforme o **Art. 3º do Regulamento**, o curso oferece 3 modalidades formais de
 :::
 :::
 
-```{=html}
-</div>
+:::
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
-```
+::: {#ws-panel-v2 .cagp-workspace-view role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden="true"}
 
 ## <i class="bi bi-pencil-square" aria-hidden="true"></i> Formulários e Requerimentos Administrativos {#formularios}
 
@@ -552,9 +543,10 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
   </div>
 </div>
 </div>
-
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
 ```
+:::
+
+::: {#ws-panel-v3 .cagp-workspace-view role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden="true"}
 
 ## <i class="bi bi-journal-text" aria-hidden="true"></i> Tutorial Visual: Requerimento de Mudança de Percurso (DRCA) {#tutorial-drca}
 
@@ -674,7 +666,8 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
     </div>
   </div>
 </nav>
-</div>
+```
+:::
 
 <script>
 (function () {
@@ -687,7 +680,8 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
     'documentos/percurso-bacharelado-nucleo-complementar.pdf',
     'documentos/percurso-bacharelado-nucleo-avancado.pdf',
     'documentos/termo-aceite-orientador-tcc.pdf',
-    'documentos/regimento-interno-cagp-ufmg.pdf'
+    'documentos/regimento-interno-cagp-ufmg.pdf',
+    'documentos/requerimento-atividade-integralizadora-credito-v20229.pdf'
   ];
 
   function initDocumentosPage() {
@@ -712,11 +706,11 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
       // When filtering by category or search query, ensure matching workspace views are visible
       if (q || activeCat !== 'all') {
         if (activeCat === 'formulario' || activeCat === 'estagio') {
-          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView(document, 'v2', false);
+          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView('v2');
         } else if (activeCat === 'normativo' || activeCat === 'percurso') {
-          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView(document, 'v1', false);
+          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView('v1');
         } else {
-          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView(document, '__all__', false);
+          if (window.cagpActivateWorkspaceView) window.cagpActivateWorkspaceView('__all__');
         }
       }
 
@@ -831,22 +825,41 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
           }
         }
 
+        var indicator = document.getElementById('cagp-vault-status-indicator');
+        var syncPill = document.getElementById('cagp-vault-sync-pill');
+        if (indicator) {
+          if (cachedCanonical >= CANONICAL_PDFS.length) {
+            indicator.textContent = '✓ ' + cachedCanonical + '/' + CANONICAL_PDFS.length + ' PDFs oficiais essenciais disponíveis offline';
+          } else {
+            indicator.textContent = '⚡ ' + cachedCanonical + '/' + CANONICAL_PDFS.length + ' PDFs offline (toque em sincronizar)';
+          }
+        }
+        if (syncPill) {
+          if (cachedCanonical >= CANONICAL_PDFS.length) {
+            syncPill.innerHTML = '<i class="bi bi-check2-all me-1"></i> Sincronizado';
+            syncPill.classList.add('cagp-btn-success');
+          } else {
+            syncPill.innerHTML = '<i class="bi bi-arrow-repeat me-1"></i> Sincronizar';
+            syncPill.classList.remove('cagp-btn-success');
+          }
+        }
+
         var badge = document.getElementById('cagp-offline-vault-badge');
         var btn = document.getElementById('cagp-btn-cache-pdfs');
         if (cachedCanonical >= CANONICAL_PDFS.length) {
           if (badge) {
-            badge.innerHTML = '<i class="bi bi-check-circle-fill me-1" aria-hidden="true"></i> Cofre Completo: 8/8 PDFs Salvos no Aparelho';
+            badge.innerHTML = '<i class="bi bi-check-circle-fill me-1" aria-hidden="true"></i> Cofre Completo: ' + CANONICAL_PDFS.length + '/' + CANONICAL_PDFS.length + ' PDFs Salvos no Aparelho';
             badge.style.background = '#1E6B3A';
             badge.style.color = '#FFFFFF';
           }
           if (btn) {
-            btn.innerHTML = '<i class="bi bi-check2-all me-1" aria-hidden="true"></i> <span>8 PDFs Prontos Offline ✓</span>';
+            btn.innerHTML = '<i class="bi bi-check2-all me-1" aria-hidden="true"></i> <span>' + CANONICAL_PDFS.length + ' PDFs Prontos Offline ✓</span>';
             btn.style.background = '#1E6B3A';
             btn.style.color = '#FFFFFF';
           }
         } else if (cachedCanonical > 0) {
           if (badge) {
-            badge.innerHTML = '<i class="bi bi-hdd-network me-1" aria-hidden="true"></i> ' + cachedCanonical + '/8 PDFs Essenciais Salvos';
+            badge.innerHTML = '<i class="bi bi-hdd-network me-1" aria-hidden="true"></i> ' + cachedCanonical + '/' + CANONICAL_PDFS.length + ' PDFs Essenciais Salvos';
           }
         }
 
@@ -859,27 +872,36 @@ Modelos oficiais disponibilizados pelo Colegiado de Coordenação Didática da F
     window.cagpCheckCachedPdfs = syncOfflineBadges;
 
     window.cagpCacheAllPdfs = async function () {
+      var syncPill = document.getElementById('cagp-vault-sync-pill');
       var btn = document.getElementById('cagp-btn-cache-pdfs');
       var status = document.getElementById('cagp-offline-pdf-status');
       if (!('caches' in window)) {
         if (status) status.textContent = 'Armazenamento offline não suportado neste navegador.';
+        if (indicator) indicator.textContent = 'Armazenamento offline não suportado neste navegador.';
         return;
       }
       if (window.cagpHaptic) window.cagpHaptic(8);
       if (window.cagpRouteProgress) window.cagpRouteProgress.start();
       try {
+        if (syncPill) {
+          syncPill.disabled = true;
+          syncPill.innerHTML = '<i class="bi bi-hourglass-split me-1"></i> Baixando...';
+        }
         if (btn) {
           btn.disabled = true;
           btn.classList.add('cagp-shimmer');
-          btn.innerHTML = '<i class="bi bi-hourglass-split me-1" aria-hidden="true"></i> <span>Baixando 8 PDFs...</span>';
+          btn.innerHTML = '<i class="bi bi-hourglass-split me-1" aria-hidden="true"></i> <span>Baixando ' + CANONICAL_PDFS.length + ' PDFs...</span>';
         }
-        if (status) status.textContent = 'Sincronizando PPC, Regulamento, Ementário, 3 Percursos, Termo de TCC e Regimento CAGP...';
+        if (status) status.textContent = 'Sincronizando 9 PDFs oficiais essenciais...';
         var cache = await caches.open(CACHE_NAME);
         await cache.addAll(CANONICAL_PDFS);
-        if (status) status.textContent = 'Sucesso! Os 8 PDFs essenciais estão salvos no seu aparelho para leitura sem internet.';
+        if (status) status.textContent = 'Sucesso! Os 9 PDFs essenciais estão salvos no seu aparelho para leitura sem internet.';
         if (btn) {
           btn.disabled = false;
           btn.classList.remove('cagp-shimmer');
+        }
+        if (syncPill) {
+          syncPill.disabled = false;
         }
         if (window.cagpRouteProgress) window.cagpRouteProgress.finish();
         if (window.cagpHaptic) window.cagpHaptic([8, 24, 12]);

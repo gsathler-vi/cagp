@@ -1,6 +1,7 @@
 ---
 title: "Trabalho de Conclusão de Curso (TCC)"
 subtitle: "Projeto de TCC (DCP 089 • 60h), Defesa (DCP 137 • 120h), as 4 Modalidades Oficiais (Art. 19) e Termo de Aceite"
+description: "Guia do Trabalho de Conclusão de Curso (DCP 089/137 - 180h): 4 modalidades regimentais, orientações de banca e Termo de Aceite."
 title-block-style: none
 toc: false
 ---
@@ -35,23 +36,27 @@ toc: false
   <p class="cagp-workspace-subtitle">Matriz comparativa das 4 modalidades oficiais de TCC aceitas na UFMG (Monografia, Projeto de Intervenção, Artigo Científico e Projeto de IC), regras de orientação e Termo de Aceite em PDF e DOCX.</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas de TCC">
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#modalidades-tcc">
-        <i class="bi bi-mortarboard-fill" aria-hidden="true"></i> <span>1. As 4 Modalidades &amp; DCP 089/137</span> <span class="cagp-ws-badge">Art. 19</span>
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="2">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#modalidades-tcc">
+        <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Modalidades de TCC</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Modalidades</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#orientacao-tcc">
-        <i class="bi bi-file-earmark-check-fill" aria-hidden="true"></i> <span>2. Termo de Aceite, Banca &amp; Depósito</span> <span class="cagp-ws-badge">PDF / DOCX</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> <span>Ver Tudo</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#orientacao-tcc">
+        <i class="bi bi-file-earmark-check-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Termo de Aceite &amp; Banca</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Termo e Banca</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```
 
 ```{=html}
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 ```
 
 ## <i class="bi bi-journal-richtext" aria-hidden="true"></i> Trabalho de Conclusão de Curso — TCC (Art. 19 a 28) {#modalidades-tcc}
@@ -175,7 +180,7 @@ Conforme o **Parágrafo Único do Art. 19**, o estudante pode optar pelo formato
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 ```
 
 ## <i class="bi bi-file-earmark-check" aria-hidden="true"></i> Termo de Aceite de Orientador, Banca & Depósito Final {#orientacao-tcc}
@@ -193,7 +198,7 @@ Conforme o **Parágrafo Único do Art. 19**, o estudante pode optar pelo formato
         <i class="bi bi-file-earmark-pdf-fill me-1" aria-hidden="true"></i> Baixar Termo de Aceite (PDF)
       </a>
       <a href="https://www.fafich.ufmg.br/gestaopublica/wp-content/uploads/2024/09/TERMO-DE-ACEITE-ORIENTADOR-TCC.docx" target="_blank" rel="noopener noreferrer" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-3">
-        <i class="bi bi-file-earmark-word me-1" aria-hidden="true"></i> Versão Editável (DOCX)
+        <i class="bi bi-file-earmark-word me-1" aria-hidden="true"></i> Versão Editável (DOCX — requer internet)
       </a>
     </div>
   </div>

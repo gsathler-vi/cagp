@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Calculadora de 600h de Extensão e Atividades Acadêmicas Complementares (AAC), Guardião de 120 dias e formulários N-20229 da FAFICH/UFMG.">
 
 <title>Extensão &amp; Atividades Complementares (AAC) – CAGP</title>
 <style>
@@ -43,9 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-157e68bdb2db3d845b905df3fee27371.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fd6a211787ca405bc8f37dd5dd13f1a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-fd6a211787ca405bc8f37dd5dd13f1a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-fd6a211787ca405bc8f37dd5dd13f1a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-997f1c8ec7897d6b099f28a18e97aaa0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3e84582b1b05e22ccf18e1d0d528415f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-997f1c8ec7897d6b099f28a18e97aaa0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Nenhum resultado",
@@ -101,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
       document.head.appendChild(vp);
     }
     if (isStandalone) {
-      vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+      vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover');
       root.classList.add('cagp-is-standalone');
     } else {
       vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover');
@@ -123,39 +124,29 @@ ul.task-list li input[type="checkbox"] {
         if (prefs.dyslexia) root.setAttribute('data-a11y-dyslexia', 'true');
         if (prefs.ruler) root.setAttribute('data-a11y-ruler', 'true');
         if (prefs.contrast === 'high') root.setAttribute('data-a11y-contrast', 'high');
-        if (prefs.motion === 'reduce') root.setAttribute('data-a11y-motion', 'reduce');
+        if (prefs.motion === 'reduce' || prefs.motion === 'reduced') root.setAttribute('data-a11y-motion', 'reduced');
         if (prefs.links) root.setAttribute('data-a11y-links', 'true');
       }
     }
   } catch (e) {}
-
-  // 4. Prevenção de Pinch/Gesture Zoom Acidental no Modo Standalone (Sem afetar #cagp-a11y-panel)
-  if (!window.__cagpZoomGuardMounted) {
-    window.__cagpZoomGuardMounted = true;
-
-    document.addEventListener('gesturestart', function (e) {
-      if (root.classList.contains('cagp-is-standalone')) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    document.addEventListener('gesturechange', function (e) {
-      if (root.classList.contains('cagp-is-standalone')) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    document.addEventListener('touchmove', function (e) {
-      if (root.classList.contains('cagp-is-standalone') && e.touches && e.touches.length > 1) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-  }
 })();
 </script>
+<noscript><style>.cagp-workspace-view[hidden]{display:block!important;}</style></noscript>
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Extensão &amp; Atividades Complementares (AAC) – CAGP">
+<meta property="og:description" content="Calculadora de 600h de Extensão e Atividades Acadêmicas Complementares (AAC), Guardião de 120 dias e formulários N-20229 da FAFICH/UFMG.">
+<meta property="og:image" content="https://cagp-ufmg.github.io/imagens/og-padrao.png">
+<meta property="og:site_name" content="CAGP">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Extensão &amp; Atividades Complementares (AAC) – CAGP">
+<meta name="twitter:description" content="Calculadora de 600h de Extensão e Atividades Acadêmicas Complementares (AAC), Guardião de 120 dias e formulários N-20229 da FAFICH/UFMG.">
+<meta name="twitter:image" content="https://cagp-ufmg.github.io/imagens/og-padrao.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
 </head>
 
 <body class="fullcontent quarto-light">
@@ -293,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-file-earmark-pdf cagp-dropdown-icon text-danger" aria-hidden="true"></i>
             <div class="cagp-dropdown-item-info">
               <strong class="cagp-dropdown-item-title">Documentos &amp; Formulários</strong>
-              <small class="cagp-dropdown-item-desc">8 PDFs oficiais offline, PPC e requerimentos</small>
+              <small class="cagp-dropdown-item-desc">9 PDFs oficiais essenciais offline, PPC e requerimentos</small>
             </div>
           </a>
           <a href="faq.html" class="cagp-island-dropdown-item" role="menuitem" data-cagp-nav="" data-route="faq.html">
@@ -340,6 +331,12 @@ ul.task-list li input[type="checkbox"] {
 
     <!-- Barra de Ferramentas Limpa à Direita (Apple HIG: Busca ⌘K + Acessibilidade Alt+A + Avatar/Passaporte) -->
     <div class="cagp-header-tools">
+      <!-- 0. Sino de Alertas & Campus Agora (Apple HIG & M3) -->
+      <button type="button" class="cagp-header-live-btn" id="cagp-header-live-trigger" onclick="window.cagpOpenCampusSheet &amp;&amp; window.cagpOpenCampusSheet()" aria-label="Alertas e Campus Agora" title="Alertas do Campus &amp; Horários">
+        <i class="bi bi-bell-fill text-warning" aria-hidden="true"></i>
+        <span class="cagp-header-live-label">Campus</span>
+      </button>
+
       <!-- 1. Botão de Busca Rápida (Spotlight ⌘K) -->
       <button type="button" class="cagp-nav-search-btn" id="cagp-nav-search-trigger" onclick="window.openCagpSpotlight &amp;&amp; window.openCagpSpotlight()" aria-label="Buscar no portal (Atalho: Ctrl+K ou ⌘K)">
         <i class="bi bi-search cagp-nav-search-icon" aria-hidden="true"></i>
@@ -444,6 +441,9 @@ ul.task-list li input[type="checkbox"] {
     </div>
 
     <div class="cagp-topbar-trailing">
+      <button type="button" class="cagp-topbar-tool-btn cagp-header-live-btn" onclick="window.cagpOpenCampusSheet &amp;&amp; window.cagpOpenCampusSheet()" aria-label="Alertas e Campus Agora" title="Alertas do Campus &amp; Horários">
+        <i class="bi bi-bell-fill text-warning" aria-hidden="true"></i>
+      </button>
       <button type="button" class="cagp-topbar-tool-btn" onclick="window.openCagpSpotlight &amp;&amp; window.openCagpSpotlight()" aria-label="Buscar no Super App (Atalho: ⌘K)" title="Busca Rápida (⌘K)">
         <i class="bi bi-search" aria-hidden="true"></i>
       </button>
@@ -479,6 +479,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 <script data-cagp-persistent-script="true">
+// Taxonomia Canônica Global Imutável (5 Eixos do Super App CAGP)
+window.CAGP_TAXONOMY_V1 = Object.freeze({
+  axes: [
+    { id: 'axis-1', key: 'hoje', label: 'Hoje', icon: 'bi-compass', root: 'index.html', routes: ['index.html'] },
+    { id: 'axis-2', key: 'curso', label: 'Curso', icon: 'bi-mortarboard', root: 'curso.html', routes: ['curso.html', 'calouros.html', 'pesquisa.html'] },
+    { id: 'axis-3', key: 'curriculo', label: 'Currículo', icon: 'bi-diagram-3', root: 'percurso.html', routes: ['percurso.html', 'optativas.html', 'acg.html', 'estagio.html', 'tcc.html'] },
+    { id: 'axis-4', key: 'acervo', label: 'Acervo', icon: 'bi-folder2-open', root: 'documentos.html', routes: ['documentos.html', 'faq.html', 'mapa-do-site.html'] },
+    { id: 'axis-5', key: 'cagp', label: 'O CAGP', icon: 'bi-people', root: 'sobre.html', routes: ['sobre.html', 'gestao.html'] }
+  ],
+  routes: {
+    'index.html': { axis: 'axis-1', tabId: 'cagp-mnav-hoje', label: 'Hoje no Campus', depth: 0 },
+    'curso.html': { axis: 'axis-2', tabId: 'cagp-mnav-curso', label: 'O Curso de Gestão Pública', depth: 0 },
+    'calouros.html': { axis: 'axis-2', tabId: 'cagp-mnav-curso', label: 'Guia do Calouro', depth: 1, parent: 'curso.html' },
+    'pesquisa.html': { axis: 'axis-2', tabId: 'cagp-mnav-curso', label: 'Pesquisa, IC & DCP', depth: 1, parent: 'curso.html' },
+    'percurso.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'Percurso Curricular', depth: 0 },
+    'optativas.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: '68 Optativas', depth: 1, parent: 'percurso.html' },
+    'acg.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'Horas ACG (600h)', depth: 1, parent: 'percurso.html' },
+    'estagio.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'Estágio & Art. 41', depth: 1, parent: 'percurso.html' },
+    'tcc.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'TCC (DCP 089/137)', depth: 1, parent: 'percurso.html' },
+    'documentos.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'Acervo & Formulários', depth: 0 },
+    'faq.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'FAQ Regimental', depth: 1, parent: 'documentos.html' },
+    'mapa-do-site.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'Mapa do Site', depth: 1, parent: 'documentos.html' },
+    'sobre.html': { axis: 'axis-5', tabId: 'cagp-mnav-cagp', label: 'O CAGP', depth: 0 },
+    'gestao.html': { axis: 'axis-5', tabId: 'cagp-mnav-cagp', label: 'Gestão em Exercício', depth: 1, parent: 'sobre.html' },
+    'estagio-tcc.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'Estágio & TCC', depth: 1, parent: 'percurso.html', isLegacyBridge: true }
+  }
+});
+
 (function () {
   'use strict';
 
@@ -498,11 +526,12 @@ ul.task-list li input[type="checkbox"] {
   function syncChapaBannerState() {
     const banner = document.getElementById('quarto-announcement') || document.getElementById('cagp-chapa-banner');
     if (!banner) return;
-    const isCompact = sessionStorage.getItem('cagp_chapa_compact') === 'true';
+    const stored = sessionStorage.getItem('cagp_chapa_compact');
+    const isCompact = stored === 'true' || (stored === null && window.innerWidth < 768);
     banner.classList.toggle('is-compact', isCompact);
     const lbl = banner.querySelector('.cagp-chapa-toggle-label');
     if (lbl) {
-      lbl.textContent = isCompact ? 'Expandir ▼' : 'Compactar ▲';
+      lbl.textContent = isCompact ? 'EXPANDIR ▼' : 'COMPACTAR ▲';
     }
   }
 
@@ -632,6 +661,7 @@ ul.task-list li input[type="checkbox"] {
   const sheetBody = document.getElementById('cagp-global-sheet-body');
   const sheetFooter = document.getElementById('cagp-global-sheet-footer');
   const sheetGrabber = document.getElementById('cagp-global-sheet-grabber');
+  let closeTimerId = null;
 
   window.cagpSheet = {
     isOpen: function () {
@@ -639,6 +669,10 @@ ul.task-list li input[type="checkbox"] {
     },
     open: function (opts) {
       if (!sheetEl || !sheetBackdrop) return;
+      if (closeTimerId) {
+        clearTimeout(closeTimerId);
+        closeTimerId = null;
+      }
       const options = opts || {};
       window.cagpCloseAllOverlays('cagp-global-bottom-sheet');
 
@@ -676,11 +710,16 @@ ul.task-list li input[type="checkbox"] {
     },
     close: function () {
       if (!sheetEl || !sheetBackdrop) return;
+      if (closeTimerId) {
+        clearTimeout(closeTimerId);
+        closeTimerId = null;
+      }
       sheetBackdrop.classList.remove('is-open');
       sheetEl.classList.remove('is-open');
-      setTimeout(function () {
+      closeTimerId = setTimeout(function () {
         sheetBackdrop.setAttribute('hidden', '');
         sheetEl.setAttribute('hidden', '');
+        closeTimerId = null;
       }, 220);
     },
     toggleDetent: function () {
@@ -780,9 +819,10 @@ ul.task-list li input[type="checkbox"] {
     const container = options.container || document.getElementById('quarto-document-content') || document;
     const views = Array.from(container.querySelectorAll('.cagp-workspace-view[data-ws-view]'));
     const tabs = Array.from(container.querySelectorAll('.cagp-workspace-tab[data-ws-tab]'));
+    const viewallBtn = container.querySelector('.cagp-workspace-viewall[data-ws-tab]');
     if (views.length === 0 || tabs.length === 0) return false;
 
-    const prevActiveBtn = tabs.find(function (b) { return b.classList.contains('is-active'); });
+    const prevActiveBtn = tabs.find(function (b) { return b.classList.contains('is-active'); }) || (viewallBtn && viewallBtn.classList.contains('is-active') ? viewallBtn : null);
     const prevIdx = prevActiveBtn ? tabs.indexOf(prevActiveBtn) : 0;
     const nextIdx = tabs.findIndex(function (b) { return b.getAttribute('data-ws-tab') === tabKey; });
     const wsDir = nextIdx >= 0 && nextIdx < prevIdx ? 'backward' : 'forward';
@@ -830,11 +870,18 @@ ul.task-list li input[type="checkbox"] {
     let activeTabBtn = null;
     tabs.forEach(function (btn) {
       const bKey = btn.getAttribute('data-ws-tab');
-      const active = bKey === tabKey;
+      const active = !isAll && bKey === tabKey;
       btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      btn.setAttribute('tabindex', active ? '0' : '-1');
       if (active) activeTabBtn = btn;
     });
+
+    if (viewallBtn) {
+      viewallBtn.classList.toggle('is-active', isAll);
+      viewallBtn.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+      if (isAll) activeTabBtn = viewallBtn;
+    }
 
     if (isInteractiveSwitch && matchedView) {
       if (window.cagpBindDetailsMotion) window.cagpBindDetailsMotion(matchedView);
@@ -849,14 +896,16 @@ ul.task-list li input[type="checkbox"] {
         } catch (e) {}
       } else if (tabKey === '__all__') {
         try {
-          history.replaceState(history.state, '', window.location.pathname);
+          history.replaceState(history.state, '', '#visao-completa');
         } catch (e) {}
       }
     }
 
-    try {
-      window.dispatchEvent(new Event('resize'));
-    } catch (e) {}
+    if (document.getElementById('cagp-grafo-svg')) {
+      try {
+        window.dispatchEvent(new Event('resize'));
+      } catch (e) {}
+    }
 
     return Boolean(matchedView || isAll);
   };
@@ -888,13 +937,15 @@ ul.task-list li input[type="checkbox"] {
 
     const views = Array.from(container.querySelectorAll('.cagp-workspace-view[data-ws-view]'));
     const tabs = Array.from(container.querySelectorAll('.cagp-workspace-tab[data-ws-tab]'));
+    const viewallBtn = container.querySelector('.cagp-workspace-viewall[data-ws-tab]');
     if (views.length === 0 || tabs.length === 0) return false;
 
     const rawId = hash.startsWith('#') ? hash.slice(1) : hash;
+    const allButtons = tabs.concat(viewallBtn ? [viewallBtn] : []);
 
     // 2. Verificar correspondência direta com data-ws-tab ou data-ws-hash
-    for (let i = 0; i < tabs.length; i++) {
-      const btn = tabs[i];
+    for (let i = 0; i < allButtons.length; i++) {
+      const btn = allButtons[i];
       const bTab = btn.getAttribute('data-ws-tab');
       const bHash = btn.getAttribute('data-ws-hash');
       if (bTab === rawId || bHash === hash || bHash === '#' + rawId) {
@@ -930,6 +981,7 @@ ul.task-list li input[type="checkbox"] {
     const container = rootContainer || document.getElementById('quarto-document-content') || document;
     const tabs = Array.from(container.querySelectorAll('.cagp-workspace-tab[data-ws-tab]'));
     const views = Array.from(container.querySelectorAll('.cagp-workspace-view[data-ws-view]'));
+    const viewallBtn = container.querySelector('.cagp-workspace-viewall[data-ws-tab]');
     if (tabs.length === 0 || views.length === 0) {
       // Mesmo sem workspace, checar redirecionamento de hash legado
       if (window.location.hash) {
@@ -960,6 +1012,19 @@ ul.task-list li input[type="checkbox"] {
         }
       });
     });
+
+    if (viewallBtn && viewallBtn.getAttribute('data-ws-bound') !== 'true') {
+      viewallBtn.setAttribute('data-ws-bound', 'true');
+      viewallBtn.addEventListener('click', function () {
+        const isCurrentlyActive = viewallBtn.classList.contains('is-active');
+        if (isCurrentlyActive) {
+          const firstTab = tabs[0];
+          if (firstTab) window.cagpActivateWorkspaceView(firstTab.getAttribute('data-ws-tab'), { container: container, updateHash: true });
+        } else {
+          window.cagpActivateWorkspaceView('__all__', { container: container, updateHash: true });
+        }
+      });
+    }
 
     // Ativar view a partir do hash atual ou manter a primeira view ativa
     if (!window.cagpSyncWorkspaceFromHash(window.location.hash, { container: container, scroll: Boolean(window.location.hash) })) {
@@ -1114,24 +1179,16 @@ ul.task-list li input[type="checkbox"] {
   };
 
   // 6. Sincronizar Abas Ativas & Indicador Contextual Discreto (Apple HIG path-controls.md)
-  const ROUTE_PATH_LABELS = {
-    'index.html': '',
-    '': '',
-    'curso.html': 'O Curso',
-    'pesquisa.html': 'Pesquisa & IC',
-    'calouros.html': 'Guia do Calouro',
-    'percurso.html': 'Percurso & 27 Obrigatórias',
-    'optativas.html': '68 Optativas',
-    'acg.html': 'Horas ACG (600h)',
-    'estagio.html': 'Estágio & Art. 41',
-    'tcc.html': 'TCC (DCP 089/137)',
-    'estagio-tcc.html': 'Estágio & TCC',
-    'documentos.html': 'Documentos & PDFs',
-    'faq.html': 'FAQ Regimental',
-    'sobre.html': 'O CAGP',
-    'gestao.html': 'Gestão & Equipe',
-    'mapa-do-site.html': 'Mapa do Site'
-  };
+  const ROUTE_PATH_LABELS = {};
+  if (window.CAGP_TAXONOMY_V1 && window.CAGP_TAXONOMY_V1.routes) {
+    Object.keys(window.CAGP_TAXONOMY_V1.routes).forEach(function (path) {
+      ROUTE_PATH_LABELS[path] = window.CAGP_TAXONOMY_V1.routes[path].label;
+      ROUTE_PATH_LABELS['/' + path] = window.CAGP_TAXONOMY_V1.routes[path].label;
+    });
+  }
+  ROUTE_PATH_LABELS[''] = 'Hoje no Campus';
+  ROUTE_PATH_LABELS['/'] = 'Hoje no Campus';
+  ROUTE_PATH_LABELS['index.html'] = 'Hoje no Campus';
 
   function syncActiveRoute() {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -1164,7 +1221,7 @@ ul.task-list li input[type="checkbox"] {
     const headerPathWrap = document.getElementById('cagp-header-path-indicator');
     const headerPathLabel = document.getElementById('cagp-header-path-label');
     if (headerPathWrap && headerPathLabel) {
-      if (sectionLabel) {
+      if (sectionLabel && currentPath !== 'index.html') {
         headerPathLabel.textContent = sectionLabel;
         headerPathWrap.removeAttribute('hidden');
       } else {
@@ -1176,6 +1233,33 @@ ul.task-list li input[type="checkbox"] {
     const topbarTitleEl = document.getElementById('cagp-topbar-title');
     if (topbarTitleEl) {
       topbarTitleEl.textContent = sectionLabel || 'Hoje no Campus';
+    }
+
+    // Injetar dinamicamente a faixa de navegação contextual .cagp-axis-pill-strip em páginas com depth > 0
+    let stripEl = document.querySelector('.cagp-axis-pill-strip');
+    const taxRoutes = window.CAGP_TAXONOMY_V1 ? window.CAGP_TAXONOMY_V1.routes : null;
+    const routeMeta = taxRoutes ? taxRoutes[currentPath] : null;
+
+    if (routeMeta && routeMeta.depth > 0 && routeMeta.parent) {
+      const parentMeta = taxRoutes[routeMeta.parent];
+      const axis = window.CAGP_TAXONOMY_V1.axes.find(function (a) { return a.id === routeMeta.axis; });
+      if (!stripEl) {
+        stripEl = document.createElement('div');
+        stripEl.className = 'cagp-axis-pill-strip d-flex align-items-center gap-2 py-1 px-3 mb-2 small bg-light border-bottom border-1';
+        const header = document.getElementById('cagp-superapp-header') || document.getElementById('quarto-header');
+        if (header && header.nextSibling) {
+          header.parentNode.insertBefore(stripEl, header.nextSibling);
+        }
+      }
+      if (stripEl && axis) {
+        stripEl.innerHTML = '<span class="text-muted"><i class="bi ' + (axis.icon || 'bi-compass') + ' me-1"></i>' + axis.label + ':</span> ' +
+          '<a href="' + routeMeta.parent + '" class="badge bg-secondary text-decoration-none text-white">' + (parentMeta ? parentMeta.label : 'Início do Eixo') + '</a>' +
+          '<span class="text-muted">/</span>' +
+          '<span class="fw-bold text-dark">' + routeMeta.label + '</span>';
+        stripEl.removeAttribute('hidden');
+      }
+    } else if (stripEl) {
+      stripEl.setAttribute('hidden', '');
     }
   }
 
@@ -1225,23 +1309,52 @@ ul.task-list li input[type="checkbox"] {
   <p class="cagp-workspace-subtitle">Simulador interativo com trava automática de tetos regimentais, Guardião do prazo fatal de 120 dias corridos (Art. 15, § 4º) e tutorial passo a passo do Formulário Oficial N-20229.</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas de Extensão e AAC">
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#calculadora-horas">
-        <i class="bi bi-calculator-fill" aria-hidden="true"></i> <span>1. Calculadora 600h &amp; N-20229</span> <span class="cagp-ws-badge">Simulador</span>
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="3">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#calculadora-horas">
+        <i class="bi bi-calculator-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Calculadora 600h</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Calculadora</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#guardiao-120-dias">
-        <i class="bi bi-shield-exclamation" aria-hidden="true"></i> <span>2. Guardião de 120 Dias</span> <span class="cagp-ws-badge">Art. 15 §4º</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#guardiao-120-dias">
+        <i class="bi bi-shield-exclamation" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Guardião 120 Dias</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">120 dias</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#regulamento-categorias">
-        <i class="bi bi-card-list" aria-hidden="true"></i> <span>3. As 9 Categorias &amp; Formulário</span> <span class="cagp-ws-badge">Tutorial</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> <span>Ver Tudo</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#regulamento-categorias">
+        <i class="bi bi-card-list" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">3. Guia &amp; Tramitação</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Guia</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
+<!-- HUD Linear Compacto de 64px para 1ª Dobra (Extensão 300h + AAC 300h) -->
+<div id="cagp-calc-hud-linear" class="cagp-calc-hud-linear mb-3 p-2 border border-1 border-dark bg-light" role="region" aria-label="Progresso de Integralização 600h">
+  <div class="row g-2">
+    <div class="col-12 col-md-6">
+      <div class="d-flex justify-content-between align-items-center mb-1">
+        <span class="small fw-bold text-uppercase">Extensão Obrigatória</span>
+        <span id="hud-ext-val" class="font-mono small fw-bold">0/300h (0 cr)</span>
+      </div>
+      <div class="progress" style="height: 8px;">
+        <div id="hud-ext-bar" class="progress-bar bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="300"></div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="d-flex justify-content-between align-items-center mb-1">
+        <span class="small fw-bold text-uppercase">Atividades Complementares (AAC)</span>
+        <span id="hud-aac-val" class="font-mono small fw-bold">0/300h (0 cr)</span>
+      </div>
+      <div class="progress" style="height: 8px;">
+        <div id="hud-aac-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="300"></div>
+      </div>
+    </div>
+  </div>
+</div>
 <section id="calculadora-horas" class="level2">
 <h2 class="anchored" data-anchor-id="calculadora-horas"><i class="bi bi-calculator" aria-hidden="true"></i> Calculadora &amp; Simulador Interativo de Horas</h2>
 <p><span id="calculadora" class="cagp-anchor-alias" aria-hidden="true"></span></p>
@@ -1253,9 +1366,9 @@ ul.task-list li input[type="checkbox"] {
       <h3 id="calc-heading" class="h5 mb-0 anchored">SIMULADOR DE INTEGRALIZAÇÃO: EXTENSÃO (300H) + AAC (ATÉ 300H)</h3>
     </div>
     <div class="d-flex flex-wrap align-items-center gap-2">
-      <button type="button" id="btn-gerar-resumo-n20229" class="cagp-btn cagp-btn-primary btn-sm">
-        <i class="bi bi-file-earmark-spreadsheet me-1" aria-hidden="true"></i> Gerar Resumo para Formulário N-20229
-      </button>
+      <a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-btn cagp-btn-primary btn-sm">
+        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Formulário Oficial N-20229 (PDF)
+      </a>
       <button type="button" id="btn-calc-sample" class="cagp-chip"><i class="bi bi-play-circle me-1" aria-hidden="true"></i>Exemplo (360h)</button>
       <button type="button" id="btn-calc-reset" class="cagp-chip">Zerar Simulação</button>
     </div>
@@ -1900,18 +2013,18 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 
-  <!-- Barra de Fechamento da Calculadora: Gerador de Espelho Oficial N-20229 & Protocolo -->
-  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 p-3 mt-4 border border-2 border-dark" style="background-color: var(--cagp-surface-low, #F4F1EA);">
+  <!-- Barra de Fechamento da Calculadora: Protocolo e Formulário Oficial N-20229 -->
+  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 p-3 mt-4 border border-1 border-dark bg-light">
     <div>
       <div class="fw-bold font-display text-uppercase small text-dark">
-        <i class="bi bi-file-earmark-spreadsheet-fill text-danger me-1" aria-hidden="true"></i> Pronto para Conferência ou Protocolo no Colegiado?
+        <i class="bi bi-file-earmark-check text-danger me-1" aria-hidden="true"></i> Protocolo no Colegiado (Sala F-2039)
       </div>
-      <div class="small text-muted">Gere o espelho oficial das horas simuladas com conversão automática em créditos (15h = 1 cr) para preencher o Requerimento N-20229 ou colar no SEI.</div>
+      <div class="small text-muted">Baixe o Requerimento Oficial N-20229 em PDF, anexe seus comprovantes autenticáveis e entregue na Secretaria do Curso ou via SEI UFMG.</div>
     </div>
     <div class="d-flex flex-wrap gap-2">
-      <button type="button" id="btn-gerar-resumo-n20229-bottom" class="cagp-btn cagp-btn-primary btn-sm">
-        <i class="bi bi-file-earmark-spreadsheet me-1" aria-hidden="true"></i> Gerar Resumo para Formulário N-20229
-      </button>
+      <a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-btn cagp-btn-primary btn-sm">
+        <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Baixar N-20229 (PDF)
+      </a>
       <button type="button" class="cagp-action-chip" data-cagp-ics="protocolo-aac-semestral">
         <i class="bi bi-calendar-plus" aria-hidden="true"></i> <span>Lembrete Protocolo (.ics)</span>
       </button>
@@ -1957,9 +2070,9 @@ ATÉ 300 HORAS
 </div>
 </div>
 </div>
-</section></div>
-
-<div class="cagp-workspace-view" data-ws-view="v2" hidden="">
+</section>
+</div>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden="true">
 <!-- =========================================================================
      GUARDIÃO DO PRAZO FATAL DE 120 DIAS DAS AAC (ART. 15, § 4º • N-20229)
      ========================================================================= -->
@@ -2040,9 +2153,7 @@ ATÉ 300 HORAS
   <div id="guardiao-120d-list" class="cagp-120d-list" aria-live="polite"></div>
 </section>
 </div>
-
-<div class="cagp-workspace-view" data-ws-view="v3" hidden="">
-
+<div id="ws-panel-v3" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden="true">
 <section id="regulamento-categorias" class="level2">
 <h2 class="anchored" data-anchor-id="regulamento-categorias"><i class="bi bi-card-list" aria-hidden="true"></i> Regulamento Detalhado por Modalidade</h2>
 <div class="d-flex flex-wrap align-items-center justify-content-between p-3 mb-4 bg-light border border-dark gap-2">
@@ -2349,11 +2460,8 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
     </div>
   </div>
 </nav>
-</section></div>
-
-<!-- Folha Oculta de Impressão A4 para o Espelho Oficial N-20229 (@media print) -->
-<div id="cagp-n20229-print-sheet" class="cagp-n20229-print-sheet" aria-hidden="true"></div>
-
+</section>
+</div>
 <script>
 (function () {
   function initAcgPage() {
@@ -2514,6 +2622,26 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
         aacBar.style.width = aacPct + '%';
       }
       aacBar.classList.toggle('is-complete', aacCap >= 300);
+    }
+
+    // Atualização reativa do HUD Linear Compacto de 64px
+    const hudExtBar = document.getElementById('hud-ext-bar');
+    const hudAacBar = document.getElementById('hud-aac-bar');
+    const hudExtVal = document.getElementById('hud-ext-val');
+    const hudAacVal = document.getElementById('hud-aac-val');
+    if (hudExtBar) {
+      hudExtBar.style.width = Math.min(100, extPct) + '%';
+      hudExtBar.setAttribute('aria-valuenow', extCap);
+    }
+    if (hudAacBar) {
+      hudAacBar.style.width = Math.min(100, aacPct) + '%';
+      hudAacBar.setAttribute('aria-valuenow', aacCap);
+    }
+    if (hudExtVal) {
+      hudExtVal.textContent = extCap + '/300h (' + extCr + ' cr)';
+    }
+    if (hudAacVal) {
+      hudAacVal.textContent = aacCap + '/300h (' + aacCr + ' cr)';
     }
 
     const totalHours = extCap + aacCap;
@@ -2969,289 +3097,6 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
     };
   }
 
-  // =========================================================================
-  // GERADOR DE ESPELHO / RESUMO PARA O FORMULÁRIO OFICIAL N-20229
-  // =========================================================================
-  const CATEGORY_META = {
-    ext_lab_a: { group: 'Extensão Obrigatória (Art. 14)', code: 'DCP 195', name: 'Laboratório de Gestão e Políticas Públicas A', max: 90 },
-    ext_lab_b: { group: 'Extensão Obrigatória (Art. 14)', code: 'DCP 196', name: 'Laboratório de Gestão e Políticas Públicas B', max: 90 },
-    ext_equalitas: { group: 'Extensão Obrigatória (Art. 14)', code: 'DCP 040', name: 'ATLAS Consultoria Jr. (Equipes de Trabalho)', max: 90 },
-    ext_proex: { group: 'Extensão Obrigatória (Art. 14)', code: 'DCP 041', name: 'Projetos e Programas PROEX / SIEX', max: 90 },
-    ext_eventos: { group: 'Extensão Obrigatória (Art. 14)', code: 'Eventos II', name: 'Organização / Debatedor de Eventos', max: 60 },
-    ext_inter: { group: 'Extensão Obrigatória (Art. 14)', code: 'Interinst.', name: 'Atividades Interinstitucionais de Ensino', max: 120 },
-    aac_1: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. I', name: 'Pesquisa Interinstitucional', max: 75 },
-    aac_2: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. II', name: 'Monitoria Acadêmica na UFMG', max: 45 },
-    aac_3: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. III', name: 'Eventos I — Participação como Ouvinte (Prazo 120d)', max: 60 },
-    aac_4: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. IV/VI', name: 'Grupos de Estudo / Pesquisa Bibliográfica', max: 30 },
-    aac_5: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. V', name: 'Iniciação Científica na UFMG (PIBIC/Volunt.)', max: 90 },
-    aac_7: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. VII/VIII', name: 'Trabalho em Anais (30h, 120d) / Artigo em Periódico (60h)', max: 90 },
-    aac_9: { group: 'AAC • Optativas (Art. 15)', code: 'Mod. IX', name: 'Vivência Profissional / Estágio Não-Obrigatório', max: 60 }
-  };
-
-  function buildResumoN20229Data() {
-    const extItems = [];
-    const aacItems = [];
-    let extRaw = 0;
-    let aacRaw = 0;
-
-    Object.keys(CATEGORY_META).forEach(function (id) {
-      const meta = CATEGORY_META[id];
-      const hrs = Math.min(meta.max, Math.max(0, parseInt(values[id] || 0, 10)));
-      if (hrs > 0) {
-        const cr = Math.round(hrs / 15);
-        const entry = {
-          id: id,
-          code: meta.code,
-          name: meta.name,
-          hours: hrs,
-          max: meta.max,
-          credits: cr
-        };
-        if (id.indexOf('ext_') === 0) {
-          extItems.push(entry);
-          extRaw += hrs;
-        } else {
-          aacItems.push(entry);
-          aacRaw += hrs;
-        }
-      }
-    });
-
-    const extCap = Math.min(300, extRaw);
-    const aacCap = Math.min(300, aacRaw);
-    const extCr = Math.round(extCap / 15);
-    const aacCr = Math.round(aacCap / 15);
-    const certsSummary = window.cagpGet120dSummary ? window.cagpGet120dSummary() : { items: [], urgentCount: 0 };
-
-    let prof = { name: '', pronouns: '', period: '1', entrySemester: '2026/1', pathway: '01-01' };
-    try {
-      if (window.cagpProfile && typeof window.cagpProfile.get === 'function') {
-        prof = Object.assign(prof, window.cagpProfile.get());
-      } else {
-        const rawProf = localStorage.getItem('cagp_student_profile_v1');
-        if (rawProf) prof = Object.assign(prof, JSON.parse(rawProf));
-      }
-    } catch (e) {}
-
-    const studentName = (prof.name && prof.name.trim()) ? prof.name.trim() : 'Estudante de Gestão Pública (Não informado)';
-    const pronounsSuffix = (prof.pronouns && prof.pronouns.trim()) ? (' (' + prof.pronouns.trim() + ')') : '';
-    const periodLabel = prof.period === 'egresso' ? 'Egresso / Visitante' : ((prof.period || '1') + 'º Período');
-    const pathwayMap = {
-      '01-01': '01-01 • Núcleo Geral (N-20229)',
-      '01-02': '01-02 • Complementar / Transversal (N-20229)',
-      '01-03': '01-03 • Avançado PPGCP (N-20229)'
-    };
-    const pathwayLabel = pathwayMap[prof.pathway] || '01-01 • Núcleo Geral (N-20229)';
-
-    // Texto formatado para o SEI / E-mail da Coordenação
-    const lines = [
-      'ESPELHO DE CONFERÊNCIA — REQUERIMENTO DE ATIVIDADES INTEGRALIZADORAS (VERSÃO N-20229)',
-      'Requerente: ' + studentName + pronounsSuffix,
-      'Período Atual: ' + periodLabel + ' • Ingresso: ' + (prof.entrySemester || '2026/1') + ' • Percurso: ' + pathwayLabel,
-      'Curso: Bacharelado em Gestão Pública — FAFICH/UFMG (Turno Noturno)',
-      'Data de Emissão: ' + new Date().toLocaleDateString('pt-BR'),
-      'Regra de Conversão Oficial: 15 horas = 1 crédito (Art. 14 e Art. 15 do Regulamento)',
-      '------------------------------------------------------------------------',
-      '1. FORMAÇÃO EM EXTENSÃO OBRIGATÓRIA (Meta: 300h = 20 créditos)',
-      '   Subtotal Aproveitado: ' + extCap + 'h / 300h (' + extCr + ' créditos de 20 cr)'
-    ];
-    if (extItems.length === 0) {
-      lines.push('   - Nenhuma atividade de extensão lançada na simulação.');
-    } else {
-      extItems.forEach(function (it) {
-        lines.push('   - [' + it.code + '] ' + it.name + ': ' + it.hours + 'h = ' + it.credits + ' cr (Teto: ' + it.max + 'h)');
-      });
-    }
-
-    lines.push(
-      '------------------------------------------------------------------------',
-      '2. ATIVIDADES ACADÊMICAS COMPLEMENTARES — AAC (Teto: 300h = 20 créditos)',
-      '   Subtotal Aproveitado: ' + aacCap + 'h / 300h (' + aacCr + ' créditos de 20 cr)'
-    );
-    if (aacItems.length === 0) {
-      lines.push('   - Nenhuma modalidade de AAC lançada na simulação.');
-    } else {
-      aacItems.forEach(function (it) {
-        lines.push('   - [' + it.code + '] ' + it.name + ': ' + it.hours + 'h = ' + it.credits + ' cr (Teto: ' + it.max + 'h)');
-      });
-    }
-
-    if (certsSummary.items.length > 0) {
-      lines.push(
-        '------------------------------------------------------------------------',
-        '3. CERTIFICADOS MONITORADOS NO GUARDIÃO DE 120 DIAS (Art. 15, § 4º):'
-      );
-      certsSummary.items.forEach(function (c) {
-        lines.push('   - ' + c.title + ' (' + c.mod + ', ' + c.hours + 'h) • Limite 120d: ' + c.deadlineBr + ' (' + c.daysLeft + ' dias restantes)');
-      });
-    }
-
-    lines.push(
-      '------------------------------------------------------------------------',
-      'TOTAL INTEGRALIZADO SIMULADO: ' + (extCap + aacCap) + 'h / 600h (' + (extCr + aacCr) + ' créditos de 40 créditos)',
-      'Tramitação Oficial: Enviar formulário N-20229 + certificados autenticáveis para coordgestaopublica@gmail.com e protocolar assinado na Secretaria do Curso (Sala F-2039 FAFICH).'
-    );
-
-    return {
-      studentName: studentName + pronounsSuffix,
-      periodLabel: periodLabel,
-      entrySemester: prof.entrySemester || '2026/1',
-      pathwayLabel: pathwayLabel,
-      extItems: extItems,
-      aacItems: aacItems,
-      extCap: extCap,
-      aacCap: aacCap,
-      extCr: extCr,
-      aacCr: aacCr,
-      totalHours: extCap + aacCap,
-      totalCredits: extCr + aacCr,
-      certs: certsSummary.items,
-      seiText: lines.join('\n')
-    };
-  }
-
-  function renderMirrorHtml(data) {
-    function buildRowsHtml(items, emptyMsg) {
-      if (items.length === 0) {
-        return '<tr><td colspan="4" class="text-center text-muted small py-2">' + emptyMsg + '</td></tr>';
-      }
-      return items.map(function (it) {
-        return (
-          '<tr>' +
-            '<td class="font-mono fw-bold small">' + it.code + '</td>' +
-            '<td class="small">' + it.name + '</td>' +
-            '<td class="text-center font-mono small">' + it.hours + 'h <span class="text-muted">/' + it.max + 'h</span></td>' +
-            '<td class="text-center font-mono fw-bold small">' + it.credits + ' cr</td>' +
-          '</tr>'
-        );
-      }).join('');
-    }
-
-    const certsHtml = data.certs.length > 0
-      ? '<div class="mt-3 p-2 border border-2 border-dark" style="background:#FFF3CD;">' +
-          '<div class="fw-bold font-display text-uppercase small text-danger mb-1">' +
-            '<i class="bi bi-shield-exclamation me-1"></i> Certificados no Guardião de 120 Dias (Art. 15, § 4º)' +
-          '</div>' +
-          '<ul class="small mb-0 ps-3">' +
-            data.certs.map(function (c) {
-              return '<li><strong>' + c.title + '</strong> (' + c.mod + ', ' + c.hours + 'h) — Data fatal: <strong>' + c.deadlineBr + '</strong> (' + c.daysLeft + 'd)</li>';
-            }).join('') +
-          '</ul>' +
-        '</div>'
-      : '';
-
-    return (
-      '<div class="cagp-n20229-mirror">' +
-        '<div class="p-3 mb-3 border border-2 border-dark" style="background: var(--cagp-surface-low, #F4F1EA);">' +
-          '<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-1">' +
-            '<span class="cagp-badge cagp-badge-red">Espelho Oficial • Versão N-20229</span>' +
-            '<span class="font-mono small fw-bold">15h = 1 crédito</span>' +
-          '</div>' +
-          '<div class="h5 font-display text-uppercase fw-bold mb-1">Resumo para Requerimento de Integralização (Extensão + AAC)</div>' +
-          '<div class="cagp-n20229-student-strip p-2 my-2 bg-white border border-dark small">' +
-            '<div><strong>Requerente:</strong> <span data-n20229-student-name>' + data.studentName + '</span></div>' +
-            '<div class="text-muted"><strong>Vínculo:</strong> <span data-n20229-student-period>' + data.periodLabel + '</span> • <strong>Ingresso:</strong> ' + data.entrySemester + ' • <strong>Percurso:</strong> ' + data.pathwayLabel + '</div>' +
-          '</div>' +
-          '<div class="small text-muted">Total Simulado: <strong>' + data.totalHours + 'h / 600h (' + data.totalCredits + ' créditos de 40 cr)</strong> • Secretaria do Colegiado: <strong>Sala F-2039 (Norma Guedes)</strong></div>' +
-        '</div>' +
-
-        '<h4 class="h6 font-display text-uppercase fw-bold mb-2">1. Formação em Extensão Obrigatória (' + data.extCap + 'h / 300h = ' + data.extCr + ' cr)</h4>' +
-        '<div class="table-responsive mb-3">' +
-          '<' + 'table class="table table-sm table-bordered border-dark align-middle mb-0">' +
-            '<thead class="table-dark">' +
-              '<tr><th>Código</th><th>Modalidade / Disciplina</th><th class="text-center">Horas</th><th class="text-center">Créditos</th></tr>' +
-            '</thead>' +
-            '<tbody>' + buildRowsHtml(data.extItems, 'Nenhuma hora de Extensão preenchida na calculadora.') + '</tbody>' +
-          '</' + 'table>' +
-        '</div>' +
-
-        '<h4 class="h6 font-display text-uppercase fw-bold mb-2">2. Atividades Complementares — AAC Art. 15 (' + data.aacCap + 'h / 300h = ' + data.aacCr + ' cr)</h4>' +
-        '<div class="table-responsive mb-2">' +
-          '<' + 'table class="table table-sm table-bordered border-dark align-middle mb-0">' +
-            '<thead class="table-dark">' +
-              '<tr><th>Mod.</th><th>Categoria Regimental (Art. 15)</th><th class="text-center">Horas</th><th class="text-center">Créditos</th></tr>' +
-            '</thead>' +
-            '<tbody>' + buildRowsHtml(data.aacItems, 'Nenhuma hora de AAC preenchida na calculadora.') + '</tbody>' +
-          '</' + 'table>' +
-        '</div>' +
-        certsHtml +
-        '<div class="mt-3">' +
-          '<label for="cagp-n20229-sei-textarea" class="small fw-bold font-display text-uppercase mb-1 d-block">Texto Pronto para Copiar (SEI / E-mail Coordenação):</label>' +
-          '<textarea id="cagp-n20229-sei-textarea" class="form-control border-dark font-mono small" rows="5" readonly>' + data.seiText + '</textarea>' +
-        '</div>' +
-      '</div>'
-    );
-  }
-
-  function openResumoN20229Modal() {
-    const data = buildResumoN20229Data();
-    const mirrorHtml = renderMirrorHtml(data);
-    const printContainer = document.getElementById('cagp-n20229-print-sheet');
-    if (printContainer) {
-      printContainer.innerHTML = mirrorHtml;
-    }
-
-    const footerHtml =
-      '<button type="button" id="btn-copy-n20229-sei" class="cagp-btn cagp-btn-primary btn-sm">' +
-        '<i class="bi bi-clipboard-check me-1" aria-hidden="true"></i> Copiar para o SEI' +
-      '</button>' +
-      '<button type="button" id="btn-print-n20229" class="cagp-btn cagp-btn-secondary btn-sm">' +
-        '<i class="bi bi-printer me-1" aria-hidden="true"></i> Imprimir / Salvar PDF' +
-      '</button>' +
-      '<a href="documentos/requerimento-atividade-integralizadora-credito-v20229.pdf" target="_blank" class="cagp-btn cagp-btn-outline btn-sm">' +
-        '<i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Formulário N-20229' +
-      '</a>';
-
-    if (window.cagpSheet && window.cagpSheet.open) {
-      window.cagpSheet.open({
-        title: 'Espelho Oficial • Requerimento N-20229',
-        badge: data.totalHours + 'h (' + data.totalCredits + ' CR)',
-        detent: 'large',
-        html: mirrorHtml,
-        footerHtml: footerHtml
-      });
-
-      const copyBtn = document.getElementById('btn-copy-n20229-sei');
-      if (copyBtn) {
-        copyBtn.onclick = function () {
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(data.seiText).then(function () {
-              if (window.cagpToast) window.cagpToast('Resumo N-20229 copiado para a área de transferência!', 'bi-clipboard-check-fill', 2800);
-            });
-          } else {
-            const ta = document.getElementById('cagp-n20229-sei-textarea');
-            if (ta) {
-              ta.select();
-              document.execCommand('copy');
-              if (window.cagpToast) window.cagpToast('Resumo N-20229 copiado!', 'bi-clipboard-check-fill', 2600);
-            }
-          }
-        };
-      }
-
-      const printBtn = document.getElementById('btn-print-n20229');
-      if (printBtn) {
-        printBtn.onclick = function () {
-          window.print();
-        };
-      }
-    }
-  }
-
-  ['btn-gerar-resumo-n20229', 'btn-gerar-resumo-n20229-bottom'].forEach(function (btnId) {
-    const btn = document.getElementById(btnId);
-    if (btn) {
-      btn.onclick = openResumoN20229Modal;
-    }
-  });
-
-  function syncPrintSheet() {
-    const printContainer = document.getElementById('cagp-n20229-print-sheet');
-    if (printContainer) {
-      printContainer.innerHTML = renderMirrorHtml(buildResumoN20229Data());
-    }
-  }
-
   // Sincronização em tempo real quando o aluno restaura, limpa o Cofre ou edita o Passaporte
   if (window.__cagpAcgSyncHandler) {
     window.removeEventListener('cagp:vault-synced', window.__cagpAcgSyncHandler);
@@ -3264,15 +3109,23 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
     Object.keys(fresh).forEach(function (k) { values[k] = fresh[k]; });
     render();
     renderGuardiao120d();
-    syncPrintSheet();
   };
   window.addEventListener('cagp:vault-synced', window.__cagpAcgSyncHandler);
   window.addEventListener('cagp:vault-cleared', window.__cagpAcgSyncHandler);
   window.addEventListener('cagp:profile-updated', window.__cagpAcgSyncHandler);
 
+  // Limpeza de listeners ao navegar via SPA
+  window.addEventListener('cagp:navigated', function () {
+    rows.forEach(function (row) {
+      const decBtn = row.querySelector('[data-action="dec"]');
+      const incBtn = row.querySelector('[data-action="inc"]');
+      if (decBtn) decBtn.onclick = null;
+      if (incBtn) incBtn.onclick = null;
+    });
+  }, { once: true });
+
   render();
   renderGuardiao120d();
-  syncPrintSheet();
   }
 
   if (document.readyState === 'loading') {
@@ -3282,7 +3135,7 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
   }
 })();
 </script>
-
+<p>```</p>
 
 
 
@@ -3525,7 +3378,6 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
     try {
       const serialized = JSON.stringify(currentPrefs);
       localStorage.setItem(STORAGE_KEY, serialized);
-      localStorage.setItem(LEGACY_STORAGE_KEY, serialized);
     } catch (e) {
       console.warn('CAGP A11y: Erro ao salvar preferências no localStorage', e);
     }
@@ -3886,23 +3738,23 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
 
 <!-- Barra de Navegação Inferior Adaptativa para Dispositivos Móveis (Web Mobile Normal) -->
 <nav id="cagp-mobile-nav" class="cagp-mobile-nav" aria-label="Navegação rápida do site no celular">
-  <a href="index.html" class="cagp-mobile-nav-item" id="cagp-mnav-inicio" data-cagp-nav="" data-route="index.html" aria-label="Início e Campus Hoje">
+  <a href="index.html" class="cagp-mobile-nav-item" id="cagp-mnav-hoje" data-cagp-nav="" data-route="index.html" aria-label="Eixo 1: Hoje no Campus">
     <i class="bi bi-compass" aria-hidden="true"></i>
     <span>Hoje</span>
   </a>
-  <a href="percurso.html" class="cagp-mobile-nav-item" id="cagp-mnav-percurso" data-cagp-nav="" data-route="percurso.html" aria-label="Percurso, Grade e 68 Optativas">
+  <a href="curso.html" class="cagp-mobile-nav-item" id="cagp-mnav-curso" data-cagp-nav="" data-route="curso.html" aria-label="Eixo 2: O Curso de Gestão Pública">
+    <i class="bi bi-mortarboard" aria-hidden="true"></i>
+    <span>Curso</span>
+  </a>
+  <a href="percurso.html" class="cagp-mobile-nav-item" id="cagp-mnav-curriculo" data-cagp-nav="" data-route="percurso.html" aria-label="Eixo 3: Currículo, Horas e Optativas">
     <i class="bi bi-diagram-3" aria-hidden="true"></i>
-    <span>Percurso</span>
+    <span>Currículo</span>
   </a>
-  <a href="acg.html" class="cagp-mobile-nav-item" id="cagp-mnav-acg" data-cagp-nav="" data-route="acg.html" aria-label="Calculadora 600h, Estágio e TCC">
-    <i class="bi bi-calculator" aria-hidden="true"></i>
-    <span>Horas ACG</span>
+  <a href="documentos.html" class="cagp-mobile-nav-item" id="cagp-mnav-acervo" data-cagp-nav="" data-route="documentos.html" aria-label="Eixo 4: Acervo de PDFs e Formulários">
+    <i class="bi bi-folder2-open" aria-hidden="true"></i>
+    <span>Acervo</span>
   </a>
-  <a href="documentos.html" class="cagp-mobile-nav-item" id="cagp-mnav-docs" data-cagp-nav="" data-route="documentos.html" aria-label="Documentos e PDFs Oficiais">
-    <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
-    <span>Documentos</span>
-  </a>
-  <a href="gestao.html" class="cagp-mobile-nav-item" id="cagp-mnav-cagp" data-cagp-nav="" data-route="gestao.html" aria-label="O CAGP e Gestão em Exercício">
+  <a href="sobre.html" class="cagp-mobile-nav-item" id="cagp-mnav-cagp" data-cagp-nav="" data-route="sobre.html" aria-label="Eixo 5: O CAGP e Gestão em Exercício">
     <i class="bi bi-people" aria-hidden="true"></i>
     <span>O CAGP</span>
   </a>
@@ -3910,30 +3762,26 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
 
 <!-- 5-Tab Bar Soberana do Super App (Apple HIG & M3 Expressive — 5 Destinos Canônicos) -->
 <nav id="cagp-superapp-tabbar" class="cagp-superapp-tabbar" aria-label="Navegação principal do Super App" hidden="">
-  <a href="index.html" class="cagp-tabbar-item" id="cagp-stab-hoje" data-cagp-nav="" data-route="index.html" aria-label="Hoje no Campus e Micro-Apps">
+  <a href="index.html" class="cagp-tabbar-item" id="cagp-stab-hoje" data-cagp-nav="" data-route="index.html" aria-label="Eixo 1: Hoje no Campus">
     <i class="bi bi-compass-fill cagp-tabbar-icon" aria-hidden="true"></i>
     <span class="cagp-tabbar-label">Hoje</span>
   </a>
-  <a href="percurso.html" class="cagp-tabbar-item" id="cagp-stab-percurso" data-cagp-nav="" data-route="percurso.html" aria-label="Percurso Curricular, Grade e 68 Optativas">
+  <a href="curso.html" class="cagp-tabbar-item" id="cagp-stab-curso" data-cagp-nav="" data-route="curso.html" aria-label="Eixo 2: O Curso de Gestão Pública">
+    <i class="bi bi-mortarboard-fill cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">Curso</span>
+  </a>
+  <a href="percurso.html" class="cagp-tabbar-item" id="cagp-stab-curriculo" data-cagp-nav="" data-route="percurso.html" aria-label="Eixo 3: Currículo, Horas e Optativas">
     <i class="bi bi-diagram-3-fill cagp-tabbar-icon" aria-hidden="true"></i>
-    <span class="cagp-tabbar-label">Percurso</span>
+    <span class="cagp-tabbar-label">Currículo</span>
   </a>
-  <a href="acg.html" class="cagp-tabbar-item" id="cagp-stab-acg" data-cagp-nav="" data-route="acg.html" aria-label="Calculadora 600h, Guardião 120 Dias, Estágio e TCC">
-    <i class="bi bi-calculator-fill cagp-tabbar-icon" aria-hidden="true"></i>
-    <span class="cagp-tabbar-label">Horas ACG</span>
+  <a href="documentos.html" class="cagp-tabbar-item" id="cagp-stab-acervo" data-cagp-nav="" data-route="documentos.html" aria-label="Eixo 4: Acervo de PDFs e Formulários">
+    <i class="bi bi-folder2-open cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">Acervo</span>
   </a>
-  <a href="documentos.html" class="cagp-tabbar-item" id="cagp-stab-docs" data-cagp-nav="" data-route="documentos.html" aria-label="Acervo de PDFs Oficiais e Formulários Offline">
-    <i class="bi bi-file-earmark-pdf-fill cagp-tabbar-icon" aria-hidden="true"></i>
-    <span class="cagp-tabbar-label">Documentos</span>
+  <a href="sobre.html" class="cagp-tabbar-item" id="cagp-stab-cagp" data-cagp-nav="" data-route="sobre.html" aria-label="Eixo 5: O CAGP e Gestão em Exercício">
+    <i class="bi bi-people-fill cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">O CAGP</span>
   </a>
-  <button type="button" class="cagp-tabbar-item cagp-tabbar-btn" id="cagp-stab-ajustes" data-cagp-open-passport="true" aria-label="Passaporte Acadêmico, Foto, Perfil e Cofre Discente">
-    <span class="cagp-avatar-frame cagp-avatar-frame--xs" data-cagp-avatar-host="">
-      <img class="cagp-profile-avatar-img" src="imagens/carteirinha.png" alt="" width="22" height="22" hidden="">
-      <span class="cagp-profile-avatar-fallback" aria-hidden="true"><i class="bi bi-person-badge-fill"></i></span>
-      <span class="cagp-pride-pin cagp-pride-pin--xs" data-cagp-pride-pin="" hidden="" aria-hidden="true"></span>
-    </span>
-    <span class="cagp-tabbar-label" data-cagp-tabbar-profile-label="">Passaporte</span>
-  </button>
 </nav>
 
 <!-- Banner Flutuante de Instalação (Brite Neo-brutalist) -->
@@ -4333,7 +4181,7 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
         <span class="fw-bold small text-uppercase font-display"><i class="bi bi-hdd-stack-fill text-success me-1"></i> Modo Offline Pronto</span>
         <span class="badge bg-success text-white">100% Sincronizado</span>
       </div>
-      <p class="small text-muted mb-0">Todas as 14 rotas, 27 obrigatórias, 68 optativas e os 8 PDFs oficiais ficam disponíveis para consulta offline na FAFICH.</p>
+      <p class="small text-muted mb-0">Todas as 14 rotas, 27 obrigatórias, 68 optativas e os 9 PDFs oficiais essenciais ficam disponíveis para consulta offline na FAFICH.</p>
     </div>
 
     <!-- Alternador de Modo de Visualização -->
@@ -4650,37 +4498,37 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
 
   function cropAndCompressSourceToWebp(imgSource, width, height) {
     const canvas = document.getElementById('cagp-profile-crop-canvas') || document.createElement('canvas');
-    canvas.width = 256;
-    canvas.height = 256;
+    canvas.width = 240;
+    canvas.height = 240;
     const ctx = canvas.getContext('2d');
     if (!ctx) throw new Error('Contexto 2D indisponível.');
 
-    const rawW = Number(width || imgSource.naturalWidth || imgSource.videoWidth || imgSource.width || 256);
-    const rawH = Number(height || imgSource.naturalHeight || imgSource.videoHeight || imgSource.height || 256);
-    const sw = Math.max(1, isFinite(rawW) && rawW > 0 ? rawW : 256);
-    const sh = Math.max(1, isFinite(rawH) && rawH > 0 ? rawH : 256);
+    const rawW = Number(width || imgSource.naturalWidth || imgSource.videoWidth || imgSource.width || 240);
+    const rawH = Number(height || imgSource.naturalHeight || imgSource.videoHeight || imgSource.height || 240);
+    const sw = Math.max(1, isFinite(rawW) && rawW > 0 ? rawW : 240);
+    const sh = Math.max(1, isFinite(rawH) && rawH > 0 ? rawH : 240);
     const minSide = Math.max(1, Math.min(sw, sh));
     const sx = Math.max(0, Math.min(sw - minSide, Math.floor((sw - minSide) / 2)));
     const sy = Math.max(0, Math.min(sh - minSide, Math.floor((sh - minSide) / 2)));
 
-    ctx.clearRect(0, 0, 256, 256);
+    ctx.clearRect(0, 0, 240, 240);
     ctx.fillStyle = '#FBF8F3';
-    ctx.fillRect(0, 0, 256, 256);
+    ctx.fillRect(0, 0, 240, 240);
     ctx.imageSmoothingEnabled = true;
     try { ctx.imageSmoothingQuality = 'high'; } catch (e) {}
-    ctx.drawImage(imgSource, sx, sy, minSide, minSide, 0, 0, 256, 256);
+    ctx.drawImage(imgSource, sx, sy, minSide, minSide, 0, 0, 240, 240);
 
     let dataUrl = '';
     try {
-      dataUrl = canvas.toDataURL('image/webp', 0.82);
-      if (dataUrl && dataUrl.indexOf('data:image/webp') === 0 && dataUrl.length > 48000) {
-        dataUrl = canvas.toDataURL('image/webp', 0.70);
+      dataUrl = canvas.toDataURL('image/webp', 0.70);
+      if (dataUrl && dataUrl.indexOf('data:image/webp') === 0 && dataUrl.length > 20000) {
+        dataUrl = canvas.toDataURL('image/webp', 0.60);
       }
     } catch (e) {}
-    if (!dataUrl || dataUrl.indexOf('data:image/webp') !== 0 || dataUrl.length > 52000) {
-      dataUrl = canvas.toDataURL('image/jpeg', 0.80);
-      if (dataUrl.length > 52000) {
-        dataUrl = canvas.toDataURL('image/jpeg', 0.68);
+    if (!dataUrl || dataUrl.indexOf('data:image/webp') !== 0 || dataUrl.length > 20000) {
+      dataUrl = canvas.toDataURL('image/jpeg', 0.70);
+      if (dataUrl.length > 20000) {
+        dataUrl = canvas.toDataURL('image/jpeg', 0.55);
       }
     }
     return dataUrl;
@@ -4858,7 +4706,6 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
             const val = Number(parsedCalc[k]) || 0;
             if (k.indexOf('ext_') === 0) extSum += val;
             else if (k.indexOf('aac_') === 0) aacSum += val;
-            else totalHours += val;
           });
           totalHours += Math.min(300, extSum) + Math.min(300, aacSum);
         }
@@ -5101,7 +4948,7 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
       candangos: '<i class="bi bi-bank2" aria-hidden="true"></i>',
       fafich: '<i class="bi bi-moon-stars-fill" aria-hidden="true"></i>',
       republica: '<i class="bi bi-shield-check" aria-hidden="true"></i>',
-      monogram: '<span class="cagp-avatar-monogram">' + computeMonogram(prof.name) + '</span>'
+      monogram: '<span class="cagp-avatar-monogram">' + escapeHtml(computeMonogram(prof.name)) + '</span>'
     };
     const fallbackHtml = presetIconMap[prof.avatarPreset] || presetIconMap.candangos;
 
@@ -5324,21 +5171,42 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
       return;
     }
 
-    // 6. Limpar Cofre (#cagp-clear-vault-btn)
+    // 6. Limpar Cofre com confirmação em 2 toques e temporizador de 4s (#cagp-clear-vault-btn)
     const clearBtn = target.closest('#cagp-clear-vault-btn');
     if (clearBtn) {
       e.preventDefault();
+      const originalHtml = clearBtn.getAttribute('data-orig-html') || clearBtn.innerHTML;
+      if (!clearBtn.hasAttribute('data-orig-html')) {
+        clearBtn.setAttribute('data-orig-html', originalHtml);
+      }
+      if (clearBtn.getAttribute('data-confirming') !== 'true') {
+        clearBtn.setAttribute('data-confirming', 'true');
+        clearBtn.classList.add('btn-danger');
+        clearBtn.classList.remove('btn-outline-danger');
+        clearBtn.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-1"></i> Toque novamente em 4s para apagar';
+        clearTimeout(clearBtn._clearConfirmTimer);
+        clearBtn._clearConfirmTimer = setTimeout(function () {
+          clearBtn.removeAttribute('data-confirming');
+          clearBtn.classList.remove('btn-danger');
+          clearBtn.classList.add('btn-outline-danger');
+          clearBtn.innerHTML = originalHtml;
+        }, 4000);
+        return;
+      }
+      clearTimeout(clearBtn._clearConfirmTimer);
+      clearBtn.removeAttribute('data-confirming');
+      clearBtn.classList.remove('btn-danger');
+      clearBtn.classList.add('btn-outline-danger');
+      clearBtn.innerHTML = originalHtml;
       try {
-        localStorage.removeItem('cagp_calc_ext_aac_v1');
-        localStorage.removeItem('cagp_aac_120d_certs_v1');
-        localStorage.removeItem('cagp_calouro_checklist_v1');
-        localStorage.removeItem('cagp_percurso_quiz_v1');
-        localStorage.removeItem('cagp_minha_grade_v1');
-        localStorage.removeItem('cagp_art41_checklist_v1');
-        localStorage.removeItem('cagp_student_profile_v1');
-        localStorage.removeItem('cagp_acg_total_horas');
-        localStorage.removeItem('cagp_calouros_checklist');
-        localStorage.removeItem('cagp_percurso_quiz_resultado');
+        CANONICAL_VAULT_KEYS.forEach(function (k) { localStorage.removeItem(k); });
+        var LEGACY_VAULT_KEYS = [
+          'cagp_percurso_quiz_resultado',
+          'cagp_calouros_checklist',
+          'cagp_acg_total_horas',
+          'cagp_a11y_prefs'
+        ];
+        LEGACY_VAULT_KEYS.forEach(function (k) { localStorage.removeItem(k); });
       } catch (err) {}
       refreshVaultData();
       syncProfileEditorFields();
@@ -5982,9 +5850,32 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
     }).join(''));
   }
 
+  function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function computeCrc32(str) {
+    let crc = -1;
+    for (let i = 0; i < str.length; i++) {
+      let byte = str.charCodeAt(i) & 0xff;
+      for (let j = 0; j < 8; j++) {
+        crc = (crc >>> 1) ^ (((crc ^ byte) & 1) ? 0xEDB88320 : 0);
+        byte >>>= 1;
+      }
+    }
+    return ((crc ^ -1) >>> 0).toString(16).padStart(8, '0');
+  }
+
   function generateSyncCode() {
     const payload = buildBackupPayload();
-    return 'CAGP1:' + encodeUtf8Base64(JSON.stringify(payload.data));
+    const b64 = encodeUtf8Base64(JSON.stringify(payload.data));
+    return 'CAGP1:' + b64 + '.' + computeCrc32(b64);
   }
 
   function restoreFromPayload(rawInput) {
@@ -5994,7 +5885,16 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
     if (typeof rawInput === 'string') {
       const trimmed = rawInput.trim();
       if (trimmed.indexOf('CAGP1:') === 0) {
-        const b64 = trimmed.slice(6).trim();
+        let b64 = trimmed.slice(6).trim();
+        if (b64.indexOf('.') !== -1) {
+          const parts = b64.split('.');
+          b64 = parts[0];
+          const expectedCrc = parts[1].toLowerCase();
+          const actualCrc = computeCrc32(b64).toLowerCase();
+          if (expectedCrc !== actualCrc) {
+            throw new Error('Código corrompido: falha de verificação CRC32.');
+          }
+        }
         const jsonStr = decodeUtf8Base64(b64);
         dataMap = JSON.parse(jsonStr);
       } else {
@@ -6189,23 +6089,35 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
 
     document.querySelectorAll('.cagp-tabbar-item').forEach(function (tab) {
       tab.classList.remove('is-active');
+      tab.setAttribute('aria-selected', 'false');
     });
 
-    if (pathname === 'index.html' || pathname === '' || pathname === 'calouros.html' || pathname === 'curso.html' || pathname === 'pesquisa.html') {
-      const tab = document.getElementById('cagp-stab-hoje');
-      if (tab) tab.classList.add('is-active');
-    } else if (pathname === 'percurso.html' || pathname === 'optativas.html') {
-      const tab = document.getElementById('cagp-stab-percurso');
-      if (tab) tab.classList.add('is-active');
-    } else if (pathname === 'acg.html' || pathname === 'estagio.html' || pathname === 'tcc.html' || pathname === 'estagio-tcc.html') {
-      const tab = document.getElementById('cagp-stab-acg');
-      if (tab) tab.classList.add('is-active');
-    } else if (pathname === 'documentos.html' || pathname === 'faq.html' || pathname === 'mapa-do-site.html') {
-      const tab = document.getElementById('cagp-stab-docs');
-      if (tab) tab.classList.add('is-active');
-    } else if (pathname === 'gestao.html' || pathname === 'sobre.html') {
-      const tab = document.getElementById('cagp-stab-ajustes');
-      if (tab) tab.classList.add('is-active');
+    let activeStabId = 'cagp-stab-hoje';
+    const tax = window.CAGP_TAXONOMY_V1;
+    const cleanName = (!pathname || pathname === '') ? 'index.html' : pathname;
+    if (tax && tax.routes && tax.routes[cleanName]) {
+      const r = tax.routes[cleanName];
+      if (r && r.tabId) {
+        activeStabId = r.tabId.replace('cagp-mnav-', 'cagp-stab-');
+      }
+    } else {
+      if (['percurso.html', 'optativas.html', 'acg.html', 'estagio.html', 'tcc.html', 'estagio-tcc.html'].indexOf(cleanName) !== -1) {
+        activeStabId = 'cagp-stab-curriculo';
+      } else if (['curso.html', 'calouros.html', 'pesquisa.html'].indexOf(cleanName) !== -1) {
+        activeStabId = 'cagp-stab-curso';
+      } else if (['documentos.html', 'faq.html', 'mapa-do-site.html'].indexOf(cleanName) !== -1) {
+        activeStabId = 'cagp-stab-acervo';
+      } else if (['sobre.html', 'gestao.html'].indexOf(cleanName) !== -1) {
+        activeStabId = 'cagp-stab-cagp';
+      } else {
+        activeStabId = 'cagp-stab-hoje';
+      }
+    }
+
+    const tab = document.getElementById(activeStabId);
+    if (tab) {
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
     }
 
     refreshVaultData();
@@ -6382,6 +6294,7 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
 
   const cache = new Map();
   let activePageDisposers = [];
+  let currentPath = window.location.pathname;
 
   function cleanupPreviousPageListeners() {
     while (activePageDisposers.length > 0) {
@@ -6447,26 +6360,36 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
     return html;
   }
 
+  const DEFAULT_FALLBACK_TAXONOMY = {
+    routes: {
+      'index.html': { tabId: 'cagp-mnav-hoje', depth: 0, axis: 'axis-1' },
+      'curso.html': { tabId: 'cagp-mnav-curso', depth: 0, axis: 'axis-2' },
+      'calouros.html': { tabId: 'cagp-mnav-curso', depth: 1, axis: 'axis-2', parent: 'curso.html' },
+      'pesquisa.html': { tabId: 'cagp-mnav-curso', depth: 1, axis: 'axis-2', parent: 'curso.html' },
+      'percurso.html': { tabId: 'cagp-mnav-curriculo', depth: 0, axis: 'axis-3' },
+      'optativas.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'acg.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'estagio.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'tcc.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'estagio-tcc.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'documentos.html': { tabId: 'cagp-mnav-acervo', depth: 0, axis: 'axis-4' },
+      'faq.html': { tabId: 'cagp-mnav-acervo', depth: 1, axis: 'axis-4', parent: 'documentos.html' },
+      'mapa-do-site.html': { tabId: 'cagp-mnav-acervo', depth: 1, axis: 'axis-4', parent: 'documentos.html' },
+      'sobre.html': { tabId: 'cagp-mnav-cagp', depth: 0, axis: 'axis-5' },
+      'gestao.html': { tabId: 'cagp-mnav-cagp', depth: 1, axis: 'axis-5', parent: 'sobre.html' }
+    }
+  };
+
+  function getTaxonomy() {
+    return window.CAGP_TAXONOMY_V1 || DEFAULT_FALLBACK_TAXONOMY;
+  }
+
   function resolveMobileTabId(pathname) {
-    const map = {
-      'index.html': 'cagp-mnav-inicio',
-      '': 'cagp-mnav-inicio',
-      'calouros.html': 'cagp-mnav-inicio',
-      'curso.html': 'cagp-mnav-inicio',
-      'pesquisa.html': 'cagp-mnav-inicio',
-      'percurso.html': 'cagp-mnav-percurso',
-      'optativas.html': 'cagp-mnav-percurso',
-      'acg.html': 'cagp-mnav-acg',
-      'estagio.html': 'cagp-mnav-acg',
-      'tcc.html': 'cagp-mnav-acg',
-      'estagio-tcc.html': 'cagp-mnav-acg',
-      'documentos.html': 'cagp-mnav-docs',
-      'faq.html': 'cagp-mnav-docs',
-      'mapa-do-site.html': 'cagp-mnav-docs',
-      'gestao.html': 'cagp-mnav-cagp',
-      'sobre.html': 'cagp-mnav-cagp'
-    };
-    return map[pathname] || 'cagp-mnav-inicio';
+    const tax = getTaxonomy();
+    const basename = pathname ? pathname.split('/').pop() : 'index.html';
+    const cleanName = (!basename || basename === '') ? 'index.html' : basename;
+    const r = (tax.routes && tax.routes[cleanName]) || (tax.routes && tax.routes['index.html']);
+    return r ? r.tabId : 'cagp-mnav-hoje';
   }
 
   function updateNavigationUI(targetUrl) {
@@ -6474,17 +6397,28 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
       const url = new URL(targetUrl, window.location.href);
       const pathname = url.pathname.split('/').pop() || 'index.html';
 
-      // 1. Atualizar Barra Móvel Inferior (Web Mobile)
+      // 1. Atualizar Barra Móvel Inferior (Web Mobile) e Tab Bar do Super App (5 Eixos Canônicos)
       document.querySelectorAll('.cagp-mobile-nav-item').forEach(function (item) {
         item.classList.remove('is-active');
         item.removeAttribute('aria-current');
       });
+      document.querySelectorAll('.cagp-tabbar-item').forEach(function (item) {
+        item.classList.remove('is-active');
+        item.setAttribute('aria-selected', 'false');
+      });
+
       const activeId = resolveMobileTabId(pathname);
       if (activeId) {
         const activeEl = document.getElementById(activeId);
         if (activeEl) {
           activeEl.classList.add('is-active');
           activeEl.setAttribute('aria-current', 'page');
+        }
+        const activeStabId = activeId.replace('cagp-mnav-', 'cagp-stab-');
+        const activeStabEl = document.getElementById(activeStabId);
+        if (activeStabEl) {
+          activeStabEl.classList.add('is-active');
+          activeStabEl.setAttribute('aria-selected', 'true');
         }
       }
 
@@ -6599,24 +6533,46 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
   }
 
   function applyPageSwap(doc, targetUrl) {
+    try {
+      currentPath = new URL(targetUrl, window.location.origin).pathname;
+    } catch (e) {}
+
     // 1. Título do Documento
     const newTitle = doc.querySelector('title');
     if (newTitle) document.title = newTitle.textContent;
 
-    // 2. Classes do Body (Preservando estados dinâmicos como Standalone e Acessibilidade)
-    const isStandaloneActive = document.documentElement.classList.contains('cagp-is-standalone') ||
+    // 2. Classes do Body e Root (Preservando estados dinâmicos como Standalone e Acessibilidade)
+    const rootEl = document.documentElement;
+    const isStandaloneActive = rootEl.classList.contains('cagp-is-standalone') ||
                                document.body.classList.contains('cagp-is-standalone');
-    const isDyslexia = document.body.classList.contains('cagp-dyslexia');
-    const isContrast = document.body.classList.contains('cagp-high-contrast');
+    const isDyslexia = rootEl.classList.contains('cagp-dyslexia') || document.body.classList.contains('cagp-dyslexia');
+    const isContrast = rootEl.classList.contains('cagp-high-contrast') || document.body.classList.contains('cagp-high-contrast');
+
+    // Preservar todos os atributos data-a11y-* em documentElement
+    const a11yAttrs = {};
+    Array.from(rootEl.attributes).forEach(function (attr) {
+      if (attr.name.startsWith('data-a11y-')) {
+        a11yAttrs[attr.name] = attr.value;
+      }
+    });
 
     if (doc.body) {
       document.body.className = doc.body.className;
       if (isStandaloneActive) {
-        document.documentElement.classList.add('cagp-is-standalone');
+        rootEl.classList.add('cagp-is-standalone');
         document.body.classList.add('cagp-is-standalone');
       }
-      if (isDyslexia) document.body.classList.add('cagp-dyslexia');
-      if (isContrast) document.body.classList.add('cagp-high-contrast');
+      if (isDyslexia) {
+        rootEl.classList.add('cagp-dyslexia');
+        document.body.classList.add('cagp-dyslexia');
+      }
+      if (isContrast) {
+        rootEl.classList.add('cagp-high-contrast');
+        document.body.classList.add('cagp-high-contrast');
+      }
+      Object.keys(a11yAttrs).forEach(function (key) {
+        rootEl.setAttribute(key, a11yAttrs[key]);
+      });
     }
 
     // 3. Margin Sidebar (TOC)
@@ -7076,6 +7032,21 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
     try {
       const fromUrl = window.location.href;
       const resolvedUrl = new URL(targetUrl, fromUrl).href;
+      const fromObj = new URL(fromUrl);
+      const toObj = new URL(targetUrl, fromUrl);
+
+      // Se for a mesma rota diferindo apenas no #hash, sincronizar Workspace View sem recarregar o DOM
+      if (fromObj.pathname === toObj.pathname && fromObj.search === toObj.search) {
+        if (!isBack && toObj.hash) {
+          history.replaceState({ url: resolvedUrl }, '', resolvedUrl);
+        }
+        if (window.cagpSyncWorkspaceFromHash) {
+          window.cagpSyncWorkspaceFromHash(toObj.hash, { scroll: true });
+        }
+        window.cagpRouteProgress.finish();
+        return;
+      }
+
       const navDir = computeNavDirection(fromUrl, resolvedUrl, Boolean(isBack), triggerAnchor);
       const mainEl = document.getElementById('quarto-document-content');
 
@@ -7157,6 +7128,16 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
   });
 
   window.addEventListener('popstate', function () {
+    try {
+      const newPath = new URL(window.location.href).pathname;
+      if (newPath === currentPath) {
+        if (window.location.hash && window.cagpSyncWorkspaceFromHash) {
+          if (window.cagpSyncWorkspaceFromHash(window.location.hash, { scroll: false })) {
+            return;
+          }
+        }
+      }
+    } catch (e) {}
     navigate(window.location.href, true, null);
   });
 
@@ -7324,7 +7305,7 @@ Conforme o Art. 16, a atividade indeferida não pode ser reapresentada na mesma 
     { title: "Extensão & Horas AAC (600h)", cat: "Página", badge: "Integralização", href: "acg.html", desc: "Calculadora de integralização 600h, Extensão 300h, 7 modalidades de AAC e Guardião de 120 dias.", keywords: "acg aac extensao 300h 600h horas complementares calculadora guardiao 120 dias voluntariado colegiado" },
     { title: "Estágio Supervisionado & Dispensa Art. 41", cat: "Página", badge: "Estágio", href: "estagio.html", desc: "Estágio Obrigatório A (DCP 135, 180h) e B (DCP 136, 120h), simulador de dispensa Art. 41 e tutorial TCE.", keywords: "estagio supervisionado obrigatorio nao obrigatorio dcp135 dcp136 art 41 dispensa profissional vinculo tce" },
     { title: "Trabalho de Conclusão de Curso (TCC)", cat: "Página", badge: "TCC", href: "tcc.html", desc: "Projeto (DCP 089, 60h) e Defesa (DCP 137, 120h), as 4 modalidades oficiais de TCC e Termo de Aceite.", keywords: "tcc trabalho conclusao curso dcp089 dcp137 monografia artigo cientifico relatorio tecnico projeto intervencao orientador" },
-    { title: "Documentos & Formulários Oficiais", cat: "Página", badge: "Acervo", href: "documentos.html", desc: "Cofre de 8 PDFs na íntegra offline, PPC N-20229, Regimento 2024, formulários e instruções SEI-UFMG.", keywords: "documentos pdfs ppc regimento regulamento estagio sei requerimento normas resolucoes cofre offline" },
+    { title: "Documentos & Formulários Oficiais", cat: "Página", badge: "Acervo", href: "documentos.html", desc: "Cofre de 9 PDFs essenciais na íntegra offline, PPC N-20229, Regimento 2024, formulários e instruções SEI-UFMG.", keywords: "documentos pdfs ppc regimento regulamento estagio sei requerimento normas resolucoes cofre offline" },
     { title: "Dúvidas Frequentes (FAQ)", cat: "Página", badge: "Ajuda", href: "faq.html", desc: "Respostas diretas sobre CEAG, mobilidade, trancamento, aproveitamento e prazos.", keywords: "faq duvidas perguntas frequentes ceag trancamento prazos secretaria colegiado" },
     { title: "O Centro Acadêmico (Sobre o CAGP)", cat: "Página", badge: "Institucional", href: "sobre.html", desc: "Regimento 2024, Os Candangos, Bruno Giorgi, Assembleia Geral e Junta Eleitoral.", keywords: "sobre cagp candangos bruno giorgi estatuto regimento interno historia diretoria representacao" },
     { title: "Gestão em Exercício & Equipe", cat: "Página", badge: "Governança", href: "gestao.html", desc: "Organograma, as 7 diretorias canônicas, transparência ativa e chamada para assessores.", keywords: "gestao equipe diretorias dipre dijur difi diac diap dicult dimac transparencia contas" },

@@ -1,6 +1,7 @@
 ---
 title: "Dúvidas Frequentes (FAQ)"
 subtitle: "Respostas baseadas nas Normas Gerais de Graduação da UFMG e no Regulamento Oficial do Curso"
+description: "Perguntas frequentes regimentais sobre prazos, trancamento, aproveitamento de estudos e acessibilidade do portal do CAGP UFMG."
 title-block-style: none
 toc: false
 ---
@@ -50,28 +51,26 @@ toc: false
   </div>
 
   <nav class="cagp-workspace-bar" aria-label="Sub-visualizações de Dúvidas Frequentes">
-    <span class="cagp-workspace-bar-label"><i class="bi bi-layers me-1" aria-hidden="true"></i>Módulos:</span>
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" data-ws-tab="v1" data-ws-hash="#filtro-faq" aria-selected="true">
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="2">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#filtro-faq">
         <i class="bi bi-question-circle" aria-hidden="true"></i>
-        <span>1. Perguntas &amp; Respostas Regimentais</span>
-        <span class="cagp-ws-badge">9 Tópicos</span>
+        <span class="cagp-tab-label-full">1. Dúvidas Frequentes</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Perguntas</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v2" data-ws-hash="#acessibilidade" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#acessibilidade">
         <i class="bi bi-universal-access" aria-hidden="true"></i>
-        <span>2. Acessibilidade Universal &amp; Apoio</span>
-        <span class="cagp-ws-badge">Alt + A</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="__all__" aria-selected="false" title="Exibir todas as seções simultaneamente">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i>
-        <span>Ver Tudo</span>
+        <span class="cagp-tab-label-full">2. Acessibilidade Universal</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Acessibilidade</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 
 <div class="cagp-workspace-deck" data-ws-deck="faq">
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 
 <!-- Atalhos de Alta Urgência / Tópicos Mais Procurados -->
 <div class="cagp-urgent-grid my-3">
@@ -283,7 +282,7 @@ toc: false
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 ```
 
 ## <i class="bi bi-universal-access" aria-hidden="true"></i> Acessibilidade, Usabilidade e Navegação no Portal {#acessibilidade}

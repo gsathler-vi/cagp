@@ -61,6 +61,8 @@
 51. [Ciclo 51: Polimento Global de Links, Resolução Infallível de Âncoras e Restauração do Anúncio da Chapa](#51-ciclo-51-polimento-global-de-links-resolução-infallível-de-âncoras-e-restauração-do-anúncio-da-chapa-impeccable-polish)
 52. [Ciclo 52: Refatoração Integral da UI/UX Mobile do Super App, Nova Bottom Tab Bar de 5 Destinos, Central de PDFs Offline e Relógio Síncrono Zero Latência](#52-ciclo-52-refatoração-integral-da-uiux-mobile-do-super-app-nova-bottom-tab-bar-de-5-destinos-central-de-pdfs-offline-e-relógio-síncrono-zero-latência-apple-hig--impeccable-adapt)
 53. [Ciclo 53: Física iOS Liquid Glass Zero Blur, Busca Mobile com visualViewport, Benchmarks de Bancos & Música e Ícones do HUB de Apps](#53-ciclo-53-física-ios-liquid-glass-zero-blur-busca-mobile-com-visualviewport-benchmarks-de-bancos--música-e-ícones-do-hub-de-apps-apple-design--impeccable-shape)
+54. [Ciclos 54 a 58: Reengenharia Integral em 5 Fases (Diagnóstico Forense, Casca Blindada, Páginas Editoriais, Módulos Operacionais e Features Client-Side)](#54-ciclos-54-a-58-reengenharia-integral-em-5-fases-diagnóstico-forense-casca-blindada-páginas-editoriais-módulos-operacionais-novas-features-client-side-e-auditoria-browser)
+55. [Ciclos 59 a 62: Arquitetura Modular de 14 Rotas & Workspaces, Passaporte Acadêmico com Foto Persistente, Motor Cinético 60/120fps e Unificação Global do Shell SPA](#55-ciclos-59-a-62-arquitetura-modular-de-14-rotas--workspaces-passaporte-acadêmico-com-foto-persistente-motor-cinético-60120fps-e-unificação-global-do-shell-spa)
 
 ---
 
@@ -2045,4 +2047,38 @@ Dando continuidade ao aprimoramento do Super App estudantil CAGP UFMG com o ferr
    - Utilitários globais `window.cagpCalendar.downloadIcs` e `window.cagpShare` integrados em `index.qmd`, `curso.qmd`, `calouros.qmd`, `acg.qmd`, `percurso.qmd`, `documentos.qmd` e `faq.qmd`.
 4. **"Meu CAGP Sync" — Backup e Portabilidade Zero-Servidor (`#cagp-settings-sheet`):**
    - Exportação e restauração completa das 8 chaves canônicas do Cofre Acadêmico via arquivo `.json` (`meu-cagp-backup-YYYY-MM-DD.json`) ou código compacto Base64 (`CAGP1:...`) com sincronização instantânea (`cagp:vault-synced`) sem recarregar a página.
+
+---
+
+## 55. Ciclos 59 a 62: Arquitetura Modular de 14 Rotas & Workspaces, Passaporte Acadêmico com Foto Persistente, Motor Cinético 60/120fps e Unificação Global do Shell SPA
+
+### 55.1 Ciclo 59 (Fase 1) — Quebra dos Monolitos de Rolagem Infinita: 14 Rotas Canônicas & Single-View App Workspaces
+- **Desmembramento Cirúrgico em 14 Rotas Canônicas (+ Rediretor `estagio-tcc.qmd` = 15 HTMLs compilados):**
+  - Criação de [`pesquisa.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/pesquisa.qmd) (unificando o Hub de Iniciação Científica e os 11 Núcleos do DCP/FAFICH), [`optativas.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/optativas.qmd) (Catálogo pesquisável das 68 Optativas + 120h de Formação Livre), [`estagio.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/estagio.qmd) (Estágio Supervisionado 300h + Simulador Art. 41 + Tutorial TCE) e [`tcc.qmd`](file:///home/gsathler/Nextcloud/Projects/cagp/tcc.qmd) (TCC 180h + 4 Modalidades Oficiais + Termo de Aceite), preservando `estagio-tcc.qmd` como ponte automática `[data-cagp-redirect]` para zero links legados quebrados.
+- **Single-View App Workspaces (`.cagp-workspace-bar` / `.cagp-workspace-view`):**
+  - Implementação do motor global de Sub-Views em [`_includes/super-app-router.html`](file:///home/gsathler/Nextcloud/Projects/cagp/_includes/super-app-router.html) com sincronização bidirecional de `#hash` (`data-ws-hash`) nas páginas operacionais (`acg.qmd`, `percurso.qmd`, `calouros.qmd`, `estagio.qmd`, `tcc.qmd`, `documentos.qmd`), reduzindo a altura de rolagem vertical em mais de 60% sem suprimir nenhuma informação factual.
+
+### 55.2 Ciclo 60 (Fase 2) — Identidade Persistente do Estudante (`cagp_student_profile_v1`) & Passaporte Acadêmico CAGP
+- **9ª Chave Canônica do Cofre Acadêmico (`cagp_student_profile_v1`):**
+  - Armazenamento 100% local de Nome/Apelido, Pronomes, Período Atual (`1ºP`–`10ºP` / Egresso), Semestre de Ingresso, Percurso (`01-01`, `01-02`, `01-03`), Modo de Avatar (`photo` ou `preset`), 4 Presets Ilustrados Brite e **9 Bandeiras de Orgulho LGBTQIAPN+** (Pin esmaltado `.cagp-pride-pin` + Tag `.cagp-pride-tag`), integrado ao **Meu CAGP Sync**.
+- **Recorte e Compressão de Foto 100% Client-Side via `<canvas>` HTML5:**
+  - Recorte quadrado centralizado (`1:1`), redimensionamento para `256×256px` e compressão em `image/webp` (fallback `image/jpeg`), gerando `dataURL` leve (`~12–25 KB`) salvo diretamente no `localStorage`.
+- **Personalização Contextual Integrada:**
+  - Pré-seleção automática da aba da Bússola em `index.qmd`, destaque do período atual do estudante no Grafo/Linha do Tempo em `percurso.qmd` e pré-preenchimento do cabeçalho do Espelho Oficial N-20229 em `acg.qmd`.
+
+### 55.3 Ciclo 61 (Fase 3) — Reengenharia Cinética 60/120fps (Apple HIG + M3 Expressive + Brite)
+- **Tokens Físicos Separados por Natureza (`styles.css`):**
+  - *Spatial Springs* (`--cagp-spring`, `--cagp-m3-spatial-fast`, `--cagp-m3-spatial-default`, `--cagp-m3-spatial-standard`) para posição, escala, altura e chevrons; *Effects Springs* sem overshoot (`--cagp-m3-effects-fast`, `--cagp-m3-effects-default`) para opacidade, cor e bordas.
+- **Transições Direcionais, Staggered Reveal, Gavetas `0fr -> 1fr`, WAAPI e Odômetro `rAF` (`280ms`):**
+  - Barra superior `#cagp-route-progress-bar` (`z-index: 1020`), transições direcionais View Transitions API + fallback CSS entre abas e Sub-Views, entrada escalonada limitada aos primeiros 8 cards, interpolação fluida de altura em `.cagp-calc-drawer` e `<details class="cagp-discipline">`, contadores numéricos animados via `requestAnimationFrame` (`280ms`), Skeletons Neo-Brutalistas Brite e desligamento instantâneo sob `@media (prefers-reduced-motion: reduce)` e `html[data-a11y-motion="reduced"]`.
+
+### 55.4 Ciclo 62 (Fase 4 Consolidada) — Correção Cirúrgica de Perfil SPA, Deduplicação Apple HIG, Hardening e Fechamento E2E com `/browser`
+- **Unificação Global do Passaporte & Upload de Foto em Todas as 15 Rotas (`_includes/pwa-install.html`):**
+  - Identificado e corrigido o bug em que o Quarto renderizava `include-after-body` dentro de `div#quarto-content` e mantinha `#cagp-profile-editor-panel` oculto fora da Home. Implementado `hoistPwaShellToBody()` e `hoistA11yToBody()` içando `#cagp-settings-sheet`, `#cagp-ios-sheet` e `#cagp-a11y-panel` diretamente para `document.body` no boot e em `cagp:navigated`, com **100% de delegação global de eventos em `document`** e todos os controles de foto/perfil sempre abertos em primeiro plano em qualquer página.
+- **Eliminação do Botão `[← Hub]` e do Lançador Waffle Redundante (Apple HIG `toolbars.md`, `path-controls.md`, `tab-bars.md`):**
+  - Removidos definitivamente `_includes/app-launcher.html`, `#cagp-waffle-btn` e `.cagp-topbar-back-btn` (`[← Hub]`).
+  - Cabeçalho Web (`#cagp-superapp-header`) e Topbar Standalone (`#cagp-superapp-topbar`) unificados: à esquerda, **Logo Oficial dos Candangos + `CAGP`** (`href="index.html"`) + indicador discreto de seção contextual (`/ <Seção>`); à direita, estritamente **Busca Spotlight (`⌘K`)**, **Acessibilidade (`Alt+A`)** e **Avatar/Passaporte do Estudante com Foto** (+ botão do Drawer Mobile `< 992px` apenas no modo Web); na base mobile/standalone, a **Bottom Tab Bar de 5 abas** como único lançador inferior canônico.
+- **Padronização de Cabeçalhos Contextuais, Hardening (`impeccable harden`) e Verificação E2E:**
+  - Padronização de `.cagp-workspace-header` e `.cagp-breadcrumbs` nas 15 rotas; truncamento seguro (`text-overflow: ellipsis`) para nomes estudantis extensos; blindagem do `<canvas>` contra imagens de proporção extrema (`100×1200` / `1200×100`); piso soberano `font-size >= 16px` em todos os campos de formulário; cobertura completa do modo **Alto Contraste AAA** (`html[data-a11y-contrast="high"]`); e aprovação integral na Tríade Oficial (`quarto render` + `impeccable doctor/detect` + auditoria Python de links/`#hash` + subagente `/browser` nas 4 classes de tela em modo Web e Standalone).
+
 

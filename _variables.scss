@@ -2,8 +2,6 @@
 // Brite 5.3.7 adapted for CAGP UFMG
 // Bootswatch
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Oswald:wght@500;600;700&display=swap');
-
 $theme: "brite" !default;
 
 //
@@ -22,8 +20,9 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #0a0a0a !default;
 
-$cagp-red: #9e2424;
-$cagp-dark: #0a0a0a;
+$cagp-red: #8b1e2d !default;
+$cagp-dark: #0a0a0a !default;
+$cagp-cream: #fbf8f3 !default;
 
 $blue:    #1976d2 !default;
 $indigo:  #5c6bc0 !default;
@@ -68,6 +67,7 @@ $link-color:                              $black !default;
 
 // Components
 
+$border-width:                1px !default;
 $border-radius:               4px !default;
 $border-radius-sm:            2px !default;
 $border-radius-lg:            4px !default;
@@ -258,8 +258,8 @@ $btn-close-hover-opacity:    1 !default;
 // Variables
 
 :root {
-  --#{$prefix}border-width: 2px;
-  --#{$prefix}border-color: #0a0a0a;
+  --#{$prefix}border-width: 1px;
+  --#{$prefix}border-color: #dfdbd2;
   --z-subnav: 1010;
   --z-sticky-bar: 1020;
   --z-live-bar: 1035;
@@ -273,29 +273,32 @@ $btn-close-hover-opacity:    1 !default;
   --z-skip-link: 1110;
 }
 
-[data-bs-theme="light"],
+[data-bs-theme="light"] {
+  --#{$prefix}border-color: #dfdbd2;
+}
+
 [data-bs-theme="dark"] {
-  --#{$prefix}border-color: #0a0a0a;
+  --#{$prefix}border-color: #343a40;
 }
 
 // Mixins
 
 @mixin btn-shadow(){
-  box-shadow: 3px 3px 0 0 var(--#{$prefix}border-color);
+  box-shadow: 2px 2px 0 0 var(--#{$prefix}border-color);
 }
 
 .table {
-  border: 2px solid $black;
+  border: 1px solid var(--#{$prefix}border-color);
 }
 
 // Navbar
 
 .navbar {
-  $navbar-border-width: 2px;
+  $navbar-border-width: 1px;
   font-size: $font-size-lg;
   font-weight: $headings-font-weight;
 
-  border: $navbar-border-width solid $black;
+  border: $navbar-border-width solid var(--#{$prefix}border-color);
 
   &.fixed-top {
     border-width: 0 0 $navbar-border-width 0;
@@ -311,32 +314,47 @@ $btn-close-hover-opacity:    1 !default;
   }
 
   &-toggler {
-    --bs-border-width: 2px;
+    --bs-border-width: 1px;
   }
 }
 
 // Buttons
 
 .btn {
-  margin: 3px 0 0 3px;
-  border-color: $black;
-  @include btn-shadow();
-  transition: all .3s;
-  transform: translate(-3px, -3px);
+  margin: 2px 0 0 2px;
+  border-color: var(--#{$prefix}border-color);
+  box-shadow: none;
+  transition: all .2s ease-in-out;
+  transform: none;
 
   &:hover {
-    border-color: $black;
+    border-color: var(--#{$prefix}border-color);
     box-shadow: none;
-    transform: translate(0, 0);
+    transform: none;
   }
 
   &.disabled {
-    border-color: $black;
+    border-color: var(--#{$prefix}border-color);
   }
 
   &-link,
   &-link:hover {
     color: $black;
+  }
+}
+
+.btn-primary, .cagp-btn-primary {
+  box-shadow: 2px 2px 0 0 #0a0a0a;
+  transform: translate(-2px, -2px);
+
+  &:hover {
+    box-shadow: 1px 1px 0 0 #0a0a0a;
+    transform: translate(-1px, -1px);
+  }
+
+  &:active {
+    box-shadow: 0 0 0 0 transparent;
+    transform: translate(0, 0);
   }
 }
 
@@ -481,16 +499,16 @@ a {
   gap: 4px;
   padding: .4rem .4rem calc(.4rem + 2px);
   font-weight: $headings-font-weight;
-  border: 2px solid $black;
+  border: 1px solid var(--#{$prefix}border-color);
   border-radius: $border-radius-lg;
 
   .nav-link {
-    border-width: 2px;
+    border-width: 1px;
     border-radius: $border-radius;
 
     &.active,
     &:hover {
-      border: 2px solid $black;
+      border: 1px solid var(--#{$prefix}border-color);
     }
   }
 }
@@ -498,7 +516,7 @@ a {
 .tab-content {
   padding: 1rem;
   margin-top: 1rem;
-  border: 2px solid $black;
+  border: 1px solid var(--#{$prefix}border-color);
   border-radius: $border-radius-lg;
 }
 
@@ -507,13 +525,13 @@ a {
   font-weight: $headings-font-weight;
 
   .nav-link {
-    border: 2px solid $black;
+    border: 1px solid var(--#{$prefix}border-color);
   }
 }
 
 .breadcrumb {
   font-weight: $headings-font-weight;
-  border: 2px solid $black;
+  border: 1px solid var(--#{$prefix}border-color);
 
   a {
     color: $black;
@@ -595,8 +613,8 @@ a {
 
 .alert {
   color: $black;
-  border: 2px solid $black;
-  @include btn-shadow();
+  border: 1px solid var(--#{$prefix}border-color);
+  box-shadow: none;
 }
 
 .alert-link {
@@ -614,7 +632,7 @@ a {
 }
 
 .badge {
-  border: 2px solid $black;
+  border: 1px solid var(--#{$prefix}border-color);
 
   &.bg-dark {
     color: $white;
@@ -622,16 +640,17 @@ a {
 }
 
 .progress {
-  border: 2px solid $black;
+  border: 1px solid var(--#{$prefix}border-color);
 
   &-bar {
-    border-right: 2px solid $black;
+    border-right: 1px solid var(--#{$prefix}border-color);
   }
 }
 
 .modal {
   &-content {
-    @include btn-shadow();
+    border: 1px solid var(--#{$prefix}border-color);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   }
 }
 

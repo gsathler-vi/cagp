@@ -12,9 +12,12 @@ color:
     cagp-red: "#9E2424"
     cagp-wine-inst: "#8B1E2D"
     cagp-gold: "#E8A317"
+    cagp-warning: "#B45309"
+    cagp-success: "#15803D"
     cagp-paper: "#FBF8F3"
     cagp-surface-low: "#F4F1EA"
     cagp-surface-high: "#EAE5DC"
+    cagp-border: "#DFDBD2"
     cagp-dark: "#0A0A0A"
     cagp-white: "#FFFFFF"
     cagp-gray-100: "#F8F9FA"
@@ -23,14 +26,14 @@ color:
     ufmg-siga: "#9E2424"
     ufmg-minha: "#005A9C"
     ufmg-moodle: "#D9531E"
-    ufmg-sei: "#1E6B3A"
+    ufmg-sei: "#15803D"
     ufmg-bu: "#5B2C6F"
   foreground: cagp-dark
   background: cagp-paper
-  primary: cagp-red
+  primary: cagp-wine-inst
   secondary: cagp-dark
-  warning: cagp-gold
-  success: ufmg-sei
+  warning: cagp-warning
+  success: cagp-success
   info: ufmg-minha
   light: cagp-paper
   dark: cagp-dark

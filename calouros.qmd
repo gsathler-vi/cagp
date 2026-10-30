@@ -1,6 +1,7 @@
 ---
 title: "Guia de Sobrevivência do Calouro"
 subtitle: "Manual prático e orientações para o ingressante no curso Noturno de Gestão Pública da UFMG"
+description: "Guia de sobrevivência do calouro de Gestão Pública no turno noturno: checklist de 30 dias, RU II Setorial, Circulares e assistência FUMP."
 title-block-style: none
 toc: false
 ---
@@ -35,37 +36,43 @@ toc: false
   <p class="cagp-workspace-subtitle">Checklist interativo dos primeiros 30 dias na UFMG, linha do tempo da rotina noturna (RU Setorial II às 18h15 e último Circular às 22h45), espaços da FAFICH e bolsas da FUMP/PRAE.</p>
 
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas do Guia do Calouro">
-    <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#checklist-calouro">
-        <i class="bi bi-check2-square" aria-hidden="true"></i> <span>1. Checklist 30d &amp; Apps</span> <span class="cagp-ws-badge">6 Passos</span>
+    <div class="cagp-workspace-tabs" role="tablist" data-tab-count="4">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-controls="ws-panel-v1" aria-selected="true" tabindex="0" data-ws-tab="v1" data-ws-hash="#checklist-calouro">
+        <i class="bi bi-check2-square" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Checklist 30d &amp; Apps</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Checklist</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#rotina-noturna">
-        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i> <span>2. Rotina Noturna, RU &amp; Mapas</span> <span class="cagp-ws-badge">18h15 • 22h45</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-controls="ws-panel-v2" aria-selected="false" tabindex="-1" data-ws-tab="v2" data-ws-hash="#rotina-noturna">
+        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Rotina Noturna &amp; RU</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Rotina</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#biblioteca-espacos">
-        <i class="bi bi-building" aria-hidden="true"></i> <span>3. FAFICH, Secretaria &amp; CEAG</span> <span class="cagp-ws-badge">F-2039</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-controls="ws-panel-v3" aria-selected="false" tabindex="-1" data-ws-tab="v3" data-ws-hash="#biblioteca-espacos">
+        <i class="bi bi-building" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">3. FAFICH, Sec &amp; CEAG</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">FAFICH</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v4" data-ws-hash="#assistencia-estudantil">
-        <i class="bi bi-heart-pulse-fill" aria-hidden="true"></i> <span>4. FUMP, PRAE &amp; Vídeos</span> <span class="cagp-ws-badge">Níveis I–III</span>
-      </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> <span>Ver Tudo</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v4" role="tab" aria-controls="ws-panel-v4" aria-selected="false" tabindex="-1" data-ws-tab="v4" data-ws-hash="#assistencia-estudantil">
+        <i class="bi bi-heart-pulse-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">4. FUMP &amp; Apoio</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">FUMP</span>
       </button>
     </div>
+    <button type="button" class="cagp-workspace-viewall" aria-pressed="false" aria-label="Ver todas as abas" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+      <i class="bi bi-layout-text-sidebar" aria-hidden="true"></i>
+    </button>
   </nav>
 </header>
 ```
 
 ```{=html}
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+<div id="ws-panel-v1" class="cagp-workspace-view is-active" role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1">
 ```
 
 ## <i class="bi bi-check2-square" aria-hidden="true"></i> Checklist Interativo dos Primeiros 30 Dias {#checklist-calouro}
-<span id="checklist" class="cagp-anchor-alias" aria-hidden="true"></span>
-
-Marque abaixo os passos já cumpridos na sua chegada à UFMG. O progresso fica salvo automaticamente neste navegador:
 
 ```{=html}
+<span id="checklist" class="cagp-anchor-alias" aria-hidden="true"></span>
 <section class="cagp-tool-box" aria-labelledby="calouro-check-title">
   <div class="cagp-tool-header">
     <div class="d-flex align-items-center gap-3">
@@ -302,7 +309,7 @@ Instale em seu smartphone os aplicativos oficiais e utilize as plataformas essen
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+<div id="ws-panel-v2" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden>
 ```
 
 ## <i class="bi bi-moon-stars" aria-hidden="true"></i> A Rotina do Estudante do Turno Noturno (Linha do Tempo Operacional) {#rotina-noturna}
@@ -463,7 +470,7 @@ Você também pode consultar o [Mapa Integrado dos Campi da UFMG (Pampulha, Saú
 ```{=html}
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
+<div id="ws-panel-v3" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden>
 ```
 
 ## <i class="bi bi-building" aria-hidden="true"></i> Conhecendo a FAFICH e os Espaços do Curso
@@ -507,7 +514,7 @@ Como estudante do noturno, você conta com canais de atendimento presencial no *
             <li><strong>Quinta e Sexta-feira:</strong> Serviços internos, das 09h00 às 15h00</li>
           </ul>
         </li>
-        <li><strong>Telefone:</strong> (31) 3409-3826 <button type="button" class="cagp-copy-btn" data-copy="3134093826" aria-label="Copiar telefone da secretaria"><i class="bi bi-telephone me-1" aria-hidden="true"></i>Copiar telefone</button> • <strong>E-mail:</strong> <a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a> <button type="button" class="cagp-copy-btn" data-copy="gestaopublica@ufmg.br" aria-label="Copiar e-mail da secretaria"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar e-mail</button></li>
+        <li><strong>Telefone:</strong> <a href="tel:+553134093826">(31) 3409-3826</a> <button type="button" class="cagp-copy-btn" data-copy="3134093826" aria-label="Copiar telefone da secretaria"><i class="bi bi-telephone me-1" aria-hidden="true"></i>Copiar telefone</button> • <strong>E-mail:</strong> <a href="mailto:gestaopublica@ufmg.br">gestaopublica@ufmg.br</a> <button type="button" class="cagp-copy-btn" data-copy="gestaopublica@ufmg.br" aria-label="Copiar e-mail da secretaria"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar e-mail</button></li>
         <li><strong>Coordenação do Curso:</strong> Profª Isabele Batista Mitozo (Atendimento presencial na <strong>Sala F-4067</strong> às quartas das 17h30 às 19h00 e quintas on-line • <a href="mailto:coordgestaopublica@gmail.com">coordgestaopublica@gmail.com</a> <button type="button" class="cagp-copy-btn" data-copy="coordgestaopublica@gmail.com" aria-label="Copiar e-mail da coordenação"><i class="bi bi-clipboard me-1" aria-hidden="true"></i>Copiar e-mail</button>).</li>
       </ul>
     </div>
@@ -585,7 +592,7 @@ Como estudante do noturno, você conta com canais de atendimento presencial no *
 </div>
 </div>
 
-<div class="cagp-workspace-view" data-ws-view="v4" hidden>
+<div id="ws-panel-v4" class="cagp-workspace-view" role="tabpanel" aria-labelledby="ws-tab-v4" data-ws-view="v4" hidden>
 ```
 
 ## <i class="bi bi-heart-pulse" aria-hidden="true"></i> Permanência Estudantil, Bolsas e Assistência {#assistencia-estudantil}
@@ -634,7 +641,7 @@ Todo discente que deseja pleitear benefícios (alimentação gratuita/subsidiada
 4. **Comprovação Documental:** Envie cópias de contracheques/declarações de renda familiar, comprovante de residência atualizado e comprovantes de despesas médicas contínuas.
 5. **Canais Diretos de Suporte FUMP:**
    - WhatsApp Oficial Pampulha: [**(31) 97537-0115**](https://wa.me/5531975370115){target="_blank"}
-   - Telefones: `(31) 3409-8401` / `(31) 3409-8470`
+   - Telefones: [**(31) 3409-8401**](tel:+553134098401) / [**(31) 3409-8470**](tel:+553134098470)
    - Atendimento presencial na sede da FUMP (Campus Pampulha, próximo à Praça de Serviços).
 :::
 
@@ -649,7 +656,7 @@ Todo discente que deseja pleitear benefícios (alimentação gratuita/subsidiada
 ### Saúde Mental, Diversidade e Acessibilidade no Campus
 
 - **Acolhimento Psicológico (DASE / PRAE):** Oferece espaço de escuta e oficinas para controle da ansiedade acadêmica. Contato: `dase@prae.ufmg.br` | [Saiba mais no portal da PRAE](https://www.ufmg.br/prae/){target="_blank" rel="noopener noreferrer"}.
-- **Acessibilidade e Inclusão (NAI):** Adaptação de provas e apostilas para pessoas com deficiência, intérpretes de Libras e mediação didática. Contato: `acessibilidade@ufmg.br` | Tel: `(31) 3409-4674`.
+- **Acessibilidade e Inclusão (NAI):** Adaptação de provas e apostilas para pessoas com deficiência, intérpretes de Libras e mediação didática. Contato: `acessibilidade@ufmg.br` | Tel: [**(31) 3409-4674**](tel:+553134094674).
 - **Nome Social e Enfrentamento ao Assédio (Res. 07/2025 e 09/2015):** Garantia de uso do nome social em carteirinhas, e-mails e diários, além de canal formal para denúncias na [Ouvidoria Geral da UFMG](https://www.ufmg.br/ouvidoria/){target="_blank" rel="noopener noreferrer"}.
 
 ---
@@ -662,7 +669,7 @@ Assista aos guias audiovisuais produzidos pela DTI, PRAE e canais oficiais da UF
 <div class="cagp-video-grid mb-4">
   <!-- Vídeo 1: SIGA UFMG -->
   <article class="cagp-video-card">
-    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/JpBGj59NPqs?autoplay=1\' title=\'Conheça o SIGA UFMG\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
+    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe loading=\'lazy\' width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/JpBGj59NPqs?autoplay=1\' title=\'Conheça o SIGA UFMG\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
       <img src="https://i.ytimg.com/vi/JpBGj59NPqs/hqdefault.jpg" alt="Miniatura do tutorial oficial Conheça o SIGA UFMG" class="cagp-video-thumb" loading="lazy">
       <div class="cagp-video-play-btn" aria-label="Reproduzir vídeo">▶</div>
     </div>
@@ -674,7 +681,7 @@ Assista aos guias audiovisuais produzidos pela DTI, PRAE e canais oficiais da UF
 
   <!-- Vídeo 2: MinhaUFMG vs App Siga -->
   <article class="cagp-video-card">
-    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/gZI42d0rrfk?autoplay=1\' title=\'MinhaUFMG Desktop ou App Siga no Celular?\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
+    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe loading=\'lazy\' width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/gZI42d0rrfk?autoplay=1\' title=\'MinhaUFMG Desktop ou App Siga no Celular?\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
       <img src="https://i.ytimg.com/vi/gZI42d0rrfk/hqdefault.jpg" alt="Miniatura do tutorial MinhaUFMG vs App Siga" class="cagp-video-thumb" loading="lazy">
       <div class="cagp-video-play-btn" aria-label="Reproduzir vídeo">▶</div>
     </div>
@@ -686,7 +693,7 @@ Assista aos guias audiovisuais produzidos pela DTI, PRAE e canais oficiais da UF
 
   <!-- Vídeo 3: Carteirinha e Biblioteca -->
   <article class="cagp-video-card">
-    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/g8979vI6M-s?autoplay=1\' title=\'Carteira de Estudante UFMG e Bibliotecas\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
+    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe loading=\'lazy\' width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/g8979vI6M-s?autoplay=1\' title=\'Carteira de Estudante UFMG e Bibliotecas\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
       <img src="https://i.ytimg.com/vi/g8979vI6M-s/hqdefault.jpg" alt="Miniatura do tutorial Carteira da UFMG" class="cagp-video-thumb" loading="lazy">
       <div class="cagp-video-play-btn" aria-label="Reproduzir vídeo">▶</div>
     </div>
@@ -698,7 +705,7 @@ Assista aos guias audiovisuais produzidos pela DTI, PRAE e canais oficiais da UF
 
   <!-- Vídeo 4: Acessibilidade NAI -->
   <article class="cagp-video-card">
-    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/4DonihIQXSM?autoplay=1\' title=\'Acessibilidade e Inclusão na Prática (NAI/UFMG)\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
+    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe loading=\'lazy\' width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/4DonihIQXSM?autoplay=1\' title=\'Acessibilidade e Inclusão na Prática (NAI/UFMG)\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
       <img src="https://i.ytimg.com/vi/4DonihIQXSM/hqdefault.jpg" alt="Miniatura do vídeo Acessibilidade e Inclusão NAI" class="cagp-video-thumb" loading="lazy">
       <div class="cagp-video-play-btn" aria-label="Reproduzir vídeo">▶</div>
     </div>
@@ -710,7 +717,7 @@ Assista aos guias audiovisuais produzidos pela DTI, PRAE e canais oficiais da UF
 
   <!-- Vídeo 5: Saúde Mental DASE -->
   <article class="cagp-video-card">
-    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/LzVLJ_zE8uM?autoplay=1\' title=\'Saúde Mental e Acolhimento Discente (DASE/PRAE)\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
+    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe loading=\'lazy\' width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/LzVLJ_zE8uM?autoplay=1\' title=\'Saúde Mental e Acolhimento Discente (DASE/PRAE)\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
       <img src="https://i.ytimg.com/vi/LzVLJ_zE8uM/hqdefault.jpg" alt="Miniatura do vídeo Saúde Mental DASE" class="cagp-video-thumb" loading="lazy">
       <div class="cagp-video-play-btn" aria-label="Reproduzir vídeo">▶</div>
     </div>
@@ -722,7 +729,7 @@ Assista aos guias audiovisuais produzidos pela DTI, PRAE e canais oficiais da UF
 
   <!-- Vídeo 6: Direitos Humanos & Assédio -->
   <article class="cagp-video-card">
-    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/dg8hXD2Qbp4?autoplay=1\' title=\'Direitos Humanos e Enfrentamento ao Assédio na UFMG\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
+    <div class="cagp-video-thumb-wrap" onclick="this.innerHTML='<iframe loading=\'lazy\' width=\'100%\' height=\'100%\' src=\'https://www.youtube-nocookie.com/embed/dg8hXD2Qbp4?autoplay=1\' title=\'Direitos Humanos e Enfrentamento ao Assédio na UFMG\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
       <img src="https://i.ytimg.com/vi/dg8hXD2Qbp4/hqdefault.jpg" alt="Miniatura do vídeo UFMG contra o assédio" class="cagp-video-thumb" loading="lazy">
       <div class="cagp-video-play-btn" aria-label="Reproduzir vídeo">▶</div>
     </div>

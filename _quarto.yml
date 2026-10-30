@@ -32,6 +32,11 @@ website:
   site-url: "https://cagp-ufmg.github.io"
   description: "Centro Acadêmico de Gestão Pública - FAFICH / UFMG"
   favicon: "logos/cagp/10_simbolo_transparente_positivo.svg"
+  open-graph:
+    image: "imagens/og-padrao.png"
+  twitter-card:
+    image: "imagens/og-padrao.png"
+    card-style: summary_large_image
 
   announcement:
     icon: megaphone-fill
@@ -52,7 +57,9 @@ website:
 
 format:
   html:
+    brand: _brand.yml
     theme:
+      - brand
       - _variables.scss
     css: styles.css
     toc: false
