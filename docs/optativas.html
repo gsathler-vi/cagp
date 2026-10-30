@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,14 +38,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-157e68bdb2db3d845b905df3fee27371.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-fc5c1ff782418b96b1f1811fd5931f44.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-157e68bdb2db3d845b905df3fee27371.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4602fa259104adf2281b082c29e4d324.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4344baba3219a23b349c4280cc8df176.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4602fa259104adf2281b082c29e4d324.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fd6a211787ca405bc8f37dd5dd13f1a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-fd6a211787ca405bc8f37dd5dd13f1a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-fd6a211787ca405bc8f37dd5dd13f1a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-997f1c8ec7897d6b099f28a18e97aaa0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3e84582b1b05e22ccf18e1d0d528415f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-997f1c8ec7897d6b099f28a18e97aaa0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Nenhum resultado",
@@ -340,6 +340,12 @@ ul.task-list li input[type="checkbox"] {
 
     <!-- Barra de Ferramentas Limpa à Direita (Apple HIG: Busca ⌘K + Acessibilidade Alt+A + Avatar/Passaporte) -->
     <div class="cagp-header-tools">
+      <!-- 0. Sino de Alertas & Campus Agora (Apple HIG & M3) -->
+      <button type="button" class="cagp-header-live-btn" id="cagp-header-live-trigger" onclick="window.cagpOpenCampusSheet &amp;&amp; window.cagpOpenCampusSheet()" aria-label="Alertas e Campus Agora" title="Alertas do Campus &amp; Horários">
+        <i class="bi bi-bell-fill text-warning" aria-hidden="true"></i>
+        <span class="cagp-header-live-label">Campus</span>
+      </button>
+
       <!-- 1. Botão de Busca Rápida (Spotlight ⌘K) -->
       <button type="button" class="cagp-nav-search-btn" id="cagp-nav-search-trigger" onclick="window.openCagpSpotlight &amp;&amp; window.openCagpSpotlight()" aria-label="Buscar no portal (Atalho: Ctrl+K ou ⌘K)">
         <i class="bi bi-search cagp-nav-search-icon" aria-hidden="true"></i>
@@ -444,6 +450,9 @@ ul.task-list li input[type="checkbox"] {
     </div>
 
     <div class="cagp-topbar-trailing">
+      <button type="button" class="cagp-topbar-tool-btn cagp-header-live-btn" onclick="window.cagpOpenCampusSheet &amp;&amp; window.cagpOpenCampusSheet()" aria-label="Alertas e Campus Agora" title="Alertas do Campus &amp; Horários">
+        <i class="bi bi-bell-fill text-warning" aria-hidden="true"></i>
+      </button>
       <button type="button" class="cagp-topbar-tool-btn" onclick="window.openCagpSpotlight &amp;&amp; window.openCagpSpotlight()" aria-label="Buscar no Super App (Atalho: ⌘K)" title="Busca Rápida (⌘K)">
         <i class="bi bi-search" aria-hidden="true"></i>
       </button>
@@ -479,6 +488,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 <script data-cagp-persistent-script="true">
+// Taxonomia Canônica Global Imutável (5 Eixos do Super App CAGP)
+window.CAGP_TAXONOMY_V1 = Object.freeze({
+  axes: [
+    { id: 'axis-1', key: 'hoje', label: 'Hoje', icon: 'bi-compass', root: 'index.html', routes: ['index.html'] },
+    { id: 'axis-2', key: 'curso', label: 'Curso', icon: 'bi-mortarboard', root: 'curso.html', routes: ['curso.html', 'calouros.html', 'pesquisa.html'] },
+    { id: 'axis-3', key: 'curriculo', label: 'Currículo', icon: 'bi-diagram-3', root: 'percurso.html', routes: ['percurso.html', 'optativas.html', 'acg.html', 'estagio.html', 'tcc.html'] },
+    { id: 'axis-4', key: 'acervo', label: 'Acervo', icon: 'bi-folder2-open', root: 'documentos.html', routes: ['documentos.html', 'faq.html', 'mapa-do-site.html'] },
+    { id: 'axis-5', key: 'cagp', label: 'O CAGP', icon: 'bi-people', root: 'sobre.html', routes: ['sobre.html', 'gestao.html'] }
+  ],
+  routes: {
+    'index.html': { axis: 'axis-1', tabId: 'cagp-mnav-hoje', label: 'Hoje no Campus', depth: 0 },
+    'curso.html': { axis: 'axis-2', tabId: 'cagp-mnav-curso', label: 'O Curso de Gestão Pública', depth: 0 },
+    'calouros.html': { axis: 'axis-2', tabId: 'cagp-mnav-curso', label: 'Guia do Calouro', depth: 1, parent: 'curso.html' },
+    'pesquisa.html': { axis: 'axis-2', tabId: 'cagp-mnav-curso', label: 'Pesquisa, IC & DCP', depth: 1, parent: 'curso.html' },
+    'percurso.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'Percurso Curricular', depth: 0 },
+    'optativas.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: '68 Optativas', depth: 1, parent: 'percurso.html' },
+    'acg.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'Horas ACG (600h)', depth: 1, parent: 'percurso.html' },
+    'estagio.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'Estágio & Art. 41', depth: 1, parent: 'percurso.html' },
+    'tcc.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'TCC (DCP 089/137)', depth: 1, parent: 'percurso.html' },
+    'documentos.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'Acervo & Formulários', depth: 0 },
+    'faq.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'FAQ Regimental', depth: 1, parent: 'documentos.html' },
+    'mapa-do-site.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'Mapa do Site', depth: 1, parent: 'documentos.html' },
+    'sobre.html': { axis: 'axis-5', tabId: 'cagp-mnav-cagp', label: 'O CAGP', depth: 0 },
+    'gestao.html': { axis: 'axis-5', tabId: 'cagp-mnav-cagp', label: 'Gestão em Exercício', depth: 1, parent: 'sobre.html' },
+    'estagio-tcc.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'Estágio & TCC', depth: 1, parent: 'percurso.html', isLegacyBridge: true }
+  }
+});
+
 (function () {
   'use strict';
 
@@ -498,11 +535,12 @@ ul.task-list li input[type="checkbox"] {
   function syncChapaBannerState() {
     const banner = document.getElementById('quarto-announcement') || document.getElementById('cagp-chapa-banner');
     if (!banner) return;
-    const isCompact = sessionStorage.getItem('cagp_chapa_compact') === 'true';
+    const stored = sessionStorage.getItem('cagp_chapa_compact');
+    const isCompact = stored === 'true' || (stored === null && window.innerWidth < 768);
     banner.classList.toggle('is-compact', isCompact);
     const lbl = banner.querySelector('.cagp-chapa-toggle-label');
     if (lbl) {
-      lbl.textContent = isCompact ? 'Expandir ▼' : 'Compactar ▲';
+      lbl.textContent = isCompact ? 'EXPANDIR ▼' : 'COMPACTAR ▲';
     }
   }
 
@@ -632,6 +670,7 @@ ul.task-list li input[type="checkbox"] {
   const sheetBody = document.getElementById('cagp-global-sheet-body');
   const sheetFooter = document.getElementById('cagp-global-sheet-footer');
   const sheetGrabber = document.getElementById('cagp-global-sheet-grabber');
+  let closeTimerId = null;
 
   window.cagpSheet = {
     isOpen: function () {
@@ -639,6 +678,10 @@ ul.task-list li input[type="checkbox"] {
     },
     open: function (opts) {
       if (!sheetEl || !sheetBackdrop) return;
+      if (closeTimerId) {
+        clearTimeout(closeTimerId);
+        closeTimerId = null;
+      }
       const options = opts || {};
       window.cagpCloseAllOverlays('cagp-global-bottom-sheet');
 
@@ -676,11 +719,16 @@ ul.task-list li input[type="checkbox"] {
     },
     close: function () {
       if (!sheetEl || !sheetBackdrop) return;
+      if (closeTimerId) {
+        clearTimeout(closeTimerId);
+        closeTimerId = null;
+      }
       sheetBackdrop.classList.remove('is-open');
       sheetEl.classList.remove('is-open');
-      setTimeout(function () {
+      closeTimerId = setTimeout(function () {
         sheetBackdrop.setAttribute('hidden', '');
         sheetEl.setAttribute('hidden', '');
+        closeTimerId = null;
       }, 220);
     },
     toggleDetent: function () {
@@ -1114,24 +1162,16 @@ ul.task-list li input[type="checkbox"] {
   };
 
   // 6. Sincronizar Abas Ativas & Indicador Contextual Discreto (Apple HIG path-controls.md)
-  const ROUTE_PATH_LABELS = {
-    'index.html': '',
-    '': '',
-    'curso.html': 'O Curso',
-    'pesquisa.html': 'Pesquisa & IC',
-    'calouros.html': 'Guia do Calouro',
-    'percurso.html': 'Percurso & 27 Obrigatórias',
-    'optativas.html': '68 Optativas',
-    'acg.html': 'Horas ACG (600h)',
-    'estagio.html': 'Estágio & Art. 41',
-    'tcc.html': 'TCC (DCP 089/137)',
-    'estagio-tcc.html': 'Estágio & TCC',
-    'documentos.html': 'Documentos & PDFs',
-    'faq.html': 'FAQ Regimental',
-    'sobre.html': 'O CAGP',
-    'gestao.html': 'Gestão & Equipe',
-    'mapa-do-site.html': 'Mapa do Site'
-  };
+  const ROUTE_PATH_LABELS = {};
+  if (window.CAGP_TAXONOMY_V1 && window.CAGP_TAXONOMY_V1.routes) {
+    Object.keys(window.CAGP_TAXONOMY_V1.routes).forEach(function (path) {
+      ROUTE_PATH_LABELS[path] = window.CAGP_TAXONOMY_V1.routes[path].label;
+      ROUTE_PATH_LABELS['/' + path] = window.CAGP_TAXONOMY_V1.routes[path].label;
+    });
+  }
+  ROUTE_PATH_LABELS[''] = 'Hoje no Campus';
+  ROUTE_PATH_LABELS['/'] = 'Hoje no Campus';
+  ROUTE_PATH_LABELS['index.html'] = 'Hoje no Campus';
 
   function syncActiveRoute() {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -1164,7 +1204,7 @@ ul.task-list li input[type="checkbox"] {
     const headerPathWrap = document.getElementById('cagp-header-path-indicator');
     const headerPathLabel = document.getElementById('cagp-header-path-label');
     if (headerPathWrap && headerPathLabel) {
-      if (sectionLabel) {
+      if (sectionLabel && currentPath !== 'index.html') {
         headerPathLabel.textContent = sectionLabel;
         headerPathWrap.removeAttribute('hidden');
       } else {
@@ -1176,6 +1216,33 @@ ul.task-list li input[type="checkbox"] {
     const topbarTitleEl = document.getElementById('cagp-topbar-title');
     if (topbarTitleEl) {
       topbarTitleEl.textContent = sectionLabel || 'Hoje no Campus';
+    }
+
+    // Injetar dinamicamente a faixa de navegação contextual .cagp-axis-pill-strip em páginas com depth > 0
+    let stripEl = document.querySelector('.cagp-axis-pill-strip');
+    const taxRoutes = window.CAGP_TAXONOMY_V1 ? window.CAGP_TAXONOMY_V1.routes : null;
+    const routeMeta = taxRoutes ? taxRoutes[currentPath] : null;
+
+    if (routeMeta && routeMeta.depth > 0 && routeMeta.parent) {
+      const parentMeta = taxRoutes[routeMeta.parent];
+      const axis = window.CAGP_TAXONOMY_V1.axes.find(function (a) { return a.id === routeMeta.axis; });
+      if (!stripEl) {
+        stripEl = document.createElement('div');
+        stripEl.className = 'cagp-axis-pill-strip d-flex align-items-center gap-2 py-1 px-3 mb-2 small bg-light border-bottom border-1';
+        const header = document.getElementById('cagp-superapp-header') || document.getElementById('quarto-header');
+        if (header && header.nextSibling) {
+          header.parentNode.insertBefore(stripEl, header.nextSibling);
+        }
+      }
+      if (stripEl && axis) {
+        stripEl.innerHTML = '<span class="text-muted"><i class="bi ' + (axis.icon || 'bi-compass') + ' me-1"></i>' + axis.label + ':</span> ' +
+          '<a href="' + routeMeta.parent + '" class="badge bg-secondary text-decoration-none text-white">' + (parentMeta ? parentMeta.label : 'Início do Eixo') + '</a>' +
+          '<span class="text-muted">/</span>' +
+          '<span class="fw-bold text-dark">' + routeMeta.label + '</span>';
+        stripEl.removeAttribute('hidden');
+      }
+    } else if (stripEl) {
+      stripEl.setAttribute('hidden', '');
     }
   }
 
@@ -3360,23 +3427,23 @@ ul.task-list li input[type="checkbox"] {
 
 <!-- Barra de Navegação Inferior Adaptativa para Dispositivos Móveis (Web Mobile Normal) -->
 <nav id="cagp-mobile-nav" class="cagp-mobile-nav" aria-label="Navegação rápida do site no celular">
-  <a href="index.html" class="cagp-mobile-nav-item" id="cagp-mnav-inicio" data-cagp-nav="" data-route="index.html" aria-label="Início e Campus Hoje">
+  <a href="index.html" class="cagp-mobile-nav-item" id="cagp-mnav-hoje" data-cagp-nav="" data-route="index.html" aria-label="Eixo 1: Hoje no Campus">
     <i class="bi bi-compass" aria-hidden="true"></i>
     <span>Hoje</span>
   </a>
-  <a href="percurso.html" class="cagp-mobile-nav-item" id="cagp-mnav-percurso" data-cagp-nav="" data-route="percurso.html" aria-label="Percurso, Grade e 68 Optativas">
+  <a href="curso.html" class="cagp-mobile-nav-item" id="cagp-mnav-curso" data-cagp-nav="" data-route="curso.html" aria-label="Eixo 2: O Curso de Gestão Pública">
+    <i class="bi bi-mortarboard" aria-hidden="true"></i>
+    <span>Curso</span>
+  </a>
+  <a href="percurso.html" class="cagp-mobile-nav-item" id="cagp-mnav-curriculo" data-cagp-nav="" data-route="percurso.html" aria-label="Eixo 3: Currículo, Horas e Optativas">
     <i class="bi bi-diagram-3" aria-hidden="true"></i>
-    <span>Percurso</span>
+    <span>Currículo</span>
   </a>
-  <a href="acg.html" class="cagp-mobile-nav-item" id="cagp-mnav-acg" data-cagp-nav="" data-route="acg.html" aria-label="Calculadora 600h, Estágio e TCC">
-    <i class="bi bi-calculator" aria-hidden="true"></i>
-    <span>Horas ACG</span>
+  <a href="documentos.html" class="cagp-mobile-nav-item" id="cagp-mnav-acervo" data-cagp-nav="" data-route="documentos.html" aria-label="Eixo 4: Acervo de PDFs e Formulários">
+    <i class="bi bi-folder2-open" aria-hidden="true"></i>
+    <span>Acervo</span>
   </a>
-  <a href="documentos.html" class="cagp-mobile-nav-item" id="cagp-mnav-docs" data-cagp-nav="" data-route="documentos.html" aria-label="Documentos e PDFs Oficiais">
-    <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
-    <span>Documentos</span>
-  </a>
-  <a href="gestao.html" class="cagp-mobile-nav-item" id="cagp-mnav-cagp" data-cagp-nav="" data-route="gestao.html" aria-label="O CAGP e Gestão em Exercício">
+  <a href="sobre.html" class="cagp-mobile-nav-item" id="cagp-mnav-cagp" data-cagp-nav="" data-route="sobre.html" aria-label="Eixo 5: O CAGP e Gestão em Exercício">
     <i class="bi bi-people" aria-hidden="true"></i>
     <span>O CAGP</span>
   </a>
@@ -3384,30 +3451,26 @@ ul.task-list li input[type="checkbox"] {
 
 <!-- 5-Tab Bar Soberana do Super App (Apple HIG & M3 Expressive — 5 Destinos Canônicos) -->
 <nav id="cagp-superapp-tabbar" class="cagp-superapp-tabbar" aria-label="Navegação principal do Super App" hidden="">
-  <a href="index.html" class="cagp-tabbar-item" id="cagp-stab-hoje" data-cagp-nav="" data-route="index.html" aria-label="Hoje no Campus e Micro-Apps">
+  <a href="index.html" class="cagp-tabbar-item" id="cagp-stab-hoje" data-cagp-nav="" data-route="index.html" aria-label="Eixo 1: Hoje no Campus">
     <i class="bi bi-compass-fill cagp-tabbar-icon" aria-hidden="true"></i>
     <span class="cagp-tabbar-label">Hoje</span>
   </a>
-  <a href="percurso.html" class="cagp-tabbar-item" id="cagp-stab-percurso" data-cagp-nav="" data-route="percurso.html" aria-label="Percurso Curricular, Grade e 68 Optativas">
+  <a href="curso.html" class="cagp-tabbar-item" id="cagp-stab-curso" data-cagp-nav="" data-route="curso.html" aria-label="Eixo 2: O Curso de Gestão Pública">
+    <i class="bi bi-mortarboard-fill cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">Curso</span>
+  </a>
+  <a href="percurso.html" class="cagp-tabbar-item" id="cagp-stab-curriculo" data-cagp-nav="" data-route="percurso.html" aria-label="Eixo 3: Currículo, Horas e Optativas">
     <i class="bi bi-diagram-3-fill cagp-tabbar-icon" aria-hidden="true"></i>
-    <span class="cagp-tabbar-label">Percurso</span>
+    <span class="cagp-tabbar-label">Currículo</span>
   </a>
-  <a href="acg.html" class="cagp-tabbar-item" id="cagp-stab-acg" data-cagp-nav="" data-route="acg.html" aria-label="Calculadora 600h, Guardião 120 Dias, Estágio e TCC">
-    <i class="bi bi-calculator-fill cagp-tabbar-icon" aria-hidden="true"></i>
-    <span class="cagp-tabbar-label">Horas ACG</span>
+  <a href="documentos.html" class="cagp-tabbar-item" id="cagp-stab-acervo" data-cagp-nav="" data-route="documentos.html" aria-label="Eixo 4: Acervo de PDFs e Formulários">
+    <i class="bi bi-folder2-open cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">Acervo</span>
   </a>
-  <a href="documentos.html" class="cagp-tabbar-item" id="cagp-stab-docs" data-cagp-nav="" data-route="documentos.html" aria-label="Acervo de PDFs Oficiais e Formulários Offline">
-    <i class="bi bi-file-earmark-pdf-fill cagp-tabbar-icon" aria-hidden="true"></i>
-    <span class="cagp-tabbar-label">Documentos</span>
+  <a href="sobre.html" class="cagp-tabbar-item" id="cagp-stab-cagp" data-cagp-nav="" data-route="sobre.html" aria-label="Eixo 5: O CAGP e Gestão em Exercício">
+    <i class="bi bi-people-fill cagp-tabbar-icon" aria-hidden="true"></i>
+    <span class="cagp-tabbar-label">O CAGP</span>
   </a>
-  <button type="button" class="cagp-tabbar-item cagp-tabbar-btn" id="cagp-stab-ajustes" data-cagp-open-passport="true" aria-label="Passaporte Acadêmico, Foto, Perfil e Cofre Discente">
-    <span class="cagp-avatar-frame cagp-avatar-frame--xs" data-cagp-avatar-host="">
-      <img class="cagp-profile-avatar-img" src="imagens/carteirinha.png" alt="" width="22" height="22" hidden="">
-      <span class="cagp-profile-avatar-fallback" aria-hidden="true"><i class="bi bi-person-badge-fill"></i></span>
-      <span class="cagp-pride-pin cagp-pride-pin--xs" data-cagp-pride-pin="" hidden="" aria-hidden="true"></span>
-    </span>
-    <span class="cagp-tabbar-label" data-cagp-tabbar-profile-label="">Passaporte</span>
-  </button>
 </nav>
 
 <!-- Banner Flutuante de Instalação (Brite Neo-brutalist) -->
@@ -4124,37 +4187,37 @@ ul.task-list li input[type="checkbox"] {
 
   function cropAndCompressSourceToWebp(imgSource, width, height) {
     const canvas = document.getElementById('cagp-profile-crop-canvas') || document.createElement('canvas');
-    canvas.width = 256;
-    canvas.height = 256;
+    canvas.width = 240;
+    canvas.height = 240;
     const ctx = canvas.getContext('2d');
     if (!ctx) throw new Error('Contexto 2D indisponível.');
 
-    const rawW = Number(width || imgSource.naturalWidth || imgSource.videoWidth || imgSource.width || 256);
-    const rawH = Number(height || imgSource.naturalHeight || imgSource.videoHeight || imgSource.height || 256);
-    const sw = Math.max(1, isFinite(rawW) && rawW > 0 ? rawW : 256);
-    const sh = Math.max(1, isFinite(rawH) && rawH > 0 ? rawH : 256);
+    const rawW = Number(width || imgSource.naturalWidth || imgSource.videoWidth || imgSource.width || 240);
+    const rawH = Number(height || imgSource.naturalHeight || imgSource.videoHeight || imgSource.height || 240);
+    const sw = Math.max(1, isFinite(rawW) && rawW > 0 ? rawW : 240);
+    const sh = Math.max(1, isFinite(rawH) && rawH > 0 ? rawH : 240);
     const minSide = Math.max(1, Math.min(sw, sh));
     const sx = Math.max(0, Math.min(sw - minSide, Math.floor((sw - minSide) / 2)));
     const sy = Math.max(0, Math.min(sh - minSide, Math.floor((sh - minSide) / 2)));
 
-    ctx.clearRect(0, 0, 256, 256);
+    ctx.clearRect(0, 0, 240, 240);
     ctx.fillStyle = '#FBF8F3';
-    ctx.fillRect(0, 0, 256, 256);
+    ctx.fillRect(0, 0, 240, 240);
     ctx.imageSmoothingEnabled = true;
     try { ctx.imageSmoothingQuality = 'high'; } catch (e) {}
-    ctx.drawImage(imgSource, sx, sy, minSide, minSide, 0, 0, 256, 256);
+    ctx.drawImage(imgSource, sx, sy, minSide, minSide, 0, 0, 240, 240);
 
     let dataUrl = '';
     try {
-      dataUrl = canvas.toDataURL('image/webp', 0.82);
-      if (dataUrl && dataUrl.indexOf('data:image/webp') === 0 && dataUrl.length > 48000) {
-        dataUrl = canvas.toDataURL('image/webp', 0.70);
+      dataUrl = canvas.toDataURL('image/webp', 0.70);
+      if (dataUrl && dataUrl.indexOf('data:image/webp') === 0 && dataUrl.length > 20000) {
+        dataUrl = canvas.toDataURL('image/webp', 0.60);
       }
     } catch (e) {}
-    if (!dataUrl || dataUrl.indexOf('data:image/webp') !== 0 || dataUrl.length > 52000) {
-      dataUrl = canvas.toDataURL('image/jpeg', 0.80);
-      if (dataUrl.length > 52000) {
-        dataUrl = canvas.toDataURL('image/jpeg', 0.68);
+    if (!dataUrl || dataUrl.indexOf('data:image/webp') !== 0 || dataUrl.length > 20000) {
+      dataUrl = canvas.toDataURL('image/jpeg', 0.70);
+      if (dataUrl.length > 20000) {
+        dataUrl = canvas.toDataURL('image/jpeg', 0.55);
       }
     }
     return dataUrl;
@@ -4332,7 +4395,6 @@ ul.task-list li input[type="checkbox"] {
             const val = Number(parsedCalc[k]) || 0;
             if (k.indexOf('ext_') === 0) extSum += val;
             else if (k.indexOf('aac_') === 0) aacSum += val;
-            else totalHours += val;
           });
           totalHours += Math.min(300, extSum) + Math.min(300, aacSum);
         }
@@ -4798,21 +4860,35 @@ ul.task-list li input[type="checkbox"] {
       return;
     }
 
-    // 6. Limpar Cofre (#cagp-clear-vault-btn)
+    // 6. Limpar Cofre com confirmação em 2 toques e temporizador de 4s (#cagp-clear-vault-btn)
     const clearBtn = target.closest('#cagp-clear-vault-btn');
     if (clearBtn) {
       e.preventDefault();
+      const originalHtml = clearBtn.getAttribute('data-orig-html') || clearBtn.innerHTML;
+      if (!clearBtn.hasAttribute('data-orig-html')) {
+        clearBtn.setAttribute('data-orig-html', originalHtml);
+      }
+      if (clearBtn.getAttribute('data-confirming') !== 'true') {
+        clearBtn.setAttribute('data-confirming', 'true');
+        clearBtn.classList.add('btn-danger');
+        clearBtn.classList.remove('btn-outline-danger');
+        clearBtn.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-1"></i> Toque novamente em 4s para apagar';
+        clearTimeout(clearBtn._clearConfirmTimer);
+        clearBtn._clearConfirmTimer = setTimeout(function () {
+          clearBtn.removeAttribute('data-confirming');
+          clearBtn.classList.remove('btn-danger');
+          clearBtn.classList.add('btn-outline-danger');
+          clearBtn.innerHTML = originalHtml;
+        }, 4000);
+        return;
+      }
+      clearTimeout(clearBtn._clearConfirmTimer);
+      clearBtn.removeAttribute('data-confirming');
+      clearBtn.classList.remove('btn-danger');
+      clearBtn.classList.add('btn-outline-danger');
+      clearBtn.innerHTML = originalHtml;
       try {
-        localStorage.removeItem('cagp_calc_ext_aac_v1');
-        localStorage.removeItem('cagp_aac_120d_certs_v1');
-        localStorage.removeItem('cagp_calouro_checklist_v1');
-        localStorage.removeItem('cagp_percurso_quiz_v1');
-        localStorage.removeItem('cagp_minha_grade_v1');
-        localStorage.removeItem('cagp_art41_checklist_v1');
-        localStorage.removeItem('cagp_student_profile_v1');
-        localStorage.removeItem('cagp_acg_total_horas');
-        localStorage.removeItem('cagp_calouros_checklist');
-        localStorage.removeItem('cagp_percurso_quiz_resultado');
+        CANONICAL_VAULT_KEYS.forEach(function (k) { localStorage.removeItem(k); });
       } catch (err) {}
       refreshVaultData();
       syncProfileEditorFields();
@@ -5456,9 +5532,32 @@ ul.task-list li input[type="checkbox"] {
     }).join(''));
   }
 
+  function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function computeCrc32(str) {
+    let crc = -1;
+    for (let i = 0; i < str.length; i++) {
+      let byte = str.charCodeAt(i) & 0xff;
+      for (let j = 0; j < 8; j++) {
+        crc = (crc >>> 1) ^ (((crc ^ byte) & 1) ? 0xEDB88320 : 0);
+        byte >>>= 1;
+      }
+    }
+    return ((crc ^ -1) >>> 0).toString(16).padStart(8, '0');
+  }
+
   function generateSyncCode() {
     const payload = buildBackupPayload();
-    return 'CAGP1:' + encodeUtf8Base64(JSON.stringify(payload.data));
+    const b64 = encodeUtf8Base64(JSON.stringify(payload.data));
+    return 'CAGP1:' + b64 + '.' + computeCrc32(b64);
   }
 
   function restoreFromPayload(rawInput) {
@@ -5468,7 +5567,16 @@ ul.task-list li input[type="checkbox"] {
     if (typeof rawInput === 'string') {
       const trimmed = rawInput.trim();
       if (trimmed.indexOf('CAGP1:') === 0) {
-        const b64 = trimmed.slice(6).trim();
+        let b64 = trimmed.slice(6).trim();
+        if (b64.indexOf('.') !== -1) {
+          const parts = b64.split('.');
+          b64 = parts[0];
+          const expectedCrc = parts[1].toLowerCase();
+          const actualCrc = computeCrc32(b64).toLowerCase();
+          if (expectedCrc !== actualCrc) {
+            throw new Error('Código corrompido: falha de verificação CRC32.');
+          }
+        }
         const jsonStr = decodeUtf8Base64(b64);
         dataMap = JSON.parse(jsonStr);
       } else {
@@ -5921,26 +6029,36 @@ ul.task-list li input[type="checkbox"] {
     return html;
   }
 
+  const DEFAULT_FALLBACK_TAXONOMY = {
+    routes: {
+      'index.html': { tabId: 'cagp-mnav-hoje', depth: 0, axis: 'axis-1' },
+      'curso.html': { tabId: 'cagp-mnav-curso', depth: 0, axis: 'axis-2' },
+      'calouros.html': { tabId: 'cagp-mnav-curso', depth: 1, axis: 'axis-2', parent: 'curso.html' },
+      'pesquisa.html': { tabId: 'cagp-mnav-curso', depth: 1, axis: 'axis-2', parent: 'curso.html' },
+      'percurso.html': { tabId: 'cagp-mnav-curriculo', depth: 0, axis: 'axis-3' },
+      'optativas.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'acg.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'estagio.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'tcc.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'estagio-tcc.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'documentos.html': { tabId: 'cagp-mnav-acervo', depth: 0, axis: 'axis-4' },
+      'faq.html': { tabId: 'cagp-mnav-acervo', depth: 1, axis: 'axis-4', parent: 'documentos.html' },
+      'mapa-do-site.html': { tabId: 'cagp-mnav-acervo', depth: 1, axis: 'axis-4', parent: 'documentos.html' },
+      'sobre.html': { tabId: 'cagp-mnav-cagp', depth: 0, axis: 'axis-5' },
+      'gestao.html': { tabId: 'cagp-mnav-cagp', depth: 1, axis: 'axis-5', parent: 'sobre.html' }
+    }
+  };
+
+  function getTaxonomy() {
+    return window.CAGP_TAXONOMY_V1 || DEFAULT_FALLBACK_TAXONOMY;
+  }
+
   function resolveMobileTabId(pathname) {
-    const map = {
-      'index.html': 'cagp-mnav-inicio',
-      '': 'cagp-mnav-inicio',
-      'calouros.html': 'cagp-mnav-inicio',
-      'curso.html': 'cagp-mnav-inicio',
-      'pesquisa.html': 'cagp-mnav-inicio',
-      'percurso.html': 'cagp-mnav-percurso',
-      'optativas.html': 'cagp-mnav-percurso',
-      'acg.html': 'cagp-mnav-acg',
-      'estagio.html': 'cagp-mnav-acg',
-      'tcc.html': 'cagp-mnav-acg',
-      'estagio-tcc.html': 'cagp-mnav-acg',
-      'documentos.html': 'cagp-mnav-docs',
-      'faq.html': 'cagp-mnav-docs',
-      'mapa-do-site.html': 'cagp-mnav-docs',
-      'gestao.html': 'cagp-mnav-cagp',
-      'sobre.html': 'cagp-mnav-cagp'
-    };
-    return map[pathname] || 'cagp-mnav-inicio';
+    const tax = getTaxonomy();
+    const basename = pathname ? pathname.split('/').pop() : 'index.html';
+    const cleanName = (!basename || basename === '') ? 'index.html' : basename;
+    const r = (tax.routes && tax.routes[cleanName]) || (tax.routes && tax.routes['index.html']);
+    return r ? r.tabId : 'cagp-mnav-hoje';
   }
 
   function updateNavigationUI(targetUrl) {
@@ -5948,17 +6066,28 @@ ul.task-list li input[type="checkbox"] {
       const url = new URL(targetUrl, window.location.href);
       const pathname = url.pathname.split('/').pop() || 'index.html';
 
-      // 1. Atualizar Barra Móvel Inferior (Web Mobile)
+      // 1. Atualizar Barra Móvel Inferior (Web Mobile) e Tab Bar do Super App (5 Eixos Canônicos)
       document.querySelectorAll('.cagp-mobile-nav-item').forEach(function (item) {
         item.classList.remove('is-active');
         item.removeAttribute('aria-current');
       });
+      document.querySelectorAll('.cagp-tabbar-item').forEach(function (item) {
+        item.classList.remove('is-active');
+        item.setAttribute('aria-selected', 'false');
+      });
+
       const activeId = resolveMobileTabId(pathname);
       if (activeId) {
         const activeEl = document.getElementById(activeId);
         if (activeEl) {
           activeEl.classList.add('is-active');
           activeEl.setAttribute('aria-current', 'page');
+        }
+        const activeStabId = activeId.replace('cagp-mnav-', 'cagp-stab-');
+        const activeStabEl = document.getElementById(activeStabId);
+        if (activeStabEl) {
+          activeStabEl.classList.add('is-active');
+          activeStabEl.setAttribute('aria-selected', 'true');
         }
       }
 
@@ -6077,20 +6206,33 @@ ul.task-list li input[type="checkbox"] {
     const newTitle = doc.querySelector('title');
     if (newTitle) document.title = newTitle.textContent;
 
-    // 2. Classes do Body (Preservando estados dinâmicos como Standalone e Acessibilidade)
-    const isStandaloneActive = document.documentElement.classList.contains('cagp-is-standalone') ||
+    // 2. Classes do Body e Root (Preservando estados dinâmicos como Standalone e Acessibilidade)
+    const rootEl = document.documentElement;
+    const isStandaloneActive = rootEl.classList.contains('cagp-is-standalone') ||
                                document.body.classList.contains('cagp-is-standalone');
-    const isDyslexia = document.body.classList.contains('cagp-dyslexia');
-    const isContrast = document.body.classList.contains('cagp-high-contrast');
+    const isDyslexia = rootEl.classList.contains('cagp-dyslexia') || document.body.classList.contains('cagp-dyslexia');
+    const isContrast = rootEl.classList.contains('cagp-high-contrast') || document.body.classList.contains('cagp-high-contrast');
+    const contrastAttr = rootEl.getAttribute('data-a11y-contrast');
+    const fontScaleAttr = rootEl.getAttribute('data-a11y-font-scale');
+    const motionAttr = rootEl.getAttribute('data-a11y-motion');
 
     if (doc.body) {
       document.body.className = doc.body.className;
       if (isStandaloneActive) {
-        document.documentElement.classList.add('cagp-is-standalone');
+        rootEl.classList.add('cagp-is-standalone');
         document.body.classList.add('cagp-is-standalone');
       }
-      if (isDyslexia) document.body.classList.add('cagp-dyslexia');
-      if (isContrast) document.body.classList.add('cagp-high-contrast');
+      if (isDyslexia) {
+        rootEl.classList.add('cagp-dyslexia');
+        document.body.classList.add('cagp-dyslexia');
+      }
+      if (isContrast) {
+        rootEl.classList.add('cagp-high-contrast');
+        document.body.classList.add('cagp-high-contrast');
+      }
+      if (contrastAttr) rootEl.setAttribute('data-a11y-contrast', contrastAttr);
+      if (fontScaleAttr) rootEl.setAttribute('data-a11y-font-scale', fontScaleAttr);
+      if (motionAttr) rootEl.setAttribute('data-a11y-motion', motionAttr);
     }
 
     // 3. Margin Sidebar (TOC)
@@ -6550,6 +6692,21 @@ ul.task-list li input[type="checkbox"] {
     try {
       const fromUrl = window.location.href;
       const resolvedUrl = new URL(targetUrl, fromUrl).href;
+      const fromObj = new URL(fromUrl);
+      const toObj = new URL(targetUrl, fromUrl);
+
+      // Se for a mesma rota diferindo apenas no #hash, sincronizar Workspace View sem recarregar o DOM
+      if (fromObj.pathname === toObj.pathname && fromObj.search === toObj.search) {
+        if (!isBack && toObj.hash) {
+          history.replaceState({ url: resolvedUrl }, '', resolvedUrl);
+        }
+        if (window.cagpSyncWorkspaceFromHash) {
+          window.cagpSyncWorkspaceFromHash(toObj.hash, { scroll: true });
+        }
+        window.cagpRouteProgress.done();
+        return;
+      }
+
       const navDir = computeNavDirection(fromUrl, resolvedUrl, Boolean(isBack), triggerAnchor);
       const mainEl = document.getElementById('quarto-document-content');
 
@@ -6631,6 +6788,11 @@ ul.task-list li input[type="checkbox"] {
   });
 
   window.addEventListener('popstate', function () {
+    if (window.location.hash && window.cagpSyncWorkspaceFromHash) {
+      if (window.cagpSyncWorkspaceFromHash(window.location.hash, { scroll: false })) {
+        return;
+      }
+    }
     navigate(window.location.href, true, null);
   });
 

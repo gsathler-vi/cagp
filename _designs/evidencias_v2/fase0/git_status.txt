@@ -1,0 +1,59 @@
+On branch plano-v2-execucao
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   AGENTS.md
+	modified:   README.md
+	modified:   _brand.yml
+	modified:   _includes/pwa-install.html
+	modified:   _includes/super-app-header.html
+	modified:   _includes/super-app-router.html
+	modified:   _quarto.yml
+	modified:   _referencias/memorial-tecnico.md
+	modified:   _variables.scss
+	modified:   acg.qmd
+	modified:   docs/acg.html
+	modified:   docs/calouros.html
+	modified:   docs/curso.html
+	modified:   docs/documentos.html
+	modified:   docs/estagio-tcc.html
+	modified:   docs/estagio.html
+	modified:   docs/faq.html
+	modified:   docs/gestao.html
+	modified:   docs/index.html
+	modified:   docs/mapa-do-site.html
+	modified:   docs/optativas.html
+	modified:   docs/percurso.html
+	modified:   docs/pesquisa.html
+	modified:   docs/robots.txt
+	modified:   docs/search.json
+	deleted:    docs/site_libs/bootstrap/bootstrap-dark-fd6a211787ca405bc8f37dd5dd13f1a1.min.css
+	deleted:    docs/site_libs/bootstrap/bootstrap-fd6a211787ca405bc8f37dd5dd13f1a1.min.css
+	deleted:    docs/site_libs/quarto-html/quarto-syntax-highlighting-157e68bdb2db3d845b905df3fee27371.css
+	deleted:    docs/site_libs/quarto-html/quarto-syntax-highlighting-dark-fc5c1ff782418b96b1f1811fd5931f44.css
+	modified:   docs/sitemap.xml
+	modified:   docs/sobre.html
+	modified:   docs/styles.css
+	modified:   docs/sw.js
+	modified:   docs/tcc.html
+	modified:   documentos.qmd
+	modified:   index.qmd
+	modified:   percurso.qmd
+	modified:   styles.css
+	modified:   sw.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	1000361583.jpg
+	6cff1478-c95b-4dc2-a175-5aafe64af947.jpeg
+	PROPOSTA_PROMPT.md
+	_designs/
+	a0bca2e3-1b49-4e71-898b-60a330800baa.jpeg
+	docs/site_libs/bootstrap/bootstrap-997f1c8ec7897d6b099f28a18e97aaa0.min.css
+	docs/site_libs/bootstrap/bootstrap-dark-3e84582b1b05e22ccf18e1d0d528415f.min.css
+	docs/site_libs/quarto-html/quarto-syntax-highlighting-4602fa259104adf2281b082c29e4d324.css
+	docs/site_libs/quarto-html/quarto-syntax-highlighting-dark-4344baba3219a23b349c4280cc8df176.css
+	docs/tests/
+	tests/
+
+no changes added to commit (use "git add" and/or "git commit -a")

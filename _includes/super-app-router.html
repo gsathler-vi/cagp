@@ -73,26 +73,36 @@
     return html;
   }
 
+  const DEFAULT_FALLBACK_TAXONOMY = {
+    routes: {
+      'index.html': { tabId: 'cagp-mnav-hoje', depth: 0, axis: 'axis-1' },
+      'curso.html': { tabId: 'cagp-mnav-curso', depth: 0, axis: 'axis-2' },
+      'calouros.html': { tabId: 'cagp-mnav-curso', depth: 1, axis: 'axis-2', parent: 'curso.html' },
+      'pesquisa.html': { tabId: 'cagp-mnav-curso', depth: 1, axis: 'axis-2', parent: 'curso.html' },
+      'percurso.html': { tabId: 'cagp-mnav-curriculo', depth: 0, axis: 'axis-3' },
+      'optativas.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'acg.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'estagio.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'tcc.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'estagio-tcc.html': { tabId: 'cagp-mnav-curriculo', depth: 1, axis: 'axis-3', parent: 'percurso.html' },
+      'documentos.html': { tabId: 'cagp-mnav-acervo', depth: 0, axis: 'axis-4' },
+      'faq.html': { tabId: 'cagp-mnav-acervo', depth: 1, axis: 'axis-4', parent: 'documentos.html' },
+      'mapa-do-site.html': { tabId: 'cagp-mnav-acervo', depth: 1, axis: 'axis-4', parent: 'documentos.html' },
+      'sobre.html': { tabId: 'cagp-mnav-cagp', depth: 0, axis: 'axis-5' },
+      'gestao.html': { tabId: 'cagp-mnav-cagp', depth: 1, axis: 'axis-5', parent: 'sobre.html' }
+    }
+  };
+
+  function getTaxonomy() {
+    return window.CAGP_TAXONOMY_V1 || DEFAULT_FALLBACK_TAXONOMY;
+  }
+
   function resolveMobileTabId(pathname) {
-    const map = {
-      'index.html': 'cagp-mnav-inicio',
-      '': 'cagp-mnav-inicio',
-      'calouros.html': 'cagp-mnav-inicio',
-      'curso.html': 'cagp-mnav-inicio',
-      'pesquisa.html': 'cagp-mnav-inicio',
-      'percurso.html': 'cagp-mnav-percurso',
-      'optativas.html': 'cagp-mnav-percurso',
-      'acg.html': 'cagp-mnav-acg',
-      'estagio.html': 'cagp-mnav-acg',
-      'tcc.html': 'cagp-mnav-acg',
-      'estagio-tcc.html': 'cagp-mnav-acg',
-      'documentos.html': 'cagp-mnav-docs',
-      'faq.html': 'cagp-mnav-docs',
-      'mapa-do-site.html': 'cagp-mnav-docs',
-      'gestao.html': 'cagp-mnav-cagp',
-      'sobre.html': 'cagp-mnav-cagp'
-    };
-    return map[pathname] || 'cagp-mnav-inicio';
+    const tax = getTaxonomy();
+    const basename = pathname ? pathname.split('/').pop() : 'index.html';
+    const cleanName = (!basename || basename === '') ? 'index.html' : basename;
+    const r = (tax.routes && tax.routes[cleanName]) || (tax.routes && tax.routes['index.html']);
+    return r ? r.tabId : 'cagp-mnav-hoje';
   }
 
   function updateNavigationUI(targetUrl) {
@@ -100,17 +110,28 @@
       const url = new URL(targetUrl, window.location.href);
       const pathname = url.pathname.split('/').pop() || 'index.html';
 
-      // 1. Atualizar Barra Móvel Inferior (Web Mobile)
+      // 1. Atualizar Barra Móvel Inferior (Web Mobile) e Tab Bar do Super App (5 Eixos Canônicos)
       document.querySelectorAll('.cagp-mobile-nav-item').forEach(function (item) {
         item.classList.remove('is-active');
         item.removeAttribute('aria-current');
       });
+      document.querySelectorAll('.cagp-tabbar-item').forEach(function (item) {
+        item.classList.remove('is-active');
+        item.setAttribute('aria-selected', 'false');
+      });
+
       const activeId = resolveMobileTabId(pathname);
       if (activeId) {
         const activeEl = document.getElementById(activeId);
         if (activeEl) {
           activeEl.classList.add('is-active');
           activeEl.setAttribute('aria-current', 'page');
+        }
+        const activeStabId = activeId.replace('cagp-mnav-', 'cagp-stab-');
+        const activeStabEl = document.getElementById(activeStabId);
+        if (activeStabEl) {
+          activeStabEl.classList.add('is-active');
+          activeStabEl.setAttribute('aria-selected', 'true');
         }
       }
 
@@ -229,20 +250,33 @@
     const newTitle = doc.querySelector('title');
     if (newTitle) document.title = newTitle.textContent;
 
-    // 2. Classes do Body (Preservando estados dinâmicos como Standalone e Acessibilidade)
-    const isStandaloneActive = document.documentElement.classList.contains('cagp-is-standalone') ||
+    // 2. Classes do Body e Root (Preservando estados dinâmicos como Standalone e Acessibilidade)
+    const rootEl = document.documentElement;
+    const isStandaloneActive = rootEl.classList.contains('cagp-is-standalone') ||
                                document.body.classList.contains('cagp-is-standalone');
-    const isDyslexia = document.body.classList.contains('cagp-dyslexia');
-    const isContrast = document.body.classList.contains('cagp-high-contrast');
+    const isDyslexia = rootEl.classList.contains('cagp-dyslexia') || document.body.classList.contains('cagp-dyslexia');
+    const isContrast = rootEl.classList.contains('cagp-high-contrast') || document.body.classList.contains('cagp-high-contrast');
+    const contrastAttr = rootEl.getAttribute('data-a11y-contrast');
+    const fontScaleAttr = rootEl.getAttribute('data-a11y-font-scale');
+    const motionAttr = rootEl.getAttribute('data-a11y-motion');
 
     if (doc.body) {
       document.body.className = doc.body.className;
       if (isStandaloneActive) {
-        document.documentElement.classList.add('cagp-is-standalone');
+        rootEl.classList.add('cagp-is-standalone');
         document.body.classList.add('cagp-is-standalone');
       }
-      if (isDyslexia) document.body.classList.add('cagp-dyslexia');
-      if (isContrast) document.body.classList.add('cagp-high-contrast');
+      if (isDyslexia) {
+        rootEl.classList.add('cagp-dyslexia');
+        document.body.classList.add('cagp-dyslexia');
+      }
+      if (isContrast) {
+        rootEl.classList.add('cagp-high-contrast');
+        document.body.classList.add('cagp-high-contrast');
+      }
+      if (contrastAttr) rootEl.setAttribute('data-a11y-contrast', contrastAttr);
+      if (fontScaleAttr) rootEl.setAttribute('data-a11y-font-scale', fontScaleAttr);
+      if (motionAttr) rootEl.setAttribute('data-a11y-motion', motionAttr);
     }
 
     // 3. Margin Sidebar (TOC)
@@ -702,6 +736,21 @@
     try {
       const fromUrl = window.location.href;
       const resolvedUrl = new URL(targetUrl, fromUrl).href;
+      const fromObj = new URL(fromUrl);
+      const toObj = new URL(targetUrl, fromUrl);
+
+      // Se for a mesma rota diferindo apenas no #hash, sincronizar Workspace View sem recarregar o DOM
+      if (fromObj.pathname === toObj.pathname && fromObj.search === toObj.search) {
+        if (!isBack && toObj.hash) {
+          history.replaceState({ url: resolvedUrl }, '', resolvedUrl);
+        }
+        if (window.cagpSyncWorkspaceFromHash) {
+          window.cagpSyncWorkspaceFromHash(toObj.hash, { scroll: true });
+        }
+        window.cagpRouteProgress.done();
+        return;
+      }
+
       const navDir = computeNavDirection(fromUrl, resolvedUrl, Boolean(isBack), triggerAnchor);
       const mainEl = document.getElementById('quarto-document-content');
 
@@ -783,6 +832,11 @@
   });
 
   window.addEventListener('popstate', function () {
+    if (window.location.hash && window.cagpSyncWorkspaceFromHash) {
+      if (window.cagpSyncWorkspaceFromHash(window.location.hash, { scroll: false })) {
+        return;
+      }
+    }
     navigate(window.location.href, true, null);
   });
 

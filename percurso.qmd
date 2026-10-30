@@ -43,41 +43,50 @@ toc: false
   <nav class="cagp-workspace-bar" aria-label="Alternar ferramentas do Percurso Curricular">
     <span class="cagp-workspace-bar-label"><i class="bi bi-layers-half" aria-hidden="true"></i> Sub-View:</span>
     <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#grafo-curricular">
-        <i class="bi bi-diagram-3-fill" aria-hidden="true"></i> 1. Grafo &amp; Minha Grade
-        <span class="cagp-workspace-tab-badge">27 Obrig.</span>
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" aria-selected="true" data-ws-tab="v1" data-ws-hash="#grafo-curricular">
+        <i class="bi bi-diagram-3-fill" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">1. Grafo &amp; Grade</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Grafo</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#explorador-grade">
-        <i class="bi bi-calendar3-range" aria-hidden="true"></i> 2. Ementas (1º ao 10ºP)
-        <span class="cagp-workspace-tab-badge">10 Sem.</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" aria-selected="false" data-ws-tab="v2" data-ws-hash="#explorador-grade">
+        <i class="bi bi-calendar3-range" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">2. Ementas (1º-10ºP)</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Ementas</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#simulador-percurso">
-        <i class="bi bi-signpost-split" aria-hidden="true"></i> 3. Simulador de Percursos
-        <span class="cagp-workspace-tab-badge">01-01/02/03</span>
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" aria-selected="false" data-ws-tab="v3" data-ws-hash="#simulador-percurso">
+        <i class="bi bi-signpost-split" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">3. 3 Percursos</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Percursos</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" aria-selected="false" data-ws-tab="__all__">
-        <i class="bi bi-arrows-expand" aria-hidden="true"></i> Ver Tudo
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-all" role="tab" aria-selected="false" data-ws-tab="__all__" data-ws-hash="#visao-completa">
+        <i class="bi bi-arrows-expand" aria-hidden="true"></i>
+        <span class="cagp-tab-label-full">Ver Tudo</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Tudo</span>
       </button>
     </div>
   </nav>
 </header>
+```
 
 <!-- ======================================================================= -->
 <!-- VIEW 1: GRAFO INTERATIVO DE PRÉ-REQUISITOS & CARTEIRA MINHA GRADE       -->
 <!-- ======================================================================= -->
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
-```
+::: {#ws-panel-v1 .cagp-workspace-view .is-active role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1"}
 
 ## <i class="bi bi-diagram-3-fill" aria-hidden="true"></i> Mapa Interativo de Pré-Requisitos & Trilhas do Curso {#grafo-curricular}
 <span id="grafo-pre-requisitos" class="cagp-anchor-alias" aria-hidden="true"></span>
 
-::: {.callout-note appearance="default"}
-## Regra Oficial de Pré-Requisitos no Colegiado de Gestão Pública & SIGA UFMG
-
-**Atenção discente sobre o SIGA:** De acordo com a matriz curricular oficial vigente (Versão N-20229), a **única disciplina de todo o curso com pré-requisito formal registrado no sistema** é **Economia do Bem-Estar (ECN 044)**, que exige aprovação prévia em **Introdução à Economia (ECN 140)**. Nenhuma outra matéria do curso possui trava automática que impeça a sua matrícula no SIGA.
-
-**Por que seguir o encadeamento sugerido?** Embora o sistema não bloqueie a matrícula nas demais disciplinas, os planos de ensino e ementas foram concebidos de forma cumulativa pelos departamentos da FAFICH e FACE. É **altamente desaconselhável pular** uma disciplina introdutória para uma avançada (por exemplo, cursar Estatística antes de Econometria, Gestão Pública A antes de B, ou Estado e Políticas Sociais A antes de B), pois a ausência do instrumental conceitual prévio compromete o rendimento acadêmico. O mapa abaixo destaca a **única trava formal** em linha contínua vermelha com ícone de cadeado e os **encadeamentos pedagógicos recomendados** pelos docentes em linhas tracejadas.
-:::
+```{=html}
+<details class="cagp-normative-details mb-3 border border-dark p-2 bg-light">
+  <summary class="fw-bold text-uppercase small" style="cursor: pointer;">
+    <i class="bi bi-info-circle-fill text-danger me-1" aria-hidden="true"></i> Regra Oficial de Pré-Requisitos no Colegiado &amp; SIGA UFMG (Toque para ler)
+  </summary>
+  <div class="mt-2 small text-dark">
+    <p><strong>Atenção discente sobre o SIGA:</strong> De acordo com a matriz curricular oficial vigente (Versão N-20229), a <strong>única disciplina de todo o curso com pré-requisito formal registrado no sistema</strong> é <strong>Economia do Bem-Estar (ECN 044)</strong>, que exige aprovação prévia em <strong>Introdução à Economia (ECN 140)</strong>. Nenhuma outra matéria do curso possui trava automática que impeça a sua matrícula no SIGA.</p>
+    <p class="mb-0"><strong>Por que seguir o encadeamento sugerido?</strong> Embora o sistema não bloqueie a matrícula nas demais disciplinas, os planos de ensino e ementas foram concebidos de forma cumulativa pelos departamentos da FAFICH e FACE. É <strong>altamente desaconselhável pular</strong> uma disciplina introdutória para uma avançada (por exemplo, cursar Estatística antes de Econometria, Gestão Pública A antes de B, ou Estado e Políticas Sociais A antes de B), pois a ausência do instrumental conceitual prévio compromete o rendimento acadêmico. O mapa abaixo destaca a <strong>única trava formal</strong> em linha contínua vermelha com ícone de cadeado e os <strong>encadeamentos pedagógicos recomendados</strong> pelos docentes em linhas tracejadas.</p>
+  </div>
+</details>
+```
 
 ```{=html}
 <!-- PAINEL UNIFICADO "MINHA GRADE" (PROGRESSO DAS 27 OBRIGATÓRIAS + OPTATIVAS FAVORITAS) -->
@@ -227,13 +236,13 @@ toc: false
     </div>
   </div>
 </section>
-</div>
+```
+:::
 
 <!-- ======================================================================= -->
 <!-- VIEW 2: LINHA DO TEMPO DOS 10 SEMESTRES & 27 EMENTAS OBRIGATÓRIAS       -->
 <!-- ======================================================================= -->
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
-```
+::: {#ws-panel-v2 .cagp-workspace-view role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden="true"}
 
 ## <i class="bi bi-calendar3-range" aria-hidden="true"></i> Linha do Tempo dos 10 Semestres com Ementário Oficial {#explorador-grade}
 
@@ -912,14 +921,12 @@ Explore abaixo a trajetória recomendada semestre a semestre. Utilize a **barra 
 4. **Utilize o Requerimento de Ajuste:** Caso fique de fora de uma matéria obrigatória no processamento online do SIGA, apresente requerimento presencial ao Colegiado da FAFICH no período de ajuste.
 :::
 
-```{=html}
-</div>
+:::
 
 <!-- ======================================================================= -->
 <!-- VIEW 3: SIMULADOR DOS 3 PERCURSOS (01-01, 01-02, 01-03) & PRAZOS        -->
 <!-- ======================================================================= -->
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
-```
+::: {#ws-panel-v3 .cagp-workspace-view role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden="true"}
 
 ## <i class="bi bi-bar-chart-line" aria-hidden="true"></i> Estrutura Geral e Prazos Oficiais
 
@@ -1189,6 +1196,9 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
     </div>
   </div>
 </nav>
+```
+
+:::
 
 <script>
 (function () {
@@ -2017,8 +2027,9 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
       });
     });
 
-    // Renderizar Nós (Disciplinas)
-    Object.keys(DISCIPLINAS_GRAFO).forEach(function (id) {
+    // Renderizar Nós (Disciplinas) com Roving Tabindex
+    const nodeIds = Object.keys(DISCIPLINAS_GRAFO);
+    nodeIds.forEach(function (id, idx) {
       const d = DISCIPLINAS_GRAFO[id];
       const x = getColX(d.col);
       const y = d.y;
@@ -2028,7 +2039,7 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
       g.setAttribute('id', `node-${id}`);
       g.setAttribute('data-id', id);
       g.setAttribute('data-track', d.track);
-      g.setAttribute('tabindex', '0');
+      g.setAttribute('tabindex', idx === 0 ? '0' : '-1');
       g.setAttribute('role', 'button');
       g.setAttribute('aria-label', `${d.code}: ${d.name} (${d.period}º Período). Clique para ver detalhes e conexões.`);
 
@@ -2136,14 +2147,34 @@ Conforme o **Art. 3º do Regulamento do Curso**, o estudante pode direcionar sua
       }
       g.appendChild(metaRight);
 
-      // Listeners de clique e teclado
+      // Listeners de clique e teclado com Roving Tabindex
+      function focusNode(targetId) {
+        nodeIds.forEach(function (nid) {
+          const nodeEl = document.getElementById('node-' + nid);
+          if (nodeEl) {
+            nodeEl.setAttribute('tabindex', nid === targetId ? '0' : '-1');
+          }
+        });
+        const targetEl = document.getElementById('node-' + targetId);
+        if (targetEl) targetEl.focus();
+      }
+
       g.addEventListener('click', function () {
+        focusNode(id);
         toggleSelectNode(id);
       });
       g.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           toggleSelectNode(id);
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          const nextIdx = (idx + 1) % nodeIds.length;
+          focusNode(nodeIds[nextIdx]);
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prevIdx = (idx - 1 + nodeIds.length) % nodeIds.length;
+          focusNode(nodeIds[prevIdx]);
         }
       });
 

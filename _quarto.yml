@@ -52,7 +52,9 @@ website:
 
 format:
   html:
+    brand: _brand.yml
     theme:
+      - brand
       - _variables.scss
     css: styles.css
     toc: false

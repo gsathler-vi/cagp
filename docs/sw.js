@@ -4,7 +4,7 @@
    + Cache-First para os 8 PDFs Normativos Oficiais e Ícones (100% Offline FAFICH)
    ========================================================================== */
 
-const CACHE_NAME = 'cagp-pwa-v2';
+const CACHE_NAME = 'cagp-pwa-v5';
 const PDF_CACHE_NAME = 'cagp-pdfs-oficiais-v1';
 
 const CORE_ASSETS = [
@@ -40,7 +40,8 @@ const OFFICIAL_PDFS = [
   'documentos/percurso-bacharelado-nucleo-complementar.pdf',
   'documentos/percurso-bacharelado-nucleo-avancado.pdf',
   'documentos/termo-aceite-orientador-tcc.pdf',
-  'documentos/regimento-interno-cagp-ufmg.pdf'
+  'documentos/regimento-interno-cagp-ufmg.pdf',
+  'documentos/requerimento-atividade-integralizadora-credito-v20229.pdf'
 ];
 
 // 1. Instalação: Pré-cache do App Shell e ativação imediata
@@ -152,13 +153,18 @@ self.addEventListener('fetch', (event) => {
             caches.open(PDF_CACHE_NAME).then((cache) => cache.put(request, clone));
           }
           return networkResponse;
+        }).catch(() => {
+          return new Response('PDF oficial não disponível offline. Conecte-se à internet para sincronizar.', {
+            status: 503,
+            headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+          });
         });
       })
     );
     return;
   }
 
-  // B. Páginas HTML, CSS e JS: Network-First para refletir novos builds do GitHub Pages imediatamente
+  // B. Páginas HTML, CSS e JS: Network-First com AbortController (1500ms timeout)
   const acceptHeader = request.headers.get('accept') || '';
   const isHtmlOrCode =
     request.mode === 'navigate' ||
@@ -170,25 +176,30 @@ self.addEventListener('fetch', (event) => {
 
   if (isHtmlOrCode) {
     event.respondWith(
-      fetch(request)
-        .then((networkResponse) => {
+      (async () => {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 1500);
+        try {
+          const networkResponse = await fetch(request, { signal: controller.signal });
+          clearTimeout(timeoutId);
           if (networkResponse && networkResponse.status === 200) {
             const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, responseClone);
-            });
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
           }
           return networkResponse;
-        })
-        .catch(() => {
-          return caches.match(request).then((cachedResponse) => {
-            if (cachedResponse) return cachedResponse;
-            if (request.mode === 'navigate' || acceptHeader.includes('text/html')) {
-              return caches.match('index.html');
-            }
-            return new Response('', { status: 503, statusText: 'Offline' });
+        } catch (err) {
+          clearTimeout(timeoutId);
+          const cachedResponse = await caches.match(request);
+          if (cachedResponse) return cachedResponse;
+          if (request.mode === 'navigate' || acceptHeader.includes('text/html')) {
+            return caches.match('index.html');
+          }
+          return new Response('Conteúdo temporariamente offline', {
+            status: 503,
+            headers: { 'Content-Type': 'text/plain; charset=utf-8' }
           });
-        })
+        }
+      })()
     );
     return;
   }

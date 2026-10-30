@@ -12,6 +12,8 @@ title-block-style: none
       <span class="cagp-badge cagp-badge-red">Turno Noturno</span>
       <span class="cagp-badge cagp-badge-dark">10 Semestres • 3.000h</span>
       <span class="cagp-badge cagp-badge-blue">Bacharelado FAFICH / UFMG</span>
+      <span class="cagp-badge cagp-badge-dark"><i class="bi bi-clock me-1" aria-hidden="true"></i>RU II: 11h-14h / 17h30-19h30</span>
+      <span class="cagp-badge cagp-badge-red"><i class="bi bi-bus-front me-1" aria-hidden="true"></i>Circular Noturno: 17h-22h45</span>
     </div>
     <div class="d-flex flex-wrap gap-1 align-items-center">
       <span class="cagp-badge cagp-badge-gold"><i class="bi bi-shield-check me-1" aria-hidden="true"></i>Portal &amp; Super App Discente</span>
@@ -22,7 +24,7 @@ title-block-style: none
     <div>
       <h1 class="cagp-workspace-title"><i class="bi bi-bank me-2 text-danger" aria-hidden="true"></i>CENTRO ACADÊMICO DE GESTÃO PÚBLICA — UFMG</h1>
       <p class="cagp-workspace-subtitle">
-        Entidade legítima de representação discente da FAFICH/UFMG. Simule horas de Extensão e AAC (<strong>600h</strong>), consulte as <strong>27 obrigatórias</strong> e <strong>68 optativas</strong>, verifique dispensa de estágio (<strong>Art. 41</strong>) e acesse os <strong>8 PDFs normativos offline</strong>.
+        Entidade legítima de representação discente da FAFICH/UFMG. Simule horas de Extensão e AAC (<strong>600h</strong>), consulte as <strong>27 obrigatórias</strong> e <strong>68 optativas</strong>, verifique dispensa de estágio (<strong>Art. 41</strong>) e acesse os <strong>9 PDFs normativos offline</strong>.
       </p>
     </div>
     <div class="cagp-workspace-actions">
@@ -41,31 +43,96 @@ title-block-style: none
   <nav class="cagp-workspace-bar" aria-label="Sub-visualizações da Central Inicial">
     <span class="cagp-workspace-bar-label"><i class="bi bi-layers me-1" aria-hidden="true"></i>Central:</span>
     <div class="cagp-workspace-tabs" role="tablist">
-      <button type="button" class="cagp-workspace-tab is-active" role="tab" data-ws-tab="v1" data-ws-hash="#bussola-interativa" aria-selected="true">
+      <button type="button" class="cagp-workspace-tab is-active" id="ws-tab-v1" role="tab" data-ws-tab="v1" data-ws-hash="#bussola-interativa" aria-selected="true">
         <i class="bi bi-compass" aria-hidden="true"></i>
-        <span>1. Bússola Discente, Carteira &amp; Campus</span>
-        <span class="cagp-ws-badge">4 Perfis</span>
+        <span class="cagp-tab-label-full">1. Bússola &amp; Eixos</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Hoje</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v2" data-ws-hash="#central-sistemas" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v2" role="tab" data-ws-tab="v2" data-ws-hash="#central-sistemas" aria-selected="false">
         <i class="bi bi-grid-3x3-gap" aria-hidden="true"></i>
-        <span>2. Sistemas UFMG &amp; 8 Micro-Apps</span>
-        <span class="cagp-ws-badge">SIGA • Ferramentas</span>
+        <span class="cagp-tab-label-full">2. Sistemas &amp; Apps</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Apps</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="v3" data-ws-hash="#modulos-oficiais" aria-selected="false">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-v3" role="tab" data-ws-tab="v3" data-ws-hash="#modulos-oficiais" aria-selected="false">
         <i class="bi bi-diagram-2" aria-hidden="true"></i>
-        <span>3. Módulos do Curso &amp; Representação</span>
-        <span class="cagp-ws-badge">CAGP • DA • DCE</span>
+        <span class="cagp-tab-label-full">3. Módulos &amp; Entidades</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">CAGP</span>
       </button>
-      <button type="button" class="cagp-workspace-tab" role="tab" data-ws-tab="__all__" aria-selected="false" title="Exibir todas as seções simultaneamente">
+      <button type="button" class="cagp-workspace-tab" id="ws-tab-all" role="tab" data-ws-tab="__all__" aria-selected="false" title="Exibir todas as seções simultaneamente">
         <i class="bi bi-arrows-expand" aria-hidden="true"></i>
-        <span>Ver Tudo</span>
+        <span class="cagp-tab-label-full">Ver Tudo</span>
+        <span class="cagp-tab-label-short" aria-hidden="true">Tudo</span>
       </button>
     </div>
   </nav>
 </header>
+```
 
-<div class="cagp-workspace-deck" data-ws-deck="index">
-<div class="cagp-workspace-view is-active" data-ws-view="v1">
+::: {.cagp-workspace-deck data-ws-deck="index"}
+
+::: {#ws-panel-v1 .cagp-workspace-view .is-active role="tabpanel" aria-labelledby="ws-tab-v1" data-ws-view="v1"}
+```{=html}
+<span id="bussola" class="cagp-anchor-alias" aria-hidden="true"></span>
+
+<!-- Bento Grid dos 5 Eixos Canônicos do Super App -->
+<section id="cagp-bento-5axes" class="cagp-tool-box mb-4 p-3 border border-1 border-dark bg-light" aria-labelledby="bento-5axes-title">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <div>
+      <span class="cagp-badge cagp-badge-red mb-1">Arquitetura de 5 Eixos</span>
+      <h2 id="bento-5axes-title" class="h5 mb-0 fw-bold font-display text-uppercase">
+        <i class="bi bi-grid-fill text-danger me-1" aria-hidden="true"></i> MAPA DOS 5 EIXOS CANÔNICOS DO SUPER APP
+      </h2>
+    </div>
+    <span class="small text-muted d-none d-md-inline">Taxonomia Unificada CAGP</span>
+  </div>
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 g-md-3">
+    <div class="col">
+      <a href="index.html" class="cagp-card h-100 p-3 text-decoration-none d-flex flex-column align-items-start justify-content-between bg-white border border-dark">
+        <div class="mb-2 text-danger fs-3"><i class="bi bi-compass" aria-hidden="true"></i></div>
+        <div>
+          <div class="fw-bold font-display text-uppercase text-dark small">1. Hoje</div>
+          <div class="small text-muted">Campus, RU &amp; Bússola</div>
+        </div>
+      </a>
+    </div>
+    <div class="col">
+      <a href="curso.html" class="cagp-card h-100 p-3 text-decoration-none d-flex flex-column align-items-start justify-content-between bg-white border border-dark">
+        <div class="mb-2 text-primary fs-3"><i class="bi bi-mortarboard" aria-hidden="true"></i></div>
+        <div>
+          <div class="fw-bold font-display text-uppercase text-dark small">2. Curso</div>
+          <div class="small text-muted">PPC, Calouros &amp; DCP</div>
+        </div>
+      </a>
+    </div>
+    <div class="col">
+      <a href="percurso.html" class="cagp-card h-100 p-3 text-decoration-none d-flex flex-column align-items-start justify-content-between bg-white border border-dark">
+        <div class="mb-2 text-success fs-3"><i class="bi bi-diagram-3" aria-hidden="true"></i></div>
+        <div>
+          <div class="fw-bold font-display text-uppercase text-dark small">3. Currículo</div>
+          <div class="small text-muted">Grade, 600h &amp; Estágio</div>
+        </div>
+      </a>
+    </div>
+    <div class="col">
+      <a href="documentos.html" class="cagp-card h-100 p-3 text-decoration-none d-flex flex-column align-items-start justify-content-between bg-white border border-dark">
+        <div class="mb-2 text-warning fs-3"><i class="bi bi-folder2-open" aria-hidden="true"></i></div>
+        <div>
+          <div class="fw-bold font-display text-uppercase text-dark small">4. Acervo</div>
+          <div class="small text-muted">PDFs Offline &amp; Formulários</div>
+        </div>
+      </a>
+    </div>
+    <div class="col">
+      <a href="sobre.html" class="cagp-card h-100 p-3 text-decoration-none d-flex flex-column align-items-start justify-content-between bg-white border border-dark">
+        <div class="mb-2 text-dark fs-3"><i class="bi bi-people" aria-hidden="true"></i></div>
+        <div>
+          <div class="fw-bold font-display text-uppercase text-dark small">5. O CAGP</div>
+          <div class="small text-muted">Gestão &amp; Estatuto</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 <span id="bussola" class="cagp-anchor-alias" aria-hidden="true"></span>
 
 <!-- Banner de Onboarding e Primeiro Acesso -->
@@ -497,12 +564,14 @@ title-block-style: none
     <small class="text-muted mt-2">DCP 135 (180h) + DCP 136 (120h) ou Dispensa Art. 41</small>
   </div>
 </div>
-</div>
+```
+:::
 
 <!-- ==========================================================================
      View 2: Sistemas UFMG & 8 Micro-Apps
      ========================================================================== -->
-<div class="cagp-workspace-view" data-ws-view="v2" hidden>
+::: {#ws-panel-v2 .cagp-workspace-view role="tabpanel" aria-labelledby="ws-tab-v2" data-ws-view="v2" hidden="true"}
+```{=html}
 <span id="sistemas" class="cagp-anchor-alias" aria-hidden="true"></span>
 <span id="avisos" class="cagp-anchor-alias" aria-hidden="true"></span>
 
@@ -766,14 +835,14 @@ title-block-style: none
     </a>
   </div>
 </div>
-</div>
+```
+:::
 
 <!-- ==========================================================================
      View 3: Módulos do Curso & Representação Discente
      ========================================================================== -->
-<div class="cagp-workspace-view" data-ws-view="v3" hidden>
+::: {#ws-panel-v3 .cagp-workspace-view role="tabpanel" aria-labelledby="ws-tab-v3" data-ws-view="v3" hidden="true"}
 <span id="jornada" class="cagp-anchor-alias" aria-hidden="true"></span>
-```
 
 ## <i class="bi bi-grid" aria-hidden="true"></i> Navegação por Módulos Oficiais {#modulos-oficiais}
 
@@ -912,8 +981,9 @@ Entenda a **Extensão Obrigatória (300h)**, as **AAC (até 300h)** com prazo de
     </article>
   </div>
 </section>
-</div>
-</div>
+```
+:::
+:::
 
 <script>
 (function () {
