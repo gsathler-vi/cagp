@@ -1,8 +1,11 @@
 ---
 title: "Hub de Estágio Supervisionado & TCC"
 subtitle: "Central de roteamento para os Workspaces dedicados de Estágio (300h • Art. 41) e TCC (180h • 4 Modalidades)"
+description: "Central de direcionamento para os Workspaces de Estágio Supervisionado (300h • Art. 41) e TCC (180h • 4 Modalidades) de Gestão Pública UFMG."
 title-block-style: none
 toc: false
+header-includes: |
+  <meta name="robots" content="noindex">
 ---
 
 ```{=html}

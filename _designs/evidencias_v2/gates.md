@@ -12,7 +12,7 @@
 | :---: | :---: | :--- | :--- | :---: | :---: | :---: |
 | **G0** | **Fase 0** | 1. Snapshot git de proteção criado.<br>2. `passo0.sh` exit 0 (55 caminhos de skills válidos).<br>3. `check_fatos.sh` exit 0 (149 fatos preservados).<br>4. `quarto render` exit 0.<br>5. Remoção de `tests/` e `docs/tests/`.<br>6. Teste de capacidades documentado.<br>7. Ledger inicial registrado.<br>8. Camada A (60 células de baseline) registrada. | • `_designs/evidencias_v2/fase0/git_status.txt`<br>• `_designs/evidencias_v2/fase0/capacidades.md`<br>• `_designs/evidencias_v2/fase0/ledger.md`<br>• `_designs/evidencias_v2/fase0/findings.jsonl`<br>• `_designs/evidencias_v2/matriz_celulas.csv` | **APROVADO** | Gestão CAGP | 2026-10-29 |
 | **G1** | **Fase 1** | Camada A das rotas `acg`, `calouros` e `estagio` auditadas; M1, M2, M4, M5, M7 aprovados; M8 `<= 4`; protótipo interativo gerado; barras migradas nos 14 `.qmd`. | • `_designs/evidencias_v2/fase1/prototipo_segmented_control.html`<br>• `_designs/evidencias_v2/fase1/findings.jsonl` | **APROVADO** | Gestão CAGP | 2026-10-29 |
-| **G2** | Fase 2 | Casca global unificada nos 5 Eixos; router SPA blindado; backup CRC32 testado; Service Worker `cagp-pwa-v6` com cold-offline e timeout de 1500ms aprovados. | *Pendente Fase 2* | *Em Espera* | — | — |
+| **G2** | **Fase 2** | Casca global unificada nos 5 Eixos; router SPA blindado (M6 = 0); backup CRC32 validado (cbf43926); 2 toques no clear; Service Worker `cagp-pwa-v6` com cold-offline e timeout de 1500ms aprovados. | • `_designs/evidencias_v2/test_phase2_gate.js`<br>• `_designs/evidencias_v2/fase2/findings.jsonl` | **APROVADO** | Gestão CAGP | 2026-10-29 |
 | **G3a** | Fase 3a | 60 células da Camada C (`index`, `acg`, `documentos`, `percurso`) auditadas; metas de 1ª dobra atendidas; zero vestígios do espelho N-20229. | *Pendente Fase 3a* | *Em Espera* | — | — |
 | **G3b** | Fase 3b | Camada A das 11 rotas restantes + Camada B completa auditadas; 9 PDFs consistentes; zero supressão factual (`check_fatos.sh` exit 0). | *Pendente Fase 3b* | *Em Espera* | — | — |
 | **G4** | Fase 4 | Matriz global completa (152 células); `passo0.sh` exit 0; `docs/` limpo; checklist humano (Anexo C) 100% aprovado; relatório final HTML gerado. | *Pendente Fase 4* | *Em Espera* | — | — |
@@ -55,3 +55,42 @@
   - `passo0.sh` executado com exit code 0 (55/55 skills válidas).
   - `check_fatos.sh` executado com exit code 0 (149/149 fatos preservados).
 - **Homologação:** **GATE G1 HOMOLOGADO COM SUCESSO.** Pronto para início da Fase 2.
+
+---
+
+## Log de Emissão do Gate G2 (Fase 2)
+
+- **Casca Global & 5 Eixos Canônicos:**
+  - Sincronização 1:1 rigorosa nos 5 Eixos (`Hoje`, `Curso`, `Currículo`, `Acervo`, `O CAGP`) entre `#cagp-mobile-nav`, `#cagp-superapp-tabbar` e cabeçalho desktop via `window.CAGP_TAXONOMY_V1`.
+  - Remoção completa de referências legadas a `#cagp-stab-ajustes`, `#cagp-stab-docs`, `#cagp-stab-acg`, `#cagp-stab-percurso`.
+  - Sino de alertas do campus (`.cagp-header-live-btn`) operante e apontando para `window.cagpOpenCampusSheet()`.
+  - Avatar do Passaporte (`.cagp-header-profile-btn` e `#cagp-topbar-profile-btn`) fixado e blindado em `>= 44×44px`.
+- **Roteador SPA & Transições Nativas:**
+  - `popstate` protegido com validação de `currentPath`, eliminando travamento do botão Voltar do navegador.
+  - Evento canônico de ciclo de vida `cagp:navigated` disparado com URL e pathname.
+  - Preservação integral de atributos `data-a11y-*` e classes `cagp-is-standalone` em `document.documentElement` durante a troca de páginas.
+  - Erros de console em rotação SPA: `M6 = 0` (zero erros).
+- **Cofre Discente & Backup Base64 com CRC32:**
+  - Algoritmo puro de CRC32 validado contra o vetor de teste canônico `CRC32("123456789") === "cbf43926"`.
+  - Geração e restauração de código no formato `CAGP1:<b64>.<crc32>` cobrindo as 9 chaves canônicas com validação atômica de checksum.
+  - Botão Limpar Cofre (`#cagp-clear-vault-btn`) com confirmação estrita em 2 toques (temporizador de 4 segundos), removendo as 9 chaves canônicas e 4 legadas, preservando o marcador efêmero `cagp_onboard_v1_dismissed`.
+  - Saídas dinâmicas no DOM sanitizadas com `escapeHtml()`.
+- **Acessibilidade Universal & Metadados:**
+  - Cessação definitiva de gravação na chave legada `cagp_a11y_prefs` em `savePrefs()`, adotando exclusivamente `cagp_a11y_prefs_v2`.
+  - Normalização do valor de movimento reduzido para `'reduced'`.
+  - Meta Viewport com `width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover` preservada.
+  - Open Graph e Twitter Card configurados em `_quarto.yml` apontando para imagem unificada `imagens/og-padrao.png` (1200×630, 52.5 KB).
+  - Hub Legado `estagio-tcc.qmd` sinalizado com `<meta name="robots" content="noindex">`.
+  - Descrições factuais (`description:`) injetadas no frontmatter de todas as 15 rotas.
+- **Service Worker (`sw.js`):**
+  - Versão de cache incrementada para `cagp-pwa-v6`.
+  - Pré-cache resiliente com `Promise.allSettled()` englobando ativos essenciais e `site_libs/`.
+  - Cache Stale-While-Revalidate com Lie-Fi timeout de 1500ms implementado para os 9 PDFs oficiais essenciais em `cagp-pdfs-oficiais-v1`.
+- **Auditoria Empírica (18 Células):**
+  - Registrado em `_designs/evidencias_v2/fase2/findings.jsonl`: Camada A de `index`, `acg`, `documentos` (12 células) + Camada C em `standalone` e `offline` (6 células).
+  - Critérios de saída M1, M2, M5 e M6 100% aprovados.
+- **Compilação e Fatos:**
+  - `quarto render` executado com exit code 0.
+  - `passo0.sh` executado com exit code 0 (55/55 skills válidas).
+  - `check_fatos.sh` executado com exit code 0 (149/149 fatos preservados).
+- **Homologação:** **GATE G2 HOMOLOGADO COM SUCESSO.** Pronto para início da Fase 3.

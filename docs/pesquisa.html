@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Iniciação Científica, bolsas PIBIC, programa de imersão e catálogo dos 11 núcleos de pesquisa do Departamento de Ciência Política (DCP/UFMG).">
 
 <title>Pesquisa, Iniciação Científica &amp; Imersão – CAGP</title>
 <style>
@@ -134,6 +135,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Pesquisa, Iniciação Científica &amp; Imersão – CAGP">
+<meta property="og:description" content="Iniciação Científica, bolsas PIBIC, programa de imersão e catálogo dos 11 núcleos de pesquisa do Departamento de Ciência Política (DCP/UFMG).">
+<meta property="og:image" content="https://cagp-ufmg.github.io/imagens/og-padrao.png">
+<meta property="og:site_name" content="CAGP">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Pesquisa, Iniciação Científica &amp; Imersão – CAGP">
+<meta name="twitter:description" content="Iniciação Científica, bolsas PIBIC, programa de imersão e catálogo dos 11 núcleos de pesquisa do Departamento de Ciência Política (DCP/UFMG).">
+<meta name="twitter:image" content="https://cagp-ufmg.github.io/imagens/og-padrao.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
 </head>
 
 <body class="fullcontent quarto-light">
@@ -2332,7 +2345,6 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
     try {
       const serialized = JSON.stringify(currentPrefs);
       localStorage.setItem(STORAGE_KEY, serialized);
-      localStorage.setItem(LEGACY_STORAGE_KEY, serialized);
     } catch (e) {
       console.warn('CAGP A11y: Erro ao salvar preferências no localStorage', e);
     }
@@ -3903,7 +3915,7 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
       candangos: '<i class="bi bi-bank2" aria-hidden="true"></i>',
       fafich: '<i class="bi bi-moon-stars-fill" aria-hidden="true"></i>',
       republica: '<i class="bi bi-shield-check" aria-hidden="true"></i>',
-      monogram: '<span class="cagp-avatar-monogram">' + computeMonogram(prof.name) + '</span>'
+      monogram: '<span class="cagp-avatar-monogram">' + escapeHtml(computeMonogram(prof.name)) + '</span>'
     };
     const fallbackHtml = presetIconMap[prof.avatarPreset] || presetIconMap.candangos;
 
@@ -4155,6 +4167,13 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
       clearBtn.innerHTML = originalHtml;
       try {
         CANONICAL_VAULT_KEYS.forEach(function (k) { localStorage.removeItem(k); });
+        var LEGACY_VAULT_KEYS = [
+          'cagp_percurso_quiz_resultado',
+          'cagp_calouros_checklist',
+          'cagp_acg_total_horas',
+          'cagp_a11y_prefs'
+        ];
+        LEGACY_VAULT_KEYS.forEach(function (k) { localStorage.removeItem(k); });
       } catch (err) {}
       refreshVaultData();
       syncProfileEditorFields();
@@ -5037,23 +5056,35 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
 
     document.querySelectorAll('.cagp-tabbar-item').forEach(function (tab) {
       tab.classList.remove('is-active');
+      tab.setAttribute('aria-selected', 'false');
     });
 
-    if (pathname === 'index.html' || pathname === '' || pathname === 'calouros.html' || pathname === 'curso.html' || pathname === 'pesquisa.html') {
-      const tab = document.getElementById('cagp-stab-hoje');
-      if (tab) tab.classList.add('is-active');
-    } else if (pathname === 'percurso.html' || pathname === 'optativas.html') {
-      const tab = document.getElementById('cagp-stab-percurso');
-      if (tab) tab.classList.add('is-active');
-    } else if (pathname === 'acg.html' || pathname === 'estagio.html' || pathname === 'tcc.html' || pathname === 'estagio-tcc.html') {
-      const tab = document.getElementById('cagp-stab-acg');
-      if (tab) tab.classList.add('is-active');
-    } else if (pathname === 'documentos.html' || pathname === 'faq.html' || pathname === 'mapa-do-site.html') {
-      const tab = document.getElementById('cagp-stab-docs');
-      if (tab) tab.classList.add('is-active');
-    } else if (pathname === 'gestao.html' || pathname === 'sobre.html') {
-      const tab = document.getElementById('cagp-stab-ajustes');
-      if (tab) tab.classList.add('is-active');
+    let activeStabId = 'cagp-stab-hoje';
+    const tax = window.CAGP_TAXONOMY_V1;
+    const cleanName = (!pathname || pathname === '') ? 'index.html' : pathname;
+    if (tax && tax.routes && tax.routes[cleanName]) {
+      const r = tax.routes[cleanName];
+      if (r && r.tabId) {
+        activeStabId = r.tabId.replace('cagp-mnav-', 'cagp-stab-');
+      }
+    } else {
+      if (['percurso.html', 'optativas.html', 'acg.html', 'estagio.html', 'tcc.html', 'estagio-tcc.html'].indexOf(cleanName) !== -1) {
+        activeStabId = 'cagp-stab-curriculo';
+      } else if (['curso.html', 'calouros.html', 'pesquisa.html'].indexOf(cleanName) !== -1) {
+        activeStabId = 'cagp-stab-curso';
+      } else if (['documentos.html', 'faq.html', 'mapa-do-site.html'].indexOf(cleanName) !== -1) {
+        activeStabId = 'cagp-stab-acervo';
+      } else if (['sobre.html', 'gestao.html'].indexOf(cleanName) !== -1) {
+        activeStabId = 'cagp-stab-cagp';
+      } else {
+        activeStabId = 'cagp-stab-hoje';
+      }
+    }
+
+    const tab = document.getElementById(activeStabId);
+    if (tab) {
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
     }
 
     refreshVaultData();

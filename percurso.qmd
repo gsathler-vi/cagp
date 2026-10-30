@@ -1,6 +1,7 @@
 ---
 title: "Percurso Curricular"
 subtitle: "Estrutura oficial dos 10 semestres, 27 disciplinas obrigatórias, ementário e os 3 percursos do curso"
+description: "Matriz curricular interativa com grafo de pré-requisitos, 27 disciplinas obrigatórias e 3 percursos formativos de Gestão Pública UFMG."
 title-block-style: none
 toc: false
 ---

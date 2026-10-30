@@ -1,6 +1,7 @@
 ---
 title: "Dúvidas Frequentes (FAQ)"
 subtitle: "Respostas baseadas nas Normas Gerais de Graduação da UFMG e no Regulamento Oficial do Curso"
+description: "Perguntas frequentes regimentais sobre prazos, trancamento, aproveitamento de estudos e acessibilidade do portal do CAGP UFMG."
 title-block-style: none
 toc: false
 ---

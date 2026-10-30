@@ -1,6 +1,7 @@
 ---
 title: "Trabalho de Conclusão de Curso (TCC)"
 subtitle: "Projeto de TCC (DCP 089 • 60h), Defesa (DCP 137 • 120h), as 4 Modalidades Oficiais (Art. 19) e Termo de Aceite"
+description: "Guia do Trabalho de Conclusão de Curso (DCP 089/137 - 180h): 4 modalidades regimentais, orientações de banca e Termo de Aceite."
 title-block-style: none
 toc: false
 ---

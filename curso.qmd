@@ -1,6 +1,7 @@
 ---
 title: "O Curso de Gestão Pública"
 subtitle: "História, excelência acadêmica, atuação dos egressos, cientometria e governança na FAFICH/UFMG"
+description: "História, perfil do egresso, Colegiado, Secretaria Sala F-2039 e estrutura acadêmica do Bacharelado em Gestão Pública da FAFICH/UFMG."
 title-block-style: none
 toc: false
 ---

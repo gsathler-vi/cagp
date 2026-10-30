@@ -1,6 +1,7 @@
 ---
 title: "Gestão em Exercício & Equipe"
 subtitle: "Organograma funcional das 7 diretorias estatutárias, representação discente e canais diretos de atendimento"
+description: "Equipe em exercício, organograma funcional, atas das assembleias e prestação de contas RREO com transparência em até 3 dias úteis."
 title-block-style: none
 toc: false
 ---

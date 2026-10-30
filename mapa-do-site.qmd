@@ -1,6 +1,7 @@
 ---
 title: "Mapa do Site"
 subtitle: "Índice estruturado, árvore temática completa das 14 rotas em 5 eixos e atalhos diretos para todas as áreas do portal do CAGP"
+description: "Mapa panorâmico da arquitetura de informação do portal discente do CAGP UFMG, estruturado em 5 eixos e 14 rotas ativas."
 title-block-style: none
 toc: false
 ---

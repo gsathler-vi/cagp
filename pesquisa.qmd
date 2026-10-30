@@ -1,6 +1,7 @@
 ---
 title: "Pesquisa, Iniciação Científica & Imersão"
 subtitle: "Diretório dos 11 Núcleos do DCP (Conceito 7 CAPES), Guia de 90h AAC (Modalidade V) e Programa de Imersão"
+description: "Iniciação Científica, bolsas PIBIC, programa de imersão e catálogo dos 11 núcleos de pesquisa do Departamento de Ciência Política (DCP/UFMG)."
 title-block-style: none
 toc: false
 ---

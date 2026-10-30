@@ -1,6 +1,7 @@
 ---
 title: "Documentos Oficiais do Curso"
 subtitle: "Repositório dos atos normativos, projeto pedagógico, regulamento, ementário e matrizes curriculares"
+description: "Acervo de atos normativos, PPC 2020, regulamento N-20229 e os 9 formulários oficiais essenciais em PDF disponíveis para acesso offline."
 title-block-style: none
 toc: false
 ---

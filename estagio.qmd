@@ -1,6 +1,7 @@
 ---
 title: "Estágio Supervisionado & Dispensa Art. 41"
 subtitle: "Estágio Curricular A (DCP 135 • 180h) e B (DCP 136 • 120h), Simulador de Dispensa Art. 41 e Tutorial do TCE"
+description: "Regulamento de Estágio Supervisionado A e B (300h), simulador de dispensa pelo Art. 41 e tutorial completo de preenchimento do TCE."
 title-block-style: none
 toc: false
 ---

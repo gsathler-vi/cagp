@@ -4,7 +4,7 @@
    + Cache-First para os 8 PDFs Normativos Oficiais e Ícones (100% Offline FAFICH)
    ========================================================================== */
 
-const CACHE_NAME = 'cagp-pwa-v5';
+const CACHE_NAME = 'cagp-pwa-v6';
 const PDF_CACHE_NAME = 'cagp-pdfs-oficiais-v1';
 
 const CORE_ASSETS = [
@@ -29,7 +29,12 @@ const CORE_ASSETS = [
   'imagens/pwa/pwa-192x192.png',
   'imagens/pwa/pwa-512x512.png',
   'imagens/pwa/apple-touch-icon.png',
-  'logos/cagp/10_simbolo_transparente_positivo.svg'
+  'logos/cagp/10_simbolo_transparente_positivo.svg',
+  'site_libs/bootstrap/bootstrap-icons.css',
+  'site_libs/bootstrap/bootstrap.min.js',
+  'site_libs/quarto-html/quarto.js',
+  'site_libs/quarto-nav/quarto-nav.js',
+  'site_libs/clipboard/clipboard.min.js'
 ];
 
 const OFFICIAL_PDFS = [
@@ -44,12 +49,23 @@ const OFFICIAL_PDFS = [
   'documentos/requerimento-atividade-integralizadora-credito-v20229.pdf'
 ];
 
-// 1. Instalação: Pré-cache do App Shell e ativação imediata
+// 1. Instalação: Pré-cache tolerante do App Shell com Promise.allSettled e ativação imediata
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(CORE_ASSETS))
-      .then(() => self.skipWaiting())
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      await Promise.allSettled(
+        CORE_ASSETS.map(async (url) => {
+          try {
+            const response = await fetch(url);
+            if (response.ok) {
+              await cache.put(url, response);
+            }
+          } catch (e) {}
+        })
+      );
+      await self.skipWaiting();
+    })()
   );
 });
 
@@ -94,7 +110,19 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   } else if (event.data.type === 'CACHE_OFFICIAL_PDFS') {
     event.waitUntil(
-      caches.open(PDF_CACHE_NAME).then((cache) => cache.addAll(OFFICIAL_PDFS))
+      (async () => {
+        const cache = await caches.open(PDF_CACHE_NAME);
+        await Promise.allSettled(
+          OFFICIAL_PDFS.map(async (url) => {
+            try {
+              const response = await fetch(url);
+              if (response.ok) {
+                await cache.put(url, response);
+              }
+            } catch (e) {}
+          })
+        );
+      })()
     );
   } else if (event.data.type === 'SHOW_NOTIFICATION') {
     const title = event.data.title || 'CAGP • Gestão Pública UFMG';
@@ -142,24 +170,41 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // A. PDFs Normativos Oficiais: Cache-First (Cofre Offline + Fallback de Rede)
+  // A. PDFs Normativos Oficiais: Stale-While-Revalidate (Cofre Offline + Atualização Silenciosa)
   if (url.pathname.endsWith('.pdf') || url.pathname.includes('/documentos/')) {
     event.respondWith(
-      caches.match(request).then((cachedPdf) => {
-        if (cachedPdf) return cachedPdf;
-        return fetch(request).then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const clone = networkResponse.clone();
-            caches.open(PDF_CACHE_NAME).then((cache) => cache.put(request, clone));
+      (async () => {
+        const cache = await caches.open(PDF_CACHE_NAME);
+        const cachedPdf = await cache.match(request);
+
+        const fetchUpdate = (async () => {
+          try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 1500);
+            const netRes = await fetch(request, { signal: controller.signal });
+            clearTimeout(timeoutId);
+            if (netRes && netRes.status === 200) {
+              await cache.put(request, netRes.clone());
+            }
+            return netRes;
+          } catch (e) {
+            return null;
           }
-          return networkResponse;
-        }).catch(() => {
-          return new Response('PDF oficial não disponível offline. Conecte-se à internet para sincronizar.', {
-            status: 503,
-            headers: { 'Content-Type': 'text/plain; charset=utf-8' }
-          });
+        })();
+
+        if (cachedPdf) {
+          event.waitUntil(fetchUpdate);
+          return cachedPdf;
+        }
+
+        const netRes = await fetchUpdate;
+        if (netRes) return netRes;
+
+        return new Response('PDF oficial não disponível offline. Conecte-se à internet para sincronizar.', {
+          status: 503,
+          headers: { 'Content-Type': 'text/plain; charset=utf-8' }
         });
-      })
+      })()
     );
     return;
   }

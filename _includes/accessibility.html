@@ -180,7 +180,6 @@
     try {
       const serialized = JSON.stringify(currentPrefs);
       localStorage.setItem(STORAGE_KEY, serialized);
-      localStorage.setItem(LEGACY_STORAGE_KEY, serialized);
     } catch (e) {
       console.warn('CAGP A11y: Erro ao salvar preferências no localStorage', e);
     }

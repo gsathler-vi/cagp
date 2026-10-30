@@ -1,6 +1,7 @@
 ---
 title: "Catálogo de 68 Optativas & Formação Livre"
 subtitle: "Catálogo interativo das 68 disciplinas optativas do PPC N-20229, filtro de favoritas e regras das 120h de Formação Livre"
+description: "Catálogo completo de 68 disciplinas optativas de Gestão Pública por departamento e regras de integralização da Formação Livre (120h)."
 title-block-style: none
 toc: false
 ---

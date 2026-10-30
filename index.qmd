@@ -1,6 +1,7 @@
 ---
 title: "Centro Acadêmico de Gestão Pública"
 subtitle: "FAFICH • Universidade Federal de Minas Gerais"
+description: "Portal Institucional e Super App Discente do Centro Acadêmico de Gestão Pública (CAGP FAFICH/UFMG) com ferramentas acadêmicas e serviços do campus."
 toc: false
 title-block-style: none
 ---

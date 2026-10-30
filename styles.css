@@ -11240,6 +11240,7 @@ html[data-a11y-contrast="high"] .cagp-passport-mini-fill {
 .cagp-topbar-tool-btn,
 #cagp-topbar-profile-btn,
 .cagp-topbar-profile-btn,
+.cagp-header-profile-btn,
 .cagp-nav-search-btn,
 .cagp-header-live-btn {
   min-width: 44px !important;

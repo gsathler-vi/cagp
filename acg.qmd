@@ -1,6 +1,7 @@
 ---
 title: "Extensão & Atividades Complementares (AAC)"
 subtitle: "Regulamento oficial, curricularização da extensão (300h), modalidades de AAC e validação no Colegiado"
+description: "Calculadora de 600h de Extensão e Atividades Acadêmicas Complementares (AAC), Guardião de 120 dias e formulários N-20229 da FAFICH/UFMG."
 title-block-style: none
 toc: false
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Guia de Sobrevivência do Calouro"
 subtitle: "Manual prático e orientações para o ingressante no curso Noturno de Gestão Pública da UFMG"
+description: "Guia de sobrevivência do calouro de Gestão Pública no turno noturno: checklist de 30 dias, RU II Setorial, Circulares e assistência FUMP."
 title-block-style: none
 toc: false
 ---

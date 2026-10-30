@@ -1,6 +1,7 @@
 ---
 title: "O Centro Acadêmico"
 subtitle: "Regimento interno, governança em 7 diretorias, princípios da administração pública e representação discente"
+description: "História dos Candangos, princípios estatutários, estrutura das 7 Diretorias e instâncias deliberativas do CAGP FAFICH/UFMG."
 title-block-style: none
 toc: false
 ---
