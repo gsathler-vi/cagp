@@ -10,6 +10,7 @@ import MobileDrawer from '../components/shell/MobileDrawer.astro';
 import BottomNav from '../components/shell/BottomNav.astro';
 import { DesktopFloatingDock } from '../components/shell/DesktopFloatingDock';
 import { GlobalSheets } from '../components/shell/GlobalSheets';
+import { SuperAppWelcomeModal } from '../components/shell/SuperAppWelcomeModal';
 import { asset } from '../lib/paths';
 import '../styles/global.css';
 
@@ -114,6 +115,9 @@ const {
 
     <!-- Global React Sheets & Spotlight Command Palette -->
     <GlobalSheets client:load />
+
+    <!-- Welcome Onboarding Tour (Apple HIG) -->
+    <SuperAppWelcomeModal client:load />
 
     <!-- Directional Navigation & Progress Bar Controller -->
     <script is:inline>

@@ -1,53 +1,63 @@
 ---
-// percurso.astro - Central Curricular 3-em-1 (Grafo 10P · 68 Optativas · Minha Grade & Percursos)
+// percurso.astro — Central Curricular & Grafo Dinâmico 10P: 27 Obrigatórias + Optativas + Formação Livre
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/ui/PageHeader.astro';
 import SegmentedControl from '../components/ui/SegmentedControl.astro';
 import JourneyNav from '../components/ui/JourneyNav.astro';
 import FactCheckBanner from '../components/ui/FactCheckBanner.astro';
-import { CurriculumGraph } from '../components/curriculum/CurriculumGraph';
+import { getCollection } from 'astro:content';
+import { CurriculumGraphDynamic } from '../components/features/curriculum/graph/CurriculumGraphDynamic';
+import CurriculumCentralOverview from '../components/features/curriculum/CurriculumCentralOverview.astro';
 import PercursoTimeline from '../components/percurso/PercursoTimeline.astro';
 import PercursoOptativasSection from '../components/percurso/PercursoOptativasSection.astro';
 import { MinhaGradeDossie } from '../components/percurso/MinhaGradeDossie';
 import PercursoSimulador from '../components/percurso/PercursoSimulador.astro';
-import AxisOverview from '../components/shell/AxisOverview.astro';
+
+const allDisciplinas = await getCollection('disciplinas');
+const catalogOptions = allDisciplinas
+  .filter((d) => d.data.natureza === 'optativa')
+  .map((d) => ({
+    code: d.data.codigo,
+    name: d.data.nome,
+    dept: d.data.departamento,
+    ch: d.data.cargaHoraria,
+  }));
 
 const tabs = [
-  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Eixo', hash: '#visao-geral' },
-  { id: 'v1', shortLabel: 'Grafo & Grade', fullLabel: '1. Grafo 10P & 27 Obrigatórias', hash: '#grafo' },
+  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral Curricular', hash: '#visao-geral' },
+  { id: 'v1', shortLabel: 'Grafo Vivo', fullLabel: '1. Grafo Dinâmico 10P', hash: '#grafo' },
   { id: 'v2', shortLabel: '68 Optativas', fullLabel: '2. Catálogo de 68 Optativas', hash: '#optativas' },
   { id: 'v3', shortLabel: 'Minha Grade', fullLabel: '3. Minha Grade & Percursos', hash: '#minha-grade' },
 ];
 
 const badges = [
-  { label: 'Central Curricular 3-em-1', variant: 'red' as const, icon: 'bi-diagram-3-fill' },
+  { label: 'Central Curricular 10P', variant: 'red' as const, icon: 'bi-diagram-3-fill' },
   { label: '27 Obrigatórias • 1.860h', variant: 'dark' as const, icon: 'bi-book-half' },
   { label: '68 Optativas Homologadas', variant: 'blue' as const, icon: 'bi-collection-fill' },
+  { label: '120h Formação Livre', variant: 'gold' as const, icon: 'bi-plus-slash-minus' },
   { label: '10 Semestres Noturno', variant: 'green' as const, icon: 'bi-calendar3' },
-  { label: 'PPC 2020 & N-20229', variant: 'gold' as const, icon: 'bi-shield-check' },
 ];
-
 ---
 
 <BaseLayout
-  title="Central Curricular: Grafo 10P, Optativas & Minha Grade"
-  description="Central Curricular unificada de Gestão Pública UFMG: mapa interativo dos 10 semestres, catálogo completo de 68 optativas, ementas oficiais e dossiê Minha Grade."
+  title="Central Curricular & Grafo Dinâmico 10P"
+  description="Central Curricular unificada de Gestão Pública UFMG: grafo reativo dos 10 semestres, 27 obrigatórias, 68 optativas e adição de disciplinas livres."
 >
   <PageHeader
-    eyebrow="Eixo 3 · Central Curricular Unificada"
-    title="Percurso Curricular, Optativas & Minha Grade"
-    subtitle="Navegue pelas 27 disciplinas obrigatórias com travas do SIGA, explore o catálogo de 68 optativas com filtros temáticos e acompanhe o percentual de integralização no dossiê pessoal da sua grade."
+    eyebrow="Eixo 3 · Central Curricular & Matriz 10P"
+    title="Trajetória Curricular, Grafo Vivo & Optativas"
+    subtitle="Navegue pelas 27 disciplinas obrigatórias com travas do SIGA, adicione matérias optativas e de formação livre no Grafo interativo e acompanhe o percentual de integralização no dossiê."
     badges={badges}
   />
 
   <SegmentedControl tabs={tabs} defaultTab="v0" />
 
-  <!-- Sub-view 0: Visão Geral do Eixo 3 (Currículo) -->
+  <!-- Sub-view 0: Visão Geral da Central Curricular -->
   <section id="ws-panel-v0" class="cagp-workspace-view" data-ws-panel="v0">
-    <AxisOverview axisId="curriculo" />
+    <CurriculumCentralOverview />
   </section>
 
-  <!-- Sub-view 1: Grafo Interativo 10P e Ementário das 27 Obrigatórias -->
+  <!-- Sub-view 1: Grafo Dinâmico 10P e Ementário das 27 Obrigatórias -->
   <section id="ws-panel-v1" class="cagp-workspace-view space-y-4" data-ws-panel="v1" hidden>
     <FactCheckBanner
       claim="Posso me matricular em matérias avançadas sem cumprir os pré-requisitos formais se o professor autorizar de boca?"
@@ -59,7 +69,7 @@ const badges = [
 A matrícula nas disciplinas com pré-requisito formal cadastrado fica condicionada à obtenção prévia de aprovação (nota mínima 60 e frequência de 75%) na disciplina propedêutica correspondente.`}
     />
 
-    <CurriculumGraph client:visible />
+    <CurriculumGraphDynamic client:load catalogOptions={catalogOptions} />
 
     <div class="pt-6 border-t-2 border-[#0A0A0A]">
       <div class="flex items-center justify-between mb-3">
@@ -67,7 +77,7 @@ A matrícula nas disciplinas com pré-requisito formal cadastrado fica condicion
           <i class="bi bi-book-half text-[#8B1E2D]" aria-hidden="true" />
           <span>Ementário Oficial das 27 Obrigatórias (1º ao 10º Período)</span>
         </h3>
-        <span class="text-xs text-gray-500 font-mono">1.620 horas totais</span>
+        <span class="text-xs text-gray-500 font-mono">1.620 horas de matérias + 240h estágios</span>
       </div>
       <PercursoTimeline />
     </div>
@@ -78,35 +88,23 @@ A matrícula nas disciplinas com pré-requisito formal cadastrado fica condicion
     <PercursoOptativasSection />
   </section>
 
-  <!-- Sub-view 3: Dossiê Minha Grade e os 3 Percursos Oficiais -->
-  <section id="ws-panel-v3" class="cagp-workspace-view space-y-6" data-ws-panel="v3" hidden>
-    <MinhaGradeDossie client:load />
-
-    <div class="pt-6 border-t-2 border-[#0A0A0A]">
-      <div class="mb-3">
-        <span class="font-mono text-xs text-gray-500 uppercase tracking-widest block">
-          Orientação Vocacional e Ênfases Formativas
-        </span>
-        <h3 class="font-['Oswald'] text-lg font-bold uppercase text-[#0A0A0A] m-0 flex items-center gap-2">
-          <i class="bi bi-compass text-[#8B1E2D]" aria-hidden="true" />
-          <span>Simulador dos 3 Percursos do PPC 2020</span>
-        </h3>
-      </div>
-      <PercursoSimulador />
-    </div>
+  <!-- Sub-view 3: Dossiê Minha Grade & Simulador Integrado -->
+  <section id="ws-panel-v3" class="cagp-workspace-view space-y-4" data-ws-panel="v3" hidden>
+    <MinhaGradeDossie client:visible />
+    <PercursoSimulador />
   </section>
 
   <!-- Journey Navigation Trail -->
   <JourneyNav
     prev={{
-      title: 'Guia de Sobrevivência do Calouro',
-      href: '/calouros',
-      desc: 'Checklist dos primeiros 30 dias, rotina noturna, jantar no RU e atendimento na FAFICH.',
+      title: 'O Bacharelado em Gestão Pública',
+      href: '/curso',
+      desc: 'História, Nota 4 MEC, colegiado e rotina de atendimento.',
     }}
     next={{
-      title: 'Extensão & Horas AAC (Calculadora 600h)',
+      title: 'Central de Horas & Certificados (600h)',
       href: '/acg',
-      desc: 'Simule suas 300h de Extensão e até 300h de Atividades Complementares com o Guardião de 120 dias.',
+      desc: 'Calculadora de 300h de Extensão e 300h de AAC com Guardião de 120 dias.',
     }}
   />
 </BaseLayout>

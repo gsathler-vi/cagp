@@ -9,9 +9,24 @@ export const CertSchema = z.object({
 });
 export type StudentCert = z.infer<typeof CertSchema>;
 
+export const CustomCourseSchema = z.object({
+  id: z.string(),
+  code: z.string().min(2),
+  name: z.string().min(2),
+  dept: z.string(),
+  period: z.number().min(1).max(10),
+  ch: z.number().min(15).max(180),
+  category: z.enum(['optativa_catalogo', 'formacao_livre', 'eletiva_externa']),
+});
+export type CustomCourse = z.infer<typeof CustomCourseSchema>;
+
 export const VaultSchemas = {
   cagp_calc_ext_aac_v1: z.record(z.string(), z.number()),
   cagp_aac_120d_certs_v1: z.array(CertSchema),
+  cagp_custom_curriculum_v1: z.object({
+    assignedCourses: z.array(CustomCourseSchema),
+  }),
+  cagp_onboarding_completed_v1: z.boolean(),
   cagp_notifications_prefs_v1: z.object({
     ru1815: z.boolean(),
     circular2230: z.boolean(),
@@ -58,6 +73,8 @@ export type VaultData<K extends VaultKey> = z.infer<(typeof VaultSchemas)[K]>;
 export const VaultDefaults: { [K in VaultKey]: VaultData<K> } = {
   cagp_calc_ext_aac_v1: {},
   cagp_aac_120d_certs_v1: [],
+  cagp_custom_curriculum_v1: { assignedCourses: [] },
+  cagp_onboarding_completed_v1: false,
   cagp_notifications_prefs_v1: {
     ru1815: false,
     circular2230: false,

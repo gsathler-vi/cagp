@@ -1,18 +1,20 @@
 ---
-// acg.astro - A2 Ferramenta: 3 sub-views (Calculadora · 120 dias · Guia)
+// acg.astro — Central de Horas & Certificados (600h): Extensão & AAC
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/ui/PageHeader.astro';
 import SegmentedControl from '../components/ui/SegmentedControl.astro';
 import JourneyNav from '../components/ui/JourneyNav.astro';
 import FactCheckBanner from '../components/ui/FactCheckBanner.astro';
-import { Calculator600h } from '../components/calculators/Calculator600h';
-import { Guardian120d } from '../components/calculators/Guardian120d';
-import AcgGuiaTramitacao from '../components/acg/AcgGuiaTramitacao.astro';
+import AcgCentralOverview from '../components/features/acg/AcgCentralOverview.astro';
+import { AcgCalculatorCore } from '../components/features/acg/calculator/AcgCalculatorCore';
+import { AcgGuardianCore } from '../components/features/acg/guardian/AcgGuardianCore';
+import AcgTramitacaoCore from '../components/features/acg/tramitacao/AcgTramitacaoCore.astro';
 
 const tabs = [
-  { id: 'v1', shortLabel: 'Calculadora', fullLabel: '1. Calculadora 600h', hash: '#calculadora-horas' },
-  { id: 'v2', shortLabel: '120 dias', fullLabel: '2. Guardião 120 Dias', hash: '#guardiao-120-dias' },
-  { id: 'v3', shortLabel: 'Guia', fullLabel: '3. Guia & Tramitação', hash: '#guia-tramitacao' },
+  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral das 600h', hash: '#visao-geral' },
+  { id: 'v1', shortLabel: 'Calculadora', fullLabel: '1. Calculadora Extensão & AAC', hash: '#calculadora' },
+  { id: 'v2', shortLabel: '120 Dias', fullLabel: '2. Guardião 120 Dias', hash: '#guardiao-120-dias' },
+  { id: 'v3', shortLabel: 'Tramitação', fullLabel: '3. Protocolo SEI Colegiado', hash: '#tramitacao-sei' },
 ];
 
 const badges = [
@@ -21,24 +23,31 @@ const badges = [
   { label: 'Prazo Fatal 120 Dias', variant: 'gold' as const, icon: 'bi-alarm-fill' },
   { label: 'PPC N-20229', variant: 'blue' as const, icon: 'bi-shield-check' },
 ];
-
 ---
 
-<BaseLayout title="Extensão & AAC (600h)" description="Calculadora interativa de 300h de Extensão Obrigatória e 300h de AAC com monitoramento do prazo legal de 120 dias.">
+<BaseLayout
+  title="Central de Horas & Certificados (600h)"
+  description="Calculadora interativa de 300h de Extensão Obrigatória e 300h de AAC com monitoramento do prazo legal de 120 dias e protocolo SEI."
+>
   <PageHeader
-    title="Extensão Obrigatória & AAC (600h)"
-    subtitle="Simulador interativo com trava automática de tetos regimentais, Guardião do prazo fatal de 120 dias corridos (Art. 15, § 4º) e tutorial de tramitação oficial."
+    title="Central de Horas & Certificados (600h)"
+    subtitle="Simulador interativo de 300h de Extensão e 300h de AAC, monitor de prescrição de 120 dias corridos e roteiro de tramitação no SEI/UFMG."
     badges={badges}
   />
 
-  <SegmentedControl tabs={tabs} defaultTab="v1" />
+  <SegmentedControl tabs={tabs} defaultTab="v0" />
 
-  <!-- Sub-view 1: Calculadora 600h -->
-  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1">
-    <Calculator600h client:load />
+  <!-- Sub-view 0: Visão Geral da Central de Horas -->
+  <section id="ws-panel-v0" class="cagp-workspace-view" data-ws-panel="v0">
+    <AcgCentralOverview />
   </section>
 
-  <!-- Sub-view 2: Guardião 120 Dias -->
+  <!-- Sub-view 1: Calculadora 600h Core -->
+  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1" hidden>
+    <AcgCalculatorCore client:load />
+  </section>
+
+  <!-- Sub-view 2: Guardião 120 Dias Core -->
   <section id="ws-panel-v2" class="cagp-workspace-view space-y-4" data-ws-panel="v2" hidden>
     <FactCheckBanner
       claim="Posso acumular todos os meus certificados de palestras e cursos e protocolar tudo junto no último semestre antes de colar grau?"
@@ -50,25 +59,25 @@ const badges = [
 Art. 15, § 4º — O discente terá o prazo máximo de 120 (cento e vinte) dias corridos, contados a partir da data de encerramento da atividade ou emissão do respectivo certificado, para requerer o aproveitamento de carga horária em Atividades Acadêmicas Complementares (AAC).
 § 5º — Expirado o prazo previsto no § 4º, o requerimento não será apreciado pela Comissão de Acompanhamento.`}
     />
-    <Guardian120d client:visible />
+    <AcgGuardianCore client:load />
   </section>
 
-  <!-- Sub-view 3: Guia & Tramitação -->
+  <!-- Sub-view 3: Guia & Tramitação SEI Core -->
   <section id="ws-panel-v3" class="cagp-workspace-view" data-ws-panel="v3" hidden>
-    <AcgGuiaTramitacao />
+    <AcgTramitacaoCore />
   </section>
 
   <!-- Journey Navigation Trail -->
   <JourneyNav
     prev={{
-      title: 'Catálogo de 68 Optativas & 120h Livre',
-      href: '/optativas',
-      desc: 'Consulte optativas por departamento temático e cumpra sua Formação Livre.',
+      title: 'Trajetória Curricular & Grafo 10P',
+      href: '/percurso',
+      desc: 'Explore as 27 obrigatórias, simule optativas e consulte travas do SIGA.',
     }}
     next={{
-      title: 'Estágio Supervisionado (300h) & Art. 41',
+      title: 'Estágio Supervisionado (300h)',
       href: '/estagio',
-      desc: 'Simule a dispensa por experiência profissional e consulte o tutorial de celebração do TCE.',
+      desc: 'Simulador do Art. 41 para servidores e modelo oficial de Termo de Compromisso.',
     }}
   />
 </BaseLayout>

@@ -16,11 +16,13 @@ describe('Cofre Discente & Backup Engine', () => {
     expect(crc32('123456789')).toBe('cbf43926');
   });
 
-  it('retorna os valores padrão para as 9 chaves canônicas quando vazias', () => {
+  it('retorna os valores padrão para as chaves canônicas quando vazias', () => {
     expect(getVaultItem('cagp_calc_ext_aac_v1')).toEqual(VaultDefaults.cagp_calc_ext_aac_v1);
     expect(getVaultItem('cagp_aac_120d_certs_v1')).toEqual([]);
     expect(getVaultItem('cagp_notifications_prefs_v1').aac120d).toBe(true);
     expect(getVaultItem('cagp_student_profile_v1').name).toBe('Estudante de Gestão Pública');
+    expect(getVaultItem('cagp_custom_curriculum_v1')).toEqual({ assignedCourses: [] });
+    expect(getVaultItem('cagp_onboarding_completed_v1')).toBe(false);
   });
 
   it('salva e recupera itens com validação de tipo Zod', () => {
@@ -68,7 +70,8 @@ describe('Cofre Discente & Backup Engine', () => {
 
   it('rejeita backups adulterados por falha de CRC32', () => {
     const backup = exportVaultBackup();
-    const tampered = backup.replace(/.$/, '0'); // altera último caractere
+    const lastChar = backup.slice(-1);
+    const tampered = backup.slice(0, -1) + (lastChar === '0' ? '1' : '0');
     const result = importVaultBackup(tampered);
     expect(result.success).toBe(false);
     expect(result.error).toContain('CRC32 mismatch');

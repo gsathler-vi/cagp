@@ -1,0 +1,101 @@
+---
+// src/components/features/acg/tramitacao/AcgTramitacaoCore.astro — Guia & Protocolo de Tramitação SEI
+import { asset } from '../../../../lib/paths';
+
+const steps = [
+  {
+    num: '1',
+    title: 'Abertura do Processo no SEI/UFMG',
+    desc: 'Acesse o SEI com seu login discente, inicie um processo do tipo "Graduação: Aproveitamento de Atividades Acadêmicas Complementares" e direcione para a unidade do Colegiado de Gestão Pública (FAFICH).',
+    badge: 'Passo 1',
+  },
+  {
+    num: '2',
+    title: 'Preenchimento do Formulário Padrão',
+    desc: 'Anexe o formulário oficial preenchido indicando detalhadamente cada certificado, a modalidade correspondente (Art. 15), a data de realização e as horas requeridas.',
+    badge: 'Passo 2',
+  },
+  {
+    num: '3',
+    title: 'Comprovação Documental & Prazo de 120 Dias',
+    desc: 'Anexe cópias nítidas em PDF dos certificados. O documento deve conter obrigatoriamente a carga horária explícita e autenticação digital ou assinatura física da entidade emissora.',
+    badge: 'Passo 3',
+  },
+  {
+    num: '4',
+    title: 'Parecer da Coordenação & Homologação SIGA',
+    desc: 'A Coordenação analisa a documentação, homologa as horas deferidas e encaminha ao DRCA para lançamento nos extratos de integralização no SIGA.',
+    badge: 'Passo 4',
+  },
+];
+---
+
+<div class="cagp-tramitacao-core select-none space-y-6">
+  <!-- Destaque Inicial -->
+  <div class="p-4 bg-white border border-[#DFDBD2] rounded-xl shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <div>
+      <span class="text-[11px] font-['Oswald'] uppercase font-bold tracking-wider text-[#8B1E2D]">
+        Fluxo Oficial do Colegiado
+      </span>
+      <h3 class="font-['Oswald'] text-lg font-bold uppercase text-[#0A0A0A] leading-tight m-0">
+        Como Tramitar Certificados de AAC no SEI/UFMG
+      </h3>
+      <p class="text-xs text-gray-600 mt-1 max-w-2xl leading-relaxed m-0">
+        Siga o roteiro passo a passo para garantir o deferimento integral das suas horas complementares sem risco de prescrição pelo prazo regimental de 120 dias corridos.
+      </p>
+    </div>
+
+    <a
+      href={asset('/documentos/requerimento-atividade-integralizadora-credito-v20229.pdf')}
+      download
+      class="min-h-[44px] px-4 py-2 bg-[#8B1E2D] text-white hover:bg-[#0A0A0A] rounded-lg font-['Oswald'] text-xs uppercase font-bold tracking-wider flex items-center justify-center gap-2 transition-all no-underline shrink-0 shadow-[2px_2px_0px_#0A0A0A]"
+    >
+      <i class="bi bi-file-earmark-pdf-fill" aria-hidden="true" />
+      <span>Baixar Requerimento SEI (PDF)</span>
+    </a>
+  </div>
+
+  <!-- Linha do Tempo dos 4 Passos -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {steps.map((st) => (
+      <div class="cagp-card p-4 bg-white border border-[#DFDBD2] rounded-xl flex items-start gap-3.5 shadow-xs">
+        <span class="w-9 h-9 rounded-lg bg-[#0A0A0A] text-white flex items-center justify-center font-['Oswald'] text-base font-black shrink-0">
+          {st.num}
+        </span>
+        <div class="min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="cagp-badge cagp-badge-red text-[10px]">{st.badge}</span>
+            <h4 class="font-['Oswald'] text-sm font-bold uppercase text-[#0A0A0A] leading-tight m-0 truncate">
+              {st.title}
+            </h4>
+          </div>
+          <p class="text-xs text-gray-700 leading-relaxed m-0">
+            {st.desc}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Requisitos para Deferimento sem Recusa -->
+  <div class="p-4 bg-[#F7F5F0] border border-[#DFDBD2] rounded-xl space-y-3">
+    <h4 class="font-['Oswald'] text-sm uppercase font-bold text-[#0A0A0A] flex items-center gap-2 m-0">
+      <i class="bi bi-check2-circle text-[#15803D]" aria-hidden="true" />
+      <span>Critérios Essenciais para Deferimento pelo Colegiado:</span>
+    </h4>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-gray-700">
+      <div class="p-3 bg-white border border-[#DFDBD2] rounded-lg">
+        <strong class="text-[#0A0A0A] block mb-1">1. Carga Horária Explícita</strong>
+        O certificado deve informar textualmente o número de horas cumpridas (ex: 30h).
+      </div>
+      <div class="p-3 bg-white border border-[#DFDBD2] rounded-lg">
+        <strong class="text-[#0A0A0A] block mb-1">2. Prazo de 120 Dias</strong>
+        A data de protocolo no SEI deve ser inferior a 120 dias corridos da emissão.
+      </div>
+      <div class="p-3 bg-white border border-[#DFDBD2] rounded-lg">
+        <strong class="text-[#0A0A0A] block mb-1">3. Vínculo com a Gestão Pública</strong>
+        O tema deve guardar consonância com as competências do PPC do curso.
+      </div>
+    </div>
+  </div>
+</div>
