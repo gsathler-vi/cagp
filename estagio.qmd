@@ -95,20 +95,20 @@ toc: false
           <span class="small fw-bold text-uppercase text-dark"><i class="bi bi-check2-square text-success me-1" aria-hidden="true"></i>Checklist Documental de Protocolo (Art. 41):</span>
           <span id="art41-check-status" class="cagp-badge cagp-badge-dark cagp-tabular">0 / 4 etapas prontas</span>
         </div>
-        <label class="cagp-art41-check-item">
-          <input type="checkbox" data-art41-check="srv_1">
+        <label class="cagp-art41-check-item" for="chk-art41-srv1">
+          <input type="checkbox" id="chk-art41-srv1" data-art41-check="srv_1" aria-label="1. Matrícula Regular no SIGA (DCP 135 ou DCP 136)">
           <span><strong>1. Matrícula Regular no SIGA:</strong> Inscrito(a) em <code>DCP 135</code> (7ºP • 180h) ou <code>DCP 136</code> (8ºP • 120h).</span>
         </label>
-        <label class="cagp-art41-check-item">
-          <input type="checkbox" data-art41-check="srv_2">
+        <label class="cagp-art41-check-item" for="chk-art41-srv2">
+          <input type="checkbox" id="chk-art41-srv2" data-art41-check="srv_2" aria-label="2. Requerimento de Experiência Profissional">
           <span><strong>2. Requerimento de Experiência Profissional:</strong> Formulário oficial preenchido e assinado (<a href="documentos/estagio-requerimento-integralizacao-experiencia-profissional.pdf" target="_blank">PDF</a> / <a href="documentos/estagio-requerimento-integralizacao-experiencia-profissional.docx" download>DOCX</a>).</span>
         </label>
-        <label class="cagp-art41-check-item">
-          <input type="checkbox" data-art41-check="srv_3">
+        <label class="cagp-art41-check-item" for="chk-art41-srv3">
+          <input type="checkbox" id="chk-art41-srv3" data-art41-check="srv_3" aria-label="3. Declaração Funcional da Chefia e Vínculo">
           <span><strong>3. Declaração Funcional da Chefia + Vínculo:</strong> Termo de posse/contrato e descrição das atribuições na administração pública.</span>
         </label>
-        <label class="cagp-art41-check-item">
-          <input type="checkbox" data-art41-check="srv_4">
+        <label class="cagp-art41-check-item" for="chk-art41-srv4">
+          <input type="checkbox" id="chk-art41-srv4" data-art41-check="srv_4" aria-label="4. Relatório Final de Atividades no Moodle">
           <span><strong>4. Relatório Final de Atividades no Moodle:</strong> Entrega ao fim do semestre para lançamento da nota (<a href="documentos/estagio-relatorio-atividades-experiencia-profissional.pdf" target="_blank">PDF</a> / <a href="documentos/estagio-relatorio-atividades-experiencia-profissional.docx" download>DOCX</a>).</span>
         </label>
       </div>

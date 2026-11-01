@@ -200,7 +200,7 @@
         <span class="cagp-badge cagp-badge-gold" id="cagp-photo-tech-meta">Canvas 256×256 WebP</span>
       </div>
 
-      <input type="file" id="cagp-profile-photo-input" accept="image/*" hidden>
+      <input type="file" id="cagp-profile-photo-input" accept="image/*" hidden aria-label="Upload de foto de perfil (256x256 WebP)">
       <canvas id="cagp-profile-crop-canvas" width="256" height="256" hidden></canvas>
 
       <!-- Controles de Foto & Presets Ilustrados Brite -->
@@ -429,7 +429,7 @@
         <button type="button" id="cagp-sync-import-json-btn" class="cagp-btn cagp-btn-outline btn-sm">
           <i class="bi bi-upload me-1" aria-hidden="true"></i> Importar (.json)
         </button>
-        <input type="file" id="cagp-sync-import-file" accept=".json,application/json" hidden>
+        <input type="file" id="cagp-sync-import-file" accept=".json,application/json" hidden aria-label="Upload de arquivo de backup JSON">
       </div>
 
       <div class="cagp-sync-code-box">
@@ -472,6 +472,15 @@
       <p class="small text-muted mb-2">Ajuste de tamanho tipográfico, fonte para dislexia, régua de foco, pausa de animações e alto contraste AAA.</p>
       <button type="button" class="cagp-btn cagp-btn-secondary w-100 btn-sm" data-cagp-action="open-a11y-from-passport">
         <i class="bi bi-sliders me-1"></i> Abrir Suíte de Acessibilidade (Alt + A)
+      </button>
+    </div>
+
+    <!-- Guia de Boas-Vindas & Recuperação de Onboarding (Apple HIG Onboarding) -->
+    <div class="cagp-settings-section mb-3">
+      <div class="fw-bold small text-uppercase font-display mb-1"><i class="bi bi-compass me-1 text-danger"></i> Guia Discente &amp; Boas-Vindas</div>
+      <p class="small text-muted mb-2">Reative os avisos contextuais, tour inicial e dicas de navegação do Portal em todas as páginas.</p>
+      <button type="button" id="cagp-reset-onboard-btn" class="cagp-btn cagp-btn-outline w-100 btn-sm" data-cagp-action="reset-onboarding">
+        <i class="bi bi-arrow-counterclockwise me-1"></i> Rever Dicas &amp; Tour de Boas-Vindas
       </button>
     </div>
   </div>
@@ -1416,6 +1425,24 @@
         }
         return;
       }
+      if (act === 'reset-onboarding') {
+        e.preventDefault();
+        closeAppSettings();
+        try {
+          localStorage.removeItem('cagp_onboard_v1_dismissed');
+        } catch (e) {}
+        if (window.cagpResetTips) window.cagpResetTips();
+        if (window.cagpResetOnboarding) {
+          window.cagpResetOnboarding();
+        } else {
+          if (window.cagpToast) window.cagpToast('Dicas e tour de boas-vindas reativados!', 'bi-compass', 2800);
+          const isHome = window.location.pathname.indexOf('index') !== -1 || window.location.pathname === '/' || window.location.pathname.endsWith('/cagp/');
+          if (!isHome) {
+            window.location.href = 'index.html#bussola';
+          }
+        }
+        return;
+      }
     }
 
     // 4. Escolher Avatar Institucional Brite
@@ -2296,7 +2323,9 @@
   };
 
   window.openCagpAppSettings = openAppSettings;
+  window.cagpOpenAppSettings = openAppSettings;
   window.closeCagpAppSettings = closeAppSettings;
+  window.cagpCloseAppSettings = closeAppSettings;
   window.refreshCagpVault = refreshVaultData;
 
   // Escutar mudanças no localStorage (outra aba ou micro-apps na página)

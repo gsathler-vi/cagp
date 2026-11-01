@@ -1401,19 +1401,20 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
 </section>
 <span id="bussola" class="cagp-anchor-alias" aria-hidden="true"></span>
 
-<!-- Banner de Onboarding e Primeiro Acesso -->
+<!-- Banner de Onboarding e Primeiro Acesso (Recuperável & TipKit) -->
 <div id="cagp-onboarding-banner" class="cagp-onboard-banner mb-3" role="region" aria-label="Boas-vindas e primeiros passos no portal">
   <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
     <div class="d-flex align-items-center gap-3">
       <div class="cagp-onboard-icon"><i class="bi bi-compass-fill" aria-hidden="true"></i></div>
       <div>
-        <div class="fw-bold fs-6 text-uppercase">Primeira vez no Portal do CAGP?</div>
-        <p class="small text-muted mb-0">Selecione seu perfil na Bússola abaixo (Vestibulando, Calouro, Meio de Curso ou Formando) para ver atalhos diretos e eliminar burocracias.</p>
+        <div class="fw-bold fs-6 text-uppercase">Boas-vindas ao Portal &amp; Super App CAGP!</div>
+        <p class="small text-muted mb-0">Use a Bússola abaixo para navegar por momento ou personalize seu Passaporte Acadêmico no topo.</p>
       </div>
     </div>
-    <div class="d-flex align-items-center gap-2">
-      <a href="calouros.html" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-2" style="font-size: 0.78rem;"><i class="bi bi-backpack me-1" aria-hidden="true"></i> Sou Calouro</a>
-      <button type="button" id="btn-dismiss-onboard" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-2" style="font-size: 0.78rem;" aria-label="Dispensar aviso de boas-vindas e não exibir novamente">✕ Entendi, fechar aviso</button>
+    <div class="d-flex align-items-center flex-wrap gap-2">
+      <a href="calouros.html" class="cagp-doc-btn cagp-doc-btn-primary py-1 px-2" style="font-size: 0.78rem;"><i class="bi bi-backpack me-1" aria-hidden="true"></i> Guia do Calouro</a>
+      <button type="button" id="btn-onboard-passport" class="cagp-doc-btn cagp-doc-btn-secondary py-1 px-2" style="font-size: 0.78rem;" onclick="(window.cagpOpenAppSettings || window.openCagpAppSettings) &amp;&amp; (window.cagpOpenAppSettings || window.openCagpAppSettings)()"><i class="bi bi-person-vcard me-1" aria-hidden="true"></i> Meu Perfil</button>
+      <button type="button" id="btn-dismiss-onboard" class="cagp-doc-btn cagp-doc-btn-outline py-1 px-2" style="font-size: 0.78rem;" aria-label="Dispensar aviso de boas-vindas e não exibir novamente">✕ Fechar</button>
     </div>
   </div>
 </div>
@@ -2261,7 +2262,12 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
 
       activeTab.setAttribute('aria-selected', 'true');
       var targetPanel = document.getElementById(targetId);
-      if (targetPanel) targetPanel.hidden = false;
+      if (targetPanel) {
+        targetPanel.hidden = false;
+        targetPanel.classList.remove('is-entering');
+        void targetPanel.offsetWidth; // trigger reflow para animação
+        targetPanel.classList.add('is-entering');
+      }
 
       if (updateHash) {
         var hashKey = targetId.replace('panel-', '');
@@ -2346,6 +2352,27 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
 
     var onboardBanner = document.getElementById('cagp-onboarding-banner');
     var btnDismissOnboard = document.getElementById('btn-dismiss-onboard');
+
+    window.cagpResetOnboarding = function () {
+      try {
+        localStorage.removeItem('cagp_onboard_v1_dismissed');
+      } catch (e) {}
+      if (onboardBanner) {
+        onboardBanner.style.display = 'block';
+        onboardBanner.style.opacity = '0';
+        onboardBanner.style.transform = 'translateY(-4px)';
+        requestAnimationFrame(function () {
+          onboardBanner.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+          onboardBanner.style.opacity = '1';
+          onboardBanner.style.transform = 'translateY(0)';
+        });
+        onboardBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      if (window.cagpToast) {
+        window.cagpToast('Dicas e tour de boas-vindas reativados!', 'bi-compass', 2800);
+      }
+    };
+
     if (onboardBanner && btnDismissOnboard) {
       try {
         if (localStorage.getItem('cagp_onboard_v1_dismissed') === 'true') {
@@ -2354,10 +2381,18 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
       } catch (e) {}
 
       btnDismissOnboard.onclick = function () {
-        onboardBanner.style.display = 'none';
+        onboardBanner.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+        onboardBanner.style.opacity = '0';
+        onboardBanner.style.transform = 'translateY(-4px)';
+        setTimeout(function () {
+          onboardBanner.style.display = 'none';
+        }, 200);
         try {
           localStorage.setItem('cagp_onboard_v1_dismissed', 'true');
         } catch (e) {}
+        if (window.cagpToast) {
+          window.cagpToast('Você pode rever as dicas a qualquer momento no Passaporte Discente.', 'bi-info-circle', 2800);
+        }
       };
     }
 
@@ -2447,9 +2482,9 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
 
   // Handler unificado de cópia rápida com feedback tátil + Dynamic Island Toast
   document.addEventListener('click', function (e) {
-    const copyBtn = e.target && e.target.closest ? e.target.closest('[data-copy]') : null;
+    const copyBtn = e.target && e.target.closest ? (e.target.closest('[data-cagp-copy]') || e.target.closest('[data-copy]')) : null;
     if (!copyBtn) return;
-    const text = copyBtn.getAttribute('data-copy');
+    const text = copyBtn.getAttribute('data-cagp-copy') || copyBtn.getAttribute('data-copy');
     if (!text) return;
 
     const copyAction = function () {
@@ -2491,6 +2526,50 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
       copyAction();
     }
   });
+
+  // Gerenciamento Global do Padrão TipKit Contextual (Apple HIG TipKit)
+  function initTipKitCards() {
+    document.querySelectorAll('.cagp-tipkit-card[id]').forEach(function (card) {
+      const tipId = card.id;
+      try {
+        if (localStorage.getItem('cagp_tip_' + tipId) === 'dismissed') {
+          card.style.display = 'none';
+          return;
+        }
+      } catch (e) {}
+      card.style.display = '';
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    const closeBtn = e.target && e.target.closest ? e.target.closest('[data-dismiss-tip]') : null;
+    if (!closeBtn) return;
+    const tipId = closeBtn.getAttribute('data-dismiss-tip');
+    const card = document.getElementById(tipId) || closeBtn.closest('.cagp-tipkit-card');
+    if (card) {
+      card.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(-4px)';
+      setTimeout(function () {
+        card.style.display = 'none';
+      }, 200);
+      try {
+        localStorage.setItem('cagp_tip_' + (tipId || card.id), 'dismissed');
+      } catch (e) {}
+    }
+  });
+
+  window.cagpResetTips = function () {
+    try {
+      Object.keys(localStorage).forEach(function (k) {
+        if (k.startsWith('cagp_tip_')) localStorage.removeItem(k);
+      });
+      initTipKitCards();
+    } catch (e) {}
+  };
+
+  initTipKitCards();
+  window.addEventListener('cagp:navigated', initTipKitCards);
 })();
 </script>
 <!-- Suite Universal de Acessibilidade CAGP UFMG -->
@@ -3207,7 +3286,7 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
         <span class="cagp-badge cagp-badge-gold" id="cagp-photo-tech-meta">Canvas 256×256 WebP</span>
       </div>
 
-      <input type="file" id="cagp-profile-photo-input" accept="image/*" hidden="">
+      <input type="file" id="cagp-profile-photo-input" accept="image/*" hidden="" aria-label="Upload de foto de perfil (256x256 WebP)">
       <canvas id="cagp-profile-crop-canvas" width="256" height="256" hidden=""></canvas>
 
       <!-- Controles de Foto & Presets Ilustrados Brite -->
@@ -3436,7 +3515,7 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
         <button type="button" id="cagp-sync-import-json-btn" class="cagp-btn cagp-btn-outline btn-sm">
           <i class="bi bi-upload me-1" aria-hidden="true"></i> Importar (.json)
         </button>
-        <input type="file" id="cagp-sync-import-file" accept=".json,application/json" hidden="">
+        <input type="file" id="cagp-sync-import-file" accept=".json,application/json" hidden="" aria-label="Upload de arquivo de backup JSON">
       </div>
 
       <div class="cagp-sync-code-box">
@@ -3479,6 +3558,15 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
       <p class="small text-muted mb-2">Ajuste de tamanho tipográfico, fonte para dislexia, régua de foco, pausa de animações e alto contraste AAA.</p>
       <button type="button" class="cagp-btn cagp-btn-secondary w-100 btn-sm" data-cagp-action="open-a11y-from-passport">
         <i class="bi bi-sliders me-1"></i> Abrir Suíte de Acessibilidade (Alt + A)
+      </button>
+    </div>
+
+    <!-- Guia de Boas-Vindas & Recuperação de Onboarding (Apple HIG Onboarding) -->
+    <div class="cagp-settings-section mb-3">
+      <div class="fw-bold small text-uppercase font-display mb-1"><i class="bi bi-compass me-1 text-danger"></i> Guia Discente &amp; Boas-Vindas</div>
+      <p class="small text-muted mb-2">Reative os avisos contextuais, tour inicial e dicas de navegação do Portal em todas as páginas.</p>
+      <button type="button" id="cagp-reset-onboard-btn" class="cagp-btn cagp-btn-outline w-100 btn-sm" data-cagp-action="reset-onboarding">
+        <i class="bi bi-arrow-counterclockwise me-1"></i> Rever Dicas &amp; Tour de Boas-Vindas
       </button>
     </div>
   </div>
@@ -4423,6 +4511,24 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
         }
         return;
       }
+      if (act === 'reset-onboarding') {
+        e.preventDefault();
+        closeAppSettings();
+        try {
+          localStorage.removeItem('cagp_onboard_v1_dismissed');
+        } catch (e) {}
+        if (window.cagpResetTips) window.cagpResetTips();
+        if (window.cagpResetOnboarding) {
+          window.cagpResetOnboarding();
+        } else {
+          if (window.cagpToast) window.cagpToast('Dicas e tour de boas-vindas reativados!', 'bi-compass', 2800);
+          const isHome = window.location.pathname.indexOf('index') !== -1 || window.location.pathname === '/' || window.location.pathname.endsWith('/cagp/');
+          if (!isHome) {
+            window.location.href = 'index.html#bussola';
+          }
+        }
+        return;
+      }
     }
 
     // 4. Escolher Avatar Institucional Brite
@@ -5303,7 +5409,9 @@ Faça o download direto do <strong>Projeto Pedagógico do Curso (PPC)</strong>, 
   };
 
   window.openCagpAppSettings = openAppSettings;
+  window.cagpOpenAppSettings = openAppSettings;
   window.closeCagpAppSettings = closeAppSettings;
+  window.cagpCloseAppSettings = closeAppSettings;
   window.refreshCagpVault = refreshVaultData;
 
   // Escutar mudanças no localStorage (outra aba ou micro-apps na página)
