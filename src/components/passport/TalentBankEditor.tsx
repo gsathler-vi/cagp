@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import type { VaultData } from '../../lib/storage/studentVault';
-import { TALENT_CATEGORIES, PRIDE_OPTIONS } from './talentConstants';
+import { TALENT_CATEGORIES, PRIDE_OPTIONS, AVATAR_PRESETS } from './talentConstants';
 
 interface TalentBankEditorProps {
   profile: VaultData<'cagp_student_profile_v1'>;
@@ -87,20 +87,41 @@ export const TalentBankEditor: React.FC<TalentBankEditorProps> = ({
         </div>
 
         <div>
-          <span className="text-[11px] text-gray-500 block mb-1">
-            Ou selecione um avatar temático:
+          <span className="text-[11px] font-['Oswald'] uppercase font-bold text-gray-700 block mb-1.5">
+            Ou escolha um avatar temático discente:
           </span>
-          <div className="flex flex-wrap gap-1">
-            {(['candangos', 'monogram', 'fafich', 'republica'] as const).map((p) => (
-              <button
-                key={p}
-                type="button"
-                onClick={() => onChange({ ...profile, avatarPreset: p, photoDataUrl: undefined })}
-                className={`cagp-preset-chip ${profile.avatarPreset === p && !profile.photoDataUrl ? 'is-active' : ''}`}
-              >
-                {p === 'candangos' ? 'Os Candangos' : p === 'monogram' ? 'Monograma' : p === 'fafich' ? 'FAFICH Noturno' : 'Prumo Republicano'}
-              </button>
-            ))}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {AVATAR_PRESETS.map((p) => {
+              const isSelected = profile.avatarPreset === p.id && !profile.photoDataUrl;
+              return (
+                <button
+                  key={p.id}
+                  type="button"
+                  onClick={() => onChange({ ...profile, avatarPreset: p.id, photoDataUrl: undefined })}
+                  className={`p-2 rounded-[4px] border-2 text-left flex items-center gap-2 transition-all cursor-pointer select-none ${
+                    isSelected
+                      ? 'border-[#0A0A0A] bg-white shadow-[2px_2px_0px_#0A0A0A] scale-102'
+                      : 'border-[#DFDBD2] bg-[#F7F5F0] hover:border-gray-400 opacity-80'
+                  }`}
+                >
+                  <div
+                    className="w-7 h-7 rounded-[3px] border border-[#0A0A0A] flex items-center justify-center shrink-0 text-xs font-bold font-['Oswald']"
+                    style={{ backgroundColor: p.bg, color: p.color }}
+                  >
+                    {p.icon ? (
+                      <i className={`bi ${p.icon}`} aria-hidden="true" />
+                    ) : (
+                      <span>{p.text?.slice(0, 2) || 'GP'}</span>
+                    )}
+                  </div>
+                  <div className="min-w-0">
+                    <span className="font-['Oswald'] text-xs font-bold uppercase text-[#0A0A0A] block truncate">
+                      {p.label}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>

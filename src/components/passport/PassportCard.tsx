@@ -1,5 +1,6 @@
 import React from 'react';
 import type { VaultData } from '../../lib/storage/studentVault';
+import { AvatarRenderer } from './AvatarRenderer';
 
 interface PassportCardProps {
   profile: VaultData<'cagp_student_profile_v1'>;
@@ -57,40 +58,13 @@ export const PassportCard: React.FC<PassportCardProps> = ({
       {/* Body com Avatar e Identidade */}
       <div className="p-3.5 sm:p-4 flex flex-wrap items-center gap-3 sm:gap-4">
         {/* Avatar com Trigger de Câmera */}
-        <button
-          type="button"
+        <AvatarRenderer
+          profile={profile}
+          sizeClass="cagp-avatar-frame--lg"
+          showCameraBadge
           onClick={onEditPhoto}
-          className="relative group p-0 bg-transparent border-0 cursor-pointer shrink-0"
-          aria-label="Trocar foto de perfil do Passaporte"
           title="Clique para trocar foto ou avatar"
-        >
-          <div className="cagp-avatar-frame cagp-avatar-frame--lg">
-            {profile.photoDataUrl ? (
-              <img
-                src={profile.photoDataUrl}
-                alt={profile.name}
-                className="w-full h-full object-cover"
-              />
-            ) : profile.avatarPreset === 'monogram' ? (
-              <span className="font-['Oswald'] text-2xl font-black text-[#8B1E2D]">
-                {initials || 'GP'}
-              </span>
-            ) : (
-              <i className="bi bi-person-fill text-3xl text-gray-500" aria-hidden="true" />
-            )}
-
-            {/* Marcador de Orgulho no Avatar */}
-            {profile.prideChoice && profile.prideChoice !== 'none' && (
-              <span
-                className={`cagp-pride-pin cagp-pride-swatch--${profile.prideChoice}`}
-                aria-hidden="true"
-              />
-            )}
-          </div>
-          <span className="cagp-avatar-cam-badge group-hover:bg-[#E8A317] transition-colors">
-            <i className="bi bi-camera-fill" aria-hidden="true" />
-          </span>
-        </button>
+        />
 
         {/* Dados de Identidade */}
         <div className="flex-1 min-w-[180px]">

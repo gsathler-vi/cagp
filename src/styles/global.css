@@ -295,3 +295,324 @@ html[data-a11y-dyslexia="true"] body {
 .cagp-video-card:hover .cagp-video-play-btn {
   transform: translate(-50%, -50%) scale(1.1);
 }
+
+/* ==========================================================================
+   Calculadora 600h: Dashboard Financeiro de Horas (Estilo Quarto / Nubank)
+   ========================================================================== */
+
+.cagp-hours-bank-card {
+  background-color: #ffffff;
+  border: 2px solid #0a0a0a;
+  border-radius: 6px;
+  box-shadow: 3px 3px 0px #0a0a0a;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.cagp-hours-bank-top {
+  background-color: #8b1e2d;
+  color: #ffffff;
+  border-bottom: 2px solid #0a0a0a;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cagp-hours-bank-slots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background-color: #f7f5f0;
+  border-bottom: 2px solid #0a0a0a;
+}
+
+.cagp-hours-bank-slot {
+  padding: 0.9rem 1.1rem;
+  border-right: 1.5px solid #0a0a0a;
+}
+
+.cagp-hours-bank-slot:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 767.98px) {
+  .cagp-hours-bank-slots {
+    grid-template-columns: 1fr;
+  }
+  .cagp-hours-bank-slot {
+    border-right: 0;
+    border-bottom: 1.5px solid #0a0a0a;
+  }
+  .cagp-hours-bank-slot:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* Anel Métrico Conic Gradient (.cagp-metric-ring) */
+.cagp-metric-ring {
+  --ring-pct: 0;
+  --ring-color: #9e2424;
+  --ring-size: 64px;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  border-radius: 50%;
+  border: 2.5px solid #0a0a0a;
+  box-shadow: 2px 2px 0px #0a0a0a;
+  background: conic-gradient(
+    var(--ring-color) calc(var(--ring-pct) * 1%),
+    #eae5dc 0
+  );
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cagp-metric-ring.is-complete {
+  --ring-color: #15803d;
+}
+
+.cagp-metric-ring-inner {
+  width: calc(var(--ring-size) - 16px);
+  height: calc(var(--ring-size) - 16px);
+  border-radius: 50%;
+  border: 2px solid #0a0a0a;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #0a0a0a;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Banner de Celebração e Status */
+.cagp-calc-celebration-box {
+  background-color: #f7f5f0;
+  border: 2px solid #0a0a0a;
+  box-shadow: 2px 2px 0 #0a0a0a;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.cagp-calc-celebration-box.is-all-complete {
+  background-color: #ffffff;
+  border: 2.5px solid #0a0a0a;
+  box-shadow: 4px 4px 0 #0a0a0a;
+}
+
+.cagp-calc-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.55rem;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+.cagp-calc-celebration-box.is-all-complete .cagp-calc-status-badge {
+  background-color: #b45309;
+  color: #ffffff;
+}
+
+/* Mini-track individual de cada linha */
+.cagp-calc-mini-track {
+  width: 100%;
+  height: 6px;
+  background-color: #eae5dc;
+  border: 1px solid #0a0a0a;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.35rem;
+}
+
+.cagp-calc-mini-fill {
+  height: 100%;
+  background-color: #9e2424;
+  transition: width 0.2s ease;
+}
+
+.cagp-calc-mini-fill.is-maxed {
+  background-color: #15803d;
+}
+
+/* Botões de Passo (+ / -) Neo-brutalistas com Apple HIG Ergonomics (min 44x44px) */
+.cagp-step-btn {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: #0a0a0a;
+  border: 2px solid #0a0a0a;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px #0a0a0a;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition: background-color 0.1s ease, transform 0.08s ease;
+}
+
+.cagp-step-btn:hover:not(:disabled) {
+  background-color: #9e2424;
+  color: #ffffff;
+}
+
+.cagp-step-btn:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #0a0a0a;
+}
+
+.cagp-step-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cagp-calc-readout {
+  min-width: 84px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* Gaveta "O que conta nisso?" */
+.cagp-calc-drawer-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #f7f5f0;
+  border: 1.5px solid #0a0a0a;
+  color: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.25rem 0.6rem;
+  margin-top: 0.45rem;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 1.5px 1.5px 0 #0a0a0a;
+  touch-action: manipulation;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.cagp-calc-drawer-toggle:hover {
+  background-color: #9e2424;
+  color: #ffffff;
+  box-shadow: 2px 2px 0 #0a0a0a;
+}
+
+.cagp-calc-drawer-toggle:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0.5px 0.5px 0 #0a0a0a;
+}
+
+.cagp-calc-drawer-toggle[aria-expanded="true"] .cagp-drawer-arrow {
+  transform: rotate(180deg);
+}
+
+.cagp-drawer-arrow {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+  font-size: 0.75rem;
+}
+
+.cagp-calc-drawer {
+  width: 100%;
+  margin-top: 0.65rem;
+}
+
+.cagp-calc-drawer-inner {
+  background-color: #ffffff;
+  border: 2px solid #0a0a0a;
+  box-shadow: 2px 2px 0 #0a0a0a;
+  padding: 0.85rem 1rem;
+  border-radius: 4px;
+}
+
+.cagp-drawer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .cagp-drawer-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
+
+.cagp-drawer-section {
+  padding: 0.65rem 0.75rem;
+  border-radius: 4px;
+}
+
+.cagp-drawer-section.is-accepted {
+  background-color: #f0fdf4;
+  border: 1.5px solid #15803d;
+}
+
+.cagp-drawer-section.is-rejected {
+  background-color: #fef2f2;
+  border: 1.5px solid #dc2626;
+}
+
+.cagp-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+.cagp-drawer-section ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #1f2937;
+  list-style-type: disc;
+}
+
+.cagp-drawer-section ul li {
+  margin-bottom: 0.35rem;
+}
+
+.cagp-drawer-section ul li:last-child {
+  margin-bottom: 0;
+}
+
+.cagp-drawer-alert {
+  margin-top: 0.6rem;
+  padding: 0.45rem 0.65rem;
+  background-color: #fffbeb;
+  border: 1.5px solid #b45309;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #78350f;
+  border-radius: 4px;
+}

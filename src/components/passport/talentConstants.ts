@@ -37,9 +37,22 @@ export const PRIDE_OPTIONS: readonly PrideOption[] = [
   { key: 'asexual', label: 'Assexual' },
 ] as const;
 
-export const AVATAR_PRESETS = [
-  { id: 'preset_candango', label: 'Candango', bg: 'bg-[#8B1E2D]', text: 'GP' },
-  { id: 'preset_coruja', label: 'Saber', bg: 'bg-[#005A9C]', text: 'UFMG' },
-  { id: 'preset_arvore', label: 'Extensão', bg: 'bg-[#15803D]', text: 'EXT' },
-  { id: 'preset_livro', label: 'FAFICH', bg: 'bg-[#0A0A0A]', text: 'FAF' },
+export interface AvatarPresetOption {
+  id: string;
+  label: string;
+  bg: string;
+  icon?: string;
+  color: string;
+  text?: string;
+}
+
+export const AVATAR_PRESETS: readonly AvatarPresetOption[] = [
+  { id: 'candangos', label: 'Candangos', bg: '#9E2424', icon: 'bi-bank', color: '#E8A317' },
+  { id: 'monogram', label: 'Monograma', bg: '#0A0A0A', text: 'Iniciais', color: '#E8A317' },
+  { id: 'fafich', label: 'FAFICH', bg: '#005A9C', icon: 'bi-building', color: '#E8A317' },
+  { id: 'republica', label: 'República', bg: '#15803D', icon: 'bi-house-heart-fill', color: '#FFFFFF' },
+  { id: 'formando', label: 'Formando', bg: '#8B1E2D', icon: 'bi-mortarboard-fill', color: '#E8A317' },
+  { id: 'pesquisador', label: 'Pesquisador', bg: '#0A0A0A', icon: 'bi-person-badge-fill', color: '#FFFFFF' },
+  { id: 'estudante_f', label: 'Discente ♀', bg: '#2A6264', icon: 'bi-person-standing-dress', color: '#FFFFFF' },
+  { id: 'estudante_m', label: 'Discente ♂', bg: '#5B2E85', icon: 'bi-person-fill', color: '#FFFFFF' },
 ] as const;
