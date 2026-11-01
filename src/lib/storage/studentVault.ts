@@ -34,6 +34,7 @@ export const VaultSchemas = {
     motion: z.string(),
     ruler: z.boolean().optional(),
   }),
+  cagp_discente_shortcuts_v1: z.array(z.string()).min(1).max(5),
   cagp_student_profile_v1: z.object({
     name: z.string(),
     period: z.string(),
@@ -73,6 +74,7 @@ export const VaultDefaults: { [K in VaultKey]: VaultData<K> } = {
     motion: 'normal',
     ruler: false,
   },
+  cagp_discente_shortcuts_v1: ['hoje', 'curso', 'percurso', 'documentos', 'sobre'],
   cagp_student_profile_v1: {
     name: 'Estudante de Gestão Pública',
     period: '1º Período',

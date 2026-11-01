@@ -1,12 +1,6 @@
 ---
-// BottomNav.astro - 5 Eixos Canônicos com transition:persist (Mobile & Tablet)
-const axes = [
-  { id: 'axis-1', label: 'Hoje', href: '/', icon: 'bi-compass', match: ['^/$'] },
-  { id: 'axis-2', label: 'Curso', href: '/curso', icon: 'bi-mortarboard', match: ['^/curso', '^/calouros', '^/pesquisa'] },
-  { id: 'axis-3', label: 'Currículo', href: '/percurso', icon: 'bi-diagram-3', match: ['^/percurso', '^/optativas', '^/acg', '^/estagio', '^/tcc', '^/estagio-tcc'] },
-  { id: 'axis-4', label: 'Acervo', href: '/documentos', icon: 'bi-folder2-open', match: ['^/documentos', '^/faq', '^/mapa-do-site'] },
-  { id: 'axis-5', label: 'O CAGP', href: '/sobre', icon: 'bi-people', match: ['^/sobre', '^/gestao'] },
-];
+// BottomNav.astro - Barra Inferior com Atalhos Customizáveis & transition:persist (Mobile & Tablet)
+import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCatalog';
 ---
 
 <nav
@@ -14,20 +8,39 @@ const axes = [
   transition:persist="main-bottom-nav"
   class="lg:hidden fixed bottom-0 left-0 right-0 z-[1040] bg-[#FFFFFF] border-t border-[#DFDBD2] shadow-[0_-2px_10px_rgba(0,0,0,0.05)] select-none"
   style="padding-bottom: env(safe-area-inset-bottom, 0px);"
-  aria-label="Navegação Principal dos 5 Eixos"
+  aria-label="Navegação Principal do Super App"
+  data-catalog={JSON.stringify(SHORTCUTS_CATALOG)}
+  data-defaults={JSON.stringify(DEFAULT_SHORTCUT_IDS)}
 >
-  <div class="max-w-xl mx-auto px-2 flex items-center justify-around h-16">
-    {axes.map((axis) => (
-      <a
-        href={axis.href}
-        id={axis.id}
-        data-match={JSON.stringify(axis.match)}
-        class="cagp-nav-item flex flex-col items-center justify-center min-w-[56px] min-h-[48px] py-1 text-gray-500 hover:text-[#8B1E2D] transition-all no-underline"
-      >
-        <i class={`bi ${axis.icon} text-xl`} aria-hidden="true"></i>
-        <span class="text-[11px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">{axis.label}</span>
-      </a>
-    ))}
+  <div id="cagp-bottom-nav-container" class="max-w-xl mx-auto px-1 sm:px-2 flex items-center justify-around h-16">
+    <!-- Renderizado Inicialmente com os 5 Eixos Canônicos (Zero CLS) -->
+    {DEFAULT_SHORTCUT_IDS.map((id) => {
+      const item = SHORTCUTS_CATALOG.find((s) => s.id === id) || SHORTCUTS_CATALOG[0];
+      return (
+        <a
+          href={item.href}
+          data-shortcut-id={item.id}
+          data-match={JSON.stringify(item.match)}
+          data-action={item.isAction ? item.actionEvent : undefined}
+          class="cagp-nav-item flex flex-col items-center justify-center min-w-[50px] sm:min-w-[56px] min-h-[48px] py-1 text-gray-500 hover:text-[#8B1E2D] transition-all no-underline"
+        >
+          <i class={`bi ${item.icon} text-lg sm:text-xl`} aria-hidden="true"></i>
+          <span class="text-[10px] sm:text-[11px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">{item.label}</span>
+        </a>
+      );
+    })}
+
+    <!-- Botão Rápido de Personalização -->
+    <button
+      type="button"
+      id="cagp-bottom-nav-customize-btn"
+      class="cagp-nav-item flex flex-col items-center justify-center min-w-[44px] min-h-[48px] py-1 text-gray-400 hover:text-[#8B1E2D] transition-all cursor-pointer border-none bg-transparent"
+      title="Personalizar atalhos da barra"
+      aria-label="Personalizar atalhos da barra inferior"
+    >
+      <i class="bi bi-sliders2 text-base sm:text-lg" aria-hidden="true"></i>
+      <span class="text-[10px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">Editar</span>
+    </button>
   </div>
 </nav>
 
@@ -41,8 +54,8 @@ const axes = [
     content: '';
     position: absolute;
     top: 0;
-    left: 20%;
-    right: 20%;
+    left: 15%;
+    right: 15%;
     height: 3px;
     background-color: #8B1E2D;
     border-radius: 2px;
@@ -56,30 +69,119 @@ const axes = [
 </style>
 
 <script>
-  function syncBottomNav() {
-    const baseUrl = document.documentElement.dataset.baseUrl || '/';
-    const cleanBase = baseUrl.replace(/\/$/, '');
-    let currentPath = window.location.pathname;
-    if (cleanBase && currentPath.startsWith(cleanBase)) {
-      currentPath = currentPath.slice(cleanBase.length) || '/';
+  function setupBottomNav() {
+    const nav = document.getElementById('cagp-bottom-nav');
+    const container = document.getElementById('cagp-bottom-nav-container');
+    if (!nav || !container) return;
+
+    const catalogRaw = nav.getAttribute('data-catalog');
+    const defaultsRaw = nav.getAttribute('data-defaults');
+    if (!catalogRaw || !defaultsRaw) return;
+
+    let catalog: any[] = [];
+    let defaults: string[] = [];
+    try {
+      catalog = JSON.parse(catalogRaw);
+      defaults = JSON.parse(defaultsRaw);
+    } catch {
+      return;
     }
 
-    const items = document.querySelectorAll('.cagp-nav-item');
-    items.forEach((item) => {
-      const matchPatterns = JSON.parse(item.getAttribute('data-match') || '[]');
-      const isMatched = matchPatterns.some((pattern: string) => {
-        const regex = new RegExp(pattern);
-        return regex.test(currentPath) || (pattern === '^/$' && (currentPath === '' || currentPath === '/index.html'));
-      });
-      if (isMatched) {
-        item.classList.add('is-active');
-        item.setAttribute('aria-current', 'page');
-      } else {
-        item.classList.remove('is-active');
-        item.removeAttribute('aria-current');
+    const catalogMap = new Map(catalog.map((c) => [c.id, c]));
+
+    function getSelectedIds(): string[] {
+      try {
+        const raw = localStorage.getItem('cagp_discente_shortcuts_v1');
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length >= 1) return parsed;
+        }
+      } catch {}
+      return defaults;
+    }
+
+    function renderNav() {
+      if (!container) return;
+      const selectedIds = getSelectedIds();
+      const baseUrl = (document.documentElement.dataset.baseUrl || '/').replace(/\/$/, '');
+      let currentPath = window.location.pathname;
+      if (baseUrl && currentPath.startsWith(baseUrl)) {
+        currentPath = currentPath.slice(baseUrl.length) || '/';
       }
-    });
+
+      const itemsHtml = selectedIds
+        .map((id) => {
+          const item = catalogMap.get(id) || catalog[0];
+          const isAction = Boolean(item.isAction && item.actionEvent);
+          const matchPatterns = item.match || [];
+          const isMatched = matchPatterns.some((pattern: string) => {
+            const regex = new RegExp(pattern);
+            return regex.test(currentPath) || (pattern === '^/$' && (currentPath === '' || currentPath === '/index.html'));
+          });
+
+          return `
+            <a
+              href="${item.href}"
+              data-shortcut-id="${item.id}"
+              data-match='${JSON.stringify(matchPatterns)}'
+              ${isAction ? `data-action="${item.actionEvent}"` : ''}
+              class="cagp-nav-item flex flex-col items-center justify-center min-w-[50px] sm:min-w-[56px] min-h-[48px] py-1 text-gray-500 hover:text-[#8B1E2D] transition-all no-underline ${isMatched ? 'is-active' : ''}"
+              ${isMatched ? 'aria-current="page"' : ''}
+            >
+              <i class="bi ${item.icon} text-lg sm:text-xl" aria-hidden="true"></i>
+              <span class="text-[10px] sm:text-[11px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">${item.label}</span>
+            </a>
+          `;
+        })
+        .join('');
+
+      const editBtnHtml = `
+        <button
+          type="button"
+          id="cagp-bottom-nav-customize-btn"
+          class="cagp-nav-item flex flex-col items-center justify-center min-w-[44px] min-h-[48px] py-1 text-gray-400 hover:text-[#8B1E2D] transition-all cursor-pointer border-none bg-transparent"
+          title="Personalizar atalhos da barra"
+          aria-label="Personalizar atalhos da barra inferior"
+        >
+          <i class="bi bi-sliders2 text-base sm:text-lg" aria-hidden="true"></i>
+          <span class="text-[10px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">Editar</span>
+        </button>
+      `;
+
+      container.innerHTML = itemsHtml + editBtnHtml;
+      bindEvents();
+    }
+
+    function bindEvents() {
+      if (!container) return;
+
+      // Botão de editar
+      const editBtn = container.querySelector('#cagp-bottom-nav-customize-btn');
+      editBtn?.addEventListener('click', () => {
+        window.dispatchEvent(new CustomEvent('cagp:open-shortcuts'));
+      });
+
+      // Ações especiais
+      const actionLinks = container.querySelectorAll('[data-action]');
+      actionLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const actionEvent = link.getAttribute('data-action');
+          if (actionEvent) {
+            window.dispatchEvent(new CustomEvent(actionEvent));
+          }
+        });
+      });
+    }
+
+    renderNav();
   }
 
-  document.addEventListener('astro:page-load', syncBottomNav);
+  document.addEventListener('astro:page-load', setupBottomNav);
+  window.addEventListener('cagp:vault-updated', (e: Event) => {
+    const custom = e as CustomEvent<{ key: string }>;
+    if (!custom.detail || custom.detail.key === 'cagp_discente_shortcuts_v1') {
+      setupBottomNav();
+    }
+  });
 </script>

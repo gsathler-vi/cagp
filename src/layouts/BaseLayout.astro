@@ -8,6 +8,7 @@ import BackToTop from '../components/shell/BackToTop.astro';
 import DynamicToast from '../components/shell/DynamicToast.astro';
 import MobileDrawer from '../components/shell/MobileDrawer.astro';
 import BottomNav from '../components/shell/BottomNav.astro';
+import { DesktopFloatingDock } from '../components/shell/DesktopFloatingDock';
 import { GlobalSheets } from '../components/shell/GlobalSheets';
 import { asset } from '../lib/paths';
 import '../styles/global.css';
@@ -107,6 +108,9 @@ const {
 
     <!-- Bottom Navigation (Mobile & Tablet) -->
     <BottomNav />
+
+    <!-- Dock Flutuante de Atalhos Rápidos (Desktop Apple HIG) -->
+    <DesktopFloatingDock client:load />
 
     <!-- Global React Sheets & Spotlight Command Palette -->
     <GlobalSheets client:load />

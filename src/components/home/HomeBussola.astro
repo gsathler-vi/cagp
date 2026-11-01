@@ -1,58 +1,118 @@
 ---
-// HomeBussola.astro - Sub-view 1: Bússola por Momento, Bento 5 Eixos e Métricas (Port Neo-Brutalista Quarto + Apple HIG)
+// HomeBussola.astro - Sub-view 1: Bússola por Momento, Meus Atalhos Discentes, Bento 5 Eixos e Métricas (Port Neo-Brutalista Quarto + Apple HIG)
+import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS, resolveShortcuts } from '../../lib/shortcutsCatalog';
+
+const initialShortcuts = resolveShortcuts(DEFAULT_SHORTCUT_IDS);
 ---
 
 <div class="space-y-4">
-  <!-- Bento dos 5 Eixos Canônicos (.cagp-tool-box) -->
-  <div class="cagp-tool-box">
-    <div class="cagp-tool-header">
+  <!-- Meus Atalhos Discentes Personalizáveis (.cagp-tool-box) -->
+  <div class="cagp-tool-box" id="cagp-home-shortcuts-box" data-catalog={JSON.stringify(SHORTCUTS_CATALOG)}>
+    <div class="cagp-tool-header flex items-center justify-between gap-2">
       <div>
-        <span class="cagp-badge cagp-badge-red mb-1">Taxonomia Oficial</span>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="cagp-badge cagp-badge-red">Personalizável</span>
+          <span class="text-xs font-mono text-gray-500 hidden sm:inline">Cofre Local</span>
+        </div>
         <h2 class="font-['Oswald'] text-sm font-bold uppercase text-[#0A0A0A] m-0 flex items-center gap-1.5">
-          <i class="bi bi-grid-fill text-[#8B1E2D]" aria-hidden="true"></i>
-          <span>Mapa dos 5 Eixos Canônicos do Super App</span>
+          <i class="bi bi-stars text-[#8B1E2D]" aria-hidden="true"></i>
+          <span>Meus Atalhos Discentes</span>
         </h2>
+        <p class="text-xs text-gray-500 mt-0.5 mb-0">
+          Acesso direto às ferramentas essenciais do seu percurso acadêmico. Personalize conforme seu momento no curso:
+        </p>
       </div>
-      <span class="text-xs font-mono font-bold text-[#8B1E2D] bg-[#8B1E2D]/10 px-2 py-0.5 rounded-[3px] border border-[#8B1E2D]/20">PPC 2020</span>
+
+      <button
+        type="button"
+        id="cagp-home-shortcuts-edit-btn"
+        class="px-2.5 py-1.5 bg-white hover:bg-[#F7F5F0] text-[#0A0A0A] font-['Oswald'] text-xs font-bold uppercase rounded-[4px] border-2 border-[#0A0A0A] shadow-[1.5px_1.5px_0_#0A0A0A] flex items-center gap-1.5 transition-all cursor-pointer active:scale-95 shrink-0"
+        title="Personalizar atalhos rápidos"
+      >
+        <i class="bi bi-sliders2 text-sm text-[#8B1E2D]" aria-hidden="true"></i>
+        <span>Personalizar</span>
+      </button>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
-      <a href="/" class="cagp-card p-3 no-underline flex flex-col justify-between">
-        <div class="text-[#8B1E2D] text-2xl mb-2"><i class="bi bi-compass" aria-hidden="true"></i></div>
-        <div>
-          <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">1. Hoje</span>
-          <span class="text-xs text-gray-500">Campus, RU & Bússola</span>
-        </div>
-      </a>
-      <a href="/curso" class="cagp-card p-3 no-underline flex flex-col justify-between">
-        <div class="text-[#005A9C] text-2xl mb-2"><i class="bi bi-mortarboard" aria-hidden="true"></i></div>
-        <div>
-          <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">2. Curso</span>
-          <span class="text-xs text-gray-500">PPC, Calouros & DCP</span>
-        </div>
-      </a>
-      <a href="/percurso" class="cagp-card p-3 no-underline flex flex-col justify-between">
-        <div class="text-[#15803D] text-2xl mb-2"><i class="bi bi-diagram-3" aria-hidden="true"></i></div>
-        <div>
-          <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">3. Currículo</span>
-          <span class="text-xs text-gray-500">Grade, 600h & Estágio</span>
-        </div>
-      </a>
-      <a href="/documentos" class="cagp-card p-3 no-underline flex flex-col justify-between">
-        <div class="text-[#B45309] text-2xl mb-2"><i class="bi bi-folder2-open" aria-hidden="true"></i></div>
-        <div>
-          <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">4. Acervo</span>
-          <span class="text-xs text-gray-500">PDFs Offline & Atos</span>
-        </div>
-      </a>
-      <a href="/sobre" class="cagp-card p-3 no-underline flex flex-col justify-between">
-        <div class="text-[#0A0A0A] text-2xl mb-2"><i class="bi bi-people" aria-hidden="true"></i></div>
-        <div>
-          <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">5. O CAGP</span>
-          <span class="text-xs text-gray-500">Gestão & Estatuto</span>
-        </div>
-      </a>
+    <!-- Grid Dinâmico de Atalhos Ativos -->
+    <div id="cagp-home-shortcuts-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+      {initialShortcuts.map((item) => (
+        <a
+          href={item.href}
+          data-shortcut-id={item.id}
+          data-action={item.isAction ? item.actionEvent : undefined}
+          class="cagp-card p-3 no-underline flex flex-col justify-between hover:border-[#0A0A0A] transition-all group"
+        >
+          <div class="text-2xl mb-2 flex items-center justify-between" style={{ color: item.color }}>
+            <i class={`bi ${item.icon}`} aria-hidden="true"></i>
+            <span class="text-[10px] font-mono uppercase bg-gray-100 text-gray-600 px-1 py-0.2 rounded border border-gray-200 group-hover:border-[#0A0A0A]/40 transition-colors">
+              {item.category}
+            </span>
+          </div>
+          <div>
+            <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block group-hover:text-[#8B1E2D] transition-colors truncate">
+              {item.label}
+            </span>
+            <span class="text-[11px] text-gray-500 line-clamp-1">
+              {item.description}
+            </span>
+          </div>
+        </a>
+      ))}
     </div>
+
+    <!-- Gaveta Expansível: Mapa Estrutural Completo dos 5 Eixos Canônicos (PPC 2020) -->
+    <details class="cagp-normative-details mt-3 border border-[#DFDBD2] rounded-[4px] bg-[#F7F5F0]/60 p-2.5">
+      <summary class="font-['Oswald'] text-xs font-bold uppercase text-[#0A0A0A] cursor-pointer flex items-center justify-between select-none py-1">
+        <span class="flex items-center gap-2">
+          <i class="bi bi-diagram-3-fill text-[#8B1E2D]" aria-hidden="true"></i>
+          <span>Ver Mapa Estrutural dos 5 Eixos Canônicos (PPC 2020)</span>
+        </span>
+        <span class="text-[11px] font-mono text-gray-500 font-normal">15 Rotas &darr;</span>
+      </summary>
+      <div class="pt-3 border-t border-[#DFDBD2] mt-2">
+        <p class="text-xs text-gray-600 mb-2 leading-relaxed">
+          Estrutura canônica de navegação curricular do Bacharelado em Gestão Pública (PPC 2020), distribuída nos 5 eixos institucionais simétricos:
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+          <a href="/" class="cagp-card p-3 no-underline flex flex-col justify-between">
+            <div class="text-[#8B1E2D] text-2xl mb-2"><i class="bi bi-compass" aria-hidden="true"></i></div>
+            <div>
+              <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">1. Hoje</span>
+              <span class="text-xs text-gray-500">Campus, RU & Bússola</span>
+            </div>
+          </a>
+          <a href="/curso" class="cagp-card p-3 no-underline flex flex-col justify-between">
+            <div class="text-[#005A9C] text-2xl mb-2"><i class="bi bi-mortarboard" aria-hidden="true"></i></div>
+            <div>
+              <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">2. Curso</span>
+              <span class="text-xs text-gray-500">PPC, Calouros & DCP</span>
+            </div>
+          </a>
+          <a href="/percurso" class="cagp-card p-3 no-underline flex flex-col justify-between">
+            <div class="text-[#15803D] text-2xl mb-2"><i class="bi bi-diagram-3" aria-hidden="true"></i></div>
+            <div>
+              <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">3. Currículo</span>
+              <span class="text-xs text-gray-500">Grade, 600h & Estágio</span>
+            </div>
+          </a>
+          <a href="/documentos" class="cagp-card p-3 no-underline flex flex-col justify-between">
+            <div class="text-[#B45309] text-2xl mb-2"><i class="bi bi-folder2-open" aria-hidden="true"></i></div>
+            <div>
+              <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">4. Acervo</span>
+              <span class="text-xs text-gray-500">PDFs Offline & Atos</span>
+            </div>
+          </a>
+          <a href="/sobre" class="cagp-card p-3 no-underline flex flex-col justify-between">
+            <div class="text-[#0A0A0A] text-2xl mb-2"><i class="bi bi-people" aria-hidden="true"></i></div>
+            <div>
+              <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block">5. O CAGP</span>
+              <span class="text-xs text-gray-500">Gestão & Estatuto</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </details>
   </div>
 
   <!-- Bússola Interativa por Momento (.cagp-tool-box) -->
@@ -235,6 +295,7 @@
 
 <script>
   function setupBussola() {
+    // 1. Alternância de Momentos da Bússola
     const tabs = document.querySelectorAll<HTMLButtonElement>('.bussola-tab');
     const panels = document.querySelectorAll<HTMLElement>('.bussola-panel');
     tabs.forEach((tab) => {
@@ -258,7 +319,82 @@
         });
       });
     });
+
+    // 2. Personalização de Meus Atalhos Discentes na Home
+    const box = document.getElementById('cagp-home-shortcuts-box');
+    const grid = document.getElementById('cagp-home-shortcuts-grid');
+    const editBtn = document.getElementById('cagp-home-shortcuts-edit-btn');
+
+    editBtn?.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('cagp:open-shortcuts'));
+    });
+
+    if (box && grid) {
+      const catalogRaw = box.getAttribute('data-catalog');
+      if (catalogRaw) {
+        try {
+          const catalog: any[] = JSON.parse(catalogRaw);
+          const map = new Map(catalog.map((c) => [c.id, c]));
+
+          const renderGrid = () => {
+            const rawStored = localStorage.getItem('cagp_discente_shortcuts_v1');
+            if (!rawStored) return;
+            const ids: string[] = JSON.parse(rawStored);
+            if (!Array.isArray(ids) || ids.length === 0) return;
+
+            grid.innerHTML = ids
+              .map((id) => {
+                const item = map.get(id) || catalog[0];
+                const isAction = Boolean(item.isAction && item.actionEvent);
+                return `
+                  <a
+                    href="${item.href}"
+                    data-shortcut-id="${item.id}"
+                    ${isAction ? `data-action="${item.actionEvent}"` : ''}
+                    class="cagp-card p-3 no-underline flex flex-col justify-between hover:border-[#0A0A0A] transition-all group"
+                  >
+                    <div class="text-2xl mb-2 flex items-center justify-between" style="color: ${item.color}">
+                      <i class="bi ${item.icon}" aria-hidden="true"></i>
+                      <span class="text-[10px] font-mono uppercase bg-gray-100 text-gray-600 px-1 py-0.2 rounded border border-gray-200 group-hover:border-[#0A0A0A]/40 transition-colors">
+                        ${item.category}
+                      </span>
+                    </div>
+                    <div>
+                      <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block group-hover:text-[#8B1E2D] transition-colors truncate">
+                        ${item.label}
+                      </span>
+                      <span class="text-[11px] text-gray-500 line-clamp-1">
+                        ${item.description}
+                      </span>
+                    </div>
+                  </a>
+                `;
+              })
+              .join('');
+
+            // Re-bind actions
+            grid.querySelectorAll('[data-action]').forEach((link) => {
+              link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const act = link.getAttribute('data-action');
+                if (act) window.dispatchEvent(new CustomEvent(act));
+              });
+            });
+          };
+
+          renderGrid();
+
+          window.addEventListener('cagp:vault-updated', (e: Event) => {
+            const custom = e as CustomEvent<{ key: string }>;
+            if (!custom.detail || custom.detail.key === 'cagp_discente_shortcuts_v1') {
+              renderGrid();
+            }
+          });
+        } catch {}
+      }
+    }
   }
+
   document.addEventListener('astro:page-load', setupBussola);
 </script>
 

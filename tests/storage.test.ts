@@ -101,4 +101,24 @@ describe('Cofre Discente & Backup Engine', () => {
     expect(storedGrade.savedCourses).toHaveLength(4);
     expect(storedGrade.savedCourses).toContain('ECN 140');
   });
+
+  it('salva e valida atalhos customizados discentes no cofre com limites', () => {
+    // Padrão
+    expect(getVaultItem('cagp_discente_shortcuts_v1')).toEqual([
+      'hoje',
+      'curso',
+      'percurso',
+      'documentos',
+      'sobre',
+    ]);
+
+    // Customizado válido
+    setVaultItem('cagp_discente_shortcuts_v1', ['calouros', 'acg', 'estagio', 'campus']);
+    expect(getVaultItem('cagp_discente_shortcuts_v1')).toEqual([
+      'calouros',
+      'acg',
+      'estagio',
+      'campus',
+    ]);
+  });
 });
