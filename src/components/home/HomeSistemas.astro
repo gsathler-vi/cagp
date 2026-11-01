@@ -1,5 +1,6 @@
 ---
 // HomeSistemas.astro - Sub-view 2: Central de Sistemas UFMG & Micro-Apps CAGP (Port Neo-Brutalista Quarto + Apple HIG)
+import { asset } from '../../lib/paths';
 ---
 
 <div class="space-y-4">
@@ -21,7 +22,7 @@
       <div class="cagp-card p-3 bg-white flex flex-col justify-between">
         <div>
           <div class="flex items-start gap-2.5 mb-1.5">
-            <img src="/logos/siga/siga-ufmg-fundo-azul.webp" alt="Logo SIGA UFMG" class="w-9 h-9 object-contain rounded-[4px] shrink-0 border border-[#DFDBD2] bg-white p-0.5" />
+            <img src={asset('/logos/siga/siga-ufmg-fundo-azul.webp')} alt="Logo SIGA UFMG" class="w-9 h-9 object-contain rounded-[4px] shrink-0 border border-[#DFDBD2] bg-white p-0.5" />
             <div class="min-w-0 flex-1">
               <div class="flex items-center justify-between gap-1">
                 <span class="font-['Oswald'] font-bold text-xs uppercase text-[#8B1E2D] truncate">SIGA UFMG</span>
@@ -44,7 +45,7 @@
             iOS
           </a>
           <span class="text-gray-300">·</span>
-          <a href="/documentos/manual-aplicativo-siga-ufmg.pdf" target="_blank" class="text-gray-600 hover:underline">
+          <a href={asset('/documentos/manual-aplicativo-siga-ufmg.pdf')} target="_blank" class="text-gray-600 hover:underline">
             Manual PDF
           </a>
         </div>
@@ -54,7 +55,7 @@
       <div class="cagp-card p-3 bg-white flex flex-col justify-between">
         <div>
           <div class="flex items-start gap-2.5 mb-1.5">
-            <img src="/logos/minhaufmg/logo-minha-ufmg.png" alt="Logo MinhaUFMG" class="w-9 h-9 object-contain rounded-[4px] shrink-0 border border-[#DFDBD2] bg-white p-0.5" />
+            <img src={asset('/logos/minhaufmg/logo-minha-ufmg.png')} alt="Logo MinhaUFMG" class="w-9 h-9 object-contain rounded-[4px] shrink-0 border border-[#DFDBD2] bg-white p-0.5" />
             <div class="min-w-0 flex-1">
               <div class="flex items-center justify-between gap-1">
                 <span class="font-['Oswald'] font-bold text-xs uppercase text-[#005A9C] truncate">MinhaUFMG</span>
@@ -79,7 +80,7 @@
       <div class="cagp-card p-3 bg-white flex flex-col justify-between">
         <div>
           <div class="flex items-start gap-2.5 mb-1.5">
-            <img src="/logos/fump/02-fump-logo-branco-fundo-colorido.png" alt="Logo FUMP" class="w-9 h-9 object-contain rounded-[4px] shrink-0 border border-[#DFDBD2] bg-white p-0.5" />
+            <img src={asset('/logos/fump/02-fump-logo-branco-fundo-colorido.png')} alt="Logo FUMP" class="w-9 h-9 object-contain rounded-[4px] shrink-0 border border-[#DFDBD2] bg-white p-0.5" />
             <div class="min-w-0 flex-1">
               <div class="flex items-center justify-between gap-1">
                 <span class="font-['Oswald'] font-bold text-xs uppercase text-[#15803D] truncate">FUMP</span>
@@ -104,7 +105,7 @@
       <div class="cagp-card p-3 bg-white flex flex-col justify-between">
         <div>
           <div class="flex items-start gap-2.5 mb-1.5">
-            <img src="/logos/interno-rotas/icone.svg" alt="Logo Interno Rotas" class="w-9 h-9 object-contain rounded-[4px] shrink-0 border border-[#DFDBD2] bg-white p-0.5" />
+            <img src={asset('/logos/interno-rotas/icone.svg')} alt="Logo Interno Rotas" class="w-9 h-9 object-contain rounded-[4px] shrink-0 border border-[#DFDBD2] bg-white p-0.5" />
             <div class="min-w-0 flex-1">
               <div class="flex items-center justify-between gap-1">
                 <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] truncate">Interno Rotas</span>

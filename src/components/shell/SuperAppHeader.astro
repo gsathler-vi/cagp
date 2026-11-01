@@ -1,6 +1,7 @@
 ---
 // SuperAppHeader.astro - Topbar Adaptativa (Mobile / Tablet / Desktop) com Dropdowns e Spotlight
 import { HEADER_NAV_ITEMS } from './headerNavData';
+import { asset } from '../../lib/paths';
 ---
 
 <header class="sticky top-0 z-[1040] w-full bg-white border-b border-[#DFDBD2] select-none" style="padding-top: env(safe-area-inset-top, 0px);">
@@ -8,7 +9,7 @@ import { HEADER_NAV_ITEMS } from './headerNavData';
     <!-- Brand / Logo -->
     <a href="/" class="flex items-center gap-2.5 text-inherit no-underline min-h-[44px] shrink-0" aria-label="Página Inicial CAGP">
       <div class="w-9 h-9 rounded-[4px] bg-white flex items-center justify-center p-1 border-2 border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A]">
-        <img src="/logos/cagp/10_simbolo_transparente_positivo.svg" alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
+        <img src={asset('/logos/cagp/10_simbolo_transparente_positivo.svg')} alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
       </div>
       <div class="leading-tight">
         <span class="block font-['Oswald'] font-black text-sm tracking-wide uppercase text-[#0A0A0A]">CAGP UFMG</span>

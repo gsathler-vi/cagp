@@ -1,5 +1,7 @@
 ---
 // MobileDrawer.astro - Menu Lateral Off-Canvas para Telas Mobile e Tablet (< 1024px)
+import { asset } from '../../lib/paths';
+
 const sections = [
   {
     title: 'CURSO & PESQUISA',
@@ -44,7 +46,7 @@ const sections = [
     <div class="cagp-drawer-header">
       <div class="flex items-center gap-2">
         <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center p-1 border-2 border-[#0A0A0A] shadow-[1.5px_1.5px_0px_#0A0A0A]">
-          <img src="/logos/cagp/10_simbolo_transparente_positivo.svg" alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
+          <img src={asset('/logos/cagp/10_simbolo_transparente_positivo.svg')} alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
         </div>
         <div>
           <span class="font-['Oswald'] font-black text-sm uppercase tracking-wide text-[#0A0A0A] block leading-none">

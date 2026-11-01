@@ -1,5 +1,6 @@
 ---
 // CalourosRotina.astro - Sub-view 2: Linha do Tempo da Noite & Transporte
+import { asset } from '../../lib/paths';
 ---
 
 <div class="space-y-4 text-[#0A0A0A]">
@@ -142,7 +143,7 @@
         <p class="text-xs text-gray-600 mt-0.5">Localização da FAFICH, Restaurantes Universitários (RU I e II), CAD 2 e vias dos Circulares:</p>
       </div>
       <a
-        href="/imagens/mapa-pampulha-detalhado.jpg"
+        href={asset('/imagens/mapa-pampulha-detalhado.jpg')}
         target="_blank"
         rel="noopener noreferrer"
         class="cagp-btn-secondary text-xs py-1.5 px-3 no-underline shrink-0 flex items-center gap-1.5"
@@ -153,7 +154,7 @@
 
     <div class="rounded-[6px] border-2 border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A] overflow-hidden bg-[#0A0A0A]">
       <img
-        src="/imagens/mapa-pampulha-detalhado.jpg"
+        src={asset('/imagens/mapa-pampulha-detalhado.jpg')}
         alt="Mapa detalhado do Campus Pampulha da UFMG destacando FAFICH, CAD 2, Restaurantes Universitários I e II e portarias"
         class="w-full h-auto max-h-[460px] object-cover"
         loading="lazy"

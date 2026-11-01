@@ -5,6 +5,7 @@ import PageHeader from '../components/ui/PageHeader.astro';
 import SegmentedControl from '../components/ui/SegmentedControl.astro';
 import JourneyNav from '../components/ui/JourneyNav.astro';
 import DocumentosTutorialDrca from '../components/documentos/DocumentosTutorialDrca.astro';
+import { asset, route } from '../lib/paths';
 
 const tabs = [
   { id: 'v1', shortLabel: 'Atos', fullLabel: '1. Atos Normativos', hash: '#atos' },
@@ -101,7 +102,7 @@ const drca = [
           <div class="flex items-center gap-1.5 shrink-0">
             {doc.readerSlug && (
               <a
-                href={`/documentos/${doc.readerSlug}`}
+                href={route(`/documentos/${doc.readerSlug}`)}
                 class="cagp-btn-secondary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1"
                 title="Ler transcrição integral em Markdown"
               >
@@ -109,7 +110,7 @@ const drca = [
                 <span>Ler</span>
               </a>
             )}
-            <a href={`/documentos/${doc.file}`} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
+            <a href={asset(`/documentos/${doc.file}`)} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
               <i class="bi bi-download" aria-hidden="true" />
               <span>PDF</span>
             </a>
@@ -139,7 +140,7 @@ const drca = [
           <div class="flex items-center gap-1.5 shrink-0">
             {doc.readerSlug && (
               <a
-                href={`/documentos/${doc.readerSlug}`}
+                href={route(`/documentos/${doc.readerSlug}`)}
                 class="cagp-btn-secondary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1"
                 title="Ler transcrição integral em Markdown"
               >
@@ -147,7 +148,7 @@ const drca = [
                 <span>Ler</span>
               </a>
             )}
-            <a href={`/documentos/${doc.file}`} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
+            <a href={asset(`/documentos/${doc.file}`)} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
               <i class="bi bi-download" aria-hidden="true" />
               <span>PDF</span>
             </a>
@@ -177,7 +178,7 @@ const drca = [
           <div class="flex items-center gap-1.5 shrink-0">
             {doc.readerSlug && (
               <a
-                href={`/documentos/${doc.readerSlug}`}
+                href={route(`/documentos/${doc.readerSlug}`)}
                 class="cagp-btn-secondary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1"
                 title="Ler transcrição integral em Markdown"
               >
@@ -185,7 +186,7 @@ const drca = [
                 <span>Ler</span>
               </a>
             )}
-            <a href={`/documentos/${doc.file}`} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
+            <a href={asset(`/documentos/${doc.file}`)} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
               <i class="bi bi-download" aria-hidden="true" />
               <span>PDF</span>
             </a>

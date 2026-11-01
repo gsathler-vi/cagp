@@ -1,5 +1,7 @@
 ---
 // EstagioTutorialTce.astro - Sub-view 2: Tutorial visual do Termo de Compromisso de Estágio (TCE)
+import { asset } from '../../lib/paths';
+
 const stats = [
   { label: 'Estágio Curricular A', ch: '180 h', desc: 'DCP 135 • 7º Período (12 créditos)', icon: 'bi-briefcase-fill' },
   { label: 'Estágio Curricular B', ch: '120 h', desc: 'DCP 136 • 8º Período (8 créditos)', icon: 'bi-clock-history' },
@@ -101,7 +103,7 @@ const docs = [
           Lei nº 11.788/2008
         </span>
         <a
-          href="/documentos/estagio-modelo-termo-de-compromisso-com-convenio.pdf"
+          href={asset('/documentos/estagio-modelo-termo-de-compromisso-com-convenio.pdf')}
           download
           class="cagp-btn-primary text-xs py-1.5 px-3 whitespace-nowrap no-underline inline-flex items-center gap-1.5 shrink-0"
         >
@@ -143,7 +145,7 @@ const docs = [
           <p class="text-xs text-gray-500">Visualização anotada do modelo padrão com os 4 blocos contratuais destacados:</p>
         </div>
         <a
-          href="/imagens/termo-compromisso-estagio-anotado.jpg"
+          href={asset('/imagens/termo-compromisso-estagio-anotado.jpg')}
           target="_blank"
           rel="noopener noreferrer"
           class="cagp-btn-secondary text-xs py-1 px-2.5 no-underline shrink-0 flex items-center gap-1"
@@ -154,7 +156,7 @@ const docs = [
 
       <div class="rounded-[6px] border-2 border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A] overflow-hidden bg-white">
         <img
-          src="/imagens/termo-compromisso-estagio-anotado.jpg"
+          src={asset('/imagens/termo-compromisso-estagio-anotado.jpg')}
           alt="Fac-símile oficial do Termo de Compromisso de Estágio (TCE) da UFMG anotado com os blocos de concedente, estagiário, interveniência e seguro"
           class="w-full h-auto max-h-[500px] object-contain"
           loading="lazy"

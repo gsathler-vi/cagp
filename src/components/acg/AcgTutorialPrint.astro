@@ -1,5 +1,6 @@
 ---
 // AcgTutorialPrint.astro - Visual anotado do Requerimento oficial de AAC (N-20229)
+import { asset } from '../../lib/paths';
 ---
 
 <div class="cagp-tool-box p-4 space-y-3 text-[#0A0A0A]">
@@ -20,7 +21,7 @@
         Passo a Passo
       </span>
       <a
-        href="/documentos/requerimento-atividade-integralizadora-credito-v20229.pdf"
+        href={asset('/documentos/requerimento-atividade-integralizadora-credito-v20229.pdf')}
         download
         class="cagp-btn-primary text-xs py-1.5 px-3 whitespace-nowrap no-underline inline-flex items-center gap-1.5 shrink-0"
       >
@@ -33,7 +34,7 @@
     <!-- Visual Anotado com Print e Pins Recalibrados -->
     <div class="cagp-doc-preview-wrapper" role="region" aria-label="Visualização anotada do Requerimento de AAC">
       <img
-        src="/imagens/tutoriais/print-requerimento-aac-1.png"
+        src={asset('/imagens/tutoriais/print-requerimento-aac-1.png')}
         alt="Formulário oficial de Requerimento de Atividade Integralizadora de Crédito AAC do Colegiado de Gestão Pública com marcações numeradas"
         class="cagp-doc-preview-img"
         loading="lazy"

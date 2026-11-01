@@ -1,5 +1,6 @@
 ---
 // CalourosFump.astro - Sub-view 4: Assistência Estudantil FUMP & PRAE
+import { asset } from '../../lib/paths';
 ---
 
 <div class="space-y-4 text-[#0A0A0A]">
@@ -89,7 +90,7 @@
       <a href="https://www.fump.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-btn-primary text-xs py-1.5 px-3 no-underline inline-flex items-center gap-1.5">
         <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Acessar Portal da FUMP &rarr;
       </a>
-      <a href="/documentos/portaria-prae-1286-2026-permanencia-estudantil.pdf" download class="cagp-btn-secondary text-xs py-1.5 px-3 no-underline inline-flex items-center gap-1.5">
+      <a href={asset('/documentos/portaria-prae-1286-2026-permanencia-estudantil.pdf')} download class="cagp-btn-secondary text-xs py-1.5 px-3 no-underline inline-flex items-center gap-1.5">
         <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Normas PRAE (PDF) &rarr;
       </a>
     </div>
@@ -107,7 +108,7 @@
           <p class="text-xs text-gray-600 mt-0.5">Fluxo oficial de cadastro socioeconômico e submissão documental:</p>
         </div>
         <a
-          href="/imagens/passo-a-passo-assistencia-fump.jpg"
+          href={asset('/imagens/passo-a-passo-assistencia-fump.jpg')}
           target="_blank"
           rel="noopener noreferrer"
           class="cagp-btn-secondary text-xs py-1 px-2.5 no-underline shrink-0 flex items-center gap-1"
@@ -118,7 +119,7 @@
 
       <div class="rounded-[6px] border-2 border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A] overflow-hidden bg-white">
         <img
-          src="/imagens/passo-a-passo-assistencia-fump.jpg"
+          src={asset('/imagens/passo-a-passo-assistencia-fump.jpg')}
           alt="Infográfico oficial da FUMP com o passo a passo de acesso ao Questionário Socioeconômico na Área do Aluno"
           class="w-full h-auto max-h-[500px] object-contain"
           loading="lazy"
