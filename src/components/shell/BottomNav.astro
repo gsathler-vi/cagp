@@ -57,7 +57,13 @@ const axes = [
 
 <script>
   function syncBottomNav() {
-    const currentPath = window.location.pathname;
+    const baseUrl = document.documentElement.dataset.baseUrl || '/';
+    const cleanBase = baseUrl.replace(/\/$/, '');
+    let currentPath = window.location.pathname;
+    if (cleanBase && currentPath.startsWith(cleanBase)) {
+      currentPath = currentPath.slice(cleanBase.length) || '/';
+    }
+
     const items = document.querySelectorAll('.cagp-nav-item');
     items.forEach((item) => {
       const matchPatterns = JSON.parse(item.getAttribute('data-match') || '[]');

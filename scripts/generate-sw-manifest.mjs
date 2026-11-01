@@ -1,6 +1,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+const githubRepo = process.env.GITHUB_REPOSITORY || '';
+const isUserPage = githubRepo.endsWith('.github.io');
+const repoName = githubRepo.split('/')[1] || '';
+const basePath = isGitHubActions && repoName && !isUserPage ? `/${repoName}` : '';
+const cleanBase = basePath.replace(/\/$/, '');
+
 function getFilesRecursively(dir, baseDir = dir) {
   let results = [];
   if (!fs.existsSync(dir)) return results;
@@ -11,7 +18,8 @@ function getFilesRecursively(dir, baseDir = dir) {
     if (stat && stat.isDirectory()) {
       results = results.concat(getFilesRecursively(fullPath, baseDir));
     } else {
-      const relPath = '/' + path.relative(baseDir, fullPath).replace(/\\/g, '/');
+      const subPath = '/' + path.relative(baseDir, fullPath).replace(/\\/g, '/');
+      const relPath = cleanBase + subPath;
       results.push(relPath);
       if (relPath.endsWith('/index.html')) {
         const dirPath = relPath.slice(0, -'index.html'.length);

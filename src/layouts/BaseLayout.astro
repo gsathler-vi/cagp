@@ -23,14 +23,14 @@ const {
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-base-url={import.meta.env.BASE_URL}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#8B1E2D" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/logos/cagp/10_simbolo_transparente_positivo.svg" />
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}logos/cagp/10_simbolo_transparente_positivo.svg`} />
+    <link rel="manifest" href={`${import.meta.env.BASE_URL}manifest.webmanifest`} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -131,9 +131,20 @@ const {
           '/gestao': { group: 5, depth: 1 }
         };
 
+        const baseUrl = document.documentElement.dataset.baseUrl || '/';
+        const cleanBase = baseUrl.replace(/\/$/, '');
+
+        function normalizePath(p) {
+          const raw = p.replace(/\/$/, '') || '/';
+          if (cleanBase && raw.startsWith(cleanBase)) {
+            return raw.slice(cleanBase.length) || '/';
+          }
+          return raw;
+        }
+
         function computeNavDir(fromPath, toPath) {
-          const cleanFrom = fromPath.replace(/\/$/, '') || '/';
-          const cleanTo = toPath.replace(/\/$/, '') || '/';
+          const cleanFrom = normalizePath(fromPath);
+          const cleanTo = normalizePath(toPath);
           const fm = ROUTE_META[cleanFrom] || { group: 1, depth: 0 };
           const tm = ROUTE_META[cleanTo] || { group: 1, depth: 0 };
 
@@ -147,9 +158,25 @@ const {
           return 'forward';
         }
 
+        function fixLinks(root = document) {
+          if (!cleanBase) return;
+          root.querySelectorAll('a[href^="/"]').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href && !href.startsWith(cleanBase) && !href.startsWith('//')) {
+              a.setAttribute('href', cleanBase + href);
+            }
+          });
+        }
+
         document.addEventListener('astro:before-preparation', function(event) {
           const fromPath = event.from.pathname;
-          const toPath = event.to.pathname;
+          let toPath = event.to.pathname;
+
+          if (cleanBase && toPath.startsWith('/') && !toPath.startsWith(cleanBase)) {
+            event.to.pathname = cleanBase + toPath;
+            toPath = event.to.pathname;
+          }
+
           const dir = computeNavDir(fromPath, toPath);
           document.documentElement.setAttribute('data-nav-dir', dir);
 
@@ -165,6 +192,8 @@ const {
         });
 
         document.addEventListener('astro:page-load', function() {
+          fixLinks();
+
           const bar = document.getElementById('cagp-route-progress-bar');
           const fill = bar ? bar.querySelector('.cagp-route-progress-fill') : null;
           if (bar && fill) {
@@ -183,7 +212,8 @@ const {
 
         if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
           window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js').catch((err) => {
+            const swPath = `${cleanBase}/sw.js`;
+            navigator.serviceWorker.register(swPath).catch((err) => {
               console.warn('[PWA] Service Worker registration failed:', err);
             });
           });
