@@ -7,8 +7,7 @@ import JourneyNav from '../components/ui/JourneyNav.astro';
 import HomeBussola from '../components/home/HomeBussola.astro';
 import HomeSistemas from '../components/home/HomeSistemas.astro';
 import HomeCagp from '../components/home/HomeCagp.astro';
-import HomeCampusTicker from '../components/home/HomeCampusTicker.astro';
-import { HomePassportLive } from '../components/home/HomePassportLive';
+import { HomeHeroHub } from '../components/home/HomeHeroHub';
 
 const tabs = [
   { id: 'v1', shortLabel: 'Hoje', fullLabel: '1. Bússola & Hoje', hash: '#hoje' },
@@ -18,33 +17,28 @@ const tabs = [
 
 const badges = [
   { label: 'Turno Noturno', variant: 'red' as const, icon: 'bi-moon-stars-fill' },
-  { label: '10 Semestres • 3.000h', variant: 'dark' as const, icon: 'bi-mortarboard-fill' },
   { label: 'FAFICH / UFMG', variant: 'blue' as const, icon: 'bi-bank' },
-  { label: 'RU II: 17h30-19h30', variant: 'dark' as const, icon: 'bi-clock-fill' },
-  { label: 'Circular até 22h45', variant: 'green' as const, icon: 'bi-bus-front' },
-  { label: 'PPC 2020', variant: 'gold' as const, icon: 'bi-shield-check' },
+  { label: 'PPC 2020 • 3.000h', variant: 'gold' as const, icon: 'bi-shield-check' },
 ];
 ---
 
 <BaseLayout title="Super App Discente" description="Portal Institucional e Super App Discente do Centro Acadêmico de Gestão Pública (CAGP FAFICH/UFMG).">
-  <!-- 1st Fold Header (360x640: y <= 200px) -->
+  <!-- 1st Fold Header Compacto (360x640: y <= 200px) -->
   <PageHeader
     eyebrow="Portal & Super App Discente Oficial"
     title="Centro Acadêmico de Gestão Pública"
-    subtitle="Entidade legítima de representação discente da FAFICH/UFMG. Simule horas de Extensão e AAC (600h), consulte as 27 obrigatórias e 68 optativas, verifique dispensa de estágio (Art. 41) e acesse os documentos oficiais offline."
+    subtitle="Entidade legítima de representação discente da FAFICH/UFMG • Bacharelado em Gestão Pública"
     badges={badges}
   />
 
-  <!-- Plantão Discente & Campus Live Ticker -->
-  <HomeCampusTicker />
+  <!-- Super Módulo Hero Discente (Passaporte & UFMG no Agora com Pílulas Apple HIG) -->
+  <HomeHeroHub client:load />
 
-  <!-- Segmented Control (Top at y <= 200px) -->
+  <!-- Segmented Control (Sub-views da Home) -->
   <SegmentedControl tabs={tabs} defaultTab="v1" />
 
   <!-- Sub-view 1: Bússola & Hoje -->
   <section id="ws-panel-v1" class="cagp-workspace-view space-y-4" data-ws-panel="v1">
-    <!-- Passaporte Acadêmico CAGP Live -->
-    <HomePassportLive client:load />
     <HomeBussola />
   </section>
 
