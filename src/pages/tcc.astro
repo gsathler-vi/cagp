@@ -19,13 +19,6 @@ const badges = [
   { label: 'Termo de Aceite Obrigatório', variant: 'gold' as const, icon: 'bi-file-earmark-check-fill' },
 ];
 
-const axisPill = {
-  axisName: 'Eixo 3 · Currículo',
-  axisIcon: 'bi-diagram-3',
-  parentLabel: 'Currículo',
-  parentHref: '/percurso',
-  currentLabel: 'TCC (180h)',
-};
 ---
 
 <BaseLayout title="Trabalho de Conclusão de Curso (TCC)" description="Regulamento oficial do TCC de Gestão Pública da UFMG (180h: DCP 089 e DCP 137), modalidades e termo de aceite.">
@@ -33,7 +26,6 @@ const axisPill = {
     title="Trabalho de Conclusão de Curso (180h)"
     subtitle="Matriz das 4 modalidades oficiais aceitas pelo Colegiado (Art. 19), projeto em DCP 089 (60h), defesa em DCP 137 (120h) e termo de aceite orientador."
     badges={badges}
-    axisPill={axisPill}
   />
 
   <SegmentedControl tabs={tabs} defaultTab="v1" />

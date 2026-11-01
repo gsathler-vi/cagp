@@ -8,9 +8,11 @@ import CursoVisao from '../components/curso/CursoVisao.astro';
 import CursoEgressos from '../components/curso/CursoEgressos.astro';
 import CursoColegiado from '../components/curso/CursoColegiado.astro';
 import CursoIngresso from '../components/curso/CursoIngresso.astro';
+import AxisOverview from '../components/shell/AxisOverview.astro';
 
 const tabs = [
-  { id: 'v1', shortLabel: 'Visão', fullLabel: '1. Visão Geral & Cientometria', hash: '#visao' },
+  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Eixo', hash: '#visao-geral' },
+  { id: 'v1', shortLabel: 'O Curso', fullLabel: '1. Visão Geral & Cientometria', hash: '#visao' },
   { id: 'v2', shortLabel: 'Egressos', fullLabel: '2. Egressos & Salários', hash: '#egressos' },
   { id: 'v3', shortLabel: 'Colegiado', fullLabel: '3. Colegiado & Secretaria', hash: '#colegiado' },
   { id: 'v4', shortLabel: 'Ingresso', fullLabel: '4. Formas de Ingresso', hash: '#ingresso' },
@@ -23,10 +25,6 @@ const badges = [
   { label: 'Turno Noturno', variant: 'green' as const, icon: 'bi-moon-stars-fill' },
 ];
 
-const breadcrumbs = [
-  { label: 'Início', href: '/' },
-  { label: 'O Curso' },
-];
 ---
 
 <BaseLayout title="O Curso de Gestão Pública" description="História, excelência Nota 4 MEC, cientometria, salários dos egressos e governança na FAFICH/UFMG.">
@@ -34,13 +32,17 @@ const breadcrumbs = [
     title="O Bacharelado em Gestão Pública"
     subtitle="Formação pública de excelência voltada para formulação, implementação e avaliação de políticas públicas no Estado brasileiro, sediada no Departamento de Ciência Política (Conceito 7 CAPES)."
     badges={badges}
-    breadcrumbs={breadcrumbs}
   />
 
-  <SegmentedControl tabs={tabs} defaultTab="v1" />
+  <SegmentedControl tabs={tabs} defaultTab="v0" />
+
+  <!-- Sub-view 0: Visão Geral do Eixo 2 (Curso) -->
+  <section id="ws-panel-v0" class="cagp-workspace-view" data-ws-panel="v0">
+    <AxisOverview axisId="curso" />
+  </section>
 
   <!-- Sub-view 1: Visão Geral -->
-  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1">
+  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1" hidden>
     <CursoVisao />
   </section>
 

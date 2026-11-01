@@ -24,13 +24,6 @@ const badges = [
   { label: 'CEAG FAFICH 08h–22h', variant: 'blue' as const, icon: 'bi-building' },
 ];
 
-const axisPill = {
-  axisName: 'Eixo 2 · Curso',
-  axisIcon: 'bi-mortarboard',
-  parentLabel: 'O Curso',
-  parentHref: '/curso',
-  currentLabel: 'Guia do Calouro',
-};
 ---
 
 <BaseLayout title="Guia do Calouro" description="Checklist interativo dos primeiros 30 dias na UFMG, rotina do noturno, espaços da FAFICH e assistência estudantil FUMP.">
@@ -38,7 +31,6 @@ const axisPill = {
     title="Guia de Sobrevivência do Calouro"
     subtitle="Checklist interativo dos primeiros 30 dias, rotina noturna, jantar no RU II, circulares gratuitos, secretaria Sala F-2039 e suporte FUMP."
     badges={badges}
-    axisPill={axisPill}
   />
 
   <SegmentedControl tabs={tabs} defaultTab="v1" />

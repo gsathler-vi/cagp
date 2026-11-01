@@ -21,13 +21,6 @@ const badges = [
   { label: 'DCP • PPGCP Nota 7', variant: 'gold' as const, icon: 'bi-star-fill' },
 ];
 
-const axisPill = {
-  axisName: 'Eixo 2 · Curso',
-  axisIcon: 'bi-mortarboard',
-  parentLabel: 'O Curso',
-  parentHref: '/curso',
-  currentLabel: 'Pesquisa & IC',
-};
 ---
 
 <BaseLayout title="Pesquisa & Extensão" description="Diretório dos 11 núcleos de pesquisa do DCP (Conceito 7 CAPES), Iniciação Científica (90h AAC) e Programa de Imersão.">
@@ -35,7 +28,6 @@ const axisPill = {
     title="Pesquisa, Iniciação Científica & Imersão"
     subtitle="Diretório dos 11 núcleos de pesquisa do DCP (Conceito 7 CAPES), Iniciação Científica (até 90h AAC) e Programa de Imersão Docente."
     badges={badges}
-    axisPill={axisPill}
   />
 
   <SegmentedControl tabs={tabs} defaultTab="v1" />

@@ -20,13 +20,6 @@ const badges = [
   { label: 'Regulamento N-20229', variant: 'green' as const, icon: 'bi-shield-check' },
 ];
 
-const axisPill = {
-  axisName: 'Eixo 3 · Currículo',
-  axisIcon: 'bi-diagram-3',
-  parentLabel: 'Currículo',
-  parentHref: '/percurso',
-  currentLabel: 'Estágio Supervisionado',
-};
 ---
 
 <BaseLayout title="Estágio Supervisionado" description="Regras do estágio supervisionado de Gestão Pública da UFMG (300h: DCP 135 e DCP 136) e simulador do Art. 41.">
@@ -34,7 +27,6 @@ const axisPill = {
     title="Estágio Supervisionado (300h)"
     subtitle="Verificador interativo de integralização por experiência profissional (Art. 41), regras do Estágio Obrigatório A e B e tutorial visual do Termo de Compromisso (TCE)."
     badges={badges}
-    axisPill={axisPill}
   />
 
   <SegmentedControl tabs={tabs} defaultTab="v1" />

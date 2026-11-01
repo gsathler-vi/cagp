@@ -10,8 +10,10 @@ import PercursoTimeline from '../components/percurso/PercursoTimeline.astro';
 import PercursoOptativasSection from '../components/percurso/PercursoOptativasSection.astro';
 import { MinhaGradeDossie } from '../components/percurso/MinhaGradeDossie';
 import PercursoSimulador from '../components/percurso/PercursoSimulador.astro';
+import AxisOverview from '../components/shell/AxisOverview.astro';
 
 const tabs = [
+  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Eixo', hash: '#visao-geral' },
   { id: 'v1', shortLabel: 'Grafo & Grade', fullLabel: '1. Grafo 10P & 27 Obrigatórias', hash: '#grafo' },
   { id: 'v2', shortLabel: '68 Optativas', fullLabel: '2. Catálogo de 68 Optativas', hash: '#optativas' },
   { id: 'v3', shortLabel: 'Minha Grade', fullLabel: '3. Minha Grade & Percursos', hash: '#minha-grade' },
@@ -25,10 +27,6 @@ const badges = [
   { label: 'PPC 2020 & N-20229', variant: 'gold' as const, icon: 'bi-shield-check' },
 ];
 
-const breadcrumbs = [
-  { label: 'Início', href: '/' },
-  { label: 'Currículo' },
-];
 ---
 
 <BaseLayout
@@ -40,13 +38,17 @@ const breadcrumbs = [
     title="Percurso Curricular, Optativas & Minha Grade"
     subtitle="Navegue pelas 27 disciplinas obrigatórias com travas do SIGA, explore o catálogo de 68 optativas com filtros temáticos e acompanhe o percentual de integralização no dossiê pessoal da sua grade."
     badges={badges}
-    breadcrumbs={breadcrumbs}
   />
 
-  <SegmentedControl tabs={tabs} defaultTab="v1" />
+  <SegmentedControl tabs={tabs} defaultTab="v0" />
+
+  <!-- Sub-view 0: Visão Geral do Eixo 3 (Currículo) -->
+  <section id="ws-panel-v0" class="cagp-workspace-view" data-ws-panel="v0">
+    <AxisOverview axisId="curriculo" />
+  </section>
 
   <!-- Sub-view 1: Grafo Interativo 10P e Ementário das 27 Obrigatórias -->
-  <section id="ws-panel-v1" class="cagp-workspace-view space-y-4" data-ws-panel="v1">
+  <section id="ws-panel-v1" class="cagp-workspace-view space-y-4" data-ws-panel="v1" hidden>
     <FactCheckBanner
       claim="Posso me matricular em matérias avançadas sem cumprir os pré-requisitos formais se o professor autorizar de boca?"
       verdict="obrigatorio"

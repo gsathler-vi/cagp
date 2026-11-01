@@ -18,14 +18,6 @@ const badges = [
   { label: 'Acessibilidade NAI', variant: 'green' as const, icon: 'bi-universal-access' },
 ];
 
-const axisPill = {
-  axisName: 'Eixo 4 · Acervo',
-  axisIcon: 'bi-folder2-open',
-  parentLabel: 'Acervo',
-  parentHref: '/documentos',
-  currentLabel: 'Dúvidas Frequentes',
-};
-
 const faqs = [
   {
     q: '1. Como funciona o trancamento parcial e total de matrícula?',
@@ -98,7 +90,6 @@ const faqs = [
     title="Perguntas Frequentes & Acessibilidade"
     subtitle="Respostas regimentais sobre trancamento, pré-requisitos, dispensa de estágio (Art. 41), EaD, turno noturno e recursos de inclusão NAI/UFMG."
     badges={badges}
-    axisPill={axisPill}
   />
 
   <SegmentedControl tabs={tabs} defaultTab="v1" />

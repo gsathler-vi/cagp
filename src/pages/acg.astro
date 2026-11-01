@@ -22,13 +22,6 @@ const badges = [
   { label: 'PPC N-20229', variant: 'blue' as const, icon: 'bi-shield-check' },
 ];
 
-const axisPill = {
-  axisName: 'Eixo 3 · Currículo',
-  axisIcon: 'bi-diagram-3',
-  parentLabel: 'Currículo',
-  parentHref: '/percurso',
-  currentLabel: 'Extensão & AAC (600h)',
-};
 ---
 
 <BaseLayout title="Extensão & AAC (600h)" description="Calculadora interativa de 300h de Extensão Obrigatória e 300h de AAC com monitoramento do prazo legal de 120 dias.">
@@ -36,7 +29,6 @@ const axisPill = {
     title="Extensão Obrigatória & AAC (600h)"
     subtitle="Simulador interativo com trava automática de tetos regimentais, Guardião do prazo fatal de 120 dias corridos (Art. 15, § 4º) e tutorial de tramitação oficial."
     badges={badges}
-    axisPill={axisPill}
   />
 
   <SegmentedControl tabs={tabs} defaultTab="v1" />

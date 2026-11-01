@@ -5,9 +5,11 @@ import PageHeader from '../components/ui/PageHeader.astro';
 import SegmentedControl from '../components/ui/SegmentedControl.astro';
 import JourneyNav from '../components/ui/JourneyNav.astro';
 import DocumentosTutorialDrca from '../components/documentos/DocumentosTutorialDrca.astro';
+import AxisOverview from '../components/shell/AxisOverview.astro';
 import { asset, route } from '../lib/paths';
 
 const tabs = [
+  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Acervo', hash: '#visao-geral' },
   { id: 'v1', shortLabel: 'Atos', fullLabel: '1. Atos Normativos', hash: '#atos' },
   { id: 'v2', shortLabel: 'Formulários', fullLabel: '2. Formulários & Requerimentos', hash: '#formularios' },
   { id: 'v3', shortLabel: 'DRCA', fullLabel: '3. Processos DRCA & Prazos', hash: '#drca' },
@@ -18,11 +20,6 @@ const badges = [
   { label: 'Formulários SEI / Colegiado', variant: 'dark' as const, icon: 'bi-journal-check' },
   { label: 'Processos DRCA / UFMG', variant: 'blue' as const, icon: 'bi-archive-fill' },
   { label: 'Offline & Custo Zero', variant: 'gold' as const, icon: 'bi-cloud-check-fill' },
-];
-
-const breadcrumbs = [
-  { label: 'Início', href: '/' },
-  { label: 'Acervo' },
 ];
 
 const atos = [
@@ -63,10 +60,14 @@ const drca = [
     title="Acervo de Documentos & Modelos"
     subtitle="Cofre offline de atos normativos, matrizes curriculares e formulários oficiais da FAFICH/UFMG em PDF com integridade factual preservada."
     badges={badges}
-    breadcrumbs={breadcrumbs}
   />
 
-  <SegmentedControl tabs={tabs} defaultTab="v1" />
+  <SegmentedControl tabs={tabs} defaultTab="v0" />
+
+  <!-- Sub-view 0: Visão Geral do Eixo 4 (Acervo) -->
+  <section id="ws-panel-v0" class="cagp-workspace-view" data-ws-panel="v0">
+    <AxisOverview axisId="acervo" />
+  </section>
 
   <!-- Campo de Busca em Tempo Real -->
   <div class="mb-3 cagp-card p-3 bg-white">
@@ -83,7 +84,7 @@ const drca = [
   </div>
 
   <!-- Sub-view 1: Atos Normativos -->
-  <section id="ws-panel-v1" class="cagp-workspace-view space-y-2" data-ws-panel="v1">
+  <section id="ws-panel-v1" class="cagp-workspace-view space-y-2" data-ws-panel="v1" hidden>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
       {atos.map((doc, idx) => (
         <div class="doc-card cagp-card cagp-stagger-enter p-3 bg-white flex items-center justify-between gap-3 transition-all" style={`--stagger-index: ${idx}`} data-search={`${doc.title} ${doc.desc} ${doc.badge}`.toLowerCase()}>

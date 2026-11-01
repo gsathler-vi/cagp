@@ -7,8 +7,10 @@ import JourneyNav from '../components/ui/JourneyNav.astro';
 import SobrePrincipios from '../components/sobre/SobrePrincipios.astro';
 import SobreGovernanca from '../components/sobre/SobreGovernanca.astro';
 import SobreEsferas from '../components/sobre/SobreEsferas.astro';
+import AxisOverview from '../components/shell/AxisOverview.astro';
 
 const tabs = [
+  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Eixo', hash: '#visao-geral' },
   { id: 'v1', shortLabel: 'Princípios', fullLabel: '1. Princípios & Missão', hash: '#principios' },
   { id: 'v2', shortLabel: 'Governança', fullLabel: '2. Governança & Estatuto', hash: '#governanca' },
   { id: 'v3', shortLabel: 'Esferas', fullLabel: '3. Esferas de Representação', hash: '#esferas' },
@@ -21,10 +23,6 @@ const badges = [
   { label: 'Os Candangos FAFICH', variant: 'gold' as const, icon: 'bi-shield-fill-check' },
 ];
 
-const breadcrumbs = [
-  { label: 'Início', href: '/' },
-  { label: 'O CAGP' },
-];
 ---
 
 <BaseLayout title="O Centro Acadêmico (CAGP)" description="História, governança, estatuto interno e esferas de representação do Centro Acadêmico de Gestão Pública da FAFICH/UFMG.">
@@ -32,13 +30,17 @@ const breadcrumbs = [
     title="O Centro Acadêmico de Gestão Pública"
     subtitle="Entidade legítima de representação discente da FAFICH/UFMG, fundada na defesa da universidade pública, plural e com compromisso republicano."
     badges={badges}
-    breadcrumbs={breadcrumbs}
   />
 
-  <SegmentedControl tabs={tabs} defaultTab="v1" />
+  <SegmentedControl tabs={tabs} defaultTab="v0" />
+
+  <!-- Sub-view 0: Visão Geral do Eixo 5 (O CAGP) -->
+  <section id="ws-panel-v0" class="cagp-workspace-view" data-ws-panel="v0">
+    <AxisOverview axisId="cagp" />
+  </section>
 
   <!-- Sub-view 1: Princípios & Missão -->
-  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1">
+  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1" hidden>
     <SobrePrincipios />
   </section>
 

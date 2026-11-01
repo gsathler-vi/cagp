@@ -1,0 +1,52 @@
+---
+// src/components/widgets/OverviewGestaoWidget.astro — Widget da Gestão Semente e Talentos (Eixo 5: O CAGP)
+import { route } from '../../lib/paths';
+---
+
+<div class="cagp-card p-4 bg-white border border-[#DFDBD2] rounded-xl flex flex-col justify-between h-full shadow-sm hover:border-[#0A0A0A] transition-all">
+  <div>
+    <!-- Header do Widget -->
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <div class="flex items-center gap-2">
+        <span class="w-9 h-9 rounded-lg bg-[#FF8718]/15 text-[#FF8718] flex items-center justify-center text-lg border border-[#FF8718]/30">
+          <i class="bi bi-award" aria-hidden="true"></i>
+        </span>
+        <div>
+          <h3 class="font-['Oswald'] font-bold text-sm uppercase text-[#0A0A0A] leading-tight">
+            Gestão Chapa Semente
+          </h3>
+          <span class="text-[11px] text-gray-500 font-mono">Diretoria Executiva 2026</span>
+        </div>
+      </div>
+      <span class="px-2 py-0.5 rounded font-['Oswald'] text-xs font-bold bg-[#FF8718] text-[#0A0A0A]">
+        Ativa
+      </span>
+    </div>
+
+    <!-- Conteúdo & Banco de Talentos -->
+    <div class="space-y-2 mb-4">
+      <p class="text-xs text-gray-700 leading-relaxed">
+        Representação discente combativa, plural e transparente nos colegiados da UFMG, FAFICH e Diretório Central dos Estudantes (DCE).
+      </p>
+
+      <div class="p-2.5 bg-[#F7F5F0] border border-[#DFDBD2] rounded-lg text-xs space-y-1">
+        <div class="font-bold text-[#0A0A0A] flex items-center gap-1.5">
+          <i class="bi bi-stars text-[#FF8718]" aria-hidden="true"></i>
+          <span>Banco de Talentos Discente</span>
+        </div>
+        <p class="text-[11px] text-gray-600">
+          Cadastre suas habilidades em comunicação, eventos, pesquisa ou finanças para atuar nas comissões.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ação Apple HIG -->
+  <a
+    href={route('/gestao')}
+    class="min-h-[44px] px-3 py-2 bg-[#0A0A0A] text-white hover:bg-[#FF8718] hover:text-[#0A0A0A] rounded-lg font-['Oswald'] text-xs uppercase font-bold tracking-wider flex items-center justify-center gap-2 transition-all no-underline mt-2 shadow-[2px_2px_0px_#0A0A0A]"
+  >
+    <span>Conhecer Diretoria & Talentos</span>
+    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+  </a>
+</div>
