@@ -281,6 +281,9 @@
     }
 
     savePrefs();
+    try {
+      window.dispatchEvent(new CustomEvent('cagp:a11y:changed', { detail: Object.assign({}, currentPrefs) }));
+    } catch (e) {}
   }
 
   // Régua de leitura: rastrear cursor suavemente
@@ -407,19 +410,30 @@
     }
   });
 
-  // Teclado: Escape fecha painel, Alt+A abre/fecha
+  // Teclado: Alt+A navega para Acessibilidade em Configurações, Alt+C abre Configurações
   window.addEventListener('keydown', function (e) {
-    // Atalho Alt + A ou Shift + Alt + A
     if (e.altKey && (e.key === 'a' || e.key === 'A' || e.code === 'KeyA')) {
       e.preventDefault();
-      if (panel.hasAttribute('hidden')) {
-        openPanel();
+      if (window.location.pathname.endsWith('configuracoes.html') || window.location.pathname.endsWith('configuracoes')) {
+        const sec = document.getElementById('acessibilidade');
+        if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+      } else if (window.cagpNavigate) {
+        window.cagpNavigate('configuracoes.html#acessibilidade');
       } else {
-        closePanel();
+        window.location.href = 'configuracoes.html#acessibilidade';
       }
     }
 
-    if (e.key === 'Escape' && !panel.hasAttribute('hidden')) {
+    if (e.altKey && (e.key === 'c' || e.key === 'C' || e.code === 'KeyC' || e.key === ',')) {
+      e.preventDefault();
+      if (window.cagpNavigate) {
+        window.cagpNavigate('configuracoes.html');
+      } else {
+        window.location.href = 'configuracoes.html';
+      }
+    }
+
+    if (e.key === 'Escape' && panel && !panel.hasAttribute('hidden')) {
       e.preventDefault();
       closePanel();
     }

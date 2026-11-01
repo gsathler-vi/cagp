@@ -1,0 +1,68 @@
+---
+// sobre.astro - A4 Guia: 3 sub-views (Princípios · Governança · Esferas)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import SegmentedControl from '../components/ui/SegmentedControl.astro';
+import JourneyNav from '../components/ui/JourneyNav.astro';
+import SobrePrincipios from '../components/sobre/SobrePrincipios.astro';
+import SobreGovernanca from '../components/sobre/SobreGovernanca.astro';
+import SobreEsferas from '../components/sobre/SobreEsferas.astro';
+
+const tabs = [
+  { id: 'v1', shortLabel: 'Princípios', fullLabel: '1. Princípios & Missão', hash: '#principios' },
+  { id: 'v2', shortLabel: 'Governança', fullLabel: '2. Governança & Estatuto', hash: '#governanca' },
+  { id: 'v3', shortLabel: 'Esferas', fullLabel: '3. Esferas de Representação', hash: '#esferas' },
+];
+
+const badges = [
+  { label: 'Regimento de 14/10/2024', variant: 'red' as const, icon: 'bi-bank' },
+  { label: 'Assembleia Geral Soberana', variant: 'dark' as const, icon: 'bi-people-fill' },
+  { label: '7 Diretorias Executivas', variant: 'blue' as const, icon: 'bi-diagram-3-fill' },
+  { label: 'Os Candangos FAFICH', variant: 'gold' as const, icon: 'bi-shield-fill-check' },
+];
+
+const breadcrumbs = [
+  { label: 'Início', href: '/' },
+  { label: 'O CAGP' },
+];
+---
+
+<BaseLayout title="O Centro Acadêmico (CAGP)" description="História, governança, estatuto interno e esferas de representação do Centro Acadêmico de Gestão Pública da FAFICH/UFMG.">
+  <PageHeader
+    title="O Centro Acadêmico de Gestão Pública"
+    subtitle="Entidade legítima de representação discente da FAFICH/UFMG, fundada na defesa da universidade pública, plural e com compromisso republicano."
+    badges={badges}
+    breadcrumbs={breadcrumbs}
+  />
+
+  <SegmentedControl tabs={tabs} defaultTab="v1" />
+
+  <!-- Sub-view 1: Princípios & Missão -->
+  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1">
+    <SobrePrincipios />
+  </section>
+
+  <!-- Sub-view 2: Governança & Estatuto -->
+  <section id="ws-panel-v2" class="cagp-workspace-view" data-ws-panel="v2" hidden>
+    <SobreGovernanca />
+  </section>
+
+  <!-- Sub-view 3: Esferas de Representação -->
+  <section id="ws-panel-v3" class="cagp-workspace-view" data-ws-panel="v3" hidden>
+    <SobreEsferas />
+  </section>
+
+  <!-- Journey Navigation Trail -->
+  <JourneyNav
+    prev={{
+      title: 'Dúvidas Frequentes & Acessibilidade',
+      href: '/faq',
+      desc: 'Respostas regimentais sobre trancamento, pré-requisitos e auxílios.',
+    }}
+    next={{
+      title: 'Gestão em Exercício & Equipe',
+      href: '/gestao',
+      desc: 'Conheça a equipe da gestão empossada, organograma das 7 diretorias e prestação de contas.',
+    }}
+  />
+</BaseLayout>

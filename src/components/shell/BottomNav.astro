@@ -1,0 +1,79 @@
+---
+// BottomNav.astro - 5 Eixos Canônicos com transition:persist (Mobile & Tablet)
+const axes = [
+  { id: 'axis-1', label: 'Hoje', href: '/', icon: 'bi-compass', match: ['^/$'] },
+  { id: 'axis-2', label: 'Curso', href: '/curso', icon: 'bi-mortarboard', match: ['^/curso', '^/calouros', '^/pesquisa'] },
+  { id: 'axis-3', label: 'Currículo', href: '/percurso', icon: 'bi-diagram-3', match: ['^/percurso', '^/optativas', '^/acg', '^/estagio', '^/tcc', '^/estagio-tcc'] },
+  { id: 'axis-4', label: 'Acervo', href: '/documentos', icon: 'bi-folder2-open', match: ['^/documentos', '^/faq', '^/mapa-do-site'] },
+  { id: 'axis-5', label: 'O CAGP', href: '/sobre', icon: 'bi-people', match: ['^/sobre', '^/gestao'] },
+];
+---
+
+<nav
+  id="cagp-bottom-nav"
+  transition:persist="main-bottom-nav"
+  class="lg:hidden fixed bottom-0 left-0 right-0 z-[1040] bg-[#FFFFFF] border-t border-[#DFDBD2] shadow-[0_-2px_10px_rgba(0,0,0,0.05)] select-none"
+  style="padding-bottom: env(safe-area-inset-bottom, 0px);"
+  aria-label="Navegação Principal dos 5 Eixos"
+>
+  <div class="max-w-xl mx-auto px-2 flex items-center justify-around h-16">
+    {axes.map((axis) => (
+      <a
+        href={axis.href}
+        id={axis.id}
+        data-match={JSON.stringify(axis.match)}
+        class="cagp-nav-item flex flex-col items-center justify-center min-w-[56px] min-h-[48px] py-1 text-gray-500 hover:text-[#8B1E2D] transition-all no-underline"
+      >
+        <i class={`bi ${axis.icon} text-xl`} aria-hidden="true"></i>
+        <span class="text-[11px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">{axis.label}</span>
+      </a>
+    ))}
+  </div>
+</nav>
+
+<style>
+  .cagp-nav-item.is-active {
+    color: #8B1E2D !important;
+    font-weight: 700;
+    position: relative;
+  }
+  .cagp-nav-item.is-active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 3px;
+    background-color: #8B1E2D;
+    border-radius: 2px;
+  }
+  .cagp-nav-item.is-active i {
+    transform: scale(1.1);
+  }
+  .cagp-nav-item:active {
+    transform: scale(0.92);
+  }
+</style>
+
+<script>
+  function syncBottomNav() {
+    const currentPath = window.location.pathname;
+    const items = document.querySelectorAll('.cagp-nav-item');
+    items.forEach((item) => {
+      const matchPatterns = JSON.parse(item.getAttribute('data-match') || '[]');
+      const isMatched = matchPatterns.some((pattern: string) => {
+        const regex = new RegExp(pattern);
+        return regex.test(currentPath) || (pattern === '^/$' && (currentPath === '' || currentPath === '/index.html'));
+      });
+      if (isMatched) {
+        item.classList.add('is-active');
+        item.setAttribute('aria-current', 'page');
+      } else {
+        item.classList.remove('is-active');
+        item.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  document.addEventListener('astro:page-load', syncBottomNav);
+</script>

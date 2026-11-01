@@ -1,0 +1,110 @@
+---
+// percurso.astro - Central Curricular 3-em-1 (Grafo 10P · 68 Optativas · Minha Grade & Percursos)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import SegmentedControl from '../components/ui/SegmentedControl.astro';
+import JourneyNav from '../components/ui/JourneyNav.astro';
+import FactCheckBanner from '../components/ui/FactCheckBanner.astro';
+import { CurriculumGraph } from '../components/curriculum/CurriculumGraph';
+import PercursoTimeline from '../components/percurso/PercursoTimeline.astro';
+import PercursoOptativasSection from '../components/percurso/PercursoOptativasSection.astro';
+import { MinhaGradeDossie } from '../components/percurso/MinhaGradeDossie';
+import PercursoSimulador from '../components/percurso/PercursoSimulador.astro';
+
+const tabs = [
+  { id: 'v1', shortLabel: 'Grafo & Grade', fullLabel: '1. Grafo 10P & 27 Obrigatórias', hash: '#grafo' },
+  { id: 'v2', shortLabel: '68 Optativas', fullLabel: '2. Catálogo de 68 Optativas', hash: '#optativas' },
+  { id: 'v3', shortLabel: 'Minha Grade', fullLabel: '3. Minha Grade & Percursos', hash: '#minha-grade' },
+];
+
+const badges = [
+  { label: 'Central Curricular 3-em-1', variant: 'red' as const, icon: 'bi-diagram-3-fill' },
+  { label: '27 Obrigatórias • 1.620h', variant: 'dark' as const, icon: 'bi-book-half' },
+  { label: '68 Optativas Homologadas', variant: 'blue' as const, icon: 'bi-collection-fill' },
+  { label: '10 Semestres Noturno', variant: 'green' as const, icon: 'bi-calendar3' },
+  { label: 'PPC 2020 & N-20229', variant: 'gold' as const, icon: 'bi-shield-check' },
+];
+
+const breadcrumbs = [
+  { label: 'Início', href: '/' },
+  { label: 'Currículo' },
+];
+---
+
+<BaseLayout
+  title="Central Curricular: Grafo 10P, Optativas & Minha Grade"
+  description="Central Curricular unificada de Gestão Pública UFMG: mapa interativo dos 10 semestres, catálogo completo de 68 optativas, ementas oficiais e dossiê Minha Grade."
+>
+  <PageHeader
+    eyebrow="Eixo 3 · Central Curricular Unificada"
+    title="Percurso Curricular, Optativas & Minha Grade"
+    subtitle="Navegue pelas 27 disciplinas obrigatórias com travas do SIGA, explore o catálogo de 68 optativas com filtros temáticos e acompanhe o percentual de integralização no dossiê pessoal da sua grade."
+    badges={badges}
+    breadcrumbs={breadcrumbs}
+  />
+
+  <SegmentedControl tabs={tabs} defaultTab="v1" />
+
+  <!-- Sub-view 1: Grafo Interativo 10P e Ementário das 27 Obrigatórias -->
+  <section id="ws-panel-v1" class="cagp-workspace-view space-y-4" data-ws-panel="v1">
+    <FactCheckBanner
+      claim="Posso me matricular em matérias avançadas sem cumprir os pré-requisitos formais se o professor autorizar de boca?"
+      verdict="obrigatorio"
+      stampText="TRAVA SIGA"
+      normativeSource="PPC 2020 • Regulamento do Curso & Normas Gerais de Graduação UFMG"
+      explanation="FALSO. As travas formais (ex.: Estatística I bloqueando Estatística II) são travadas algoritmicamente no sistema SIGA da UFMG durante a fase de matrícula. Nenhuma autorização verbal de docente supera a trava eletrônica sem deliberação formal do Colegiado."
+      officialRuleExcerpt={`PPC 2020 — Regime de Pré-Requisitos:
+A matrícula nas disciplinas com pré-requisito formal cadastrado fica condicionada à obtenção prévia de aprovação (nota mínima 60 e frequência de 75%) na disciplina propedêutica correspondente.`}
+    />
+
+    <CurriculumGraph client:visible />
+
+    <div class="pt-6 border-t-2 border-[#0A0A0A]">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-['Oswald'] text-base uppercase font-bold text-[#0A0A0A] m-0 flex items-center gap-2">
+          <i class="bi bi-book-half text-[#8B1E2D]" aria-hidden="true" />
+          <span>Ementário Oficial das 27 Obrigatórias (1º ao 10º Período)</span>
+        </h3>
+        <span class="text-xs text-gray-500 font-mono">1.620 horas totais</span>
+      </div>
+      <PercursoTimeline />
+    </div>
+  </section>
+
+  <!-- Sub-view 2: Catálogo de 68 Optativas e 120h de Formação Livre -->
+  <section id="ws-panel-v2" class="cagp-workspace-view" data-ws-panel="v2" hidden>
+    <PercursoOptativasSection />
+  </section>
+
+  <!-- Sub-view 3: Dossiê Minha Grade e os 3 Percursos Oficiais -->
+  <section id="ws-panel-v3" class="cagp-workspace-view space-y-6" data-ws-panel="v3" hidden>
+    <MinhaGradeDossie client:load />
+
+    <div class="pt-6 border-t-2 border-[#0A0A0A]">
+      <div class="mb-3">
+        <span class="font-mono text-xs text-gray-500 uppercase tracking-widest block">
+          Orientação Vocacional e Ênfases Formativas
+        </span>
+        <h3 class="font-['Oswald'] text-lg font-bold uppercase text-[#0A0A0A] m-0 flex items-center gap-2">
+          <i class="bi bi-compass text-[#8B1E2D]" aria-hidden="true" />
+          <span>Simulador dos 3 Percursos do PPC 2020</span>
+        </h3>
+      </div>
+      <PercursoSimulador />
+    </div>
+  </section>
+
+  <!-- Journey Navigation Trail -->
+  <JourneyNav
+    prev={{
+      title: 'Guia de Sobrevivência do Calouro',
+      href: '/calouros',
+      desc: 'Checklist dos primeiros 30 dias, rotina noturna, jantar no RU e atendimento na FAFICH.',
+    }}
+    next={{
+      title: 'Extensão & Horas AAC (Calculadora 600h)',
+      href: '/acg',
+      desc: 'Simule suas 300h de Extensão e até 300h de Atividades Complementares com o Guardião de 120 dias.',
+    }}
+  />
+</BaseLayout>

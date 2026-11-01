@@ -112,376 +112,393 @@
   <div class="cagp-a11y-header">
     <div class="cagp-a11y-header-title">
       <i class="bi bi-person-vcard-fill me-2 text-warning" aria-hidden="true"></i>
-      <h3 id="cagp-settings-title" class="cagp-a11y-title">Passaporte Acadêmico &amp; Perfil</h3>
+      <h3 id="cagp-settings-title" class="cagp-a11y-title">Passaporte &amp; Perfil Discente</h3>
     </div>
     <button type="button" class="cagp-a11y-close" data-cagp-close-passport="true" aria-label="Fechar Passaporte Acadêmico">✕</button>
   </div>
   
   <div class="cagp-a11y-body">
-    <!-- 1. Passaporte / Crachá Acadêmico CAGP (cagp_student_profile_v1) -->
-    <div id="cagp-vault-passport-card" class="cagp-passport-card mb-3" role="region" aria-label="Passaporte Acadêmico Discente CAGP UFMG">
-      <div class="cagp-passport-topbar">
-        <div class="cagp-passport-inst">
-          <i class="bi bi-bank2 me-1 text-warning" aria-hidden="true"></i>
-          <span>FAFICH / UFMG • GESTÃO PÚBLICA</span>
+    <!-- Controle Segmentado Interno: [Passaporte & Carteira] [Perfil & Banco de Talentos] -->
+    <div class="cagp-profile-tabs mb-3" role="tablist" aria-label="Visualização do Perfil Discente">
+      <button type="button" class="cagp-profile-tab is-active" role="tab" id="cagp-ptab-passport" aria-controls="cagp-ppanel-passport" aria-selected="true" data-profile-tab="passport">
+        <i class="bi bi-person-vcard me-1" aria-hidden="true"></i> Passaporte &amp; Carteira
+      </button>
+      <button type="button" class="cagp-profile-tab" role="tab" id="cagp-ptab-talent" aria-controls="cagp-ppanel-talent" aria-selected="false" data-profile-tab="talent">
+        <i class="bi bi-briefcase me-1" aria-hidden="true"></i> Perfil &amp; Banco de Talentos
+      </button>
+    </div>
+
+    <!-- PAINEL 1: PASSAPORTE & CARTEIRA -->
+    <div id="cagp-ppanel-passport" class="cagp-profile-panel" role="tabpanel" aria-labelledby="cagp-ptab-passport">
+      <!-- 1. Passaporte / Crachá Acadêmico CAGP (cagp_student_profile_v1) -->
+      <div id="cagp-vault-passport-card" class="cagp-passport-card mb-3" role="region" aria-label="Passaporte Acadêmico Discente CAGP UFMG">
+        <div class="cagp-passport-topbar">
+          <div class="cagp-passport-inst">
+            <i class="bi bi-bank2 me-1 text-warning" aria-hidden="true"></i>
+            <span>FAFICH / UFMG • GESTÃO PÚBLICA</span>
+          </div>
+          <span class="cagp-passport-stamp" data-cagp-passport-stamp>1º PERÍODO • ATIVO</span>
         </div>
-        <span class="cagp-passport-stamp" data-cagp-passport-stamp>1º PERÍODO • ATIVO</span>
+
+        <div class="cagp-passport-body">
+          <button type="button" class="cagp-passport-avatar-btn" id="cagp-vault-avatar-trigger" data-cagp-action="pick-photo" aria-label="Trocar foto de perfil do Passaporte Acadêmico" title="Clique para enviar ou tirar uma foto (256x256 WebP)">
+            <span class="cagp-avatar-frame cagp-avatar-frame--lg" data-cagp-avatar-host>
+              <img class="cagp-profile-avatar-img" src="imagens/carteirinha.png" alt="Foto do estudante no Passaporte CAGP" width="72" height="72" hidden>
+              <span class="cagp-profile-avatar-fallback" aria-hidden="true"><i class="bi bi-person-badge-fill"></i></span>
+              <span class="cagp-pride-pin cagp-pride-pin--lg" data-cagp-pride-pin hidden aria-hidden="true"></span>
+            </span>
+            <span class="cagp-avatar-cam-badge" aria-hidden="true"><i class="bi bi-camera-fill"></i></span>
+          </button>
+
+          <div class="cagp-passport-identity">
+            <div class="cagp-passport-name-row mb-1">
+              <span class="cagp-passport-name" data-cagp-profile-name-display>Estudante de Gestão Pública</span>
+              <span class="cagp-passport-pronouns" data-cagp-profile-pronouns-display hidden></span>
+            </div>
+            <div class="cagp-passport-badges">
+              <span class="cagp-badge cagp-badge-red" data-cagp-profile-period-display>1º Período</span>
+              <span class="cagp-badge cagp-badge-dark font-mono" data-cagp-profile-semester-display>Ingresso 2026/1</span>
+              <span class="cagp-badge cagp-badge-blue" data-cagp-profile-pathway-display>01-01 • Geral</span>
+              <span class="cagp-pride-tag" data-cagp-pride-tag hidden>
+                <span class="cagp-pride-tag-swatch" data-cagp-pride-swatch aria-hidden="true"></span>
+                <span class="cagp-pride-tag-label" data-cagp-pride-label>Orgulho</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="cagp-metric-ring flex-shrink-0" id="cagp-vault-ring" style="--ring-pct: 0; --ring-size: 48px;" title="Índice Global de Integralização">
+            <div class="cagp-metric-ring-inner" id="cagp-vault-ring-val">0%</div>
+          </div>
+        </div>
+
+        <!-- Badges de Áreas de Interesse no Passaporte (Banco de Talentos) -->
+        <div class="cagp-passport-interests-container p-2 border-top border-dark border-opacity-10 bg-light bg-opacity-50" id="cagp-passport-interests-wrap" hidden>
+          <div class="d-flex align-items-center gap-1 flex-wrap" data-cagp-passport-interests></div>
+        </div>
+
+        <!-- Barra Dupla de Conclusão do Curso (27 Obrigatórias + 600h ACG) -->
+        <div class="cagp-passport-progress-grid">
+          <div class="cagp-passport-progress-item">
+            <div class="d-flex justify-content-between align-items-center small mb-1">
+              <span class="fw-bold text-uppercase font-display" style="font-size: 0.72rem;">27 Obrigatórias</span>
+              <span class="font-mono fw-bold cagp-tabular" style="font-size: 0.74rem;" data-cagp-passport-obrig-text>0/27 (0%)</span>
+            </div>
+            <div class="cagp-passport-mini-track" aria-hidden="true">
+              <div class="cagp-passport-mini-fill is-obrig" data-cagp-passport-obrig-bar style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="cagp-passport-progress-item">
+            <div class="d-flex justify-content-between align-items-center small mb-1">
+              <span class="fw-bold text-uppercase font-display" style="font-size: 0.72rem;">600h Extensão &amp; AAC</span>
+              <span class="font-mono fw-bold cagp-tabular" style="font-size: 0.74rem;" data-cagp-passport-acg-text>0h/600h (0%)</span>
+            </div>
+            <div class="cagp-passport-mini-track" aria-hidden="true">
+              <div class="cagp-passport-mini-fill is-acg" data-cagp-passport-acg-bar style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cagp-passport-actions">
+          <button type="button" id="cagp-vault-upload-photo-btn" class="cagp-btn cagp-btn-primary btn-sm flex-grow-1" data-cagp-action="pick-photo">
+            <i class="bi bi-camera-fill me-1" aria-hidden="true"></i> Enviar / Trocar Foto (1:1)
+          </button>
+          <button type="button" id="cagp-vault-campus-live-btn" class="cagp-btn cagp-btn-outline btn-sm" data-cagp-action="open-campus-sheet" title="Ver status ao vivo do RU II, Circular Noturno até 22h45 e CEAG F-2033">
+            <i class="bi bi-clock-history me-1" aria-hidden="true"></i> Campus Agora
+          </button>
+        </div>
       </div>
 
-      <div class="cagp-passport-body">
-        <button type="button" class="cagp-passport-avatar-btn" id="cagp-vault-avatar-trigger" data-cagp-action="pick-photo" aria-label="Trocar foto de perfil do Passaporte Acadêmico" title="Clique para enviar ou tirar uma foto (256x256 WebP)">
-          <span class="cagp-avatar-frame cagp-avatar-frame--lg" data-cagp-avatar-host>
-            <img class="cagp-profile-avatar-img" src="imagens/carteirinha.png" alt="Foto do estudante no Passaporte CAGP" width="72" height="72" hidden>
-            <span class="cagp-profile-avatar-fallback" aria-hidden="true"><i class="bi bi-person-badge-fill"></i></span>
-            <span class="cagp-pride-pin cagp-pride-pin--lg" data-cagp-pride-pin hidden aria-hidden="true"></span>
+      <!-- Minhas Metas Salvas Localmente (Offline Student Vault) -->
+      <div class="cagp-vault-section mb-3">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div class="cagp-vault-title font-display fw-bold text-uppercase fs-6">
+            <i class="bi bi-safe2-fill me-1 text-warning"></i> Cofre Discente Local
+          </div>
+          <span class="cagp-badge cagp-badge-dark font-mono">100% Offline</span>
+        </div>
+        <div class="cagp-vault-cards">
+          <div class="cagp-vault-card">
+            <div class="cagp-vault-card-label">Calculadora ACG</div>
+            <div class="cagp-vault-card-val" id="cagp-vault-acg">0h / 600h</div>
+            <a href="acg.html#calculadora" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Abrir Calculadora →</a>
+          </div>
+          <div class="cagp-vault-card">
+            <div class="cagp-vault-card-label">Guardião 120 Dias</div>
+            <div class="cagp-vault-card-val" id="cagp-vault-120d">0 certificados</div>
+            <a href="acg.html#guardiao-120-dias" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Monitorar Prazos →</a>
+          </div>
+          <div class="cagp-vault-card">
+            <div class="cagp-vault-card-label">Checklist Calouro</div>
+            <div class="cagp-vault-card-val" id="cagp-vault-checklist">0 de 6 passos</div>
+            <a href="calouros.html#checklist-calouro" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Ver Checklist →</a>
+          </div>
+          <div class="cagp-vault-card">
+            <div class="cagp-vault-card-label">Percurso &amp; Grade</div>
+            <div class="cagp-vault-card-val" id="cagp-vault-percurso">Não simulado</div>
+            <a href="percurso.html#termometro-percurso" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Ver Percurso →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Atalho Direto para Configurações do Super App -->
+      <div class="cagp-profile-settings-callout p-3 bg-light border border-dark rounded-1 d-flex align-items-center justify-content-between mb-2">
+        <div>
+          <strong class="d-block font-display text-uppercase small"><i class="bi bi-gear-fill text-danger me-1"></i> Configurações do Super App</strong>
+          <span class="small text-muted" style="font-size: 0.75rem;">Acessibilidade, alertas do RU/Circular, backup sync e termos.</span>
+        </div>
+        <a href="configuracoes.html" class="btn btn-sm btn-dark font-display text-uppercase" data-cagp-nav onclick="window.closeCagpAppSettings()">Abrir →</a>
+      </div>
+    </div>
+
+    <!-- PAINEL 2: PERFIL & BANCO DE TALENTOS -->
+    <div id="cagp-ppanel-talent" class="cagp-profile-panel" role="tabpanel" aria-labelledby="cagp-ptab-talent" hidden>
+      <div id="cagp-profile-editor-panel" class="cagp-profile-editor-box mb-3">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-1 mb-2">
+          <span class="fw-bold small text-uppercase font-display">
+            <i class="bi bi-person-gear text-danger me-1" aria-hidden="true"></i> Cadastro &amp; Banco de Talentos Discentes
           </span>
-          <span class="cagp-avatar-cam-badge" aria-hidden="true"><i class="bi bi-camera-fill"></i></span>
-        </button>
+          <span class="cagp-badge cagp-badge-gold" id="cagp-photo-tech-meta">Canvas 256×256 WebP</span>
+        </div>
 
-        <div class="cagp-passport-identity">
-          <div class="cagp-passport-name-row mb-1">
-            <span class="cagp-passport-name" data-cagp-profile-name-display>Estudante de Gestão Pública</span>
-            <span class="cagp-passport-pronouns" data-cagp-profile-pronouns-display hidden></span>
+        <input type="file" id="cagp-profile-photo-input" accept="image/*" hidden aria-label="Upload de foto de perfil (256x256 WebP)">
+        <canvas id="cagp-profile-crop-canvas" width="256" height="256" hidden></canvas>
+
+        <!-- Controles de Foto & Presets Ilustrados Brite -->
+        <div class="cagp-profile-photo-controls mb-3">
+          <div class="d-flex flex-wrap gap-2 mb-2">
+            <button type="button" id="cagp-btn-pick-photo" class="cagp-btn cagp-btn-primary btn-sm" data-cagp-action="pick-photo">
+              <i class="bi bi-camera-fill me-1" aria-hidden="true"></i> Subir Foto / Câmera (256×256)
+            </button>
+            <button type="button" id="cagp-btn-remove-photo" class="cagp-btn cagp-btn-outline btn-sm" data-cagp-action="remove-photo" hidden>
+              <i class="bi bi-trash3 me-1" aria-hidden="true"></i> Remover Foto
+            </button>
           </div>
-          <div class="cagp-passport-badges">
-            <span class="cagp-badge cagp-badge-red" data-cagp-profile-period-display>1º Período</span>
-            <span class="cagp-badge cagp-badge-dark font-mono" data-cagp-profile-semester-display>Ingresso 2026/1</span>
-            <span class="cagp-badge cagp-badge-blue" data-cagp-profile-pathway-display>01-01 • Geral</span>
-            <span class="cagp-pride-tag" data-cagp-pride-tag hidden>
-              <span class="cagp-pride-tag-swatch" data-cagp-pride-swatch aria-hidden="true"></span>
-              <span class="cagp-pride-tag-label" data-cagp-pride-label>Orgulho</span>
+          <div class="small text-muted mb-1">Ou escolha um avatar institucional Brite:</div>
+          <div class="cagp-avatar-preset-rail" role="group" aria-label="Avatares ilustrados do CAGP">
+            <button type="button" class="cagp-preset-chip is-active" data-cagp-avatar-preset="candangos">
+              <i class="bi bi-bank2 me-1" aria-hidden="true"></i> Os Candangos
+            </button>
+            <button type="button" class="cagp-preset-chip" data-cagp-avatar-preset="monogram">
+              <i class="bi bi-fonts me-1" aria-hidden="true"></i> Monograma (Iniciais)
+            </button>
+            <button type="button" class="cagp-preset-chip" data-cagp-avatar-preset="fafich">
+              <i class="bi bi-moon-stars-fill me-1" aria-hidden="true"></i> FAFICH Noturno
+            </button>
+            <button type="button" class="cagp-preset-chip" data-cagp-avatar-preset="republica">
+              <i class="bi bi-shield-check me-1" aria-hidden="true"></i> Prumo Republicano
+            </button>
+          </div>
+        </div>
+
+        <!-- Campos de Identificação Acadêmica -->
+        <div class="row g-2 mb-3">
+          <div class="col-sm-7">
+            <label for="cagp-prof-input-name" class="form-label small fw-bold mb-1">Nome Completo ou Social</label>
+            <input type="text" id="cagp-prof-input-name" class="form-control border-dark" placeholder="Ex.: Maria Clara / João Pedro" maxlength="80">
+          </div>
+          <div class="col-sm-5">
+            <label for="cagp-prof-input-pronouns" class="form-label small fw-bold mb-1">Pronomes (opcional)</label>
+            <input type="text" id="cagp-prof-input-pronouns" class="form-control border-dark" placeholder="ela/dela, ele/dele, elu/delu" maxlength="24">
+          </div>
+          <div class="col-sm-7">
+            <label for="cagp-prof-input-email" class="form-label small fw-bold mb-1">E-mail Institucional ou Pessoal</label>
+            <input type="email" id="cagp-prof-input-email" class="form-control border-dark font-mono small" placeholder="estudante@ufmg.br" maxlength="90">
+          </div>
+          <div class="col-sm-5">
+            <label for="cagp-prof-input-phone" class="form-label small fw-bold mb-1">WhatsApp / Telefone</label>
+            <input type="tel" id="cagp-prof-input-phone" class="form-control border-dark font-mono small" placeholder="(31) 99999-9999" maxlength="20">
+          </div>
+          <div class="col-6 col-sm-4">
+            <label for="cagp-prof-input-period" class="form-label small fw-bold mb-1">Período Atual</label>
+            <select id="cagp-prof-input-period" class="form-select border-dark">
+              <option value="1">1º Período (Calouro)</option>
+              <option value="2">2º Período</option>
+              <option value="3">3º Período</option>
+              <option value="4">4º Período</option>
+              <option value="5">5º Período</option>
+              <option value="6">6º Período</option>
+              <option value="7">7º Período</option>
+              <option value="8">8º Período</option>
+              <option value="9">9º Período</option>
+              <option value="10">10º Período (Formando)</option>
+              <option value="egresso">Egresso / Visitante</option>
+            </select>
+          </div>
+          <div class="col-6 col-sm-3">
+            <label for="cagp-prof-input-semester" class="form-label small fw-bold mb-1">Ingresso</label>
+            <input type="text" id="cagp-prof-input-semester" class="form-control border-dark font-mono" placeholder="2026/1" maxlength="10">
+          </div>
+          <div class="col-12 col-sm-5">
+            <label for="cagp-prof-input-pathway" class="form-label small fw-bold mb-1">Percurso Curricular</label>
+            <select id="cagp-prof-input-pathway" class="form-select border-dark">
+              <option value="01-01">01-01 • Núcleo Geral</option>
+              <option value="01-02">01-02 • Complementar (5ºP+)</option>
+              <option value="01-03">01-03 • Avançado PPGCP (7ºP+)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Marcador / Pin de Orgulho LGBTQIAPN+ -->
+        <div class="mb-3">
+          <label class="form-label small fw-bold mb-1 d-block">
+            <i class="bi bi-heart-fill text-danger me-1" aria-hidden="true"></i> Marcador / Pin de Orgulho no Avatar &amp; Passaporte (opcional)
+          </label>
+          <div class="cagp-pride-picker-grid" id="cagp-prof-pride-grid" role="radiogroup" aria-label="Escolher marcador de bandeira LGBTQIAPN+">
+            <button type="button" class="cagp-pride-choice-chip is-active" role="radio" aria-checked="true" data-cagp-pride-choice="none">
+              <span class="cagp-pride-swatch cagp-pride-swatch--none" aria-hidden="true"></span>
+              <span>Nenhum</span>
+            </button>
+            <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="lgbt">
+              <span class="cagp-pride-swatch cagp-pride-swatch--lgbt" aria-hidden="true"></span>
+              <span>LGBTQIAPN+</span>
+            </button>
+            <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="trans">
+              <span class="cagp-pride-swatch cagp-pride-swatch--trans" aria-hidden="true"></span>
+              <span>Trans</span>
+            </button>
+            <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="gay">
+              <span class="cagp-pride-swatch cagp-pride-swatch--gay" aria-hidden="true"></span>
+              <span>Gay</span>
+            </button>
+            <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="bisexual">
+              <span class="cagp-pride-swatch cagp-pride-swatch--bisexual" aria-hidden="true"></span>
+              <span>Bissexual</span>
+            </button>
+            <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="lesbian">
+              <span class="cagp-pride-swatch cagp-pride-swatch--lesbian" aria-hidden="true"></span>
+              <span>Lésbica</span>
+            </button>
+            <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="nonbinary">
+              <span class="cagp-pride-swatch cagp-pride-swatch--nonbinary" aria-hidden="true"></span>
+              <span>Não-Binárie</span>
+            </button>
+            <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="pansexual">
+              <span class="cagp-pride-swatch cagp-pride-swatch--pansexual" aria-hidden="true"></span>
+              <span>Pansexual</span>
+            </button>
+            <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="asexual">
+              <span class="cagp-pride-swatch cagp-pride-swatch--asexual" aria-hidden="true"></span>
+              <span>Assexual</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ÁREAS DE INTERESSE EM GESTÃO PÚBLICA (BANCO DE TALENTOS) -->
+        <div class="mb-3 p-3 bg-light border border-dark rounded-1">
+          <div class="d-flex align-items-center justify-content-between mb-1">
+            <label class="form-label fw-bold font-display text-uppercase small mb-0">
+              <i class="bi bi-stars text-warning me-1" aria-hidden="true"></i> Áreas de Interesse (Banco de Talentos)
+            </label>
+            <span class="cagp-badge cagp-badge-dark" id="cagp-interests-count-badge">0 selecionadas</span>
+          </div>
+          <p class="small text-muted mb-2">
+            Selecione seus temas de preferência para atuação profissional, estágio ou pesquisa. As principais serão exibidas no seu Passaporte.
+          </p>
+
+          <div class="cagp-interests-picker-grid" id="cagp-interests-picker">
+            <button type="button" class="cagp-interest-chip" data-interest-key="pol_pub" aria-pressed="false">
+              <i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Políticas Públicas &amp; Planejamento
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="orcamento" aria-pressed="false">
+              <i class="bi bi-cash-coin me-1" aria-hidden="true"></i> Orçamento &amp; Finanças Públicas
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="pessoas" aria-pressed="false">
+              <i class="bi bi-people me-1" aria-hidden="true"></i> Gestão de Pessoas no Setor Público
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="licitacoes" aria-pressed="false">
+              <i class="bi bi-briefcase me-1" aria-hidden="true"></i> Licitações, Contratos &amp; Compras
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="cidades" aria-pressed="false">
+              <i class="bi bi-building me-1" aria-hidden="true"></i> Cidades, Habitação &amp; Urbanismo
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="saude" aria-pressed="false">
+              <i class="bi bi-heart-pulse me-1" aria-hidden="true"></i> Saúde Pública &amp; Gestão do SUS
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="educacao" aria-pressed="false">
+              <i class="bi bi-mortarboard me-1" aria-hidden="true"></i> Educação &amp; Gestão Universitária
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="govtech" aria-pressed="false">
+              <i class="bi bi-cpu me-1" aria-hidden="true"></i> GovTech, Inovação &amp; Governo Digital
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="dados" aria-pressed="false">
+              <i class="bi bi-graph-up me-1" aria-hidden="true"></i> Ciência de Dados &amp; Avaliação de Impacto
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="terceiro_setor" aria-pressed="false">
+              <i class="bi bi-globe-americas me-1" aria-hidden="true"></i> Terceiro Setor, OSCs &amp; ESG
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="rel_inst" aria-pressed="false">
+              <i class="bi bi-chat-left-text me-1" aria-hidden="true"></i> Relações Institucionais &amp; Advocacy
+            </button>
+            <button type="button" class="cagp-interest-chip" data-interest-key="meio_ambiente" aria-pressed="false">
+              <i class="bi bi-tree me-1" aria-hidden="true"></i> Meio Ambiente, Clima &amp; Sustentabilidade
+            </button>
+          </div>
+
+          <div class="mt-2">
+            <label for="cagp-prof-input-other-interests" class="form-label small text-muted mb-1">Outras áreas de interesse (opcional):</label>
+            <input type="text" id="cagp-prof-input-other-interests" class="form-control form-control-sm border-dark" placeholder="Ex.: Direito Administrativo, Regulação de Serviços, etc." maxlength="100">
+          </div>
+        </div>
+
+        <!-- HABILIDADES & FERRAMENTAS -->
+        <div class="mb-3">
+          <label class="form-label fw-bold font-display text-uppercase small mb-1">
+            <i class="bi bi-tools text-primary me-1" aria-hidden="true"></i> Habilidades &amp; Ferramentas Práticas
+          </label>
+          <div class="cagp-skills-picker-grid" id="cagp-skills-picker">
+            <button type="button" class="cagp-skill-chip" data-skill-key="sei_ufmg" aria-pressed="false">SEI UFMG</button>
+            <button type="button" class="cagp-skill-chip" data-skill-key="excel_pbi" aria-pressed="false">Excel / Power BI</button>
+            <button type="button" class="cagp-skill-chip" data-skill-key="r_python" aria-pressed="false">R / Python</button>
+            <button type="button" class="cagp-skill-chip" data-skill-key="redacao_oficial" aria-pressed="false">Redação Oficial</button>
+            <button type="button" class="cagp-skill-chip" data-skill-key="analise_politicas" aria-pressed="false">Análise de Políticas</button>
+            <button type="button" class="cagp-skill-chip" data-skill-key="gestao_projetos" aria-pressed="false">Gestão de Projetos</button>
+            <button type="button" class="cagp-skill-chip" data-skill-key="editais" aria-pressed="false">Elaboração de Editais</button>
+            <button type="button" class="cagp-skill-chip" data-skill-key="pesquisa_campo" aria-pressed="false">Pesquisa Aplicada</button>
+          </div>
+        </div>
+
+        <!-- MINI-BIO (280 CARACTERES) -->
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <label for="cagp-prof-input-bio" class="form-label fw-bold font-display text-uppercase small mb-0">
+              <i class="bi bi-card-text text-danger me-1" aria-hidden="true"></i> Mini-Bio / Resumo Profissional
+            </label>
+            <span class="small font-mono text-muted" id="cagp-bio-char-count">0 / 280</span>
+          </div>
+          <textarea id="cagp-prof-input-bio" class="form-control border-dark" rows="3" maxlength="280" placeholder="Resuma em poucas frases sua trajetória acadêmica, interesses e objetivos na Gestão Pública..."></textarea>
+        </div>
+
+        <!-- LINKS PROFISSIONAIS -->
+        <div class="row g-2 mb-3">
+          <div class="col-sm-6">
+            <label for="cagp-prof-input-linkedin" class="form-label small fw-bold mb-1">
+              <i class="bi bi-linkedin text-primary me-1"></i> Perfil no LinkedIn
+            </label>
+            <input type="url" id="cagp-prof-input-linkedin" class="form-control form-control-sm border-dark font-mono" placeholder="https://linkedin.com/in/seuperfil" maxlength="120">
+          </div>
+          <div class="col-sm-6">
+            <label for="cagp-prof-input-lattes" class="form-label small fw-bold mb-1">
+              <i class="bi bi-journal-code text-danger me-1"></i> Currículo Lattes
+            </label>
+            <input type="url" id="cagp-prof-input-lattes" class="form-control form-control-sm border-dark font-mono" placeholder="http://lattes.cnpq.br/..." maxlength="120">
+          </div>
+        </div>
+
+        <!-- CONSENTIMENTO BANCO DE TALENTOS (LGPD) -->
+        <div class="form-check p-2 bg-light border border-dark rounded-1 mb-3">
+          <input class="form-check-input ms-1 me-2" type="checkbox" id="cagp-prof-consent-talent">
+          <label class="form-check-label small" for="cagp-prof-consent-talent">
+            <strong>Participar do Banco de Talentos Discentes do CAGP</strong>
+            <span class="d-block text-muted" style="font-size: 0.75rem;">
+              Autorizo o compartilhamento voluntário destas informações para divulgação de vagas de estágio, pesquisa e projetos de extensão. Seus dados continuam salvos no seu dispositivo.
             </span>
-          </div>
+          </label>
         </div>
 
-        <div class="cagp-metric-ring flex-shrink-0" id="cagp-vault-ring" style="--ring-pct: 0; --ring-size: 48px;" title="Índice Global de Integralização">
-          <div class="cagp-metric-ring-inner" id="cagp-vault-ring-val">0%</div>
-        </div>
-      </div>
-
-      <!-- Barra Dupla de Conclusão do Curso (27 Obrigatórias + 600h ACG) -->
-      <div class="cagp-passport-progress-grid">
-        <div class="cagp-passport-progress-item">
-          <div class="d-flex justify-content-between align-items-center small mb-1">
-            <span class="fw-bold text-uppercase font-display" style="font-size: 0.72rem;">27 Obrigatórias</span>
-            <span class="font-mono fw-bold cagp-tabular" style="font-size: 0.74rem;" data-cagp-passport-obrig-text>0/27 (0%)</span>
-          </div>
-          <div class="cagp-passport-mini-track" aria-hidden="true">
-            <div class="cagp-passport-mini-fill is-obrig" data-cagp-passport-obrig-bar style="width: 0%;"></div>
-          </div>
-        </div>
-        <div class="cagp-passport-progress-item">
-          <div class="d-flex justify-content-between align-items-center small mb-1">
-            <span class="fw-bold text-uppercase font-display" style="font-size: 0.72rem;">600h Extensão &amp; AAC</span>
-            <span class="font-mono fw-bold cagp-tabular" style="font-size: 0.74rem;" data-cagp-passport-acg-text>0h/600h (0%)</span>
-          </div>
-          <div class="cagp-passport-mini-track" aria-hidden="true">
-            <div class="cagp-passport-mini-fill is-acg" data-cagp-passport-acg-bar style="width: 0%;"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cagp-passport-actions">
-        <button type="button" id="cagp-vault-upload-photo-btn" class="cagp-btn cagp-btn-primary btn-sm flex-grow-1" data-cagp-action="pick-photo">
-          <i class="bi bi-camera-fill me-1" aria-hidden="true"></i> Enviar / Trocar Foto (1:1)
-        </button>
-        <button type="button" id="cagp-vault-campus-live-btn" class="cagp-btn cagp-btn-outline btn-sm" data-cagp-action="open-campus-sheet" title="Ver status ao vivo do RU II, Circular Noturno até 22h45 e CEAG F-2033">
-          <i class="bi bi-clock-history me-1" aria-hidden="true"></i> Campus Agora
-        </button>
-      </div>
-    </div>
-
-    <!-- 2. Painel Editor Completo Sempre Visível (Foto <canvas> 256x256, Período, Percurso e Bandeiras LGBTQIAPN+) -->
-    <div id="cagp-profile-editor-panel" class="cagp-profile-editor-box mb-3">
-      <div class="d-flex align-items-center justify-content-between flex-wrap gap-1 mb-2">
-        <span class="fw-bold small text-uppercase font-display">
-          <i class="bi bi-sliders2 text-danger me-1" aria-hidden="true"></i> Configurar Foto, Perfil &amp; Bandeira (100% Local)
-        </span>
-        <span class="cagp-badge cagp-badge-gold" id="cagp-photo-tech-meta">Canvas 256×256 WebP</span>
-      </div>
-
-      <input type="file" id="cagp-profile-photo-input" accept="image/*" hidden aria-label="Upload de foto de perfil (256x256 WebP)">
-      <canvas id="cagp-profile-crop-canvas" width="256" height="256" hidden></canvas>
-
-      <!-- Controles de Foto & Presets Ilustrados Brite -->
-      <div class="cagp-profile-photo-controls mb-3">
-        <div class="d-flex flex-wrap gap-2 mb-2">
-          <button type="button" id="cagp-btn-pick-photo" class="cagp-btn cagp-btn-primary btn-sm" data-cagp-action="pick-photo">
-            <i class="bi bi-camera-fill me-1" aria-hidden="true"></i> Subir Foto / Câmera (256×256)
-          </button>
-          <button type="button" id="cagp-btn-remove-photo" class="cagp-btn cagp-btn-outline btn-sm" data-cagp-action="remove-photo" hidden>
-            <i class="bi bi-trash3 me-1" aria-hidden="true"></i> Remover Foto
-          </button>
-        </div>
-        <div class="small text-muted mb-1">Ou escolha um avatar institucional Brite:</div>
-        <div class="cagp-avatar-preset-rail" role="group" aria-label="Avatares ilustrados do CAGP">
-          <button type="button" class="cagp-preset-chip is-active" data-cagp-avatar-preset="candangos">
-            <i class="bi bi-bank2 me-1" aria-hidden="true"></i> Os Candangos
-          </button>
-          <button type="button" class="cagp-preset-chip" data-cagp-avatar-preset="monogram">
-            <i class="bi bi-fonts me-1" aria-hidden="true"></i> Monograma (Iniciais)
-          </button>
-          <button type="button" class="cagp-preset-chip" data-cagp-avatar-preset="fafich">
-            <i class="bi bi-moon-stars-fill me-1" aria-hidden="true"></i> FAFICH Noturno
-          </button>
-          <button type="button" class="cagp-preset-chip" data-cagp-avatar-preset="republica">
-            <i class="bi bi-shield-check me-1" aria-hidden="true"></i> Prumo Republicano
-          </button>
-        </div>
-      </div>
-
-      <!-- Campos de Identificação Acadêmica -->
-      <div class="row g-2 mb-3">
-        <div class="col-sm-7">
-          <label for="cagp-prof-input-name" class="form-label small fw-bold mb-1">Nome ou Apelido</label>
-          <input type="text" id="cagp-prof-input-name" class="form-control border-dark" placeholder="Ex.: Maria Clara / João Pedro" maxlength="80">
-        </div>
-        <div class="col-sm-5">
-          <label for="cagp-prof-input-pronouns" class="form-label small fw-bold mb-1">Pronomes (opcional)</label>
-          <input type="text" id="cagp-prof-input-pronouns" class="form-control border-dark" placeholder="ela/dela, ele/dele, elu/delu" maxlength="24">
-        </div>
-        <div class="col-6 col-sm-4">
-          <label for="cagp-prof-input-period" class="form-label small fw-bold mb-1">Período Atual</label>
-          <select id="cagp-prof-input-period" class="form-select border-dark">
-            <option value="1">1º Período (Calouro)</option>
-            <option value="2">2º Período</option>
-            <option value="3">3º Período</option>
-            <option value="4">4º Período</option>
-            <option value="5">5º Período</option>
-            <option value="6">6º Período</option>
-            <option value="7">7º Período</option>
-            <option value="8">8º Período</option>
-            <option value="9">9º Período</option>
-            <option value="10">10º Período (Formando)</option>
-            <option value="egresso">Egresso / Visitante</option>
-          </select>
-        </div>
-        <div class="col-6 col-sm-3">
-          <label for="cagp-prof-input-semester" class="form-label small fw-bold mb-1">Ingresso</label>
-          <input type="text" id="cagp-prof-input-semester" class="form-control border-dark font-mono" placeholder="2026/1" maxlength="10">
-        </div>
-        <div class="col-12 col-sm-5">
-          <label for="cagp-prof-input-pathway" class="form-label small fw-bold mb-1">Percurso Curricular</label>
-          <select id="cagp-prof-input-pathway" class="form-select border-dark">
-            <option value="01-01">01-01 • Núcleo Geral</option>
-            <option value="01-02">01-02 • Complementar (5ºP+)</option>
-            <option value="01-03">01-03 • Avançado PPGCP (7ºP+)</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Marcador / Pin de Orgulho LGBTQIAPN+ -->
-      <div class="mb-3">
-        <label class="form-label small fw-bold mb-1 d-block">
-          <i class="bi bi-heart-fill text-danger me-1" aria-hidden="true"></i> Marcador / Pin de Orgulho no Avatar &amp; Passaporte (opcional)
-        </label>
-        <div class="cagp-pride-picker-grid" id="cagp-prof-pride-grid" role="radiogroup" aria-label="Escolher marcador de bandeira LGBTQIAPN+">
-          <button type="button" class="cagp-pride-choice-chip is-active" role="radio" aria-checked="true" data-cagp-pride-choice="none">
-            <span class="cagp-pride-swatch cagp-pride-swatch--none" aria-hidden="true"></span>
-            <span>Nenhum</span>
-          </button>
-          <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="lgbt">
-            <span class="cagp-pride-swatch cagp-pride-swatch--lgbt" aria-hidden="true"></span>
-            <span>LGBTQIAPN+</span>
-          </button>
-          <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="trans">
-            <span class="cagp-pride-swatch cagp-pride-swatch--trans" aria-hidden="true"></span>
-            <span>Trans</span>
-          </button>
-          <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="gay">
-            <span class="cagp-pride-swatch cagp-pride-swatch--gay" aria-hidden="true"></span>
-            <span>Gay</span>
-          </button>
-          <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="bisexual">
-            <span class="cagp-pride-swatch cagp-pride-swatch--bisexual" aria-hidden="true"></span>
-            <span>Bissexual</span>
-          </button>
-          <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="lesbian">
-            <span class="cagp-pride-swatch cagp-pride-swatch--lesbian" aria-hidden="true"></span>
-            <span>Lésbica</span>
-          </button>
-          <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="nonbinary">
-            <span class="cagp-pride-swatch cagp-pride-swatch--nonbinary" aria-hidden="true"></span>
-            <span>Não-Binárie</span>
-          </button>
-          <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="pansexual">
-            <span class="cagp-pride-swatch cagp-pride-swatch--pansexual" aria-hidden="true"></span>
-            <span>Pansexual</span>
-          </button>
-          <button type="button" class="cagp-pride-choice-chip" role="radio" aria-checked="false" data-cagp-pride-choice="asexual">
-            <span class="cagp-pride-swatch cagp-pride-swatch--asexual" aria-hidden="true"></span>
-            <span>Assexual</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="d-flex justify-content-end gap-2">
         <button type="button" id="cagp-prof-save-btn" class="cagp-btn cagp-btn-primary btn-sm w-100" data-cagp-action="save-profile">
-          <i class="bi bi-check2-circle me-1" aria-hidden="true"></i> Salvar no Passaporte Acadêmico
+          <i class="bi bi-check2-circle me-1"></i> Salvar Perfil &amp; Banco de Talentos
         </button>
       </div>
-    </div>
-
-    <!-- Minhas Metas Salvas Localmente (Offline Student Vault) -->
-    <div class="cagp-vault-section mb-3">
-      <div class="d-flex align-items-center justify-content-between mb-2">
-        <div class="cagp-vault-title font-display fw-bold text-uppercase fs-6">
-          <i class="bi bi-safe2-fill me-1 text-warning"></i> Cofre Discente Local
-        </div>
-        <button type="button" id="cagp-clear-vault-btn" class="btn btn-sm btn-outline-danger py-0 px-2 small" title="Limpar dados salvos das calculadoras e checklists">
-          <i class="bi bi-trash3 me-1" aria-hidden="true"></i> Limpar Cofre
-        </button>
-      </div>
-      <div class="cagp-vault-cards">
-        <div class="cagp-vault-card">
-          <div class="cagp-vault-card-label">Calculadora ACG</div>
-          <div class="cagp-vault-card-val" id="cagp-vault-acg">0h / 600h</div>
-          <a href="acg.html#calculadora" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Abrir Calculadora →</a>
-        </div>
-        <div class="cagp-vault-card">
-          <div class="cagp-vault-card-label">Guardião 120 Dias</div>
-          <div class="cagp-vault-card-val" id="cagp-vault-120d">0 certificados</div>
-          <a href="acg.html#guardiao-120-dias" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Monitorar Prazos →</a>
-        </div>
-        <div class="cagp-vault-card">
-          <div class="cagp-vault-card-label">Checklist Calouro</div>
-          <div class="cagp-vault-card-val" id="cagp-vault-checklist">0 de 6 passos</div>
-          <a href="calouros.html#checklist-calouro" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Ver Checklist →</a>
-        </div>
-        <div class="cagp-vault-card">
-          <div class="cagp-vault-card-label">Percurso &amp; Grade</div>
-          <div class="cagp-vault-card-val" id="cagp-vault-percurso">Não simulado</div>
-          <a href="percurso.html#termometro-percurso" class="cagp-vault-card-link" data-cagp-nav onclick="window.closeCagpAppSettings()">Ver Percurso →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Alertas de Sobrevivência Noturna & Guardião de Prazos (Notifications API + .ics) -->
-    <div class="cagp-settings-box mb-3" id="cagp-notifications-section">
-      <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
-        <span class="fw-bold small text-uppercase font-display">
-          <i class="bi bi-bell-fill text-danger me-1" aria-hidden="true"></i> Alertas &amp; Sobrevivência Noturna
-        </span>
-        <span class="cagp-badge cagp-badge-dark" id="cagp-notif-perm-badge">In-App + Agenda</span>
-      </div>
-      <p class="small text-muted mb-2">Receba alertas antes do fechamento do RU II, saída do último Circular e prescrição de 120 dias das AAC.</p>
-
-      <div class="cagp-notif-list mb-2">
-        <div class="cagp-notif-row">
-          <label class="cagp-notif-label" for="cagp-notif-ru1815">
-            <input type="checkbox" id="cagp-notif-ru1815" class="cagp-notif-check">
-            <span>
-              <strong>Jantar no RU II (18h15)</strong>
-              <small class="d-block text-muted">Aviso antes do pico da fila e fechamento às 19h30</small>
-            </span>
-          </label>
-          <button type="button" class="cagp-action-chip" data-cagp-ics="ru-1815" title="Adicionar alarme recorrente 18h15 na Agenda (.ics)">
-            <i class="bi bi-calendar-plus" aria-hidden="true"></i> <span>.ics</span>
-          </button>
-        </div>
-
-        <div class="cagp-notif-row">
-          <label class="cagp-notif-label" for="cagp-notif-circular2230">
-            <input type="checkbox" id="cagp-notif-circular2230" class="cagp-notif-check">
-            <span>
-              <strong>Último Circular (22h30)</strong>
-              <small class="d-block text-muted">Alerta de saída da FAFICH antes do último ônibus (22h45)</small>
-            </span>
-          </label>
-          <button type="button" class="cagp-action-chip" data-cagp-ics="circular-2230" title="Adicionar alarme recorrente 22h30 na Agenda (.ics)">
-            <i class="bi bi-calendar-plus" aria-hidden="true"></i> <span>.ics</span>
-          </button>
-        </div>
-
-        <div class="cagp-notif-row">
-          <label class="cagp-notif-label" for="cagp-notif-aac120d">
-            <input type="checkbox" id="cagp-notif-aac120d" class="cagp-notif-check" checked>
-            <span>
-              <strong>Guardião 120 Dias (Art. 15, § 4º)</strong>
-              <small class="d-block text-muted">Selo no App e alerta para certificados com &lt; 30 dias</small>
-            </span>
-          </label>
-          <a href="acg.html#guardiao-120-dias" class="cagp-action-chip" data-cagp-nav onclick="window.closeCagpAppSettings()">
-            <i class="bi bi-shield-exclamation" aria-hidden="true"></i> <span>Abrir</span>
-          </a>
-        </div>
-      </div>
-
-      <button type="button" id="cagp-notif-test-btn" class="cagp-btn cagp-btn-outline w-100 btn-sm">
-        <i class="bi bi-bell me-1" aria-hidden="true"></i> Ativar / Testar Notificação Nativa
-      </button>
-    </div>
-
-    <!-- Meu CAGP Sync: Portabilidade e Backup Zero-Servidor da Carteira Acadêmica -->
-    <div class="cagp-settings-box mb-3" id="cagp-sync-section">
-      <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
-        <span class="fw-bold small text-uppercase font-display">
-          <i class="bi bi-arrow-left-right text-primary me-1" aria-hidden="true"></i> Meu CAGP Sync (Backup &amp; Portabilidade)
-        </span>
-        <span class="cagp-badge cagp-badge-gold">Zero-Servidor</span>
-      </div>
-      <p class="small text-muted mb-2">Transfira suas horas de ACG, disciplinas cursadas, certificados de 120 dias e checklists entre o PC e o celular sem criar conta.</p>
-
-      <div class="d-grid gap-2 mb-2" style="grid-template-columns: 1fr 1fr;">
-        <button type="button" id="cagp-sync-export-json" class="cagp-btn cagp-btn-primary btn-sm">
-          <i class="bi bi-download me-1" aria-hidden="true"></i> Exportar (.json)
-        </button>
-        <button type="button" id="cagp-sync-import-json-btn" class="cagp-btn cagp-btn-outline btn-sm">
-          <i class="bi bi-upload me-1" aria-hidden="true"></i> Importar (.json)
-        </button>
-        <input type="file" id="cagp-sync-import-file" accept=".json,application/json" hidden aria-label="Upload de arquivo de backup JSON">
-      </div>
-
-      <div class="cagp-sync-code-box">
-        <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
-          <label for="cagp-sync-code-input" class="small fw-bold font-mono">Código Rápido (CAGP1:...)</label>
-          <button type="button" id="cagp-sync-copy-code" class="cagp-action-chip">
-            <i class="bi bi-clipboard-check" aria-hidden="true"></i> <span>Gerar &amp; Copiar</span>
-          </button>
-        </div>
-        <div class="d-flex gap-2">
-          <input type="text" id="cagp-sync-code-input" class="cagp-sync-input" placeholder="Cole o código CAGP1:... aqui" aria-label="Código de sincronização Meu CAGP Sync">
-          <button type="button" id="cagp-sync-apply-code" class="cagp-btn cagp-btn-secondary btn-sm flex-shrink-0">
-            Restaurar
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Status do Super App & Armazenamento Offline -->
-    <div class="cagp-app-status-box mb-3">
-      <div class="d-flex align-items-center justify-content-between mb-1">
-        <span class="fw-bold small text-uppercase font-display"><i class="bi bi-hdd-stack-fill text-success me-1"></i> Modo Offline Pronto</span>
-        <span class="badge bg-success text-white">100% Sincronizado</span>
-      </div>
-      <p class="small text-muted mb-0">Todas as 14 rotas, 27 obrigatórias, 68 optativas e os 9 PDFs oficiais essenciais ficam disponíveis para consulta offline na FAFICH.</p>
-    </div>
-
-    <!-- Alternador de Modo de Visualização -->
-    <div class="cagp-mode-switch-box mb-3">
-      <div class="fw-bold small text-uppercase font-display mb-1"><i class="bi bi-toggles me-1"></i> Modo de Visualização</div>
-      <p class="small text-muted mb-2">Alterne entre a casca de aplicativo instalado (Super App) e a visualização editorial clássica do Portal Web.</p>
-      <button type="button" class="cagp-btn cagp-btn-outline w-100 btn-sm" onclick="window.cagpToggleAppMode &amp;&amp; window.cagpToggleAppMode()">
-        <i class="bi bi-display me-1"></i> Alternar Modo Portal Web / Super App
-      </button>
-    </div>
-
-    <!-- Acessibilidade Universal Centralizada -->
-    <div class="cagp-settings-section mb-3">
-      <div class="fw-bold small text-uppercase font-display mb-1"><i class="bi bi-universal-access me-1 text-primary"></i> Acessibilidade &amp; Preferências de Leitura</div>
-      <p class="small text-muted mb-2">Ajuste de tamanho tipográfico, fonte para dislexia, régua de foco, pausa de animações e alto contraste AAA.</p>
-      <button type="button" class="cagp-btn cagp-btn-secondary w-100 btn-sm" data-cagp-action="open-a11y-from-passport">
-        <i class="bi bi-sliders me-1"></i> Abrir Suíte de Acessibilidade (Alt + A)
-      </button>
-    </div>
-
-    <!-- Guia de Boas-Vindas & Recuperação de Onboarding (Apple HIG Onboarding) -->
-    <div class="cagp-settings-section mb-3">
-      <div class="fw-bold small text-uppercase font-display mb-1"><i class="bi bi-compass me-1 text-danger"></i> Guia Discente &amp; Boas-Vindas</div>
-      <p class="small text-muted mb-2">Reative os avisos contextuais, tour inicial e dicas de navegação do Portal em todas as páginas.</p>
-      <button type="button" id="cagp-reset-onboard-btn" class="cagp-btn cagp-btn-outline w-100 btn-sm" data-cagp-action="reset-onboarding">
-        <i class="bi bi-arrow-counterclockwise me-1"></i> Rever Dicas &amp; Tour de Boas-Vindas
-      </button>
     </div>
   </div>
   
@@ -718,6 +735,21 @@
     '01-03': '01-03 • Avançado PPGCP'
   };
 
+  const INTEREST_AREAS_META = {
+    pol_pub: { label: 'Políticas Públicas', icon: 'bi-file-earmark-text' },
+    orcamento: { label: 'Orçamento & Finanças', icon: 'bi-cash-coin' },
+    pessoas: { label: 'Gestão de Pessoas', icon: 'bi-people' },
+    licitacoes: { label: 'Licitações & Compras', icon: 'bi-briefcase' },
+    cidades: { label: 'Cidades & Urbanismo', icon: 'bi-building' },
+    saude: { label: 'Saúde Pública (SUS)', icon: 'bi-heart-pulse' },
+    educacao: { label: 'Educação Pública', icon: 'bi-mortarboard' },
+    govtech: { label: 'GovTech & Inovação', icon: 'bi-cpu' },
+    dados: { label: 'Ciência de Dados', icon: 'bi-graph-up' },
+    terceiro_setor: { label: 'Terceiro Setor & ESG', icon: 'bi-globe-americas' },
+    rel_inst: { label: 'Relações Institucionais', icon: 'bi-chat-left-text' },
+    meio_ambiente: { label: 'Meio Ambiente & Clima', icon: 'bi-tree' }
+  };
+
   function getStudentProfile() {
     const defaults = {
       name: '',
@@ -729,6 +761,15 @@
       avatarPreset: 'candangos',
       photoDataUrl: '',
       prideFlag: 'none',
+      email: '',
+      phone: '',
+      interests: [],
+      otherInterests: '',
+      skills: [],
+      bio: '',
+      linkedin: '',
+      lattes: '',
+      talentConsent: false,
       updatedAt: ''
     };
     try {
@@ -739,6 +780,8 @@
           const merged = Object.assign({}, defaults, parsed);
           if (!PRIDE_FLAGS_META[merged.prideFlag]) merged.prideFlag = 'none';
           if (!PATHWAY_LABELS[merged.pathway]) merged.pathway = '01-01';
+          if (!Array.isArray(merged.interests)) merged.interests = [];
+          if (!Array.isArray(merged.skills)) merged.skills = [];
           return merged;
         }
       }
@@ -845,6 +888,32 @@
     });
   }
 
+  function switchProfileTab(tabName) {
+    const isPassport = tabName === 'passport';
+    const passportTab = document.getElementById('cagp-ptab-passport');
+    const talentTab = document.getElementById('cagp-ptab-talent');
+    const passportPanel = document.getElementById('cagp-ppanel-passport');
+    const talentPanel = document.getElementById('cagp-ppanel-talent');
+
+    if (passportTab) {
+      passportTab.classList.toggle('is-active', isPassport);
+      passportTab.setAttribute('aria-selected', isPassport ? 'true' : 'false');
+    }
+    if (talentTab) {
+      talentTab.classList.toggle('is-active', !isPassport);
+      talentTab.setAttribute('aria-selected', !isPassport ? 'true' : 'false');
+    }
+    if (passportPanel) {
+      if (isPassport) passportPanel.removeAttribute('hidden');
+      else passportPanel.setAttribute('hidden', '');
+    }
+    if (talentPanel) {
+      if (!isPassport) talentPanel.removeAttribute('hidden');
+      else talentPanel.setAttribute('hidden', '');
+    }
+  }
+  window.cagpSwitchProfileTab = switchProfileTab;
+
   function openAppSettings(initialFocus) {
     hoistPwaShellToBody();
     const sheet = document.getElementById('cagp-settings-sheet');
@@ -852,10 +921,10 @@
     if (!sheet || !backdrop) return;
     if (window.cagpCloseAllOverlays) window.cagpCloseAllOverlays('cagp-settings-sheet');
 
-    // Garantir que o painel completo de edição de foto e perfil esteja SEMPRE visível em todas as páginas
-    const editorPanel = document.getElementById('cagp-profile-editor-panel');
-    if (editorPanel) {
-      editorPanel.removeAttribute('hidden');
+    if (initialFocus === 'talent' || initialFocus === 'editor') {
+      switchProfileTab('talent');
+    } else {
+      switchProfileTab('passport');
     }
 
     refreshVaultData();
@@ -1284,6 +1353,30 @@
       }
     });
 
+    // Sincronizar badges das Áreas de Interesse no Passaporte
+    const passportInterestsWrap = document.getElementById('cagp-passport-interests-wrap');
+    const passportInterestsList = document.querySelector('[data-cagp-passport-interests]');
+    if (passportInterestsWrap && passportInterestsList) {
+      const interests = Array.isArray(prof.interests) ? prof.interests : [];
+      if (interests.length > 0) {
+        passportInterestsWrap.removeAttribute('hidden');
+        let badgesHtml = '<span class="small fw-bold text-uppercase font-display text-muted me-1" style="font-size: 0.68rem;">Interesses:</span>';
+        interests.slice(0, 3).forEach(function (key) {
+          const meta = INTEREST_AREAS_META[key];
+          if (meta) {
+            badgesHtml += '<span class="cagp-passport-interest-badge"><i class="bi ' + meta.icon + ' me-1"></i>' + escapeHtml(meta.label) + '</span>';
+          }
+        });
+        if (interests.length > 3) {
+          badgesHtml += '<span class="cagp-badge cagp-badge-dark font-mono">+' + (interests.length - 3) + '</span>';
+        }
+        passportInterestsList.innerHTML = badgesHtml;
+      } else {
+        passportInterestsWrap.setAttribute('hidden', '');
+        passportInterestsList.innerHTML = '';
+      }
+    }
+
     const removePhotoBtn = document.getElementById('cagp-btn-remove-photo');
     if (removePhotoBtn) {
       if (hasPhoto) removePhotoBtn.removeAttribute('hidden');
@@ -1305,15 +1398,53 @@
     const prof = getStudentProfile();
     const nameInput = document.getElementById('cagp-prof-input-name');
     const pronounsInput = document.getElementById('cagp-prof-input-pronouns');
+    const emailInput = document.getElementById('cagp-prof-input-email');
+    const phoneInput = document.getElementById('cagp-prof-input-phone');
     const periodSelect = document.getElementById('cagp-prof-input-period');
     const semInput = document.getElementById('cagp-prof-input-semester');
     const pathSelect = document.getElementById('cagp-prof-input-pathway');
+    const bioInput = document.getElementById('cagp-prof-input-bio');
+    const bioCount = document.getElementById('cagp-bio-char-count');
+    const linkedinInput = document.getElementById('cagp-prof-input-linkedin');
+    const lattesInput = document.getElementById('cagp-prof-input-lattes');
+    const otherInterestsInput = document.getElementById('cagp-prof-input-other-interests');
+    const consentCheck = document.getElementById('cagp-prof-consent-talent');
+    const countBadge = document.getElementById('cagp-interests-count-badge');
 
     if (nameInput) nameInput.value = prof.name || '';
     if (pronounsInput) pronounsInput.value = prof.pronouns || '';
+    if (emailInput) emailInput.value = prof.email || '';
+    if (phoneInput) phoneInput.value = prof.phone || '';
     if (periodSelect) periodSelect.value = prof.period || '1';
     if (semInput) semInput.value = prof.entrySemester || '2026/1';
     if (pathSelect) pathSelect.value = prof.pathway || '01-01';
+    if (bioInput) {
+      bioInput.value = prof.bio || '';
+      if (bioCount) bioCount.textContent = (prof.bio || '').length + ' / 280';
+    }
+    if (linkedinInput) linkedinInput.value = prof.linkedin || '';
+    if (lattesInput) lattesInput.value = prof.lattes || '';
+    if (otherInterestsInput) otherInterestsInput.value = prof.otherInterests || '';
+    if (consentCheck) consentCheck.checked = Boolean(prof.talentConsent);
+
+    const userInterests = Array.isArray(prof.interests) ? prof.interests : [];
+    document.querySelectorAll('[data-interest-key]').forEach(function (btn) {
+      const k = btn.getAttribute('data-interest-key');
+      const active = userInterests.indexOf(k) !== -1;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    if (countBadge) {
+      countBadge.textContent = userInterests.length + ' selecionada' + (userInterests.length === 1 ? '' : 's');
+    }
+
+    const userSkills = Array.isArray(prof.skills) ? prof.skills : [];
+    document.querySelectorAll('[data-skill-key]').forEach(function (btn) {
+      const k = btn.getAttribute('data-skill-key');
+      const active = userSkills.indexOf(k) !== -1;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
 
     document.querySelectorAll('[data-cagp-avatar-preset]').forEach(function (btn) {
       const val = btn.getAttribute('data-cagp-avatar-preset');
@@ -1343,22 +1474,48 @@
   function collectAndSaveEditorFields(showFeedback) {
     const nameInput = document.getElementById('cagp-prof-input-name');
     const pronounsInput = document.getElementById('cagp-prof-input-pronouns');
+    const emailInput = document.getElementById('cagp-prof-input-email');
+    const phoneInput = document.getElementById('cagp-prof-input-phone');
     const periodSelect = document.getElementById('cagp-prof-input-period');
     const semInput = document.getElementById('cagp-prof-input-semester');
     const pathSelect = document.getElementById('cagp-prof-input-pathway');
+    const bioInput = document.getElementById('cagp-prof-input-bio');
+    const linkedinInput = document.getElementById('cagp-prof-input-linkedin');
+    const lattesInput = document.getElementById('cagp-prof-input-lattes');
+    const otherInterestsInput = document.getElementById('cagp-prof-input-other-interests');
+    const consentCheck = document.getElementById('cagp-prof-consent-talent');
+
+    const interests = [];
+    document.querySelectorAll('[data-interest-key].is-active').forEach(function (btn) {
+      interests.push(btn.getAttribute('data-interest-key'));
+    });
+
+    const skills = [];
+    document.querySelectorAll('[data-skill-key].is-active').forEach(function (btn) {
+      skills.push(btn.getAttribute('data-skill-key'));
+    });
 
     saveStudentProfile({
       name: nameInput ? nameInput.value.trim() : '',
       pronouns: pronounsInput ? pronounsInput.value.trim() : '',
+      email: emailInput ? emailInput.value.trim() : '',
+      phone: phoneInput ? phoneInput.value.trim() : '',
       period: periodSelect ? periodSelect.value : '1',
       entrySemester: (semInput && semInput.value.trim()) ? semInput.value.trim() : '2026/1',
-      pathway: pathSelect ? pathSelect.value : '01-01'
+      pathway: pathSelect ? pathSelect.value : '01-01',
+      interests: interests,
+      otherInterests: otherInterestsInput ? otherInterestsInput.value.trim() : '',
+      skills: skills,
+      bio: bioInput ? bioInput.value.trim().slice(0, 280) : '',
+      linkedin: linkedinInput ? linkedinInput.value.trim() : '',
+      lattes: lattesInput ? lattesInput.value.trim() : '',
+      talentConsent: consentCheck ? consentCheck.checked : false
     });
 
     if (showFeedback) {
       if (window.cagpHaptic) window.cagpHaptic(8);
       if (window.cagpToast) {
-        window.cagpToast('Passaporte Acadêmico CAGP salvo no dispositivo!', 'bi-person-check-fill', 2600);
+        window.cagpToast('Perfil & Banco de Talentos salvos no dispositivo!', 'bi-check2-circle', 2800);
       }
     }
   }
@@ -1366,6 +1523,38 @@
   document.addEventListener('click', function (e) {
     const target = e.target;
     if (!target || !target.closest) return;
+
+    // 0. Alternar Abas do Perfil [Passaporte & Carteira] / [Perfil & Banco de Talentos]
+    const profileTabBtn = target.closest('[data-profile-tab]');
+    if (profileTabBtn) {
+      e.preventDefault();
+      const tabName = profileTabBtn.getAttribute('data-profile-tab');
+      switchProfileTab(tabName);
+      return;
+    }
+
+    // 0.1 Seleção de Chips de Áreas de Interesse
+    const interestChip = target.closest('[data-interest-key]');
+    if (interestChip) {
+      e.preventDefault();
+      const isActive = interestChip.classList.toggle('is-active');
+      interestChip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      const countEl = document.getElementById('cagp-interests-count-badge');
+      if (countEl) {
+        const count = document.querySelectorAll('#cagp-interests-picker [data-interest-key].is-active').length;
+        countEl.textContent = count + ' selecionada' + (count === 1 ? '' : 's');
+      }
+      return;
+    }
+
+    // 0.2 Seleção de Chips de Habilidades
+    const skillChip = target.closest('[data-skill-key]');
+    if (skillChip) {
+      e.preventDefault();
+      const isActive = skillChip.classList.toggle('is-active');
+      skillChip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      return;
+    }
 
     // 1. Abrir Passaporte & Perfil Completo a partir de qualquer gatilho (Navbar, Topbar, Tabbar, Drawer, Home Card)
     const openPassportBtn = target.closest('[data-cagp-open-passport]');
@@ -1513,6 +1702,17 @@
       window.dispatchEvent(new CustomEvent('cagp:vault-cleared'));
       if (window.cagpToast) {
         window.cagpToast('Cofre discente zerado com sucesso.', 'bi-trash3', 2400);
+      }
+    }
+  });
+
+  document.addEventListener('input', function (e) {
+    const t = e.target;
+    if (!t) return;
+    if (t.id === 'cagp-prof-input-bio') {
+      const counter = document.getElementById('cagp-bio-char-count');
+      if (counter) {
+        counter.textContent = t.value.length + ' / 280';
       }
     }
   });
@@ -2326,7 +2526,12 @@
   window.cagpOpenAppSettings = openAppSettings;
   window.closeCagpAppSettings = closeAppSettings;
   window.cagpCloseAppSettings = closeAppSettings;
+  window.closeCagpPassportSheet = closeAppSettings;
   window.refreshCagpVault = refreshVaultData;
+  window.cagpBuildBackupPayload = buildBackupPayload;
+  window.cagpRestoreVaultFromPayload = restoreFromPayload;
+  window.cagpGenerateQuickCode = generateSyncCode;
+  window.cagpRestoreFromQuickCode = restoreFromPayload;
 
   // Escutar mudanças no localStorage (outra aba ou micro-apps na página)
   window.addEventListener('storage', refreshVaultData);

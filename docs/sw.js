@@ -1,206 +1,283 @@
-/* ==========================================================================
-   CAGP UFMG — Service Worker Oficial (PWA Offline & Cache Engine v2)
-   Estratégia: Network-First para HTML/CSS/JS (Atualização Imediata no GitHub Pages)
-   + Cache-First para os 8 PDFs Normativos Oficiais e Ícones (100% Offline FAFICH)
-   ========================================================================== */
-
-const CACHE_NAME = 'cagp-pwa-v6';
-const PDF_CACHE_NAME = 'cagp-pdfs-oficiais-v1';
-
-const CORE_ASSETS = [
-  './',
-  'index.html',
-  'curso.html',
-  'pesquisa.html',
-  'calouros.html',
-  'percurso.html',
-  'optativas.html',
-  'acg.html',
-  'estagio.html',
-  'tcc.html',
-  'estagio-tcc.html',
-  'documentos.html',
-  'faq.html',
-  'sobre.html',
-  'gestao.html',
-  'mapa-do-site.html',
-  'styles.css',
-  'manifest.webmanifest',
-  'imagens/pwa/pwa-192x192.png',
-  'imagens/pwa/pwa-512x512.png',
-  'imagens/pwa/apple-touch-icon.png',
-  'logos/cagp/10_simbolo_transparente_positivo.svg',
-  'site_libs/bootstrap/bootstrap-icons.css',
-  'site_libs/bootstrap/bootstrap.min.js',
-  'site_libs/quarto-html/quarto.js',
-  'site_libs/quarto-nav/quarto-nav.js',
-  'site_libs/clipboard/clipboard.min.js'
+// CAGP UFMG — Service Worker Oficial (PWA Offline & Anti-Lie-Fi)
+const CACHE_NAME = 'cagp-pwa-v7';
+const PRECACHE_ASSETS = [
+  "/_astro/Art41Simulator.OjO6fh49.js",
+  "/_astro/BaseLayout.Dr_KM6GH.css",
+  "/_astro/Calculator600h.BgF3c4w5.js",
+  "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DXqcZz58.js",
+  "/_astro/CurriculumGraph.L8fNz755.js",
+  "/_astro/GlobalSheets.B04jK9PT.js",
+  "/_astro/Guardian120d.-u0AzTst.js",
+  "/_astro/HomePassportLive.BHbI1Rke.js",
+  "/_astro/MinhaGradeDossie.CV2ygtLp.js",
+  "/_astro/PercursoQuiz.CWN2g1VZ.js",
+  "/_astro/client.DIo2Mfbe.js",
+  "/_astro/curriculumGraphData.CInpm3WW.js",
+  "/_astro/jsx-runtime.C2aMnSBe.js",
+  "/_astro/react.CmU_e8vp.js",
+  "/_astro/rolldown-runtime.WkwZ5CU-.js",
+  "/_astro/studentVault.CMcDgU57.js",
+  "/acg/index.html",
+  "/acg/",
+  "/acg",
+  "/calouros/index.html",
+  "/calouros/",
+  "/calouros",
+  "/configuracoes/index.html",
+  "/configuracoes/",
+  "/configuracoes",
+  "/curso/index.html",
+  "/curso/",
+  "/curso",
+  "/documentos/cne-dcn-educacao-ambiental-2012.pdf",
+  "/documentos/cne-dcn-educacao-direitos-humanos-2012.pdf",
+  "/documentos/cne-dcn-relacoes-etnico-raciais-2004.pdf",
+  "/documentos/cne-parecer-003-2004-relacoes-etnico-raciais.pdf",
+  "/documentos/declaracao-atividade-avaliativa.pdf",
+  "/documentos/depoimentos-de-egressos.pdf",
+  "/documentos/dti-office365-criacao-conta.pdf",
+  "/documentos/ementario-gestao-publica-ufmg.pdf",
+  "/documentos/estagio-manual-orientacoes-fafich.pdf",
+  "/documentos/estagio-modelo-plano-de-atividades.docx",
+  "/documentos/estagio-modelo-plano-de-atividades.pdf",
+  "/documentos/estagio-modelo-relatorio-final.docx",
+  "/documentos/estagio-modelo-relatorio-final.pdf",
+  "/documentos/estagio-modelo-relatorio-semestral.docx",
+  "/documentos/estagio-modelo-relatorio-semestral.pdf",
+  "/documentos/estagio-modelo-termo-de-compromisso-com-convenio.docx",
+  "/documentos/estagio-modelo-termo-de-compromisso-com-convenio.pdf",
+  "/documentos/estagio-modelo-termo-de-compromisso-sem-vinculo.docx",
+  "/documentos/estagio-modelo-termo-de-compromisso-sem-vinculo.pdf",
+  "/documentos/estagio-relatorio-atividades-experiencia-profissional.docx",
+  "/documentos/estagio-relatorio-atividades-experiencia-profissional.pdf",
+  "/documentos/estagio-requerimento-integralizacao-experiencia-profissional.docx",
+  "/documentos/estagio-requerimento-integralizacao-experiencia-profissional.pdf",
+  "/documentos/fca-formacao-complementar-aberta.pdf",
+  "/documentos/forma-ingresso-obtencao-novo-titulo.pdf",
+  "/documentos/forma-ingresso-reopcao.pdf",
+  "/documentos/forma-ingresso-sisu.pdf",
+  "/documentos/index.html",
+  "/documentos/",
+  "/documentos",
+  "/documentos/manual-aplicativo-siga-ufmg.pdf",
+  "/documentos/percurso-bacharelado-nucleo-avancado.pdf",
+  "/documentos/percurso-bacharelado-nucleo-complementar.pdf",
+  "/documentos/percurso-bacharelado-nucleo-geral.pdf",
+  "/documentos/portaria-prae-1286-2026-permanencia-estudantil.pdf",
+  "/documentos/ppc-gestao-publica-ufmg.pdf",
+  "/documentos/recepcao-calouros-2023-2.pdf",
+  "/documentos/recepcao-ingressantes-2024-2.pdf",
+  "/documentos/regimento-geral-ufmg.pdf",
+  "/documentos/regimento-interno-cagp-ufmg.pdf",
+  "/documentos/regulamento-gestao-publica-ufmg.pdf",
+  "/documentos/requerimento-aproveitamento-de-estudos-colegiado.pdf",
+  "/documentos/requerimento-aproveitamento-de-estudos-drca.pdf",
+  "/documentos/requerimento-atividade-integralizadora-credito-v20152.pdf",
+  "/documentos/requerimento-atividade-integralizadora-credito-v20229.pdf",
+  "/documentos/requerimento-avaliacao-medica.pdf",
+  "/documentos/requerimento-formacao-complementar-aberta-fca.pdf",
+  "/documentos/requerimento-inclusao-nome-social.pdf",
+  "/documentos/requerimento-inscricao-colacao-de-grau-colegiado.pdf",
+  "/documentos/requerimento-inscricao-colacao-de-grau-drca.pdf",
+  "/documentos/requerimento-inscricao-exame-especial.pdf",
+  "/documentos/requerimento-matricula-disciplina-isolada.pdf",
+  "/documentos/requerimento-matricula-formacao-livre.pdf",
+  "/documentos/requerimento-matricula-pos-graduacao.pdf",
+  "/documentos/requerimento-mudanca-de-turno.pdf",
+  "/documentos/requerimento-mudanca-percurso-curricular-drca.pdf",
+  "/documentos/requerimento-mudanca-percurso-modalidade-habilitacao-enfase.pdf",
+  "/documentos/requerimento-prioridade-registro-diploma.pdf",
+  "/documentos/requerimento-regime-especial-graduacao.pdf",
+  "/documentos/requerimento-revisao-desligamento-plano-estudos-colegiado.pdf",
+  "/documentos/requerimento-revisao-desligamento-plano-integralizacao-drca.pdf",
+  "/documentos/requerimento-trancamento-parcial-matricula.pdf",
+  "/documentos/requerimento-trancamento-total-matricula.pdf",
+  "/documentos/requerimento-transferencia-outra-ies.pdf",
+  "/documentos/resolucao-01-2016-formacao-complementar-aberta.pdf",
+  "/documentos/resolucao-01-2018-altera-formacao-complementar-aberta.pdf",
+  "/documentos/resolucao-01-2019-estagio-curricular.pdf",
+  "/documentos/resolucao-01-2020-atividades-integralizadoras-credito.pdf",
+  "/documentos/resolucao-03-2016-modalidade-ead.pdf",
+  "/documentos/resolucao-05-2016-mobilidade-estudantil.pdf",
+  "/documentos/resolucao-07-2016-planejamento-horario.pdf",
+  "/documentos/resolucao-08-2016-distribuicao-vagas-remanescentes.pdf",
+  "/documentos/resolucao-cepe-01-2018-normas-gerais-graduacao.pdf",
+  "/documentos/resolucao-cepe-02-2009-estagio-ufmg.pdf",
+  "/documentos/resolucao-cepe-06-2019-aproveitamento-estudos.pdf",
+  "/documentos/resolucao-cepe-11-2018-regras-transicao-graduacao.pdf",
+  "/documentos/resolucao-cepe-19-2014-formacao-transversal.pdf",
+  "/documentos/resolucao-congrega-02-2018-concurso-tcc.pdf",
+  "/documentos/resolucao-prae-09-2015-nome-social.pdf",
+  "/documentos/resolucao-ufmg-07-2025-contra-o-assedio.pdf",
+  "/documentos/roteiro-comprovacao-conhecimentos-estudante.pdf",
+  "/documentos/roteiro-regime-especial-raep-estudante.pdf",
+  "/documentos/termo-aceite-orientador-tcc.pdf",
+  "/estagio/index.html",
+  "/estagio/",
+  "/estagio",
+  "/estagio-tcc/index.html",
+  "/estagio-tcc/",
+  "/estagio-tcc",
+  "/faq/index.html",
+  "/faq/",
+  "/faq",
+  "/gestao/index.html",
+  "/gestao/",
+  "/gestao",
+  "/imagens/campanha-permanecer-fump.png",
+  "/imagens/carteirinha.png",
+  "/imagens/conexaowifi.png",
+  "/imagens/guia-acesso-biblioteca.png",
+  "/imagens/guia-acesso-sistemas.png",
+  "/imagens/guia-alimentacao-no-campus.png",
+  "/imagens/mapa-pampulha-detalhado.jpg",
+  "/imagens/mapas-dos-campi.png",
+  "/imagens/og-padrao.png",
+  "/imagens/os-candangos.jpg",
+  "/imagens/passo-a-passo-assistencia-fump.jpg",
+  "/imagens/pwa/apple-touch-icon.png",
+  "/imagens/pwa/pwa-192x192.png",
+  "/imagens/pwa/pwa-512x512.png",
+  "/imagens/pwa/pwa-icon.svg",
+  "/imagens/pwa/pwa-maskable-512x512.png",
+  "/imagens/tutoriais/print-mudanca-percurso-1.png",
+  "/imagens/tutoriais/print-requerimento-aac-1.png",
+  "/imagens/tutoriais/print-termo-estagio-1.png",
+  "/index.html",
+  "/",
+  "/logos/cagp/01_vertical_fundo_claro.svg",
+  "/logos/cagp/02_vertical_transparente_positivo.svg",
+  "/logos/cagp/03_vertical_fundo_escuro.svg",
+  "/logos/cagp/04_vertical_transparente_negativo.svg",
+  "/logos/cagp/05_horizontal_fundo_claro.svg",
+  "/logos/cagp/06_horizontal_transparente_positivo.svg",
+  "/logos/cagp/07_horizontal_fundo_escuro.svg",
+  "/logos/cagp/08_horizontal_transparente_negativo.svg",
+  "/logos/cagp/09_simbolo_fundo_claro.svg",
+  "/logos/cagp/10_simbolo_transparente_positivo.svg",
+  "/logos/cagp/11_simbolo_fundo_escuro.svg",
+  "/logos/cagp/12_simbolo_transparente_negativo.svg",
+  "/logos/cagp/13_horizontal_cagp_essencial.svg",
+  "/logos/fump/01-fump-logo-branco-fundo-colorido-sigla.jpeg",
+  "/logos/fump/02-fump-logo-branco-fundo-colorido.png",
+  "/logos/fump/03-fump-logo-colorido-fundo-branco-sigla.jpeg",
+  "/logos/fump/03-fump-sinae-logo-colorido-fundo-branco.png",
+  "/logos/interno-rotas/capa-mapa-natal.svg",
+  "/logos/interno-rotas/capa.svg",
+  "/logos/interno-rotas/icone.svg",
+  "/logos/interno-rotas/logo-horizontal.svg",
+  "/logos/interno-rotas/logo.svg",
+  "/logos/interno-rotas/marker.svg",
+  "/logos/minhaufmg/logo-minha-ufmg.png",
+  "/logos/siga/siga-ufmg-fundo-azul.webp",
+  "/logos/siga/siga-ufmg-fundo-branco.webp",
+  "/logos/ufmg/aplicacoes/branco-completa-ufmg.jpg",
+  "/logos/ufmg/aplicacoes/branco-ufmg.jpg",
+  "/logos/ufmg/aplicacoes/negativo-completa-ufmg.jpg",
+  "/logos/ufmg/aplicacoes/negativo-ufmg.jpg",
+  "/logos/ufmg/aplicacoes/preto-completa-ufmg.jpg",
+  "/logos/ufmg/aplicacoes/preto-ufmg.jpg",
+  "/logos/ufmg/aplicacoes/principal-completa-ufmg.jpg",
+  "/logos/ufmg/aplicacoes/principal-completa2-ufmg.jpg",
+  "/logos/ufmg/aplicacoes/principal-completa3-ufmg.jpg",
+  "/logos/ufmg/aplicacoes/principal-ufmg.jpg",
+  "/logos/ufmg/assinaturas/cac-ufmg.jpg",
+  "/logos/ufmg/assinaturas/copi-ufmg.jpg",
+  "/logos/ufmg/assinaturas/dai-ufmg.jpg",
+  "/logos/ufmg/assinaturas/ddcs-ufmg.jpg",
+  "/logos/ufmg/assinaturas/dri-ufmg.jpg",
+  "/logos/ufmg/assinaturas/dti-ufmg.jpg",
+  "/logos/ufmg/assinaturas/nai-ufmg.png",
+  "/logos/ufmg/assinaturas/ordem-ufmg.jpg",
+  "/logos/ufmg/assinaturas/pj-ufmg.jpg",
+  "/logos/ufmg/assinaturas/pra-ufmg.jpg",
+  "/logos/ufmg/assinaturas/prae-ufmg.png",
+  "/logos/ufmg/assinaturas/principal-ufmg.jpg",
+  "/logos/ufmg/assinaturas/proex-ufmg.jpg",
+  "/logos/ufmg/assinaturas/prograd-ufmg.jpg",
+  "/logos/ufmg/assinaturas/prograd-ufmg.png",
+  "/logos/ufmg/assinaturas/proplan-ufmg.jpg",
+  "/logos/ufmg/assinaturas/prorh-ufmg.jpg",
+  "/logos/ufmg/assinaturas/prpg-ufmg.jpg",
+  "/logos/ufmg/assinaturas/prpq-ufmg.jpg",
+  "/manifest.webmanifest",
+  "/mapa-do-site/index.html",
+  "/mapa-do-site/",
+  "/mapa-do-site",
+  "/optativas/index.html",
+  "/optativas/",
+  "/optativas",
+  "/percurso/index.html",
+  "/percurso/",
+  "/percurso",
+  "/pesquisa/index.html",
+  "/pesquisa/",
+  "/pesquisa",
+  "/sobre/index.html",
+  "/sobre/",
+  "/sobre",
+  "/tcc/index.html",
+  "/tcc/",
+  "/tcc"
 ];
 
-const OFFICIAL_PDFS = [
-  'documentos/ppc-gestao-publica-ufmg.pdf',
-  'documentos/regulamento-gestao-publica-ufmg.pdf',
-  'documentos/ementario-gestao-publica-ufmg.pdf',
-  'documentos/percurso-bacharelado-nucleo-geral.pdf',
-  'documentos/percurso-bacharelado-nucleo-complementar.pdf',
-  'documentos/percurso-bacharelado-nucleo-avancado.pdf',
-  'documentos/termo-aceite-orientador-tcc.pdf',
-  'documentos/regimento-interno-cagp-ufmg.pdf',
-  'documentos/requerimento-atividade-integralizadora-credito-v20229.pdf'
-];
-
-// 1. Instalação: Pré-cache tolerante do App Shell com Promise.allSettled e ativação imediata
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    (async () => {
-      const cache = await caches.open(CACHE_NAME);
-      await Promise.allSettled(
-        CORE_ASSETS.map(async (url) => {
-          try {
-            const response = await fetch(url);
-            if (response.ok) {
-              await cache.put(url, response);
-            }
-          } catch (e) {}
-        })
+    caches.open(CACHE_NAME).then((cache) => {
+      return Promise.allSettled(
+        PRECACHE_ASSETS.map((url) =>
+          fetch(url)
+            .then((res) => {
+              if (res.ok) return cache.put(url, res);
+            })
+            .catch(() => {})
+        )
       );
-      await self.skipWaiting();
-    })()
+    }).then(() => self.skipWaiting())
   );
 });
 
-// 2. Ativação: Limpeza de caches obsoletos e notificação via Dynamic Island Toast
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    (async () => {
-      const cacheNames = await caches.keys();
-      let updatedFromPrevious = false;
-
-      await Promise.all(
-        cacheNames.map((name) => {
-          if (name !== CACHE_NAME && name !== PDF_CACHE_NAME) {
-            if (name.startsWith('cagp-pwa-')) {
-              updatedFromPrevious = true;
-            }
-            return caches.delete(name);
-          }
-          return Promise.resolve();
-        })
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))
       );
-
-      await self.clients.claim();
-
-      if (updatedFromPrevious) {
-        const allClients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
-        allClients.forEach((client) => {
-          client.postMessage({
-            type: 'CAGP_SW_UPDATED',
-            version: CACHE_NAME
-          });
-        });
-      }
-    })()
+    }).then(() => self.clients.claim())
   );
 });
 
-// Suporte a comandos diretos do cliente (ex.: forçar atualização, pré-cache de PDFs ou disparar notificação nativa)
-self.addEventListener('message', (event) => {
-  if (!event.data) return;
-  if (event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  } else if (event.data.type === 'CACHE_OFFICIAL_PDFS') {
-    event.waitUntil(
-      (async () => {
-        const cache = await caches.open(PDF_CACHE_NAME);
-        await Promise.allSettled(
-          OFFICIAL_PDFS.map(async (url) => {
-            try {
-              const response = await fetch(url);
-              if (response.ok) {
-                await cache.put(url, response);
-              }
-            } catch (e) {}
-          })
-        );
-      })()
-    );
-  } else if (event.data.type === 'SHOW_NOTIFICATION') {
-    const title = event.data.title || 'CAGP • Gestão Pública UFMG';
-    const options = Object.assign({
-      icon: 'imagens/pwa/pwa-192x192.png',
-      badge: 'imagens/pwa/pwa-192x192.png',
-      vibrate: [120, 60, 120],
-      data: { url: event.data.url || 'index.html' }
-    }, event.data.options || {});
-    if (self.registration && self.registration.showNotification) {
-      event.waitUntil(self.registration.showNotification(title, options));
-    }
-  }
-});
-
-// Clique em Notificação Nativa: Foca aba aberta do Super App ou navega até a rota-alvo
-self.addEventListener('notificationclick', (event) => {
-  event.notification.close();
-  const targetUrl = (event.notification.data && event.notification.data.url) ? event.notification.data.url : 'index.html';
-  event.waitUntil(
-    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
-      for (const client of clientList) {
-        if ('focus' in client) {
-          client.focus();
-          client.postMessage({ type: 'CAGP_NOTIFICATION_CLICK', url: targetUrl });
-          return;
-        }
-      }
-      if (self.clients.openWindow) {
-        return self.clients.openWindow(targetUrl);
-      }
-    })
-  );
-});
-
-// 3. Interceptação Inteligente de Requisições
 self.addEventListener('fetch', (event) => {
-  const request = event.request;
-  if (request.method !== 'GET') return;
+  const req = event.request;
+  if (req.method !== 'GET') return;
 
-  const url = new URL(request.url);
+  const url = new URL(req.url);
 
-  // Ignorar origens externas
-  if (url.origin !== self.location.origin) {
-    return;
-  }
-
-  // A. PDFs Normativos Oficiais: Stale-While-Revalidate (Cofre Offline + Atualização Silenciosa)
-  if (url.pathname.endsWith('.pdf') || url.pathname.includes('/documentos/')) {
+  // Navegação: Network-first com anti-Lie-Fi timeout de 2.5s
+  if (req.mode === 'navigate') {
     event.respondWith(
       (async () => {
-        const cache = await caches.open(PDF_CACHE_NAME);
-        const cachedPdf = await cache.match(request);
-
-        const fetchUpdate = (async () => {
-          try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 1500);
-            const netRes = await fetch(request, { signal: controller.signal });
-            clearTimeout(timeoutId);
-            if (netRes && netRes.status === 200) {
-              await cache.put(request, netRes.clone());
-            }
-            return netRes;
-          } catch (e) {
-            return null;
+        try {
+          const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('Anti-Lie-Fi timeout (2.5s)')), 2500)
+          );
+          const networkResponse = await Promise.race([fetch(req), timeoutPromise]);
+          if (networkResponse && networkResponse.status === 200) {
+            const cache = await caches.open(CACHE_NAME);
+            cache.put(req, networkResponse.clone());
+            return networkResponse;
           }
-        })();
-
-        if (cachedPdf) {
-          event.waitUntil(fetchUpdate);
-          return cachedPdf;
+        } catch (_) {
+          // Fallback para cache imediato
         }
-
-        const netRes = await fetchUpdate;
-        if (netRes) return netRes;
-
-        return new Response('PDF oficial não disponível offline. Conecte-se à internet para sincronizar.', {
+        const cached = await caches.match(req);
+        if (cached) return cached;
+        const dirPath = url.pathname.endsWith('/') ? url.pathname + 'index.html' : url.pathname + '/index.html';
+        const dirCached = await caches.match(dirPath);
+        if (dirCached) return dirCached;
+        const indexCached = await caches.match('/index.html') || await caches.match('/');
+        if (indexCached) return indexCached;
+        return new Response('Sem conexão e sem cache disponível.', {
           status: 503,
           headers: { 'Content-Type': 'text/plain; charset=utf-8' }
         });
@@ -209,62 +286,24 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // B. Páginas HTML, CSS e JS: Network-First com AbortController (1500ms timeout)
-  const acceptHeader = request.headers.get('accept') || '';
-  const isHtmlOrCode =
-    request.mode === 'navigate' ||
-    acceptHeader.includes('text/html') ||
-    url.pathname.endsWith('.html') ||
-    url.pathname.endsWith('.css') ||
-    url.pathname.endsWith('.js') ||
-    url.pathname.endsWith('.webmanifest');
-
-  if (isHtmlOrCode) {
-    event.respondWith(
-      (async () => {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 1500);
-        try {
-          const networkResponse = await fetch(request, { signal: controller.signal });
-          clearTimeout(timeoutId);
-          if (networkResponse && networkResponse.status === 200) {
-            const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
-          }
-          return networkResponse;
-        } catch (err) {
-          clearTimeout(timeoutId);
-          const cachedResponse = await caches.match(request);
-          if (cachedResponse) return cachedResponse;
-          if (request.mode === 'navigate' || acceptHeader.includes('text/html')) {
-            return caches.match('index.html');
-          }
-          return new Response('Conteúdo temporariamente offline', {
-            status: 503,
-            headers: { 'Content-Type': 'text/plain; charset=utf-8' }
-          });
-        }
-      })()
-    );
-    return;
-  }
-
-  // C. Imagens, Ícones e Vetores SVG: Stale-While-Revalidate
+  // Documentos, assets e fontes: Cache-first com revalidação em background
   event.respondWith(
-    caches.match(request).then((cachedResponse) => {
-      const fetchPromise = fetch(request)
-        .then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, responseClone);
-            });
+    caches.match(req).then((cached) => {
+      if (cached) {
+        fetch(req).then((res) => {
+          if (res && res.status === 200) {
+            caches.open(CACHE_NAME).then((c) => c.put(req, res));
           }
-          return networkResponse;
-        })
-        .catch(() => cachedResponse);
-
-      return cachedResponse || fetchPromise;
+        }).catch(() => {});
+        return cached;
+      }
+      return fetch(req).then((res) => {
+        if (res && res.status === 200) {
+          const resClone = res.clone();
+          caches.open(CACHE_NAME).then((c) => c.put(req, resClone));
+        }
+        return res;
+      });
     })
   );
 });

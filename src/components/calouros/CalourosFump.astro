@@ -1,0 +1,132 @@
+---
+// CalourosFump.astro - Sub-view 4: Assistência Estudantil FUMP & PRAE
+---
+
+<div class="space-y-4 text-[#0A0A0A]">
+  <div class="cagp-tool-box p-4 space-y-3">
+    <div class="border-b border-[#DFDBD2] pb-2.5 flex items-center justify-between flex-wrap gap-2">
+      <div>
+        <div class="flex items-center gap-2">
+          <i class="bi bi-shield-heart-fill text-[#8B1E2D] text-lg" aria-hidden="true"></i>
+          <h3 class="font-['Oswald'] text-base font-bold uppercase text-[#0A0A0A]">
+            Permanência e Assistência Estudantil (FUMP & PRAE)
+          </h3>
+        </div>
+        <p class="text-xs text-gray-600 mt-0.5">Programas de apoio financeiro, nutricional e psicossocial na UFMG:</p>
+      </div>
+      <span class="cagp-badge cagp-badge-green font-mono">
+        <i class="bi bi-heart-fill" aria-hidden="true"></i> Assistência Discente
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="cagp-card p-3.5 bg-white flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 rounded-[4px] bg-[#8B1E2D]/10 text-[#8B1E2D] border border-[#8B1E2D]/30 flex items-center justify-center shrink-0">
+              <i class="bi bi-award-fill text-base" aria-hidden="true"></i>
+            </div>
+            <span class="font-['Oswald'] font-bold uppercase text-xs text-[#8B1E2D]">
+              Níveis de Vulnerabilidade (I a IV)
+            </span>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Após análise socioeconômica dos documentos familiares, os discentes classificados nos Níveis I e II recebem <strong>isenção integral de todas as refeições no RU</strong> e prioridade para bolsas acadêmicas.
+          </p>
+        </div>
+      </div>
+
+      <div class="cagp-card p-3.5 bg-white flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 rounded-[4px] bg-[#0A0A0A]/10 text-[#0A0A0A] border border-[#0A0A0A]/30 flex items-center justify-center shrink-0">
+              <i class="bi bi-wallet2 text-base" aria-hidden="true"></i>
+            </div>
+            <span class="font-['Oswald'] font-bold uppercase text-xs text-[#0A0A0A]">
+              Auxílios Permanência & Transporte
+            </span>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Subsídio mensal depositado em conta corrente para custeio de passagens do transporte coletivo metropolitano de Belo Horizonte e material didático acadêmico.
+          </p>
+        </div>
+      </div>
+
+      <div class="cagp-card p-3.5 bg-white flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 rounded-[4px] bg-[#15803D]/10 text-[#15803D] border border-[#15803D]/30 flex items-center justify-center shrink-0">
+              <i class="bi bi-heart-pulse-fill text-base" aria-hidden="true"></i>
+            </div>
+            <span class="font-['Oswald'] font-bold uppercase text-xs text-[#15803D]">
+              Assistência Médica e Odontológica
+            </span>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Consultas clínicas gratuitas na sede da FUMP no campus Pampulha, com tratamentos dentários, ginecológicos, oftalmológicos e fornecimento de óculos de grau.
+          </p>
+        </div>
+      </div>
+
+      <div class="cagp-card p-3.5 bg-white flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 rounded-[4px] bg-[#005A9C]/10 text-[#005A9C] border border-[#005A9C]/30 flex items-center justify-center shrink-0">
+              <i class="bi bi-emoji-smile-fill text-base" aria-hidden="true"></i>
+            </div>
+            <span class="font-['Oswald'] font-bold uppercase text-xs text-[#005A9C]">
+              Apoio Psicossocial & Saúde Mental
+            </span>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Acolhimento com psicólogos e assistentes sociais vinculados à PRAE/FUMP para acompanhamento do estresse acadêmico e adaptação universitária.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-2 flex flex-wrap gap-2">
+      <a href="https://www.fump.ufmg.br" target="_blank" rel="noopener noreferrer" class="cagp-btn-primary text-xs py-1.5 px-3 no-underline inline-flex items-center gap-1.5">
+        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Acessar Portal da FUMP &rarr;
+      </a>
+      <a href="/documentos/portaria-prae-1286-2026-permanencia-estudantil.pdf" download class="cagp-btn-secondary text-xs py-1.5 px-3 no-underline inline-flex items-center gap-1.5">
+        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Normas PRAE (PDF) &rarr;
+      </a>
+    </div>
+
+    <!-- Infográfico Passo a Passo Assistência FUMP -->
+    <div class="mt-4 pt-4 border-t border-[#DFDBD2] space-y-2">
+      <div class="flex items-center justify-between gap-2 flex-wrap">
+        <div>
+          <div class="flex items-center gap-2">
+            <i class="bi bi-card-checklist text-[#8B1E2D]" aria-hidden="true"></i>
+            <h4 class="font-['Oswald'] font-bold text-sm uppercase text-[#0A0A0A]">
+              Passo a Passo da Assistência Estudantil FUMP
+            </h4>
+          </div>
+          <p class="text-xs text-gray-600 mt-0.5">Fluxo oficial de cadastro socioeconômico e submissão documental:</p>
+        </div>
+        <a
+          href="/imagens/passo-a-passo-assistencia-fump.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cagp-btn-secondary text-xs py-1 px-2.5 no-underline shrink-0 flex items-center gap-1"
+        >
+          <i class="bi bi-arrows-fullscreen"></i> Ver Completo
+        </a>
+      </div>
+
+      <div class="rounded-[6px] border-2 border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A] overflow-hidden bg-white">
+        <img
+          src="/imagens/passo-a-passo-assistencia-fump.jpg"
+          alt="Infográfico oficial da FUMP com o passo a passo de acesso ao Questionário Socioeconômico na Área do Aluno"
+          class="w-full h-auto max-h-[500px] object-contain"
+          loading="lazy"
+        />
+      </div>
+      <p class="text-xs text-gray-500 italic text-center">
+        Fonte: Fundação Universitária Mendes Pimentel (FUMP / UFMG).
+      </p>
+    </div>
+  </div>
+</div>

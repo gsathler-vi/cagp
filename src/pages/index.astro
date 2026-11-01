@@ -1,0 +1,82 @@
+---
+// index.astro - A1 Hub Discente Oficial
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import SegmentedControl from '../components/ui/SegmentedControl.astro';
+import JourneyNav from '../components/ui/JourneyNav.astro';
+import HomeBussola from '../components/home/HomeBussola.astro';
+import HomeSistemas from '../components/home/HomeSistemas.astro';
+import HomeCagp from '../components/home/HomeCagp.astro';
+import HomeCampusTicker from '../components/home/HomeCampusTicker.astro';
+import { HomePassportLive } from '../components/home/HomePassportLive';
+
+const tabs = [
+  { id: 'v1', shortLabel: 'Hoje', fullLabel: '1. Bússola & Hoje', hash: '#hoje' },
+  { id: 'v2', shortLabel: 'Apps', fullLabel: '2. Sistemas & Apps', hash: '#apps' },
+  { id: 'v3', shortLabel: 'CAGP', fullLabel: '3. Módulos & CAGP', hash: '#cagp' },
+];
+
+const badges = [
+  { label: 'Turno Noturno', variant: 'red' as const, icon: 'bi-moon-stars-fill' },
+  { label: '10 Semestres • 3.000h', variant: 'dark' as const, icon: 'bi-mortarboard-fill' },
+  { label: 'FAFICH / UFMG', variant: 'blue' as const, icon: 'bi-bank' },
+  { label: 'RU II: 17h30-19h30', variant: 'dark' as const, icon: 'bi-clock-fill' },
+  { label: 'Circular até 22h45', variant: 'green' as const, icon: 'bi-bus-front' },
+  { label: 'PPC 2020', variant: 'gold' as const, icon: 'bi-shield-check' },
+];
+---
+
+<BaseLayout title="Super App Discente" description="Portal Institucional e Super App Discente do Centro Acadêmico de Gestão Pública (CAGP FAFICH/UFMG).">
+  <!-- 1st Fold Header (360x640: y <= 200px) -->
+  <PageHeader
+    eyebrow="Portal & Super App Discente Oficial"
+    title="Centro Acadêmico de Gestão Pública"
+    subtitle="Entidade legítima de representação discente da FAFICH/UFMG. Simule horas de Extensão e AAC (600h), consulte as 27 obrigatórias e 68 optativas, verifique dispensa de estágio (Art. 41) e acesse os documentos oficiais offline."
+    badges={badges}
+  />
+
+  <!-- Quick Entry Action Buttons (Desktop & Tablet) -->
+  <div class="hidden sm:flex flex-wrap items-center gap-2 mb-3">
+    <a href="/calouros" class="cagp-btn-primary text-xs py-1.5 px-3">
+      <i class="bi bi-compass" aria-hidden="true" /> Sou Calouro (1º P)
+    </a>
+    <a href="/percurso" class="cagp-btn-secondary text-xs py-1.5 px-3">
+      <i class="bi bi-diagram-3" aria-hidden="true" /> Grade 10P & Grafo
+    </a>
+    <a href="/curso" class="cagp-btn-secondary text-xs py-1.5 px-3">
+      <i class="bi bi-mortarboard" aria-hidden="true" /> O Curso de Gestão Pública
+    </a>
+  </div>
+
+  <!-- Plantão Discente & Campus Live Ticker -->
+  <HomeCampusTicker />
+
+  <!-- Segmented Control (Top at y <= 200px) -->
+  <SegmentedControl tabs={tabs} defaultTab="v1" />
+
+  <!-- Sub-view 1: Bússola & Hoje -->
+  <section id="ws-panel-v1" class="cagp-workspace-view space-y-4" data-ws-panel="v1">
+    <!-- Passaporte Acadêmico CAGP Live -->
+    <HomePassportLive client:load />
+    <HomeBussola />
+  </section>
+
+  <!-- Sub-view 2: Sistemas & Apps -->
+  <section id="ws-panel-v2" class="cagp-workspace-view" data-ws-panel="v2" hidden>
+    <HomeSistemas />
+  </section>
+
+  <!-- Sub-view 3: Módulos & CAGP -->
+  <section id="ws-panel-v3" class="cagp-workspace-view" data-ws-panel="v3" hidden>
+    <HomeCagp />
+  </section>
+
+  <!-- Journey Navigation Trail -->
+  <JourneyNav
+    next={{
+      title: 'Guia de Sobrevivência do Calouro',
+      href: '/calouros',
+      desc: 'Checklist interativo dos primeiros 30 dias, rotina noturna, jantar no RU e atendimento na FAFICH.',
+    }}
+  />
+</BaseLayout>

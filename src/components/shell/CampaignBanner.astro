@@ -1,0 +1,61 @@
+---
+// CampaignBanner.astro - Faixa Permanente de Transparência e Proposta de Chapa CAGP
+---
+
+<aside id="cagp-campaign-banner" class="w-full bg-[#8B1E2D] text-white border-b-2 border-[#0A0A0A] select-none text-xs transition-all duration-200 z-[1050] relative">
+  <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2.5">
+    <div class="flex items-center gap-2 flex-1 min-w-0">
+      <span class="inline-flex items-center font-['Oswald'] text-[11px] font-bold tracking-wider uppercase bg-[#0A0A0A] text-white px-2 py-0.5 rounded border border-white/30 shrink-0">
+        <i class="bi bi-megaphone-fill me-1 text-yellow-300"></i> PROPOSTA DE CHAPA
+      </span>
+      <p id="cagp-banner-text" class="text-[11px] sm:text-xs text-white/95 leading-snug m-0 line-clamp-1 sm:line-clamp-none transition-all">
+        Este portal é uma proposta e projeto da <strong>Chapa [Nome da Chapa a Definir]</strong> para a gestão do <strong>CAGP (FAFICH/UFMG)</strong>. Nosso compromisso é com os discentes: <strong>independentemente do resultado da eleição, disponibilizaremos este projeto completo para a gestão vencedora</strong>.
+      </p>
+    </div>
+
+    <button
+      type="button"
+      id="cagp-banner-toggle-btn"
+      class="px-2 py-1 bg-[#0A0A0A]/40 hover:bg-[#0A0A0A] text-white border border-white/20 rounded text-[10px] font-mono font-bold shrink-0 flex items-center gap-1 transition-colors cursor-pointer"
+      aria-expanded="false"
+      aria-controls="cagp-banner-text"
+      title="Alternar modo compacto do aviso da chapa"
+    >
+      <span id="cagp-banner-toggle-label">Expandir ▼</span>
+    </button>
+  </div>
+</aside>
+
+<script>
+  function setupCampaignBanner() {
+    const banner = document.getElementById('cagp-campaign-banner');
+    const text = document.getElementById('cagp-banner-text');
+    const btn = document.getElementById('cagp-banner-toggle-btn');
+    const label = document.getElementById('cagp-banner-toggle-label');
+    if (!banner || !text || !btn || !label) return;
+
+    let isExpanded = localStorage.getItem('cagp_campaign_banner_expanded') === 'true';
+
+    function renderState() {
+      if (isExpanded) {
+        text.classList.remove('line-clamp-1');
+        label.textContent = 'Compactar ▲';
+        btn?.setAttribute('aria-expanded', 'true');
+      } else {
+        text.classList.add('line-clamp-1');
+        label.textContent = 'Expandir ▼';
+        btn?.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    btn.addEventListener('click', () => {
+      isExpanded = !isExpanded;
+      localStorage.setItem('cagp_campaign_banner_expanded', isExpanded ? 'true' : 'false');
+      renderState();
+    });
+
+    renderState();
+  }
+
+  document.addEventListener('astro:page-load', setupCampaignBanner);
+</script>

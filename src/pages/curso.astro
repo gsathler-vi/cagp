@@ -1,0 +1,75 @@
+---
+// curso.astro - A4 Guia: 4 sub-views (Visão · Egressos · Colegiado · Ingresso)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import SegmentedControl from '../components/ui/SegmentedControl.astro';
+import JourneyNav from '../components/ui/JourneyNav.astro';
+import CursoVisao from '../components/curso/CursoVisao.astro';
+import CursoEgressos from '../components/curso/CursoEgressos.astro';
+import CursoColegiado from '../components/curso/CursoColegiado.astro';
+import CursoIngresso from '../components/curso/CursoIngresso.astro';
+
+const tabs = [
+  { id: 'v1', shortLabel: 'Visão', fullLabel: '1. Visão Geral & Cientometria', hash: '#visao' },
+  { id: 'v2', shortLabel: 'Egressos', fullLabel: '2. Egressos & Salários', hash: '#egressos' },
+  { id: 'v3', shortLabel: 'Colegiado', fullLabel: '3. Colegiado & Secretaria', hash: '#colegiado' },
+  { id: 'v4', shortLabel: 'Ingresso', fullLabel: '4. Formas de Ingresso', hash: '#ingresso' },
+];
+
+const badges = [
+  { label: 'Nota 4 CPC/MEC', variant: 'red' as const, icon: 'bi-star-fill' },
+  { label: 'Criado em 2009 (REUNI)', variant: 'dark' as const, icon: 'bi-bank' },
+  { label: 'DCP • FAFICH • UFMG', variant: 'blue' as const, icon: 'bi-mortarboard-fill' },
+  { label: 'Turno Noturno', variant: 'green' as const, icon: 'bi-moon-stars-fill' },
+];
+
+const breadcrumbs = [
+  { label: 'Início', href: '/' },
+  { label: 'O Curso' },
+];
+---
+
+<BaseLayout title="O Curso de Gestão Pública" description="História, excelência Nota 4 MEC, cientometria, salários dos egressos e governança na FAFICH/UFMG.">
+  <PageHeader
+    title="O Bacharelado em Gestão Pública"
+    subtitle="Formação pública de excelência voltada para formulação, implementação e avaliação de políticas públicas no Estado brasileiro, sediada no Departamento de Ciência Política (Conceito 7 CAPES)."
+    badges={badges}
+    breadcrumbs={breadcrumbs}
+  />
+
+  <SegmentedControl tabs={tabs} defaultTab="v1" />
+
+  <!-- Sub-view 1: Visão Geral -->
+  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1">
+    <CursoVisao />
+  </section>
+
+  <!-- Sub-view 2: Egressos -->
+  <section id="ws-panel-v2" class="cagp-workspace-view" data-ws-panel="v2" hidden>
+    <CursoEgressos />
+  </section>
+
+  <!-- Sub-view 3: Colegiado -->
+  <section id="ws-panel-v3" class="cagp-workspace-view" data-ws-panel="v3" hidden>
+    <CursoColegiado />
+  </section>
+
+  <!-- Sub-view 4: Ingresso -->
+  <section id="ws-panel-v4" class="cagp-workspace-view" data-ws-panel="v4" hidden>
+    <CursoIngresso />
+  </section>
+
+  <!-- Journey Navigation Trail -->
+  <JourneyNav
+    prev={{
+      title: 'Hub Principal do Super App',
+      href: '/',
+      desc: 'Bússola discente, sistemas oficiais e avisos do campus.',
+    }}
+    next={{
+      title: 'Guia de Sobrevivência do Calouro',
+      href: '/calouros',
+      desc: 'Checklist dos primeiros 30 dias, rotina noturna e atendimento na FAFICH.',
+    }}
+  />
+</BaseLayout>

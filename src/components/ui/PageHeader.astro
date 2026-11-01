@@ -1,0 +1,107 @@
+---
+// PageHeader.astro - Cabeçalho Canônico Padronizado com Badges, Breadcrumbs e 1ª Dobra
+interface Badge {
+  label: string;
+  variant?: 'red' | 'dark' | 'blue' | 'green' | 'gold';
+  icon?: string;
+}
+
+interface Breadcrumb {
+  label: string;
+  href?: string;
+}
+
+interface AxisPill {
+  axisName: string;
+  axisIcon: string;
+  parentLabel: string;
+  parentHref: string;
+  currentLabel: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  eyebrow?: string;
+  badges?: Badge[];
+  breadcrumbs?: Breadcrumb[];
+  axisPill?: AxisPill;
+}
+
+const {
+  title,
+  subtitle,
+  eyebrow,
+  badges = [],
+  breadcrumbs = [],
+  axisPill,
+} = Astro.props;
+
+const badgeClasses: Record<string, string> = {
+  red: 'cagp-badge-red',
+  dark: 'cagp-badge-dark',
+  blue: 'cagp-badge-blue',
+  green: 'cagp-badge-green',
+  gold: 'cagp-badge-gold',
+};
+---
+
+<header class="mb-3 select-none">
+  <!-- Axis Context Pill Strip (para rotas filhas) -->
+  {axisPill && (
+    <div class="cagp-axis-pill-strip">
+      <span class="text-gray-400 flex items-center gap-1 font-mono text-[11px]">
+        <i class={`bi ${axisPill.axisIcon}`} aria-hidden="true" />
+        <span>{axisPill.axisName}:</span>
+      </span>
+      <a href={axisPill.parentHref} class="text-xs font-bold text-[#8B1E2D] hover:underline no-underline">
+        {axisPill.parentLabel}
+      </a>
+      <span class="text-gray-300">/</span>
+      <span class="text-xs font-bold text-[#0A0A0A]">{axisPill.currentLabel}</span>
+    </div>
+  )}
+
+  <!-- Breadcrumbs & Badges Row -->
+  <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+    {breadcrumbs.length > 0 ? (
+      <nav aria-label="Trilha de navegação" class="text-xs text-gray-500 flex items-center gap-1">
+        {breadcrumbs.map((crumb, idx) => (
+          <>
+            {crumb.href ? (
+              <a href={crumb.href} class="text-[#8B1E2D] hover:underline no-underline">{crumb.label}</a>
+            ) : (
+              <span class="text-gray-700 font-semibold">{crumb.label}</span>
+            )}
+            {idx < breadcrumbs.length - 1 && <span class="text-gray-300">›</span>}
+          </>
+        ))}
+      </nav>
+    ) : eyebrow ? (
+      <span class="text-xs font-['Oswald'] uppercase tracking-wider text-[#8B1E2D] font-bold">
+        {eyebrow}
+      </span>
+    ) : <div />}
+
+    {badges.length > 0 && (
+      <div class="flex flex-wrap items-center gap-1">
+        {badges.map((b) => (
+          <span class={`cagp-badge ${badgeClasses[b.variant || 'dark']}`}>
+            {b.icon && <i class={`bi ${b.icon}`} aria-hidden="true" />}
+            <span>{b.label}</span>
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <!-- Page Title & Subtitle -->
+  <h1 class="font-['Oswald'] text-2xl sm:text-3xl font-black uppercase text-[#0A0A0A] leading-tight">
+    {title}
+  </h1>
+  {subtitle && (
+    <p class="text-xs sm:text-sm text-gray-600 mt-1 max-w-4xl leading-relaxed">
+      {subtitle}
+    </p>
+  )}
+</header>

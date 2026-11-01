@@ -1,0 +1,63 @@
+---
+// SobreGovernanca.astro - Sub-view 2: Governança Estatutária e Estrutura Orgânica
+const diretorias = [
+  { nome: '1. Coordenação Geral / Presidência', icon: 'bi-bank', desc: 'Representação jurídica, institucional e política perante a UFMG e a sociedade.' },
+  { nome: '2. Secretaria-Geral', icon: 'bi-file-earmark-text', desc: 'Atas de assembleias, arquivo histórico, editais e comunicações oficiais.' },
+  { nome: '3. Diretoria de Finanças & Patrimônio', icon: 'bi-cash-coin', desc: 'Livro-caixa, prestação de contas bimestral e inventário de bens patrimoniais.' },
+  { nome: '4. Diretoria de Assuntos Acadêmicos', icon: 'bi-mortarboard', desc: 'Acompanhamento do Colegiado, NDE, estágio e combate a abusos pedagógicos.' },
+  { nome: '5. Diretoria de Comunicação', icon: 'bi-broadcast-pin', desc: 'Redes sociais, murais da FAFICH e manutenção do Portal e Super App discente.' },
+  { nome: '6. Diretoria de Extensão & Cultura', icon: 'bi-palette', desc: 'Calouradas culturais, cineclube, semanas acadêmicas e visitas técnicas.' },
+  { nome: '7. Diversidade & Permanência', icon: 'bi-heart-pulse', desc: 'Acompanhamento de cotistas, demandas da FUMP e acolhimento afirmativo.' },
+];
+---
+
+<div class="space-y-4 text-[#0A0A0A]">
+  <div class="cagp-tool-box p-4 space-y-3">
+    <div class="border-b border-[#DFDBD2] pb-2.5 flex items-center justify-between flex-wrap gap-2">
+      <div>
+        <div class="flex items-center gap-2">
+          <i class="bi bi-diagram-3-fill text-[#8B1E2D] text-lg" aria-hidden="true"></i>
+          <h3 class="font-['Oswald'] text-base font-bold uppercase text-[#0A0A0A]">
+            Estrutura em 7 Diretorias Executivas (Estatuto 2024)
+          </h3>
+        </div>
+        <p class="text-xs text-gray-600 mt-0.5">Divisão funcional de competências para garantir eficiência e transparência:</p>
+      </div>
+      <span class="cagp-badge cagp-badge-red font-mono">
+        Regimento 14/10/2024
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      {diretorias.map((d) => (
+        <div class="cagp-card p-3 bg-white flex items-start gap-2.5">
+          <div class="w-8 h-8 rounded-[4px] bg-[#F7F5F0] border border-[#DFDBD2] flex items-center justify-center text-[#8B1E2D] shrink-0 mt-0.5 shadow-[1px_1px_0_#0A0A0A]">
+            <i class={`bi ${d.icon} text-sm`} aria-hidden="true" />
+          </div>
+          <div class="min-w-0">
+            <span class="font-['Oswald'] font-bold uppercase text-[#8B1E2D] block mb-0.5">{d.nome}</span>
+            <p class="text-xs text-gray-600 leading-snug">{d.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="cagp-card p-3.5 bg-[#F7F5F0] text-xs space-y-1 mt-2">
+      <div class="flex items-center gap-2 mb-1">
+        <i class="bi bi-check2-square text-[#15803D] text-base" aria-hidden="true"></i>
+        <span class="font-['Oswald'] font-bold uppercase text-xs text-[#0A0A0A]">
+          Processo Eleitoral Democrático
+        </span>
+      </div>
+      <p class="text-xs text-gray-600 leading-relaxed">
+        A Diretoria Executiva é eleita anualmente por voto direto, secreto e universal de todos os estudantes regularmente matriculados no curso. As eleições são conduzidas por Comissão Eleitoral independente sorteada em Assembleia Geral.
+      </p>
+    </div>
+
+    <div class="pt-2">
+      <a href="/documentos/regimento-interno-cagp-ufmg.pdf" download class="cagp-btn-primary inline-flex items-center gap-1.5 text-xs py-1.5 px-3 no-underline">
+        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Baixar Regimento Interno do CAGP (PDF) &rarr;
+      </a>
+    </div>
+  </div>
+</div>

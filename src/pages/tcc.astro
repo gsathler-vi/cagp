@@ -1,0 +1,64 @@
+---
+// tcc.astro - A4 Guia: 2 sub-views (Modalidades · Termo e Banca)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import SegmentedControl from '../components/ui/SegmentedControl.astro';
+import JourneyNav from '../components/ui/JourneyNav.astro';
+import TccModalidades from '../components/tcc/TccModalidades.astro';
+import TccBancaNormas from '../components/tcc/TccBancaNormas.astro';
+
+const tabs = [
+  { id: 'v1', shortLabel: 'Modalidades', fullLabel: '1. Modalidades de TCC', hash: '#modalidades' },
+  { id: 'v2', shortLabel: 'Termo & Banca', fullLabel: '2. Termo de Aceite & Banca', hash: '#termo-banca' },
+];
+
+const badges = [
+  { label: '180h (DCP 089 + DCP 137)', variant: 'red' as const, icon: 'bi-mortarboard-fill' },
+  { label: '4 Modalidades (Art. 19)', variant: 'dark' as const, icon: 'bi-grid-fill' },
+  { label: '9º e 10º Períodos', variant: 'blue' as const, icon: 'bi-calendar-check' },
+  { label: 'Termo de Aceite Obrigatório', variant: 'gold' as const, icon: 'bi-file-earmark-check-fill' },
+];
+
+const axisPill = {
+  axisName: 'Eixo 3 · Currículo',
+  axisIcon: 'bi-diagram-3',
+  parentLabel: 'Currículo',
+  parentHref: '/percurso',
+  currentLabel: 'TCC (180h)',
+};
+---
+
+<BaseLayout title="Trabalho de Conclusão de Curso (TCC)" description="Regulamento oficial do TCC de Gestão Pública da UFMG (180h: DCP 089 e DCP 137), modalidades e termo de aceite.">
+  <PageHeader
+    title="Trabalho de Conclusão de Curso (180h)"
+    subtitle="Matriz das 4 modalidades oficiais aceitas pelo Colegiado (Art. 19), projeto em DCP 089 (60h), defesa em DCP 137 (120h) e termo de aceite orientador."
+    badges={badges}
+    axisPill={axisPill}
+  />
+
+  <SegmentedControl tabs={tabs} defaultTab="v1" />
+
+  <!-- Sub-view 1: Modalidades de TCC -->
+  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1">
+    <TccModalidades />
+  </section>
+
+  <!-- Sub-view 2: Termo de Aceite & Regras de Banca -->
+  <section id="ws-panel-v2" class="cagp-workspace-view" data-ws-panel="v2" hidden>
+    <TccBancaNormas />
+  </section>
+
+  <!-- Journey Navigation Trail -->
+  <JourneyNav
+    prev={{
+      title: 'Estágio Supervisionado (300h) & Art. 41',
+      href: '/estagio',
+      desc: 'Simulador de dispensa por experiência profissional e tutorial do TCE.',
+    }}
+    next={{
+      title: 'Acervo de Documentos & Formulários Oficiais',
+      href: '/documentos',
+      desc: 'Acesse o acervo completo de documentos oficiais, formulários e modelos em PDF.',
+    }}
+  />
+</BaseLayout>

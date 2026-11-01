@@ -1,0 +1,256 @@
+// curriculumGraphData.ts - Topologia e Conexões das 27 Disciplinas Obrigatórias do PPC 2020
+
+export interface CourseNodeData {
+  code: string;
+  name: string;
+  lines: string[];
+  period: number;
+  dept: 'DCP' | 'ECN' | 'SOA' | 'EST';
+  ch: number;
+  cr: number;
+  col: number;
+  y: number;
+  track: 'gestao' | 'politicas' | 'sociedade' | 'economia' | 'metodos' | 'pratica';
+  trackLabel: string;
+  desc: string;
+  isFormalLock?: boolean;
+  isKey?: boolean;
+  formalReqs: string[];
+  suggestedReqs: string[];
+  formalUnlocks: string[];
+  suggestedUnlocks: string[];
+}
+
+export const DISCIPLINAS_GRAFO: Record<string, CourseNodeData> = {
+  // 1º Período (5 disciplinas)
+  DCP124: {
+    code: 'DCP 124', name: 'Gestão Pública A', lines: ['Gestão Pública A'],
+    period: 1, dept: 'DCP', ch: 60, cr: 4, col: 1, y: 45,
+    track: 'gestao', trackLabel: 'Gestão & Organizações',
+    desc: 'Origens, evolução da administração burocrática, Nova Gestão Pública, governança participativa e histórico da gestão pública no Brasil.',
+    formalReqs: [], suggestedReqs: [], formalUnlocks: [], suggestedUnlocks: ['DCP127', 'DCP037']
+  },
+  DCP032: {
+    code: 'DCP 032', name: 'Fundamentos da Análise Política', lines: ['Fundamentos da', 'Análise Política'],
+    period: 1, dept: 'DCP', ch: 60, cr: 4, col: 1, y: 155,
+    track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+    desc: 'Política, Poder, Estado e Mercado. Democracia procedimental, instituições decisórias, representação e accountability.',
+    formalReqs: [], suggestedReqs: [], formalUnlocks: [], suggestedUnlocks: ['DCP035', 'DCP042', 'DCP037']
+  },
+  SOA048: {
+    code: 'SOA 048', name: 'Fundamentos de Análise Sociológica', lines: ['Fundamentos de', 'Análise Sociológica'],
+    period: 1, dept: 'SOA', ch: 60, cr: 4, col: 1, y: 265,
+    track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+    desc: 'Sociedade e indivíduo, processos de socialização, papéis sociais, status, classes sociais e teorias da ação coletiva.',
+    formalReqs: [], suggestedReqs: [], formalUnlocks: [], suggestedUnlocks: ['SOA607', 'DCP042']
+  },
+  DCP123: {
+    code: 'DCP 123', name: 'Aspectos Legais da Gestão Pública A', lines: ['Aspectos Legais da', 'Gestão Pública A'],
+    period: 1, dept: 'DCP', ch: 60, cr: 4, col: 1, y: 375,
+    track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+    desc: 'Estado Moderno, Direito Constitucional, Direitos e Garantias Fundamentais, separação dos Poderes e repartição de competências no federalismo.',
+    formalReqs: [], suggestedReqs: [], formalUnlocks: [], suggestedUnlocks: ['DCP125']
+  },
+  DCP033: {
+    code: 'DCP 033', name: 'Metodologia', lines: ['Metodologia'],
+    period: 1, dept: 'DCP', ch: 60, cr: 4, col: 1, y: 485,
+    track: 'metodos', trackLabel: 'Metodologia & Métodos Quantitativos',
+    desc: 'Filosofia da ciência, métodos quantitativos e qualitativos, elaboração de projetos e construção de indicadores de políticas públicas.',
+    formalReqs: [], suggestedReqs: [], formalUnlocks: [], suggestedUnlocks: ['EST057', 'DCP089']
+  },
+
+  // 2º Período (5 disciplinas)
+  SOA607: {
+    code: 'SOA 607', name: 'Sociologia das Organizações Públicas', lines: ['Sociologia das', 'Organizações'],
+    period: 2, dept: 'SOA', ch: 60, cr: 4, col: 2, y: 45,
+    track: 'gestao', trackLabel: 'Gestão & Organizações',
+    desc: 'Burocracia pública, teorias institucionais, cultura organizacional, poder político e flexibilização da administração.',
+    formalReqs: [], suggestedReqs: ['SOA048'], formalUnlocks: [], suggestedUnlocks: []
+  },
+  DCP035: {
+    code: 'DCP 035', name: 'Instituições Políticas Comparadas', lines: ['Instituições Políticas', 'Comparadas'],
+    period: 2, dept: 'DCP', ch: 60, cr: 4, col: 2, y: 155,
+    track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+    desc: 'Análise comparada de regimes democráticos, sistemas eleitorais e partidários, federalismo e relações Executivo-Legislativo.',
+    formalReqs: [], suggestedReqs: ['DCP032'], formalUnlocks: [], suggestedUnlocks: []
+  },
+  DCP042: {
+    code: 'DCP 042', name: 'Política, Economia e Sociedade no Brasil', lines: ['Política, Econ. e Soc.', 'no Brasil'],
+    period: 2, dept: 'DCP', ch: 60, cr: 4, col: 2, y: 265,
+    track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+    desc: 'Construção nacional e desenvolvimento do Estado no Brasil, dinâmica de modernização e questões étnico-raciais e socioambientais.',
+    formalReqs: [], suggestedReqs: ['DCP032', 'SOA048'], formalUnlocks: [], suggestedUnlocks: ['DCP126']
+  },
+  DCP125: {
+    code: 'DCP 125', name: 'Aspectos Legais da Gestão Pública B', lines: ['Aspectos Legais da', 'Gestão Pública B'],
+    period: 2, dept: 'DCP', ch: 60, cr: 4, col: 2, y: 375,
+    track: 'sociedade', trackLabel: 'Ciência Política & Direito',
+    desc: 'Administração direta e indireta, poderes administrativos, atos, licitações e contratos administrativos, controle e improbidade.',
+    formalReqs: [], suggestedReqs: ['DCP123'], formalUnlocks: [], suggestedUnlocks: []
+  },
+  ECN140: {
+    code: 'ECN 140', name: 'Introdução à Economia', lines: ['Introdução à', 'Economia'],
+    period: 2, dept: 'ECN', ch: 60, cr: 4, col: 2, y: 485,
+    track: 'economia', trackLabel: 'Economia & Finanças Públicas',
+    desc: 'Noções fundamentais de microeconomia (oferta, demanda, equilíbrio de mercado) e macroeconomia (moeda, renda, juros e setor público).',
+    isKey: true,
+    formalReqs: [], suggestedReqs: [], formalUnlocks: ['ECN044'], suggestedUnlocks: []
+  },
+
+  // 3º Período (5 disciplinas)
+  DCP127: {
+    code: 'DCP 127', name: 'Gestão Pública B', lines: ['Gestão Pública B'],
+    period: 3, dept: 'DCP', ch: 60, cr: 4, col: 3, y: 45,
+    track: 'gestao', trackLabel: 'Gestão & Organizações',
+    desc: 'Governança contemporânea, parcerias público-privadas, regulação, gestão em redes, contratualização e gestão de pessoas no setor público.',
+    formalReqs: [], suggestedReqs: ['DCP124'], formalUnlocks: [], suggestedUnlocks: ['DCP130']
+  },
+  DCP037: {
+    code: 'DCP 037', name: 'Análise de Políticas Públicas', lines: ['Análise de', 'Políticas Públicas'],
+    period: 3, dept: 'DCP', ch: 60, cr: 4, col: 3, y: 155,
+    track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+    desc: 'Ciclo de políticas públicas (agenda, formulação, implementação e avaliação), policy communities e coordenação intersetorial.',
+    formalReqs: [], suggestedReqs: ['DCP032', 'DCP124'], formalUnlocks: [], suggestedUnlocks: ['DCP131']
+  },
+  DCP126: {
+    code: 'DCP 126', name: 'Estado e Políticas Sociais A', lines: ['Estado e Políticas', 'Sociais A'],
+    period: 3, dept: 'DCP', ch: 60, cr: 4, col: 3, y: 265,
+    track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+    desc: 'Teorias do Estado de bem-estar social, regimes de proteção social comparados e evolução das políticas sociais no Brasil.',
+    formalReqs: [], suggestedReqs: ['DCP042'], formalUnlocks: [], suggestedUnlocks: ['DCP128']
+  },
+  DCP132: {
+    code: 'DCP 132', name: 'Democracia Digital e Governo Eletrônico', lines: ['Democracia Digital &', 'Gov. Eletrônico'],
+    period: 3, dept: 'DCP', ch: 60, cr: 4, col: 3, y: 375,
+    track: 'gestao', trackLabel: 'Gestão & Organizações',
+    desc: 'Governança eletrônica, transparência pública ativa, Lei de Acesso à Informação, dados abertos, participação digital e controle social.',
+    formalReqs: [], suggestedReqs: [], formalUnlocks: [], suggestedUnlocks: []
+  },
+  ECN044: {
+    code: 'ECN 044', name: 'Economia do Bem-Estar', lines: ['Economia do', 'Bem-Estar'],
+    period: 3, dept: 'ECN', ch: 60, cr: 4, col: 3, y: 485,
+    track: 'economia', trackLabel: 'Economia & Finanças Públicas',
+    desc: 'Função de bem-estar social, equidade e eficiência, falhas de mercado, externalidades, bens públicos, tributação e análise custo-benefício.',
+    isFormalLock: true,
+    formalReqs: ['ECN140'], suggestedReqs: [], formalUnlocks: [], suggestedUnlocks: ['DCP129']
+  },
+
+  // 4º Período (4 disciplinas)
+  DCP130: {
+    code: 'DCP 130', name: 'Planejamento Público', lines: ['Planejamento', 'Público'],
+    period: 4, dept: 'DCP', ch: 60, cr: 4, col: 4, y: 45,
+    track: 'gestao', trackLabel: 'Gestão & Organizações',
+    desc: 'Metodologias de planejamento governamental, plano plurianual (PPA), planejamento estratégico e desenvolvimento governamental.',
+    formalReqs: [], suggestedReqs: ['DCP127'], formalUnlocks: [], suggestedUnlocks: ['DCP133']
+  },
+  DCP128: {
+    code: 'DCP 128', name: 'Estado e Políticas Sociais B', lines: ['Estado e Políticas', 'Sociais B'],
+    period: 4, dept: 'DCP', ch: 60, cr: 4, col: 4, y: 190,
+    track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+    desc: 'O sistema de proteção social pós-1988: saúde (SUS), previdência, assistência social (SUAS), educação, moradia e desafios federativos.',
+    formalReqs: [], suggestedReqs: ['DCP126'], formalUnlocks: [], suggestedUnlocks: []
+  },
+  DCP129: {
+    code: 'DCP 129', name: 'Finanças Públicas', lines: ['Finanças', 'Públicas'],
+    period: 4, dept: 'DCP', ch: 60, cr: 4, col: 4, y: 335,
+    track: 'economia', trackLabel: 'Economia & Finanças Públicas',
+    desc: 'Teoria da tributação, federalismo fiscal, ciclo orçamentário brasileiro (PPA, LDO, LOA) e Lei de Responsabilidade Fiscal.',
+    formalReqs: [], suggestedReqs: ['ECN044'], formalUnlocks: [], suggestedUnlocks: []
+  },
+  EST057: {
+    code: 'EST 057', name: 'Introdução à Estatística', lines: ['Introdução à', 'Estatística'],
+    period: 4, dept: 'EST', ch: 60, cr: 4, col: 4, y: 485,
+    track: 'metodos', trackLabel: 'Metodologia & Métodos Quantitativos',
+    desc: 'Estatística descritiva, cálculo de probabilidades, variáveis aleatórias, inferência estatística e prática no software estatístico R.',
+    formalReqs: [], suggestedReqs: ['DCP033'], formalUnlocks: [], suggestedUnlocks: ['ECN190']
+  },
+
+  // 5º Período (3 disciplinas)
+  DCP133: {
+    code: 'DCP 133', name: 'Formulação e Implementação de Programas e Projetos', lines: ['Formulação e Impl.', 'Programas/Projetos'],
+    period: 5, dept: 'DCP', ch: 60, cr: 4, col: 5, y: 90,
+    track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+    desc: 'Ciclo de vida de projetos públicos, matriz lógica, diagnóstico de viabilidade, monitoramento de execução e gestão de riscos.',
+    formalReqs: [], suggestedReqs: ['DCP130'], formalUnlocks: [], suggestedUnlocks: []
+  },
+  DCP131: {
+    code: 'DCP 131', name: 'Avaliação de Políticas Públicas A', lines: ['Avaliação de', 'Políticas Públicas A'],
+    period: 5, dept: 'DCP', ch: 60, cr: 4, col: 5, y: 265,
+    track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+    desc: 'Papel da avaliação no ciclo governamental, desenhos de avaliação, indicadores de eficácia, eficiência e efetividade.',
+    formalReqs: [], suggestedReqs: ['DCP037'], formalUnlocks: [], suggestedUnlocks: ['DCP134']
+  },
+  ECN190: {
+    code: 'ECN 190', name: 'Econometria I', lines: ['Econometria I'],
+    period: 5, dept: 'ECN', ch: 60, cr: 4, col: 5, y: 440,
+    track: 'metodos', trackLabel: 'Metodologia & Métodos Quantitativos',
+    desc: 'Modelo de regressão linear simples e múltipla, testes de hipóteses, pressupostos clássicos e estimação econométrica aplicada.',
+    formalReqs: [], suggestedReqs: ['EST057'], formalUnlocks: [], suggestedUnlocks: ['DCP134']
+  },
+
+  // 6º Período (1 disciplina)
+  DCP134: {
+    code: 'DCP 134', name: 'Avaliação de Políticas Públicas B', lines: ['Avaliação de', 'Políticas Públicas B'],
+    period: 6, dept: 'DCP', ch: 60, cr: 4, col: 6, y: 265,
+    track: 'politicas', trackLabel: 'Políticas Públicas & Avaliação',
+    desc: 'Avaliação de impactos causais, desenhos quase-experimentais, inferência com microdados e modelos econométricos aplicados.',
+    formalReqs: [], suggestedReqs: ['DCP131', 'ECN190'], formalUnlocks: [], suggestedUnlocks: []
+  },
+
+  // 7º Período (1 disciplina)
+  DCP135: {
+    code: 'DCP 135', name: 'Estágio Curricular A', lines: ['Estágio Curricular A', '(180 horas)'],
+    period: 7, dept: 'DCP', ch: 180, cr: 12, col: 7, y: 265,
+    track: 'pratica', trackLabel: 'Prática Profissional & TCC',
+    desc: 'Experiência prática profissional de 180 horas em órgãos públicos ou instituições conveniadas (ou dispensa pelo Art. 41).',
+    formalReqs: [], suggestedReqs: [], formalUnlocks: [], suggestedUnlocks: ['DCP136']
+  },
+
+  // 8º Período (1 disciplina)
+  DCP136: {
+    code: 'DCP 136', name: 'Estágio Curricular B', lines: ['Estágio Curricular B', '(120 horas)'],
+    period: 8, dept: 'DCP', ch: 120, cr: 8, col: 8, y: 265,
+    track: 'pratica', trackLabel: 'Prática Profissional & TCC',
+    desc: 'Segunda etapa da vivência profissional de estágio supervisionado (120 horas), aprofundando relatórios técnicos e atuação de campo.',
+    formalReqs: [], suggestedReqs: ['DCP135'], formalUnlocks: [], suggestedUnlocks: []
+  },
+
+  // 9º Período (1 disciplina)
+  DCP089: {
+    code: 'DCP 089', name: 'Projeto do TCC', lines: ['Projeto do TCC', '(60 horas)'],
+    period: 9, dept: 'DCP', ch: 60, cr: 4, col: 9, y: 265,
+    track: 'pratica', trackLabel: 'Prática Profissional & TCC',
+    desc: 'Sistematização do plano de monografia, delimitação do problema de pesquisa e elaboração formal do projeto de graduação.',
+    formalReqs: [], suggestedReqs: ['DCP033'], formalUnlocks: [], suggestedUnlocks: ['DCP137']
+  },
+
+  // 10º Período (1 disciplina)
+  DCP137: {
+    code: 'DCP 137', name: 'Trabalho de Conclusão de Curso', lines: ['Trabalho Conclusão', 'de Curso (120h)'],
+    period: 10, dept: 'DCP', ch: 120, cr: 8, col: 10, y: 265,
+    track: 'pratica', trackLabel: 'Prática Profissional & TCC',
+    desc: 'Desenvolvimento e defesa pública da monografia, relatório técnico ou plano de intervenção perante banca examinadora da UFMG.',
+    formalReqs: [], suggestedReqs: ['DCP089'], formalUnlocks: [], suggestedUnlocks: []
+  }
+};
+
+export const TRACK_NAMES: Record<string, string> = {
+  all: 'Todas as Trilhas',
+  gestao: 'Gestão & Organizações',
+  politicas: 'Políticas Públicas & Avaliação',
+  sociedade: 'Ciência Política & Direito',
+  economia: 'Economia & Finanças Públicas',
+  metodos: 'Metodologia & Métodos Quantitativos',
+  pratica: 'Prática Profissional & TCC'
+};
+
+export const DEPT_COLORS: Record<string, string> = {
+  DCP: '#8B1E2D',
+  ECN: '#0A0A0A',
+  SOA: '#15803D',
+  EST: '#1E3F66'
+};
+
+export function getColX(col: number): number {
+  return 15 + (col - 1) * 118;
+}

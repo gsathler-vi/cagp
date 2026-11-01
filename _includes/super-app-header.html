@@ -174,10 +174,10 @@
         <kbd class="cagp-nav-search-kbd">⌘K</kbd>
       </button>
 
-      <!-- 2. Botão de Acessibilidade Universal (Alt+A) -->
-      <button type="button" class="cagp-island-tool-btn" data-cagp-open-a11y="true" onclick="window.cagpA11y ? window.cagpA11y.open() : (window.openCagpA11y &amp;&amp; window.openCagpA11y())" aria-label="Painel de Acessibilidade (Alt + A)" title="Opções de Acessibilidade (Alt + A)">
-        <i class="bi bi-universal-access" aria-hidden="true"></i>
-      </button>
+      <!-- 2. Botão de Configurações & Acessibilidade (Alt+C / Alt+A) -->
+      <a href="configuracoes.html" class="cagp-island-tool-btn cagp-header-settings-btn" data-cagp-nav aria-label="Abrir Configurações do Super App e Acessibilidade (Atalho: Alt+C ou Alt+A)" title="Configurações &amp; Acessibilidade (Alt+C)">
+        <i class="bi bi-gear-fill" aria-hidden="true"></i>
+      </a>
 
       <!-- 3. Avatar / Crachá do Estudante com Foto (Abre Passaporte & Perfil Completo em Qualquer Página) -->
       <button type="button" class="cagp-header-profile-btn" id="cagp-header-profile-btn" data-cagp-open-passport="true" aria-label="Abrir Passaporte Acadêmico, Foto e Perfil do Estudante" title="Passaporte Acadêmico CAGP, Foto &amp; Cofre Discente">
@@ -245,6 +245,7 @@
         <a href="documentos.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-file-earmark-pdf me-2 text-danger"></i> Documentos &amp; Formulários</a>
         <a href="faq.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-question-circle me-2 text-primary"></i> Dúvidas Frequentes (FAQ)</a>
         <a href="mapa-do-site.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-map me-2 text-dark"></i> Mapa do Site</a>
+        <a href="configuracoes.html" class="cagp-drawer-link" data-cagp-nav onclick="window.closeCagpMobileDrawer()"><i class="bi bi-gear-fill me-2 text-warning"></i> Configurações &amp; Acessibilidade</a>
       </div>
 
       <div class="cagp-drawer-section">
@@ -277,9 +278,9 @@
       <button type="button" class="cagp-topbar-tool-btn" onclick="window.openCagpSpotlight &amp;&amp; window.openCagpSpotlight()" aria-label="Buscar no Super App (Atalho: ⌘K)" title="Busca Rápida (⌘K)">
         <i class="bi bi-search" aria-hidden="true"></i>
       </button>
-      <button type="button" class="cagp-topbar-tool-btn" data-cagp-open-a11y="true" onclick="window.cagpA11y ? window.cagpA11y.open() : (window.openCagpA11y &amp;&amp; window.openCagpA11y())" aria-label="Acessibilidade (Alt + A)" title="Acessibilidade (Alt + A)">
-        <i class="bi bi-universal-access" aria-hidden="true"></i>
-      </button>
+      <a href="configuracoes.html" class="cagp-topbar-tool-btn cagp-topbar-settings-btn" data-cagp-nav aria-label="Configurações do Super App &amp; Acessibilidade" title="Configurações &amp; Acessibilidade (Alt+C)">
+        <i class="bi bi-gear-fill" aria-hidden="true"></i>
+      </a>
       <button type="button" class="cagp-topbar-profile-btn" id="cagp-topbar-profile-btn" data-cagp-open-passport="true" aria-label="Abrir Passaporte Acadêmico, Foto e Perfil" title="Passaporte Acadêmico CAGP &amp; Perfil">
         <span class="cagp-avatar-frame cagp-avatar-frame--sm" data-cagp-avatar-host>
           <img class="cagp-profile-avatar-img" src="imagens/carteirinha.png" alt="Foto do estudante" width="26" height="26" hidden>
@@ -331,6 +332,7 @@ window.CAGP_TAXONOMY_V1 = Object.freeze({
     'documentos.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'Acervo & Formulários', depth: 0 },
     'faq.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'FAQ Regimental', depth: 1, parent: 'documentos.html' },
     'mapa-do-site.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'Mapa do Site', depth: 1, parent: 'documentos.html' },
+    'configuracoes.html': { axis: 'axis-4', tabId: 'cagp-mnav-acervo', label: 'Configurações & Acessibilidade', depth: 1, parent: 'documentos.html' },
     'sobre.html': { axis: 'axis-5', tabId: 'cagp-mnav-cagp', label: 'O CAGP', depth: 0 },
     'gestao.html': { axis: 'axis-5', tabId: 'cagp-mnav-cagp', label: 'Gestão em Exercício', depth: 1, parent: 'sobre.html' },
     'estagio-tcc.html': { axis: 'axis-3', tabId: 'cagp-mnav-curriculo', label: 'Estágio & TCC', depth: 1, parent: 'percurso.html', isLegacyBridge: true }

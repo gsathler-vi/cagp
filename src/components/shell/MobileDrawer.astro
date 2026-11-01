@@ -1,0 +1,188 @@
+---
+// MobileDrawer.astro - Menu Lateral Off-Canvas para Telas Mobile e Tablet (< 1024px)
+const sections = [
+  {
+    title: 'CURSO & PESQUISA',
+    links: [
+      { label: 'Início (Campus Hoje)', href: '/', icon: 'bi-house-door', color: 'text-[#8B1E2D]' },
+      { label: 'O Curso de Gestão Pública', href: '/curso', icon: 'bi-mortarboard', color: 'text-[#8B1E2D]' },
+      { label: 'Pesquisa, IC & 11 Núcleos DCP', href: '/pesquisa', icon: 'bi-journal-bookmark-fill', color: 'text-blue-600' },
+      { label: 'Guia do Calouro (Noturno)', href: '/calouros', icon: 'bi-compass', color: 'text-[#15803D]' },
+    ],
+  },
+  {
+    title: 'CURRÍCULO & HORAS',
+    links: [
+      { label: 'Central Curricular & Grafo 10P', href: '/percurso', icon: 'bi-diagram-3', color: 'text-blue-600' },
+      { label: 'Catálogo de 68 Optativas', href: '/percurso#optativas', icon: 'bi-collection', color: 'text-[#8B1E2D]' },
+      { label: 'Extensão & Horas AAC (600h)', href: '/acg', icon: 'bi-calculator', color: 'text-amber-600' },
+      { label: 'Estágio & Dispensa Art. 41', href: '/estagio', icon: 'bi-briefcase', color: 'text-[#15803D]' },
+      { label: 'Trabalho de Conclusão (TCC)', href: '/tcc', icon: 'bi-file-earmark-text', color: 'text-gray-800' },
+    ],
+  },
+  {
+    title: 'ACERVO & AJUDA',
+    links: [
+      { label: 'Documentos & Formulários (PDF)', href: '/documentos', icon: 'bi-file-earmark-pdf', color: 'text-[#8B1E2D]' },
+      { label: 'Dúvidas Frequentes (FAQ)', href: '/faq', icon: 'bi-question-circle', color: 'text-blue-600' },
+    ],
+  },
+  {
+    title: 'O CENTRO ACADÊMICO',
+    links: [
+      { label: 'O CAGP & Estatuto 2024', href: '/sobre', icon: 'bi-bank', color: 'text-[#8B1E2D]' },
+      { label: 'Gestão em Exercício & Equipe', href: '/gestao', icon: 'bi-people', color: 'text-[#15803D]' },
+    ],
+  },
+];
+---
+
+<div id="cagp-mobile-drawer" class="cagp-mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu Lateral do Portal">
+  <div class="cagp-drawer-backdrop" id="cagp-drawer-backdrop"></div>
+  <div class="cagp-drawer-panel" role="document">
+    <!-- Header do Menu -->
+    <div class="cagp-drawer-header">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center p-1 border-2 border-[#0A0A0A] shadow-[1.5px_1.5px_0px_#0A0A0A]">
+          <img src="/logos/cagp/10_simbolo_transparente_positivo.svg" alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
+        </div>
+        <div>
+          <span class="font-['Oswald'] font-black text-sm uppercase tracking-wide text-[#0A0A0A] block leading-none">
+            Navegação Geral
+          </span>
+          <span class="text-[10px] text-gray-500 font-mono block mt-0.5">CAGP FAFICH / UFMG</span>
+        </div>
+      </div>
+      <button type="button" id="cagp-drawer-close" class="cagp-drawer-close-btn" aria-label="Fechar menu lateral">
+        ✕
+      </button>
+    </div>
+
+    <!-- Atalho para o Passaporte do Estudante -->
+    <button
+      type="button"
+      id="cagp-drawer-passport-cta"
+      class="mb-4 p-2.5 rounded-xl border border-[#DFDBD2] bg-[#F7F5F0] hover:border-[#0A0A0A] hover:bg-white text-left flex items-center gap-3 transition-colors cursor-pointer w-full group"
+    >
+      <div class="w-10 h-10 rounded-full bg-[#8B1E2D] text-white flex items-center justify-center font-['Oswald'] font-bold text-sm border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] shrink-0">
+        <i class="bi bi-person-badge-fill text-lg"></i>
+      </div>
+      <div class="flex-1 min-w-0">
+        <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block group-hover:text-[#8B1E2D] leading-tight">
+          Passaporte Discente
+        </span>
+        <span class="text-[10px] text-gray-500 block leading-tight mt-0.5">
+          Horas, Perfil & Banco de Talentos &rarr;
+        </span>
+      </div>
+    </button>
+
+    <!-- Seções de Navegação -->
+    <div class="space-y-3 flex-1 overflow-y-auto pr-1">
+      {sections.map((section) => (
+        <div class="cagp-drawer-section">
+          <span class="cagp-drawer-section-title">{section.title}</span>
+          <div class="space-y-0.5">
+            {section.links.map((link) => (
+              <a href={link.href} class="cagp-drawer-link">
+                <i class={`bi ${link.icon} ${link.color} text-sm shrink-0`} aria-hidden="true"></i>
+                <span class="truncate">{link.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Rodapé do Drawer com Ações Rápidas -->
+    <div class="pt-3 mt-2 border-t border-[#DFDBD2] flex items-center justify-between text-[11px]">
+      <button
+        type="button"
+        id="cagp-drawer-a11y-btn"
+        class="text-gray-700 hover:text-[#8B1E2D] font-semibold flex items-center gap-1 cursor-pointer"
+      >
+        <i class="bi bi-universal-access"></i> Acessibilidade
+      </button>
+      <button
+        type="button"
+        id="cagp-drawer-settings-btn"
+        class="text-gray-700 hover:text-[#8B1E2D] font-semibold flex items-center gap-1 cursor-pointer"
+      >
+        <i class="bi bi-gear-fill"></i> Ajustes
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const getDrawer = () => document.getElementById('cagp-mobile-drawer');
+
+  const openDrawer = () => {
+    const drawer = getDrawer();
+    if (!drawer) return;
+    drawer.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('cagp-drawer-open');
+  };
+
+  const closeDrawer = () => {
+    const drawer = getDrawer();
+    if (!drawer) return;
+    drawer.classList.remove('is-open');
+    document.body.style.overflow = '';
+    document.body.classList.remove('cagp-drawer-open');
+  };
+
+  const toggleDrawer = () => {
+    const drawer = getDrawer();
+    if (drawer?.classList.contains('is-open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  };
+
+  (window as any).openCagpMobileDrawer = openDrawer;
+  (window as any).closeCagpMobileDrawer = closeDrawer;
+  (window as any).toggleCagpMobileDrawer = toggleDrawer;
+
+  if (!(window as any).__cagp_drawer_initialized) {
+    (window as any).__cagp_drawer_initialized = true;
+    window.addEventListener('cagp:open-drawer', () => (window as any).openCagpMobileDrawer?.());
+    window.addEventListener('cagp:close-drawer', () => (window as any).closeCagpMobileDrawer?.());
+    window.addEventListener('cagp:toggle-drawer', () => (window as any).toggleCagpMobileDrawer?.());
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        (window as any).closeCagpMobileDrawer?.();
+      }
+    });
+  }
+
+  function setupMobileDrawer() {
+    closeDrawer();
+
+    document.getElementById('cagp-drawer-backdrop')?.addEventListener('click', closeDrawer);
+    document.getElementById('cagp-drawer-close')?.addEventListener('click', closeDrawer);
+
+    document.querySelectorAll('#cagp-mobile-drawer .cagp-drawer-link').forEach((link) => {
+      link.addEventListener('click', closeDrawer);
+    });
+
+    document.getElementById('cagp-drawer-passport-cta')?.addEventListener('click', () => {
+      closeDrawer();
+      window.dispatchEvent(new CustomEvent('cagp:open-passport'));
+    });
+
+    document.getElementById('cagp-drawer-a11y-btn')?.addEventListener('click', () => {
+      closeDrawer();
+      window.dispatchEvent(new CustomEvent('cagp:open-a11y'));
+    });
+
+    document.getElementById('cagp-drawer-settings-btn')?.addEventListener('click', () => {
+      closeDrawer();
+      window.dispatchEvent(new CustomEvent('cagp:open-settings'));
+    });
+  }
+
+  document.addEventListener('astro:page-load', setupMobileDrawer);
+</script>

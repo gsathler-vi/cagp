@@ -1,0 +1,293 @@
+---
+// SuperAppHeader.astro - Topbar Adaptativa (Mobile / Tablet / Desktop) com Dropdowns e Spotlight
+import { HEADER_NAV_ITEMS } from './headerNavData';
+---
+
+<header class="sticky top-0 z-[1040] w-full bg-white border-b border-[#DFDBD2] select-none" style="padding-top: env(safe-area-inset-top, 0px);">
+  <div class="max-w-7xl mx-auto px-3 sm:px-4 h-14 flex items-center justify-between gap-2">
+    <!-- Brand / Logo -->
+    <a href="/" class="flex items-center gap-2.5 text-inherit no-underline min-h-[44px] shrink-0" aria-label="Página Inicial CAGP">
+      <div class="w-9 h-9 rounded-[4px] bg-white flex items-center justify-center p-1 border-2 border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A]">
+        <img src="/logos/cagp/10_simbolo_transparente_positivo.svg" alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
+      </div>
+      <div class="leading-tight">
+        <span class="block font-['Oswald'] font-black text-sm tracking-wide uppercase text-[#0A0A0A]">CAGP UFMG</span>
+        <span class="hidden sm:block text-xs text-gray-500 font-mono">FAFICH • Campus Pampulha</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation (lg: 1024px+) -->
+    <nav class="hidden lg:flex items-center gap-1" aria-label="Navegação desktop dos 5 eixos">
+      <!-- 1. Início -->
+      <a
+        href="/"
+        class="cagp-island-nav-link px-2.5 py-1.5 rounded-[4px] font-['Inter'] font-semibold text-xs text-gray-800 hover:bg-[#F7F5F0] hover:text-[#8B1E2D] transition-colors no-underline min-h-[36px] flex items-center border border-transparent"
+        data-route="/"
+      >
+        Início
+      </a>
+
+      <!-- 2 a 5. Dropdowns dos 4 Eixos -->
+      {HEADER_NAV_ITEMS.filter(item => item.children).map((item, idx) => (
+        <div class="cagp-island-dropdown relative" data-dropdown={item.href}>
+          <button
+            type="button"
+            class="cagp-island-dropdown-btn px-2.5 py-1.5 rounded-[4px] font-['Inter'] font-semibold text-xs text-gray-800 hover:bg-[#F7F5F0] hover:text-[#8B1E2D] flex items-center gap-1.5 transition-colors min-h-[36px] cursor-pointer border border-transparent"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span>{item.label}</span>
+            <i class="bi bi-chevron-down text-xs text-gray-400 cagp-island-dropdown-chevron" aria-hidden="true" />
+          </button>
+          <div class={`cagp-island-dropdown-menu absolute ${idx >= 2 ? 'right-0' : 'left-0'} top-full pt-1.5 z-[1050] min-w-[300px]`}>
+            <div class="bg-white border-2 border-[#0A0A0A] rounded-md shadow-[4px_4px_0px_#0A0A0A] p-2 space-y-1">
+              <a
+                href={item.href}
+                class="px-2.5 py-1.5 bg-[#F7F5F0] hover:bg-[#8B1E2D] hover:text-white rounded-[4px] flex items-center justify-between no-underline transition-colors group/header border border-[#DFDBD2]"
+              >
+                <span class="font-['Oswald'] font-bold text-xs uppercase tracking-wide">Visão Geral do Eixo</span>
+                <span class="text-xs font-mono group-hover/header:translate-x-0.5 transition-transform">Ver Página &rarr;</span>
+              </a>
+              <div class="border-t border-[#DFDBD2] my-1" />
+              {item.children?.map((child) => (
+                <a
+                  href={child.href}
+                  class="cagp-island-dropdown-item p-2 rounded-[4px] hover:bg-[#F7F5F0] flex items-start gap-2.5 no-underline transition-colors block text-left group/item"
+                  data-route={child.href}
+                >
+                  <i class={`bi ${child.icon} text-base text-[#8B1E2D] mt-0.5 group-hover/item:scale-110 transition-transform shrink-0`} aria-hidden="true" />
+                  <div class="min-w-0">
+                    <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block leading-tight">{child.label}</span>
+                    <span class="text-xs text-gray-500 block leading-tight mt-0.5">{child.desc}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </nav>
+
+    <!-- Quick Actions & Tools -->
+    <div class="flex items-center gap-1 sm:gap-1.5">
+      <!-- Spotlight Search Button (Desktop md+) -->
+      <button
+        type="button"
+        id="cagp-btn-spotlight-desktop"
+        class="hidden md:inline-flex items-center gap-2 px-2.5 py-1.5 rounded-[4px] border border-[#DFDBD2] bg-[#F7F5F0] hover:bg-white hover:border-[#0A0A0A] text-xs text-gray-600 transition-colors min-h-[36px] cursor-pointer"
+        aria-label="Buscar no portal"
+      >
+        <i class="bi bi-search text-xs" aria-hidden="true" />
+        <span class="text-xs">Buscar...</span>
+        <kbd class="text-xs bg-white border border-[#DFDBD2] rounded-[2px] px-1.5 py-0.5 font-mono text-gray-500">⌘K</kbd>
+      </button>
+
+      <!-- Spotlight Search Button (Mobile/Tablet < md) -->
+      <button
+        type="button"
+        id="cagp-btn-spotlight-mobile"
+        class="md:hidden w-10 h-10 flex items-center justify-center rounded-[4px] text-[#0A0A0A] hover:bg-[#F7F5F0] transition-colors cursor-pointer"
+        aria-label="Abrir busca rápida"
+      >
+        <i class="bi bi-search text-base" aria-hidden="true" />
+      </button>
+
+      <!-- Live Campus Pill (Desktop xl+) -->
+      <button
+        type="button"
+        id="cagp-btn-campus-desktop"
+        class="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] border border-[#DFDBD2] bg-[#F7F5F0] hover:bg-white text-xs font-semibold text-gray-700 transition-colors min-h-[36px] cursor-pointer"
+        aria-label="Status do campus"
+      >
+        <span class="w-2 h-2 rounded-full bg-[#15803D] cagp-pulse-indicator" aria-hidden="true" />
+        <span>Campus Aberto</span>
+      </button>
+
+      <!-- Campus Bell (Mobile/Tablet < xl) -->
+      <button
+        type="button"
+        id="cagp-btn-campus"
+        class="xl:hidden w-10 h-10 flex items-center justify-center rounded-[4px] text-[#0A0A0A] hover:bg-[#F7F5F0] transition-colors relative cursor-pointer"
+        aria-label="Status do campus"
+      >
+        <i class="bi bi-bell text-lg" aria-hidden="true" />
+        <span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#15803D] cagp-pulse-indicator" />
+      </button>
+
+      <!-- A11y Sheet Button (Hidden on xs mobile to prevent header overflow, visible sm+) -->
+      <button
+        type="button"
+        id="cagp-btn-a11y"
+        class="hidden sm:flex w-10 h-10 items-center justify-center rounded-[4px] text-[#0A0A0A] hover:bg-[#F7F5F0] transition-colors cursor-pointer"
+        aria-label="Opções de acessibilidade (Alt + A)"
+        title="Acessibilidade (Alt + A)"
+      >
+        <i class="bi bi-universal-access text-lg" aria-hidden="true" />
+      </button>
+
+      <!-- Settings Button (Hidden on xs mobile to prevent header overflow, visible sm+) -->
+      <button
+        type="button"
+        id="cagp-btn-settings"
+        class="hidden sm:flex w-10 h-10 items-center justify-center rounded-[4px] text-[#0A0A0A] hover:bg-[#F7F5F0] transition-colors cursor-pointer"
+        aria-label="Abrir configurações e sincronização do Super App (Alt + S)"
+        title="Configurações & Sincronização (Alt + S)"
+      >
+        <i class="bi bi-gear-fill text-base text-gray-700" aria-hidden="true" />
+      </button>
+
+      <!-- Student Passport Avatar -->
+      <button
+        type="button"
+        id="cagp-btn-passport"
+        class="w-10 h-10 flex items-center justify-center rounded-full bg-[#F7F5F0] border border-[#DFDBD2] text-[#8B1E2D] hover:border-[#0A0A0A] hover:shadow-[1px_1px_0px_#0A0A0A] transition-all cursor-pointer overflow-hidden relative"
+        aria-label="Abrir passaporte discente"
+        title="Passaporte Discente"
+      >
+        <span id="cagp-header-avatar-slot" class="w-full h-full flex items-center justify-center text-xs font-['Oswald'] font-bold">
+          <i class="bi bi-person-fill text-lg" aria-hidden="true" />
+        </span>
+      </button>
+
+      <!-- Hamburger Menu Button (Mobile/Tablet: < lg) -->
+      <button
+        type="button"
+        id="cagp-mobile-menu-btn"
+        class="lg:hidden w-10 h-10 flex items-center justify-center rounded-[4px] text-[#0A0A0A] hover:bg-[#F7F5F0] transition-colors cursor-pointer border border-[#0A0A0A] bg-white shadow-[1.5px_1.5px_0px_#0A0A0A]"
+        aria-label="Abrir menu de navegação lateral com todas as seções"
+        title="Menu Geral"
+      >
+        <i class="bi bi-list text-2xl" aria-hidden="true" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  function setupHeaderListeners() {
+    const dispatch = (evt: string) => window.dispatchEvent(new CustomEvent(evt));
+    document.getElementById('cagp-btn-spotlight-desktop')?.addEventListener('click', () => dispatch('cagp:open-spotlight'));
+    document.getElementById('cagp-btn-spotlight-mobile')?.addEventListener('click', () => dispatch('cagp:open-spotlight'));
+    document.getElementById('cagp-btn-campus-desktop')?.addEventListener('click', () => dispatch('cagp:open-campus'));
+    document.getElementById('cagp-btn-campus')?.addEventListener('click', () => dispatch('cagp:open-campus'));
+    document.getElementById('cagp-btn-a11y')?.addEventListener('click', () => dispatch('cagp:open-a11y'));
+    document.getElementById('cagp-btn-settings')?.addEventListener('click', () => dispatch('cagp:open-settings'));
+    document.getElementById('cagp-btn-passport')?.addEventListener('click', () => dispatch('cagp:open-passport'));
+    document.getElementById('cagp-mobile-menu-btn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dispatch('cagp:toggle-drawer');
+    });
+
+    // Dropdowns interativos (Desktop)
+    const dropdowns = document.querySelectorAll<HTMLElement>('.cagp-island-dropdown');
+
+    dropdowns.forEach((dd) => {
+      const btn = dd.querySelector<HTMLButtonElement>('.cagp-island-dropdown-btn');
+      if (!btn) return;
+
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const isOpen = dd.classList.contains('is-open');
+
+        dropdowns.forEach((d) => {
+          d.classList.remove('is-open');
+          d.querySelector('.cagp-island-dropdown-btn')?.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          dd.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      };
+    });
+
+    // Fechar dropdowns ao clicar fora
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement | null;
+      if (!target?.closest('.cagp-island-dropdown')) {
+        dropdowns.forEach((d) => {
+          d.classList.remove('is-open');
+          d.querySelector('.cagp-island-dropdown-btn')?.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    // Atalhos Globais e Tecla Esc (vinculados uma única vez ao window)
+    if (!(window as any).__cagp_header_events_bound) {
+      (window as any).__cagp_header_events_bound = true;
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.cagp-island-dropdown.is-open').forEach((d) => {
+            d.classList.remove('is-open');
+            d.querySelector('.cagp-island-dropdown-btn')?.setAttribute('aria-expanded', 'false');
+          });
+        } else if (e.altKey && (e.key === 'a' || e.key === 'A')) {
+          e.preventDefault();
+          window.dispatchEvent(new CustomEvent('cagp:open-a11y'));
+        } else if (e.altKey && (e.key === 's' || e.key === 'S')) {
+          e.preventDefault();
+          window.dispatchEvent(new CustomEvent('cagp:open-settings'));
+        }
+      });
+      window.addEventListener('cagp:vault-updated', () => {
+        (window as any).__cagp_update_avatar?.();
+      });
+    }
+
+    // Sincronizar Rota Ativa no Cabeçalho
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+    const homeLink = document.querySelector<HTMLAnchorElement>('.cagp-island-nav-link');
+    if (homeLink) {
+      const isHome = currentPath === '/' || currentPath === '';
+      homeLink.classList.toggle('is-active', isHome);
+      if (isHome) homeLink.setAttribute('aria-current', 'page');
+      else homeLink.removeAttribute('aria-current');
+    }
+
+    dropdowns.forEach((dd) => {
+      const items = dd.querySelectorAll<HTMLAnchorElement>('.cagp-island-dropdown-item');
+      let parentActive = false;
+      items.forEach((item) => {
+        const rawHref = item.getAttribute('href') || '';
+        const hrefPath = rawHref.split('#')[0].replace(/\/$/, '') || '/';
+        const isMatch = hrefPath === currentPath || (currentPath === '/estagio-tcc' && hrefPath === '/estagio');
+        item.classList.toggle('is-active', isMatch);
+        if (isMatch) parentActive = true;
+      });
+
+      const btn = dd.querySelector<HTMLButtonElement>('.cagp-island-dropdown-btn');
+      if (btn) {
+        btn.classList.toggle('is-active', parentActive);
+      }
+    });
+
+    // Sincronizar Avatar do Passaporte
+    const updateHeaderAvatar = () => {
+      const slot = document.getElementById('cagp-header-avatar-slot');
+      if (!slot) return;
+      try {
+        const raw = localStorage.getItem('cagp_student_profile_v1');
+        if (raw) {
+          const profile = JSON.parse(raw);
+          if (profile.photoDataUrl) {
+            slot.innerHTML = `<img src="${profile.photoDataUrl}" alt="${profile.name || 'Estudante'}" class="w-full h-full object-cover" />`;
+            return;
+          }
+          if (profile.name) {
+            const initials = profile.name.split(' ').filter(Boolean).slice(0, 2).map((w: string) => w[0].toUpperCase()).join('');
+            if (initials) {
+              slot.innerHTML = `<span class="text-[#8B1E2D] font-bold text-xs">${initials}</span>`;
+              return;
+            }
+          }
+        }
+        slot.innerHTML = '<i class="bi bi-person-fill text-lg" aria-hidden="true" />';
+      } catch (e) {}
+    };
+
+    (window as any).__cagp_update_avatar = updateHeaderAvatar;
+    updateHeaderAvatar();
+  }
+
+  document.addEventListener('astro:page-load', setupHeaderListeners);
+</script>
