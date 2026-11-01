@@ -7,6 +7,8 @@ import { downloadAac120dIcs } from '../../lib/ics';
 export const Calculator600h: React.FC = () => {
   const [data, setData] = useState<VaultData<'cagp_calc_ext_aac_v1'>>({});
   const [openDrawers, setOpenDrawers] = useState<Record<string, boolean>>({});
+  const [allDrawersOpen, setAllDrawersOpen] = useState(false);
+  const [confirmReset, setConfirmReset] = useState(false);
 
   // Helper to resolve value taking into account possible legacy keys
   const getItemValue = (item: AcgItemDef, currentData: Record<string, number>): number => {
@@ -69,11 +71,17 @@ export const Calculator600h: React.FC = () => {
   };
 
   const handleReset = () => {
+    if (!confirmReset) {
+      setConfirmReset(true);
+      setTimeout(() => setConfirmReset(false), 4000);
+      return;
+    }
     const resetObj: Record<string, number> = {};
     for (const item of EXTENSION_ITEMS) resetObj[item.key] = 0;
     for (const item of AAC_ITEMS) resetObj[item.key] = 0;
     setData(resetObj);
     setVaultItem('cagp_calc_ext_aac_v1', resetObj);
+    setConfirmReset(false);
   };
 
   const handleSample360 = () => {
@@ -99,6 +107,15 @@ export const Calculator600h: React.FC = () => {
       ...prev,
       [key]: !prev[key],
     }));
+  };
+
+  const toggleAllDrawers = () => {
+    const nextState = !allDrawersOpen;
+    setAllDrawersOpen(nextState);
+    const updated: Record<string, boolean> = {};
+    for (const item of EXTENSION_ITEMS) updated[item.key] = nextState;
+    for (const item of AAC_ITEMS) updated[item.key] = nextState;
+    setOpenDrawers(updated);
   };
 
   // Totals calculations
@@ -174,19 +191,32 @@ export const Calculator600h: React.FC = () => {
             <button
               type="button"
               onClick={handleSample360}
-              className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#F7F5F0] text-[#0A0A0A] font-['Oswald'] text-xs uppercase font-bold rounded-[4px] border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] hover:bg-[#eae5dc] transition-colors active:translate-x-0.5 active:translate-y-0.5"
+              className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#F7F5F0] text-[#0A0A0A] font-['Oswald'] text-xs uppercase font-bold rounded-[4px] border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] hover:bg-[#eae5dc] transition-colors active:translate-x-0.5 active:translate-y-0.5 cursor-pointer"
             >
               <i className="bi bi-play-circle text-[#8B1E2D]" aria-hidden="true" />
               <span>Exemplo (360h)</span>
             </button>
             <button
               type="button"
+              onClick={toggleAllDrawers}
+              className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#F7F5F0] text-[#0A0A0A] font-['Oswald'] text-xs uppercase font-bold rounded-[4px] border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] hover:bg-[#eae5dc] transition-colors active:translate-x-0.5 active:translate-y-0.5 cursor-pointer"
+              aria-label={allDrawersOpen ? 'Recolher todas as gavetas' : 'Expandir todas as gavetas'}
+            >
+              <i className={`bi ${allDrawersOpen ? 'bi-chevron-contract' : 'bi-chevron-expand'} text-[#8B1E2D]`} aria-hidden="true" />
+              <span>{allDrawersOpen ? 'Recolher Guias' : 'Expandir Guias'}</span>
+            </button>
+            <button
+              type="button"
               onClick={handleReset}
               disabled={total === 0}
-              className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#F7F5F0] text-[#0A0A0A] font-['Oswald'] text-xs uppercase font-bold rounded-[4px] border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] hover:bg-[#eae5dc] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className={`inline-flex items-center gap-1 px-3 py-1.5 font-['Oswald'] text-xs uppercase font-bold rounded-[4px] border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed ${
+                confirmReset
+                  ? 'bg-[#DC2626] text-white animate-pulse'
+                  : 'bg-[#F7F5F0] text-[#0A0A0A] hover:bg-[#eae5dc]'
+              }`}
             >
               <i className="bi bi-arrow-counterclockwise" aria-hidden="true" />
-              <span>Zerar</span>
+              <span>{confirmReset ? 'Confirmar Zerar?' : 'Zerar'}</span>
             </button>
           </div>
         </div>
@@ -420,16 +450,30 @@ export const Calculator600h: React.FC = () => {
                         </div>
 
                         {/* Botão Gaveta "O que conta nisso?" */}
-                        <button
-                          type="button"
-                          onClick={() => toggleDrawer(item.key)}
-                          aria-expanded={isDrawerOpen}
-                          className="cagp-calc-drawer-toggle"
-                        >
-                          <i className="bi bi-info-circle-fill text-[#8B1E2D]" aria-hidden="true" />
-                          <span>O que conta nisso?</span>
-                          <i className="bi bi-chevron-down cagp-drawer-arrow" aria-hidden="true" />
-                        </button>
+                        <div className="flex items-center gap-2 mt-2">
+                          <button
+                            type="button"
+                            onClick={() => toggleDrawer(item.key)}
+                            aria-expanded={isDrawerOpen}
+                            aria-controls={`drawer-${item.key}`}
+                            className="cagp-calc-drawer-toggle"
+                          >
+                            <i className="bi bi-info-circle-fill text-[#8B1E2D]" aria-hidden="true" />
+                            <span>O que conta nisso?</span>
+                            <i className="bi bi-chevron-down cagp-drawer-arrow" aria-hidden="true" />
+                          </button>
+
+                          {!isMaxed && (
+                            <button
+                              type="button"
+                              onClick={() => updateItemHours(item.key, item.max, item.max)}
+                              className="text-[10px] font-mono font-bold uppercase text-gray-600 hover:text-[#8B1E2D] bg-[#F7F5F0] hover:bg-gray-200 px-2 py-1 rounded border border-[#DFDBD2] transition-colors cursor-pointer mt-1.5"
+                              title={`Preencher até o teto regulamentar de ${item.max}h`}
+                            >
+                              Teto ({item.max}h)
+                            </button>
+                          )}
+                        </div>
                       </div>
 
                       {/* Controles de Passo (+ / -) */}
@@ -471,50 +515,53 @@ export const Calculator600h: React.FC = () => {
                     </div>
 
                     {/* Gaveta Expansível de Critérios Normativos */}
-                    {isDrawerOpen && (
-                      <div className="cagp-calc-drawer">
-                        <div className="cagp-calc-drawer-inner">
-                          <div className="cagp-drawer-grid">
-                            {/* O Que Conta */}
-                            <div className="cagp-drawer-section is-accepted">
-                              <div className="cagp-drawer-header">
-                                <span className="font-['Oswald'] text-xs uppercase font-bold text-[#15803D] flex items-center gap-1">
-                                  <i className="bi bi-check-circle-fill" aria-hidden="true" />
-                                  <span>O QUE CONTA</span>
-                                </span>
-                              </div>
-                              <ul>
-                                {item.accepted.map((acc, i) => (
-                                  <li key={i}>{acc}</li>
-                                ))}
-                              </ul>
+                    <div
+                      id={`drawer-${item.key}`}
+                      className={`cagp-calc-drawer ${isDrawerOpen ? 'is-open' : ''}`}
+                      role="region"
+                      aria-label={`Critérios regulamentares de ${item.label}`}
+                    >
+                      <div className="cagp-calc-drawer-inner">
+                        <div className="cagp-calc-drawer-grid">
+                          {/* O Que Conta */}
+                          <div className="cagp-calc-drawer-section is-accepted">
+                            <div className="cagp-calc-drawer-header">
+                              <span className="font-['Oswald'] text-xs uppercase font-bold text-[#15803D] flex items-center gap-1">
+                                <i className="bi bi-check-circle-fill" aria-hidden="true" />
+                                <span>O QUE CONTA</span>
+                              </span>
                             </div>
-
-                            {/* O Que Não Conta */}
-                            <div className="cagp-drawer-section is-rejected">
-                              <div className="cagp-drawer-header">
-                                <span className="font-['Oswald'] text-xs uppercase font-bold text-[#DC2626] flex items-center gap-1">
-                                  <i className="bi bi-x-circle-fill" aria-hidden="true" />
-                                  <span>O QUE NÃO CONTA</span>
-                                </span>
-                              </div>
-                              <ul>
-                                {item.rejected.map((rej, i) => (
-                                  <li key={i}>{rej}</li>
-                                ))}
-                              </ul>
-                            </div>
+                            <ul>
+                              {item.accepted.map((acc, i) => (
+                                <li key={i}>{acc}</li>
+                              ))}
+                            </ul>
                           </div>
 
-                          {item.alertNote && (
-                            <div className="cagp-drawer-alert">
-                              <i className="bi bi-exclamation-triangle-fill text-[#B45309] me-1" aria-hidden="true" />
-                              <strong>Atenção:</strong> {item.alertNote}
+                          {/* O Que Não Conta */}
+                          <div className="cagp-calc-drawer-section is-rejected">
+                            <div className="cagp-calc-drawer-header">
+                              <span className="font-['Oswald'] text-xs uppercase font-bold text-[#DC2626] flex items-center gap-1">
+                                <i className="bi bi-x-circle-fill" aria-hidden="true" />
+                                <span>O QUE NÃO CONTA</span>
+                              </span>
                             </div>
-                          )}
+                            <ul>
+                              {item.rejected.map((rej, i) => (
+                                <li key={i}>{rej}</li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
+
+                        {item.alertNote && (
+                          <div className="cagp-calc-drawer-alert">
+                            <i className="bi bi-exclamation-triangle-fill text-[#B45309] me-1" aria-hidden="true" />
+                            <strong>Atenção:</strong> {item.alertNote}
+                          </div>
+                        )}
                       </div>
-                    )}
+                    </div>
                   </div>
                 );
               })}
@@ -606,16 +653,30 @@ export const Calculator600h: React.FC = () => {
                         </div>
 
                         {/* Botão Gaveta "O que conta nisso?" */}
-                        <button
-                          type="button"
-                          onClick={() => toggleDrawer(item.key)}
-                          aria-expanded={isDrawerOpen}
-                          className="cagp-calc-drawer-toggle"
-                        >
-                          <i className="bi bi-info-circle-fill text-[#8B1E2D]" aria-hidden="true" />
-                          <span>O que conta nisso?</span>
-                          <i className="bi bi-chevron-down cagp-drawer-arrow" aria-hidden="true" />
-                        </button>
+                        <div className="flex items-center gap-2 mt-2">
+                          <button
+                            type="button"
+                            onClick={() => toggleDrawer(item.key)}
+                            aria-expanded={isDrawerOpen}
+                            aria-controls={`drawer-${item.key}`}
+                            className="cagp-calc-drawer-toggle"
+                          >
+                            <i className="bi bi-info-circle-fill text-[#8B1E2D]" aria-hidden="true" />
+                            <span>O que conta nisso?</span>
+                            <i className="bi bi-chevron-down cagp-drawer-arrow" aria-hidden="true" />
+                          </button>
+
+                          {!isMaxed && (
+                            <button
+                              type="button"
+                              onClick={() => updateItemHours(item.key, item.max, item.max)}
+                              className="text-[10px] font-mono font-bold uppercase text-gray-600 hover:text-[#8B1E2D] bg-[#F7F5F0] hover:bg-gray-200 px-2 py-1 rounded border border-[#DFDBD2] transition-colors cursor-pointer mt-1.5"
+                              title={`Preencher até o teto regulamentar de ${item.max}h`}
+                            >
+                              Teto ({item.max}h)
+                            </button>
+                          )}
+                        </div>
                       </div>
 
                       {/* Controles de Passo (+ / -) */}
@@ -657,50 +718,53 @@ export const Calculator600h: React.FC = () => {
                     </div>
 
                     {/* Gaveta Expansível de Critérios Normativos */}
-                    {isDrawerOpen && (
-                      <div className="cagp-calc-drawer">
-                        <div className="cagp-calc-drawer-inner">
-                          <div className="cagp-drawer-grid">
-                            {/* O Que Conta */}
-                            <div className="cagp-drawer-section is-accepted">
-                              <div className="cagp-drawer-header">
-                                <span className="font-['Oswald'] text-xs uppercase font-bold text-[#15803D] flex items-center gap-1">
-                                  <i className="bi bi-check-circle-fill" aria-hidden="true" />
-                                  <span>O QUE CONTA</span>
-                                </span>
-                              </div>
-                              <ul>
-                                {item.accepted.map((acc, i) => (
-                                  <li key={i}>{acc}</li>
-                                ))}
-                              </ul>
+                    <div
+                      id={`drawer-${item.key}`}
+                      className={`cagp-calc-drawer ${isDrawerOpen ? 'is-open' : ''}`}
+                      role="region"
+                      aria-label={`Critérios regulamentares de ${item.label}`}
+                    >
+                      <div className="cagp-calc-drawer-inner">
+                        <div className="cagp-calc-drawer-grid">
+                          {/* O Que Conta */}
+                          <div className="cagp-calc-drawer-section is-accepted">
+                            <div className="cagp-calc-drawer-header">
+                              <span className="font-['Oswald'] text-xs uppercase font-bold text-[#15803D] flex items-center gap-1">
+                                <i className="bi bi-check-circle-fill" aria-hidden="true" />
+                                <span>O QUE CONTA</span>
+                              </span>
                             </div>
-
-                            {/* O Que Não Conta */}
-                            <div className="cagp-drawer-section is-rejected">
-                              <div className="cagp-drawer-header">
-                                <span className="font-['Oswald'] text-xs uppercase font-bold text-[#DC2626] flex items-center gap-1">
-                                  <i className="bi bi-x-circle-fill" aria-hidden="true" />
-                                  <span>O QUE NÃO CONTA</span>
-                                </span>
-                              </div>
-                              <ul>
-                                {item.rejected.map((rej, i) => (
-                                  <li key={i}>{rej}</li>
-                                ))}
-                              </ul>
-                            </div>
+                            <ul>
+                              {item.accepted.map((acc, i) => (
+                                <li key={i}>{acc}</li>
+                              ))}
+                            </ul>
                           </div>
 
-                          {item.alertNote && (
-                            <div className="cagp-drawer-alert">
-                              <i className="bi bi-exclamation-triangle-fill text-[#DC2626] me-1" aria-hidden="true" />
-                              <strong>{item.alertNote}</strong>
+                          {/* O Que Não Conta */}
+                          <div className="cagp-calc-drawer-section is-rejected">
+                            <div className="cagp-calc-drawer-header">
+                              <span className="font-['Oswald'] text-xs uppercase font-bold text-[#DC2626] flex items-center gap-1">
+                                <i className="bi bi-x-circle-fill" aria-hidden="true" />
+                                <span>O QUE NÃO CONTA</span>
+                              </span>
                             </div>
-                          )}
+                            <ul>
+                              {item.rejected.map((rej, i) => (
+                                <li key={i}>{rej}</li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
+
+                        {item.alertNote && (
+                          <div className="cagp-calc-drawer-alert">
+                            <i className="bi bi-exclamation-triangle-fill text-[#DC2626] me-1" aria-hidden="true" />
+                            <strong>{item.alertNote}</strong>
+                          </div>
+                        )}
                       </div>
-                    )}
+                    </div>
                   </div>
                 );
               })}

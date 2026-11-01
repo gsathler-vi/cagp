@@ -282,19 +282,6 @@
   margin-bottom: 0.75rem;
 }
 
-/* Interpolador de Gaveta de Formulários */
-.cagp-calc-drawer {
-  display: grid !important;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.28s cubic-bezier(0.27, 1.06, 0.18, 1);
-}
-.cagp-calc-drawer.is-open {
-  grid-template-rows: 1fr;
-}
-.cagp-calc-drawer > div {
-  overflow: hidden;
-}
-
 /* Notificação Cápsula Tátil (Dynamic Island Toast) */
 .cagp-toast {
   position: fixed;
