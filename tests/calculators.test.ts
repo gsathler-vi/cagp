@@ -51,4 +51,47 @@ describe('Curriculum & Hours Invariants', () => {
     expect(tccB?.ch).toBe(120);
     expect((tccA?.ch || 0) + (tccB?.ch || 0)).toBe(180);
   });
+
+  it('garante conformidade das 6 modalidades de Extensão Obrigatória (PPC Quadro 8 / Art. 13)', async () => {
+    const { EXTENSION_FIELDS } = await import('../src/components/calculators/ExtensionForm');
+    expect(EXTENSION_FIELDS).toHaveLength(6);
+
+    const keys = EXTENSION_FIELDS.map((f) => f.key);
+    expect(keys).toContain('ext_lab_a');
+    expect(keys).toContain('ext_lab_b');
+    expect(keys).toContain('ext_ensino_inter');
+    expect(keys).toContain('ext_eventos_ii');
+    expect(keys).toContain('ext_ufmg');
+    expect(keys).toContain('ext_inter_equalitas');
+
+    // Tetos normativos
+    const labA = EXTENSION_FIELDS.find((f) => f.key === 'ext_lab_a');
+    expect(labA?.max).toBe(90);
+
+    const ensinoInter = EXTENSION_FIELDS.find((f) => f.key === 'ext_ensino_inter');
+    expect(ensinoInter?.max).toBe(120);
+
+    const eventosII = EXTENSION_FIELDS.find((f) => f.key === 'ext_eventos_ii');
+    expect(eventosII?.max).toBe(30);
+  });
+
+  it('garante conformidade das 9 modalidades de AAC (PPC Quadro 7 / Art. 15 § 4º)', async () => {
+    const { AAC_FIELDS } = await import('../src/components/calculators/AacForm');
+    expect(AAC_FIELDS).toHaveLength(9);
+
+    const monitoria = AAC_FIELDS.find((f) => f.key === 'aac_monitoria');
+    expect(monitoria?.max).toBe(45); // 3 créditos de 15h
+
+    const periodico = AAC_FIELDS.find((f) => f.key === 'aac_periodico');
+    expect(periodico?.max).toBe(60); // 4 créditos de 15h
+
+    const anais = AAC_FIELDS.find((f) => f.key === 'aac_anais');
+    expect(anais?.max).toBe(30); // 2 créditos de 15h
+
+    const pesquisaInter = AAC_FIELDS.find((f) => f.key === 'aac_pesquisa_inter');
+    expect(pesquisaInter?.max).toBe(75); // 5 créditos de 15h
+
+    const vivencia = AAC_FIELDS.find((f) => f.key === 'aac_vivencia');
+    expect(vivencia?.max).toBe(60); // 4 créditos de 15h
+  });
 });

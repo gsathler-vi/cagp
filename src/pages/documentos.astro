@@ -25,12 +25,14 @@ const breadcrumbs = [
 ];
 
 const atos = [
-  { title: 'Projeto Pedagógico do Curso (PPC 2020)', file: 'ppc-gestao-publica-ufmg.pdf', desc: 'Estrutura completa de 3.000h, competências e perfil de formação.', badge: 'Documento Mestre' },
-  { title: 'Regulamento do Curso Versão N-20229', file: 'regulamento-gestao-publica-ufmg.pdf', desc: 'Normas de integralização, AAC, estágio e culminância de TCC.', badge: 'Norma Vigente' },
-  { title: 'Regimento Interno do CAGP (14/10/2024)', file: 'regimento-interno-cagp-ufmg.pdf', desc: 'Estatuto soberano aprovado pela Assembleia Geral Discente.', badge: 'Entidade Discente' },
-  { title: 'Matriz Percurso 01-01 (Bacharelado Geral)', file: 'percurso-bacharelado-nucleo-geral.pdf', desc: '1.020h em optativas com máxima flexibilidade curricular.', badge: 'Percurso 01-01' },
-  { title: 'Matriz Percurso 01-02 (Núcleo Complementar)', file: 'percurso-bacharelado-nucleo-complementar.pdf', desc: '300h em Formação Transversal ou Aberta (FCA).', badge: 'Percurso 01-02' },
-  { title: 'Matriz Percurso 01-03 (Núcleo Avançado Pós)', file: 'percurso-bacharelado-nucleo-avancado.pdf', desc: 'Disciplinas de mestrado/doutorado no PPGCP/FAFICH.', badge: 'Percurso 01-03' },
+  { title: 'Projeto Pedagógico do Curso (PPC 2020)', file: 'ppc-gestao-publica-ufmg.pdf', readerSlug: 'ppc-gestao-publica-ufmg', desc: 'Estrutura completa de 3.000h, competências e perfil de formação.', badge: 'Documento Mestre' },
+  { title: 'Regulamento do Curso Versão N-20229', file: 'regulamento-gestao-publica-ufmg.pdf', readerSlug: 'regulamento-gestao-publica-ufmg', desc: 'Normas de integralização, AAC, estágio e culminância de TCC.', badge: 'Norma Vigente' },
+  { title: 'Regimento Interno do CAGP (14/10/2024)', file: 'regimento-interno-cagp-ufmg.pdf', readerSlug: 'regimento-interno-cagp-ufmg', desc: 'Estatuto soberano aprovado pela Assembleia Geral Discente.', badge: 'Entidade Discente' },
+  { title: 'Matriz Percurso 01-01 (Bacharelado Geral)', file: 'percurso-bacharelado-nucleo-geral.pdf', readerSlug: 'percurso-bacharelado-nucleo-geral', desc: '1.020h em optativas com máxima flexibilidade curricular.', badge: 'Percurso 01-01' },
+  { title: 'Matriz Percurso 01-02 (Núcleo Complementar)', file: 'percurso-bacharelado-nucleo-complementar.pdf', readerSlug: 'percurso-bacharelado-nucleo-complementar', desc: '300h em Formação Transversal ou Aberta (FCA).', badge: 'Percurso 01-02' },
+  { title: 'Matriz Percurso 01-03 (Núcleo Avançado Pós)', file: 'percurso-bacharelado-nucleo-avancado.pdf', readerSlug: 'percurso-bacharelado-nucleo-avancado', desc: 'Disciplinas de mestrado/doutorado no PPGCP/FAFICH.', badge: 'Percurso 01-03' },
+  { title: 'Ementário Oficial do Curso de Gestão Pública', file: 'ementario-gestao-publica-ufmg.pdf', readerSlug: 'ementario-gestao-publica-ufmg', desc: 'Ementas, pré-requisitos e créditos das 27 obrigatórias e 68 optativas.', badge: 'Ementário Geral' },
+  { title: 'Transcrição Recepção Ingressantes 2024/2', file: 'recepcao-ingressantes-2024-2.pdf', readerSlug: 'transcricao-recepcao-ingressantes-2024-2', desc: 'Apresentação oficial de acolhimento discente pela Coordenação (49 slides).', badge: 'Acolhimento Calouro' },
   { title: 'Resolução CEPE 06/2019 (Aproveitamento)', file: 'resolucao-cepe-06-2019-aproveitamento-estudos.pdf', desc: 'Aproveitamento de estudos com prazo fatal até o final do 2º período.', badge: 'CEPE / UFMG' },
 ];
 
@@ -96,9 +98,22 @@ const drca = [
               <p class="text-xs text-gray-500 leading-tight">{doc.desc}</p>
             </div>
           </div>
-          <a href={`/documentos/${doc.file}`} download class="cagp-btn-primary text-xs py-1.5 px-3 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
-            <i class="bi bi-download" aria-hidden="true" /> Baixar
-          </a>
+          <div class="flex items-center gap-1.5 shrink-0">
+            {doc.readerSlug && (
+              <a
+                href={`/documentos/${doc.readerSlug}`}
+                class="cagp-btn-secondary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1"
+                title="Ler transcrição integral em Markdown"
+              >
+                <i class="bi bi-eye" aria-hidden="true" />
+                <span>Ler</span>
+              </a>
+            )}
+            <a href={`/documentos/${doc.file}`} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
+              <i class="bi bi-download" aria-hidden="true" />
+              <span>PDF</span>
+            </a>
+          </div>
         </div>
       ))}
     </div>
@@ -121,9 +136,22 @@ const drca = [
               <p class="text-xs text-gray-500 leading-tight">{doc.desc}</p>
             </div>
           </div>
-          <a href={`/documentos/${doc.file}`} download class="cagp-btn-primary text-xs py-1.5 px-3 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
-            <i class="bi bi-download" aria-hidden="true" /> Baixar
-          </a>
+          <div class="flex items-center gap-1.5 shrink-0">
+            {doc.readerSlug && (
+              <a
+                href={`/documentos/${doc.readerSlug}`}
+                class="cagp-btn-secondary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1"
+                title="Ler transcrição integral em Markdown"
+              >
+                <i class="bi bi-eye" aria-hidden="true" />
+                <span>Ler</span>
+              </a>
+            )}
+            <a href={`/documentos/${doc.file}`} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
+              <i class="bi bi-download" aria-hidden="true" />
+              <span>PDF</span>
+            </a>
+          </div>
         </div>
       ))}
     </div>
@@ -146,9 +174,22 @@ const drca = [
               <p class="text-xs text-gray-500 leading-tight">{doc.desc}</p>
             </div>
           </div>
-          <a href={`/documentos/${doc.file}`} download class="cagp-btn-primary text-xs py-1.5 px-3 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
-            <i class="bi bi-download" aria-hidden="true" /> Baixar
-          </a>
+          <div class="flex items-center gap-1.5 shrink-0">
+            {doc.readerSlug && (
+              <a
+                href={`/documentos/${doc.readerSlug}`}
+                class="cagp-btn-secondary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1"
+                title="Ler transcrição integral em Markdown"
+              >
+                <i class="bi bi-eye" aria-hidden="true" />
+                <span>Ler</span>
+              </a>
+            )}
+            <a href={`/documentos/${doc.file}`} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
+              <i class="bi bi-download" aria-hidden="true" />
+              <span>PDF</span>
+            </a>
+          </div>
         </div>
       ))}
     </div>

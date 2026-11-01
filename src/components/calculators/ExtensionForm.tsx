@@ -1,19 +1,80 @@
 import React, { useState, useEffect } from 'react';
 import { getVaultItem, setVaultItem, type VaultData } from '../../lib/storage/studentVault';
 
-const EXTENSION_FIELDS = [
-  { key: 'ext_lab_a', label: 'Laboratório de Gestão Pública A (DCP 195)', max: 90, icon: 'bi-flask' },
-  { key: 'ext_lab_b', label: 'Laboratório de Gestão Pública B (DCP 196)', max: 90, icon: 'bi-flask-fill' },
-  { key: 'ext_siex_proj', label: 'Projetos SIEX FAFICH (Ações Contínuas)', max: 180, icon: 'bi-diagram-3-fill' },
-  { key: 'ext_cursos', label: 'Cursos e Oficinas de Extensão Universitária', max: 120, icon: 'bi-mortarboard-fill' },
-  { key: 'ext_eventos', label: 'Organização/Apresentação em Eventos de Extensão', max: 60, icon: 'bi-calendar2-event-fill' },
+export const EXTENSION_FIELDS = [
+  {
+    key: 'ext_lab_a',
+    label: 'Laboratório de Gestão e Políticas Públicas A',
+    code: 'DCP xxx',
+    max: 90,
+    cred: '6 créditos',
+    desc: 'Projetos de intervenção sob a forma de diagnósticos e pesquisas com órgãos públicos e ONGs',
+    icon: 'bi-flask',
+  },
+  {
+    key: 'ext_lab_b',
+    label: 'Laboratório de Gestão e Políticas Públicas B',
+    code: 'DCP xxx',
+    max: 90,
+    cred: '6 créditos',
+    desc: 'Elaboração e acompanhamento de projetos aplicados de gestão governamental',
+    icon: 'bi-flask-fill',
+  },
+  {
+    key: 'ext_ensino_inter',
+    label: 'Atividades Interinstitucionais de Ensino A e B',
+    code: 'DCP 176 / 177',
+    max: 120,
+    cred: 'Até 8 créditos',
+    desc: 'Disciplinas, seminários, oficinas ou cursos de extensão em outras IES validados pelo Colegiado',
+    icon: 'bi-mortarboard-fill',
+  },
+  {
+    key: 'ext_eventos_ii',
+    label: 'Participação em Eventos II (Comissão / Moderador)',
+    code: 'DCP 120',
+    max: 30,
+    cred: '2 créditos',
+    desc: 'Participação em comissão organizadora, comitê científico ou como debatedor/moderador (prazo: 120 dias)',
+    icon: 'bi-calendar2-event-fill',
+  },
+  {
+    key: 'ext_ufmg',
+    label: 'Atividades de Extensão na UFMG (Projetos / Ações)',
+    code: 'DCP xxx',
+    max: 90,
+    cred: 'Até 6 créditos',
+    desc: 'Ações de extensão universitária na UFMG com relatório final e avaliação docente',
+    icon: 'bi-diagram-3-fill',
+  },
+  {
+    key: 'ext_inter_equalitas',
+    label: 'Atividades Interinstitucionais de Extensão (Equalitas Jr.)',
+    code: 'DCP xxx',
+    max: 90,
+    cred: 'Até 6 créditos',
+    desc: 'Ações de extensão externas e projetos na Empresa Júnior Equalitas UFMG Consultoria Jr.',
+    icon: 'bi-building-check',
+  },
 ] as const;
 
 export const ExtensionForm: React.FC = () => {
   const [data, setData] = useState<VaultData<'cagp_calc_ext_aac_v1'>>({});
 
   useEffect(() => {
-    setData(getVaultItem('cagp_calc_ext_aac_v1'));
+    const raw = getVaultItem('cagp_calc_ext_aac_v1');
+    // Migração transparente de chaves legadas se existirem
+    const migrated = { ...raw };
+    if (migrated['ext_siex_proj'] && !migrated['ext_ufmg']) {
+      migrated['ext_ufmg'] = Math.min(90, migrated['ext_siex_proj']);
+    }
+    if (migrated['ext_eventos'] && !migrated['ext_eventos_ii']) {
+      migrated['ext_eventos_ii'] = Math.min(30, migrated['ext_eventos']);
+    }
+    if (migrated['ext_cursos'] && !migrated['ext_ensino_inter']) {
+      migrated['ext_ensino_inter'] = Math.min(120, migrated['ext_cursos']);
+    }
+    setData(migrated);
   }, []);
 
   const handleChange = (key: string, val: number, max: number) => {
@@ -37,7 +98,7 @@ export const ExtensionForm: React.FC = () => {
             </h3>
           </div>
           <p className="text-xs text-gray-600 mt-0.5">
-            Resoluções CEPE/UFMG e PPC 2020. Exige registro no SIEX ou código de laboratório.
+            PPC 2020 Quadro 8 e Regulamento N-20229 Art. 13. Exige protocolo de relatório no Colegiado.
           </p>
         </div>
         <span className="font-['JetBrains_Mono'] text-sm font-bold text-[#8B1E2D] bg-[#8B1E2D]/10 px-2.5 py-1 rounded-[4px] border border-[#8B1E2D]/30">
@@ -49,36 +110,46 @@ export const ExtensionForm: React.FC = () => {
         {EXTENSION_FIELDS.map((f) => {
           const currentVal = Number(data[f.key]) || 0;
           return (
-            <div key={f.key} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-[6px] bg-white border border-[#DFDBD2] hover:border-[#0A0A0A] transition-colors shadow-[1px_1px_0_#0A0A0A]">
-              <div className="flex items-start gap-2.5 flex-1 min-w-0">
-                <div className="w-7 h-7 rounded-[4px] bg-[#F7F5F0] border border-[#DFDBD2] flex items-center justify-center text-[#8B1E2D] shrink-0 mt-0.5">
-                  <i className={`bi ${f.icon} text-sm`} aria-hidden="true" />
-                </div>
-                <div>
-                  <label htmlFor={f.key} className="block text-xs font-semibold text-[#0A0A0A]">
-                    {f.label}
-                  </label>
-                  <span className="text-xs text-gray-500 font-mono">Limite de cômputo: até {f.max}h</span>
+            <div
+              key={f.key}
+              className="bg-white border border-[#DFDBD2] rounded-[4px] p-2.5 flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap"
+            >
+              <div className="flex items-start gap-2.5 min-w-0 flex-1">
+                <i className={`bi ${f.icon} text-base text-[#8B1E2D] mt-0.5 shrink-0`} aria-hidden="true" />
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="font-['Oswald'] text-xs uppercase font-bold text-[#0A0A0A]">
+                      {f.label}
+                    </span>
+                    <span className="font-mono text-[10px] text-gray-500 bg-[#F7F5F0] px-1.5 py-0.2 rounded border border-[#DFDBD2]">
+                      {f.code}
+                    </span>
+                    <span className="font-mono text-[10px] text-[#8B1E2D] font-bold">
+                      {f.cred}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 mt-0.5 leading-snug">{f.desc}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2 self-end sm:self-center">
-                {currentVal >= f.max && (
-                  <span className="cagp-stamp-badge is-homologado text-xs py-0.5 px-1.5 shrink-0" title="Limite máximo atingido">
-                    <i className="bi bi-shield-check" aria-hidden="true" />
-                    <span>TETO</span>
-                  </span>
-                )}
+
+              <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto justify-end">
+                <label htmlFor={`input-${f.key}`} className="sr-only">
+                  Horas para {f.label}
+                </label>
                 <input
-                  id={f.key}
+                  id={`input-${f.key}`}
                   type="number"
-                  min={0}
+                  min="0"
                   max={f.max}
-                  value={currentVal === 0 ? '' : currentVal}
+                  step="15"
+                  value={currentVal || ''}
                   placeholder="0"
-                  onChange={(e) => handleChange(f.key, parseInt(e.target.value, 10) || 0, f.max)}
-                  className="w-24 bg-[#F7F5F0] border border-[#DFDBD2] p-1.5 rounded-[4px] text-base sm:text-xs text-right font-mono focus:border-[#8B1E2D] focus:bg-white focus:outline-none"
+                  onChange={(e) => handleChange(f.key, Number(e.target.value), f.max)}
+                  className="w-20 px-2 py-1.5 text-base sm:text-xs font-mono font-bold bg-[#F7F5F0] border border-[#0A0A0A] rounded-[4px] text-right focus:border-[#8B1E2D] focus:bg-white focus:outline-none"
                 />
-                <span className="text-xs font-mono text-gray-500">h</span>
+                <span className="text-xs font-mono text-gray-500 w-14 text-right">
+                  / {f.max}h
+                </span>
               </div>
             </div>
           );

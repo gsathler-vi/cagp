@@ -266,12 +266,12 @@ const filteredHeadings = headings.filter((h) => h.depth >= 1 && h.depth <= 3 && 
 <style is:global>
   /* Tipografia Editorial para o Leitor de Documentos */
   .cagp-doc-reader {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-body, system-ui, sans-serif);
     color: #0A0A0A;
   }
 
   .cagp-doc-reader h1 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-display, 'Oswald', sans-serif);
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -284,7 +284,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 1 && h.depth <= 3 && 
   }
 
   .cagp-doc-reader h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-display, 'Oswald', sans-serif);
     font-size: 1.25rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -297,7 +297,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 1 && h.depth <= 3 && 
   }
 
   .cagp-doc-reader h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-display, 'Oswald', sans-serif);
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -307,10 +307,10 @@ const filteredHeadings = headings.filter((h) => h.depth >= 1 && h.depth <= 3 && 
   }
 
   .cagp-doc-reader h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-display, 'Oswald', sans-serif);
     font-size: 0.95rem;
     font-weight: 700;
-    color: #4A4A4A;
+    color: #0A0A0A;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
@@ -319,7 +319,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 1 && h.depth <= 3 && 
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 1rem;
-    color: #1F2937;
+    color: #0A0A0A;
   }
 
   .cagp-doc-reader ul,
@@ -351,7 +351,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 1 && h.depth <= 3 && 
     margin: 1rem 0;
     background-color: #FBF8F3;
     font-style: italic;
-    color: #374151;
+    color: #0A0A0A;
   }
 
   .cagp-doc-reader table {
@@ -369,7 +369,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 1 && h.depth <= 3 && 
     background-color: #F7F5F0;
     border: 1px solid #0A0A0A;
     padding: 0.6rem 0.75rem;
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-display, 'Oswald', sans-serif);
     font-weight: 700;
     text-transform: uppercase;
     text-align: left;
@@ -380,7 +380,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 1 && h.depth <= 3 && 
   .cagp-doc-reader td {
     border: 1px solid #DFDBD2;
     padding: 0.5rem 0.75rem;
-    color: #1F2937;
+    color: #0A0A0A;
     vertical-align: top;
   }
 

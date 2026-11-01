@@ -2,25 +2,63 @@ import React, { useState, useEffect } from 'react';
 import { getVaultItem, setVaultItem, type VaultData } from '../../lib/storage/studentVault';
 
 const ART41_CRITERIA = [
-  { id: 'crit_1', label: 'Atuação profissional em gestão pública ou terceiro setor por no mínimo 1 ano', icon: 'bi-briefcase-fill' },
-  { id: 'crit_2', label: 'Cópia da CTPS assinada ou Termo de Posse / Portaria em Diário Oficial', icon: 'bi-file-earmark-person-fill' },
-  { id: 'crit_3', label: 'Relatório circunstanciado de atividades com carimbo e assinatura da chefia', icon: 'bi-file-earmark-check-fill' },
-  { id: 'crit_4', label: 'Chefia imediata possui diploma de nível superior reconhecido', icon: 'bi-mortarboard-fill' },
-  { id: 'crit_5', label: 'Preenchimento do Requerimento Oficial de Integralização por Experiência', icon: 'bi-pencil-square' },
+  {
+    id: 'crit_vinculo',
+    label: 'Vínculo profissional em órgão público (governamental ou ONG do terceiro setor), contratado ou efetivo (Art. 41, caput)',
+    icon: 'bi-briefcase-fill',
+  },
+  {
+    id: 'crit_matricula',
+    label: 'Matrícula regular em Estágio Curricular A (DCP 135, 180h) e/ou Estágio Curricular B (DCP 136, 120h) no período vigente (Art. 41, § 1º, I)',
+    icon: 'bi-mortarboard-fill',
+  },
+  {
+    id: 'crit_fase1',
+    label: 'Início do Período: Requerimento com Declaração do superior hierárquico atestando tipo de vínculo, período e atividades exercidas (Art. 41, § 1º, II)',
+    icon: 'bi-file-earmark-person-fill',
+  },
+  {
+    id: 'crit_horas',
+    label: 'Carga horária acumulada no exercício profissional igual ou superior à da disciplina requerida (≥ 180h Estágio A / ≥ 120h Estágio B) (Art. 41, § 1º, III)',
+    icon: 'bi-clock-history',
+  },
+  {
+    id: 'crit_fase2',
+    label: 'Final do Período: Relatório de Atividades com atesto da chefia demonstrando compatibilidade das atribuições com a grade do curso (Art. 41, § 1º, III)',
+    icon: 'bi-file-earmark-check-fill',
+  },
 ];
 
 const EMPLOYMENT_MODES = [
-  { label: 'Servidor Efetivo', icon: 'bi-shield-check' },
-  { label: 'Empregado CLT', icon: 'bi-file-text' },
-  { label: 'Cargo Comissionado', icon: 'bi-person-badge' },
-  { label: 'Contrato OSC / Terceiro Setor', icon: 'bi-building-check' },
+  { label: 'Servidor Efetivo (Art. 41)', icon: 'bi-shield-check' },
+  { label: 'Cargo em Comissão (Art. 41)', icon: 'bi-person-badge' },
+  { label: 'Contratado / CLT em Órgão Público', icon: 'bi-file-text' },
+  { label: 'Vínculo em ONG / Terceiro Setor', icon: 'bi-building-check' },
 ];
 
 export const Art41Simulator: React.FC = () => {
   const [checks, setChecks] = useState<VaultData<'cagp_art41_checklist_v1'>>({});
 
   useEffect(() => {
-    setChecks(getVaultItem('cagp_art41_checklist_v1'));
+    const raw = getVaultItem('cagp_art41_checklist_v1');
+    // Migração de chaves legadas crit_1..crit_5 para chaves descritivas se existirem
+    const migrated = { ...raw };
+    if (migrated['crit_1'] !== undefined && migrated['crit_vinculo'] === undefined) {
+      migrated['crit_vinculo'] = migrated['crit_1'];
+    }
+    if (migrated['crit_2'] !== undefined && migrated['crit_fase1'] === undefined) {
+      migrated['crit_fase1'] = migrated['crit_2'];
+    }
+    if (migrated['crit_3'] !== undefined && migrated['crit_fase2'] === undefined) {
+      migrated['crit_fase2'] = migrated['crit_3'];
+    }
+    if (migrated['crit_4'] !== undefined && migrated['crit_horas'] === undefined) {
+      migrated['crit_horas'] = migrated['crit_4'];
+    }
+    if (migrated['crit_5'] !== undefined && migrated['crit_matricula'] === undefined) {
+      migrated['crit_matricula'] = migrated['crit_5'];
+    }
+    setChecks(migrated);
   }, []);
 
   const toggle = (id: string) => {
@@ -43,7 +81,7 @@ export const Art41Simulator: React.FC = () => {
             </h3>
           </div>
           <p className="text-xs text-gray-600 mt-0.5">
-            Estudantes com atuação profissional comprovada na área pública podem solicitar dispensa dos estágios A (180h) e B (120h).
+            Regulamento do Curso N-20229, Art. 41. Integralização curricular com base em experiência profissional em órgãos públicos ou ONGs.
           </p>
         </div>
         <span className="cagp-badge cagp-badge-red font-mono">
@@ -54,7 +92,7 @@ export const Art41Simulator: React.FC = () => {
       {/* Categorias Elegíveis */}
       <div className="p-3 bg-white rounded-[6px] border border-[#DFDBD2]">
         <span className="font-['Oswald'] font-bold text-xs uppercase text-gray-700 block mb-1.5">
-          Vínculos Profissionais Reconhecidos pelo Colegiado:
+          Vínculos Profissionais Elegíveis (Art. 41):
         </span>
         <div className="flex flex-wrap gap-1.5">
           {EMPLOYMENT_MODES.map((mode) => (
@@ -122,20 +160,30 @@ export const Art41Simulator: React.FC = () => {
           </div>
           <p className="text-xs text-gray-700 leading-relaxed">
             {isEligible
-              ? 'Você cumpre todos os requisitos do Art. 41 do Regulamento N-20229. Junte a documentação comprobatória e protocole na Secretaria Sala F-2039 com Norma Guedes.'
-              : 'Marque todos os requisitos acima conforme sua documentação para certificar a viabilidade do pedido de dispensa.'}
+              ? 'Você cumpre os requisitos do Art. 41 do Regulamento N-20229. Protocole o requerimento no início do semestre letivo com a declaração da chefia, e entregue o relatório ao orientador no final do período.'
+              : 'Marque todos os requisitos acima conforme sua documentação para certificar a viabilidade do pedido de integralização por experiência profissional.'}
           </p>
         </div>
 
         {isEligible && (
-          <a
-            href="/documentos/estagio-requerimento-integralizacao-experiencia-profissional.pdf"
-            download
-            className="cagp-btn-primary text-xs py-2 px-3 no-underline inline-flex items-center gap-1.5 shrink-0 whitespace-nowrap"
-          >
-            <i className="bi bi-file-earmark-pdf" aria-hidden="true" />
-            Baixar Requerimento Art. 41 (PDF)
-          </a>
+          <div className="flex items-center gap-2 flex-wrap shrink-0">
+            <a
+              href="/documentos/estagio-requerimento-integralizacao-experiencia-profissional.pdf"
+              download
+              className="cagp-btn-primary text-xs py-2 px-3 no-underline inline-flex items-center gap-1.5 shrink-0 whitespace-nowrap"
+            >
+              <i className="bi bi-file-earmark-pdf" aria-hidden="true" />
+              Requerimento (PDF)
+            </a>
+            <a
+              href="/documentos/estagio-relatorio-atividades-experiencia-profissional.pdf"
+              download
+              className="cagp-btn-secondary text-xs py-2 px-3 no-underline inline-flex items-center gap-1.5 shrink-0 whitespace-nowrap"
+            >
+              <i className="bi bi-file-earmark-text" aria-hidden="true" />
+              Relatório Final (PDF)
+            </a>
+          </div>
         )}
       </div>
     </div>

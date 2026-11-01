@@ -1,13 +1,13 @@
 ---
 // SobreGovernanca.astro - Sub-view 2: Governança Estatutária e Estrutura Orgânica
 const diretorias = [
-  { nome: '1. Coordenação Geral / Presidência', icon: 'bi-bank', desc: 'Representação jurídica, institucional e política perante a UFMG e a sociedade.' },
-  { nome: '2. Secretaria-Geral', icon: 'bi-file-earmark-text', desc: 'Atas de assembleias, arquivo histórico, editais e comunicações oficiais.' },
-  { nome: '3. Diretoria de Finanças & Patrimônio', icon: 'bi-cash-coin', desc: 'Livro-caixa, prestação de contas bimestral e inventário de bens patrimoniais.' },
-  { nome: '4. Diretoria de Assuntos Acadêmicos', icon: 'bi-mortarboard', desc: 'Acompanhamento do Colegiado, NDE, estágio e combate a abusos pedagógicos.' },
-  { nome: '5. Diretoria de Comunicação', icon: 'bi-broadcast-pin', desc: 'Redes sociais, murais da FAFICH e manutenção do Portal e Super App discente.' },
-  { nome: '6. Diretoria de Extensão & Cultura', icon: 'bi-palette', desc: 'Calouradas culturais, cineclube, semanas acadêmicas e visitas técnicas.' },
-  { nome: '7. Diversidade & Permanência', icon: 'bi-heart-pulse', desc: 'Acompanhamento de cotistas, demandas da FUMP e acolhimento afirmativo.' },
+  { sigla: 'DIPRE', nome: '1. Diretoria da Presidência', icon: 'bi-bank', desc: 'Presidência e Vice-Presidência. Representação jurídica, institucional e política perante a UFMG e a sociedade (Art. 28).' },
+  { sigla: 'DIJUR', nome: '2. Diretoria de Assuntos Jurídicos', icon: 'bi-shield-check', desc: 'Atas de assembleias, arquivo institucional, conformidade jurídica e transparência (Art. 29).' },
+  { sigla: 'DIFI', nome: '3. Diretoria Financeira', icon: 'bi-cash-coin', desc: 'Livro-caixa, prestação de contas e RREO mensal, e gestão dos itens do curso (Art. 30).' },
+  { sigla: 'DIAC', nome: '4. Diretoria Acadêmica', icon: 'bi-mortarboard', desc: 'Acompanhamento discente junto ao Colegiado, NDE, percursos curriculares e AAC/extensão (Art. 31).' },
+  { sigla: 'DIAP', nome: '5. Diretoria de Articulação e Assuntos Políticos', icon: 'bi-diagram-3', desc: 'Relações institucionais com CEB, DA FAFICH, DCE UFMG e campo de públicas (Art. 32).' },
+  { sigla: 'DICULT', nome: '6. Diretoria de Cultura', icon: 'bi-palette', desc: 'Calouradas semestrais, eventos culturais, debates extracurriculares e esportes (Art. 33).' },
+  { sigla: 'DIMAC', nome: '7. Diretoria de Marketing e Comunicação', icon: 'bi-broadcast-pin', desc: 'Redes sociais, murais da FAFICH e manutenção contínua do Super App discente (Art. 34).' },
 ];
 ---
 
@@ -18,7 +18,7 @@ const diretorias = [
         <div class="flex items-center gap-2">
           <i class="bi bi-diagram-3-fill text-[#8B1E2D] text-lg" aria-hidden="true"></i>
           <h3 class="font-['Oswald'] text-base font-bold uppercase text-[#0A0A0A]">
-            Estrutura em 7 Diretorias Executivas (Estatuto 2024)
+            Estrutura em 7 Diretorias Executivas (Regimento de 14/10/2024)
           </h3>
         </div>
         <p class="text-xs text-gray-600 mt-0.5">Divisão funcional de competências para garantir eficiência e transparência:</p>
@@ -54,10 +54,14 @@ const diretorias = [
       </p>
     </div>
 
-    <div class="pt-2">
-      <a href="/documentos/regimento-interno-cagp-ufmg.pdf" download class="cagp-btn-primary inline-flex items-center gap-1.5 text-xs py-1.5 px-3 no-underline">
-        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Baixar Regimento Interno do CAGP (PDF) &rarr;
+    <div class="pt-2 flex items-center gap-2 flex-wrap">
+      <a href="/documentos/regimento-interno-cagp-ufmg" class="cagp-btn-secondary inline-flex items-center gap-1.5 text-xs py-1.5 px-3 no-underline">
+        <i class="bi bi-eye" aria-hidden="true"></i> Ler Regimento Transcrito
       </a>
+      <a href="/documentos/regimento-interno-cagp-ufmg.pdf" download class="cagp-btn-primary inline-flex items-center gap-1.5 text-xs py-1.5 px-3 no-underline">
+        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Baixar PDF Oficial
+      </a>
+    </div>
     </div>
   </div>
 </div>
