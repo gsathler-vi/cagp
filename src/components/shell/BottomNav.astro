@@ -22,10 +22,12 @@ import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCata
           data-shortcut-id={item.id}
           data-match={JSON.stringify(item.match)}
           data-action={item.isAction ? item.actionEvent : undefined}
-          class="cagp-nav-item flex flex-col items-center justify-center min-w-[48px] sm:min-w-[56px] min-h-[44px] py-1 px-1.5 text-gray-600 hover:text-[#8B1E2D] transition-all no-underline rounded-full"
+          class="cagp-nav-item flex flex-col items-center justify-center min-w-[48px] sm:min-w-[54px] min-h-[44px] py-0.5 px-1 text-gray-700 hover:text-[#8B1E2D] no-underline group cursor-pointer"
         >
-          <i class={`bi ${item.icon} text-base sm:text-lg`} aria-hidden="true"></i>
-          <span class="text-[10px] sm:text-[11px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">{item.label}</span>
+          <div class="cagp-nav-icon-circle w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300">
+            <i class={`bi ${item.icon} text-base sm:text-lg`} aria-hidden="true"></i>
+          </div>
+          <span class="cagp-nav-label text-[9px] sm:text-[10px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5 transition-colors">{item.label}</span>
         </a>
       );
     })}
@@ -34,37 +36,54 @@ import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCata
     <button
       type="button"
       id="cagp-bottom-nav-customize-btn"
-      class="cagp-nav-item flex flex-col items-center justify-center min-w-[42px] min-h-[44px] py-1 px-1 text-gray-400 hover:text-[#8B1E2D] transition-all cursor-pointer border-none bg-transparent rounded-full"
+      class="cagp-nav-item flex flex-col items-center justify-center min-w-[40px] min-h-[44px] py-0.5 px-1 text-gray-400 hover:text-[#8B1E2D] cursor-pointer border-none bg-transparent group"
       title="Personalizar atalhos da barra"
       aria-label="Personalizar atalhos da barra inferior"
     >
-      <i class="bi bi-sliders2 text-sm sm:text-base" aria-hidden="true"></i>
-      <span class="text-[9px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">Editar</span>
+      <div class="cagp-nav-icon-circle w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300">
+        <i class="bi bi-sliders2 text-sm sm:text-base" aria-hidden="true"></i>
+      </div>
+      <span class="cagp-nav-label text-[9px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5 transition-colors">Editar</span>
     </button>
   </div>
 </nav>
 
 <style>
   .cagp-nav-item {
-    transition: all 0.15s cubic-bezier(0.2, 0, 0, 1);
-    border: 1px solid transparent;
+    position: relative;
+    user-select: none;
+    outline: none;
   }
-  .cagp-nav-item.is-active {
-    background-color: #8B1E2D !important;
-    color: #FFFFFF !important;
-    border: 1px solid #0A0A0A;
-    box-shadow: 1.5px 1.5px 0px #0A0A0A;
-    font-weight: 700;
+  .cagp-nav-icon-circle {
+    background: transparent;
+    border: 2px solid transparent;
+    color: #4B5563;
+    transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .cagp-nav-item.is-active i,
-  .cagp-nav-item.is-active span {
-    color: #FFFFFF !important;
-  }
-  .cagp-nav-item.is-active i {
+  .cagp-nav-item:hover .cagp-nav-icon-circle {
+    background: #F7F5F0;
+    color: #8B1E2D;
     transform: scale(1.08);
   }
-  .cagp-nav-item:active {
-    transform: scale(0.93);
+  .cagp-nav-item:active .cagp-nav-icon-circle {
+    transform: scale(0.92);
+  }
+  .cagp-nav-item.is-active .cagp-nav-icon-circle {
+    background-color: #8B1E2D !important;
+    color: #FFFFFF !important;
+    border: 2px solid #0A0A0A;
+    box-shadow: 2px 2px 0px #0A0A0A;
+    transform: scale(1.1) translateY(-2px);
+  }
+  .cagp-nav-item.is-active .cagp-nav-icon-circle i {
+    color: #FFFFFF !important;
+  }
+  .cagp-nav-item.is-active .cagp-nav-label {
+    color: #8B1E2D !important;
+    font-weight: 700;
+  }
+  .cagp-nav-label {
+    color: #6B7280;
   }
 </style>
 
@@ -125,11 +144,13 @@ import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCata
               data-shortcut-id="${item.id}"
               data-match='${JSON.stringify(matchPatterns)}'
               ${isAction ? `data-action="${item.actionEvent}"` : ''}
-              class="cagp-nav-item flex flex-col items-center justify-center min-w-[48px] sm:min-w-[56px] min-h-[44px] py-1 px-1.5 text-gray-600 hover:text-[#8B1E2D] transition-all no-underline rounded-full ${isMatched ? 'is-active' : ''}"
+              class="cagp-nav-item flex flex-col items-center justify-center min-w-[48px] sm:min-w-[54px] min-h-[44px] py-0.5 px-1 text-gray-700 hover:text-[#8B1E2D] no-underline group cursor-pointer ${isMatched ? 'is-active' : ''}"
               ${isMatched ? 'aria-current="page"' : ''}
             >
-              <i class="bi ${item.icon} text-base sm:text-lg" aria-hidden="true"></i>
-              <span class="text-[10px] sm:text-[11px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">${item.label}</span>
+              <div class="cagp-nav-icon-circle w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300">
+                <i class="bi ${item.icon} text-base sm:text-lg" aria-hidden="true"></i>
+              </div>
+              <span class="cagp-nav-label text-[9px] sm:text-[10px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5 transition-colors">${item.label}</span>
             </a>
           `;
         })
@@ -139,12 +160,14 @@ import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCata
         <button
           type="button"
           id="cagp-bottom-nav-customize-btn"
-          class="cagp-nav-item flex flex-col items-center justify-center min-w-[42px] min-h-[44px] py-1 px-1 text-gray-400 hover:text-[#8B1E2D] transition-all cursor-pointer border-none bg-transparent rounded-full"
+          class="cagp-nav-item flex flex-col items-center justify-center min-w-[40px] min-h-[44px] py-0.5 px-1 text-gray-400 hover:text-[#8B1E2D] cursor-pointer border-none bg-transparent group"
           title="Personalizar atalhos da barra"
           aria-label="Personalizar atalhos da barra inferior"
         >
-          <i class="bi bi-sliders2 text-sm sm:text-base" aria-hidden="true"></i>
-          <span class="text-[9px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5">Editar</span>
+          <div class="cagp-nav-icon-circle w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300">
+            <i class="bi bi-sliders2 text-sm sm:text-base" aria-hidden="true"></i>
+          </div>
+          <span class="cagp-nav-label text-[9px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5 transition-colors">Editar</span>
         </button>
       `;
 

@@ -1,41 +1,9 @@
 ---
 // MobileDrawer.astro - Menu Lateral Off-Canvas para Telas Mobile e Tablet (< 1024px)
 import { asset } from '../../lib/paths';
+import { HEADER_NAV_ITEMS } from './headerNavData';
 
-const sections = [
-  {
-    title: 'CURSO & PESQUISA',
-    links: [
-      { label: 'O Curso de Gestão Pública', href: '/curso', icon: 'bi-mortarboard', color: 'text-[#8B1E2D]' },
-      { label: 'Guia do Calouro (Noturno)', href: '/calouros', icon: 'bi-compass', color: 'text-[#15803D]' },
-      { label: 'Pesquisa, IC & 11 Núcleos', href: '/pesquisa', icon: 'bi-journal-bookmark-fill', color: 'text-blue-600' },
-    ],
-  },
-  {
-    title: 'CURRÍCULO & HORAS',
-    links: [
-      { label: 'Central Curricular & Grafo 10P', href: '/percurso', icon: 'bi-diagram-3', color: 'text-blue-600' },
-      { label: 'Extensão & Horas AAC (600h)', href: '/acg', icon: 'bi-calculator', color: 'text-amber-600' },
-      { label: 'Estágio & Dispensa Art. 41', href: '/estagio', icon: 'bi-briefcase', color: 'text-[#15803D]' },
-      { label: 'Trabalho de Conclusão (TCC)', href: '/tcc', icon: 'bi-journal-check', color: 'text-gray-800' },
-      { label: 'Catálogo de 68 Optativas', href: '/percurso#optativas', icon: 'bi-collection', color: 'text-[#8B1E2D]' },
-    ],
-  },
-  {
-    title: 'ACERVO & AJUDA',
-    links: [
-      { label: 'Documentos & Formulários (PDF)', href: '/documentos', icon: 'bi-file-earmark-pdf', color: 'text-[#8B1E2D]' },
-      { label: 'Dúvidas Frequentes (FAQ)', href: '/faq', icon: 'bi-question-circle', color: 'text-blue-600' },
-    ],
-  },
-  {
-    title: 'O CENTRO ACADÊMICO',
-    links: [
-      { label: 'O CAGP & Estatuto 2024', href: '/sobre', icon: 'bi-bank', color: 'text-[#8B1E2D]' },
-      { label: 'Processo Eleitoral & Diretorias', href: '/gestao', icon: 'bi-people', color: 'text-[#15803D]' },
-    ],
-  },
-];
+const axisSections = HEADER_NAV_ITEMS.filter((item) => Boolean(item.children && item.children.length > 0));
 ---
 
 <div id="cagp-mobile-drawer" class="cagp-mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu Lateral do Portal">
@@ -63,11 +31,11 @@ const sections = [
     <button
       type="button"
       id="cagp-drawer-passport-cta"
-      class="mb-4 p-2.5 rounded-xl border border-[#DFDBD2] bg-[#F7F5F0] hover:border-[#0A0A0A] hover:bg-white text-left flex items-center gap-3 transition-colors cursor-pointer w-full group"
+      class="mb-3 p-2.5 rounded-xl border-2 border-[#0A0A0A] bg-[#F7F5F0] hover:bg-white text-left flex items-center gap-3 shadow-[2.5px_2.5px_0px_#0A0A0A] active:scale-[0.98] transition-all cursor-pointer w-full group"
     >
       <div
         id="cagp-drawer-avatar-slot"
-        class="w-10 h-10 rounded-full bg-[#8B1E2D] text-white flex items-center justify-center font-['Oswald'] font-bold text-sm border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] shrink-0 overflow-hidden relative"
+        class="w-10 h-10 rounded-full bg-[#8B1E2D] text-white flex items-center justify-center font-['Oswald'] font-bold text-sm border-2 border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] shrink-0 overflow-hidden relative"
       >
         <i class="bi bi-person-badge-fill text-lg"></i>
       </div>
@@ -80,23 +48,34 @@ const sections = [
         </span>
         <span
           id="cagp-drawer-student-sub"
-          class="text-[10px] text-gray-500 block leading-tight mt-0.5 truncate"
+          class="text-[10px] text-gray-500 block leading-tight mt-0.5 truncate font-mono"
         >
           Horas, Perfil & Banco de Talentos &rarr;
         </span>
       </div>
     </button>
 
-    <!-- Seções de Navegação -->
-    <div class="space-y-3 flex-1 overflow-y-auto pr-1">
-      {sections.map((section) => (
-        <div class="cagp-drawer-section">
-          <span class="cagp-drawer-section-title">{section.title}</span>
+    <!-- Seções de Navegação dos Eixos (Cards Neo-Brutalistas Estilo Desktop) -->
+    <div class="space-y-1 flex-1 overflow-y-auto pr-1">
+      {axisSections.map((section) => (
+        <div class="cagp-drawer-section-card">
+          <div class="cagp-drawer-section-header">
+            <span class="cagp-drawer-section-title">{section.label}</span>
+            <a href={section.href} class="cagp-drawer-section-overview-btn">
+              <span>Visão Geral</span>
+              <i class="bi bi-arrow-right text-xs" aria-hidden="true" />
+            </a>
+          </div>
           <div class="space-y-0.5">
-            {section.links.map((link) => (
-              <a href={link.href} class="cagp-drawer-link">
-                <i class={`bi ${link.icon} ${link.color} text-sm shrink-0`} aria-hidden="true"></i>
-                <span class="truncate">{link.label}</span>
+            {section.children?.map((child) => (
+              <a href={child.href} class="cagp-drawer-link group/item">
+                <div class="w-7 h-7 rounded-md bg-[#F7F5F0] group-hover/item:bg-[#8B1E2D] border border-[#DFDBD2] group-hover/item:border-[#0A0A0A] flex items-center justify-center shrink-0 transition-colors">
+                  <i class={`bi ${child.icon} text-sm text-[#8B1E2D] group-hover/item:text-white transition-colors`} aria-hidden="true" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <span class="cagp-drawer-link-title group-hover/item:text-[#8B1E2D]">{child.label}</span>
+                  <span class="cagp-drawer-link-desc line-clamp-1">{child.desc}</span>
+                </div>
               </a>
             ))}
           </div>
@@ -105,9 +84,26 @@ const sections = [
     </div>
 
     <!-- Rodapé do Drawer com Ações Rápidas -->
-    <div class="pt-3 mt-2 border-t border-[#DFDBD2] flex items-center justify-between text-[11px]">
+    <div class="pt-3 mt-2 border-t-2 border-[#0A0A0A] flex items-center justify-between text-[11px]">
       <button
         type="button"
+        id="cagp-drawer-a11y-btn"
+        class="text-gray-800 hover:text-[#8B1E2D] font-['Oswald'] uppercase font-bold flex items-center gap-1.5 cursor-pointer active:scale-95 transition-transform"
+      >
+        <i class="bi bi-universal-access text-sm text-[#8B1E2D]"></i>
+        <span>Acessibilidade</span>
+      </button>
+      <button
+        type="button"
+        id="cagp-drawer-settings-btn"
+        class="text-gray-800 hover:text-[#8B1E2D] font-['Oswald'] uppercase font-bold flex items-center gap-1.5 cursor-pointer active:scale-95 transition-transform"
+      >
+        <i class="bi bi-gear-fill text-sm text-[#8B1E2D]"></i>
+        <span>Ajustes</span>
+      </button>
+    </div>
+  </div>
+</div>
         id="cagp-drawer-a11y-btn"
         class="text-gray-700 hover:text-[#8B1E2D] font-semibold flex items-center gap-1 cursor-pointer"
       >

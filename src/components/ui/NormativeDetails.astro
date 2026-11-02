@@ -29,7 +29,23 @@ const { title, badge, icon, open = false } = Astro.props;
 </details>
 
 <style>
+  .details-icon {
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
   details[open] summary .details-icon {
     transform: rotate(90deg);
+  }
+  details[open] > div {
+    animation: cagpDetailsCardOpen 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes cagpDetailsCardOpen {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
