@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 interface BottomSheetProps {
   id: string;
@@ -19,15 +20,20 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
 }) => {
   const [detent, setDetent] = useState<'medium' | 'large'>(initialDetent);
   const [dragY, setDragY] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const isDragging = useRef(false);
   const startY = useRef(0);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setDetent(initialDetent);
     setDragY(0);
   }, [isOpen, initialDetent]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted || typeof document === 'undefined') return null;
 
   const handleTouchStart = (e: React.TouchEvent) => {
     isDragging.current = true;
@@ -57,10 +63,10 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
 
   const heightClass = detent === 'large' ? 'h-[90dvh]' : 'h-[50dvh]';
 
-  return (
+  const sheetContent = (
     <div
       id={id}
-      className="fixed inset-0 z-[1080] flex flex-col justify-end"
+      className="fixed inset-0 z-[1080] flex flex-col justify-end pointer-events-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby={`${id}-title`}
@@ -100,7 +106,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="w-9 h-9 flex items-center justify-center rounded-full bg-[#F7F5F0] hover:bg-[#DFDBD2] text-[#0A0A0A] font-bold text-sm"
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-[#F7F5F0] hover:bg-[#DFDBD2] text-[#0A0A0A] font-bold text-sm cursor-pointer transition-colors active:scale-95"
             aria-label="Fechar gaveta"
           >
             ✕
@@ -114,4 +120,6 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
       </div>
     </div>
   );
+
+  return createPortal(sheetContent, document.body);
 };

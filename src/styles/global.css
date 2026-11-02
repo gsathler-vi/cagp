@@ -51,7 +51,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   scroll-behavior: smooth;
-  touch-action: manipulation;
+  touch-action: pan-x pan-y;
 }
 
 body {

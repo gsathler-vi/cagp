@@ -57,6 +57,37 @@ const axisSections = HEADER_NAV_ITEMS.filter((item) => Boolean(item.children && 
 
     <!-- Seções de Navegação dos Eixos (Cards Neo-Brutalistas Estilo Desktop) -->
     <div class="space-y-1 flex-1 overflow-y-auto pr-1">
+      <!-- Eixo 1: Início & Bússola Discente -->
+      <div class="cagp-drawer-section-card">
+        <div class="cagp-drawer-section-header">
+          <span class="cagp-drawer-section-title">1. Hoje & Campus</span>
+          <a href="/" class="cagp-drawer-section-overview-btn">
+            <span>Página Inicial</span>
+            <i class="bi bi-house-door-fill text-xs" aria-hidden="true" />
+          </a>
+        </div>
+        <div class="space-y-0.5">
+          <a href="/#hoje" class="cagp-drawer-link group/item">
+            <div class="w-7 h-7 rounded-md bg-[#F7F5F0] group-hover/item:bg-[#8B1E2D] border border-[#DFDBD2] group-hover/item:border-[#0A0A0A] flex items-center justify-center shrink-0 transition-colors">
+              <i class="bi bi-compass text-sm text-[#8B1E2D] group-hover/item:text-white transition-colors" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <span class="cagp-drawer-link-title group-hover/item:text-[#8B1E2D]">Bússola & Rotina Discente</span>
+              <span class="cagp-drawer-link-desc line-clamp-1">Status dos restaurantes, notícias e atalhos essenciais</span>
+            </div>
+          </a>
+          <a href="/#apps" class="cagp-drawer-link group/item">
+            <div class="w-7 h-7 rounded-md bg-[#F7F5F0] group-hover/item:bg-[#8B1E2D] border border-[#DFDBD2] group-hover/item:border-[#0A0A0A] flex items-center justify-center shrink-0 transition-colors">
+              <i class="bi bi-grid-3x3-gap text-sm text-[#8B1E2D] group-hover/item:text-white transition-colors" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <span class="cagp-drawer-link-title group-hover/item:text-[#8B1E2D]">Sistemas & Aplicativos UFMG</span>
+              <span class="cagp-drawer-link-desc line-clamp-1">SIGA, MinhaUFMG, Moodle, FUMP e Carteirinha</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
       {axisSections.map((section) => (
         <div class="cagp-drawer-section-card">
           <div class="cagp-drawer-section-header">
@@ -109,28 +140,40 @@ const axisSections = HEADER_NAV_ITEMS.filter((item) => Boolean(item.children && 
   import { renderAvatarHtml } from '../../lib/avatarHelper';
 
   function openDrawer() {
-    const drawer = document.getElementById('cagp-mobile-drawer');
-    if (!drawer) return;
-    drawer.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    document.body.classList.add('cagp-drawer-open');
+    if ((window as any).__cagp_open_drawer) {
+      (window as any).__cagp_open_drawer();
+    } else {
+      const drawer = document.getElementById('cagp-mobile-drawer');
+      if (drawer) {
+        drawer.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('cagp-drawer-open');
+      }
+    }
   }
 
   function closeDrawer() {
-    const drawer = document.getElementById('cagp-mobile-drawer');
-    if (!drawer) return;
-    drawer.classList.remove('is-open');
-    document.body.style.overflow = '';
-    document.body.classList.remove('cagp-drawer-open');
+    if ((window as any).__cagp_close_drawer) {
+      (window as any).__cagp_close_drawer();
+    } else {
+      const drawer = document.getElementById('cagp-mobile-drawer');
+      if (drawer) {
+        drawer.classList.remove('is-open');
+        document.body.style.overflow = '';
+        document.body.classList.remove('cagp-drawer-open');
+      }
+    }
   }
 
   function toggleDrawer() {
-    const drawer = document.getElementById('cagp-mobile-drawer');
-    if (!drawer) return;
-    if (drawer.classList.contains('is-open')) {
-      closeDrawer();
+    if ((window as any).__cagp_toggle_drawer) {
+      (window as any).__cagp_toggle_drawer();
     } else {
-      openDrawer();
+      const drawer = document.getElementById('cagp-mobile-drawer');
+      if (drawer) {
+        if (drawer.classList.contains('is-open')) closeDrawer();
+        else openDrawer();
+      }
     }
   }
 

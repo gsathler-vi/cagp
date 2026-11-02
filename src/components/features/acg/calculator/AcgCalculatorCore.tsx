@@ -151,177 +151,192 @@ export const AcgCalculatorCore: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
-          {items.map((item) => {
-            const val = data[item.key] || 0;
-            const itemPct = Math.min(100, Math.round((val / item.max) * 100));
-            const isDrawerOpen = !!openDrawers[item.key];
-            const isMaxed = val >= item.max;
+        {/* Colunas Independentes com Física Desacoplada (Masonry 2-Col) */}
+        <div className="flex flex-col md:flex-row gap-3 items-start">
+          {/* Coluna 1 Independente */}
+          <div className="flex-1 flex flex-col gap-3 w-full">
+            {items
+              .filter((_, idx) => idx % 2 === 0)
+              .map((item) => renderCard(item))}
+          </div>
 
-            return (
-              <div
-                key={item.key}
-                className="cagp-card p-3.5 bg-white border border-[#DFDBD2] rounded-lg shadow-xs flex flex-col h-fit transition-all duration-200"
-              >
-                <div>
-                  <div className="flex items-start justify-between gap-2 mb-1.5">
-                    <div className="flex items-center gap-2">
-                      <span className="w-7 h-7 rounded bg-[#F7F5F0] border border-[#DFDBD2] flex items-center justify-center text-sm text-[#8B1E2D] shrink-0">
-                        <i className={`bi ${item.icon}`} aria-hidden="true" />
-                      </span>
-                      <div>
-                        <span className="text-[10px] font-mono font-bold uppercase text-gray-500">
-                          {item.code}
-                        </span>
-                        <h3 className="font-['Oswald'] text-sm font-bold text-[#0A0A0A] leading-tight m-0">
-                          {item.label}
-                        </h3>
-                      </div>
-                    </div>
-                    {isMaxed ? (
-                      <span className="cagp-stamp-badge is-teto text-[10px] py-0.5 px-1.5 shrink-0 shadow-[1px_1px_0_#15803D]">
-                        <i className="bi bi-patch-check-fill" aria-hidden="true" />
-                        <span>TETO {item.max}h</span>
-                      </span>
-                    ) : (
-                      <span className="text-[11px] font-mono font-bold text-gray-600 shrink-0">
-                        Teto: {item.max}h
-                      </span>
-                    )}
-                  </div>
+          {/* Coluna 2 Independente */}
+          <div className="flex-1 flex flex-col gap-3 w-full">
+            {items
+              .filter((_, idx) => idx % 2 === 1)
+              .map((item) => renderCard(item))}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
-                  <p className="text-xs text-gray-600 mb-2 leading-relaxed">{item.desc}</p>
+  const renderCard = (item: AcgItemDef) => {
+    const val = data[item.key] || 0;
+    const itemPct = Math.min(100, Math.round((val / item.max) * 100));
+    const isDrawerOpen = !!openDrawers[item.key];
+    const isMaxed = val >= item.max;
 
-                  {/* Barra de Progresso do Item */}
-                  <div className="w-full h-1.5 bg-[#DFDBD2] rounded-full overflow-hidden mb-2">
-                    <div
-                      className={`h-full transition-all duration-200 ${
-                        isMaxed ? 'bg-[#15803D]' : 'bg-[#8B1E2D]'
-                      }`}
-                      style={{ width: `${itemPct}%` }}
-                    />
-                  </div>
-                </div>
-
-                {/* Controles Táteis Apple HIG */}
-                <div>
-                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-[#DFDBD2]">
-                    <div className="flex items-center gap-1">
-                      <button
-                        type="button"
-                        onClick={() => handleStep(item, -item.step)}
-                        disabled={val <= 0}
-                        className="w-10 h-10 rounded bg-[#F7F5F0] hover:bg-[#EAE6DE] border border-[#DFDBD2] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-sm font-bold text-[#0A0A0A]"
-                        aria-label={`Diminuir ${item.step}h de ${item.label}`}
-                      >
-                        <i className="bi bi-dash" aria-hidden="true" />
-                      </button>
-
-                      <div className="w-16 h-10 bg-[#FFFFFF] border border-[#0A0A0A] rounded flex flex-col items-center justify-center">
-                        <span className="font-mono text-xs font-black text-[#0A0A0A] leading-none">
-                          {val}h
-                        </span>
-                        <span className="text-[9px] text-gray-400 font-mono">
-                          /{item.max}h
-                        </span>
-                      </div>
-
-                      <button
-                        type="button"
-                        onClick={() => handleStep(item, item.step)}
-                        disabled={isMaxed}
-                        className="w-10 h-10 rounded bg-[#F7F5F0] hover:bg-[#EAE6DE] border border-[#DFDBD2] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-sm font-bold text-[#0A0A0A]"
-                        aria-label={`Adicionar ${item.step}h em ${item.label}`}
-                      >
-                        <i className="bi bi-plus" aria-hidden="true" />
-                      </button>
-                    </div>
-
-                    <div className="flex items-center gap-1">
-                      {isMaxed ? (
-                        <span className="text-[10px] font-mono font-bold text-[#15803D] bg-[#DCFCE7] border border-[#15803D]/30 px-2 py-1 rounded flex items-center gap-1 shadow-xs">
-                          <i className="bi bi-check-circle-fill text-[11px]" aria-hidden="true" />
-                          <span>100%</span>
-                        </span>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={() => handleMaxOut(item)}
-                          className="px-2.5 py-1 rounded bg-[#F7F5F0] hover:bg-[#8B1E2D] hover:text-white border border-[#DFDBD2] text-[11px] font-['Oswald'] uppercase font-bold text-gray-700 transition-all active:scale-95 cursor-pointer min-h-[32px] flex items-center gap-1 shadow-xs"
-                          title={`Preencher teto de ${item.max}h`}
-                        >
-                          <i className="bi bi-arrow-bar-up text-xs" aria-hidden="true" />
-                          <span>Teto</span>
-                        </button>
-                      )}
-
-                      <button
-                        type="button"
-                        onClick={() => toggleDrawer(item.key)}
-                        className={`px-2 py-1 rounded border text-[11px] font-['Oswald'] uppercase font-bold transition-colors flex items-center gap-1 ${
-                          isDrawerOpen
-                            ? 'bg-[#0A0A0A] text-white border-[#0A0A0A]'
-                            : 'bg-[#F7F5F0] text-gray-700 border-[#DFDBD2] hover:bg-[#EAE6DE]'
-                        }`}
-                        aria-expanded={isDrawerOpen}
-                        aria-controls={`drawer-${item.key}`}
-                      >
-                        <span>Regras</span>
-                        <i
-                          className={`bi bi-chevron-${isDrawerOpen ? 'up' : 'down'} text-[9px]`}
-                          aria-hidden="true"
-                        />
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Gaveta Normativa de Regras com Interpolação Fluida 0fr -> 1fr */}
-                  <div
-                    id={`drawer-${item.key}`}
-                    className={`cagp-calc-drawer ${isDrawerOpen ? 'is-open' : ''}`}
-                    role="region"
-                    aria-label={`Normas de ${item.label}`}
-                    aria-hidden={!isDrawerOpen}
-                  >
-                    <div className="cagp-calc-drawer-inner">
-                      <div className="cagp-calc-drawer-grid">
-                        <div className="cagp-calc-drawer-section is-accepted">
-                          <div className="cagp-calc-drawer-header">
-                            <i className="bi bi-check-circle-fill text-[#15803D]" aria-hidden="true" />
-                            <span>O que pontua:</span>
-                          </div>
-                          <ul>
-                            {item.accepted.map((acc, i) => (
-                              <li key={i}>{acc}</li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <div className="cagp-calc-drawer-section is-rejected">
-                          <div className="cagp-calc-drawer-header">
-                            <i className="bi bi-x-circle-fill text-[#DC2626]" aria-hidden="true" />
-                            <span>O que não pontua:</span>
-                          </div>
-                          <ul>
-                            {item.rejected.map((rej, i) => (
-                              <li key={i}>{rej}</li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {item.alertNote && (
-                          <div className="cagp-calc-drawer-alert">
-                            <i className="bi bi-exclamation-triangle-fill text-[#B45309]" aria-hidden="true" />
-                            <span>{item.alertNote}</span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    return (
+      <div
+        key={item.key}
+        className="cagp-card p-3.5 bg-white border border-[#DFDBD2] rounded-lg shadow-xs flex flex-col h-fit transition-all duration-200"
+      >
+        <div>
+          <div className="flex items-start justify-between gap-2 mb-1.5">
+            <div className="flex items-center gap-2">
+              <span className="w-7 h-7 rounded bg-[#F7F5F0] border border-[#DFDBD2] flex items-center justify-center text-sm text-[#8B1E2D] shrink-0">
+                <i className={`bi ${item.icon}`} aria-hidden="true" />
+              </span>
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase text-gray-500">
+                  {item.code}
+                </span>
+                <h3 className="font-['Oswald'] text-sm font-bold text-[#0A0A0A] leading-tight m-0">
+                  {item.label}
+                </h3>
               </div>
-            );
-          })}
+            </div>
+            {isMaxed ? (
+              <span className="cagp-stamp-badge is-teto text-[10px] py-0.5 px-1.5 shrink-0 shadow-[1px_1px_0_#15803D]">
+                <i className="bi bi-patch-check-fill" aria-hidden="true" />
+                <span>TETO {item.max}h</span>
+              </span>
+            ) : (
+              <span className="text-[11px] font-mono font-bold text-gray-600 shrink-0">
+                Teto: {item.max}h
+              </span>
+            )}
+          </div>
+
+          <p className="text-xs text-gray-600 mb-2 leading-relaxed">{item.desc}</p>
+
+          {/* Barra de Progresso do Item */}
+          <div className="w-full h-1.5 bg-[#DFDBD2] rounded-full overflow-hidden mb-2">
+            <div
+              className={`h-full transition-all duration-200 ${
+                isMaxed ? 'bg-[#15803D]' : 'bg-[#8B1E2D]'
+              }`}
+              style={{ width: `${itemPct}%` }}
+            />
+          </div>
+        </div>
+
+        {/* Controles Táteis Apple HIG */}
+        <div>
+          <div className="flex items-center justify-between gap-2 pt-2 border-t border-[#DFDBD2]">
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => handleStep(item, -item.step)}
+                disabled={val <= 0}
+                className="w-10 h-10 rounded bg-[#F7F5F0] hover:bg-[#EAE6DE] border border-[#DFDBD2] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-sm font-bold text-[#0A0A0A]"
+                aria-label={`Diminuir ${item.step}h de ${item.label}`}
+              >
+                <i className="bi bi-dash" aria-hidden="true" />
+              </button>
+
+              <div className="w-16 h-10 bg-[#FFFFFF] border border-[#0A0A0A] rounded flex flex-col items-center justify-center">
+                <span className="font-mono text-xs font-black text-[#0A0A0A] leading-none">
+                  {val}h
+                </span>
+                <span className="text-[9px] text-gray-400 font-mono">
+                  /{item.max}h
+                </span>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => handleStep(item, item.step)}
+                disabled={isMaxed}
+                className="w-10 h-10 rounded bg-[#F7F5F0] hover:bg-[#EAE6DE] border border-[#DFDBD2] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-sm font-bold text-[#0A0A0A]"
+                aria-label={`Adicionar ${item.step}h em ${item.label}`}
+              >
+                <i className="bi bi-plus" aria-hidden="true" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-1">
+              {isMaxed ? (
+                <span className="text-[10px] font-mono font-bold text-[#15803D] bg-[#DCFCE7] border border-[#15803D]/30 px-2 py-1 rounded flex items-center gap-1 shadow-xs">
+                  <i className="bi bi-check-circle-fill text-[11px]" aria-hidden="true" />
+                  <span>100%</span>
+                </span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => handleMaxOut(item)}
+                  className="px-2.5 py-1 rounded bg-[#F7F5F0] hover:bg-[#8B1E2D] hover:text-white border border-[#DFDBD2] text-[11px] font-['Oswald'] uppercase font-bold text-gray-700 transition-all active:scale-95 cursor-pointer min-h-[32px] flex items-center gap-1 shadow-xs"
+                  title={`Preencher teto de ${item.max}h`}
+                >
+                  <i className="bi bi-arrow-bar-up text-xs" aria-hidden="true" />
+                  <span>Teto</span>
+                </button>
+              )}
+
+              <button
+                type="button"
+                onClick={() => toggleDrawer(item.key)}
+                className={`px-2 py-1 rounded border text-[11px] font-['Oswald'] uppercase font-bold transition-colors flex items-center gap-1 ${
+                  isDrawerOpen
+                    ? 'bg-[#0A0A0A] text-white border-[#0A0A0A]'
+                    : 'bg-[#F7F5F0] text-gray-700 border-[#DFDBD2] hover:bg-[#EAE6DE]'
+                }`}
+                aria-expanded={isDrawerOpen}
+                aria-controls={`drawer-${item.key}`}
+              >
+                <span>Regras</span>
+                <i
+                  className={`bi bi-chevron-${isDrawerOpen ? 'up' : 'down'} text-[9px]`}
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
+          </div>
+
+          {/* Gaveta Normativa de Regras com Interpolação Fluida 0fr -> 1fr */}
+          <div
+            id={`drawer-${item.key}`}
+            className={`cagp-calc-drawer ${isDrawerOpen ? 'is-open' : ''}`}
+            role="region"
+            aria-label={`Normas de ${item.label}`}
+            aria-hidden={!isDrawerOpen}
+          >
+            <div className="cagp-calc-drawer-inner">
+              <div className="cagp-calc-drawer-grid">
+                <div className="cagp-calc-drawer-section is-accepted">
+                  <div className="cagp-calc-drawer-header">
+                    <i className="bi bi-check-circle-fill text-[#15803D]" aria-hidden="true" />
+                    <span>O que pontua:</span>
+                  </div>
+                  <ul>
+                    {item.accepted.map((acc: string, i: number) => (
+                      <li key={i}>{acc}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="cagp-calc-drawer-section is-rejected">
+                  <div className="cagp-calc-drawer-header">
+                    <i className="bi bi-x-circle-fill text-[#DC2626]" aria-hidden="true" />
+                    <span>O que não pontua:</span>
+                  </div>
+                  <ul>
+                    {item.rejected.map((rej: string, i: number) => (
+                      <li key={i}>{rej}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                {item.alertNote && (
+                  <div className="cagp-calc-drawer-alert">
+                    <i className="bi bi-exclamation-triangle-fill text-[#B45309]" aria-hidden="true" />
+                    <span>{item.alertNote}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
