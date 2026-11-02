@@ -151,7 +151,7 @@ export const AcgCalculatorCore: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
           {items.map((item) => {
             const val = data[item.key] || 0;
             const itemPct = Math.min(100, Math.round((val / item.max) * 100));
@@ -161,7 +161,7 @@ export const AcgCalculatorCore: React.FC = () => {
             return (
               <div
                 key={item.key}
-                className="cagp-card p-3.5 bg-white border border-[#DFDBD2] rounded-lg shadow-xs flex flex-col justify-between"
+                className="cagp-card p-3.5 bg-white border border-[#DFDBD2] rounded-lg shadow-xs flex flex-col h-fit transition-all duration-200"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2 mb-1.5">

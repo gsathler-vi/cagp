@@ -1,64 +1,82 @@
 ---
-// BottomNav.astro - Barra Inferior com Atalhos Customizáveis & transition:persist (Mobile & Tablet)
+// BottomNav.astro - Dock Inferior Flutuante em Pílula (Mobile & Tablet) — Idêntico ao Desktop Dock
 import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCatalog';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
 <nav
   id="cagp-bottom-nav"
-  transition:persist="main-bottom-nav"
-  class="lg:hidden fixed left-2.5 right-2.5 max-w-lg mx-auto z-[1040] bg-white/92 backdrop-blur-xl border-2 border-[#0A0A0A] rounded-full shadow-[3px_3px_0px_#0A0A0A] px-2 py-1 select-none"
-  style="bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));"
+  class="lg:hidden fixed left-1/2 -translate-x-1/2 z-[1040] select-none pointer-events-none"
+  style="bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));"
   aria-label="Navegação Principal do Super App"
   data-catalog={JSON.stringify(SHORTCUTS_CATALOG)}
   data-defaults={JSON.stringify(DEFAULT_SHORTCUT_IDS)}
 >
-  <div id="cagp-bottom-nav-container" class="w-full flex items-center justify-around gap-0.5">
-    <!-- Renderizado Inicialmente com os 5 Eixos Canônicos (Zero CLS) -->
+  <div
+    id="cagp-bottom-nav-container"
+    class="pointer-events-auto bg-white/95 backdrop-blur-xl border-2 border-[#0A0A0A] shadow-[3px_3px_0px_#0A0A0A] rounded-full px-2.5 py-1.5 flex items-center justify-center gap-1.5 sm:gap-2 transition-all duration-300"
+    role="toolbar"
+    aria-label="Atalhos discentes"
+  >
+    <!-- Renderizado Inicialmente no SSR com os 5 Atalhos Canônicos -->
     {DEFAULT_SHORTCUT_IDS.map((id) => {
       const item = SHORTCUTS_CATALOG.find((s) => s.id === id) || SHORTCUTS_CATALOG[0];
+      const isMatched = item.match?.some((pattern: string) => {
+        const regex = new RegExp(pattern);
+        return regex.test(currentPath) || (pattern === '^/$' && currentPath === '/');
+      });
+
       return (
         <a
           href={item.href}
           data-shortcut-id={item.id}
           data-match={JSON.stringify(item.match)}
           data-action={item.isAction ? item.actionEvent : undefined}
-          class="cagp-nav-item flex flex-col items-center justify-center min-w-[48px] sm:min-w-[54px] min-h-[44px] py-0.5 px-1 text-gray-700 hover:text-[#8B1E2D] no-underline group cursor-pointer"
+          class={`cagp-nav-item relative flex items-center justify-center rounded-full transition-all duration-300 no-underline cursor-pointer ${
+            isMatched ? 'is-active' : ''
+          }`}
+          aria-current={isMatched ? 'page' : undefined}
+          aria-label={item.fullLabel}
+          title={item.fullLabel}
         >
-          <div class="cagp-nav-icon-circle w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300">
-            <i class={`bi ${item.icon} text-base sm:text-lg`} aria-hidden="true"></i>
+          <div class="cagp-nav-icon-circle w-10 h-10 min-w-[40px] min-h-[40px] rounded-full flex items-center justify-center transition-all duration-300 relative text-gray-700">
+            <i class={`bi ${item.icon} text-lg transition-transform duration-200`} aria-hidden="true" />
+            <span
+              class="cagp-nav-active-dot absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-[#8B1E2D] ring-2 ring-white opacity-0 transition-opacity duration-200"
+              aria-hidden="true"
+            />
           </div>
-          <span class="cagp-nav-label text-[9px] sm:text-[10px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5 transition-colors">{item.label}</span>
         </a>
       );
     })}
 
-    <!-- Botão Rápido de Personalização -->
+    <!-- Divisor Sutil -->
+    <div class="h-5 w-[1.5px] bg-[#DFDBD2] mx-0.5" aria-hidden="true"></div>
+
+    <!-- Botão de Personalização de Atalhos -->
     <button
       type="button"
       id="cagp-bottom-nav-customize-btn"
-      class="cagp-nav-item flex flex-col items-center justify-center min-w-[40px] min-h-[44px] py-0.5 px-1 text-gray-400 hover:text-[#8B1E2D] cursor-pointer border-none bg-transparent group"
+      class="cagp-nav-item flex items-center justify-center w-10 h-10 min-w-[40px] min-h-[40px] rounded-full text-gray-400 hover:text-[#8B1E2D] hover:bg-[#F7F5F0] transition-colors cursor-pointer border-none bg-transparent"
       title="Personalizar atalhos da barra"
       aria-label="Personalizar atalhos da barra inferior"
     >
-      <div class="cagp-nav-icon-circle w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300">
-        <i class="bi bi-sliders2 text-sm sm:text-base" aria-hidden="true"></i>
-      </div>
-      <span class="cagp-nav-label text-[9px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5 transition-colors">Editar</span>
+      <i class="bi bi-sliders2 text-base" aria-hidden="true" />
     </button>
   </div>
 </nav>
 
 <style>
   .cagp-nav-item {
-    position: relative;
-    user-select: none;
     outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
   .cagp-nav-icon-circle {
     background: transparent;
     border: 2px solid transparent;
     color: #4B5563;
-    transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   .cagp-nav-item:hover .cagp-nav-icon-circle {
     background: #F7F5F0;
@@ -68,22 +86,20 @@ import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCata
   .cagp-nav-item:active .cagp-nav-icon-circle {
     transform: scale(0.92);
   }
+
+  /* Estado Ativo: Circulado de Vermelho com Animação Apple Spring */
   .cagp-nav-item.is-active .cagp-nav-icon-circle {
     background-color: #8B1E2D !important;
     color: #FFFFFF !important;
-    border: 2px solid #0A0A0A;
-    box-shadow: 2px 2px 0px #0A0A0A;
-    transform: scale(1.1) translateY(-2px);
+    border: 2px solid #0A0A0A !important;
+    box-shadow: 2px 2px 0px #0A0A0A, 0 0 0 3px rgba(139, 30, 45, 0.35) !important;
+    transform: scale(1.08) translateY(-2px) !important;
   }
   .cagp-nav-item.is-active .cagp-nav-icon-circle i {
     color: #FFFFFF !important;
   }
-  .cagp-nav-item.is-active .cagp-nav-label {
-    color: #8B1E2D !important;
-    font-weight: 700;
-  }
-  .cagp-nav-label {
-    color: #6B7280;
+  .cagp-nav-item.is-active .cagp-nav-active-dot {
+    opacity: 1 !important;
   }
 </style>
 
@@ -119,6 +135,31 @@ import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCata
       return defaults;
     }
 
+    function syncActiveNav() {
+      if (!container) return;
+      const baseUrl = (document.documentElement.dataset.baseUrl || '/').replace(/\/$/, '');
+      let currentPath = window.location.pathname;
+      if (baseUrl && currentPath.startsWith(baseUrl)) {
+        currentPath = currentPath.slice(baseUrl.length) || '/';
+      }
+
+      const items = container.querySelectorAll<HTMLAnchorElement>('.cagp-nav-item[data-match]');
+      items.forEach((link) => {
+        const matchRaw = link.getAttribute('data-match');
+        if (!matchRaw) return;
+        try {
+          const patterns: string[] = JSON.parse(matchRaw);
+          const isMatched = patterns.some((p: string) => {
+            const reg = new RegExp(p);
+            return reg.test(currentPath) || (p === '^/$' && (currentPath === '' || currentPath === '/' || currentPath === '/index.html'));
+          });
+          link.classList.toggle('is-active', isMatched);
+          if (isMatched) link.setAttribute('aria-current', 'page');
+          else link.removeAttribute('aria-current');
+        } catch {}
+      });
+    }
+
     function renderNav() {
       if (!container) return;
       const selectedIds = getSelectedIds();
@@ -144,47 +185,46 @@ import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCata
               data-shortcut-id="${item.id}"
               data-match='${JSON.stringify(matchPatterns)}'
               ${isAction ? `data-action="${item.actionEvent}"` : ''}
-              class="cagp-nav-item flex flex-col items-center justify-center min-w-[48px] sm:min-w-[54px] min-h-[44px] py-0.5 px-1 text-gray-700 hover:text-[#8B1E2D] no-underline group cursor-pointer ${isMatched ? 'is-active' : ''}"
+              class="cagp-nav-item relative flex items-center justify-center rounded-full transition-all duration-300 no-underline cursor-pointer ${isMatched ? 'is-active' : ''}"
               ${isMatched ? 'aria-current="page"' : ''}
+              aria-label="${item.fullLabel}"
+              title="${item.fullLabel}"
             >
-              <div class="cagp-nav-icon-circle w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300">
-                <i class="bi ${item.icon} text-base sm:text-lg" aria-hidden="true"></i>
+              <div class="cagp-nav-icon-circle w-10 h-10 min-w-[40px] min-h-[40px] rounded-full flex items-center justify-center transition-all duration-300 relative text-gray-700">
+                <i class="bi ${item.icon} text-lg transition-transform duration-200" aria-hidden="true"></i>
+                <span class="cagp-nav-active-dot absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-[#8B1E2D] ring-2 ring-white opacity-0 transition-opacity duration-200" aria-hidden="true"></span>
               </div>
-              <span class="cagp-nav-label text-[9px] sm:text-[10px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5 transition-colors">${item.label}</span>
             </a>
           `;
         })
         .join('');
 
+      const dividerHtml = `<div class="h-5 w-[1.5px] bg-[#DFDBD2] mx-0.5" aria-hidden="true"></div>`;
+
       const editBtnHtml = `
         <button
           type="button"
           id="cagp-bottom-nav-customize-btn"
-          class="cagp-nav-item flex flex-col items-center justify-center min-w-[40px] min-h-[44px] py-0.5 px-1 text-gray-400 hover:text-[#8B1E2D] cursor-pointer border-none bg-transparent group"
+          class="cagp-nav-item flex items-center justify-center w-10 h-10 min-w-[40px] min-h-[40px] rounded-full text-gray-400 hover:text-[#8B1E2D] hover:bg-[#F7F5F0] transition-colors cursor-pointer border-none bg-transparent"
           title="Personalizar atalhos da barra"
           aria-label="Personalizar atalhos da barra inferior"
         >
-          <div class="cagp-nav-icon-circle w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300">
-            <i class="bi bi-sliders2 text-sm sm:text-base" aria-hidden="true"></i>
-          </div>
-          <span class="cagp-nav-label text-[9px] font-['Oswald'] font-semibold uppercase tracking-tight mt-0.5 transition-colors">Editar</span>
+          <i class="bi bi-sliders2 text-base" aria-hidden="true"></i>
         </button>
       `;
 
-      container.innerHTML = itemsHtml + editBtnHtml;
+      container.innerHTML = itemsHtml + dividerHtml + editBtnHtml;
       bindEvents();
     }
 
     function bindEvents() {
       if (!container) return;
 
-      // Botão de editar
       const editBtn = container.querySelector('#cagp-bottom-nav-customize-btn');
       editBtn?.addEventListener('click', () => {
         window.dispatchEvent(new CustomEvent('cagp:open-shortcuts'));
       });
 
-      // Ações especiais
       const actionLinks = container.querySelectorAll('[data-action]');
       actionLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
@@ -197,9 +237,18 @@ import { SHORTCUTS_CATALOG, DEFAULT_SHORTCUT_IDS } from '../../lib/shortcutsCata
       });
     }
 
-    renderNav();
+    // Se já existem itens renderizados pelo SSR ou navegação anterior, só sincronizamos o estado ativo
+    // para permitir transições CSS fluidas sem recriar o DOM
+    const existingItems = container.querySelectorAll('.cagp-nav-item[data-match]');
+    if (existingItems.length > 0) {
+      syncActiveNav();
+      bindEvents();
+    } else {
+      renderNav();
+    }
   }
 
+  setupBottomNav();
   document.addEventListener('astro:page-load', setupBottomNav);
   window.addEventListener('cagp:vault-updated', (e: Event) => {
     const custom = e as CustomEvent<{ key: string }>;

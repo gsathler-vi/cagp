@@ -35,17 +35,50 @@ const { title, badge, icon, open = false } = Astro.props;
   details[open] summary .details-icon {
     transform: rotate(90deg);
   }
-  details[open] > div {
-    animation: cagpDetailsCardOpen 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-  @keyframes cagpDetailsCardOpen {
-    from {
-      opacity: 0;
-      transform: translateY(-6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  details > div {
+    overflow: hidden;
   }
 </style>
+
+<script>
+  function setupDetailsAccordions() {
+    document.querySelectorAll<HTMLDetailsElement>('details.cagp-normative-details').forEach((details) => {
+      const summary = details.querySelector('summary');
+      const content = details.querySelector(':scope > div') as HTMLElement | null;
+      if (!summary || !content) return;
+
+      if ((details as any).__cagp_animated) return;
+      (details as any).__cagp_animated = true;
+
+      summary.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (details.open) {
+          const startHeight = content.offsetHeight;
+          const anim = content.animate(
+            [
+              { height: `${startHeight}px`, opacity: '1', transform: 'translateY(0)' },
+              { height: '0px', opacity: '0', transform: 'translateY(-6px)' }
+            ],
+            { duration: 240, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' }
+          );
+          anim.onfinish = () => {
+            details.open = false;
+          };
+        } else {
+          details.open = true;
+          const endHeight = content.offsetHeight;
+          content.animate(
+            [
+              { height: '0px', opacity: '0', transform: 'translateY(-8px)' },
+              { height: `${endHeight}px`, opacity: '1', transform: 'translateY(0)' }
+            ],
+            { duration: 300, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' }
+          );
+        }
+      });
+    });
+  }
+
+  setupDetailsAccordions();
+  document.addEventListener('astro:page-load', setupDetailsAccordions);
+</script>

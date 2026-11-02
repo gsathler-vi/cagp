@@ -67,14 +67,14 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity duration-200"
+        className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity duration-200 animate-in fade-in"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Sheet Modal Container */}
       <div
-        className={`relative z-[1090] w-full max-w-2xl mx-auto bg-white/98 backdrop-blur-xl rounded-t-xl border-2 border-b-0 border-[#0A0A0A] shadow-[0_-8px_32px_rgba(10,10,10,0.2)] flex flex-col transition-all duration-200 ${heightClass}`}
+        className={`relative z-[1090] w-full max-w-2xl mx-auto bg-white/98 backdrop-blur-xl rounded-t-2xl border-2 border-b-0 border-[#0A0A0A] shadow-[0_-8px_32px_rgba(10,10,10,0.2)] flex flex-col transition-all duration-300 animate-in slide-in-from-bottom duration-300 ease-out ${heightClass}`}
         style={{
           transform: `translateY(${dragY}px)`,
           paddingBottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))',

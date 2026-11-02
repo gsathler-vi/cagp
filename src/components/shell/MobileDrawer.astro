@@ -7,7 +7,7 @@ const axisSections = HEADER_NAV_ITEMS.filter((item) => Boolean(item.children && 
 ---
 
 <div id="cagp-mobile-drawer" class="cagp-mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu Lateral do Portal">
-  <div class="cagp-drawer-backdrop" id="cagp-drawer-backdrop"></div>
+  <div class="cagp-drawer-backdrop" id="cagp-drawer-backdrop" onclick="window.dispatchEvent(new CustomEvent('cagp:close-drawer'))"></div>
   <div class="cagp-drawer-panel" role="document">
     <!-- Header do Menu -->
     <div class="cagp-drawer-header">
@@ -22,7 +22,7 @@ const axisSections = HEADER_NAV_ITEMS.filter((item) => Boolean(item.children && 
           <span class="text-[10px] text-gray-500 font-mono block mt-0.5"><strong class="text-[#8B1E2D]">CAGP</strong> FAFICH / UFMG</span>
         </div>
       </div>
-      <button type="button" id="cagp-drawer-close" class="cagp-drawer-close-btn" aria-label="Fechar menu lateral">
+      <button type="button" id="cagp-drawer-close" class="cagp-drawer-close-btn" onclick="window.dispatchEvent(new CustomEvent('cagp:close-drawer'))" aria-label="Fechar menu lateral">
         ✕
       </button>
     </div>
@@ -104,68 +104,47 @@ const axisSections = HEADER_NAV_ITEMS.filter((item) => Boolean(item.children && 
     </div>
   </div>
 </div>
-        id="cagp-drawer-a11y-btn"
-        class="text-gray-700 hover:text-[#8B1E2D] font-semibold flex items-center gap-1 cursor-pointer"
-      >
-        <i class="bi bi-universal-access"></i> Acessibilidade
-      </button>
-      <button
-        type="button"
-        id="cagp-drawer-settings-btn"
-        class="text-gray-700 hover:text-[#8B1E2D] font-semibold flex items-center gap-1 cursor-pointer"
-      >
-        <i class="bi bi-gear-fill"></i> Ajustes
-      </button>
-    </div>
-  </div>
-</div>
 
 <script>
   import { renderAvatarHtml } from '../../lib/avatarHelper';
 
-  const getDrawer = () => document.getElementById('cagp-mobile-drawer');
-
-  const openDrawer = () => {
-    const drawer = getDrawer();
+  function openDrawer() {
+    const drawer = document.getElementById('cagp-mobile-drawer');
     if (!drawer) return;
     drawer.classList.add('is-open');
     document.body.style.overflow = 'hidden';
     document.body.classList.add('cagp-drawer-open');
-  };
+  }
 
-  const closeDrawer = () => {
-    const drawer = getDrawer();
+  function closeDrawer() {
+    const drawer = document.getElementById('cagp-mobile-drawer');
     if (!drawer) return;
     drawer.classList.remove('is-open');
     document.body.style.overflow = '';
     document.body.classList.remove('cagp-drawer-open');
-  };
+  }
 
-  const toggleDrawer = () => {
-    const drawer = getDrawer();
-    if (drawer?.classList.contains('is-open')) {
+  function toggleDrawer() {
+    const drawer = document.getElementById('cagp-mobile-drawer');
+    if (!drawer) return;
+    if (drawer.classList.contains('is-open')) {
       closeDrawer();
     } else {
       openDrawer();
     }
-  };
+  }
 
-  (window as any).openCagpMobileDrawer = openDrawer;
-  (window as any).closeCagpMobileDrawer = closeDrawer;
-  (window as any).toggleCagpMobileDrawer = toggleDrawer;
-
+  // Bind global event listeners once on window
   if (!(window as any).__cagp_drawer_initialized) {
     (window as any).__cagp_drawer_initialized = true;
-    window.addEventListener('cagp:open-drawer', () => (window as any).openCagpMobileDrawer?.());
-    window.addEventListener('cagp:close-drawer', () => (window as any).closeCagpMobileDrawer?.());
-    window.addEventListener('cagp:toggle-drawer', () => (window as any).toggleCagpMobileDrawer?.());
+    window.addEventListener('cagp:open-drawer', openDrawer);
+    window.addEventListener('cagp:close-drawer', closeDrawer);
+    window.addEventListener('cagp:toggle-drawer', toggleDrawer);
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        (window as any).closeCagpMobileDrawer?.();
-      }
+      if (e.key === 'Escape') closeDrawer();
     });
     window.addEventListener('cagp:vault-updated', () => {
-      (window as any).__cagp_update_drawer_avatar?.();
+      updateDrawerAvatar();
     });
   }
 
@@ -217,5 +196,6 @@ const axisSections = HEADER_NAV_ITEMS.filter((item) => Boolean(item.children && 
     });
   }
 
+  setupMobileDrawer();
   document.addEventListener('astro:page-load', setupMobileDrawer);
 </script>
