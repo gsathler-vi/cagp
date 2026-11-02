@@ -14,25 +14,25 @@ const isHomeActive = currentPath === '/' || currentPath === '';
 >
   <div class="max-w-6xl mx-auto pointer-events-auto bg-white/95 backdrop-blur-xl border-2 border-[#0A0A0A] shadow-[3px_3px_0px_#0A0A0A] rounded-full px-3 sm:px-4 h-13 sm:h-14 flex items-center justify-between gap-2 sm:gap-4 flex-nowrap whitespace-nowrap transition-all duration-300">
     <!-- Brand / Logo (Left) -->
-    <a href="/" class="flex items-center gap-2 text-inherit no-underline min-h-[44px] shrink-0 active:scale-95 transition-transform" aria-label="Página Inicial CAGP">
-      <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center p-1 border-2 border-[#0A0A0A] shadow-[1.5px_1.5px_0px_#0A0A0A] shrink-0">
+    <a href="/" class="flex items-center gap-2.5 text-inherit no-underline min-h-[44px] shrink-0 active:scale-95 transition-transform" aria-label="Página Inicial CAGP">
+      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center p-1 border-2 border-[#0A0A0A] shadow-[1.5px_1.5px_0px_#0A0A0A] hover:rotate-3 transition-transform shrink-0">
         <img src={asset('/logos/cagp/10_simbolo_transparente_positivo.svg')} alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
       </div>
       <div class="leading-tight">
-        <span class="block font-['Oswald'] font-black text-sm tracking-wide uppercase">
+        <span class="block font-['Oswald'] font-black text-sm sm:text-base tracking-wide uppercase">
           <span class="text-[#8B1E2D]">CAGP</span> <span class="text-[#0A0A0A]">UFMG</span>
         </span>
-        <span class="hidden 2xl:block text-[11px] text-gray-500 font-mono">FAFICH • Campus Pampulha</span>
+        <span class="hidden xl:block text-[10px] text-gray-500 font-mono tracking-tight">Gestão Pública • FAFICH</span>
       </div>
     </a>
 
     <!-- Desktop Navigation Dock (Centered Segmented Capsule) -->
     <nav class="hidden lg:flex items-center justify-center flex-1 max-w-xl mx-auto" aria-label="Navegação desktop dos 5 eixos">
-      <div class="bg-[#F7F5F0]/90 border border-[#DFDBD2] p-1 rounded-full flex items-center gap-1 shadow-xs transition-all">
+      <div class="bg-[#F7F5F0]/95 border border-[#DFDBD2] p-1 rounded-full flex items-center gap-1 shadow-xs transition-all">
         <!-- 1. Início -->
         <a
           href="/"
-          class={`cagp-island-nav-link px-3 py-1 rounded-full font-['Inter'] font-semibold text-xs transition-all no-underline h-7 flex items-center border whitespace-nowrap ${
+          class={`cagp-island-nav-link px-3 py-1 rounded-full font-['Inter'] font-semibold text-xs transition-all no-underline h-8 flex items-center gap-1.5 border whitespace-nowrap ${
             isHomeActive
               ? 'is-active bg-white text-[#8B1E2D] border-[#8B1E2D] shadow-[1px_1px_0_#8B1E2D]'
               : 'text-gray-700 border-transparent hover:bg-white hover:text-[#8B1E2D]'
@@ -40,7 +40,8 @@ const isHomeActive = currentPath === '/' || currentPath === '';
           data-route="/"
           aria-current={isHomeActive ? 'page' : undefined}
         >
-          Início
+          <i class="bi bi-compass text-xs text-[#8B1E2D]" aria-hidden="true" />
+          <span>Início</span>
         </a>
 
         <!-- 2 a 5. Dropdowns dos 4 Eixos -->
@@ -51,7 +52,7 @@ const isHomeActive = currentPath === '/' || currentPath === '';
             <div class="cagp-island-dropdown relative" data-dropdown={item.href}>
               <button
                 type="button"
-                class={`cagp-island-dropdown-btn px-2.5 py-1 rounded-full font-['Inter'] font-semibold text-xs flex items-center gap-1 transition-all h-7 cursor-pointer border whitespace-nowrap ${
+                class={`cagp-island-dropdown-btn px-2.5 py-1 rounded-full font-['Inter'] font-semibold text-xs flex items-center gap-1.5 transition-all h-8 cursor-pointer border whitespace-nowrap ${
                   isAxisActive
                     ? 'is-active bg-white text-[#8B1E2D] border-[#8B1E2D] shadow-[1px_1px_0_#8B1E2D]'
                     : 'text-gray-700 border-transparent hover:bg-white hover:text-[#8B1E2D]'
@@ -59,8 +60,9 @@ const isHomeActive = currentPath === '/' || currentPath === '';
                 aria-expanded="false"
                 aria-haspopup="true"
               >
-                <span>{item.label}</span>
-                <i class="bi bi-chevron-down text-[10px] text-gray-400 cagp-island-dropdown-chevron" aria-hidden="true" />
+                <i class={`bi ${item.icon} text-xs ${isAxisActive ? 'text-[#8B1E2D]' : 'text-gray-500'}`} aria-hidden="true" />
+                <span>{item.shortLabel || item.label}</span>
+                <i class="bi bi-chevron-down text-[9px] text-gray-400 cagp-island-dropdown-chevron" aria-hidden="true" />
               </button>
               <div class={`cagp-island-dropdown-menu absolute ${idx >= 2 ? 'right-0' : 'left-0'} top-full pt-2 z-[1050] min-w-[310px]`}>
                 <div class="bg-white/98 backdrop-blur-xl border-2 border-[#0A0A0A] rounded-2xl shadow-[4px_4px_0px_#0A0A0A] p-2 space-y-1">
@@ -108,9 +110,9 @@ const isHomeActive = currentPath === '/' || currentPath === '';
         aria-label="Buscar no portal (⌘K)"
         title="Buscar no portal (⌘K)"
       >
-        <i class="bi bi-search text-xs text-gray-600" aria-hidden="true" />
+        <i class="bi bi-search text-xs text-[#8B1E2D]" aria-hidden="true" />
         <span class="hidden sm:inline text-xs text-gray-700">Buscar</span>
-        <kbd class="hidden md:inline-block text-[10px] bg-white border border-[#0A0A0A] rounded px-1.5 py-0.5 font-mono font-bold text-gray-700">⌘K</kbd>
+        <kbd class="hidden md:inline-block text-[10px] bg-white border border-[#0A0A0A] rounded px-1.5 py-0.5 font-mono font-bold text-gray-700 shadow-xs">⌘K</kbd>
       </button>
 
       <!-- Live Campus Status Pill -->
@@ -122,8 +124,9 @@ const isHomeActive = currentPath === '/' || currentPath === '';
         title="Status do campus (RU & Circular)"
       >
         <span class="w-2 h-2 rounded-full bg-[#15803D] cagp-pulse-indicator" aria-hidden="true" />
-        <span class="hidden xl:inline">Campus Aberto</span>
-        <i class="bi bi-bell xl:hidden text-sm text-[#0A0A0A]" aria-hidden="true" />
+        <span class="hidden sm:inline">Campus</span>
+        <span class="hidden 2xl:inline">Aberto</span>
+        <i class="bi bi-bell sm:hidden text-sm text-[#0A0A0A]" aria-hidden="true" />
       </button>
 
       <!-- Student Passport Avatar -->
@@ -144,7 +147,7 @@ const isHomeActive = currentPath === '/' || currentPath === '';
         type="button"
         id="cagp-mobile-menu-btn"
         onclick="if(window.__cagp_toggle_drawer){window.__cagp_toggle_drawer()}else{window.dispatchEvent(new CustomEvent('cagp:toggle-drawer'))}"
-        class="lg:hidden w-9 h-9 min-w-[36px] min-h-[36px] flex items-center justify-center rounded-full text-[#0A0A0A] hover:bg-[#F7F5F0] transition-all cursor-pointer border-2 border-[#0A0A0A] bg-white shadow-[1.5px_1.5px_0px_#0A0A0A] active:scale-95 shrink-0"
+        class="lg:hidden w-9 h-9 min-w-[36px] min-h-[36px] flex items-center justify-center rounded-full text-[#0A0A0A] hover:bg-[#F7F5F0] hover:text-[#8B1E2D] transition-all cursor-pointer border-2 border-[#0A0A0A] bg-white shadow-[1.5px_1.5px_0px_#0A0A0A] active:scale-95 shrink-0"
         aria-label="Abrir menu de navegação lateral com todas as seções"
         title="Menu Geral"
       >

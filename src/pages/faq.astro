@@ -69,6 +69,7 @@ const faqs = [
     a: 'O CEAG FAFICH (Central de Atendimento à Graduação • Sala F-2033) funciona de segunda a sexta, das 08h00 às 22h00 ininterruptamente no período letivo, cobrindo todo o turno noturno. A Secretaria do Curso de Gestão Pública (Sala F-2039 com Norma Guedes) atende terças presenciais (16h30–19h30) e segundas/quartas no CEAG (16h00–22h00). E-mail: coordgestaopublica@gmail.com.',
   },
   {
+    id: 'aproveitamento',
     q: '8. Qual o prazo máximo para pedir aproveitamento de estudos?',
     badge: 'Res. CEPE 06/2019',
     icon: 'bi-calendar-check-fill',
@@ -99,7 +100,7 @@ const faqs = [
   <section id="ws-panel-v1" class="cagp-workspace-view space-y-2" data-ws-panel="v1">
     <div class="space-y-1.5">
       {faqs.map((f) => (
-        <NormativeDetails title={f.q} badge={f.badge} icon={f.icon}>
+        <NormativeDetails id={f.id} title={f.q} badge={f.badge} icon={f.icon}>
           <p class="text-xs text-gray-700 leading-relaxed">{f.a}</p>
         </NormativeDetails>
       ))}

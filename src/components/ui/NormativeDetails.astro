@@ -1,16 +1,17 @@
 ---
 // NormativeDetails.astro - Encapsulamento de Textos Regimentais e Normas
 interface Props {
+  id?: string;
   title: string;
   badge?: string;
   icon?: string;
   open?: boolean;
 }
 
-const { title, badge, icon, open = false } = Astro.props;
+const { id, title, badge, icon, open = false } = Astro.props;
 ---
 
-<details class="cagp-normative-details bg-white border-2 border-[#0A0A0A] rounded-[6px] my-2 overflow-hidden transition-all shadow-[2px_2px_0_#0A0A0A] hover:shadow-[3px_3px_0_#0A0A0A]" open={open}>
+<details id={id} class="cagp-normative-details bg-white border-2 border-[#0A0A0A] rounded-[6px] my-2 overflow-hidden transition-all shadow-[2px_2px_0_#0A0A0A] hover:shadow-[3px_3px_0_#0A0A0A]" open={open}>
   <summary class="px-3.5 py-2.5 cursor-pointer font-['Oswald'] font-bold text-sm uppercase text-[#0A0A0A] bg-[#F7F5F0] hover:bg-[#EAE5DC] flex items-center justify-between select-none transition-colors">
     <span class="flex items-center gap-2">
       <i class="bi bi-chevron-right text-xs transition-transform duration-200 details-icon text-gray-500" aria-hidden="true"></i>

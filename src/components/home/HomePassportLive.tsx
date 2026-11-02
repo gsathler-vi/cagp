@@ -213,7 +213,7 @@ export const HomePassportLive: React.FC = () => {
       {/* 4 Métricas de Bolso Interativas */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 p-2 bg-[#F7F5F0] border-t border-[#DFDBD2]">
         <a
-          href="/acg#calculadora-horas"
+          href="/acg#calculadora"
           className="p-2.5 bg-white rounded-[4px] border border-[#DFDBD2] hover:border-[#8B1E2D] hover:shadow-[1px_1px_0_#0A0A0A] no-underline block transition-all group"
         >
           <div className="flex items-center gap-1.5 mb-0.5">

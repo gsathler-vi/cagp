@@ -138,10 +138,36 @@ const { tabs, defaultTab = tabs[0]?.id } = Astro.props;
         if (hash === '#visao-completa') {
           activate('__all__', false);
         } else if (hash) {
-          const matchingTab = Array.from(tabs).find((t) => t.getAttribute('data-ws-hash') === hash);
+          let matchingTab = Array.from(tabs).find((t) => t.getAttribute('data-ws-hash') === hash);
+          if (!matchingTab && hash.length > 1) {
+            try {
+              const targetEl = document.querySelector(hash);
+              if (targetEl) {
+                const parentPanel = targetEl.closest('.cagp-workspace-view');
+                if (parentPanel) {
+                  const panelId = parentPanel.getAttribute('data-ws-panel') || parentPanel.id.replace('ws-panel-', '');
+                  matchingTab = Array.from(tabs).find((t) => t.getAttribute('data-ws-tab') === panelId);
+                }
+              }
+            } catch (e) {}
+          }
+
           if (matchingTab) {
             const id = matchingTab.getAttribute('data-ws-tab');
-            if (id) activate(id, false);
+            if (id) {
+              activate(id, false);
+              try {
+                const targetEl = document.querySelector(hash);
+                if (targetEl) {
+                  setTimeout(() => {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (targetEl.tagName === 'DETAILS') {
+                      (targetEl as HTMLDetailsElement).open = true;
+                    }
+                  }, 150);
+                }
+              } catch (e) {}
+            }
           }
         }
       };
