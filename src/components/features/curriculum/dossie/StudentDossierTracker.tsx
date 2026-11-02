@@ -26,9 +26,11 @@ export const StudentDossierTracker: React.FC = () => {
     loadData();
     const handleUpdate = () => loadData();
     window.addEventListener('storage', handleUpdate);
+    window.addEventListener('cagp:vault-updated', handleUpdate);
     window.addEventListener('cagp-vault-updated', handleUpdate);
     return () => {
       window.removeEventListener('storage', handleUpdate);
+      window.removeEventListener('cagp:vault-updated', handleUpdate);
       window.removeEventListener('cagp-vault-updated', handleUpdate);
     };
   }, []);
@@ -74,9 +76,15 @@ export const StudentDossierTracker: React.FC = () => {
               {totalCompleted}h / {degreeTotal}h
             </span>
           </div>
-          <span className="px-2.5 py-1 rounded bg-[#0A0A0A] text-white font-mono text-xs font-bold shrink-0">
-            {totalPct}%
-          </span>
+          {totalCompleted >= degreeTotal ? (
+            <span className="cagp-stamp-badge is-homologado text-xs py-1 px-2 shadow-[2px_2px_0_#B45309]">
+              ★ APTO À COLAÇÃO
+            </span>
+          ) : (
+            <span className="px-2.5 py-1 rounded bg-[#0A0A0A] text-white font-mono text-xs font-bold shrink-0">
+              {totalPct}%
+            </span>
+          )}
         </div>
       </div>
 
@@ -142,9 +150,16 @@ export const StudentDossierTracker: React.FC = () => {
             <span className="text-[10px] font-['Oswald'] uppercase font-bold text-gray-700">
               3. Extensão 300h
             </span>
-            <span className="text-[10px] font-mono font-bold text-[#15803D]">
-              {extDone}/300h
-            </span>
+            <div className="flex items-center gap-1">
+              <span className="text-[10px] font-mono font-bold text-[#15803D]">
+                {extDone}/300h
+              </span>
+              {extDone >= 300 && (
+                <span className="cagp-stamp-badge is-teto text-[9px] py-0 px-1 shadow-[1px_1px_0_#15803D]">
+                  TETO ✓
+                </span>
+              )}
+            </div>
           </div>
           <div className="w-full bg-white border border-[#DFDBD2] rounded h-1.5 overflow-hidden">
             <div
@@ -162,9 +177,16 @@ export const StudentDossierTracker: React.FC = () => {
             <span className="text-[10px] font-['Oswald'] uppercase font-bold text-gray-700">
               4. AAC (Art. 15)
             </span>
-            <span className="text-[10px] font-mono font-bold text-[#B45309]">
-              {aacDone}/300h
-            </span>
+            <div className="flex items-center gap-1">
+              <span className="text-[10px] font-mono font-bold text-[#B45309]">
+                {aacDone}/300h
+              </span>
+              {aacDone >= 300 && (
+                <span className="cagp-stamp-badge is-teto text-[9px] py-0 px-1 shadow-[1px_1px_0_#15803D]">
+                  TETO ✓
+                </span>
+              )}
+            </div>
           </div>
           <div className="w-full bg-white border border-[#DFDBD2] rounded h-1.5 overflow-hidden">
             <div

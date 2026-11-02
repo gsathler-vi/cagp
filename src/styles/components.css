@@ -231,7 +231,7 @@
   border-color: #B45309;
 }
 
-/* Stamp Badges (Tilted com Sombra Mecânica) */
+/* Stamp Badges (Tilted com Sombra Mecânica & Animação de Impacto) */
 .cagp-stamp-badge {
   display: inline-flex;
   align-items: center;
@@ -244,28 +244,58 @@
   padding: 0.25rem 0.55rem;
   border: 2px solid #0A0A0A;
   box-shadow: 2px 2px 0 #0A0A0A;
-  transform: rotate(-1.5deg);
+  transform: rotate(-2deg);
   border-radius: 4px;
   line-height: 1.2;
-  animation: cagpStampImpact 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: cagpStampImpact 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
 }
-.cagp-stamp-badge.is-deferido {
+.cagp-stamp-badge.is-deferido,
+.cagp-stamp-badge.is-feito {
   border-color: #15803D;
   color: #15803D;
-  background-color: #FFFFFF;
+  background-color: #F0FDF4;
   box-shadow: 2px 2px 0 #15803D;
+  transform: rotate(-2.5deg);
+}
+.cagp-stamp-badge.is-teto {
+  border-color: #15803D;
+  color: #15803D;
+  background-color: #DCFCE7;
+  box-shadow: 2.5px 2.5px 0 #15803D;
+  transform: rotate(1.5deg);
 }
 .cagp-stamp-badge.is-indeferido {
   border-color: #DC2626;
   color: #DC2626;
-  background-color: #FFFFFF;
+  background-color: #FEF2F2;
   box-shadow: 2px 2px 0 #DC2626;
+  transform: rotate(2deg);
 }
 .cagp-stamp-badge.is-homologado {
   border-color: #B45309;
   color: #0A0A0A;
   background-color: #FEF3C7;
   box-shadow: 2px 2px 0 #B45309;
+  transform: rotate(-1.5deg);
+}
+
+/* Liquid-Glass Neo-Brutalista (Camada Funcional Flutuante) */
+.cagp-glass-surface {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 2px solid #0A0A0A;
+  box-shadow: 3px 3px 0 #0A0A0A;
+}
+
+/* Microinteração Tátil Global Apple HIG para Botões */
+.cagp-workspace-tab:active,
+.cagp-nav-item:active,
+.cagp-tool-button:active,
+button:not(:disabled):active {
+  transform: scale(0.97) translate(0.5px, 0.5px);
+  transition: transform 0.08s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Faixa de Contexto de Eixo (.cagp-axis-pill-strip) */
@@ -282,29 +312,31 @@
   margin-bottom: 0.75rem;
 }
 
-/* Notificação Cápsula Tátil (Dynamic Island Toast) */
+/* Notificação Cápsula Tátil (Dynamic Island Toast - Liquid Glass Neo-Brutal) */
 .cagp-toast {
   position: fixed;
   top: 1.25rem;
   left: 50%;
   transform: translateX(-50%) translateY(-130%);
   z-index: 9999;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
   color: #0a0a0a;
   border: 2px solid #0a0a0a;
   box-shadow: 3px 3px 0 #0a0a0a;
-  padding: 0.6rem 1.25rem;
+  padding: 0.55rem 1.25rem;
   display: flex;
   align-items: center;
   gap: 0.65rem;
   font-family: var(--font-display, 'Oswald', sans-serif);
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   pointer-events: none;
   opacity: 0;
-  border-radius: 6px;
+  border-radius: 9999px;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
   max-width: min(92%, 460px);
   white-space: nowrap;

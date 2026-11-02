@@ -137,13 +137,19 @@ export const Art41SimulatorCore: React.FC = () => {
                   type="checkbox"
                   checked={isChecked}
                   onChange={() => toggleCheck(crit.id)}
-                  className="mt-0.5 w-4 h-4 text-[#15803D] rounded border-gray-300 focus:ring-0 cursor-pointer"
+                  className="mt-0.5 w-4 h-4 text-[#15803D] rounded border-gray-300 focus:ring-0 cursor-pointer shrink-0"
                 />
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <span className="text-xs text-gray-800 leading-relaxed font-medium block">
                     {crit.label}
                   </span>
                 </div>
+                {isChecked && (
+                  <span className="cagp-stamp-badge is-deferido text-[10px] py-0.5 px-2 shadow-[1px_1px_0_#15803D] shrink-0">
+                    <i className="bi bi-check-lg" aria-hidden="true" />
+                    <span>ATENDIDO</span>
+                  </span>
+                )}
               </label>
             );
           })}
@@ -158,33 +164,42 @@ export const Art41SimulatorCore: React.FC = () => {
             : 'bg-amber-50 border-[#B45309]'
         }`}
       >
-        <div className="flex items-start gap-3">
-          <span
-            className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl shrink-0 ${
-              isFullyEligible
-                ? 'bg-[#15803D] text-white shadow-[1px_1px_0px_#0A0A0A]'
-                : 'bg-[#B45309] text-white shadow-[1px_1px_0px_#0A0A0A]'
-            }`}
-          >
-            <i className={`bi ${isFullyEligible ? 'bi-check-lg' : 'bi-info-circle-fill'}`} aria-hidden="true" />
-          </span>
-          <div className="min-w-0">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="font-['Oswald'] text-xs uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white border border-current">
-                {isFullyEligible ? 'Parecer: Totalmente Elegível' : 'Pendências Identificadas'}
-              </span>
+        <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
+          <div className="flex items-start gap-3">
+            <span
+              className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl shrink-0 ${
+                isFullyEligible
+                  ? 'bg-[#15803D] text-white shadow-[1px_1px_0px_#0A0A0A]'
+                  : 'bg-[#B45309] text-white shadow-[1px_1px_0px_#0A0A0A]'
+              }`}
+            >
+              <i className={`bi ${isFullyEligible ? 'bi-check-lg' : 'bi-info-circle-fill'}`} aria-hidden="true" />
+            </span>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="font-['Oswald'] text-xs uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white border border-current">
+                  {isFullyEligible ? 'Parecer: Totalmente Elegível' : 'Pendências Identificadas'}
+                </span>
+              </div>
+              <h4 className="font-['Oswald'] text-sm sm:text-base font-bold uppercase text-[#0A0A0A] m-0 mb-1">
+                {isFullyEligible
+                  ? 'Você Cumpre Todos os Requisitos do Art. 41!'
+                  : `Faltam ${ART41_CRITERIA.length - checkedCount} Critério(s) para Solicitar a Dispensa`}
+              </h4>
+              <p className="text-xs text-gray-700 leading-relaxed m-0">
+                {isFullyEligible
+                  ? 'Você pode requerer a dispensa integral das disciplinas DCP 135 (180h) e DCP 136 (120h). Providencie a Declaração de sua chefia e protocole no início do semestre letivo com o professor orientador de estágio do DCP.'
+                  : 'Para obter a dispensa de estágio, é necessário cumprir todos os requisitos formais. Caso trabalhe no setor privado em atividades não correlatas à gestão pública, consulte as opções de cumprimento de estágio nas férias (Art. 31).'}
+              </p>
             </div>
-            <h4 className="font-['Oswald'] text-sm sm:text-base font-bold uppercase text-[#0A0A0A] m-0 mb-1">
-              {isFullyEligible
-                ? 'Você Cumpre Todos os Requisitos do Art. 41!'
-                : `Faltam ${ART41_CRITERIA.length - checkedCount} Critério(s) para Solicitar a Dispensa`}
-            </h4>
-            <p className="text-xs text-gray-700 leading-relaxed m-0">
-              {isFullyEligible
-                ? 'Você pode requerer a dispensa integral das disciplinas DCP 135 (180h) e DCP 136 (120h). Providencie a Declaração de sua chefia e protocole no início do semestre letivo com o professor orientador de estágio do DCP.'
-                : 'Para obter a dispensa de estágio, é necessário cumprir todos os requisitos formais. Caso trabalhe no setor privado em atividades não correlatas à gestão pública, consulte as opções de cumprimento de estágio nas férias (Art. 31).'}
-            </p>
           </div>
+
+          {isFullyEligible && (
+            <div className="cagp-big-stamp shrink-0 scale-90 sm:scale-100 self-center sm:self-auto shadow-[3px_3px_0_#15803D]">
+              <span className="cagp-big-stamp-title">★ DISPENSA DEFERÍVEL</span>
+              <span className="cagp-big-stamp-sub">ART. 41 REGULAMENTO N-20229</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -61,6 +61,9 @@ export const CurriculumGraphDynamic: React.FC<Props> = ({ catalogOptions = [] })
   }, []);
 
   const handleToggleCompleted = (code: string, ch: number) => {
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      navigator.vibrate(12);
+    }
     const isDone = completedCourses.includes(code);
     const updated = isDone
       ? completedCourses.filter((c) => c !== code)
@@ -210,22 +213,29 @@ export const CurriculumGraphDynamic: React.FC<Props> = ({ catalogOptions = [] })
                           }`}
                         >
                           <div className="flex items-start justify-between gap-1.5 mb-1">
-                            <button
-                              type="button"
-                              onClick={() =>
-                                setSelectedNode({
-                                  code: disc.code,
-                                  name: disc.name,
-                                  period: disc.period,
-                                  ch: disc.ch,
-                                  desc: disc.desc,
-                                  dept: disc.dept,
-                                })
-                              }
-                              className="font-mono font-black text-left text-[#8B1E2D] hover:underline"
-                            >
-                              {disc.code}
-                            </button>
+                            <div className="flex items-center gap-1.5">
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  setSelectedNode({
+                                    code: disc.code,
+                                    name: disc.name,
+                                    period: disc.period,
+                                    ch: disc.ch,
+                                    desc: disc.desc,
+                                    dept: disc.dept,
+                                  })
+                                }
+                                className="font-mono font-black text-left text-[#8B1E2D] hover:underline"
+                              >
+                                {disc.code}
+                              </button>
+                              {isCompleted && (
+                                <span className="cagp-stamp-badge is-feito text-[8px] font-black uppercase tracking-wider py-0 px-1 text-[#15803D] border-[#15803D] bg-[#DCFCE7]">
+                                  FEITO ✓
+                                </span>
+                              )}
+                            </div>
                             <div className="flex items-center gap-1">
                               {isFormalLock && (
                                 <span className="text-[10px] text-[#DC2626]" title="Trava Formal no SIGA">
@@ -272,9 +282,16 @@ export const CurriculumGraphDynamic: React.FC<Props> = ({ catalogOptions = [] })
                           }`}
                         >
                           <div className="flex items-start justify-between gap-1 mb-1">
-                            <span className="px-1.5 py-0.5 rounded text-[9px] font-['Oswald'] uppercase font-bold bg-[#B45309] text-white">
-                              {cust.category === 'formacao_livre' ? 'LIVRE' : 'OPTATIVA'}
-                            </span>
+                            <div className="flex items-center gap-1">
+                              <span className="px-1.5 py-0.5 rounded text-[9px] font-['Oswald'] uppercase font-bold bg-[#B45309] text-white">
+                                {cust.category === 'formacao_livre' ? 'LIVRE' : 'OPTATIVA'}
+                              </span>
+                              {isCompleted && (
+                                <span className="cagp-stamp-badge is-feito text-[8px] font-black uppercase tracking-wider py-0 px-1 text-[#15803D] border-[#15803D] bg-[#DCFCE7]">
+                                  FEITO ✓
+                                </span>
+                              )}
+                            </div>
                             <div className="flex items-center gap-1.5">
                               <input
                                 type="checkbox"

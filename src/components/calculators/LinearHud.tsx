@@ -42,7 +42,7 @@ export const LinearHud: React.FC = () => {
   return (
     <div
       id="cagp-calc-hud-linear"
-      className="sticky top-14 z-[40] bg-white border-2 border-[#0A0A0A] rounded-[6px] p-3 shadow-[2px_2px_0px_#0A0A0A] mb-4"
+      className="sticky top-14 z-[40] bg-white/94 backdrop-blur-md border-2 border-[#0A0A0A] rounded-[6px] p-3 shadow-[3px_3px_0px_#0A0A0A] mb-4"
       role="region"
       aria-label="Progresso de Integralização 600h"
     >
@@ -58,7 +58,7 @@ export const LinearHud: React.FC = () => {
             • {totalPct}%
           </span>
           {total >= 600 ? (
-            <span className="cagp-stamp-badge is-deferido text-[10px] py-0.5 px-2 inline-flex items-center gap-1">
+            <span className="cagp-stamp-badge is-deferido text-[10px] py-0.5 px-2 inline-flex items-center gap-1 shadow-[2px_2px_0_#15803D]">
               <i className="bi bi-patch-check-fill text-green-700" aria-hidden="true" />
               <span className="font-bold text-green-800">INTEGRALIZAÇÃO APTA</span>
             </span>
@@ -70,20 +70,27 @@ export const LinearHud: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2 text-xs font-mono">
-          <span className={`px-2 py-0.5 rounded-[4px] border font-bold ${
-            capExt >= 300
-              ? 'bg-green-100 text-green-900 border-green-400'
-              : 'bg-[#8B1E2D]/10 text-[#8B1E2D] border-[#8B1E2D]/30'
-          }`}>
-            Ext: {capExt}/300h
-          </span>
-          <span className={`px-2 py-0.5 rounded-[4px] border font-bold ${
-            capAac >= 300
-              ? 'bg-green-100 text-green-900 border-green-400'
-              : 'bg-gray-100 text-gray-800 border-gray-300'
-          }`}>
-            AAC: {capAac}/300h
-          </span>
+          {capExt >= 300 ? (
+            <span className="cagp-stamp-badge is-teto text-[10px] py-0.5 px-1.5 shadow-[1px_1px_0_#15803D]">
+              <i className="bi bi-patch-check-fill" aria-hidden="true" />
+              <span>Ext: 300h Teto</span>
+            </span>
+          ) : (
+            <span className="px-2 py-0.5 rounded-[4px] border font-bold bg-[#8B1E2D]/10 text-[#8B1E2D] border-[#8B1E2D]/30">
+              Ext: {capExt}/300h
+            </span>
+          )}
+
+          {capAac >= 300 ? (
+            <span className="cagp-stamp-badge is-teto text-[10px] py-0.5 px-1.5 shadow-[1px_1px_0_#15803D]">
+              <i className="bi bi-patch-check-fill" aria-hidden="true" />
+              <span>AAC: 300h Teto</span>
+            </span>
+          ) : (
+            <span className="px-2 py-0.5 rounded-[4px] border font-bold bg-gray-100 text-gray-800 border-gray-300">
+              AAC: {capAac}/300h
+            </span>
+          )}
         </div>
       </div>
 

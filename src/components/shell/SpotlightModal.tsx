@@ -110,16 +110,16 @@ export const SpotlightModal: React.FC = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[1070] flex items-start justify-center pt-12 sm:pt-20 px-3 bg-black/60 backdrop-blur-sm animate-in fade-in duration-150">
+    <div className="fixed inset-0 z-[1070] flex items-start justify-center pt-12 sm:pt-20 px-3 bg-black/60 backdrop-blur-md animate-in fade-in duration-150">
       <div
         className="fixed inset-0 -z-10"
         onClick={() => setIsOpen(false)}
         aria-hidden="true"
       />
-      <div className="w-full max-w-xl bg-white border-2 border-[#0A0A0A] rounded-xl shadow-[4px_4px_0px_#0A0A0A] overflow-hidden flex flex-col max-h-[80vh]">
+      <div className="w-full max-w-xl bg-white/98 backdrop-blur-xl border-2 border-[#0A0A0A] rounded-xl shadow-[6px_6px_0px_#0A0A0A] overflow-hidden flex flex-col max-h-[80vh] animate-in zoom-in-95 duration-150">
         {/* Search Input Bar */}
-        <div className="flex items-center px-3 py-2.5 border-b-2 border-[#DFDBD2] bg-[#F7F5F0]">
-          <i className="bi bi-search text-gray-400 text-base mr-2.5" aria-hidden="true" />
+        <div className="flex items-center px-3.5 py-3 border-b-2 border-[#0A0A0A] bg-[#F7F5F0]/90 backdrop-blur-sm">
+          <i className="bi bi-search text-gray-500 text-base mr-2.5" aria-hidden="true" />
           <input
             ref={inputRef}
             type="search"
@@ -136,13 +136,13 @@ export const SpotlightModal: React.FC = () => {
             <button
               type="button"
               onClick={() => setQuery('')}
-              className="text-gray-400 hover:text-gray-700 p-1 mr-1 text-sm"
+              className="text-gray-400 hover:text-gray-700 p-1 mr-1 text-sm active:scale-95 transition-transform"
               aria-label="Limpar busca"
             >
               <i className="bi bi-x-circle-fill" />
             </button>
           )}
-          <kbd className="hidden sm:inline-block bg-white text-gray-500 border border-[#DFDBD2] rounded px-1.5 py-0.5 text-[10px] font-mono">
+          <kbd className="hidden sm:inline-block bg-white text-gray-700 border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] rounded px-1.5 py-0.5 text-[10px] font-mono font-bold">
             ESC
           </kbd>
         </div>
@@ -167,7 +167,7 @@ export const SpotlightModal: React.FC = () => {
                     key={q.href}
                     type="button"
                     onClick={() => handleNavigate(q.href)}
-                    className="p-2 text-left rounded-lg border border-[#DFDBD2] hover:border-[#0A0A0A] hover:bg-[#F7F5F0] transition-colors flex items-center gap-2.5"
+                    className="p-2.5 text-left rounded-lg border border-[#DFDBD2] hover:border-[#0A0A0A] hover:bg-[#F7F5F0] active:scale-[0.98] transition-all flex items-center gap-2.5 cursor-pointer"
                   >
                     <i className={`bi ${q.icon} text-lg ${q.color}`} />
                     <div className="min-w-0">
@@ -191,9 +191,9 @@ export const SpotlightModal: React.FC = () => {
                   key={item.href}
                   type="button"
                   onClick={() => handleNavigate(item.href)}
-                  className={`w-full text-left p-2.5 rounded-lg border transition-all flex items-center justify-between gap-2 ${
+                  className={`w-full text-left p-2.5 rounded-lg border transition-all flex items-center justify-between gap-2 active:scale-[0.99] cursor-pointer ${
                     idx === activeIndex
-                      ? 'bg-[#F7F5F0] border-[#0A0A0A] ring-1 ring-[#0A0A0A]'
+                      ? 'bg-[#F7F5F0] border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A]'
                       : 'border-transparent hover:bg-gray-50'
                   }`}
                 >
@@ -216,13 +216,13 @@ export const SpotlightModal: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <div className="px-3 py-2 border-t border-[#DFDBD2] bg-[#F7F5F0] flex items-center justify-between text-[10px] text-gray-500">
-          <div className="flex items-center gap-2">
-            <span><kbd className="bg-white border px-1 rounded">↑↓</kbd> Navegar</span>
-            <span><kbd className="bg-white border px-1 rounded">↵</kbd> Acessar</span>
-            <span><kbd className="bg-white border px-1 rounded">ESC</kbd> Fechar</span>
+        <div className="px-3.5 py-2.5 border-t-2 border-[#0A0A0A] bg-[#F7F5F0]/90 backdrop-blur-sm flex items-center justify-between text-[10px] text-gray-600">
+          <div className="flex items-center gap-2.5">
+            <span><kbd className="bg-white border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] px-1 py-0.5 rounded font-mono font-bold">↑↓</kbd> Navegar</span>
+            <span><kbd className="bg-white border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] px-1 py-0.5 rounded font-mono font-bold">↵</kbd> Acessar</span>
+            <span><kbd className="bg-white border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] px-1 py-0.5 rounded font-mono font-bold">ESC</kbd> Fechar</span>
           </div>
-          <span className="font-mono font-bold text-[#8B1E2D]">CAGP SPOTLIGHT</span>
+          <span className="font-mono font-bold text-[#8B1E2D] tracking-wider">CAGP SPOTLIGHT</span>
         </div>
       </div>
     </div>

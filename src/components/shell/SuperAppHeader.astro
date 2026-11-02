@@ -4,10 +4,15 @@ import { HEADER_NAV_ITEMS } from './headerNavData';
 import { asset } from '../../lib/paths';
 ---
 
-<header class="sticky top-0 z-[1040] w-full bg-white border-b border-[#DFDBD2] select-none" style="padding-top: env(safe-area-inset-top, 0px);">
+<header
+  id="cagp-super-app-header"
+  transition:persist="main-header"
+  class="sticky top-0 z-[1040] w-full bg-white/92 backdrop-blur-md border-b-2 border-[#0A0A0A] shadow-[0_2px_10px_rgba(10,10,10,0.05)] select-none transition-colors"
+  style="padding-top: env(safe-area-inset-top, 0px);"
+>
   <div class="max-w-7xl mx-auto px-3 sm:px-4 h-14 flex items-center justify-between gap-2">
     <!-- Brand / Logo -->
-    <a href="/" class="flex items-center gap-2.5 text-inherit no-underline min-h-[44px] shrink-0" aria-label="Página Inicial CAGP">
+    <a href="/" class="flex items-center gap-2.5 text-inherit no-underline min-h-[44px] shrink-0 active:scale-95 transition-transform" aria-label="Página Inicial CAGP">
       <div class="w-9 h-9 rounded-[4px] bg-white flex items-center justify-center p-1 border-2 border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A]">
         <img src={asset('/logos/cagp/10_simbolo_transparente_positivo.svg')} alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
       </div>
@@ -43,7 +48,7 @@ import { asset } from '../../lib/paths';
             <i class="bi bi-chevron-down text-xs text-gray-400 cagp-island-dropdown-chevron" aria-hidden="true" />
           </button>
           <div class={`cagp-island-dropdown-menu absolute ${idx >= 2 ? 'right-0' : 'left-0'} top-full pt-1.5 z-[1050] min-w-[300px]`}>
-            <div class="bg-white border-2 border-[#0A0A0A] rounded-md shadow-[4px_4px_0px_#0A0A0A] p-2 space-y-1">
+            <div class="bg-white/96 backdrop-blur-xl border-2 border-[#0A0A0A] rounded-md shadow-[4px_4px_0px_#0A0A0A] p-2 space-y-1">
               <a
                 href={item.href}
                 class="px-2.5 py-1.5 bg-[#F7F5F0] hover:bg-[#8B1E2D] hover:text-white rounded-[4px] flex items-center justify-between no-underline transition-colors group/header border border-[#DFDBD2]"

@@ -14,9 +14,11 @@ export const CalouroChecklistWidget: React.FC = () => {
     load();
     const handleUpdate = () => load();
     window.addEventListener('storage', handleUpdate);
+    window.addEventListener('cagp:vault-updated', handleUpdate);
     window.addEventListener('cagp-vault-updated', handleUpdate);
     return () => {
       window.removeEventListener('storage', handleUpdate);
+      window.removeEventListener('cagp:vault-updated', handleUpdate);
       window.removeEventListener('cagp-vault-updated', handleUpdate);
     };
   }, []);
@@ -39,17 +41,22 @@ export const CalouroChecklistWidget: React.FC = () => {
               <span className="text-[11px] text-gray-500 font-mono">10 Passos Essenciais</span>
             </div>
           </div>
-          <span
-            className={`px-2 py-0.5 rounded font-['Oswald'] text-[11px] font-bold ${
-              completedCount >= TOTAL_ITEMS
-                ? 'bg-[#15803D] text-white'
-                : completedCount > 0
-                ? 'bg-[#8B1E2D] text-white'
-                : 'bg-gray-100 text-gray-700 border border-[#DFDBD2]'
-            }`}
-          >
-            {completedCount}/{TOTAL_ITEMS} Concluídos
-          </span>
+          {completedCount >= TOTAL_ITEMS ? (
+            <span className="cagp-stamp-badge is-homologado text-[10px] py-0.5 px-2 shadow-[1.5px_1.5px_0_#B45309]">
+              <i className="bi bi-patch-check-fill" aria-hidden="true" />
+              <span>HOMOLOGADO</span>
+            </span>
+          ) : (
+            <span
+              className={`px-2 py-0.5 rounded font-['Oswald'] text-[11px] font-bold ${
+                completedCount > 0
+                  ? 'bg-[#8B1E2D] text-white'
+                  : 'bg-gray-100 text-gray-700 border border-[#DFDBD2]'
+              }`}
+            >
+              {completedCount}/{TOTAL_ITEMS} Concluídos
+            </span>
+          )}
         </div>
 
         <p className="text-xs text-gray-700 leading-relaxed mb-3">

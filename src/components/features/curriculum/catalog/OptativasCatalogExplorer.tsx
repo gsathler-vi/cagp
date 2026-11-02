@@ -39,9 +39,11 @@ export const OptativasCatalogExplorer: React.FC<Props> = ({ optativas }) => {
     loadAllocated();
     const handleUpdate = () => loadAllocated();
     window.addEventListener('storage', handleUpdate);
+    window.addEventListener('cagp:vault-updated', handleUpdate);
     window.addEventListener('cagp-vault-updated', handleUpdate);
     return () => {
       window.removeEventListener('storage', handleUpdate);
+      window.removeEventListener('cagp:vault-updated', handleUpdate);
       window.removeEventListener('cagp-vault-updated', handleUpdate);
     };
   }, []);
@@ -175,8 +177,9 @@ export const OptativasCatalogExplorer: React.FC<Props> = ({ optativas }) => {
                       {item.ch}h ({Math.round(item.ch / 15)} cr)
                     </span>
                     {isAllocated && (
-                      <span className="px-1.5 py-0.5 rounded text-[10px] font-['Oswald'] uppercase font-bold bg-[#15803D] text-white">
-                        {allocatedCourse.period}ºP
+                      <span className="cagp-stamp-badge is-deferido text-[10px] py-0.5 px-1.5 shadow-[1px_1px_0_#15803D]">
+                        <i className="bi bi-diagram-3-fill text-[9px]" aria-hidden="true" />
+                        <span>NO GRAFO • {allocatedCourse.period}ºP</span>
                       </span>
                     )}
                   </div>

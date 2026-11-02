@@ -127,13 +127,19 @@ export const AcgCalculatorCore: React.FC = () => {
       <div className="mb-6">
         <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2 border-b-2 border-[#0A0A0A]">
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <h2 className="font-['Oswald'] text-lg uppercase font-bold text-[#0A0A0A] m-0">
                 {title}
               </h2>
               <span className={`px-2 py-0.5 rounded text-xs font-['Oswald'] font-bold text-white ${colorClass}`}>
                 {badgeText}
               </span>
+              {clampedSum >= targetMax && (
+                <span className="cagp-stamp-badge is-deferido text-[10px] py-0.5 px-2">
+                  <i className="bi bi-award-fill" aria-hidden="true" />
+                  <span>300h ATINGIDAS</span>
+                </span>
+              )}
             </div>
             <p className="text-xs text-gray-600 mt-0.5 m-0 font-normal">{subtitle}</p>
           </div>
@@ -172,9 +178,16 @@ export const AcgCalculatorCore: React.FC = () => {
                         </h3>
                       </div>
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-gray-600 shrink-0">
-                      Teto: {item.max}h
-                    </span>
+                    {isMaxed ? (
+                      <span className="cagp-stamp-badge is-teto text-[10px] py-0.5 px-1.5 shrink-0 shadow-[1px_1px_0_#15803D]">
+                        <i className="bi bi-patch-check-fill" aria-hidden="true" />
+                        <span>TETO {item.max}h</span>
+                      </span>
+                    ) : (
+                      <span className="text-[11px] font-mono font-bold text-gray-600 shrink-0">
+                        Teto: {item.max}h
+                      </span>
+                    )}
                   </div>
 
                   <p className="text-xs text-gray-600 mb-2 leading-relaxed">{item.desc}</p>
@@ -225,14 +238,20 @@ export const AcgCalculatorCore: React.FC = () => {
                     </div>
 
                     <div className="flex items-center gap-1">
-                      {!isMaxed && (
+                      {isMaxed ? (
+                        <span className="text-[10px] font-mono font-bold text-[#15803D] bg-[#DCFCE7] border border-[#15803D]/30 px-2 py-1 rounded flex items-center gap-1 shadow-xs">
+                          <i className="bi bi-check-circle-fill text-[11px]" aria-hidden="true" />
+                          <span>100%</span>
+                        </span>
+                      ) : (
                         <button
                           type="button"
                           onClick={() => handleMaxOut(item)}
-                          className="px-2 py-1 rounded bg-[#F7F5F0] hover:bg-[#8B1E2D] hover:text-white border border-[#DFDBD2] text-[11px] font-['Oswald'] uppercase font-bold text-gray-700 transition-colors"
+                          className="px-2.5 py-1 rounded bg-[#F7F5F0] hover:bg-[#8B1E2D] hover:text-white border border-[#DFDBD2] text-[11px] font-['Oswald'] uppercase font-bold text-gray-700 transition-all active:scale-95 cursor-pointer min-h-[32px] flex items-center gap-1 shadow-xs"
                           title={`Preencher teto de ${item.max}h`}
                         >
-                          Teto
+                          <i className="bi bi-arrow-bar-up text-xs" aria-hidden="true" />
+                          <span>Teto</span>
                         </button>
                       )}
 

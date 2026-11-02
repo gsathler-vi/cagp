@@ -193,7 +193,15 @@ export const CalouroChecklistCore: React.FC = () => {
                   >
                     {item.title}
                   </h4>
-                  <i className={`bi ${item.icon} text-gray-400 text-sm`} aria-hidden="true" />
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    {isDone && (
+                      <span className="cagp-stamp-badge is-feito text-[10px] py-0.5 px-2 shadow-[1px_1px_0_#15803D]">
+                        <i className="bi bi-check-lg" aria-hidden="true" />
+                        <span>FEITO</span>
+                      </span>
+                    )}
+                    <i className={`bi ${item.icon} ${isDone ? 'text-[#15803D]' : 'text-gray-400'} text-sm`} aria-hidden="true" />
+                  </div>
                 </div>
 
                 <p className="text-xs text-gray-600 leading-relaxed m-0 mb-2">
@@ -216,6 +224,27 @@ export const CalouroChecklistCore: React.FC = () => {
           );
         })}
       </div>
+
+      {/* Banner de Celebração e Carimbo Burocrático */}
+      {completedCount === CHECKLIST_ITEMS.length && completedCount > 0 && (
+        <div className="p-4 sm:p-5 rounded-xl bg-[#DCFCE7] border-2 border-[#15803D] shadow-[3px_3px_0px_#15803D] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left animate-in fade-in zoom-in-95 duration-200">
+          <div>
+            <div className="flex items-center gap-2 justify-center sm:justify-start mb-1">
+              <span className="cagp-stamp-badge is-homologado">★ 100% CONCLUÍDO</span>
+              <span className="font-['Oswald'] font-bold text-sm uppercase text-[#15803D]">
+                Todos os 30 Dias Ativados!
+              </span>
+            </div>
+            <p className="text-xs text-gray-700 m-0">
+              Parabéns! Todos os sistemas, acessos e rotinas da UFMG foram integralmente configurados.
+            </p>
+          </div>
+          <div className="cagp-big-stamp shrink-0 scale-90 sm:scale-100">
+            <span className="cagp-big-stamp-title">★ CALOURO INTEGRALIZADO</span>
+            <span className="cagp-big-stamp-sub">FAFICH / UFMG</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

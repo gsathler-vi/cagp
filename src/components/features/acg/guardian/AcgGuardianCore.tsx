@@ -221,16 +221,16 @@ export const AcgGuardianCore: React.FC = () => {
                     <div className="flex items-center gap-2 shrink-0">
                       <div className="text-right">
                         {isExpired ? (
-                          <span className="px-2 py-1 bg-[#FEE2E2] text-[#DC2626] border border-[#DC2626] rounded text-xs font-bold font-mono block">
-                            EXPIRADO (0 dias)
+                          <span className="cagp-stamp-badge text-[10px] font-black tracking-widest text-[#DC2626] border-2 border-[#DC2626] bg-[#FEE2E2] block py-0.5 px-2">
+                            EXPIRADO (0D)
                           </span>
                         ) : isUrgent ? (
-                          <span className="px-2 py-1 bg-[#FEF3C7] text-[#B45309] border border-[#B45309] rounded text-xs font-bold font-mono block animate-pulse">
-                            Restam {daysLeft} dias!
+                          <span className="cagp-stamp-badge text-[10px] font-black tracking-widest text-[#B45309] border-2 border-[#B45309] bg-[#FEF3C7] block py-0.5 px-2 animate-pulse">
+                            URGENTE ({daysLeft}D)
                           </span>
                         ) : (
-                          <span className="px-2 py-1 bg-[#DCFCE7] text-[#15803D] border border-[#15803D] rounded text-xs font-bold font-mono block">
-                            {daysLeft} dias restantes
+                          <span className="cagp-stamp-badge is-feito text-[10px] font-black tracking-widest text-[#15803D] border-2 border-[#15803D] bg-[#DCFCE7] block py-0.5 px-2">
+                            NO PRAZO ({daysLeft}D)
                           </span>
                         )}
                       </div>
@@ -238,7 +238,7 @@ export const AcgGuardianCore: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => downloadAac120dIcs(c.title, new Date(c.date))}
-                        className="w-9 h-9 rounded bg-[#F7F5F0] hover:bg-[#EAE6DE] border border-[#DFDBD2] text-gray-700 flex items-center justify-center text-sm"
+                        className="w-9 h-9 rounded-lg bg-[#F7F5F0] hover:bg-[#EAE6DE] border border-[#DFDBD2] hover:border-[#0A0A0A] text-gray-700 flex items-center justify-center text-sm active:scale-95 transition-all cursor-pointer shadow-xs"
                         title="Baixar lembrete de calendário (.ics)"
                         aria-label="Baixar lembrete de calendário (.ics)"
                       >
@@ -248,7 +248,7 @@ export const AcgGuardianCore: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => handleDeleteCert(c.id)}
-                        className="w-9 h-9 rounded bg-[#F7F5F0] hover:bg-[#FEE2E2] hover:text-[#DC2626] border border-[#DFDBD2] text-gray-400 flex items-center justify-center text-sm transition-colors"
+                        className="w-9 h-9 rounded-lg bg-[#F7F5F0] hover:bg-[#FEE2E2] hover:text-[#DC2626] border border-[#DFDBD2] hover:border-[#DC2626] text-gray-400 flex items-center justify-center text-sm active:scale-95 transition-all cursor-pointer shadow-xs"
                         title="Excluir certificado"
                         aria-label="Excluir certificado"
                       >

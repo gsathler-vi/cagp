@@ -2,6 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { getVaultItem, type VaultData } from '../../lib/storage/studentVault';
 import { AvatarRenderer } from '../passport/AvatarRenderer';
 
+const TALENT_LABELS: Record<string, string> = {
+  pol_pub: 'Políticas Públicas',
+  orcamento: 'Orçamento & Finanças',
+  gestao_pessoas: 'Gestão de Pessoas',
+  licitacoes: 'Licitações & Contratos',
+  cidades: 'Políticas Urbanas',
+  saude: 'Saúde Pública (SUS)',
+  educacao: 'Educação Pública',
+  govtech: 'GovTech & Dados',
+  dados: 'Avaliação & Métricas',
+  terceiro_setor: 'Terceiro Setor',
+  rel_inst: 'Relações Institucionais',
+  clima: 'Meio Ambiente',
+};
+
 export const HomePassportLive: React.FC = () => {
   const [profile, setProfile] = useState<VaultData<'cagp_student_profile_v1'>>({
     name: 'Estudante de Gestão Pública',
@@ -139,6 +154,24 @@ export const HomePassportLive: React.FC = () => {
           <div className="cagp-metric-ring-inner">{globalPct}%</div>
         </div>
       </div>
+
+      {/* Áreas de Interesse no Passaporte (Banco de Talentos) */}
+      {profile.interests && profile.interests.length > 0 && (
+        <div className="px-3.5 py-2 bg-[#F7F5F0] border-t border-b border-[#DFDBD2] flex flex-wrap items-center gap-1">
+          <span className="text-[10px] font-['Oswald'] uppercase font-bold text-gray-500 mr-1">
+            <i className="bi bi-tag-fill text-[#8B1E2D] mr-1" aria-hidden="true" />
+            Interesses:
+          </span>
+          {profile.interests.map((key) => (
+            <span
+              key={key}
+              className="text-[10px] font-semibold bg-white border border-[#DFDBD2] text-[#0A0A0A] px-2 py-0.5 rounded shadow-[1px_1px_0px_#0A0A0A]"
+            >
+              {TALENT_LABELS[key] || key}
+            </span>
+          ))}
+        </div>
+      )}
 
       {/* Barra Dupla de Conclusão do Curso */}
       <div className="cagp-passport-progress-grid mb-2">
