@@ -46,7 +46,7 @@ export const HEADER_NAV_ITEMS: HeaderNavItem[] = [
     href: '/sobre',
     children: [
       { label: 'O Centro Acadêmico', desc: 'Os Candangos, princípios e instâncias', href: '/sobre', icon: 'bi-bank' },
-      { label: 'Gestão em Exercício', desc: 'Organograma das 7 diretorias e contas', href: '/gestao', icon: 'bi-people' },
+      { label: 'Processo Eleitoral & Diretorias', desc: 'Organograma regimental, diretorias e transição eleitoral', href: '/gestao', icon: 'bi-people' },
     ],
   },
 ];

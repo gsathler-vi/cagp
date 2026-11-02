@@ -32,7 +32,7 @@ const sections = [
     title: 'O CENTRO ACADÊMICO',
     links: [
       { label: 'O CAGP & Estatuto 2024', href: '/sobre', icon: 'bi-bank', color: 'text-[#8B1E2D]' },
-      { label: 'Gestão em Exercício & Equipe', href: '/gestao', icon: 'bi-people', color: 'text-[#15803D]' },
+      { label: 'Processo Eleitoral & Diretorias', href: '/gestao', icon: 'bi-people', color: 'text-[#15803D]' },
     ],
   },
 ];
@@ -65,14 +65,23 @@ const sections = [
       id="cagp-drawer-passport-cta"
       class="mb-4 p-2.5 rounded-xl border border-[#DFDBD2] bg-[#F7F5F0] hover:border-[#0A0A0A] hover:bg-white text-left flex items-center gap-3 transition-colors cursor-pointer w-full group"
     >
-      <div class="w-10 h-10 rounded-full bg-[#8B1E2D] text-white flex items-center justify-center font-['Oswald'] font-bold text-sm border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] shrink-0">
+      <div
+        id="cagp-drawer-avatar-slot"
+        class="w-10 h-10 rounded-full bg-[#8B1E2D] text-white flex items-center justify-center font-['Oswald'] font-bold text-sm border border-[#0A0A0A] shadow-[1px_1px_0px_#0A0A0A] shrink-0 overflow-hidden relative"
+      >
         <i class="bi bi-person-badge-fill text-lg"></i>
       </div>
       <div class="flex-1 min-w-0">
-        <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block group-hover:text-[#8B1E2D] leading-tight">
+        <span
+          id="cagp-drawer-student-name"
+          class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block group-hover:text-[#8B1E2D] leading-tight truncate"
+        >
           Passaporte Discente
         </span>
-        <span class="text-[10px] text-gray-500 block leading-tight mt-0.5">
+        <span
+          id="cagp-drawer-student-sub"
+          class="text-[10px] text-gray-500 block leading-tight mt-0.5 truncate"
+        >
           Horas, Perfil & Banco de Talentos &rarr;
         </span>
       </div>
@@ -116,6 +125,8 @@ const sections = [
 </div>
 
 <script>
+  import { renderAvatarHtml } from '../../lib/avatarHelper';
+
   const getDrawer = () => document.getElementById('cagp-mobile-drawer');
 
   const openDrawer = () => {
@@ -157,10 +168,35 @@ const sections = [
         (window as any).closeCagpMobileDrawer?.();
       }
     });
+    window.addEventListener('cagp:vault-updated', () => {
+      (window as any).__cagp_update_drawer_avatar?.();
+    });
+  }
+
+  function updateDrawerAvatar() {
+    const slot = document.getElementById('cagp-drawer-avatar-slot');
+    const nameEl = document.getElementById('cagp-drawer-student-name');
+    const subEl = document.getElementById('cagp-drawer-student-sub');
+    if (!slot) return;
+    try {
+      const raw = localStorage.getItem('cagp_student_profile_v1');
+      const profile = raw ? JSON.parse(raw) : null;
+      slot.innerHTML = renderAvatarHtml(profile, 'md');
+      if (profile?.name && nameEl) {
+        nameEl.textContent = profile.name;
+      }
+      if (profile?.period && subEl) {
+        subEl.textContent = `${profile.period} • ${profile.semester || 'Ativo'} →`;
+      }
+    } catch (e) {
+      slot.innerHTML = '<i class="bi bi-person-badge-fill text-lg"></i>';
+    }
   }
 
   function setupMobileDrawer() {
+    (window as any).__cagp_update_drawer_avatar = updateDrawerAvatar;
     closeDrawer();
+    updateDrawerAvatar();
 
     document.getElementById('cagp-drawer-backdrop')?.addEventListener('click', closeDrawer);
     document.getElementById('cagp-drawer-close')?.addEventListener('click', closeDrawer);

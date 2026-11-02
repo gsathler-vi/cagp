@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getVaultItem, setVaultItem, type VaultData } from '../../lib/storage/studentVault';
 import { AvatarRenderer } from '../passport/AvatarRenderer';
+import { TALENT_CATEGORIES } from '../passport/talentConstants';
 import { downloadRu1815Ics, downloadCircular2230Ics } from '../../lib/ics';
+
+const TALENT_LABEL_MAP: Record<string, string> = Object.fromEntries(
+  TALENT_CATEGORIES.map((c) => [c.key, c.label])
+);
 
 export const HomeHeroHub: React.FC = () => {
   const [profile, setProfile] = useState<VaultData<'cagp_student_profile_v1'>>({
@@ -206,7 +211,39 @@ export const HomeHeroHub: React.FC = () => {
               </div>
             </div>
 
-            <div className="cagp-passport-progress-grid mb-1 px-3 sm:px-4 pb-3">
+            {/* Áreas de Interesse no Passaporte (Banco de Talentos) */}
+            {profile.interests && profile.interests.length > 0 ? (
+              <div className="px-3 sm:px-4 py-2 bg-[#F7F5F0] border-t border-[#DFDBD2] flex flex-wrap items-center gap-1">
+                <span className="text-[10px] font-['Oswald'] uppercase font-bold text-gray-500 mr-1 flex items-center gap-1">
+                  <i className="bi bi-stars text-[#8B1E2D]" aria-hidden="true" />
+                  Interesses:
+                </span>
+                {profile.interests.map((key) => (
+                  <span
+                    key={key}
+                    className="text-[10px] font-semibold bg-white border border-[#DFDBD2] text-[#0A0A0A] px-2 py-0.5 rounded shadow-[1px_1px_0px_#0A0A0A]"
+                  >
+                    {TALENT_LABEL_MAP[key] || key}
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <div className="px-3 sm:px-4 py-2 bg-[#F7F5F0] border-t border-[#DFDBD2] flex items-center justify-between gap-2">
+                <span className="text-[10px] text-gray-500 font-medium flex items-center gap-1">
+                  <i className="bi bi-stars text-[#8B1E2D]" aria-hidden="true" />
+                  Banco de Talentos: cadastre seus interesses
+                </span>
+                <button
+                  type="button"
+                  onClick={openPassportSheet}
+                  className="text-[10px] font-['Oswald'] font-bold text-[#8B1E2D] hover:underline uppercase cursor-pointer"
+                >
+                  + Configurar
+                </button>
+              </div>
+            )}
+
+            <div className="cagp-passport-progress-grid mb-1 px-3 sm:px-4 pb-3 pt-2">
               <div className="cagp-passport-progress-item">
                 <div className="flex justify-between items-center text-xs mb-1">
                   <span className="font-['Oswald'] font-bold uppercase text-[11px] text-gray-700">
@@ -240,6 +277,26 @@ export const HomeHeroHub: React.FC = () => {
                   />
                 </div>
               </div>
+            </div>
+
+            {/* Ações Rápidas Mobile */}
+            <div className="p-2.5 bg-white border-t border-[#DFDBD2] flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={openPassportSheet}
+                className="cagp-btn-secondary text-xs py-1.5 px-3 flex-1 justify-center cursor-pointer min-h-[44px] flex items-center gap-1.5"
+              >
+                <i className="bi bi-person-gear text-[#8B1E2D]" aria-hidden="true" />
+                <span>Personalizar Passaporte</span>
+              </button>
+              <button
+                type="button"
+                onClick={openCampusSheet}
+                className="cagp-btn-outline text-xs py-1.5 px-3 cursor-pointer min-h-[44px] flex items-center gap-1.5"
+              >
+                <i className="bi bi-clock-history text-[#8B1E2D]" aria-hidden="true" />
+                <span>Campus Agora</span>
+              </button>
             </div>
           </div>
         )}
@@ -449,9 +506,41 @@ export const HomeHeroHub: React.FC = () => {
                 <div className="cagp-metric-ring-inner">{globalPct}%</div>
               </div>
             </div>
+
+            {/* Áreas de Interesse no Passaporte (Banco de Talentos) Desktop */}
+            {profile.interests && profile.interests.length > 0 ? (
+              <div className="px-3.5 py-2 bg-[#F7F5F0] border-t border-[#DFDBD2] flex flex-wrap items-center gap-1">
+                <span className="text-[10px] font-['Oswald'] uppercase font-bold text-gray-500 mr-1 flex items-center gap-1">
+                  <i className="bi bi-stars text-[#8B1E2D]" aria-hidden="true" />
+                  Interesses:
+                </span>
+                {profile.interests.map((key) => (
+                  <span
+                    key={key}
+                    className="text-[10px] font-semibold bg-white border border-[#DFDBD2] text-[#0A0A0A] px-2 py-0.5 rounded shadow-[1px_1px_0px_#0A0A0A]"
+                  >
+                    {TALENT_LABEL_MAP[key] || key}
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <div className="px-3.5 py-2 bg-[#F7F5F0] border-t border-[#DFDBD2] flex items-center justify-between gap-2">
+                <span className="text-[10px] text-gray-500 font-medium flex items-center gap-1">
+                  <i className="bi bi-stars text-[#8B1E2D]" aria-hidden="true" />
+                  Banco de Talentos: cadastre seus interesses no Passaporte
+                </span>
+                <button
+                  type="button"
+                  onClick={openPassportSheet}
+                  className="text-[10px] font-['Oswald'] font-bold text-[#8B1E2D] hover:underline uppercase cursor-pointer"
+                >
+                  + Configurar
+                </button>
+              </div>
+            )}
           </div>
 
-          <div className="cagp-passport-progress-grid px-3.5 pb-3 pt-1 border-t border-[#DFDBD2]/60">
+          <div className="cagp-passport-progress-grid px-3.5 pb-2 pt-2 border-t border-[#DFDBD2]/60">
             <div className="cagp-passport-progress-item">
               <div className="flex justify-between items-center text-xs mb-1">
                 <span className="font-['Oswald'] font-bold uppercase text-[11px] text-gray-700">
@@ -485,6 +574,26 @@ export const HomeHeroHub: React.FC = () => {
                 />
               </div>
             </div>
+          </div>
+
+          {/* Barra de Ações do Passaporte no Desktop */}
+          <div className="p-2.5 bg-white border-t border-[#DFDBD2] flex items-center justify-between gap-2">
+            <button
+              type="button"
+              onClick={openPassportSheet}
+              className="cagp-btn-secondary text-xs py-1.5 px-3 flex-1 justify-center cursor-pointer min-h-[44px] flex items-center gap-1.5"
+            >
+              <i className="bi bi-person-gear text-[#8B1E2D]" aria-hidden="true" />
+              <span>Personalizar Passaporte & Talentos</span>
+            </button>
+            <button
+              type="button"
+              onClick={openCampusSheet}
+              className="cagp-btn-outline text-xs py-1.5 px-3 cursor-pointer min-h-[44px] flex items-center gap-1.5"
+            >
+              <i className="bi bi-clock-history text-[#8B1E2D]" aria-hidden="true" />
+              <span>Campus Agora</span>
+            </button>
           </div>
         </div>
 

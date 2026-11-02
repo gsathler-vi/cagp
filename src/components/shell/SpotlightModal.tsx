@@ -23,7 +23,7 @@ const CATALOG: SearchItem[] = [
   { title: "Acervo de Documentos & Formulários", cat: "Página", badge: "Acervo", href: "/documentos", desc: "Cofre offline com PPC 2020, Regulamento N-20229, Regimento CAGP 2024 e formulários oficiais.", keywords: "documentos pdfs ppc regimento regulamento estagio sei requerimento normas resolucoes cofre offline" },
   { title: "Dúvidas Frequentes (FAQ)", cat: "Página", badge: "Ajuda", href: "/faq", desc: "Respostas regimentais sobre trancamento, pré-requisitos, EaD, CEAG e acessibilidade.", keywords: "faq duvidas perguntas frequentes ceag trancamento prazos secretaria colegiado" },
   { title: "O Centro Acadêmico (Sobre o CAGP)", cat: "Página", badge: "O CAGP", href: "/sobre", desc: "Regimento 2024, Os Candangos de Bruno Giorgi, Assembleia Geral e esferas de representação.", keywords: "sobre cagp candangos bruno giorgi estatuto regimento interno historia diretoria representacao" },
-  { title: "Gestão Ativa & Prestação de Contas", cat: "Página", badge: "O CAGP", href: "/gestao", desc: "Organograma das 7 diretorias, membros em exercício, RREO mensal e acesso a documentos em 3 dias.", keywords: "gestao equipe diretorias dipre dijur difi diac diap dicult dimac transparencia contas" },
+  { title: "Processo Eleitoral & Diretorias do CAGP", cat: "Página", badge: "O CAGP", href: "/gestao", desc: "Organograma das 7 diretorias, atribuições estatutárias, processo eleitoral e prestação de contas.", keywords: "gestao equipe diretorias dipre dijur difi diac diap dicult dimac transparencia contas eleicao eleitoral" },
 ];
 
 export const SpotlightModal: React.FC = () => {

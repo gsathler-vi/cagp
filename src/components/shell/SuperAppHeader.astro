@@ -167,6 +167,8 @@ import { asset } from '../../lib/paths';
 </header>
 
 <script>
+  import { renderAvatarHtml } from '../../lib/avatarHelper';
+
   function setupHeaderListeners() {
     const dispatch = (evt: string) => window.dispatchEvent(new CustomEvent(evt));
     document.getElementById('cagp-btn-spotlight-desktop')?.addEventListener('click', () => dispatch('cagp:open-spotlight'));
@@ -270,22 +272,11 @@ import { asset } from '../../lib/paths';
       if (!slot) return;
       try {
         const raw = localStorage.getItem('cagp_student_profile_v1');
-        if (raw) {
-          const profile = JSON.parse(raw);
-          if (profile.photoDataUrl) {
-            slot.innerHTML = `<img src="${profile.photoDataUrl}" alt="${profile.name || 'Estudante'}" class="w-full h-full object-cover" />`;
-            return;
-          }
-          if (profile.name) {
-            const initials = profile.name.split(' ').filter(Boolean).slice(0, 2).map((w: string) => w[0].toUpperCase()).join('');
-            if (initials) {
-              slot.innerHTML = `<span class="text-[#8B1E2D] font-bold text-xs">${initials}</span>`;
-              return;
-            }
-          }
-        }
+        const profile = raw ? JSON.parse(raw) : null;
+        slot.innerHTML = renderAvatarHtml(profile, 'sm');
+      } catch (e) {
         slot.innerHTML = '<i class="bi bi-person-fill text-lg" aria-hidden="true" />';
-      } catch (e) {}
+      }
     };
 
     (window as any).__cagp_update_avatar = updateHeaderAvatar;

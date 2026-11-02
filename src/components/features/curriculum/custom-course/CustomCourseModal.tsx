@@ -4,6 +4,7 @@ import {
   setVaultItem,
   type CustomCourse,
 } from '../../../../lib/storage/studentVault';
+import { BottomSheet } from '../../../shell/BottomSheet';
 
 interface Props {
   isOpen: boolean;
@@ -83,38 +84,20 @@ export const CustomCourseModal: React.FC<Props> = ({
   };
 
   return (
-    <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-xs p-4 select-none animate-in fade-in duration-150"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="custom-course-title"
+    <BottomSheet
+      id="modal-custom-course"
+      isOpen={isOpen}
+      onClose={onClose}
+      title="Adicionar Disciplina ao Grafo 10P"
+      initialDetent="large"
     >
-      <div className="w-full max-w-lg bg-white border-2 border-[#0A0A0A] rounded-xl shadow-[4px_4px_0px_#0A0A0A] p-5 space-y-4 max-h-[90dvh] overflow-y-auto">
-        <div className="flex items-center justify-between pb-2 border-b border-[#DFDBD2]">
-          <div className="flex items-center gap-2">
-            <span className="w-8 h-8 rounded bg-[#8B1E2D]/10 text-[#8B1E2D] flex items-center justify-center text-base border border-[#8B1E2D]/20">
-              <i className="bi bi-diagram-3-fill" aria-hidden="true" />
-            </span>
-            <h3 id="custom-course-title" className="font-['Oswald'] text-base uppercase font-bold text-[#0A0A0A] m-0">
-              Adicionar Disciplina ao Grafo 10P
-            </h3>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="w-8 h-8 rounded bg-[#F7F5F0] hover:bg-[#EAE6DE] border border-[#DFDBD2] text-gray-500 hover:text-[#0A0A0A] flex items-center justify-center font-bold"
-            aria-label="Fechar modal"
-          >
-            ✕
-          </button>
-        </div>
-
+      <div className="p-4 sm:p-5 space-y-4 overflow-y-auto">
         {/* Alternador de Modo: Catálogo vs Externa Personalizada */}
         <div className="flex items-center gap-1.5 p-1 bg-[#F7F5F0] rounded-lg border border-[#DFDBD2]">
           <button
             type="button"
             onClick={() => setMode('catalog')}
-            className={`flex-1 py-1.5 rounded text-xs font-['Oswald'] uppercase font-bold transition-all ${
+            className={`flex-1 py-2 px-2 rounded-md text-xs font-['Oswald'] uppercase font-bold transition-all min-h-[44px] flex items-center justify-center cursor-pointer ${
               mode === 'catalog'
                 ? 'bg-[#0A0A0A] text-white shadow-xs'
                 : 'text-gray-600 hover:text-[#0A0A0A]'
@@ -128,7 +111,7 @@ export const CustomCourseModal: React.FC<Props> = ({
               setMode('custom');
               setCategory('formacao_livre');
             }}
-            className={`flex-1 py-1.5 rounded text-xs font-['Oswald'] uppercase font-bold transition-all ${
+            className={`flex-1 py-2 px-2 rounded-md text-xs font-['Oswald'] uppercase font-bold transition-all min-h-[44px] flex items-center justify-center cursor-pointer ${
               mode === 'custom'
                 ? 'bg-[#8B1E2D] text-white shadow-xs'
                 : 'text-gray-600 hover:text-[#0A0A0A]'
@@ -284,6 +267,6 @@ export const CustomCourseModal: React.FC<Props> = ({
           </div>
         </form>
       </div>
-    </div>
+    </BottomSheet>
   );
 };

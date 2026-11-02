@@ -256,44 +256,47 @@ export const AcgCalculatorCore: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Gaveta Normativa de Regras */}
+                  {/* Gaveta Normativa de Regras com Interpolação Fluida 0fr -> 1fr */}
                   <div
                     id={`drawer-${item.key}`}
                     className={`cagp-calc-drawer ${isDrawerOpen ? 'is-open' : ''}`}
                     role="region"
                     aria-label={`Normas de ${item.label}`}
+                    aria-hidden={!isDrawerOpen}
                   >
-                    <div className="cagp-calc-drawer-grid pt-2.5 mt-2 border-t border-dashed border-[#DFDBD2]">
-                      <div className="cagp-calc-drawer-section mb-2">
-                        <span className="cagp-calc-drawer-header text-[10px] font-['Oswald'] uppercase font-bold text-[#15803D] block mb-1">
-                          <i className="bi bi-check-circle-fill mr-1" aria-hidden="true" />
-                          O que pontua:
-                        </span>
-                        <ul className="text-[11px] text-gray-600 list-disc pl-4 space-y-0.5 m-0">
-                          {item.accepted.map((acc, i) => (
-                            <li key={i}>{acc}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="cagp-calc-drawer-section mb-2">
-                        <span className="cagp-calc-drawer-header text-[10px] font-['Oswald'] uppercase font-bold text-[#DC2626] block mb-1">
-                          <i className="bi bi-x-circle-fill mr-1" aria-hidden="true" />
-                          O que não pontua:
-                        </span>
-                        <ul className="text-[11px] text-gray-600 list-disc pl-4 space-y-0.5 m-0">
-                          {item.rejected.map((rej, i) => (
-                            <li key={i}>{rej}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {item.alertNote && (
-                        <div className="cagp-calc-drawer-alert p-2 bg-[#FEF3C7] border border-[#B45309]/30 rounded text-[10px] text-[#B45309] font-medium leading-relaxed">
-                          <i className="bi bi-exclamation-triangle-fill mr-1" aria-hidden="true" />
-                          {item.alertNote}
+                    <div className="cagp-calc-drawer-inner">
+                      <div className="cagp-calc-drawer-grid">
+                        <div className="cagp-calc-drawer-section is-accepted">
+                          <div className="cagp-calc-drawer-header">
+                            <i className="bi bi-check-circle-fill text-[#15803D]" aria-hidden="true" />
+                            <span>O que pontua:</span>
+                          </div>
+                          <ul>
+                            {item.accepted.map((acc, i) => (
+                              <li key={i}>{acc}</li>
+                            ))}
+                          </ul>
                         </div>
-                      )}
+
+                        <div className="cagp-calc-drawer-section is-rejected">
+                          <div className="cagp-calc-drawer-header">
+                            <i className="bi bi-x-circle-fill text-[#DC2626]" aria-hidden="true" />
+                            <span>O que não pontua:</span>
+                          </div>
+                          <ul>
+                            {item.rejected.map((rej, i) => (
+                              <li key={i}>{rej}</li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {item.alertNote && (
+                          <div className="cagp-calc-drawer-alert">
+                            <i className="bi bi-exclamation-triangle-fill text-[#B45309]" aria-hidden="true" />
+                            <span>{item.alertNote}</span>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
