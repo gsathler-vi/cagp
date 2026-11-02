@@ -268,13 +268,28 @@ const {
           }
         });
 
-        if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
-          window.addEventListener('load', () => {
-            const swPath = `${cleanBase}/sw.js`;
-            navigator.serviceWorker.register(swPath).catch((err) => {
-              console.warn('[PWA] Service Worker registration failed:', err);
+        if ('serviceWorker' in navigator) {
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '0.0.0.0') {
+            // Em ambiente local, desregistra qualquer SW prévio e limpa caches para visualização 100% atualizada
+            navigator.serviceWorker.getRegistrations().then((regs) => {
+              for (const r of regs) r.unregister();
             });
-          });
+            if ('caches' in window) {
+              caches.keys().then((keys) => {
+                for (const k of keys) caches.delete(k);
+              });
+            }
+          } else if (window.location.protocol === 'https:') {
+            window.addEventListener('load', () => {
+              const swPath = `${cleanBase}/sw.js`;
+              navigator.serviceWorker.register(swPath).catch((err) => {
+                console.warn('[PWA] Service Worker registration failed:', err);
+              });
+            });
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+              window.location.reload();
+            });
+          }
         }
 
         window.addEventListener('pointermove', function(e) {

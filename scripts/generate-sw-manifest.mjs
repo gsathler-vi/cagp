@@ -47,13 +47,18 @@ if (fs.existsSync(distDir)) {
   }
   
   const manifestJson = JSON.stringify(allFiles, null, 2);
-  const updatedSw = swContent.replace(
+  const buildVersion = 'cagp-pwa-v' + Date.now();
+  let updatedSw = swContent.replace(
     /const PRECACHE_ASSETS\s*=\s*\[[\s\S]*?\];/,
     `const PRECACHE_ASSETS = ${manifestJson};`
   );
+  updatedSw = updatedSw.replace(
+    /const CACHE_NAME\s*=\s*['"][^'"]+['"];/,
+    `const CACHE_NAME = '${buildVersion}';`
+  );
   
   fs.writeFileSync(swDistPath, updatedSw, 'utf8');
-  console.log(`[SW-Manifest] Injected ${allFiles.length} precache assets into dist/sw.js`);
+  console.log(`[SW-Manifest] Injected ${allFiles.length} precache assets with cache version ${buildVersion} into dist/sw.js`);
 } else {
   console.log('[SW-Manifest] dist directory not found, skipping manifest injection.');
 }

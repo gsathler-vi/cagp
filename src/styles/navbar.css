@@ -28,18 +28,27 @@
 
 .cagp-island-dropdown-btn.is-active,
 .cagp-island-nav-link.is-active {
-  background: #FFFFFF !important;
-  border: 1.5px solid #8B1E2D !important;
-  color: #8B1E2D !important;
+  background: #8B1E2D !important;
+  border: 1.5px solid #0A0A0A !important;
+  color: #FFFFFF !important;
   font-weight: 700;
-  box-shadow: 1.5px 1.5px 0px #8B1E2D;
+  box-shadow: 1.5px 1.5px 0px #0A0A0A !important;
+}
+
+.cagp-island-dropdown-btn.is-active i,
+.cagp-island-nav-link.is-active i {
+  color: #FFFFFF !important;
 }
 
 .cagp-island-dropdown.is-open .cagp-island-dropdown-btn {
-  background: #FFFFFF;
-  border-color: #8B1E2D;
+  background: #F7F5F0;
+  border-color: #0A0A0A;
   color: #8B1E2D;
-  box-shadow: 1.5px 1.5px 0px #8B1E2D;
+}
+
+.cagp-island-dropdown.is-open .cagp-island-dropdown-btn.is-active {
+  background: #8B1E2D !important;
+  color: #FFFFFF !important;
 }
 
 .cagp-island-dropdown-chevron {
@@ -50,13 +59,12 @@
 
 .cagp-island-dropdown.is-open .cagp-island-dropdown-chevron {
   transform: rotate(180deg);
-  color: #8B1E2D;
 }
 
-/* Dropdown Menu Container: Clears the Header Capsule Completely */
+/* Dropdown Menu Container: Flutua logo abaixo da Ilha da Doca */
 .cagp-island-dropdown-menu {
   position: absolute;
-  top: calc(100% + 1.25rem);
+  top: calc(100% + 0.65rem);
   min-width: 310px;
   max-width: 360px;
   background: transparent;

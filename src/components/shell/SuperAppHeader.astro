@@ -12,143 +12,143 @@ const isHomeActive = currentPath === '/' || currentPath === '';
   class="sticky top-2 sm:top-3 lg:top-4 z-[1040] w-full px-2.5 sm:px-4 lg:px-6 pointer-events-none select-none transition-all duration-300"
   style="padding-top: env(safe-area-inset-top, 0px);"
 >
-  <div class="max-w-7xl mx-auto pointer-events-auto bg-white/95 backdrop-blur-xl border-2 border-[#0A0A0A] shadow-[3px_3px_0px_#0A0A0A] rounded-full px-3.5 sm:px-5 lg:px-6 h-14 sm:h-15 lg:h-16 flex items-center justify-between gap-3 sm:gap-4 lg:gap-6 flex-nowrap whitespace-nowrap transition-all duration-300">
-    <!-- Brand / Logo (Left) -->
-    <a href="/" class="flex items-center gap-2 sm:gap-3 text-inherit no-underline min-h-[44px] shrink-0 active:scale-95 transition-transform" aria-label="Página Inicial CAGP">
-      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center p-1 border-2 border-[#0A0A0A] shadow-[1.5px_1.5px_0px_#0A0A0A] hover:rotate-3 transition-transform shrink-0">
-        <img src={asset('/logos/cagp/10_simbolo_transparente_positivo.svg')} alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
-      </div>
-      <div class="leading-tight">
-        <span class="block font-['Oswald'] font-black text-sm sm:text-base tracking-wide uppercase">
-          <span class="text-[#8B1E2D]">CAGP</span> <span class="text-[#0A0A0A]">UFMG</span>
-        </span>
-        <span class="hidden xl:block text-[10px] text-gray-500 font-mono tracking-tight">Gestão Pública • FAFICH</span>
-      </div>
-    </a>
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-2.5 sm:gap-4 pointer-events-none">
+    <!-- ILHA 1: Marca & Identidade Institucional (Esquerda) -->
+    <div class="pointer-events-auto bg-white/95 backdrop-blur-xl border-2 border-[#0A0A0A] shadow-[3px_3px_0px_#0A0A0A] rounded-full px-3 py-1.5 sm:px-4 sm:py-2 flex items-center shrink-0 transition-transform active:scale-98">
+      <a href="/" class="flex items-center gap-2.5 text-inherit no-underline min-h-[38px] group" aria-label="Página Inicial CAGP">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center p-1 border-2 border-[#0A0A0A] shadow-[1.5px_1.5px_0px_#0A0A0A] group-hover:rotate-6 transition-transform shrink-0">
+          <img src={asset('/logos/cagp/10_simbolo_transparente_positivo.svg')} alt="Emblema Candangos CAGP" class="w-full h-full object-contain" />
+        </div>
+        <div class="leading-tight">
+          <span class="block font-['Oswald'] font-black text-sm sm:text-base tracking-wide uppercase">
+            <span class="text-[#8B1E2D]">CAGP</span> <span class="text-[#0A0A0A]">UFMG</span>
+          </span>
+          <span class="hidden xl:block text-[10px] text-gray-500 font-mono tracking-tight">Gestão Pública • FAFICH</span>
+        </div>
+      </a>
+    </div>
 
-    <!-- Desktop Navigation Dock (Centered Segmented Capsule) -->
-    <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 max-w-2xl mx-auto" aria-label="Navegação desktop dos 5 eixos">
-      <div class="bg-[#F7F5F0]/95 border border-[#DFDBD2] p-1.5 rounded-full flex items-center gap-1.5 xl:gap-2 shadow-xs transition-all">
-        <!-- 1. Início -->
-        <a
-          href="/"
-          class={`cagp-island-nav-link px-3.5 py-1.5 rounded-full font-['Inter'] font-semibold text-xs transition-all no-underline h-8.5 flex items-center gap-2 border whitespace-nowrap ${
-            isHomeActive
-              ? 'is-active bg-white text-[#8B1E2D] border-[#8B1E2D] shadow-[1.5px_1.5px_0_#8B1E2D]'
-              : 'text-gray-700 border-transparent hover:bg-white hover:text-[#8B1E2D]'
-          }`}
-          data-route="/"
-          aria-current={isHomeActive ? 'page' : undefined}
-        >
-          <i class="bi bi-compass text-xs text-[#8B1E2D]" aria-hidden="true" />
-          <span>Início</span>
-        </a>
+    <!-- ILHA 2: Doca Central dos 5 Eixos (Centro - Desktop) -->
+    <nav class="hidden lg:flex pointer-events-auto bg-white/95 backdrop-blur-xl border-2 border-[#0A0A0A] shadow-[3px_3px_0px_#0A0A0A] rounded-full p-1.5 items-center gap-1.5 xl:gap-2 transition-all mx-auto" aria-label="Navegação desktop dos 5 eixos">
+      <!-- 1. Início -->
+      <a
+        href="/"
+        class={`cagp-island-nav-link px-3.5 py-1.5 rounded-full font-['Inter'] font-semibold text-xs transition-all no-underline h-9 flex items-center gap-2 border whitespace-nowrap ${
+          isHomeActive
+            ? 'is-active bg-[#8B1E2D] text-white border-[#0A0A0A] shadow-[1.5px_1.5px_0_#0A0A0A]'
+            : 'text-gray-700 border-transparent hover:bg-[#F7F5F0] hover:text-[#8B1E2D]'
+        }`}
+        data-route="/"
+        aria-current={isHomeActive ? 'page' : undefined}
+      >
+        <i class={`bi bi-compass text-sm ${isHomeActive ? 'text-white' : 'text-[#8B1E2D]'}`} aria-hidden="true" />
+        <span>Início</span>
+      </a>
 
-        <!-- 2 a 5. Dropdowns dos 4 Eixos -->
-        {HEADER_NAV_ITEMS.filter(item => item.children).map((item, idx) => {
-          const isAxisActive = item.href === currentPath || (item.children && item.children.some(c => c.href === currentPath || (currentPath === '/estagio-tcc' && c.href === '/estagio')));
+      <!-- 2 a 5. Dropdowns dos 4 Eixos -->
+      {HEADER_NAV_ITEMS.filter(item => item.children).map((item, idx) => {
+        const isAxisActive = item.href === currentPath || (item.children && item.children.some(c => c.href === currentPath || (currentPath === '/estagio-tcc' && c.href === '/estagio')));
 
-          return (
-            <div class="cagp-island-dropdown relative" data-dropdown={item.href}>
-              <button
-                type="button"
-                class={`cagp-island-dropdown-btn px-3 py-1.5 rounded-full font-['Inter'] font-semibold text-xs flex items-center gap-1.5 xl:gap-2 transition-all h-8.5 cursor-pointer border whitespace-nowrap ${
-                  isAxisActive
-                    ? 'is-active bg-white text-[#8B1E2D] border-[#8B1E2D] shadow-[1.5px_1.5px_0_#8B1E2D]'
-                    : 'text-gray-700 border-transparent hover:bg-white hover:text-[#8B1E2D]'
-                }`}
-                aria-expanded="false"
-                aria-haspopup="true"
-              >
-                <i class={`bi ${item.icon} text-xs ${isAxisActive ? 'text-[#8B1E2D]' : 'text-gray-500'}`} aria-hidden="true" />
-                <span class="xl:hidden">{item.shortLabel || item.label}</span>
-                <span class="hidden xl:inline">{item.label}</span>
-                <i class="bi bi-chevron-down text-[9px] text-gray-400 cagp-island-dropdown-chevron ml-0.5" aria-hidden="true" />
-              </button>
-              <div class={`cagp-island-dropdown-menu absolute ${
-                idx === 0 ? 'left-0' : idx === 3 ? 'right-0' : 'left-1/2 -translate-x-1/2'
-              } top-[calc(100%+1.25rem)] z-[1070] min-w-[310px] max-w-[350px]`}>
-                <div class="cagp-island-dropdown-card bg-white/98 backdrop-blur-xl border-2 border-[#0A0A0A] rounded-2xl shadow-[4px_4px_0px_#0A0A0A] p-2.5 space-y-1.5">
-                  <!-- Header do Eixo com Visão Geral -->
-                  <div class="flex items-center justify-between px-3 py-2 bg-[#F7F5F0] rounded-xl border border-[#DFDBD2]">
-                    <div class="flex items-center gap-2 min-w-0">
-                      <div class="w-6 h-6 rounded-md bg-[#8B1E2D] text-white flex items-center justify-center text-xs shrink-0 shadow-xs">
-                        <i class={`bi ${item.icon}`} aria-hidden="true" />
-                      </div>
-                      <span class="font-['Oswald'] font-bold text-xs uppercase tracking-wide text-[#0A0A0A] truncate">{item.label}</span>
+        return (
+          <div class="cagp-island-dropdown relative" data-dropdown={item.href}>
+            <button
+              type="button"
+              class={`cagp-island-dropdown-btn px-3 py-1.5 rounded-full font-['Inter'] font-semibold text-xs flex items-center gap-1.5 xl:gap-2 transition-all h-9 cursor-pointer border whitespace-nowrap ${
+                isAxisActive
+                  ? 'is-active bg-[#8B1E2D] text-white border-[#0A0A0A] shadow-[1.5px_1.5px_0_#0A0A0A]'
+                  : 'text-gray-700 border-transparent hover:bg-[#F7F5F0] hover:text-[#8B1E2D]'
+              }`}
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <i class={`bi ${item.icon} text-sm ${isAxisActive ? 'text-white' : 'text-gray-500'}`} aria-hidden="true" />
+              <span class="xl:hidden">{item.shortLabel || item.label}</span>
+              <span class="hidden xl:inline">{item.label}</span>
+              <i class={`bi bi-chevron-down text-[9px] cagp-island-dropdown-chevron ml-0.5 ${isAxisActive ? 'text-white' : 'text-gray-400'}`} aria-hidden="true" />
+            </button>
+            <div class={`cagp-island-dropdown-menu absolute ${
+              idx === 0 ? 'left-0' : idx === 3 ? 'right-0' : 'left-1/2 -translate-x-1/2'
+            } top-[calc(100%+0.65rem)] z-[1070] min-w-[310px] max-w-[350px]`}>
+              <div class="cagp-island-dropdown-card bg-white/98 backdrop-blur-xl border-2 border-[#0A0A0A] rounded-2xl shadow-[4px_4px_0px_#0A0A0A] p-2.5 space-y-1.5">
+                <!-- Header do Eixo com Visão Geral -->
+                <div class="flex items-center justify-between px-3 py-2 bg-[#F7F5F0] rounded-xl border border-[#DFDBD2]">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <div class="w-6 h-6 rounded-md bg-[#8B1E2D] text-white flex items-center justify-center text-xs shrink-0 shadow-xs">
+                      <i class={`bi ${item.icon}`} aria-hidden="true" />
                     </div>
-                    <a
-                      href={item.href}
-                      class="text-[11px] font-['Inter'] font-bold text-[#8B1E2D] hover:text-[#0A0A0A] flex items-center gap-1 no-underline transition-colors shrink-0 ml-2"
-                      aria-label={`Visão Geral de ${item.label}`}
-                    >
-                      <span>Visão Geral</span>
-                      <i class="bi bi-arrow-right text-[10px]" aria-hidden="true" />
-                    </a>
+                    <span class="font-['Oswald'] font-bold text-xs uppercase tracking-wide text-[#0A0A0A] truncate">{item.label}</span>
                   </div>
+                  <a
+                    href={item.href}
+                    class="text-[11px] font-['Inter'] font-bold text-[#8B1E2D] hover:text-[#0A0A0A] flex items-center gap-1 no-underline transition-colors shrink-0 ml-2"
+                    aria-label={`Visão Geral de ${item.label}`}
+                  >
+                    <span>Visão Geral</span>
+                    <i class="bi bi-arrow-right text-[10px]" aria-hidden="true" />
+                  </a>
+                </div>
 
-                  <!-- Divisor Sutil -->
-                  <div class="border-t border-[#DFDBD2] my-1" />
+                <!-- Divisor Sutil -->
+                <div class="border-t border-[#DFDBD2] my-1" />
 
-                  <!-- Sub-páginas Canônicas -->
-                  <div class="space-y-1">
-                    {item.children?.map((child) => {
-                      const isChildActive = child.href === currentPath;
-                      return (
-                        <a
-                          href={child.href}
-                          class={`cagp-island-dropdown-item px-3 py-2 rounded-xl hover:bg-[#F7F5F0] flex items-start gap-3 no-underline transition-all block text-left group/item border ${
-                            isChildActive
-                              ? 'is-active bg-[#FEE2E2] border-[#8B1E2D] shadow-[1px_1px_0_#8B1E2D]'
-                              : 'border-transparent hover:border-[#DFDBD2]'
-                          }`}
-                          data-route={child.href}
-                        >
-                          <div class={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border transition-all ${
-                            isChildActive
-                              ? 'bg-[#8B1E2D] text-white border-[#8B1E2D]'
-                              : 'bg-[#F7F5F0] text-[#8B1E2D] border-[#DFDBD2] group-hover/item:bg-white group-hover/item:border-[#0A0A0A] group-hover/item:scale-105'
-                          }`}>
-                            <i class={`bi ${child.icon} text-sm`} aria-hidden="true" />
-                          </div>
-                          <div class="min-w-0 flex-1">
-                            <span class={`font-['Oswald'] font-bold text-xs uppercase block leading-tight ${
-                              isChildActive ? 'text-[#8B1E2D]' : 'text-[#0A0A0A] group-hover/item:text-[#8B1E2D]'
-                            }`}>{child.label}</span>
-                            <span class="text-[11px] text-gray-500 block leading-snug mt-0.5 line-clamp-1">{child.desc}</span>
-                          </div>
-                        </a>
-                      );
-                    })}
-                  </div>
+                <!-- Sub-páginas Canônicas -->
+                <div class="space-y-1">
+                  {item.children?.map((child) => {
+                    const isChildActive = child.href === currentPath;
+                    return (
+                      <a
+                        href={child.href}
+                        class={`cagp-island-dropdown-item px-3 py-2 rounded-xl hover:bg-[#F7F5F0] flex items-start gap-3 no-underline transition-all block text-left group/item border ${
+                          isChildActive
+                            ? 'is-active bg-[#FEE2E2] border-[#8B1E2D] shadow-[1px_1px_0_#8B1E2D]'
+                            : 'border-transparent hover:border-[#DFDBD2]'
+                        }`}
+                        data-route={child.href}
+                      >
+                        <div class={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border transition-all ${
+                          isChildActive
+                            ? 'bg-[#8B1E2D] text-white border-[#8B1E2D]'
+                            : 'bg-[#F7F5F0] text-[#8B1E2D] border-[#DFDBD2] group-hover/item:bg-white group-hover/item:border-[#0A0A0A] group-hover/item:scale-105'
+                        }`}>
+                          <i class={`bi ${child.icon} text-sm`} aria-hidden="true" />
+                        </div>
+                        <div class="min-w-0 flex-1">
+                          <span class={`font-['Oswald'] font-bold text-xs uppercase block leading-tight ${
+                            isChildActive ? 'text-[#8B1E2D]' : 'text-[#0A0A0A] group-hover/item:text-[#8B1E2D]'
+                          }`}>{child.label}</span>
+                          <span class="text-[11px] text-gray-500 block leading-snug mt-0.5 line-clamp-1">{child.desc}</span>
+                        </div>
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </nav>
 
-    <!-- Quick Actions & Tools (Right) - Pílulas e Círculos Harmonizados -->
-    <div class="flex items-center gap-2 sm:gap-2.5 lg:gap-3 shrink-0">
+    <!-- ILHA 3: Ações Rápidas & Ferramentas Discentes (Direita) -->
+    <div class="pointer-events-auto bg-white/95 backdrop-blur-xl border-2 border-[#0A0A0A] shadow-[3px_3px_0px_#0A0A0A] rounded-full p-1.5 sm:px-2.5 sm:py-1.5 flex items-center gap-1.5 sm:gap-2 shrink-0 transition-all">
       <!-- Spotlight Search Button -->
       <button
         type="button"
         id="cagp-btn-spotlight"
-        class="w-9 h-9 sm:w-auto sm:h-9.5 px-0 sm:px-3.5 rounded-full border-2 border-[#0A0A0A] bg-[#F7F5F0] hover:bg-white text-xs font-semibold text-gray-700 shadow-[1.5px_1.5px_0px_#0A0A0A] active:scale-95 transition-all flex items-center justify-center sm:justify-start gap-2 cursor-pointer shrink-0"
+        class="w-9 h-9 sm:w-auto sm:h-9 px-0 sm:px-3 rounded-full border border-[#DFDBD2] hover:border-[#0A0A0A] bg-[#F7F5F0] hover:bg-white text-xs font-semibold text-gray-700 shadow-xs hover:shadow-[1px_1px_0px_#0A0A0A] active:scale-95 transition-all flex items-center justify-center sm:justify-start gap-1.5 cursor-pointer shrink-0"
         aria-label="Buscar no portal (⌘K)"
         title="Buscar no portal (⌘K)"
       >
         <i class="bi bi-search text-xs text-[#8B1E2D]" aria-hidden="true" />
         <span class="hidden sm:inline text-xs text-gray-700 font-medium">Buscar</span>
-        <kbd class="hidden md:inline-block text-[10px] bg-white border border-[#0A0A0A] rounded px-1.5 py-0.5 font-mono font-bold text-gray-700 shadow-xs ml-1">⌘K</kbd>
+        <kbd class="hidden md:inline-block text-[10px] bg-white border border-[#DFDBD2] rounded px-1.5 py-0.5 font-mono font-bold text-gray-600 shadow-2xs ml-0.5">⌘K</kbd>
       </button>
 
       <!-- Live Campus Status Button -->
       <button
         type="button"
         id="cagp-btn-campus"
-        class="w-9 h-9 sm:w-auto sm:h-9.5 px-0 sm:px-3.5 rounded-full border-2 border-[#0A0A0A] bg-[#F7F5F0] hover:bg-white text-xs font-['Oswald'] uppercase font-bold tracking-wide text-[#0A0A0A] shadow-[1.5px_1.5px_0px_#0A0A0A] active:scale-95 transition-all flex items-center justify-center sm:justify-start gap-2 cursor-pointer relative shrink-0"
+        class="w-9 h-9 sm:w-auto sm:h-9 px-0 sm:px-3 rounded-full border border-[#DFDBD2] hover:border-[#0A0A0A] bg-[#F7F5F0] hover:bg-white text-xs font-['Oswald'] uppercase font-bold tracking-wide text-[#0A0A0A] shadow-xs hover:shadow-[1px_1px_0px_#0A0A0A] active:scale-95 transition-all flex items-center justify-center sm:justify-start gap-2 cursor-pointer relative shrink-0"
         aria-label="Status do campus (RU & Circular)"
         title="Status do campus (RU & Circular)"
       >
@@ -164,8 +164,8 @@ const isHomeActive = currentPath === '/' || currentPath === '';
         <span class="hidden 2xl:inline text-gray-500 font-normal ml-0.5 font-['Inter'] text-[11px] lowercase">• aberto</span>
       </button>
 
-      <!-- Subtle Divider between Tools and Discente Identity (Desktop & Tablet) -->
-      <div class="hidden sm:block h-5 w-[1.5px] bg-[#DFDBD2] shrink-0 mx-0.5" aria-hidden="true"></div>
+      <!-- Divisor Sutil -->
+      <div class="h-5 w-[1.5px] bg-[#DFDBD2] shrink-0 mx-0.5" aria-hidden="true"></div>
 
       <!-- Student Passport Avatar -->
       <button

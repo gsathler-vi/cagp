@@ -52,6 +52,12 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(req.url);
 
+  // Ambiente Local / Preview: Sempre direto da rede para evitar cache obsoleto durante testes
+  if (url.hostname === 'localhost' || url.hostname === '127.0.0.1' || url.hostname === '0.0.0.0') {
+    event.respondWith(fetch(req).catch(() => caches.match(req)));
+    return;
+  }
+
   // Navegação: Network-first com anti-Lie-Fi timeout de 2.5s
   if (req.mode === 'navigate') {
     event.respondWith(
