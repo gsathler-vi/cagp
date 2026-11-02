@@ -14,7 +14,7 @@ const tabs = [
   { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral das 600h', hash: '#visao-geral' },
   { id: 'v1', shortLabel: 'Calculadora', fullLabel: '1. Calculadora Extensão & AAC', hash: '#calculadora' },
   { id: 'v2', shortLabel: '120 Dias', fullLabel: '2. Guardião 120 Dias', hash: '#guardiao-120-dias' },
-  { id: 'v3', shortLabel: 'Tramitação', fullLabel: '3. Protocolo SEI Colegiado', hash: '#tramitacao-sei' },
+  { id: 'v3', shortLabel: 'Protocolo', fullLabel: '3. Protocolo Colegiado N-20229', hash: '#protocolo-colegiado' },
 ];
 
 const badges = [
@@ -27,11 +27,11 @@ const badges = [
 
 <BaseLayout
   title="Central de Horas & Certificados (600h)"
-  description="Calculadora interativa de 300h de Extensão Obrigatória e 300h de AAC com monitoramento do prazo legal de 120 dias e protocolo SEI."
+  description="Calculadora interativa de 300h de Extensão Obrigatória e 300h de AAC com monitoramento do prazo legal de 120 dias e protocolo do Colegiado N-20229."
 >
   <PageHeader
     title="Central de Horas & Certificados (600h)"
-    subtitle="Simulador interativo de 300h de Extensão e 300h de AAC, monitor de prescrição de 120 dias corridos e roteiro de tramitação no SEI/UFMG."
+    subtitle="Simulador interativo de 300h de Extensão e 300h de AAC, monitor de prescrição de 120 dias corridos e roteiro de tramitação oficial do Colegiado de Gestão Pública."
     badges={badges}
   />
 
@@ -54,7 +54,7 @@ const badges = [
       verdict="atencao"
       stampText="120 DIAS CORRIDOS"
       normativeSource="Art. 15, § 4º do Regulamento do Curso Versão N-20229"
-      explanation="ALERTA MÁXIMO • INDEFERIMENTO AUTOMÁTICO. O Regulamento estabelece o prazo peremptório de exatamente 120 dias corridos a contar da data de emissão do certificado ou encerramento da atividade para requerer o aproveitamento no SEI/UFMG. Certificados fora do prazo são sumariamente indeferidos pelo Colegiado, mesmo que sejam legítimos."
+      explanation="ALERTA MÁXIMO • INDEFERIMENTO AUTOMÁTICO. O Regulamento estabelece o prazo peremptório de exatamente 120 dias corridos a contar da data de emissão do certificado ou encerramento da atividade para requerer o aproveitamento perante o Colegiado. Certificados fora do prazo são sumariamente indeferidos, mesmo que autênticos."
       officialRuleExcerpt={`Regulamento do Curso de Graduação em Gestão Pública — Versão N-20229:
 Art. 15, § 4º — O discente terá o prazo máximo de 120 (cento e vinte) dias corridos, contados a partir da data de encerramento da atividade ou emissão do respectivo certificado, para requerer o aproveitamento de carga horária em Atividades Acadêmicas Complementares (AAC).
 § 5º — Expirado o prazo previsto no § 4º, o requerimento não será apreciado pela Comissão de Acompanhamento.`}
@@ -62,7 +62,7 @@ Art. 15, § 4º — O discente terá o prazo máximo de 120 (cento e vinte) dias
     <AcgGuardianCore client:load />
   </section>
 
-  <!-- Sub-view 3: Guia & Tramitação SEI Core -->
+  <!-- Sub-view 3: Guia & Protocolo Colegiado N-20229 Core -->
   <section id="ws-panel-v3" class="cagp-workspace-view" data-ws-panel="v3" hidden>
     <AcgTramitacaoCore />
   </section>

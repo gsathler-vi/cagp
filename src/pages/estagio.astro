@@ -1,53 +1,69 @@
 ---
-// estagio.astro - A2 Ferramenta: 2 sub-views (Art. 41 · Tutorial)
+// estagio.astro — Central de Estágio Supervisionado (300h) & Dispensa Art. 41
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/ui/PageHeader.astro';
 import SegmentedControl from '../components/ui/SegmentedControl.astro';
 import JourneyNav from '../components/ui/JourneyNav.astro';
 import FactCheckBanner from '../components/ui/FactCheckBanner.astro';
-import { Art41Simulator } from '../components/curriculum/Art41Simulator';
-import EstagioTutorialTce from '../components/estagio/EstagioTutorialTce.astro';
+import EstagioCentralOverview from '../components/features/estagio/EstagioCentralOverview.astro';
+import { Art41SimulatorCore } from '../components/features/estagio/art41/Art41SimulatorCore';
+import EstagioObrigatorioCore from '../components/features/estagio/obrigatorio/EstagioObrigatorioCore.astro';
+import EstagioTceCore from '../components/features/estagio/tce/EstagioTceCore.astro';
 
 const tabs = [
-  { id: 'v1', shortLabel: 'Art. 41', fullLabel: '1. Dispensa Art. 41', hash: '#art41' },
-  { id: 'v2', shortLabel: 'Tutorial', fullLabel: '2. Tutorial TCE & Modelos', hash: '#tutorial' },
+  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Estágio', hash: '#visao-geral' },
+  { id: 'v1', shortLabel: 'Dispensa Art. 41', fullLabel: '1. Dispensa Art. 41', hash: '#art41' },
+  { id: 'v2', shortLabel: 'Estágio 300h', fullLabel: '2. Estágio Obrigatório (300h)', hash: '#obrigatorio' },
+  { id: 'v3', shortLabel: 'Tutorial TCE', fullLabel: '3. Tutorial TCE & Modelos', hash: '#tutorial' },
 ];
 
 const badges = [
   { label: '300h Obrigatórias (DCP 135/136)', variant: 'red' as const, icon: 'bi-briefcase-fill' },
   { label: 'Dispensa Art. 41 Regulamento', variant: 'dark' as const, icon: 'bi-file-earmark-check-fill' },
-  { label: 'TCE via SEI UFMG', variant: 'blue' as const, icon: 'bi-journal-text' },
+  { label: 'Lei Federal 11.788/2008', variant: 'blue' as const, icon: 'bi-journal-text' },
   { label: 'Regulamento N-20229', variant: 'green' as const, icon: 'bi-shield-check' },
 ];
-
 ---
 
-<BaseLayout title="Estágio Supervisionado" description="Regras do estágio supervisionado de Gestão Pública da UFMG (300h: DCP 135 e DCP 136) e simulador do Art. 41.">
+<BaseLayout
+  title="Estágio Supervisionado (300h) & Art. 41"
+  description="Regras do estágio supervisionado de Gestão Pública da UFMG (300h: DCP 135 e DCP 136), simulador do Art. 41 para servidores e modelos oficiais de TCE."
+>
   <PageHeader
     title="Estágio Supervisionado (300h)"
     subtitle="Verificador interativo de integralização por experiência profissional (Art. 41), regras do Estágio Obrigatório A e B e tutorial visual do Termo de Compromisso (TCE)."
     badges={badges}
   />
 
-  <SegmentedControl tabs={tabs} defaultTab="v1" />
+  <SegmentedControl tabs={tabs} defaultTab="v0" />
 
-  <!-- Sub-view 1: Art. 41 -->
-  <section id="ws-panel-v1" class="cagp-workspace-view space-y-4" data-ws-panel="v1">
+  <!-- Sub-view 0: Visão Geral da Central de Estágio -->
+  <section id="ws-panel-v0" class="cagp-workspace-view" data-ws-panel="v0">
+    <EstagioCentralOverview />
+  </section>
+
+  <!-- Sub-view 1: Dispensa Art. 41 -->
+  <section id="ws-panel-v1" class="cagp-workspace-view space-y-4" data-ws-panel="v1" hidden>
     <FactCheckBanner
       claim="Servidor público em exercício, celetista no setor público ou comissionado tem dispensa do Estágio Supervisionado (300h)?"
       verdict="homologado"
       stampText="DISPENSA ART. 41"
       normativeSource="Art. 41 do Regulamento Versão N-20229 & Parecer CNE/CES 01/2006"
-      explanation="VERDADEIRO, MAS EXIGE PROTOCOLO FORMAL NO SEI/UFMG. O discente com vínculo formal ativo na administração pública direta ou indireta pode obter a dispensa total das 300h de estágio (DCP 135 e DCP 136). Para isso, deve abrir processo eletrônico com portaria de posse, CTPS ou contrato de trabalho acompanhado de memorial descritivo de atividades correlatas à Gestão Pública."
+      explanation="VERDADEIRO, MEDIANTE PROTOCOLO FORMAL. O discente com vínculo formal ativo na administração pública direta ou indireta pode obter a dispensa total das 300h de estágio (DCP 135 e DCP 136). Para isso, deve apresentar portaria de posse, CTPS ou contrato acompanhado de declaração da chefia e memorial de atividades correlatas à Gestão Pública."
       officialRuleExcerpt={`Regulamento do Curso — Art. 41:
 O discente que comprovar exercício profissional ou estágio não-obrigatório correlato à área de Gestão Pública na administração direta ou indireta, por período mínimo regulamentar, poderá requerer a dispensa das disciplinas de Estágio Supervisionado A e B, mediante parecer fundamentado da comissão avaliadora designada pelo Colegiado.`}
     />
-    <Art41Simulator client:visible />
+    <Art41SimulatorCore client:load />
   </section>
 
-  <!-- Sub-view 2: Tutorial TCE & Modelos -->
+  <!-- Sub-view 2: Estágio Obrigatório (300h) -->
   <section id="ws-panel-v2" class="cagp-workspace-view" data-ws-panel="v2" hidden>
-    <EstagioTutorialTce />
+    <EstagioObrigatorioCore />
+  </section>
+
+  <!-- Sub-view 3: Tutorial TCE & Minutas -->
+  <section id="ws-panel-v3" class="cagp-workspace-view" data-ws-panel="v3" hidden>
+    <EstagioTceCore />
   </section>
 
   <!-- Journey Navigation Trail -->

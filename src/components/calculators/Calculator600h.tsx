@@ -780,7 +780,7 @@ export const Calculator600h: React.FC = () => {
               <span>Protocolo no Colegiado (Sala F-2039 com Norma Guedes)</span>
             </div>
             <div className="text-xs text-gray-600 mt-0.5">
-              Baixe o Requerimento Oficial N-20229 em PDF, anexe seus comprovantes autenticáveis e entregue na Secretaria do Curso ou via SEI UFMG.
+              Baixe o Requerimento Oficial N-20229 em PDF, anexe seus comprovantes autenticáveis e entregue na Secretaria do Curso ou via e-mail coordgestaopublica@gmail.com.
             </div>
           </div>
 

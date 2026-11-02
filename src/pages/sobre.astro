@@ -1,19 +1,19 @@
 ---
-// sobre.astro - A4 Guia: 3 sub-views (Princípios · Governança · Esferas)
+// sobre.astro — Central do Centro Acadêmico de Gestão Pública (CAGP FAFICH/UFMG)
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/ui/PageHeader.astro';
 import SegmentedControl from '../components/ui/SegmentedControl.astro';
 import JourneyNav from '../components/ui/JourneyNav.astro';
-import SobrePrincipios from '../components/sobre/SobrePrincipios.astro';
-import SobreGovernanca from '../components/sobre/SobreGovernanca.astro';
-import SobreEsferas from '../components/sobre/SobreEsferas.astro';
-import AxisOverview from '../components/shell/AxisOverview.astro';
+import CagpCentralOverview from '../components/features/cagp/CagpCentralOverview.astro';
+import CagpHistoriaCore from '../components/features/cagp/historia/CagpHistoriaCore.astro';
+import CagpEstatutoCore from '../components/features/cagp/estatuto/CagpEstatutoCore.astro';
+import CagpGestaoDiretoria from '../components/features/cagp/gestao/CagpGestaoDiretoria.astro';
 
 const tabs = [
-  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Eixo', hash: '#visao-geral' },
-  { id: 'v1', shortLabel: 'Princípios', fullLabel: '1. Princípios & Missão', hash: '#principios' },
+  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do CAGP', hash: '#visao-geral' },
+  { id: 'v1', shortLabel: 'Princípios', fullLabel: '1. Princípios & História', hash: '#principios' },
   { id: 'v2', shortLabel: 'Governança', fullLabel: '2. Governança & Estatuto', hash: '#governanca' },
-  { id: 'v3', shortLabel: 'Esferas', fullLabel: '3. Esferas de Representação', hash: '#esferas' },
+  { id: 'v3', shortLabel: 'Gestão', fullLabel: '3. Diretorias & Transparência', hash: '#diretorias' },
 ];
 
 const badges = [
@@ -22,10 +22,12 @@ const badges = [
   { label: '7 Diretorias Executivas', variant: 'blue' as const, icon: 'bi-diagram-3-fill' },
   { label: 'Os Candangos FAFICH', variant: 'gold' as const, icon: 'bi-shield-fill-check' },
 ];
-
 ---
 
-<BaseLayout title="O Centro Acadêmico (CAGP)" description="História, governança, estatuto interno e esferas de representação do Centro Acadêmico de Gestão Pública da FAFICH/UFMG.">
+<BaseLayout
+  title="O Centro Acadêmico (CAGP)"
+  description="História, governança, estatuto interno, diretorias executivas e prestação de contas do Centro Acadêmico de Gestão Pública da FAFICH/UFMG."
+>
   <PageHeader
     title="O Centro Acadêmico de Gestão Pública"
     subtitle="Entidade legítima de representação discente da FAFICH/UFMG, fundada na defesa da universidade pública, plural e com compromisso republicano."
@@ -36,35 +38,35 @@ const badges = [
 
   <!-- Sub-view 0: Visão Geral do Eixo 5 (O CAGP) -->
   <section id="ws-panel-v0" class="cagp-workspace-view" data-ws-panel="v0">
-    <AxisOverview axisId="cagp" />
+    <CagpCentralOverview />
   </section>
 
-  <!-- Sub-view 1: Princípios & Missão -->
-  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1" hidden>
-    <SobrePrincipios />
+  <!-- Sub-view 1: Princípios & História -->
+  <section id="ws-panel-v1" class="cagp-workspace-view space-y-4" data-ws-panel="v1" hidden>
+    <CagpHistoriaCore />
   </section>
 
   <!-- Sub-view 2: Governança & Estatuto -->
-  <section id="ws-panel-v2" class="cagp-workspace-view" data-ws-panel="v2" hidden>
-    <SobreGovernanca />
+  <section id="ws-panel-v2" class="cagp-workspace-view space-y-4" data-ws-panel="v2" hidden>
+    <CagpEstatutoCore />
   </section>
 
-  <!-- Sub-view 3: Esferas de Representação -->
-  <section id="ws-panel-v3" class="cagp-workspace-view" data-ws-panel="v3" hidden>
-    <SobreEsferas />
+  <!-- Sub-view 3: Gestão & Transparência -->
+  <section id="ws-panel-v3" class="cagp-workspace-view space-y-4" data-ws-panel="v3" hidden>
+    <CagpGestaoDiretoria />
   </section>
 
   <!-- Journey Navigation Trail -->
   <JourneyNav
     prev={{
-      title: 'Dúvidas Frequentes & Acessibilidade',
-      href: '/faq',
-      desc: 'Respostas regimentais sobre trancamento, pré-requisitos e auxílios.',
+      title: 'Acervo de Documentos Oficiais',
+      href: '/documentos',
+      desc: 'Atos normativos, requerimentos acadêmicos e formulários do Colegiado.',
     }}
     next={{
-      title: 'Gestão em Exercício & Equipe',
-      href: '/gestao',
-      desc: 'Conheça a equipe da gestão empossada, organograma das 7 diretorias e prestação de contas.',
+      title: 'Bússola Discente & Rotina do Campus',
+      href: '/',
+      desc: 'Retorne à página inicial do Super App discente com avisos em tempo real.',
     }}
   />
 </BaseLayout>

@@ -76,7 +76,7 @@ export const AcgGuardianCore: React.FC = () => {
               Guardião do Prazo Fatal de 120 Dias Corridos
             </h3>
             <p className="text-xs text-gray-800 mt-1 leading-relaxed m-0">
-              <strong>Art. 15, § 4º do Regulamento do Curso (Versão N-20229):</strong> Certificados de atividades complementares (AAC) devem ser obrigatoriamente protocolados no SEI Colegiado em até <strong>120 dias corridos</strong> após a emissão do documento. Após esse prazo, o aproveitamento prescreve e é indeferido pela Coordenação.
+              <strong>Art. 15, § 4º do Regulamento do Curso (Versão N-20229):</strong> Certificados de atividades complementares (AAC) devem ser obrigatoriamente protocolados perante o Colegiado de Gestão Pública em até <strong>120 dias corridos</strong> após a emissão do documento. Após esse prazo, o aproveitamento prescreve e é indeferido pela Coordenação.
             </p>
           </div>
         </div>

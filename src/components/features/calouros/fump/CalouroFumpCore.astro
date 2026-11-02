@@ -1,0 +1,109 @@
+---
+// src/components/features/calouros/fump/CalouroFumpCore.astro — Permanência e Assistência Estudantil (FUMP & PRAE)
+const niveis = [
+  {
+    nivel: 'Nível I e II',
+    status: 'Vulnerabilidade Alta / Muito Alta',
+    beneficios: 'Isenção integral de todas as refeições no RU (café, almoço e jantar), prioridade máxima em bolsas acadêmicas (PIBIC, Extensão, Monitoria) e auxílio moradia ou vaga na Moradia Universitária.',
+    badge: 'Isenção 100% RU',
+    highlight: true,
+  },
+  {
+    nivel: 'Nível III',
+    status: 'Vulnerabilidade Média',
+    beneficios: 'Subsidio parcial com redução significativa no valor das refeições, elegibilidade para auxílio financeiro suplementar e acesso a serviços de assistência médica/odontológica.',
+    badge: 'Subsídio Parcial',
+    highlight: false,
+  },
+  {
+    nivel: 'Nível IV',
+    status: 'Vulnerabilidade Básica',
+    beneficios: 'Acesso a atendimento de apoio psicológico, médico e odontológico, empréstimo de computadores e bolsas de projetos de graduação.',
+    badge: 'Apoio Saúde',
+    highlight: false,
+  },
+];
+---
+
+<div class="cagp-calouro-fump space-y-6 select-none text-[#0A0A0A]">
+  {/* Cabeçalho */}
+  <div class="p-4 bg-white border border-[#DFDBD2] rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+    <div>
+      <span class="text-[11px] font-['Oswald'] uppercase font-bold tracking-wider text-[#15803D]">
+        Permanência e Apoio Discente
+      </span>
+      <h3 class="font-['Oswald'] text-base font-bold uppercase text-[#0A0A0A] m-0">
+        Assistência Estudantil FUMP & PRAE/UFMG
+      </h3>
+      <p class="text-xs text-gray-600 mt-0.5 m-0">
+        Programas de auxílio financeiro, alimentação, transporte, moradia e saúde na UFMG.
+      </p>
+    </div>
+
+    <a
+      href="https://www.fump.ufmg.br/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="min-h-[44px] px-4 py-2 bg-[#15803D] hover:bg-[#0A0A0A] text-white rounded-lg text-xs font-['Oswald'] uppercase font-bold tracking-wider flex items-center justify-center gap-2 transition-all no-underline shrink-0 shadow-[2px_2px_0px_#0A0A0A]"
+    >
+      <i class="bi bi-box-arrow-up-right" aria-hidden="true" />
+      <span>Portal Oficial FUMP</span>
+    </a>
+  </div>
+
+  {/* Classificação Socioeconômica */}
+  <div class="space-y-3">
+    {niveis.map((n) => (
+      <div
+        class={`cagp-card p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-all ${
+          n.highlight
+            ? 'bg-[#F0FDF4] border-[#15803D] shadow-[2px_2px_0px_#15803D]'
+            : 'bg-white border-[#DFDBD2]'
+        }`}
+      >
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-2 mb-1 flex-wrap">
+            <h4 class="font-['Oswald'] text-sm font-bold uppercase text-[#0A0A0A] m-0">
+              {n.nivel}
+            </h4>
+            <span class="text-xs text-gray-500 font-medium">— {n.status}</span>
+            <span class={`px-2 py-0.5 rounded text-[10px] font-['Oswald'] uppercase font-bold ${
+              n.highlight ? 'bg-[#15803D] text-white' : 'bg-gray-100 text-gray-700 border border-[#DFDBD2]'
+            }`}>
+              {n.badge}
+            </span>
+          </div>
+          <p class="text-xs text-gray-700 leading-relaxed m-0">
+            {n.beneficios}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* Passo a Passo para Solicitação */}
+  <div class="p-4 bg-[#F7F5F0] border border-[#DFDBD2] rounded-xl space-y-3 shadow-xs">
+    <div class="flex items-center justify-between border-b border-[#DFDBD2] pb-2">
+      <h4 class="font-['Oswald'] text-sm font-bold uppercase text-[#0A0A0A] m-0 flex items-center gap-2">
+        <i class="bi bi-card-checklist text-[#8B1E2D]" aria-hidden="true" />
+        <span>Como Solicitar Assistência Estudantil na FUMP</span>
+      </h4>
+      <span class="text-xs text-gray-500 font-mono">Processo 100% Online</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-gray-700">
+      <div class="p-3 bg-white border border-[#DFDBD2] rounded-lg">
+        <strong class="text-[#0A0A0A] block mb-1">1. Preencher Questionário:</strong>
+        Acesse a Área do Aluno no site da FUMP e responda ao questionário socioeconômico com a renda bruta familiar.
+      </div>
+      <div class="p-3 bg-white border border-[#DFDBD2] rounded-lg">
+        <strong class="text-[#0A0A0A] block mb-1">2. Anexar Documentos:</strong>
+        Envie cópias de comprovantes de renda, comprovante de residência e documentação civil de todos os membros do núcleo familiar.
+      </div>
+      <div class="p-3 bg-white border border-[#DFDBD2] rounded-lg">
+        <strong class="text-[#0A0A0A] block mb-1">3. Acompanhar Parecer:</strong>
+        A equipe de assistentes sociais divulga seu nível no sistema em até 30 dias úteis.
+      </div>
+    </div>
+  </div>
+</div>

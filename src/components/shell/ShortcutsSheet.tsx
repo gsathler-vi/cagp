@@ -184,11 +184,11 @@ export const ShortcutsSheet: React.FC<ShortcutsSheetProps> = ({ isOpen, onClose 
       </div>
 
       {/* Footer Fixo da Sheet com Botões de Ação */}
-      <div className="border-t border-[#DFDBD2] p-4 bg-white flex items-center justify-between gap-3">
+      <div className="border-t border-[#DFDBD2] p-4 bg-white flex flex-wrap items-center justify-between gap-3">
         <button
           type="button"
           onClick={handleReset}
-          className="px-3 py-2 text-xs font-['Oswald'] uppercase font-bold text-gray-600 hover:text-[#0A0A0A] bg-[#F7F5F0] hover:bg-gray-200 rounded-[4px] border border-[#DFDBD2] transition-colors cursor-pointer"
+          className="min-h-[44px] px-3 py-2 text-xs font-['Oswald'] uppercase font-bold text-gray-600 hover:text-[#0A0A0A] bg-[#F7F5F0] hover:bg-gray-200 rounded-[6px] border border-[#DFDBD2] transition-colors cursor-pointer"
         >
           Restaurar 5 Eixos
         </button>
@@ -197,7 +197,7 @@ export const ShortcutsSheet: React.FC<ShortcutsSheetProps> = ({ isOpen, onClose 
           <button
             type="button"
             onClick={onClose}
-            className="px-3 py-2 text-xs font-['Oswald'] uppercase font-bold text-gray-600 hover:text-black rounded-[4px] transition-colors cursor-pointer"
+            className="min-h-[44px] px-3 py-2 text-xs font-['Oswald'] uppercase font-bold text-gray-600 hover:text-black rounded-[6px] transition-colors cursor-pointer"
           >
             Cancelar
           </button>
@@ -205,7 +205,7 @@ export const ShortcutsSheet: React.FC<ShortcutsSheetProps> = ({ isOpen, onClose 
             type="button"
             onClick={handleSave}
             disabled={!isValidCount}
-            className={`px-4 py-2 text-xs font-['Oswald'] uppercase font-bold text-white rounded-[4px] border-2 border-[#0A0A0A] transition-all cursor-pointer ${
+            className={`min-h-[44px] px-4 py-2 text-xs font-['Oswald'] uppercase font-bold text-white rounded-[6px] border-2 border-[#0A0A0A] transition-all cursor-pointer ${
               isValidCount
                 ? 'bg-[#8B1E2D] hover:bg-[#9E2424] shadow-[2px_2px_0_#0A0A0A] active:scale-95'
                 : 'bg-gray-400 opacity-50 cursor-not-allowed'

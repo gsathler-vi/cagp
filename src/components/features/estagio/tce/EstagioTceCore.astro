@@ -1,0 +1,153 @@
+---
+// src/components/features/estagio/tce/EstagioTceCore.astro — Tutorial Visual do Termo de Compromisso de Estágio (TCE)
+import { asset } from '../../../../lib/paths';
+
+const etapasTCE = [
+  {
+    num: 1,
+    titulo: '1. Dados da Entidade Concedente',
+    icon: 'bi-building',
+    desc: 'Preencha a Razão Social completa, CNPJ, endereço oficial do órgão concedente (ministério, secretaria, fundação, ONG ou empresa conveniada) e os dados do representante legal signatário.',
+  },
+  {
+    num: 2,
+    titulo: '2. Identificação Acadêmica do Discente',
+    icon: 'bi-person-vcard',
+    desc: 'Insira seus dados cadastrais (CPF, RG, endereço) e declare expressamente o curso como Bacharelado em Gestão Pública, o turno Noturno e o número de matrícula no SIGA.',
+  },
+  {
+    num: 3,
+    titulo: '3. Interveniência Institucional FAFICH/UFMG',
+    icon: 'bi-bank',
+    desc: 'Identifique a Faculdade de Filosofia e Ciências Humanas e o Colegiado de Gestão Pública. A assinatura é firmada pela Coordenação do Curso em conjunto com o docente orientador do DCP.',
+  },
+  {
+    num: 4,
+    titulo: '4. Plano de Atividades & Seguro Obrigatório',
+    icon: 'bi-shield-shaded',
+    desc: 'Anexe o Plano de Atividades com tarefas compatíveis com o perfil de Gestão Pública e informe a apólice do Seguro contra Acidentes Pessoais contratada pela concedente (Lei nº 11.788/2008).',
+  },
+];
+
+const docs = [
+  {
+    titulo: 'TCE com Convênio (PDF)',
+    desc: 'Para órgãos com convênio ativo com a UFMG',
+    link: '/documentos/estagio-modelo-termo-de-compromisso-com-convenio.pdf',
+    ext: 'PDF',
+  },
+  {
+    titulo: 'TCE com Convênio (DOCX)',
+    desc: 'Versão editável para preenchimento em computador',
+    link: '/documentos/estagio-modelo-termo-de-compromisso-com-convenio.docx',
+    ext: 'DOCX',
+  },
+  {
+    titulo: 'TCE sem Convênio (PDF)',
+    desc: 'Para estágios via agentes de integração',
+    link: '/documentos/estagio-modelo-termo-de-compromisso-sem-vinculo.pdf',
+    ext: 'PDF',
+  },
+  {
+    titulo: 'Manual de Estágio FAFICH (PDF)',
+    desc: 'Orientações oficiais de estágio da diretoria da FAFICH',
+    link: '/documentos/estagio-manual-orientacoes-fafich.pdf',
+    ext: 'PDF',
+  },
+];
+---
+
+<div class="cagp-estagio-tce space-y-6 select-none text-[#0A0A0A]">
+  {/* Cabeçalho */}
+  <div class="p-4 bg-white border border-[#DFDBD2] rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+    <div>
+      <span class="text-[11px] font-['Oswald'] uppercase font-bold tracking-wider text-[#8B1E2D]">
+        Guia Visual Passo a Passo
+      </span>
+      <h3 class="font-['Oswald'] text-base font-bold uppercase text-[#0A0A0A] m-0">
+        Preenchimento do Termo de Compromisso de Estágio (TCE)
+      </h3>
+      <p class="text-xs text-gray-600 mt-0.5 m-0">
+        Documento jurídico obrigatório pela Lei nº 11.788/2008 para formalizar Estágio Obrigatório ou Não-Obrigatório.
+      </p>
+    </div>
+
+    <a
+      href={asset('/documentos/estagio-modelo-termo-de-compromisso-com-convenio.pdf')}
+      download
+      class="min-h-[44px] px-4 py-2 bg-[#8B1E2D] hover:bg-[#0A0A0A] text-white rounded-lg text-xs font-['Oswald'] uppercase font-bold tracking-wider flex items-center justify-center gap-2 transition-all no-underline shrink-0 shadow-[2px_2px_0px_#0A0A0A]"
+    >
+      <i class="bi bi-file-earmark-arrow-down-fill" aria-hidden="true" />
+      <span>Baixar TCE Padrão (PDF)</span>
+    </a>
+  </div>
+
+  {/* Tutorial com Imagem Anotada e Pins */}
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+    <div class="cagp-doc-preview-wrapper" role="region" aria-label="Visualização anotada do modelo de TCE">
+      <img
+        src={asset('/imagens/tutoriais/print-termo-estagio-1.png')}
+        alt="Primeira folha do modelo oficial de Termo de Compromisso de Estágio da UFMG com demarcações dos campos de preenchimento"
+        class="cagp-doc-preview-img"
+        loading="lazy"
+      />
+
+      <div class="cagp-doc-box" style="top: 36%; left: 5%; width: 90%; height: 30.69%;" aria-hidden="true"></div>
+      <button type="button" class="cagp-doc-pin" style="top: 36%; left: 5%;" aria-label="Ponto 1: Instituição Concedente">1</button>
+
+      <div class="cagp-doc-box" style="top: 67%; left: 5%; width: 90%; height: 26.7%;" aria-hidden="true"></div>
+      <button type="button" class="cagp-doc-pin" style="top: 67%; left: 5%;" aria-label="Ponto 2: Dados do Estudante">2</button>
+    </div>
+
+    <div class="space-y-3">
+      {etapasTCE.map((et) => (
+        <div class="cagp-card p-3.5 bg-white border border-[#DFDBD2] rounded-xl flex items-start gap-3 shadow-xs">
+          <span class="w-8 h-8 rounded-lg bg-[#8B1E2D] text-white flex items-center justify-center font-['Oswald'] text-sm font-bold shrink-0 shadow-[1px_1px_0px_#0A0A0A]">
+            {et.num}
+          </span>
+          <div class="min-w-0">
+            <h4 class="font-['Oswald'] text-xs font-bold uppercase text-[#0A0A0A] leading-tight m-0 mb-1">
+              {et.titulo}
+            </h4>
+            <p class="text-xs text-gray-700 leading-relaxed m-0">
+              {et.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Acervo de Minutas e Modelos Oficiais */}
+  <div class="p-4 bg-[#F7F5F0] border border-[#DFDBD2] rounded-xl space-y-3 shadow-xs">
+    <div class="flex items-center justify-between border-b border-[#DFDBD2] pb-2">
+      <h4 class="font-['Oswald'] text-sm font-bold uppercase text-[#0A0A0A] m-0 flex items-center gap-2">
+        <i class="bi bi-folder-symlink text-[#8B1E2D]" aria-hidden="true" />
+        <span>Minutas e Modelos Oficiais de Estágio</span>
+      </h4>
+      <span class="text-xs text-gray-500 font-mono">Downloads Diretos</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {docs.map((d) => (
+        <a
+          href={asset(d.link)}
+          download
+          class="p-3 bg-white hover:bg-[#FBF8F3] border border-[#DFDBD2] hover:border-[#0A0A0A] rounded-lg flex items-center justify-between gap-3 transition-all no-underline text-[#0A0A0A] shadow-xs"
+        >
+          <div class="min-w-0">
+            <div class="font-['Oswald'] text-xs font-bold uppercase text-[#0A0A0A] truncate">
+              {d.titulo}
+            </div>
+            <div class="text-[11px] text-gray-500 truncate mt-0.5">
+              {d.desc}
+            </div>
+          </div>
+          <span class="px-2 py-1 rounded bg-[#0A0A0A] text-white font-mono text-[10px] font-bold shrink-0">
+            {d.ext}
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>

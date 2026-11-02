@@ -1,12 +1,13 @@
 ---
-// documentos.astro - A3 Catálogo: 3 sub-views (Atos · Formulários · DRCA)
+// documentos.astro — Central de Acervo de Documentos Oficiais (Eixo 4)
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/ui/PageHeader.astro';
 import SegmentedControl from '../components/ui/SegmentedControl.astro';
 import JourneyNav from '../components/ui/JourneyNav.astro';
-import DocumentosTutorialDrca from '../components/documentos/DocumentosTutorialDrca.astro';
-import AxisOverview from '../components/shell/AxisOverview.astro';
-import { asset, route } from '../lib/paths';
+import DocumentosCentralOverview from '../components/features/documentos/DocumentosCentralOverview.astro';
+import DocumentosAtosRegulamentares from '../components/features/documentos/atos/DocumentosAtosRegulamentares.astro';
+import DocumentosFormulariosOficiais from '../components/features/documentos/formularios/DocumentosFormulariosOficiais.astro';
+import DocumentosDrcaPrazos from '../components/features/documentos/drca/DocumentosDrcaPrazos.astro';
 
 const tabs = [
   { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Acervo', hash: '#visao-geral' },
@@ -17,45 +18,16 @@ const tabs = [
 
 const badges = [
   { label: 'Atos Normativos Oficiais', variant: 'red' as const, icon: 'bi-file-earmark-text-fill' },
-  { label: 'Formulários SEI / Colegiado', variant: 'dark' as const, icon: 'bi-journal-check' },
+  { label: 'Formulários Colegiado N-20229', variant: 'dark' as const, icon: 'bi-journal-check' },
   { label: 'Processos DRCA / UFMG', variant: 'blue' as const, icon: 'bi-archive-fill' },
   { label: 'Offline & Custo Zero', variant: 'gold' as const, icon: 'bi-cloud-check-fill' },
 ];
-
-const atos = [
-  { title: 'Projeto Pedagógico do Curso (PPC 2020)', file: 'ppc-gestao-publica-ufmg.pdf', readerSlug: 'ppc-gestao-publica-ufmg', desc: 'Estrutura completa de 3.000h, competências e perfil de formação.', badge: 'Documento Mestre' },
-  { title: 'Regulamento do Curso Versão N-20229', file: 'regulamento-gestao-publica-ufmg.pdf', readerSlug: 'regulamento-gestao-publica-ufmg', desc: 'Normas de integralização, AAC, estágio e culminância de TCC.', badge: 'Norma Vigente' },
-  { title: 'Regimento Interno do CAGP (14/10/2024)', file: 'regimento-interno-cagp-ufmg.pdf', readerSlug: 'regimento-interno-cagp-ufmg', desc: 'Estatuto soberano aprovado pela Assembleia Geral Discente.', badge: 'Entidade Discente' },
-  { title: 'Matriz Percurso 01-01 (Bacharelado Geral)', file: 'percurso-bacharelado-nucleo-geral.pdf', readerSlug: 'percurso-bacharelado-nucleo-geral', desc: '1.020h em optativas com máxima flexibilidade curricular.', badge: 'Percurso 01-01' },
-  { title: 'Matriz Percurso 01-02 (Núcleo Complementar)', file: 'percurso-bacharelado-nucleo-complementar.pdf', readerSlug: 'percurso-bacharelado-nucleo-complementar', desc: '300h em Formação Transversal ou Aberta (FCA).', badge: 'Percurso 01-02' },
-  { title: 'Matriz Percurso 01-03 (Núcleo Avançado Pós)', file: 'percurso-bacharelado-nucleo-avancado.pdf', readerSlug: 'percurso-bacharelado-nucleo-avancado', desc: 'Disciplinas de mestrado/doutorado no PPGCP/FAFICH.', badge: 'Percurso 01-03' },
-  { title: 'Ementário Oficial do Curso de Gestão Pública', file: 'ementario-gestao-publica-ufmg.pdf', readerSlug: 'ementario-gestao-publica-ufmg', desc: 'Ementas, pré-requisitos e créditos das 27 obrigatórias e 68 optativas.', badge: 'Ementário Geral' },
-  { title: 'Transcrição Recepção Ingressantes 2024/2', file: 'recepcao-ingressantes-2024-2.pdf', readerSlug: 'transcricao-recepcao-ingressantes-2024-2', desc: 'Apresentação oficial de acolhimento discente pela Coordenação (49 slides).', badge: 'Acolhimento Calouro' },
-  { title: 'Resolução CEPE 06/2019 (Aproveitamento)', file: 'resolucao-cepe-06-2019-aproveitamento-estudos.pdf', desc: 'Aproveitamento de estudos com prazo fatal até o final do 2º período.', badge: 'CEPE / UFMG' },
-];
-
-const formularios = [
-  { title: 'Requerimento de AAC / Horas (N-20229)', file: 'requerimento-atividade-integralizadora-credito-v20229.pdf', desc: 'Protocolo de certificados com limite fatal de 120 dias.', badge: 'SEI Colegiado' },
-  { title: 'Dispensa de Estágio Art. 41 (Requerimento)', file: 'estagio-requerimento-integralizacao-experiencia-profissional.pdf', desc: 'Integralização por experiência profissional como servidor ou ONG.', badge: 'Art. 41' },
-  { title: 'Relatório de Atividades Art. 41', file: 'estagio-relatorio-atividades-experiencia-profissional.pdf', desc: 'Comprovação semestral de atribuições para nota de estágio.', badge: 'Art. 41' },
-  { title: 'Termo de Aceite de Orientador de TCC', file: 'termo-aceite-orientador-tcc.pdf', desc: 'Requisito obrigatório para matrícula em DCP 089 (9ºP).', badge: 'TCC 9ºP' },
-  { title: 'Requerimento de Matrícula Formação Livre', file: 'requerimento-matricula-formacao-livre.pdf', desc: 'Protocolo para cursar 120h em outras unidades da UFMG.', badge: '120h Livre' },
-  { title: 'Termo de Compromisso de Estágio com Convênio', file: 'estagio-modelo-termo-de-compromisso-com-convenio.pdf', desc: 'Modelo oficial com interveniência para órgãos conveniados.', badge: 'TCE Obrigatório' },
-  { title: 'Termo de Compromisso de Estágio sem Vínculo', file: 'estagio-modelo-termo-de-compromisso-sem-vinculo.pdf', desc: 'Modelo para órgãos via agentes integradores de estágio.', badge: 'TCE Geral' },
-  { title: 'Plano de Atividades de Estágio', file: 'estagio-modelo-plano-de-atividades.pdf', desc: 'Cronograma e plano assinado para deferimento no Colegiado.', badge: 'Estágio' },
-  { title: 'Relatório Final de Estágio Supervisionado', file: 'estagio-modelo-relatorio-final.pdf', desc: 'Entrega final para integralização de DCP 135 ou DCP 136.', badge: 'Estágio' },
-];
-
-const drca = [
-  { title: 'Requerimento Trancamento Parcial de Matrícula', file: 'requerimento-trancamento-parcial-matricula.pdf', desc: 'Trancamento de disciplinas específicas dentro do calendário.', badge: 'DRCA' },
-  { title: 'Requerimento Trancamento Total com Justificativa', file: 'requerimento-trancamento-total-matricula.pdf', desc: 'Trancamento geral do semestre com documentação comprobatória.', badge: 'DRCA' },
-  { title: 'Requerimento de Regime Especial (RAEP)', file: 'requerimento-regime-especial-graduacao.pdf', desc: 'Amparo para tratamento de saúde e licença maternidade/paternidade.', badge: 'RAEP' },
-  { title: 'Requerimento de Inclusão de Nome Social', file: 'requerimento-inclusao-nome-social.pdf', desc: 'Garantia institucional de uso do nome social nos registros da UFMG.', badge: 'Direitos' },
-  { title: 'Requerimento de Aproveitamento de Estudos', file: 'requerimento-aproveitamento-de-estudos-drca.pdf', desc: 'Submissão de disciplinas cursadas anteriormente (até o 2º período).', badge: 'Res. 06/2019' },
-];
 ---
 
-<BaseLayout title="Acervo de Documentos Oficiais" description="Atos normativos, requerimentos acadêmicos, termos de estágio e processos do DRCA do curso de Gestão Pública UFMG.">
+<BaseLayout
+  title="Acervo de Documentos Oficiais"
+  description="Atos normativos, requerimentos acadêmicos, termos de estágio e processos do DRCA do curso de Gestão Pública UFMG."
+>
   <PageHeader
     title="Acervo de Documentos & Modelos"
     subtitle="Cofre offline de atos normativos, matrizes curriculares e formulários oficiais da FAFICH/UFMG em PDF com integridade factual preservada."
@@ -66,138 +38,22 @@ const drca = [
 
   <!-- Sub-view 0: Visão Geral do Eixo 4 (Acervo) -->
   <section id="ws-panel-v0" class="cagp-workspace-view" data-ws-panel="v0">
-    <AxisOverview axisId="acervo" />
+    <DocumentosCentralOverview />
   </section>
-
-  <!-- Campo de Busca em Tempo Real -->
-  <div class="mb-3 cagp-card p-3 bg-white">
-    <label for="doc-search-input" class="sr-only">Buscar documento oficial</label>
-    <div class="relative">
-      <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" aria-hidden="true"></i>
-      <input
-        type="search"
-        id="doc-search-input"
-        placeholder="Buscar por nome, assunto ou norma (ex: TCC, Art. 41, PPC, trancamento)..."
-        class="w-full bg-[#F7F5F0] border border-[#DFDBD2] pl-9 pr-3 py-2.5 rounded-[4px] text-base sm:text-xs text-[#0A0A0A] placeholder-gray-500 focus:border-[#8B1E2D] focus:bg-white focus:outline-none"
-      />
-    </div>
-  </div>
 
   <!-- Sub-view 1: Atos Normativos -->
-  <section id="ws-panel-v1" class="cagp-workspace-view space-y-2" data-ws-panel="v1" hidden>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-      {atos.map((doc, idx) => (
-        <div class="doc-card cagp-card cagp-stagger-enter p-3 bg-white flex items-center justify-between gap-3 transition-all" style={`--stagger-index: ${idx}`} data-search={`${doc.title} ${doc.desc} ${doc.badge}`.toLowerCase()}>
-          <div class="flex items-start gap-2.5 min-w-0">
-            <div class="w-8 h-8 rounded-[4px] bg-[#8B1E2D]/10 text-[#8B1E2D] border border-[#8B1E2D]/20 flex items-center justify-center shrink-0 shadow-[1px_1px_0_#0A0A0A] mt-0.5">
-              <i class="bi bi-file-earmark-ruled-fill text-base" aria-hidden="true" />
-            </div>
-            <div class="min-w-0">
-              <div class="flex items-center gap-1.5 mb-0.5 flex-wrap">
-                <span class="cagp-badge cagp-badge-red text-xs font-mono">{doc.badge}</span>
-                <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] truncate">{doc.title}</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-tight">{doc.desc}</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-1.5 shrink-0">
-            {doc.readerSlug && (
-              <a
-                href={route(`/documentos/${doc.readerSlug}`)}
-                class="cagp-btn-secondary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1"
-                title="Ler transcrição integral em Markdown"
-              >
-                <i class="bi bi-eye" aria-hidden="true" />
-                <span>Ler</span>
-              </a>
-            )}
-            <a href={asset(`/documentos/${doc.file}`)} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
-              <i class="bi bi-download" aria-hidden="true" />
-              <span>PDF</span>
-            </a>
-          </div>
-        </div>
-      ))}
-    </div>
+  <section id="ws-panel-v1" class="cagp-workspace-view" data-ws-panel="v1" hidden>
+    <DocumentosAtosRegulamentares />
   </section>
 
-  <!-- Sub-view 2: Formulários & Requerimentos -->
-  <section id="ws-panel-v2" class="cagp-workspace-view space-y-2" data-ws-panel="v2" hidden>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-      {formularios.map((doc, idx) => (
-        <div class="doc-card cagp-card cagp-stagger-enter p-3 bg-white flex items-center justify-between gap-3 transition-all" style={`--stagger-index: ${idx}`} data-search={`${doc.title} ${doc.desc} ${doc.badge}`.toLowerCase()}>
-          <div class="flex items-start gap-2.5 min-w-0">
-            <div class="w-8 h-8 rounded-[4px] bg-[#0A0A0A]/10 text-[#0A0A0A] border border-[#0A0A0A]/20 flex items-center justify-center shrink-0 shadow-[1px_1px_0_#0A0A0A] mt-0.5">
-              <i class="bi bi-file-earmark-check-fill text-base" aria-hidden="true" />
-            </div>
-            <div class="min-w-0">
-              <div class="flex items-center gap-1.5 mb-0.5 flex-wrap">
-                <span class="cagp-badge cagp-badge-dark text-xs font-mono">{doc.badge}</span>
-                <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] truncate">{doc.title}</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-tight">{doc.desc}</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-1.5 shrink-0">
-            {doc.readerSlug && (
-              <a
-                href={route(`/documentos/${doc.readerSlug}`)}
-                class="cagp-btn-secondary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1"
-                title="Ler transcrição integral em Markdown"
-              >
-                <i class="bi bi-eye" aria-hidden="true" />
-                <span>Ler</span>
-              </a>
-            )}
-            <a href={asset(`/documentos/${doc.file}`)} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
-              <i class="bi bi-download" aria-hidden="true" />
-              <span>PDF</span>
-            </a>
-          </div>
-        </div>
-      ))}
-    </div>
+  <!-- Sub-view 2: Formulários Oficiais -->
+  <section id="ws-panel-v2" class="cagp-workspace-view" data-ws-panel="v2" hidden>
+    <DocumentosFormulariosOficiais />
   </section>
 
   <!-- Sub-view 3: Processos DRCA & Prazos -->
-  <section id="ws-panel-v3" class="cagp-workspace-view space-y-4" data-ws-panel="v3" hidden>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-      {drca.map((doc, idx) => (
-        <div class="doc-card cagp-card cagp-stagger-enter p-3 bg-white flex items-center justify-between gap-3 transition-all" style={`--stagger-index: ${idx}`} data-search={`${doc.title} ${doc.desc} ${doc.badge}`.toLowerCase()}>
-          <div class="flex items-start gap-2.5 min-w-0">
-            <div class="w-8 h-8 rounded-[4px] bg-[#005A9C]/10 text-[#005A9C] border border-[#005A9C]/20 flex items-center justify-center shrink-0 shadow-[1px_1px_0_#0A0A0A] mt-0.5">
-              <i class="bi bi-file-earmark-text-fill text-base" aria-hidden="true" />
-            </div>
-            <div class="min-w-0">
-              <div class="flex items-center gap-1.5 mb-0.5 flex-wrap">
-                <span class="cagp-badge cagp-badge-blue text-xs font-mono">{doc.badge}</span>
-                <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] truncate">{doc.title}</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-tight">{doc.desc}</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-1.5 shrink-0">
-            {doc.readerSlug && (
-              <a
-                href={route(`/documentos/${doc.readerSlug}`)}
-                class="cagp-btn-secondary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1"
-                title="Ler transcrição integral em Markdown"
-              >
-                <i class="bi bi-eye" aria-hidden="true" />
-                <span>Ler</span>
-              </a>
-            )}
-            <a href={asset(`/documentos/${doc.file}`)} download class="cagp-btn-primary text-xs py-1.5 px-2.5 whitespace-nowrap no-underline inline-flex items-center gap-1 shrink-0">
-              <i class="bi bi-download" aria-hidden="true" />
-              <span>PDF</span>
-            </a>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <!-- Tutorial Passo a Passo do Requerimento DRCA -->
-    <DocumentosTutorialDrca />
+  <section id="ws-panel-v3" class="cagp-workspace-view" data-ws-panel="v3" hidden>
+    <DocumentosDrcaPrazos />
   </section>
 
   <!-- Journey Navigation Trail -->
@@ -205,33 +61,12 @@ const drca = [
     prev={{
       title: 'Trabalho de Conclusão de Curso (180h)',
       href: '/tcc',
-      desc: 'Modalidades e normas de culminância de TCC.',
+      desc: 'Modalidades regimentais, termo de aceite e normas de defesa.',
     }}
     next={{
-      title: 'Dúvidas Frequentes (FAQ Regimental)',
-      href: '/faq',
-      desc: 'Respostas rápidas sobre trancamento, quebra de pré-requisito, EaD e aproveitamento.',
+      title: 'O Centro Acadêmico (CAGP)',
+      href: '/sobre',
+      desc: 'História dos Candangos, regimento interno e representação discente.',
     }}
   />
 </BaseLayout>
-
-<script>
-  function setupDocSearch() {
-    const input = document.getElementById('doc-search-input') as HTMLInputElement | null;
-    const cards = document.querySelectorAll<HTMLElement>('.doc-card');
-
-    input?.addEventListener('input', () => {
-      const q = (input.value || '').toLowerCase().trim();
-      cards.forEach((card) => {
-        const text = card.getAttribute('data-search') || '';
-        if (!q || text.includes(q)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  }
-
-  document.addEventListener('astro:page-load', setupDocSearch);
-</script>

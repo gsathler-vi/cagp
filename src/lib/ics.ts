@@ -103,8 +103,8 @@ export function downloadAac120dIcs(
   downloadIcs(
     {
       title: `🚨 Prazo Fatal 120 Dias AAC: ${certTitle}`,
-      description: `Art. 15, § 4º do Regulamento do Curso N-20229: Prazo fatal de 120 dias corridos para protocolar o certificado no Colegiado (Sala F-2039) ou via SEI/UFMG.`,
-      location: 'Secretaria do Colegiado Sala F-2039 / SEI UFMG',
+      description: `Art. 15, § 4º do Regulamento do Curso N-20229: Prazo fatal de 120 dias corridos para protocolar o certificado no Colegiado (Sala F-2039) ou via e-mail coordgestaopublica@gmail.com.`,
+      location: 'Secretaria do Colegiado Sala F-2039 (coordgestaopublica@gmail.com)',
       startDate: start,
       endDate: end,
     },

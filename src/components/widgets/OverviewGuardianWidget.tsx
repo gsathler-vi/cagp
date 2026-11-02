@@ -48,7 +48,7 @@ export const OverviewGuardianWidget: React.FC = () => {
               <i className="bi bi-alarm-fill" aria-hidden="true" />
               <span>Prazo Fatal Regimental:</span>
             </div>
-            Certificados de AAC devem ser protocolados no SEI Colegiado em até <strong>120 dias corridos</strong> da emissão.
+            Certificados de AAC devem ser protocolados perante o Colegiado de Gestão Pública em até <strong>120 dias corridos</strong> da emissão.
           </div>
 
           {certs.length > 0 ? (

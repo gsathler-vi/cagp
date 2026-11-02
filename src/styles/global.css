@@ -98,13 +98,15 @@ button, a, input, select {
 .cagp-workspace-tabs[data-tab-count="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .cagp-workspace-tabs[data-tab-count="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .cagp-workspace-tabs[data-tab-count="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cagp-workspace-tabs[data-tab-count="5"] { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 
 .cagp-workspace-tab {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  padding: 0.55rem 0.35rem;
+  min-height: 44px;
+  padding: 0.55rem 0.5rem;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.85rem;
@@ -118,6 +120,7 @@ button, a, input, select {
   overflow: hidden;
   text-overflow: ellipsis;
   transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: manipulation;
 }
 .cagp-workspace-tab:hover {
   background-color: var(--color-cagp-cream);

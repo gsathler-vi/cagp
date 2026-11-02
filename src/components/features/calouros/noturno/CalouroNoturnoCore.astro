@@ -1,0 +1,139 @@
+---
+// src/components/features/calouros/noturno/CalouroNoturnoCore.astro — Rotina Noturna, RU II e Transporte
+const timeline = [
+  {
+    hora: '17h30',
+    titulo: 'Abertura do RU II Setorial',
+    desc: 'Início do jantar subsidiado aos fundos da FAFICH (próximo à FACE e ECI). Cardápio nutritivo com opção vegetariana.',
+    icon: 'bi-cup-hot-fill',
+    badge: '17h30 – 19h00',
+  },
+  {
+    hora: '18h15',
+    titulo: 'Horário de Ouro para Jantar',
+    desc: 'Pico mínimo de filas no RU II. Chegar às 18h15 garante jantar tranquilo e tempo para subir aos auditórios da FAFICH sem atraso.',
+    icon: 'bi-star-fill',
+    badge: 'Dica Veterana',
+    highlight: true,
+  },
+  {
+    hora: '19h00',
+    titulo: 'Início das Aulas no Turno Noturno',
+    desc: 'Início pontual do 1º bloco de aulas nas salas e auditórios da FAFICH (1º e 2º andares).',
+    icon: 'bi-mortarboard-fill',
+    badge: '19h00 – 20h40',
+  },
+  {
+    hora: '20h40',
+    titulo: 'Intervalo & Convivência',
+    desc: 'Intervalo de 10 minutos. Ponto de encontro na cantina da FAFICH, centro acadêmico e xerox.',
+    icon: 'bi-chat-dots-fill',
+    badge: '20h40 – 20h50',
+  },
+  {
+    hora: '20h50',
+    titulo: 'Segundo Bloco de Aulas',
+    desc: 'Continuidade dos seminários, debates e oficinas de laboratório.',
+    icon: 'bi-book-half',
+    badge: '20h50 – 22h30',
+  },
+  {
+    hora: '22h30',
+    titulo: 'Término das Aulas & Encerramento',
+    desc: 'Final do turno noturno. Saída em grupos em direção às paradas dos ônibus circulares e pontos da Av. Antônio Carlos.',
+    icon: 'bi-moon-stars-fill',
+    badge: '22h30',
+  },
+  {
+    hora: '22h45',
+    titulo: 'Último Circular Noturno',
+    desc: 'Partida do último ônibus Circular Interno da FAFICH para a portaria da Av. Antônio Carlos e Av. Carlos Luz (Catalão).',
+    icon: 'bi-bus-front-fill',
+    badge: 'Último Carro',
+    highlight: true,
+  },
+];
+---
+
+<div class="cagp-calouro-noturno space-y-6 select-none text-[#0A0A0A]">
+  {/* Cabeçalho */}
+  <div class="p-4 bg-white border border-[#DFDBD2] rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+    <div>
+      <span class="text-[11px] font-['Oswald'] uppercase font-bold tracking-wider text-[#8B1E2D]">
+        Guia Operacional do Turno Noturno
+      </span>
+      <h3 class="font-['Oswald'] text-base font-bold uppercase text-[#0A0A0A] m-0">
+        Linha do Tempo Noturna: Das 17h30 às 22h45
+      </h3>
+      <p class="text-xs text-gray-600 mt-0.5 m-0">
+        Horários operacionais essenciais para quem estuda à noite na Pampulha.
+      </p>
+    </div>
+    <span class="px-2.5 py-1 rounded bg-[#0A0A0A] text-white font-mono text-xs font-bold shrink-0">
+      Turno Noturno
+    </span>
+  </div>
+
+  {/* Cronograma Noturno */}
+  <div class="space-y-3">
+    {timeline.map((item) => (
+      <div
+        class={`cagp-card p-3.5 rounded-xl border flex items-start gap-3.5 transition-all ${
+          item.highlight
+            ? 'bg-[#FDF8F8] border-[#8B1E2D] shadow-[2px_2px_0px_#8B1E2D]'
+            : 'bg-white border-[#DFDBD2]'
+        }`}
+      >
+        <span
+          class={`w-12 h-10 rounded-lg flex items-center justify-center font-mono text-xs font-bold shrink-0 ${
+            item.highlight ? 'bg-[#8B1E2D] text-white shadow-[1px_1px_0px_#0A0A0A]' : 'bg-[#F7F5F0] text-[#0A0A0A] border border-[#DFDBD2]'
+          }`}
+        >
+          {item.hora}
+        </span>
+
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-2 mb-1 flex-wrap">
+            <h4 class="font-['Oswald'] text-sm font-bold uppercase text-[#0A0A0A] m-0">
+              {item.titulo}
+            </h4>
+            <span class={`px-2 py-0.5 rounded text-[10px] font-['Oswald'] uppercase font-bold ${
+              item.highlight ? 'bg-[#8B1E2D] text-white' : 'bg-gray-100 text-gray-600 border border-[#DFDBD2]'
+            }`}>
+              {item.badge}
+            </span>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed m-0">
+            {item.desc}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* Dicas de Segurança e Deslocamento na Pampulha */}
+  <div class="p-4 bg-[#F7F5F0] border border-[#DFDBD2] rounded-xl space-y-3 shadow-xs">
+    <div class="flex items-center justify-between border-b border-[#DFDBD2] pb-2">
+      <h4 class="font-['Oswald'] text-sm font-bold uppercase text-[#0A0A0A] m-0 flex items-center gap-2">
+        <i class="bi bi-shield-fill-check text-[#15803D]" aria-hidden="true" />
+        <span>Dicas de Segurança e Deslocamento dos Veteranos</span>
+      </h4>
+      <span class="text-xs text-gray-500 font-mono">Dica de Ouro</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-gray-700">
+      <div class="p-3 bg-white border border-[#DFDBD2] rounded-lg">
+        <strong class="text-[#0A0A0A] block mb-1">Caminhe em Grupos:</strong>
+        Ao sair da aula às 22h30, desça em grupos com colegas de turma até o ponto de ônibus ou estacionamento da FAFICH.
+      </div>
+      <div class="p-3 bg-white border border-[#DFDBD2] rounded-lg">
+        <strong class="text-[#0A0A0A] block mb-1">Rotas Iluminadas:</strong>
+        Prefira o trajeto principal que passa pela frente da ECI e FACE até a Av. Reitor Mendes Pimentel.
+      </div>
+      <div class="p-3 bg-white border border-[#DFDBD2] rounded-lg">
+        <strong class="text-[#0A0A0A] block mb-1">Guarda Universitária:</strong>
+        Em qualquer emergência, contate a Guarda da UFMG pelo ramal interno ou acione as viaturas de ronda no anel do campus.
+      </div>
+    </div>
+  </div>
+</div>

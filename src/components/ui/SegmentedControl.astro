@@ -133,16 +133,21 @@ const { tabs, defaultTab = tabs[0]?.id } = Astro.props;
       });
 
       // Match current window location hash on load
-      const hash = window.location.hash;
-      if (hash === '#visao-completa') {
-        activate('__all__', false);
-      } else if (hash) {
-        const matchingTab = Array.from(tabs).find((t) => t.getAttribute('data-ws-hash') === hash);
-        if (matchingTab) {
-          const id = matchingTab.getAttribute('data-ws-tab');
-          if (id) activate(id, false);
+      const applyHash = () => {
+        const hash = window.location.hash;
+        if (hash === '#visao-completa') {
+          activate('__all__', false);
+        } else if (hash) {
+          const matchingTab = Array.from(tabs).find((t) => t.getAttribute('data-ws-hash') === hash);
+          if (matchingTab) {
+            const id = matchingTab.getAttribute('data-ws-tab');
+            if (id) activate(id, false);
+          }
         }
-      }
+      };
+
+      applyHash();
+      window.addEventListener('hashchange', applyHash);
     });
   }
 
