@@ -11,8 +11,8 @@ import EstagioObrigatorioCore from '../components/features/estagio/obrigatorio/E
 import EstagioTceCore from '../components/features/estagio/tce/EstagioTceCore.astro';
 
 const tabs = [
-  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Estágio', hash: '#visao-geral' },
-  { id: 'v1', shortLabel: 'Dispensa Art. 41', fullLabel: '1. Dispensa Art. 41', hash: '#art41' },
+  { id: 'v0', shortLabel: 'Geral', fullLabel: 'Visão Geral do Estágio', hash: '#visao-geral' },
+  { id: 'v1', shortLabel: 'Art. 41', fullLabel: '1. Dispensa Art. 41', hash: '#art41' },
   { id: 'v2', shortLabel: 'Estágio 300h', fullLabel: '2. Estágio Obrigatório (300h)', hash: '#obrigatorio' },
   { id: 'v3', shortLabel: 'Tutorial TCE', fullLabel: '3. Tutorial TCE & Modelos', hash: '#tutorial' },
 ];
@@ -30,6 +30,7 @@ const badges = [
   description="Regras do estágio supervisionado de Gestão Pública da UFMG (300h: DCP 135 e DCP 136), simulador do Art. 41 para servidores e modelos oficiais de TCE."
 >
   <PageHeader
+    eyebrow="Eixo 3 · Estágio Supervisionado"
     title="Estágio Supervisionado (300h)"
     subtitle="Verificador interativo de integralização por experiência profissional (Art. 41), regras do Estágio Obrigatório A e B e tutorial visual do Termo de Compromisso (TCE)."
     badges={badges}

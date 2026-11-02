@@ -11,8 +11,8 @@ import CursoIngresso from '../components/curso/CursoIngresso.astro';
 import AxisOverview from '../components/shell/AxisOverview.astro';
 
 const tabs = [
-  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Eixo', hash: '#visao-geral' },
-  { id: 'v1', shortLabel: 'O Curso', fullLabel: '1. Visão Geral & Cientometria', hash: '#visao' },
+  { id: 'v0', shortLabel: 'Geral', fullLabel: 'Painel do Curso', hash: '#visao-geral' },
+  { id: 'v1', shortLabel: 'História', fullLabel: '1. História & Cientometria', hash: '#historia' },
   { id: 'v2', shortLabel: 'Egressos', fullLabel: '2. Egressos & Salários', hash: '#egressos' },
   { id: 'v3', shortLabel: 'Colegiado', fullLabel: '3. Colegiado & Secretaria', hash: '#colegiado' },
   { id: 'v4', shortLabel: 'Ingresso', fullLabel: '4. Formas de Ingresso', hash: '#ingresso' },
@@ -29,6 +29,7 @@ const badges = [
 
 <BaseLayout title="O Curso de Gestão Pública" description="História, excelência Nota 4 MEC, cientometria, salários dos egressos e governança na FAFICH/UFMG.">
   <PageHeader
+    eyebrow="Eixo 2 · O Bacharelado em Gestão Pública"
     title="O Bacharelado em Gestão Pública"
     subtitle="Formação pública de excelência voltada para formulação, implementação e avaliação de políticas públicas no Estado brasileiro, sediada no Departamento de Ciência Política (Conceito 7 CAPES)."
     badges={badges}

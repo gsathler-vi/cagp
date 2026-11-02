@@ -11,7 +11,7 @@ import { AcgGuardianCore } from '../components/features/acg/guardian/AcgGuardian
 import AcgTramitacaoCore from '../components/features/acg/tramitacao/AcgTramitacaoCore.astro';
 
 const tabs = [
-  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral das 600h', hash: '#visao-geral' },
+  { id: 'v0', shortLabel: 'Geral', fullLabel: 'Visão Geral das 600h', hash: '#visao-geral' },
   { id: 'v1', shortLabel: 'Calculadora', fullLabel: '1. Calculadora Extensão & AAC', hash: '#calculadora' },
   { id: 'v2', shortLabel: '120 Dias', fullLabel: '2. Guardião 120 Dias', hash: '#guardiao-120-dias' },
   { id: 'v3', shortLabel: 'Protocolo', fullLabel: '3. Protocolo Colegiado N-20229', hash: '#protocolo-colegiado' },
@@ -30,6 +30,7 @@ const badges = [
   description="Calculadora interativa de 300h de Extensão Obrigatória e 300h de AAC com monitoramento do prazo legal de 120 dias e protocolo do Colegiado N-20229."
 >
   <PageHeader
+    eyebrow="Eixo 3 · Horas & Certificados (600h)"
     title="Central de Horas & Certificados (600h)"
     subtitle="Simulador interativo de 300h de Extensão e 300h de AAC, monitor de prescrição de 120 dias corridos e roteiro de tramitação oficial do Colegiado de Gestão Pública."
     badges={badges}

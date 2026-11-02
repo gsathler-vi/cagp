@@ -59,14 +59,14 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html
 const shouldRenderAxisNav = showAxisNav && !isHome;
 ---
 
-<header class="mb-4 select-none">
+<header class="mb-2 sm:mb-4 select-none">
   <!-- Barra de Pílulas do Eixo Apple HIG (Substitui Breadcrumbs & AxisPill) -->
   {shouldRenderAxisNav && (
     <AxisNavBar axisId={axisId} activeId={activeId} />
   )}
 
   <!-- Badges & Eyebrow Row -->
-  <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+  <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1">
     {eyebrow ? (
       <span class="text-xs font-['Oswald'] uppercase tracking-wider text-[#8B1E2D] font-bold">
         {eyebrow}
@@ -75,8 +75,8 @@ const shouldRenderAxisNav = showAxisNav && !isHome;
 
     {badges.length > 0 && (
       <div class="flex flex-wrap items-center gap-1">
-        {badges.map((b) => (
-          <span class={`cagp-badge ${badgeClasses[b.variant || 'dark']}`}>
+        {badges.map((b, idx) => (
+          <span class={`cagp-badge ${badgeClasses[b.variant || 'dark']} ${idx >= 2 ? 'hidden sm:inline-flex' : 'inline-flex'}`}>
             {b.icon && <i class={`bi ${b.icon}`} aria-hidden="true" />}
             <span>{b.label}</span>
           </span>
@@ -86,11 +86,11 @@ const shouldRenderAxisNav = showAxisNav && !isHome;
   </div>
 
   <!-- Page Title & Subtitle -->
-  <h1 class="font-['Oswald'] text-2xl sm:text-3xl font-black uppercase text-[#0A0A0A] leading-tight">
+  <h1 class="font-['Oswald'] text-xl sm:text-3xl font-black uppercase text-[#0A0A0A] leading-tight">
     {title}
   </h1>
   {subtitle && (
-    <p class="text-xs sm:text-sm text-gray-600 mt-1 max-w-4xl leading-relaxed">
+    <p class="text-xs sm:text-sm text-gray-600 mt-0.5 sm:mt-1 max-w-4xl leading-relaxed line-clamp-2 sm:line-clamp-none">
       {subtitle}
     </p>
   )}

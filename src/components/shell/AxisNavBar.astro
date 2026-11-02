@@ -33,7 +33,7 @@ const activeItemId = axis
 
 {axis && (
   <nav
-    class={`cagp-axis-navbar-wrap mb-4 select-none ${className}`}
+    class={`cagp-axis-navbar-wrap mb-3 select-none ${className}`}
     aria-label={`Navegação do Eixo ${axis.number}: ${axis.name}`}
   >
     <div class="cagp-axis-navbar-container flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none">
@@ -52,9 +52,11 @@ const activeItemId = axis
           return (
             <a
               href={item.href}
+              data-axis-id={item.id}
+              data-axis-href={item.href}
               class={`cagp-axis-pill min-h-[44px] px-3 py-1.5 rounded-lg flex items-center gap-1.5 text-xs font-['Oswald'] uppercase tracking-tight transition-all duration-150 no-underline shrink-0 ${
                 isActive
-                  ? 'bg-[#8B1E2D] text-[#FFFFFF] font-bold border-2 border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A]'
+                  ? 'is-active bg-[#8B1E2D] text-[#FFFFFF] font-bold border-2 border-[#0A0A0A] shadow-[2px_2px_0px_#0A0A0A]'
                   : 'bg-[#F7F5F0] text-[#0A0A0A] font-semibold border border-[#DFDBD2] hover:bg-[#EAE6DE] hover:border-[#0A0A0A]'
               }`}
               aria-current={isActive ? 'page' : undefined}
@@ -84,3 +86,83 @@ const activeItemId = axis
     transform: scale(0.96);
   }
 </style>
+
+<script>
+  function setupAxisNavBar() {
+    const bars = document.querySelectorAll<HTMLElement>('.cagp-axis-navbar-wrap');
+    bars.forEach((bar) => {
+      const pills = bar.querySelectorAll<HTMLAnchorElement>('.cagp-axis-pill');
+      if (!pills.length) return;
+
+      const updateActivePill = () => {
+        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+        const currentHash = window.location.hash;
+
+        let matchedPill: HTMLAnchorElement | null = null;
+
+        // 1. Prioridade para correspondência de hash se existir
+        if (currentHash) {
+          pills.forEach((p) => {
+            const href = p.getAttribute('href') || '';
+            if (href.includes(currentHash)) {
+              matchedPill = p;
+            }
+          });
+        }
+
+        // 2. Prioridade para correspondência exata de pathname
+        if (!matchedPill) {
+          pills.forEach((p) => {
+            const href = p.getAttribute('href') || '';
+            const pathOnly = href.split('#')[0].replace(/\/$/, '') || '/';
+            if (pathOnly === currentPath || (pathOnly !== '/' && currentPath.startsWith(pathOnly))) {
+              matchedPill = p;
+            }
+          });
+        }
+
+        // 3. Fallback: primeira pill
+        if (!matchedPill && pills.length > 0) {
+          matchedPill = pills[0];
+        }
+
+        if (matchedPill) {
+          pills.forEach((p) => {
+            const isMatch = p === matchedPill;
+            p.classList.toggle('is-active', isMatch);
+            p.classList.toggle('bg-[#8B1E2D]', isMatch);
+            p.classList.toggle('text-[#FFFFFF]', isMatch);
+            p.classList.toggle('font-bold', isMatch);
+            p.classList.toggle('border-2', isMatch);
+            p.classList.toggle('border-[#0A0A0A]', isMatch);
+            p.classList.toggle('shadow-[2px_2px_0px_#0A0A0A]', isMatch);
+
+            p.classList.toggle('bg-[#F7F5F0]', !isMatch);
+            p.classList.toggle('text-[#0A0A0A]', !isMatch);
+            p.classList.toggle('font-semibold', !isMatch);
+            p.classList.toggle('border', !isMatch);
+            p.classList.toggle('border-[#DFDBD2]', !isMatch);
+
+            if (isMatch) {
+              p.setAttribute('aria-current', 'page');
+            } else {
+              p.removeAttribute('aria-current');
+            }
+
+            const icon = p.querySelector('i');
+            if (icon) {
+              icon.classList.toggle('text-[#FFFFFF]', isMatch);
+              icon.classList.toggle('text-gray-600', !isMatch);
+            }
+          });
+        }
+      };
+
+      updateActivePill();
+      window.addEventListener('hashchange', updateActivePill);
+    });
+  }
+
+  setupAxisNavBar();
+  document.addEventListener('astro:page-load', setupAxisNavBar);
+</script>

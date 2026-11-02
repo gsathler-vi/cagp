@@ -12,9 +12,9 @@ import CalouroEspacosCore from '../components/features/calouros/espacos/CalouroE
 import CalouroFumpCore from '../components/features/calouros/fump/CalouroFumpCore.astro';
 
 const tabs = [
-  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do Acolhimento', hash: '#visao-geral' },
+  { id: 'v0', shortLabel: 'Geral', fullLabel: 'Visão Geral do Acolhimento', hash: '#visao-geral' },
   { id: 'v1', shortLabel: 'Checklist', fullLabel: '1. Checklist 30d & Tutoriais', hash: '#checklist' },
-  { id: 'v2', shortLabel: 'Rotina', fullLabel: '2. Rotina Noturna & RU', hash: '#rotina-noturna' },
+  { id: 'v2', shortLabel: 'Rotina RU', fullLabel: '2. Rotina Noturna & RU', hash: '#rotina-noturna' },
   { id: 'v3', shortLabel: 'Espaços', fullLabel: '3. FAFICH, Sec & CEAG', hash: '#espacos' },
   { id: 'v4', shortLabel: 'FUMP', fullLabel: '4. FUMP & Assistência', hash: '#fump' },
 ];
@@ -32,6 +32,7 @@ const badges = [
   description="Checklist interativo dos primeiros 30 dias na UFMG, rotina noturna, jantar no RU II às 18h15, circulares gratuitos, secretaria Sala F-2039 e suporte FUMP."
 >
   <PageHeader
+    eyebrow="Eixo 2 · Guia de Sobrevivência"
     title="Guia de Sobrevivência do Calouro"
     subtitle="Checklist interativo dos primeiros 30 dias, rotina noturna, jantar no RU II, circulares gratuitos, secretaria Sala F-2039 e suporte FUMP."
     badges={badges}

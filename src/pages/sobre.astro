@@ -10,10 +10,10 @@ import CagpEstatutoCore from '../components/features/cagp/estatuto/CagpEstatutoC
 import CagpGestaoDiretoria from '../components/features/cagp/gestao/CagpGestaoDiretoria.astro';
 
 const tabs = [
-  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do CAGP', hash: '#visao-geral' },
-  { id: 'v1', shortLabel: 'Princípios', fullLabel: '1. Princípios & História', hash: '#principios' },
-  { id: 'v2', shortLabel: 'Governança', fullLabel: '2. Governança & Estatuto', hash: '#governanca' },
-  { id: 'v3', shortLabel: 'Gestão', fullLabel: '3. Diretorias & Transparência', hash: '#diretorias' },
+  { id: 'v0', shortLabel: 'Geral', fullLabel: 'Visão Geral do CAGP', hash: '#visao-geral' },
+  { id: 'v1', shortLabel: 'História', fullLabel: '1. Princípios & História', hash: '#principios' },
+  { id: 'v2', shortLabel: 'Estatuto', fullLabel: '2. Governança & Estatuto', hash: '#governanca' },
+  { id: 'v3', shortLabel: 'Diretorias', fullLabel: '3. Diretorias & Transparência', hash: '#diretorias' },
 ];
 
 const badges = [
@@ -29,6 +29,7 @@ const badges = [
   description="História, governança, estatuto interno, diretorias executivas e prestação de contas do Centro Acadêmico de Gestão Pública da FAFICH/UFMG."
 >
   <PageHeader
+    eyebrow="Eixo 5 · O Centro Acadêmico (CAGP)"
     title="O Centro Acadêmico de Gestão Pública"
     subtitle="Entidade legítima de representação discente da FAFICH/UFMG, fundada na defesa da universidade pública, plural e com compromisso republicano."
     badges={badges}

@@ -160,7 +160,7 @@ export const HomeHeroHub: React.FC = () => {
                 <button
                   type="button"
                   onClick={openPassportSheet}
-                  className="text-[11px] font-['Oswald'] uppercase font-bold text-white hover:text-[#FFE082] bg-white/10 hover:bg-white/20 border border-white/30 rounded px-2 py-0.5 transition-colors cursor-pointer inline-flex items-center gap-1 min-h-[30px]"
+                  className="text-xs font-['Oswald'] uppercase font-bold text-white hover:text-[#FFE082] bg-white/10 hover:bg-white/20 border border-white/30 rounded px-3 py-1.5 transition-colors cursor-pointer inline-flex items-center gap-1.5 min-h-[44px]"
                   aria-label="Editar Passaporte Discente e Foto"
                 >
                   <i className="bi bi-pencil-square" aria-hidden="true" />
@@ -402,7 +402,7 @@ export const HomeHeroHub: React.FC = () => {
                 <button
                   type="button"
                   onClick={openPassportSheet}
-                  className="text-[11px] font-['Oswald'] uppercase font-bold text-white hover:text-[#FFE082] bg-white/10 hover:bg-white/20 border border-white/30 rounded px-2.5 py-0.5 transition-colors cursor-pointer inline-flex items-center gap-1 min-h-[28px]"
+                  className="text-xs font-['Oswald'] uppercase font-bold text-white hover:text-[#FFE082] bg-white/10 hover:bg-white/20 border border-white/30 rounded px-3 py-1.5 transition-colors cursor-pointer inline-flex items-center gap-1.5 min-h-[44px]"
                   aria-label="Editar Passaporte Discente e Foto"
                 >
                   <i className="bi bi-pencil-square" aria-hidden="true" />

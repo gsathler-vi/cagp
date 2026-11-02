@@ -10,8 +10,8 @@ import TccCronogramaTimeline from '../components/features/tcc/cronograma/TccCron
 import TccTermoAceiteCore from '../components/features/tcc/termo/TccTermoAceiteCore.astro';
 
 const tabs = [
-  { id: 'v0', shortLabel: 'Visão Geral', fullLabel: 'Visão Geral do TCC', hash: '#visao-geral' },
-  { id: 'v1', shortLabel: '4 Modalidades', fullLabel: '1. Modalidades de TCC (Art. 19)', hash: '#modalidades' },
+  { id: 'v0', shortLabel: 'Geral', fullLabel: 'Visão Geral do TCC', hash: '#visao-geral' },
+  { id: 'v1', shortLabel: 'Modalidades', fullLabel: '1. Modalidades de TCC (Art. 19)', hash: '#modalidades' },
   { id: 'v2', shortLabel: 'Cronograma', fullLabel: '2. Cronograma 9º/10ºP & Bancas', hash: '#cronograma' },
   { id: 'v3', shortLabel: 'Termo Aceite', fullLabel: '3. Termo de Aceite & Modelos', hash: '#termo-aceite' },
 ];
@@ -29,6 +29,7 @@ const badges = [
   description="Regulamento oficial do TCC de Gestão Pública da UFMG (180h: DCP 089 e DCP 137), 4 modalidades do Art. 19, regras de banca e download do Termo de Aceite."
 >
   <PageHeader
+    eyebrow="Eixo 3 · Trabalho de Conclusão de Curso"
     title="Trabalho de Conclusão de Curso (180h)"
     subtitle="Matriz das 4 modalidades oficiais aceitas pelo Colegiado (Art. 19), projeto em DCP 089 (60h), defesa em DCP 137 (120h) e termo de aceite orientador."
     badges={badges}
