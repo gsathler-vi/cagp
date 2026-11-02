@@ -36,8 +36,10 @@
 }
 
 .cagp-island-dropdown.is-open .cagp-island-dropdown-btn {
-  background: #F7F5F0;
-  border-color: #0A0A0A;
+  background: #FFFFFF;
+  border-color: #8B1E2D;
+  color: #8B1E2D;
+  box-shadow: 1.5px 1.5px 0px #8B1E2D;
 }
 
 .cagp-island-dropdown-chevron {
@@ -48,12 +50,15 @@
 
 .cagp-island-dropdown.is-open .cagp-island-dropdown-chevron {
   transform: rotate(180deg);
+  color: #8B1E2D;
 }
 
+/* Dropdown Menu Container: Clears the Header Capsule Completely */
 .cagp-island-dropdown-menu {
   position: absolute;
-  top: calc(100% + 4px);
-  min-width: 295px;
+  top: calc(100% + 1.25rem);
+  min-width: 310px;
+  max-width: 360px;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -63,16 +68,19 @@
   z-index: 1070;
 }
 
-/* Open via class or group hover */
+/* Open via class */
 .cagp-island-dropdown.is-open .cagp-island-dropdown-menu {
   display: flex !important;
+}
+
+.cagp-island-dropdown.is-open .cagp-island-dropdown-card {
   animation: cagpDropdownAppear 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes cagpDropdownAppear {
   from {
     opacity: 0;
-    transform: translateY(-6px) scale(0.98);
+    transform: translateY(-8px) scale(0.97);
   }
   to {
     opacity: 1;

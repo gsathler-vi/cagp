@@ -85,6 +85,15 @@ const {
           }
         };
 
+        // Reset seguro do estado do drawer em transições de página Astro
+        document.addEventListener('astro:after-swap', function() {
+          document.body.style.overflow = '';
+          document.body.classList.remove('cagp-drawer-open');
+          if (window.__cagp_close_drawer) {
+            window.__cagp_close_drawer();
+          }
+        });
+
         try {
           var raw = localStorage.getItem('cagp_a11y_prefs_v2');
           if (raw) {

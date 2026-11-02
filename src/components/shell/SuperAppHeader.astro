@@ -65,34 +65,62 @@ const isHomeActive = currentPath === '/' || currentPath === '';
                 <span class="hidden xl:inline">{item.label}</span>
                 <i class="bi bi-chevron-down text-[9px] text-gray-400 cagp-island-dropdown-chevron ml-0.5" aria-hidden="true" />
               </button>
-              <div class={`cagp-island-dropdown-menu absolute ${idx >= 2 ? 'right-0' : 'left-0'} top-full pt-2 z-[1050] min-w-[310px]`}>
-                <div class="bg-white/98 backdrop-blur-xl border-2 border-[#0A0A0A] rounded-2xl shadow-[4px_4px_0px_#0A0A0A] p-2.5 space-y-1.5">
-                  <a
-                    href={item.href}
-                    class="px-3 py-2 bg-[#F7F5F0] hover:bg-[#8B1E2D] hover:text-white rounded-xl flex items-center justify-between no-underline transition-colors group/header border border-[#DFDBD2]"
-                  >
-                    <span class="font-['Oswald'] font-bold text-xs uppercase tracking-wide">Visão Geral do Eixo</span>
-                    <span class="text-xs font-mono group-hover/header:translate-x-0.5 transition-transform">Ver Página &rarr;</span>
-                  </a>
-                  <div class="border-t border-[#DFDBD2] my-1.5" />
-                  {item.children?.map((child) => {
-                    const isChildActive = child.href === currentPath;
-                    return (
-                      <a
-                        href={child.href}
-                        class={`cagp-island-dropdown-item px-3 py-2 rounded-xl hover:bg-[#F7F5F0] flex items-start gap-3 no-underline transition-colors block text-left group/item ${
-                          isChildActive ? 'is-active bg-[#FEE2E2] border-[#8B1E2D]' : ''
-                        }`}
-                        data-route={child.href}
-                      >
-                        <i class={`bi ${child.icon} text-base text-[#8B1E2D] mt-0.5 group-hover/item:scale-110 transition-transform shrink-0`} aria-hidden="true" />
-                        <div class="min-w-0">
-                          <span class="font-['Oswald'] font-bold text-xs uppercase text-[#0A0A0A] block leading-tight">{child.label}</span>
-                          <span class="text-xs text-gray-500 block leading-tight mt-1">{child.desc}</span>
-                        </div>
-                      </a>
-                    );
-                  })}
+              <div class={`cagp-island-dropdown-menu absolute ${
+                idx === 0 ? 'left-0' : idx === 3 ? 'right-0' : 'left-1/2 -translate-x-1/2'
+              } top-[calc(100%+1.25rem)] z-[1070] min-w-[310px] max-w-[350px]`}>
+                <div class="cagp-island-dropdown-card bg-white/98 backdrop-blur-xl border-2 border-[#0A0A0A] rounded-2xl shadow-[4px_4px_0px_#0A0A0A] p-2.5 space-y-1.5">
+                  <!-- Header do Eixo com Visão Geral -->
+                  <div class="flex items-center justify-between px-3 py-2 bg-[#F7F5F0] rounded-xl border border-[#DFDBD2]">
+                    <div class="flex items-center gap-2 min-w-0">
+                      <div class="w-6 h-6 rounded-md bg-[#8B1E2D] text-white flex items-center justify-center text-xs shrink-0 shadow-xs">
+                        <i class={`bi ${item.icon}`} aria-hidden="true" />
+                      </div>
+                      <span class="font-['Oswald'] font-bold text-xs uppercase tracking-wide text-[#0A0A0A] truncate">{item.label}</span>
+                    </div>
+                    <a
+                      href={item.href}
+                      class="text-[11px] font-['Inter'] font-bold text-[#8B1E2D] hover:text-[#0A0A0A] flex items-center gap-1 no-underline transition-colors shrink-0 ml-2"
+                      aria-label={`Visão Geral de ${item.label}`}
+                    >
+                      <span>Visão Geral</span>
+                      <i class="bi bi-arrow-right text-[10px]" aria-hidden="true" />
+                    </a>
+                  </div>
+
+                  <!-- Divisor Sutil -->
+                  <div class="border-t border-[#DFDBD2] my-1" />
+
+                  <!-- Sub-páginas Canônicas -->
+                  <div class="space-y-1">
+                    {item.children?.map((child) => {
+                      const isChildActive = child.href === currentPath;
+                      return (
+                        <a
+                          href={child.href}
+                          class={`cagp-island-dropdown-item px-3 py-2 rounded-xl hover:bg-[#F7F5F0] flex items-start gap-3 no-underline transition-all block text-left group/item border ${
+                            isChildActive
+                              ? 'is-active bg-[#FEE2E2] border-[#8B1E2D] shadow-[1px_1px_0_#8B1E2D]'
+                              : 'border-transparent hover:border-[#DFDBD2]'
+                          }`}
+                          data-route={child.href}
+                        >
+                          <div class={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border transition-all ${
+                            isChildActive
+                              ? 'bg-[#8B1E2D] text-white border-[#8B1E2D]'
+                              : 'bg-[#F7F5F0] text-[#8B1E2D] border-[#DFDBD2] group-hover/item:bg-white group-hover/item:border-[#0A0A0A] group-hover/item:scale-105'
+                          }`}>
+                            <i class={`bi ${child.icon} text-sm`} aria-hidden="true" />
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <span class={`font-['Oswald'] font-bold text-xs uppercase block leading-tight ${
+                              isChildActive ? 'text-[#8B1E2D]' : 'text-[#0A0A0A] group-hover/item:text-[#8B1E2D]'
+                            }`}>{child.label}</span>
+                            <span class="text-[11px] text-gray-500 block leading-snug mt-0.5 line-clamp-1">{child.desc}</span>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -173,17 +201,26 @@ const isHomeActive = currentPath === '/' || currentPath === '';
   function setupHeaderListeners() {
     const dispatch = (evt: string) => window.dispatchEvent(new CustomEvent(evt));
 
-    document.getElementById('cagp-btn-spotlight')?.addEventListener('click', () => dispatch('cagp:open-spotlight'));
-    document.getElementById('cagp-btn-campus')?.addEventListener('click', () => dispatch('cagp:open-campus'));
-    document.getElementById('cagp-btn-passport')?.addEventListener('click', () => dispatch('cagp:open-passport'));
-    document.getElementById('cagp-mobile-menu-btn')?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if ((window as any).__cagp_toggle_drawer) {
-        (window as any).__cagp_toggle_drawer();
-      } else {
-        dispatch('cagp:toggle-drawer');
-      }
-    });
+    const spotlightBtn = document.getElementById('cagp-btn-spotlight');
+    if (spotlightBtn) spotlightBtn.onclick = () => dispatch('cagp:open-spotlight');
+
+    const campusBtn = document.getElementById('cagp-btn-campus');
+    if (campusBtn) campusBtn.onclick = () => dispatch('cagp:open-campus');
+
+    const passportBtn = document.getElementById('cagp-btn-passport');
+    if (passportBtn) passportBtn.onclick = () => dispatch('cagp:open-passport');
+
+    const mobileMenuBtn = document.getElementById('cagp-mobile-menu-btn');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.onclick = (e) => {
+        e.stopPropagation();
+        if ((window as any).__cagp_toggle_drawer) {
+          (window as any).__cagp_toggle_drawer();
+        } else {
+          dispatch('cagp:toggle-drawer');
+        }
+      };
+    }
 
     // Dropdowns interativos (Desktop)
     const dropdowns = document.querySelectorAll<HTMLElement>('.cagp-island-dropdown');

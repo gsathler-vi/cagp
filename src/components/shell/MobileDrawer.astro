@@ -216,27 +216,39 @@ const axisSections = HEADER_NAV_ITEMS.filter((item) => Boolean(item.children && 
     closeDrawer();
     updateDrawerAvatar();
 
-    document.getElementById('cagp-drawer-backdrop')?.addEventListener('click', closeDrawer);
-    document.getElementById('cagp-drawer-close')?.addEventListener('click', closeDrawer);
+    const backdrop = document.getElementById('cagp-drawer-backdrop');
+    if (backdrop) backdrop.onclick = closeDrawer;
 
-    document.querySelectorAll('#cagp-mobile-drawer .cagp-drawer-link').forEach((link) => {
-      link.addEventListener('click', closeDrawer);
+    const closeBtn = document.getElementById('cagp-drawer-close');
+    if (closeBtn) closeBtn.onclick = closeDrawer;
+
+    document.querySelectorAll<HTMLElement>('#cagp-mobile-drawer .cagp-drawer-link').forEach((link) => {
+      link.onclick = closeDrawer;
     });
 
-    document.getElementById('cagp-drawer-passport-cta')?.addEventListener('click', () => {
-      closeDrawer();
-      window.dispatchEvent(new CustomEvent('cagp:open-passport'));
-    });
+    const passportCta = document.getElementById('cagp-drawer-passport-cta');
+    if (passportCta) {
+      passportCta.onclick = () => {
+        closeDrawer();
+        window.dispatchEvent(new CustomEvent('cagp:open-passport'));
+      };
+    }
 
-    document.getElementById('cagp-drawer-a11y-btn')?.addEventListener('click', () => {
-      closeDrawer();
-      window.dispatchEvent(new CustomEvent('cagp:open-a11y'));
-    });
+    const a11yBtn = document.getElementById('cagp-drawer-a11y-btn');
+    if (a11yBtn) {
+      a11yBtn.onclick = () => {
+        closeDrawer();
+        window.dispatchEvent(new CustomEvent('cagp:open-a11y'));
+      };
+    }
 
-    document.getElementById('cagp-drawer-settings-btn')?.addEventListener('click', () => {
-      closeDrawer();
-      window.dispatchEvent(new CustomEvent('cagp:open-settings'));
-    });
+    const settingsBtn = document.getElementById('cagp-drawer-settings-btn');
+    if (settingsBtn) {
+      settingsBtn.onclick = () => {
+        closeDrawer();
+        window.dispatchEvent(new CustomEvent('cagp:open-settings'));
+      };
+    }
   }
 
   setupMobileDrawer();
